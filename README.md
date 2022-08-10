@@ -1,2 +1,2 @@
-# subramanya.github.io
-my blog
+# My blog
+This is my blog, uses Jekyll.
