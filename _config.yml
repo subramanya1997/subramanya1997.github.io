@@ -5,3 +5,13 @@ baseurl: ""
 url: "http://subramanya1997.github.io"
 twitter_username: subramanya1997
 github_username:  subramanya1997
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+highlighter: rouge
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
