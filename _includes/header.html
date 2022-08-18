@@ -20,6 +20,7 @@
         {% for page in site.pages %}
           {% if page.title and page.includelink %}<a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}
         {% endfor %}
+        {% if page.title == "About" %}<a class="page-link" href="/assets/resume/subramanya_resume.pdf" download>Download</a>{% endif %}
       </div>
     </nav>
   </div>
