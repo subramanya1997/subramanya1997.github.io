@@ -1,6 +1,5 @@
 _drafts/
 _site/
 .jekyll-cache/
-Gemfile
 Gemfile.lock
 .DS_Store
