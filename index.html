@@ -4,11 +4,36 @@ layout: default
 
 <header class="post-header">
   {% assign about = site.data.about %}
-  <h1>Bio</h1>
-  <p>{{about.bio}}</p></br>
-  <p>{{about.history}}</p>
-
+  
 </header>
+<div class="post-content">
+  <h3>About</h3>
+</div>
+<tr style="padding:0px">
+  <td style="padding:0px">
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <tbody>
+          <tr style="padding:0px">
+              <td style="padding:2.5%;width:63%;vertical-align:middle">
+                <p>{{about.bio}}</p></br>
+                <p>{{about.research_interest}}</p></br>
+                <p>{{about.history}}</p></br>
+                <p style="text-align:center">
+                  <a href="mailto:snagabhushan@umass.edu">Email</a> &nbsp/&nbsp
+                  <a href="/assets/resume/subramanya_resume.pdf">CV</a> &nbsp/&nbsp
+                  <a href="https://github.com/subramanya1997">Github</a>&nbsp/&nbsp
+                  <a href="https://www.linkedin.com/in/nsubramanya/">Linkedin</a>
+                </p>
+              </td>
+              <td style="padding:2.5%;width:40%;max-width:40%">
+                  <a href="/images/IMG_9402.jpg">
+                    <img style="width:100%;max-width:100%" alt="profile photo"src="/assets/images/profile_picture.png" class="hoverZoomLink"></a>
+              </td>
+          </tr>
+          </tbody>
+      </table>
+  </td>
+</tr>
 
 <div class="home">
   <ul class="posts">
