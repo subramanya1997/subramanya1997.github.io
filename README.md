@@ -1,5 +1,6 @@
-# My blog
-This is my blog, uses Jekyll.
+# Academic website
+This is my academic website. I used a pre existing template and modified it according to my needs.
+Built uses Jekyll.
 
 ### Instructions to run.
 
