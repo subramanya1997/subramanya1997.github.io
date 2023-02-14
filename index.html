@@ -4,7 +4,6 @@ layout: default
 
 <header class="post-header">
   {% assign about = site.data.about %}
-  
 </header>
 <div class="post-content">
   <h3>About</h3>
@@ -19,31 +18,32 @@ layout: default
                 <p>{{about.research_interest}}</p></br>
                 <p>{{about.history}}</p></br>
                 <p style="text-align:center">
-                  <a href="mailto:snagabhushan@umass.edu">Email</a> &nbsp/&nbsp
-                  <a href="/assets/resume/subramanya_resume.pdf">CV</a> &nbsp/&nbsp
-                  <a href="https://github.com/subramanya1997">Github</a>&nbsp/&nbsp
-                  <a href="https://www.linkedin.com/in/nsubramanya/">Linkedin</a>
+                  <a href="mailto:{{site.email}}">Email</a> &nbsp/&nbsp
+                  <a href="{{about.cv_file}}">CV</a> &nbsp/&nbsp
+                  <a href="https://github.com/{{ about.github_username }}">Github</a>&nbsp/&nbsp
+                  <a href="https://www.linkedin.com/in/{{ about.linkedin_username }}">Linkedin</a>
                 </p>
               </td>
               <td style="padding:2.5%;width:40%;max-width:40%">
                   <a href="/images/IMG_9402.jpg">
-                    <img style="width:100%;max-width:100%" alt="profile photo"src="/assets/images/profile_picture.png" class="hoverZoomLink"></a>
+                    <img style="width:100%;max-width:100%" alt="profile photo"src="/assets/images/profile_picture.webp" class="hoverZoomLink"></a>
               </td>
           </tr>
           </tbody>
       </table>
   </td>
 </tr>
-
-<div class="home">
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        <br>
-        {{ post.excerpt }}
-      </li>
-    {% endfor %}
-  </ul>
+</hr>
+<div class="post-content">
+  <h3>Blog</h3>
 </div>
+<ul class="posts">
+  {% for post in site.posts %}
+    <li>
+      <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      <br>
+      {{ post.excerpt }}
+    </li>
+  {% endfor %}
+</ul>
