@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Demystifying the Shell Scripting: Working with Files and Directories"
-excerpt: Building upon the fundamentals of shell scripting, this guide delves into advanced techniques and best practices that will elevate your scripting skills. We will explore error handling, command substitution, process management, and share valuable tips for writing efficient, robust, and maintainable scripts. By mastering these advanced concepts, you will be well-equipped to tackle complex scripting challenges and harness the full power of shell scripting.
+excerpt: Master the art of working with files and directories in shell scripting to streamline your tasks and improve efficiency. Learn how to create, copy, move, and delete files and directories, as well as read and write to files using practical examples. Discover the power of searching for files and directories with the `find` command. Enhance your shell scripting skills with valuable resources and tutorials, and unlock the full potential of file and directory management in the shell.
 date: 2023-01-04
 ready: true
 ---
