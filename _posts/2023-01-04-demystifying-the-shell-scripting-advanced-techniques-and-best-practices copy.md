@@ -6,11 +6,9 @@ date: 2023-01-04
 ready: true
 ---
 
-# Demystifying the Shell Scripting: Working with Files and Directories
-
 In my previous blog posts, we covered the basics of using the shell, introduced shell scripting for beginners, and explored advanced techniques and best practices. In this blog post, we will focus on working with files and directories in shell scripts. We will discuss common tasks such as creating, copying, moving, and deleting files and directories, as well as reading and writing to files. We will also provide some resources for further learning.
 
-## 1. Creating Files and Directories
+## Creating Files and Directories
 
 To create a new file in a shell script, you can use the `touch` command:
 
@@ -24,7 +22,7 @@ To create a new directory, you can use the `mkdir` command:
 mkdir new_directory
 ```
 
-## 2. Copying and Moving Files and Directories
+## Copying and Moving Files and Directories
 
 To copy a file, you can use the `cp` command:
 
@@ -44,7 +42,7 @@ To move a file or directory, you can use the `mv` command:
 mv source_file.txt destination_file.txt
 ```
 
-## 3. Deleting Files and Directories
+## Deleting Files and Directories
 
 To delete a file, you can use the `rm` command:
 
@@ -58,7 +56,7 @@ To delete a directory, you can use the `-r` (recursive) option:
 rm -r directory_to_delete
 ```
 
-## 4. Reading and Writing to Files
+## Reading and Writing to Files
 
 To read the contents of a file, you can use the `cat` command:
 
@@ -83,7 +81,7 @@ while IFS= read -r line; do
 done < file_to_read.txt
 ```
 
-## 5. Searching for Files and Directories
+## Searching for Files and Directories
 
 To search for files and directories, you can use the `find` command:
 
@@ -97,7 +95,7 @@ For example, to find all `.txt` files in the `/home/user` directory, you can use
 find /home/user -name "*.txt"
 ```
 
-## 6. Resources
+## Resources
 
 To further improve your skills in working with files and directories in shell scripts, here are some resources:
 
