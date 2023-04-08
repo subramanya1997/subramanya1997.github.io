@@ -6,8 +6,6 @@ date: 2022-12-28
 ready: true
 ---
 
-# Demystifying the Shell Scripting: A Beginner's Guide
-
 In my previous blog post, we introduced the basics of using the shell, navigating within it, connecting programs, and some miscellaneous tips and tricks. Now that you have a good understanding of the shell, it's time to take your skills to the next level by learning shell scripting. Shell scripting allows you to automate tasks, perform complex operations, and create custom commands. In this blog post, we will explore the basics of shell scripting, including variables, control structures, loops, and functions. We will also provide some resources for further learning.
 
 ## What is Shell Scripting?
