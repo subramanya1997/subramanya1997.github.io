@@ -3,6 +3,7 @@ layout: post
 title: "Demystifying the Shell Scripting: A Beginner's Guide"
 excerpt: Shell scripting is a powerful tool that enables users to automate tasks, perform complex operations, and create custom commands. In this beginner's guide, we will explore the basics of shell scripting, including creating and executing scripts, working with variables, control structures, loops, and functions. By understanding these fundamental concepts, you will be well on your way to mastering shell scripting and unlocking its full potential.
 date: 2022-12-28
+tags: [Shell Scripting, Bash, Shell]
 ready: true
 ---
 

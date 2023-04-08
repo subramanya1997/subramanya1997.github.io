@@ -423,3 +423,23 @@
       margin: 0 0 15px; }
   
   }
+
+  .post-tags {
+    margin-top: 0.5em;
+  }
+  
+  .tag {
+    display: inline-block;
+    background-color: #4a90e2; /* Changed background color to a less bright blue */
+    border-radius: 12px;
+    padding: 4px 8px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 0.8em;
+    color: #ffffff; /* Text color is white */
+    text-decoration: none;
+  }
+  
+  .tag:hover {
+    background-color: #3b75b9; /* Changed hover background color to a slightly darker blue */
+  }
