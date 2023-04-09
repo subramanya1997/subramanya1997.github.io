@@ -18,6 +18,7 @@ jobs:
         with:
           ruby-version: 2.7.4
       - run: gem install bundler
+      - run: ls
       - run: bundle install
       - run: bundle exec jekyll build
 
