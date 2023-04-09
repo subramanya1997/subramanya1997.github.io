@@ -1,8 +1,9 @@
 title: Subramanya N
 email: snagabhushan@umass.edu
-description: '"The harder you work, the luckier you get." -- Gary Player'
+description: Welcome to my personal website, a space where I blog and share my musings on academic and professional topics. Dive in to explore my intellectual journey and gain insights from my experiences in various fields!
 baseurl: ""
 url: "http://subramanya1997.github.io"
+data_dir: _data
 
 # Build settings
 markdown: kramdown
