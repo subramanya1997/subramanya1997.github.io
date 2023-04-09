@@ -33,6 +33,7 @@ layout: default
       </table>
   </td>
 </tr>
+
 </hr>
 <div class="post-content">
   <h3>Blog</h3>
@@ -46,9 +47,16 @@ layout: default
       {{ post.excerpt }}
       <div class="post-tags">
         {% for tag in post.tags %}
-          <span class="tag">{{ tag }}</span>
+          <span class="tag" onclick="redirectToBlogWithFilter('{{ tag }}')">{{ tag }}</span>
         {% endfor %}
       </div>
     </li>
   {% endfor %}
 </ul>
+
+<script>
+  function redirectToBlogWithFilter(tag) {
+    localStorage.setItem('selectedTag', tag);
+    window.location.href = '/blog/';
+  }
+</script>
