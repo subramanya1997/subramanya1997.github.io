@@ -18,9 +18,9 @@
   
   h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
   
-  a         { color: #2a7ae2; text-decoration: none; }
-  a:hover   { color: #000; text-decoration: underline; }
-  a:visited { color: #205caa; }
+  a         { color: #415a77; text-decoration: none; }
+  a:hover   { color: #013a63; text-decoration: underline; }
+  a:visited { color: #415a77; }
   
   /* Utility */
   
@@ -430,7 +430,7 @@
   
   .tag {
     display: inline-block;
-    background-color: #4a90e2; /* Changed background color to a less bright blue */
+    background-color: #778da9; /* Changed background color to a less bright blue */
     border-radius: 12px;
     padding: 4px 8px;
     margin-right: 5px;
@@ -438,8 +438,37 @@
     font-size: 0.8em;
     color: #ffffff; /* Text color is white */
     text-decoration: none;
+    cursor: pointer;
   }
   
   .tag:hover {
-    background-color: #3b75b9; /* Changed hover background color to a slightly darker blue */
+    background-color: #415a77; /* Changed hover background color to a slightly darker blue */
+  }
+
+  .note {
+    text-align: center;
+    font-size: 16px;
+    color: #415a77;
+    margin-bottom: 16px;
+  }
+
+  .search-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  
+  #search-input {
+    width: 90%; /* Adjust this value to change the width of the search input */
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  #search-input:focus {
+    border-color: #778da9;
   }
