@@ -18,13 +18,15 @@ jobs:
         with:
           ruby-version: 2.7.4
       - run: gem install bundler
-      - run: bundle install --gemfile ./Gemfile
-      - run: bundle exec jekyll build --gemfile ./Gemfile
+      - run: ls
+      - run: bundle install
+      - run: bundle exec jekyll build
 
-      - name: Install html-proofer, aspell
+      - name: Install html-proofer, aspell, and imagemagick
         run: |
           gem install html-proofer
           sudo apt-get update && sudo apt-get install -y aspell
+          sudo apt-get install -y imagemagick
 
       - name: Run html-proofer for broken links
         run: bundle exec htmlproofer ./_site --disable-external --check-favicon --check-opengraph --check-html --check-img-http --check-img-https --empty-alt-ignore --url-ignore "/localhost/,/127.0.0.1/"
