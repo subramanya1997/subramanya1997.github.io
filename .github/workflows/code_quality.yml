@@ -18,11 +18,10 @@ jobs:
         with:
           ruby-version: 2.7.4
       - run: gem install bundler
-      - run: ls
-      - run: bundle install --gemfile='./GemFile'
-      - run: bundle exec jekyll build
+      - run: bundle install --gemfile ./GemFile
+      - run: bundle exec jekyll build --gemfile ./GemFile
 
-      - name: Install html-proofer, aspell, and imagemagick
+      - name: Install html-proofer, aspell
         run: |
           gem install html-proofer
           sudo apt-get update && sudo apt-get install -y aspell
