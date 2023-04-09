@@ -16,14 +16,14 @@ jobs:
       - name: Setup Ruby and Jekyll
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2.2
+          ruby-version: 2.7.4
       - run: gem install bundler
+      - run: bundle add html-proofer
       - run: bundle install
       - run: bundle exec jekyll build
 
-      - name: Install html-proofer, aspell
+      - name: Install aspell
         run: |
-          gem install html-proofer
           sudo apt-get update && sudo apt-get install -y aspell
 
       - name: Run html-proofer for broken links
