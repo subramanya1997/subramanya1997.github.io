@@ -18,8 +18,8 @@ jobs:
         with:
           ruby-version: 2.7.4
       - run: gem install bundler
-      - run: bundle install --gemfile ./Gemfile
-      - run: bundle exec jekyll build --gemfile ./Gemfile
+      - run: bundle install --gemfile ./GemFile
+      - run: bundle exec jekyll build --gemfile ./GemFile
 
       - name: Install html-proofer, aspell
         run: |
