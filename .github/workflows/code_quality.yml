@@ -1,0 +1,43 @@
+name: Jekyll Code Quality
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup Ruby and Jekyll
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7.x
+      - run: gem install bundler
+      - run: bundle install
+      - run: bundle exec jekyll build
+
+      - name: Install html-proofer, aspell, and imagemagick
+        run: |
+          gem install html-proofer
+          sudo apt-get update && sudo apt-get install -y aspell
+          sudo apt-get install -y imagemagick
+
+      - name: Run html-proofer for broken links
+        run: bundle exec htmlproofer ./_site --disable-external --check-favicon --check-opengraph --check-html --check-img-http --check-img-https --empty-alt-ignore --url-ignore "/localhost/,/127.0.0.1/"
+
+      - name: Spell check
+        run: bundle exec aspelllint **/*.md --home-dir=. --personal=./.aspell.en.pws --lang=en_US --mode=markdown
+
+      - name: Check front matter formatting
+        run: bundle exec jekyll frontmatter_check
+
+      - name: Check link formatting
+        run: bundle exec htmlproofer ./_site --check-html --check-links
+
+      - name: Check SEO
+        run: bundle exec htmlproofer ./_site --seo --only-4xx --check-external-hash
