@@ -472,3 +472,20 @@
   #search-input:focus {
     border-color: #778da9;
   }
+
+  .post-img {
+    width: 100%;
+    max-width: 800px; /* Adjust this value based on your desired size */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .post-img-caption{
+    display: block;
+    text-align: center;
+    font-style: italic;
+    font-size: 0.9em;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
