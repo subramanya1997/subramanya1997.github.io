@@ -166,6 +166,12 @@
   /* ----------------------------------------------------------*/
   
   .post-header { margin: 10px 0 30px; }
+
+  .post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   
   .post-header h1 {
     font-size: 36px;
@@ -176,7 +182,7 @@
   
   .post-header .meta {
     font-size: 15px;
-    color: #818181;
+    color: #000000;
     margin-top: 5px;
   }
   
@@ -488,4 +494,17 @@
     font-size: 0.9em;
     margin-top: 5px;
     margin-bottom: 15px;
+  }
+  
+  .social-share {
+    display: flex;
+    align-items: center;
+  }
+  
+  .social-icon {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s;
   }
