@@ -9,6 +9,11 @@ data_dir: _data
 markdown: kramdown
 permalink: pretty
 
+# collections
+collections:
+  books:
+    output: true
+
 highlighter: rouge
 kramdown:
   input: GFM
