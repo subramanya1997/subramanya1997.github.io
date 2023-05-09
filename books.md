@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Books
-permalink: /Books/
+permalink: /books/
 includelink: true
 ---
 
