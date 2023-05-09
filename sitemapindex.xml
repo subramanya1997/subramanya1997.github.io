@@ -1,0 +1,12 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for book in site.books %}
+    <sitemap>
+      <loc>{{ site.url }}{{ book.web_url | prepend: site.baseurl }}/sitemap.xml</loc>
+      <lastmod>{{ book.date | date_to_xmlschema }}</lastmod>
+    </sitemap>
+  {% endfor %}
+</sitemapindex>
