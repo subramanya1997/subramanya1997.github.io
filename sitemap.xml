@@ -7,7 +7,6 @@ layout: null
     {% unless page.layout == 'null' %}
       <url>
         <loc>{{ site.url }}{{ page.url | replace: 'index.html', '' }}</loc>
-        <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
       </url>
     {% endunless %}
   {% endfor %}
@@ -15,6 +14,12 @@ layout: null
     <url>
       <loc>{{ site.url }}{{ post.url }}</loc>
       <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+    </url>
+  {% endfor %}
+  {% for book in site.books %}
+    <url>
+      <loc>{{ site.url }}{{ book.web_url | prepend: site.baseurl }}</loc>
+      <lastmod>{{ book.date | date_to_xmlschema }}</lastmod>
     </url>
   {% endfor %}
 </urlset>
