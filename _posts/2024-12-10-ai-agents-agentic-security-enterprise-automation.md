@@ -5,7 +5,7 @@ excerpt: Exploring the potential of AI agents in enterprise security and automat
 author: Subramanya N
 date: 2024-12-10
 tags: [AI, Security, Automation, Enterprise, AI Agents]
-image: /assets/images/menlo_ventures_ai_agents_market_map-100124.webp
+image: /assets/images/menlo_ventures_ai_agents_market_map.webp
 ready: true
 ---
 Traditional automation tools like **Robotic Process Automation (RPA)** and **Integration Platform as a Service (iPaaS)** have long served as the backbone of enterprise workflows. These systems, designed to automate repetitive tasks and connect disparate software tools, have delivered undeniable value. However, their inherent limitations are becoming increasingly evident. They require significant manual setup, often break when systems change, and struggle to handle unstructured data such as documents, emails, or images.

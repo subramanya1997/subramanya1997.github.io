@@ -1,3 +1,6 @@
 User-agent: *
 Disallow:
 Sitemap: https://subramanya.ai/sitemap.xml
+Sitemap: https://subramanya.ai/sitemap-media.xml
+Sitemap: https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/sitemap.xml
+Sitemap: https://subramanya.ai/sitemapindex.xml

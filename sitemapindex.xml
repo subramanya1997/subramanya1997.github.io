@@ -3,6 +3,14 @@ layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>{{ site.url }}/sitemap.xml</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>{{ site.url }}/sitemap-media.xml</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+  </sitemap>
   {% for book in site.books %}
     <sitemap>
       <loc>{{ site.url }}{{ book.web_url | prepend: site.baseurl }}/sitemap.xml</loc>
