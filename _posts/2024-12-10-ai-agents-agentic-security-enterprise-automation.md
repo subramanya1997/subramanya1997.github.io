@@ -12,7 +12,7 @@ Traditional automation tools like **Robotic Process Automation (RPA)** and **Int
 
 Enter **AI agents** — a revolutionary leap from static, rule-based automation to **intelligent, adaptable systems**. AI agents promise to overcome the constraints of traditional tools, paving the way for *smarter, more efficient enterprise automation*. An excellent breakdown of their significance can be found in the insightful Menlo Ventures article ["Beyond Bots: How AI Agents Are Driving the Next Wave of Enterprise Automation"](https://menlovc.com/perspective/beyond-bots-how-ai-agents-are-driving-the-next-wave-of-enterprise-automation/).
 
-![AI Agents Market Map](https://menlovc.com/wp-content/uploads/2024/04/menlo_ventures_ai_agents_market_map-100124.webp){:.post-img}
+![AI Agents Market Map](/assets/images/menlo_ventures_ai_agents_market_map.webp){:.post-img}
 
 ### The Shift from Automation to Intelligence
 
