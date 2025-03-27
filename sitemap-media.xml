@@ -1,47 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://subramanya.ai/assets/images/NockOut_1080x540.png</loc>
+    <loc>http://localhost:4000/assets/favicon/site.webmanifest</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/anscombes_quartet.png</loc>
+    <loc>http://localhost:4000/assets/images/NockOut_1080x540.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/menlo_ventures_ai_agents_market_map.webp</loc>
+    <loc>http://localhost:4000/assets/images/anscombes_quartet.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/pinecone_hybrid_index.jpg</loc>
+    <loc>http://localhost:4000/assets/images/menlo_ventures_ai_agents_market_map.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/pinecone_hybrid_query.jpg</loc>
+    <loc>http://localhost:4000/assets/images/pinecone_hybrid_index.jpg</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/profile_picture.webp</loc>
+    <loc>http://localhost:4000/assets/images/pinecone_hybrid_query.jpg</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/system_design_with_document_ai_gpt_pinecone.jpeg</loc>
+    <loc>http://localhost:4000/assets/images/profile_picture.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/resume/CV.pdf</loc>
+    <loc>http://localhost:4000/assets/images/system_design_with_document_ai_gpt_pinecone.jpeg</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/videos/documents_converse_demo.mp4</loc>
+    <loc>http://localhost:4000/assets/js/toc.js</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:4000/assets/resume/CV.pdf</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:4000/assets/videos/documents_converse_demo.mp4</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
