@@ -9,3 +9,107 @@ bio: I hold an M.S. in Computer Science from the University of Massachusetts Amh
 research_interest: Currently, I lead cutting-edge initiatives at Dylog, where I architect state-of-the-art conversational AI and search platforms, leveraging my expertise in machine learning. Concurrently, as a Co-Founder of NockOut, I am driving innovation in sports and fitness management through technology.
 history: Previously, I served as Head of Product Development at <a href='https://www.renderpub.com'>RenderPub, India</a>, and completed an internship at <a href='https://www.vertica.com'>Vertica</a>, PA. During my undergraduate years at the National Institute of Engineering, Mysore, I co-founded Yourkraft, a platform to streamline musician bookings, and Vayam, a non-profit dedicated to empowering individuals through education and equality.
 fav_quote: '"The harder you work, the luckier you get." -- Gary Player'
+
+#Work Experience
+experience:
+  - position: Founding Machine Learning Engineer & Lead Architect
+    company: Dylog Inc
+    location: San Jose, CA
+    period: Aug 2023 - Present
+    logo: /assets/images/logos/dylog.png
+    description: Serve as the principal architect, spearheading the development and design of Dylog Inc's conversational AI and search platform.
+    achievements:
+      - Developed pipelines for synthetic data generation, tailored for e-commerce platforms, improving search results by 20% (internal evaluations).
+      - Developed a hybrid search framework combining Elasticsearch, ColBERT, and llama, integrating keyword-based and vector-based retrieval for enhanced search accuracy.
+      - Designed and implemented agentic workflows for automating sales data processing from emails, text messages, and contact forms, reducing order processing time by 2 hours.
+      
+  - position: Graduate Student Researcher
+    company: Human-Centered Robotics Lab, UMass Amherst
+    location: MA
+    period: Sept 2022 - May 2023
+    logo: /assets/images/logos/umass.png
+    description: Working with Professor Hao Zhang on multi-modal learning approaches.
+    achievements:
+      - Experimenting with multi-modal learning approaches based on DETR and GLIP to obtain attribute-based representations from natural language descriptions and visual features for object instance recognition and tracking.
+      
+  - position: Machine Learning Engineer, Intern
+    company: Ribbon Communications
+    location: Westford, MA
+    period: Sept 2022 - Dec 2022
+    logo: /assets/images/logos/ribbon.png
+    description: Implemented advanced machine learning solutions for user behavior analysis.
+    achievements:
+      - Implemented a multi-modal deep learning model for categorizing of user behavior based on VoIP traffic, images, and textual data gathered from user browsing sessions.
+      - Worked end-to-end on the project, from data collection to successful deployment.
+      
+  - position: Software Engineer Intern
+    company: Vertica
+    location: Pittsburgh, PA
+    period: June 2022 - August 2022
+    logo: /assets/images/logos/vertica.png
+    description: Worked with Data Optimization and Backup team on database solutions.
+    achievements:
+      - Developed an algorithm to improve and optimize database re-shading method in Eon mode.
+      - Extended this algorithm to improve backtracking of newly created storage containers while performing operations like re-shard, ILM and alter table.
+      - Designed and developed pipelines for data analytic and machine learning teams to work on backup and restoring information.
+      
+  - position: Graduate Student Researcher
+    company: Meta
+    location: Amherst, MA
+    period: Jan 2022 - July 2022
+    logo: /assets/images/logos/meta.png
+    description: Research on cross-modal transformer approaches for video analysis.
+    achievements:
+      - Proposed an advanced cross-modal transformer approach with a video frame-level contrastive loss to reveal the correlation between language queries and video clips, focusing on Natural Language Query tasks for the Ego4d dataset.
+      - This approach resulted in an improvement in the baseline with a IoU 0.5 recall @ 5 of 8.2 and recall @ 3 of 4.8.
+      
+  - position: Head of Product Development
+    company: RenderPub
+    location: Bangalore, India
+    period: Jun 2018 - May 2021
+    logo: /assets/images/logos/renderpub.png
+    description: Lead architect, developer, and designer for RenderPub Studio, Stitch & Walk, architectural visualization softwares.
+    achievements:
+      - Developed Common Unreal Modules (CUM) - a modular C++ / Blueprint system for RenderPub's Unreal Engine based applications.
+      - Developed and implemented a 360-degree panoramic image loading algorithm utilizing tile-based streaming, three.js, WebGL, and OpenCV.
+      - Developed a desktop application utilizing Next.js, Electron, and React to launch and auto-update the RenderPub suite of applications and projects.
+      
+  - position: Co-founder
+    company: Yourkraft
+    location: Bangalore, India
+    period: Feb 2016 - May 2018
+    logo: 
+    description: Yourkraft, a marketplace connecting entertainers and party planners, secured funding from renowned singer Vijay Prakash.
+    achievements:
+      - Managed a network of over 200 artists across multiple cities, including Bangalore, Mumbai, and Hyderabad, and successfully hosted over 350 events.
+      - Developed a feature-rich dashboard for event planning and artist hiring, including an events list and the ability to book event tickets, utilizing Flask and Firebase technology stack.
+      
+  - position: Co-founder/Treasurer
+    company: Vayam (Non-Profit)
+    location: Mysore, India
+    period: Jan 2016 - Present
+    logo: 
+    description: Vayam is a student-led trust to empower individuals through education and equality as its foundation.
+    achievements:
+      - In partnership with five government schools around Mysore, providing online classes in subjects such as science, mathematics, and computer science to approximately 200 children.
+      - Organizing various community initiatives, including blood donation drives, charity events, food relief efforts, and green initiatives.
+
+#Education
+education:
+  - institution: University of Massachusetts Amherst
+    location: MA
+    degree: Master of Science in Computer Science
+    period: Sept 2021 - May 2023
+    logo: /assets/images/logos/umass.png
+    description: Focused on advanced computer science topics with emphasis on AI and machine learning.
+    details:
+      - Coursework: Neural Networks, Advanced Natural Language Processing, Intelligent Visual Computing, Mathematical Statistics, Systems for Data Science, Reinforcement Learning
+      
+  - institution: The National Institute of Engineering Mysore
+    location: India
+    degree: Bachelor of Engineering in Computer Science
+    period: Aug 2015 - May 2019
+    logo: /assets/images/logos/nie.png
+    description: Fundamental computer science education with focus on practical implementation.
+    details:
+      - Coursework: Operating System, Data Structures & Algorithms, Data mining and warehousing

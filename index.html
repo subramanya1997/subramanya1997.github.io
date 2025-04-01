@@ -2,86 +2,142 @@
 layout: default
 ---
 
-<div class="profile-card">
-  {% assign about = site.data.about %}
-  <div class="profile-content">
-    <h1 class="section-heading">About</h1>
-    <p>{{about.bio}}</p>
-    <p>{{about.research_interest}}</p>
-    <p>{{about.history}}</p>
-    <div class="profile-links">
-      <a href="mailto:{{site.email}}">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-          <polyline points="22,6 12,13 2,6"></polyline>
-        </svg>
-        Email
-      </a>
-      <a href="{{about.cv_file}}">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-          <polyline points="14 2 14 8 20 8"></polyline>
-          <line x1="16" y1="13" x2="8" y2="13"></line>
-          <line x1="16" y1="17" x2="8" y2="17"></line>
-          <polyline points="10 9 9 9 8 9"></polyline>
-        </svg>
-        CV
-      </a>
-      <a href="https://github.com/{{ about.github_username }}">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-        </svg>
-        Github
-      </a>
-      <a href="https://www.linkedin.com/in/{{ about.linkedin_username }}">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-          <rect x="2" y="9" width="4" height="12"></rect>
-          <circle cx="4" cy="4" r="2"></circle>
-        </svg>
-        LinkedIn
-      </a>
+<div class="index-container">
+  <div class="profile-card">
+    {% assign about = site.data.about %}
+    <div class="profile-content">
+      <h1 class="section-heading">About</h1>
+      <p>{{about.bio}}</p>
+      <p>{{about.research_interest}}</p>
+      <p>{{about.history}}</p>
+      <div class="profile-links">
+        <a href="mailto:{{site.email}}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          Email
+        </a>
+        <a href="{{about.cv_file}}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          CV
+        </a>
+        <a href="https://github.com/{{ about.github_username }}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+          Github
+        </a>
+        <a href="https://www.linkedin.com/in/{{ about.linkedin_username }}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="profile-image">
+      <img alt="profile photo" src="/assets/images/profile_picture.webp" class="profile-img" />
     </div>
   </div>
-  <div class="profile-image">
-    <img style="width:100%;max-width:100%" alt="profile photo" src="/assets/images/profile_picture.webp" class="hoverZoomLink"/>
-  </div>
-</div>
 
-<div class="content-section">
-  <h2 class="section-heading">Books</h2>
-  <ul class="posts">
-    {% for book in site.books %}
-      <li>
-        <span class="post-date">{{ book.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ book.web_url | prepend: site.baseurl }}">{{ book.title }}</a>
-        <p>{{ book.excerpt }}</p>
-        <div class="post-tags">
-          {% for tag in book.tags %}
-            <span class="tag" onclick="redirectToBookWithFilter('{{ tag }}')">{{ tag }}</span>
-          {% endfor %}
+  <div class="content-section">
+    <h2 class="section-heading">Books</h2>
+    <div class="books-list">
+      {% for book in site.books %}
+        <div class="book-entry">
+          <div class="book-meta">
+            <span class="book-date">{{ book.date | date: "%Y-%m-%d" }}</span>
+            <span class="book-reading-time">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              {{ book.content | reading_time }}
+            </span>
+          </div>
+          <h2 class="book-title"><a href="{{ book.web_url | prepend: site.baseurl }}">{{ book.title }}</a></h2>
+          
+          {% if book.tags.size > 0 %}
+          <div class="book-tags">
+            {% for tag in book.tags %}
+              <span class="tag" onclick="redirectToBookWithFilter('{{ tag }}')">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+          
+          <div class="book-excerpt">
+            {{ book.excerpt }}
+          </div>
+          
+          <a href="{{ book.web_url | prepend: site.baseurl }}" class="continue-reading">
+            Continue reading
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
         </div>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
-
-<div class="content-section">
-  <h2 class="section-heading">Blog</h2>
-  <ul class="posts">
-    {% for post in site.posts %}
-    <li>
-      <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      <p>{{ post.excerpt }}</p>
-      <div class="post-tags">
-      {% for tag in post.tags %}
-        <span class="tag" onclick="redirectToBlogWithFilter('{{ tag }}')">{{ tag }}</span>
+        
+        {% unless forloop.last %}
+          <hr class="book-divider">
+        {% endunless %}
       {% endfor %}
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2 class="section-heading">Blog</h2>
+    <div class="blog-posts">
+      {% for post in site.posts %}
+        <div class="blog-post">
+          <div class="post-meta">
+            <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+            <span class="post-reading-time">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              {{ post.content | reading_time }}
+            </span>
+          </div>
+          <h2 class="post-title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+          
+          {% if post.tags.size > 0 %}
+          <div class="post-tags">
+            {% for tag in post.tags %}
+              <span class="tag" onclick="redirectToBlogWithFilter('{{ tag }}')">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+          
+          <div class="post-excerpt">
+            {{ post.excerpt }}
+          </div>
+          
+          <a href="{{ post.url | prepend: site.baseurl }}" class="continue-reading">
+            Continue reading
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+        
+        {% unless forloop.last %}
+          <hr class="post-divider">
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
 </div>
 
 <script>
@@ -97,17 +153,24 @@ layout: default
 </script>
 
 <style>
+  .index-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
   .profile-card {
     display: flex;
-    background: white;
-    border-radius: 12px;
+    background: transparent;
+    border-radius: 0;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    margin-bottom: 50px;
+    box-shadow: none;
+    margin-bottom: 40px;
+    width: 100%;
   }
   
   .profile-content {
-    padding: 40px;
+    padding: 0 20px 0 0;
     flex: 3;
   }
   
@@ -117,40 +180,229 @@ layout: default
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right, #f0f4ff, #e8eeff);
+    background: transparent;
   }
   
   .profile-image img {
+    width: 100%;
+    height: auto;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    border-radius: 8px;
   }
   
-  .profile-image img:hover {
-    transform: scale(1.03);
+  .section-heading {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    color: #111;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .section-heading:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #555555;
   }
   
   .content-section {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
   
   .profile-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 25px;
+    gap: 10px;
+    margin-top: 20px;
   }
   
   .profile-links a {
-    padding: 10px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    background-color: #f5f5f5;
+    color: #4b5563;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  
+  .profile-links a:hover {
+    background-color: #e5e5e5;
+    color: #333333;
+    transform: translateY(-2px);
+  }
+  
+  .books-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .book-entry {
+    margin-bottom: 30px;
+  }
+  
+  .book-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  
+  .book-date {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .book-reading-time {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .book-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+  }
+  
+  .book-title a {
+    color: #111;
+    text-decoration: none;
+  }
+  
+  .book-title a:hover {
+    color: #555555;
+  }
+  
+  .book-excerpt {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 12px;
+  }
+  
+  .book-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .continue-reading {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #555555;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  
+  .continue-reading:hover {
+    color: #333333;
+    text-decoration: underline;
+  }
+  
+  .continue-reading svg {
+    transition: transform 0.2s ease;
+  }
+  
+  .continue-reading:hover svg {
+    transform: translateX(3px);
+  }
+  
+  .book-divider, .post-divider {
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    margin: 30px 0;
+  }
+  
+  .blog-posts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .blog-post {
+    margin-bottom: 30px;
+  }
+  
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  
+  .post-date {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .post-reading-time {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .post-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+  }
+  
+  .post-title a {
+    color: #111;
+    text-decoration: none;
+  }
+  
+  .post-title a:hover {
+    color: #555555;
+  }
+  
+  .post-excerpt {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 12px;
+  }
+  
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
   }
   
   @media screen and (max-width: 768px) {
     .profile-card {
       flex-direction: column-reverse;
+      gap: 20px;
     }
     
     .profile-image {
-      height: 300px;
+      width: 100%;
+    }
+    
+    .profile-content {
+      padding: 0;
+    }
+    
+    .post-title, .book-title {
+      font-size: 18px;
     }
   }
 </style>

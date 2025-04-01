@@ -50,13 +50,13 @@ includelink: false
     left: 0;
     width: 50px;
     height: 4px;
-    background: #2563eb;
+    background: #555555;
     border-radius: 2px;
   }
   
   .guestbook-header p {
     font-size: 18px;
-    color: #64748b;
+    color: #666666;
     max-width: 600px;
   }
 
@@ -77,7 +77,7 @@ includelink: false
   }
 
   .primary-btn {
-    background: #2563eb;
+    background: #555555;
     color: white;
     border: none;
     padding: 12px 24px;
@@ -89,18 +89,18 @@ includelink: false
   }
 
   .primary-btn:hover {
-    background: #1d4ed8;
+    background: #333333;
   }
 
   .primary-btn:disabled {
-    background: #94a3b8;
+    background: #999999;
     cursor: not-allowed;
   }
   
   .form-note {
     margin-top: 15px;
     font-size: 14px;
-    color: #64748b;
+    color: #666666;
   }
 
   .form-status {
@@ -111,14 +111,14 @@ includelink: false
   }
 
   .form-status.success {
-    background: #dcfce7;
-    color: #166534;
+    background: #e5e5e5;
+    color: #333333;
     display: block;
   }
 
   .form-status.error {
-    background: #fee2e2;
-    color: #b91c1c;
+    background: #e5e5e5;
+    color: #555555;
     display: block;
   }
 
@@ -152,33 +152,33 @@ includelink: false
   }
 
   .entry-date {
-    color: #64748b;
+    color: #666666;
     font-size: 14px;
   }
 
   .entry-message {
-    color: #1e293b;
+    color: #333333;
     line-height: 1.6;
   }
 
   .loading-messages {
     text-align: center;
     padding: 20px;
-    color: #64748b;
+    color: #666666;
   }
 
   .no-messages {
     text-align: center;
     padding: 30px;
-    background: #f8fafc;
+    background: #f8f8f8;
     border-radius: 12px;
-    color: #64748b;
+    color: #666666;
   }
 
   .thank-you-message {
     display: none;
-    background: #dcfce7;
-    color: #166534;
+    background: #e5e5e5;
+    color: #333333;
     padding: 15px;
     border-radius: 6px;
     margin-top: 20px;
@@ -187,7 +187,7 @@ includelink: false
   .refresh-button {
     background: none;
     border: none;
-    color: #2563eb;
+    color: #555555;
     cursor: pointer;
     font-size: 14px;
     padding: 5px 10px;
