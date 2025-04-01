@@ -14,8 +14,8 @@
   
   body {
     font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 16px;
-    line-height: 1.7;
+    font-size: 14px;
+    line-height: 1.6;
     font-weight: 400;
     color: #333;
     background-color: #fafafa;
@@ -24,30 +24,30 @@
   h1, h2, h3, h4, h5, h6 { 
     font-weight: 600; 
     line-height: 1.3;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     color: #111;
   }
   
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 2rem; }
-  h3 { font-size: 1.75rem; }
-  h4 { font-size: 1.5rem; }
-  h5 { font-size: 1.25rem; }
-  h6 { font-size: 1rem; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.7rem; }
+  h3 { font-size: 1.4rem; }
+  h4 { font-size: 1.2rem; }
+  h5 { font-size: 1rem; }
+  h6 { font-size: 0.9rem; }
   
   a { 
-    color: #2563eb; 
+    color: #555555; 
     text-decoration: none;
     transition: all 0.2s ease;
   }
   a:hover { 
-    color: #1d4ed8; 
+    color: #333333; 
     text-decoration: none;
   }
-  a:visited { color: #2563eb; }
+  a:visited { color: #555555; }
   
   p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
   }
   
   /* Utility */
@@ -69,9 +69,9 @@
   /* Site header */
   
   .site-header {
-    border-top: 4px solid #2563eb;
+    border-top: 4px solid #555555;
     border-bottom: 1px solid rgba(0,0,0,0.05);
-    min-height: 70px;
+    min-height: 60px;
     background-color: white;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     position: sticky;
@@ -86,18 +86,18 @@
   .site-title:visited {
     display: block;
     color: #111;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
     letter-spacing: -0.5px;
     float: left;
-    line-height: 70px;
+    line-height: 60px;
     position: relative;
     z-index: 1;
   }
   
   .site-nav {
     float: right;
-    line-height: 70px;
+    line-height: 60px;
   }
   
   .site-nav .menu-icon { display: none; }
@@ -108,29 +108,30 @@
     font-weight: 500;
     letter-spacing: -0.2px;
     transition: color 0.2s ease;
+    font-size: 14px;
   }
   
   .site-nav .page-link:hover {
-    color: #2563eb;
+    color: #333333;
   }
   
   /* Site footer */
   
   .site-footer {
     border-top: 1px solid rgba(0,0,0,0.05);
-    padding: 50px 0;
+    padding: 40px 0;
     background-color: #fff;
   }
   
   .footer-heading {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: -0.2px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: #111;
   }
   
-  .site-footer .column { float: left; margin-bottom: 20px; }
+  .site-footer .column { float: left; margin-bottom: 15px; }
   
   .footer-col-1 {
     width: 270px; /*fallback*/
@@ -160,7 +161,7 @@
   
   .site-footer li,
   .site-footer p {
-    font-size: 15px;
+    font-size: 13px;
     color: #666;
     margin-bottom: 0.5rem;
   }
@@ -174,7 +175,7 @@
     position: relative;
     top: 3px;
     margin-right: 5px;
-    fill: #2563eb;
+    fill: #555555;
   }
   
   
@@ -182,9 +183,9 @@
   /* ----------------------------------------------------------*/
   
   .page-content {
-    padding: 50px 0;
+    padding: 40px 0;
     background-color: #fafafa;
-    min-height: calc(100vh - 70px - 120px); /* Ensures footer sticks to bottom */
+    min-height: calc(100vh - 60px - 100px);
   }
   
   
@@ -198,78 +199,78 @@
   }
   
   .posts li { 
-    margin-bottom: 40px; 
+    margin-bottom: 30px;
     background: white;
-    border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   
   .posts li:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   }
   
   .posts .post-link {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
     letter-spacing: -0.5px;
     line-height: 1.3;
     color: #111;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     display: block;
   }
   
   .posts .post-link:hover {
-    color: #2563eb;
+    color: #555555;
   }
   
   .posts .post-date {
     display: inline-block;
-    font-size: 14px;
+    font-size: 12px;
     color: #666;
-    background: #f0f4ff;
-    padding: 5px 12px;
-    border-radius: 30px;
-    margin-bottom: 15px;
+    background: #f0f0f0;
+    padding: 4px 10px;
+    border-radius: 25px;
+    margin-bottom: 12px;
   }
   
   
   /* Post styles */
   /* ----------------------------------------------------------*/
   
-  .post-header { margin: 10px 0 30px; }
+  .post-header { margin: 8px 0 25px; }
 
   .post-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
   
   .post-header h1 {
-    font-size: 42px;
+    font-size: 36px;
     letter-spacing: -1px;
     line-height: 1.2;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
   
   .post-header .meta {
-    font-size: 15px;
+    font-size: 13px;
     color: #666;
-    margin-top: 5px;
+    margin-top: 4px;
   }
   
   .post-content { 
-    margin: 0 0 30px; 
-    font-size: 17px;
-    line-height: 1.8;
+    margin: 0 0 25px;
+    font-size: 15px;
+    line-height: 1.7;
   }
   
   .post-content > * { 
-    margin: 20px 0; 
+    margin: 16px 0;
     max-width: 800px;
   }
   
@@ -282,51 +283,51 @@
   .post-content h6 {
     line-height: 1.3;
     font-weight: 600;
-    margin: 40px 0 20px;
+    margin: 35px 0 16px;
   }
   
   .post-content h2 {
-    font-size: 32px;
+    font-size: 28px;
     letter-spacing: -0.5px;
     border-bottom: 1px solid rgba(0,0,0,0.05);
-    padding-bottom: 10px;
+    padding-bottom: 8px;
   }
   
   .post-content h3 {
-    font-size: 26px;
+    font-size: 22px;
     letter-spacing: -0.3px;
   }
   
   .post-content h4 {
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: -0.2px;
   }
   
   .post-content blockquote {
-    border-left: 4px solid #2563eb;
-    padding: 15px 20px;
-    font-size: 18px;
-    background: #f0f4ff;
+    border-left: 4px solid #555555;
+    padding: 12px 16px;
+    font-size: 16px;
+    background: #f5f5f5;
     border-radius: 0 8px 8px 0;
-    margin: 30px 0;
+    margin: 25px 0;
     color: #333;
   }
   
   .post-content ul,
-  .post-content ol { padding-left: 25px; margin-bottom: 20px; }
+  .post-content ol { padding-left: 20px; margin-bottom: 16px; }
   
   .post pre,
   .post code {
-    border: 1px solid #e2e8f0;
-    background-color: #f8fafc;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-size: 15px;
+    border: 1px solid #e2e2e2;
+    background-color: #f8f8f8;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
     overflow: auto;
     font-family: 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   }
   
-  .post code { padding: 3px 6px; border-radius: 4px; }
+  .post code { padding: 2px 5px; border-radius: 3px; }
   
   .post ul,
   .post ol { margin-left: 1.5em; }
@@ -340,26 +341,26 @@
   /* terminal */
   .post pre.terminal {
     border: 1px solid #111;
-    background-color: #1e293b;
-    color: #f1f5f9;
-    border-radius: 8px;
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+    border-radius: 6px;
   }
   
-  .post pre.terminal code { background-color: #1e293b; }
+  .post pre.terminal code { background-color: #1e1e1e; }
   
   /* AK custom CSS mods */
-  .imgright { float: right; margin-left: 20px; }
+  .imgright { float: right; margin-left: 16px; }
   .imgcap img {
     border: none;
     max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   }
   .imgcap {
     color: #666;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 8px;
   }
   
   .svgdiv {
@@ -370,65 +371,65 @@
   /* ----------------------------------------------------------*/
   
   .highlight  { background: #ffffff; }
-  .highlight .c { color: #999988; font-style: italic } /* Comment */
-  .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+  .highlight .c { color: #999999; font-style: italic } /* Comment */
+  .highlight .err { color: #777777; background-color: #e3e3e3 } /* Error */
   .highlight .k { font-weight: bold } /* Keyword */
   .highlight .o { font-weight: bold } /* Operator */
-  .highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+  .highlight .cm { color: #999999; font-style: italic } /* Comment.Multiline */
   .highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
-  .highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+  .highlight .c1 { color: #999999; font-style: italic } /* Comment.Single */
   .highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
-  .highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
-  .highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+  .highlight .gd { color: #000000; background-color: #dddddd } /* Generic.Deleted */
+  .highlight .gd .x { color: #000000; background-color: #aaaaaa } /* Generic.Deleted.Specific */
   .highlight .ge { font-style: italic } /* Generic.Emph */
-  .highlight .gr { color: #aa0000 } /* Generic.Error */
+  .highlight .gr { color: #777777 } /* Generic.Error */
   .highlight .gh { color: #999999 } /* Generic.Heading */
-  .highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
-  .highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+  .highlight .gi { color: #000000; background-color: #dddddd } /* Generic.Inserted */
+  .highlight .gi .x { color: #000000; background-color: #aaaaaa } /* Generic.Inserted.Specific */
   .highlight .go { color: #888888 } /* Generic.Output */
   .highlight .gp { color: #555555 } /* Generic.Prompt */
   .highlight .gs { font-weight: bold } /* Generic.Strong */
   .highlight .gu { color: #aaaaaa } /* Generic.Subheading */
-  .highlight .gt { color: #aa0000 } /* Generic.Traceback */
+  .highlight .gt { color: #777777 } /* Generic.Traceback */
   .highlight .kc { font-weight: bold } /* Keyword.Constant */
   .highlight .kd { font-weight: bold } /* Keyword.Declaration */
   .highlight .kp { font-weight: bold } /* Keyword.Pseudo */
   .highlight .kr { font-weight: bold } /* Keyword.Reserved */
-  .highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
-  .highlight .m { color: #009999 } /* Literal.Number */
-  .highlight .s { color: #d14 } /* Literal.String */
-  .highlight .na { color: #008080 } /* Name.Attribute */
-  .highlight .nb { color: #0086B3 } /* Name.Builtin */
-  .highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
-  .highlight .no { color: #008080 } /* Name.Constant */
-  .highlight .ni { color: #800080 } /* Name.Entity */
-  .highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
-  .highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+  .highlight .kt { color: #555555; font-weight: bold } /* Keyword.Type */
+  .highlight .m { color: #555555 } /* Literal.Number */
+  .highlight .s { color: #666666 } /* Literal.String */
+  .highlight .na { color: #555555 } /* Name.Attribute */
+  .highlight .nb { color: #555555 } /* Name.Builtin */
+  .highlight .nc { color: #555555; font-weight: bold } /* Name.Class */
+  .highlight .no { color: #555555 } /* Name.Constant */
+  .highlight .ni { color: #555555 } /* Name.Entity */
+  .highlight .ne { color: #666666; font-weight: bold } /* Name.Exception */
+  .highlight .nf { color: #666666; font-weight: bold } /* Name.Function */
   .highlight .nn { color: #555555 } /* Name.Namespace */
-  .highlight .nt { color: #000080 } /* Name.Tag */
-  .highlight .nv { color: #008080 } /* Name.Variable */
+  .highlight .nt { color: #555555 } /* Name.Tag */
+  .highlight .nv { color: #555555 } /* Name.Variable */
   .highlight .ow { font-weight: bold } /* Operator.Word */
   .highlight .w { color: #bbbbbb } /* Text.Whitespace */
-  .highlight .mf { color: #009999 } /* Literal.Number.Float */
-  .highlight .mh { color: #009999 } /* Literal.Number.Hex */
-  .highlight .mi { color: #009999 } /* Literal.Number.Integer */
-  .highlight .mo { color: #009999 } /* Literal.Number.Oct */
-  .highlight .sb { color: #d14 } /* Literal.String.Backtick */
-  .highlight .sc { color: #d14 } /* Literal.String.Char */
-  .highlight .sd { color: #d14 } /* Literal.String.Doc */
-  .highlight .s2 { color: #d14 } /* Literal.String.Double */
-  .highlight .se { color: #d14 } /* Literal.String.Escape */
-  .highlight .sh { color: #d14 } /* Literal.String.Heredoc */
-  .highlight .si { color: #d14 } /* Literal.String.Interpol */
-  .highlight .sx { color: #d14 } /* Literal.String.Other */
-  .highlight .sr { color: #009926 } /* Literal.String.Regex */
-  .highlight .s1 { color: #d14 } /* Literal.String.Single */
-  .highlight .ss { color: #990073 } /* Literal.String.Symbol */
+  .highlight .mf { color: #555555 } /* Literal.Number.Float */
+  .highlight .mh { color: #555555 } /* Literal.Number.Hex */
+  .highlight .mi { color: #555555 } /* Literal.Number.Integer */
+  .highlight .mo { color: #555555 } /* Literal.Number.Oct */
+  .highlight .sb { color: #666666 } /* Literal.String.Backtick */
+  .highlight .sc { color: #666666 } /* Literal.String.Char */
+  .highlight .sd { color: #666666 } /* Literal.String.Doc */
+  .highlight .s2 { color: #666666 } /* Literal.String.Double */
+  .highlight .se { color: #666666 } /* Literal.String.Escape */
+  .highlight .sh { color: #666666 } /* Literal.String.Heredoc */
+  .highlight .si { color: #666666 } /* Literal.String.Interpol */
+  .highlight .sx { color: #666666 } /* Literal.String.Other */
+  .highlight .sr { color: #555555 } /* Literal.String.Regex */
+  .highlight .s1 { color: #666666 } /* Literal.String.Single */
+  .highlight .ss { color: #555555 } /* Literal.String.Symbol */
   .highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
-  .highlight .vc { color: #008080 } /* Name.Variable.Class */
-  .highlight .vg { color: #008080 } /* Name.Variable.Global */
-  .highlight .vi { color: #008080 } /* Name.Variable.Instance */
-  .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+  .highlight .vc { color: #555555 } /* Name.Variable.Class */
+  .highlight .vg { color: #555555 } /* Name.Variable.Global */
+  .highlight .vi { color: #555555 } /* Name.Variable.Instance */
+  .highlight .il { color: #555555 } /* Literal.Number.Integer.Long */
   
   
   /* media queries */
@@ -526,24 +527,25 @@
   
   .tag {
     display: inline-block;
-    padding: 5px 12px;
-    margin: 0 8px 8px 0;
-    font-size: 13px;
-    background-color: #eef2ff;
+    padding: 3px 8px;
+    background-color: #f3f3f3;
     color: #4b5563;
-    border-radius: 30px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 400;
     cursor: pointer;
     transition: all 0.2s ease;
   }
   
   .tag:hover {
-    background-color: #2563eb;
-    color: white;
+    background-color: #e5e5e5;
+    color: #111827;
+    transform: translateY(-2px);
   }
 
   .note {
-    background-color: #f0f4ff;
-    border-left: 4px solid #2563eb;
+    background-color: #f5f5f5;
+    border-left: 4px solid #555555;
     padding: 15px;
     margin: 20px 0;
     border-radius: 0 8px 8px 0;
@@ -560,7 +562,7 @@
     width: 100%;
     padding: 12px 20px;
     font-size: 16px;
-    border: 2px solid #e2e8f0;
+    border: 2px solid #e2e2e2;
     border-radius: 30px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.03);
     transition: all 0.2s ease;
@@ -568,7 +570,7 @@
   
   #search-input:focus {
     outline: none;
-    border-color: #2563eb;
+    border-color: #555555;
   }
 
   .post-img {
@@ -591,7 +593,6 @@
   .social-share {
     display: flex;
     gap: 10px;
-    margin: 30px 0;
   }
   
   .social-icon {
@@ -601,13 +602,13 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #f0f4ff;
-    color: #2563eb;
+    background-color: #f5f5f5;
+    color: #555555;
     transition: all 0.2s ease;
   }
 
   .social-icon:hover {
-    background-color: #2563eb;
+    background-color: #555555;
     color: white;
     transform: translateY(-3px);
   }
@@ -644,7 +645,7 @@
 
   .profile-links a {
     padding: 8px 15px;
-    background: #f0f4ff;
+    background: #f5f5f5;
     border-radius: 30px;
     font-weight: 500;
     font-size: 14px;
@@ -652,7 +653,7 @@
   }
 
   .profile-links a:hover {
-    background: #2563eb;
+    background: #555555;
     color: white;
   }
 
@@ -670,7 +671,7 @@
     left: 0;
     width: 50px;
     height: 4px;
-    background: #2563eb;
+    background: #555555;
     border-radius: 2px;
   }
 
@@ -687,7 +688,7 @@
     height: 2px;
     bottom: -4px;
     left: 0;
-    background-color: #2563eb;
+    background-color: #555555;
     transition: width 0.3s ease;
   }
 
