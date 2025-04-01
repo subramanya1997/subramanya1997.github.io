@@ -1,0 +1,80 @@
+{% comment %}
+  Estimate reading time for the provided content
+  Usage: {% include reading_time.html content=page.content %}
+  or pass specific content: {% include reading_time.html content=post.content %}
+{% endcomment %}
+
+{% assign content_to_read = include.content | default: content %}
+
+{% comment %}
+  First try to remove code blocks to avoid counting them in the reading time
+  This uses a trick to preserve p tags while removing other HTML
+{% endcomment %}
+{% assign preprocessed_content = content_to_read | replace: '<p>', '__p__' %}
+{% assign preprocessed_content = preprocessed_content | replace: '</p>', '__/p__' %}
+{% assign preprocessed_content = preprocessed_content | replace: '<pre', '__CODEBLOCK_START__' %}
+{% assign preprocessed_content = preprocessed_content | replace: '</pre>', '__CODEBLOCK_END__' %}
+{% assign preprocessed_content = preprocessed_content | replace: '<code', '__CODE_START__' %}
+{% assign preprocessed_content = preprocessed_content | replace: '</code>', '__CODE_END__' %}
+
+{% comment %} Strip all HTML tags {% endcomment %}
+{% assign stripped_content = preprocessed_content | strip_html %}
+
+{% comment %} Remove content inside code blocks {% endcomment %}
+{% assign start_marker_size = '__CODEBLOCK_START__' | size %}
+{% assign clean_content = '' %}
+{% assign parts = stripped_content | split: '__CODEBLOCK_START__' %}
+{% for part in parts %}
+  {% if forloop.first %}
+    {% assign clean_content = part %}
+  {% else %}
+    {% assign end_split = part | split: '__CODEBLOCK_END__' %}
+    {% if end_split.size > 1 %}
+      {% assign clean_content = clean_content | append: end_split[1] %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} Also remove content inside inline code elements {% endcomment %}
+{% assign parts = clean_content | split: '__CODE_START__' %}
+{% assign clean_content = '' %}
+{% for part in parts %}
+  {% if forloop.first %}
+    {% assign clean_content = part %}
+  {% else %}
+    {% assign end_split = part | split: '__CODE_END__' %}
+    {% if end_split.size > 1 %}
+      {% assign clean_content = clean_content | append: end_split[1] %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} Restore paragraph tags {% endcomment %}
+{% assign clean_content = clean_content | replace: '__p__', '<p>' %}
+{% assign clean_content = clean_content | replace: '__/p__', '</p>' %}
+
+{% comment %} Count words and calculate reading time {% endcomment %}
+{% assign words = clean_content | number_of_words %}
+
+{% comment %} 
+  Average reading speed is about 200-250 words per minute
+  We'll use 200 for a conservative estimate
+{% endcomment %}
+{% assign reading_time_minutes = words | divided_by: 200 %}
+{% assign reading_time_remainder = words | modulo: 200 %}
+
+{% if reading_time_minutes > 0 %}
+  {% if reading_time_minutes == 1 %}
+    {% assign reading_time_text = "1 min read" %}
+  {% else %}
+    {% assign reading_time_text = reading_time_minutes | append: " mins read" %}
+  {% endif %}
+{% else %}
+  {% if reading_time_remainder < 50 %}
+    {% assign reading_time_text = "less than a minute read" %}
+  {% else %}
+    {% assign reading_time_text = "1 min read" %}
+  {% endif %}
+{% endif %}
+
+{{ reading_time_text }} 
