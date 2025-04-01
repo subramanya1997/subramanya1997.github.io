@@ -1,0 +1,1579 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://subramanya.ai/feed.xml" rel="self" type="application/atom+xml" /><link href="https://subramanya.ai/" rel="alternate" type="text/html" /><updated>2025-04-01T01:14:41+00:00</updated><id>https://subramanya.ai/feed.xml</id><title type="html">Subramanya N</title><subtitle>Welcome to my personal website, a space where I blog and share my musings on academic and professional topics. Dive in to explore my intellectual journey and gain insights from my experiences in various fields!</subtitle><entry><title type="html">AI Agents and Agentic Security: The Next Frontier in Enterprise Automation</title><link href="https://subramanya.ai/2024/12/10/ai-agents-agentic-security-enterprise-automation/" rel="alternate" type="text/html" title="AI Agents and Agentic Security: The Next Frontier in Enterprise Automation" /><published>2024-12-10T00:00:00+00:00</published><updated>2024-12-10T00:00:00+00:00</updated><id>https://subramanya.ai/2024/12/10/ai-agents-agentic-security-enterprise-automation</id><content type="html" xml:base="https://subramanya.ai/2024/12/10/ai-agents-agentic-security-enterprise-automation/"><![CDATA[<p>Traditional automation tools like <strong>Robotic Process Automation (RPA)</strong> and <strong>Integration Platform as a Service (iPaaS)</strong> have long served as the backbone of enterprise workflows. These systems, designed to automate repetitive tasks and connect disparate software tools, have delivered undeniable value. However, their inherent limitations are becoming increasingly evident. They require significant manual setup, often break when systems change, and struggle to handle unstructured data such as documents, emails, or images.</p>
+
+<p>Enter <strong>AI agents</strong> — a revolutionary leap from static, rule-based automation to <strong>intelligent, adaptable systems</strong>. AI agents promise to overcome the constraints of traditional tools, paving the way for <em>smarter, more efficient enterprise automation</em>. An excellent breakdown of their significance can be found in the insightful Menlo Ventures article <a href="https://menlovc.com/perspective/beyond-bots-how-ai-agents-are-driving-the-next-wave-of-enterprise-automation/">“Beyond Bots: How AI Agents Are Driving the Next Wave of Enterprise Automation”</a>.</p>
+
+<p><img src="/assets/images/menlo_ventures_ai_agents_market_map.webp" alt="AI Agents Market Map" class="post-img" /></p>
+
+<h3 id="the-shift-from-automation-to-intelligence">The Shift from Automation to Intelligence</h3>
+
+<p>AI agents represent a fundamental paradigm shift. Unlike their predecessors, these systems are not bound by rigid rules or pre-defined workflows. Instead, they possess the ability to learn, adapt, and make decisions based on changing circumstances. This adaptability enables them to address dynamic and complex tasks, unlocking unprecedented levels of efficiency and scalability.</p>
+
+<p>However, this evolution introduces a new layer of complexity: <strong>agentic security</strong>. As AI agents grow more autonomous, ensuring their security, transparency, and trustworthiness becomes paramount, particularly in multi-agent environments where multiple AI systems must collaborate. This shift necessitates rethinking how we secure enterprise automation systems to ensure they remain robust and trustworthy in a rapidly evolving landscape.</p>
+
+<h3 id="the-imperative-of-agentic-security">The Imperative of Agentic Security</h3>
+
+<p>Agentic security involves safeguarding intelligent, autonomous systems while maintaining their transparency and reliability. It becomes especially critical in environments where multiple AI agents operate simultaneously, managing dynamic processes and sensitive data. Key considerations for agentic security include:</p>
+
+<h3 id="dynamic-adaptability-with-robust-security">Dynamic Adaptability with Robust Security</h3>
+
+<p>AI agents excel at adjusting to system changes, but their adaptability must not come at the expense of enterprise security. In multi-agent environments, secure communication protocols and strong authentication mechanisms form the foundation of security. However, static security measures alone are insufficient. Evolving contexts require context-aware security — a system that dynamically adjusts access controls and agent behavior based on situational needs and data sensitivities. This mitigates risks such as unauthorized escalations, prompt injection attacks, and data breaches.</p>
+
+<p>For example, a financial reporting agent, which has access to internal financial metrics, should be able to generate a detailed report for C-suite agents while maintaining strict data boundaries. If an HR agent requests information about salaries, the financial agent should only provide relevant, pre-approved metrics, such as aggregated departmental budgets, rather than individual salary slips. This ensures that agents respect organizational boundaries and adhere to context-aware security protocols.</p>
+
+<p>In cross-enterprise collaborations, where AI agents from different organizations interact, maintaining the integrity of each participant’s systems is essential. Context-aware security ensures that agents respect boundaries and operate within predefined limits, even as they adapt to new information or changing environments.</p>
+
+<h3 id="transparent-decision-making-and-accountability">Transparent Decision-Making and Accountability</h3>
+
+<p>As AI agents take on more critical roles in enterprise processes, transparency and accountability become non-negotiable. Organizations must implement mechanisms to trace and audit agent decisions, ensuring they align with business objectives and ethical standards. This is particularly important in regulated industries, where compliance requirements demand a clear understanding of how and why decisions are made.</p>
+
+<h3 id="trust-in-multi-agent-collaboration">Trust in Multi-Agent Collaboration</h3>
+
+<p>In scenarios where multiple agents collaborate, trust is the cornerstone of effective operation. Agents must communicate securely, share information responsibly, and resolve conflicts without compromising the integrity of the broader system. Establishing trust requires robust encryption, tamper-proof logs, and mechanisms for conflict resolution to prevent unintended behaviors or system failures.</p>
+
+<h3 id="the-path-forward">The Path Forward</h3>
+
+<p>AI agents represent the next frontier in enterprise automation, promising smarter, faster, and more scalable workflows. However, their increasing sophistication demands a proactive approach to agentic security. As organizations embrace these intelligent systems, they must prioritize building trust, safeguarding data, and ensuring transparency to foster sustainable innovation.</p>
+
+<p>The Menlo Ventures article encapsulates this beautifully: AI agents are not just tools — they are collaborators, reshaping how enterprises operate. But with great power comes great responsibility. By addressing the challenges of agentic security, we can unlock the full potential of AI agents while preserving the integrity and trust that underpin modern enterprises.</p>]]></content><author><name>Subramanya N</name></author><category term="AI" /><category term="Security" /><category term="Automation" /><category term="Enterprise" /><category term="AI Agents" /><summary type="html"><![CDATA[Exploring the potential of AI agents in enterprise security and automation, and how they can enhance security operations.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://subramanya.ai/assets/images/menlo_ventures_ai_agents_market_map.webp" /><media:content medium="image" url="https://subramanya.ai/assets/images/menlo_ventures_ai_agents_market_map.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">A feat of strength MVP for AI Apps</title><link href="https://subramanya.ai/2024/02/20/a-feat-of-strength-mvp-for-ai-apps/" rel="alternate" type="text/html" title="A feat of strength MVP for AI Apps" /><published>2024-02-20T00:00:00+00:00</published><updated>2024-02-20T00:00:00+00:00</updated><id>https://subramanya.ai/2024/02/20/a-feat-of-strength-mvp-for-ai-apps</id><content type="html" xml:base="https://subramanya.ai/2024/02/20/a-feat-of-strength-mvp-for-ai-apps/"><![CDATA[<p>A minimum viable product (MVP) is a version of a product with just enough features to be usable by early customers, who can then provide feedback for future product development.</p>
+
+<p>Today I want to focus on what that looks like for shipping AI applications. To do that, we only need to understand 4 things.</p>
+<ul>
+  <li>What does 80% actually mean?</li>
+  <li>What segments can we serve well?</li>
+  <li>Can we double down?</li>
+  <li>Can we educate the user about the segments we don’t serve well?</li>
+</ul>
+
+<p>The Pareto principle, also known as the 80/20 rule, still applies but in a different way than you might think.</p>
+
+<h3 id="what-is-an-mvp">What is an MVP?</h3>
+<p>An analogy I often use to help understand this concept is as follows: You need something to help get from point A to point B. Maybe the vision is to have a car. However, the MVP is not a chassis without wheels or an engine. Instead, it might look like a skateboard. You’ll ship and realize the product needs brakes or steering. So then you ship a scooter. Afterwards, you figure out the scooter needs more leverage, so you add larger wheels and end up with a bicycle. Limited by the force you can apply as a human being, you start thinking about motors and can branch out into mopeds, e-bikes, and motorcycles. Then one day, ship the car.</p>
+
+<h3 id="consider-the-8020-rule">Consider the 80/20 rule</h3>
+<p>When talking about something being  80% done or 80% ready, it is usually in a machine-learning sense. In this context, each component is deterministic, which means 80% translates to  8 out of 10 features being complete. Once the remaining 2 features are ready, we can ship the product. However, If we want to follow the 80/20 rule, we might be able to ship the product with 80% of the features and then add the remaining 20% later, like a car without a radio or air conditioning. However, The meaning of 80% can vary significantly, and this definition may not apply to an AI-powered application.</p>
+
+<p>The issue with Summary Statistics
+<img src="/assets/images/anscombes_quartet.png" alt="Anscombe's quartet" class="post-img" />
+The above image is an example of Anscombe’s quartet. It’s a set of four datasets that have nearly identical simple descriptive statistics yet very different distributions and appearances. This is a classic explanation of why summary statistics can be misleading.</p>
+
+<p>Consider the following example:</p>
+
+<table class="custom-table">
+    <thead>
+        <tr>
+            <th>Query_id</th>
+            <th>score</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>0.9</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>0.8</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>0.9</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>0.9</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>0.0</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The average score is 0.58. However, if we analyze the queries within segments, we might discover that we are serving the majority of queries exceptionally well!</p>
+
+<blockquote>
+  <p><strong>Admitting what you’re bad at</strong></p>
+
+  <p>Being honest with what you’re bad at is a great way to build trust with your users. If you can accurately identify when something will perform poorly and confidently reject it, then you might be ready to ship a great product while educating your users about the limitations of your application.</p>
+</blockquote>
+
+<p>It is very important to understand the limitations of your system and to be able to confidently understand the characteristics of your system beyond summary statistics. This is because not all systems are made equal. The behavior of a probabilistic system could be very different from the previous example. Consider the following dataset:</p>
+
+<table class="custom-table">
+    <thead>
+        <tr>
+            <th>Query_id</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>.59</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>.58</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>.59</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>.57</td>
+        </tr>
+    </tbody>
+</table>
+<p>A system like this also has the same average score of 0.58, but it’s not as easy to reject any subset of requests…</p>
+
+<h3 id="learning-to-say-no">Learning to say no</h3>
+<p>Consider an RAG application where a large proportion of the queries are regarding timeline queries. If our search engines do not support this time constraint, we will likely be unable to perform well.</p>
+
+<table class="custom-table">
+    <thead>
+        <tr>
+            <th>Query_id</th>
+            <th>Score</th>
+            <th>Query Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>0.9</td>
+            <td>text search</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>0.8</td>
+            <td>text search</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>0.9</td>
+            <td>news search</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>0.9</td>
+            <td>news search</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>0.0</td>
+            <td>timeline</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>0.0</td>
+            <td>timeline</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>If we’re in a pinch to ship, we could simply build a classification model that detects whether or not these questions are timeline questions and throw a warning. Instead of constantly trying to push the algorithm to do better, we can educate the user and educate them by changing the way that we might design the product.</p>
+
+<blockquote>
+  <p><strong>Detecting segments</strong></p>
+
+  <p>Detecting these segments could be accomplished in various ways. We could construct a classifier or employ a language model to categorize them. Additionally, we can utilize clustering algorithms with the embeddings to identify common groups and potentially analyze the mean scores within each group. The sole objective is to identify segments that can enhance our understanding of the activities within specific subgroups.</p>
+</blockquote>
+
+<p>One of the worst things you can do is to spend months building out a feature that only increases your productivity by a little while ignoring some more important segment of your user base.</p>
+
+<p>By redesigning our application and recognizing its limitations, we can potentially improve performance under certain conditions by identifying the types of tasks we can decline. If we are able to put this segment data into some kind of In-System Observability, we can safely monitor what proportion of questions are being turned down and prioritize our work to maximize coverage.</p>
+
+<h3 id="figure-out-what-youre-actually-trying-to-do-before-you-do-it">Figure out what you’re actually trying to do before you do it</h3>
+<p>One of the dangerous things I’ve noticed working with startups is that we often think that the AI works at all… As a result, we want to be able to serve a large general application without much thought into what exactly we want to accomplish.</p>
+
+<p>In my opinion, most of these companies should try to focus on one or two significant areas and identify a good niche to target. If your app is good at one or two tasks, there’s no way you could not find a hundred or two hundred users to test out your application and get feedback quickly. Whereas, if your application is good at nothing, it’s going to be hard to be memorable and provide something that has repeated use. You might get some virality, but very quickly, you’re going to lose the trust of your users and find yourself in a position where you’re trying to reduce churn.</p>
+
+<p>When we’re front-loaded, the ability to use GPT-4 to make predictions, and time to feedback is very important. If we can get feedback quickly, we can iterate quickly. If we can iterate quickly, we can build a better product.</p>
+
+<h3 id="final-thoughts">Final thoughts</h3>
+<p>The MVP for an AI application is not as simple as shipping a product with 80% of the features. Instead, it requires a deep understanding of the segments of your users that you can serve well and the ability to educate your users about the segments that you don’t serve well. By understanding the limitations of your system and niching down, you can build a product that is memorable and provides something that has repeated use. This will allow you to get feedback quickly and iterate quickly, ultimately leading to a better product, by identifying your feats of strength.</p>
+
+<style>
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.custom-table th, .custom-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.custom-table th {
+    background-color: #f2f2f2;
+}
+
+.custom-table tr:nth-child(even){background-color: #f9f9f9;}
+
+.custom-table tr:hover {background-color: #ddd;}
+
+.custom-table td {
+    color: #666;
+}
+
+.custom-table td:nth-child(2) { /* Targeting the score column */
+    text-align: center;
+}
+</style>]]></content><author><name>Subramanya N</name></author><category term="AI" /><category term="MVP" /><category term="Product Development" /><category term="User Feedback" /><category term="Innovation" /><summary type="html"><![CDATA[Exploring the concept of a Minimum Viable Product (MVP) in AI applications, focusing on delivering value by understanding and addressing user needs effectively.]]></summary></entry><entry><title type="html">The Nockout Story</title><link href="https://subramanya.ai/2024/01/11/the-nockout-story/" rel="alternate" type="text/html" title="The Nockout Story" /><published>2024-01-11T00:00:00+00:00</published><updated>2024-01-11T00:00:00+00:00</updated><id>https://subramanya.ai/2024/01/11/the-nockout-story</id><content type="html" xml:base="https://subramanya.ai/2024/01/11/the-nockout-story/"><![CDATA[<p><img src="/assets/images/NockOut_1080x540.png" alt="Nockout Logo" class="post-img" /></p>
+
+<p>As the co-founders of <a href="https://nockout.co"><strong>Nockout</strong></a>, Yash and I, Subramanya, have been on a quest to solve a problem that plagues every sports enthusiast: finding the right place and the right people for playing sports. Our personal struggles with organizing sports activities have led us to create a platform that not only eases these challenges but also promotes a sense of community among sports lovers.</p>
+
+<h3 id="the-problem-a-universal-challenge">The Problem: A Universal Challenge</h3>
+<p>Our frustrations weren’t unique. Across the globe, from tennis courts to basketball hoops, sports enthusiasts were grappling with the same issues: finding the right venue and the right people to play with. This global dilemma was evident in the shared experiences voiced through numerous tweets and conversations among the community.</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Bay Club is pretty good. But also trying to find a reliable way to find players is hard (even using PyC).</p>&mdash; Gautam (@gautamtata) <a href="https://twitter.com/gautamtata/status/1741899381442572543?ref_src=twsrc%5Etfw">January 1, 2024</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">You should move to New York, where it&#39;s even more difficult!<a href="https://t.co/c8RjpPzW9x">https://t.co/c8RjpPzW9x</a></p>&mdash; Awais Hussain (@Ahussain4) <a href="https://twitter.com/Ahussain4/status/1741896891644760310?ref_src=twsrc%5Etfw">January 1, 2024</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">someone create an app that shows all public basketball courts and whether or not people are at them or not. this would save a lot of time for me lol.</p>&mdash; thao 🍉 (@holycowitsthao) <a href="https://twitter.com/holycowitsthao/status/1372340571470233603?ref_src=twsrc%5Etfw">March 18, 2021</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I have wanted pickup hoops forever</p>&mdash; Rob Kornblum (@rkorny) <a href="https://twitter.com/rkorny/status/1412085318870867970?ref_src=twsrc%5Etfw">July 5, 2021</a></blockquote>
+
+<p>These tweets underscore the need for a platform like Nockout.</p>
+
+<h3 id="our-solution-introducing-nockout">Our Solution: Introducing Nockout</h3>
+<p>Nockout is more than just an app; it’s a revolution in the sports community. Designed to be intuitive and user-friendly, it addresses key challenges:</p>
+
+<ul>
+  <li><strong>Venue Discovery:</strong> The app shows you all available sports facilities nearby. Whether it’s a public basketball court or a private soccer field, “Nockout” has you covered.</li>
+  <li><strong>Skill-Based Activity Matching:</strong> Our platform intuitively recommends players whose skills align with yours, ensuring you can join in on sporting activities that suit your preferences and proficiency in your chosen sport. After all, it’s all about fair play and good competition.</li>
+  <li><strong>Intuitive Process:</strong> We’ve designed <a href="https://nockout.co">Nockout</a> to be user-friendly. The booking process is straightforward, and finding players is hassle-free.</li>
+</ul>
+
+<h3 id="the-impact-fostering-community-and-fair-play">The Impact: Fostering Community and Fair Play</h3>
+<p>Nockout transcends being a mere application; it’s about building a community bound by the love of sports. It encourages fair play, connects like-minded individuals, and rekindles the joy in sports.</p>
+
+<h3 id="looking-ahead-the-future-of-nockout">Looking Ahead: The Future of Nockout</h3>
+<p>Our vision for Nockout is expansive and all-encompassing:</p>
+
+<ul>
+  <li><strong>Creating Spaces for Teams:</strong> Developing private areas for teams and groups to interact and bond.</li>
+  <li><strong>Expanding Community Features:</strong> Introducing a platform for sharing triumphs and experiences.</li>
+  <li><strong>Accessible Coaching and Activities:</strong> Offering a range of activities and coaching sessions for all skill levels and interests.</li>
+  <li><strong>Streamlined Payments and Management:</strong> Enhancing the booking and payment process for a smooth user experience.</li>
+  <li><strong>Personalized Athletic Journey:</strong> Providing tailored advice for sports and nutrition, alongside a comprehensive sports marketplace.</li>
+</ul>
+
+<h3 id="join-the-revolution">Join the Revolution</h3>
+<p>Be part of a movement that’s reshaping the sports landscape. Sign up for early beta access at <a href="https://nockout.co">Nockout.co</a>, and connect with us on <a href="https://www.instagram.com/nockout.co">Instagram</a>, <a href="https://www.linkedin.com/company/nockout">LinkedIn</a>, and <a href="https://twitter.com/nockout_co">Twitter</a>. Together, let’s make sports accessible and enjoyable for everyone!</p>
+
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>]]></content><author><name>Subramanya N, Yash Kejariwal</name></author><category term="Sports" /><category term="Technology" /><category term="Community" /><category term="Innovation" /><summary type="html"><![CDATA[Discover how Nockout is transforming the way we find and enjoy sports activities. No more hassle in booking courts, no more mismatches in skill levels, just pure joy of playing your favorite sports.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://subramanya.ai/assets/images/NockOut_1080x540.png" /><media:content medium="image" url="https://subramanya.ai/assets/images/NockOut_1080x540.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Enhancing Document Interactions - Leveraging the synergy of Google Cloud Platform, Pinecone, and LLM in Natural Language Communication</title><link href="https://subramanya.ai/2023/06/10/enhancing-document-interactions/" rel="alternate" type="text/html" title="Enhancing Document Interactions - Leveraging the synergy of Google Cloud Platform, Pinecone, and LLM in Natural Language Communication" /><published>2023-06-10T00:00:00+00:00</published><updated>2023-06-10T00:00:00+00:00</updated><id>https://subramanya.ai/2023/06/10/enhancing-document-interactions</id><content type="html" xml:base="https://subramanya.ai/2023/06/10/enhancing-document-interactions/"><![CDATA[<p><img src="/assets/images/system_design_with_document_ai_gpt_pinecone.jpeg" alt="High-level view of system design with Document AI, OpenAI, Pinecone" class="post-img" />
+<span class="post-img-caption">High-level view of system design with Document AI, OpenAI, Pinecone</span></p>
+
+<p>In today’s digital era, accessing crucial information from government documents can be overwhelming and time-consuming due to their scanned and non-digitized formats. To address this issue, there is a need for an innovative tool that simplifies navigation, scanning, and digitization of these documents, making them easily readable and searchable. This user-friendly solution will revolutionize the way people interact with government documents, leading to better decision-making, improved public services, and a more informed and engaged citizenry. Developing such a tool is essential for ensuring transparency and accessibility of vital information in the modern world.</p>
+
+<p>To achieve our goal, we will follow a systematic approach consisting of the following steps:</p>
+
+<ol>
+  <li>We will use the powerful Document AI API provided by Google Cloud Platform to convert PDF / Image documents into text format. This step allows us to extract textual content from the documents, making it easier to process and analyze.</li>
+  <li>Next, we will employ a Language Model (LLM) to generate embeddings for each text extracted from the documents. These embeddings capture the semantic representation of the text, enabling us to effectively analyze and compare documents based on their content.</li>
+  <li>To optimize the retrieval process, we will utilize Pinecone, a robust indexing and similarity search system. By storing the generated embeddings in PineCone, we can quickly search for documents that closely match a user’s query.</li>
+  <li>With the acquired knowledge and enhanced search capabilities, our tool will efficiently answer user queries by retrieving the most relevant documents based on their content.</li>
+</ol>
+
+<p>For demonstration of this process, we utilized documents from the <a href="https://ceg.karnataka.gov.in/krdh/public/english">Karnataka Resident Data Hub (KRDH)</a> by web scraping.</p>
+<video controls="" class="post-img">
+    <source src="/assets/videos/documents_converse_demo.mp4" type="video/mp4" />
+</video>
+<p><span class="post-img-caption">Demo: Building a powerful question/answering for government documents using Document AI, OpenAI, Pinecone, and Flask</span></p>
+
+<h2 id="1-setting-up-google-cloud-platform---document-ai">1. Setting Up Google Cloud Platform - Document AI</h2>
+
+<p>Document AI is a document understanding platform that converts unstructured data from documents into structured data, making it easier to comprehend, analyze, and utilize. To set up Document AI in your Google Cloud Platform (GCP) Console, follow these steps:</p>
+
+<ul>
+  <li>Enable the <a href="https://console.cloud.google.com/flows/enableapi?apiid=documentai.googleapis.com">Document AI API</a>.</li>
+  <li>Create a service account:
+    <ul>
+      <li>Navigate to the <a href="https://console.cloud.google.com/projectselector2/iam-admin/serviceaccounts/create?supportedpurview=project">create service account page</a> in the Google Cloud console.</li>
+      <li>Choose your project.</li>
+      <li>Enter a name in the Service account name field. The Google Cloud console will automatically fill in the Service account ID field based on this name.</li>
+      <li>Click Create and continue.</li>
+      <li>Grant the Project &gt; Owner role to your service account to provide access to your project.</li>
+      <li>Click Continue.</li>
+      <li>Click Done to complete the service account creation process. (Do not close your browser window, as you will need it in the next step.)</li>
+    </ul>
+  </li>
+  <li>Create a service account key:
+    <ul>
+      <li>In the Google Cloud console, click the email address for the service account you created.</li>
+      <li>Click Keys.</li>
+      <li>Click Add key, then click Create new key.</li>
+      <li>Click Create. A JSON key file will be downloaded to your computer.</li>
+      <li>Click Close.</li>
+    </ul>
+  </li>
+  <li>Set the environment variable GOOGLE_APPLICATION_CREDENTIALS to the path of the JSON file containing your service account key. This variable applies only to your current shell session, so if you open a new session, you will need to set the variable again.</li>
+  <li>Install the Client Library:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">google</span><span class="o">-</span><span class="n">cloud</span><span class="o">-</span><span class="n">documentai</span> 
+</code></pre></div>    </div>
+  </li>
+  <li>Create a Processor:
+    <ul>
+      <li>In the Document AI section of the Google Cloud console, go to the <a href="https://console.cloud.google.com/ai/document-ai/processors">Processors</a> page.</li>
+      <li>Click +Create processor.</li>
+      <li>Choose the processor type you want to create from the list.</li>
+      <li>In the Create processor window, specify a processor name.</li>
+      <li>Select your desired region from the list.</li>
+      <li>Click Create to generate your processor.</li>
+      <li>Take note of the Processor ID and location.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>After completing these steps, you are ready to use the Document AI API in your code.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">convert_pdf_images_to_text</span><span class="p">(</span><span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">
+    Convert PDF or image file containing text into plain text using Google Document AI.
+    Args:
+        file_path (str): The file path of the PDF or image file.
+
+    Returns:
+        str: The extracted plain text from the input file.
+    </span><span class="sh">"""</span>
+    <span class="n">extention</span> <span class="o">=</span> <span class="n">file_path</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sh">"</span><span class="s">.</span><span class="sh">"</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="nf">strip</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">extention</span> <span class="o">==</span> <span class="sh">"</span><span class="s">pdf</span><span class="sh">"</span><span class="p">:</span>
+        <span class="n">mime_type</span> <span class="o">=</span> <span class="sh">"</span><span class="s">application/pdf</span><span class="sh">"</span>
+    <span class="k">elif</span> <span class="n">extention</span> <span class="o">==</span> <span class="sh">"</span><span class="s">png</span><span class="sh">"</span><span class="p">:</span>
+        <span class="n">mime_type</span> <span class="o">=</span> <span class="sh">"</span><span class="s">image/png</span><span class="sh">"</span>
+    <span class="k">elif</span> <span class="n">extention</span> <span class="o">==</span> <span class="sh">"</span><span class="s">jpg</span><span class="sh">"</span> <span class="ow">or</span> <span class="n">extention</span> <span class="o">==</span> <span class="sh">"</span><span class="s">jpeg</span><span class="sh">"</span><span class="p">:</span>
+        <span class="n">mime_type</span> <span class="o">=</span> <span class="sh">"</span><span class="s">image/jpeg</span><span class="sh">"</span>
+    <span class="n">opts</span> <span class="o">=</span> <span class="nc">ClientOptions</span><span class="p">(</span>
+        <span class="n">api_endpoint</span><span class="o">=</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">location</span><span class="si">}</span><span class="s">-documentai.googleapis.com</span><span class="sh">"</span>
+    <span class="p">)</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">documentai</span><span class="p">.</span><span class="nc">DocumentProcessorServiceClient</span><span class="p">(</span><span class="n">client_options</span><span class="o">=</span><span class="n">opts</span><span class="p">)</span>
+    <span class="c1"># Add the credentials obtained, Project ID, Location and the Processor ID
+</span>    <span class="n">name</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">processor_path</span><span class="p">(</span>
+        <span class="n">project_id</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">processor_id</span>
+    <span class="p">)</span>
+    <span class="c1"># Read the file into memory
+</span>    <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="sh">"</span><span class="s">rb</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">image</span><span class="p">:</span>
+        <span class="n">image_content</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
+    <span class="c1"># Load Binary Data into Document AI RawDocument Object
+</span>    <span class="n">raw_document</span> <span class="o">=</span> <span class="n">documentai</span><span class="p">.</span><span class="nc">RawDocument</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="n">image_content</span><span class="p">,</span> <span class="n">mime_type</span><span class="o">=</span><span class="n">mime_type</span><span class="p">)</span>
+    <span class="c1"># Configure the process request
+</span>    <span class="n">request</span> <span class="o">=</span> <span class="n">documentai</span><span class="p">.</span><span class="nc">ProcessRequest</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">raw_document</span><span class="o">=</span><span class="n">raw_document</span><span class="p">)</span>
+    <span class="n">result_document</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">process_document</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">).</span><span class="n">document</span>
+    <span class="k">return</span> <span class="n">result_document</span><span class="p">.</span><span class="n">text</span>
+</code></pre></div></div>
+
+<h2 id="2-embeddings-generation-and-pinecone">2. Embeddings Generation and Pinecone</h2>
+
+<p>In this step, we will use the OpenAI Text Embedding API to generate embeddings that capture the semantic meaning of the extracted text. These embeddings serve as numerical representations of the textual data, allowing us to understand the underlying context and nuances.</p>
+
+<p>After generating the embeddings, we will securely store them in Pinecone, a powerful indexing and similarity search system. By leveraging Pinecone’s efficient storage capabilities, we can effectively organize and index the embeddings for quick and precise retrieval.</p>
+
+<p>With the embeddings stored in Pinecone, our system gains the ability to perform similarity searches. This enables us to find documents that closely match a given query or exhibit similar semantic characteristics.</p>
+
+<p>The following code uses OpenAI’s Text Embedding model to create embeddings for text data. It divides the input text into chunks, generates embeddings for each chunk, and then upserts the embeddings along with associated metadata to a Pinecone search index for efficient searching and retrieval.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">create_embeddings</span><span class="p">(</span>
+    <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sh">"</span><span class="s">text-embedding-ada-002</span><span class="sh">"</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">
+    Creates a text embedding using OpenAI</span><span class="sh">'</span><span class="s">s Text Embedding model.
+
+    Args:
+        text (str): The text to embed
+        model (str, optional): The name of the text embedding model to use.
+            Defaults to </span><span class="sh">"</span><span class="s">text-embedding-ada-002</span><span class="sh">"</span><span class="s">.
+
+    Returns:
+        List[float]: The text embedding.
+    </span><span class="sh">"""</span>
+    <span class="k">if</span> <span class="nf">type</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">openai</span><span class="p">.</span><span class="n">Embedding</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="nb">input</span><span class="o">=</span><span class="n">text</span><span class="p">).</span><span class="n">data</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="sh">"</span><span class="s">embedding</span><span class="sh">"</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">response</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">openai</span><span class="p">.</span><span class="n">Embedding</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span>
+            <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="nb">input</span><span class="o">=</span><span class="p">[</span><span class="n">text</span><span class="p">]).</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="sh">"</span><span class="s">embedding</span><span class="sh">"</span><span class="p">]]</span><span class="err">∂</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">generate_embeddings_upload_to_pinecone</span><span class="p">(</span><span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]):</span>
+    <span class="sh">"""</span><span class="s">
+    Generates text embeddings from the provided documents, then uploads and indexes 
+    them to Pinecone.
+
+    Args:
+        documents (List[Dict[str, Any]]): A list of dictionaries containing 
+        document information.
+            Each dictionary should include the following keys:
+                - </span><span class="sh">"</span><span class="s">Content</span><span class="sh">"</span><span class="s">: The text content of the document.
+                - </span><span class="sh">"</span><span class="s">DocumentName</span><span class="sh">"</span><span class="s">: The name of the document.
+                - </span><span class="sh">"</span><span class="s">DocumentType</span><span class="sh">"</span><span class="s">: The type/category of the document.
+
+    Note:
+        This function assumes that Pinecone and the associated index have already
+        been initialized properly. Please make sure to initialize Pinecone first
+        and set up the index accordingly.
+    </span><span class="sh">"""</span>
+    <span class="c1"># create chunks
+</span>    <span class="n">chunks</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">documents</span><span class="p">:</span>
+        <span class="n">texts</span> <span class="o">=</span> <span class="nf">create_chunks</span><span class="p">(</span><span class="n">document</span><span class="p">[</span><span class="sh">"</span><span class="s">Content</span><span class="sh">"</span><span class="p">])</span>
+        <span class="n">chunks</span><span class="p">.</span><span class="nf">extend</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="sh">"</span><span class="s">id</span><span class="sh">"</span><span class="p">:</span> <span class="nf">str</span><span class="p">(</span><span class="nf">uuid4</span><span class="p">()),</span>
+                    <span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">:</span> <span class="n">texts</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                    <span class="sh">"</span><span class="s">chunk_index</span><span class="sh">"</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span>
+                    <span class="sh">"</span><span class="s">title</span><span class="sh">"</span><span class="p">:</span> <span class="n">document</span><span class="p">[</span><span class="sh">"</span><span class="s">DocumentName</span><span class="sh">"</span><span class="p">],</span>
+                    <span class="sh">"</span><span class="s">type</span><span class="sh">"</span><span class="p">:</span> <span class="n">document</span><span class="p">[</span><span class="sh">"</span><span class="s">DocumentType</span><span class="sh">"</span><span class="p">],</span>
+                <span class="p">}</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">texts</span><span class="p">))</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+    <span class="c1"># initialize Pinecone index, create embeddings, and upsert to Pinecone
+</span>    <span class="n">index</span> <span class="o">=</span> <span class="n">pinecone</span><span class="p">.</span><span class="nc">Index</span><span class="p">(</span><span class="sh">"</span><span class="s">pinecone-index</span><span class="sh">"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">tqdm</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">chunks</span><span class="p">),</span> <span class="mi">100</span><span class="p">)):</span>
+        <span class="c1"># find end of batch
+</span>        <span class="n">i_end</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">chunks</span><span class="p">),</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="n">batch</span> <span class="o">=</span> <span class="n">chunks</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i_end</span><span class="p">]</span>
+        <span class="n">ids_batch</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">id</span><span class="sh">"</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">]</span>
+        <span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">]</span>
+        <span class="n">embeds</span> <span class="o">=</span> <span class="nf">create_embeddings</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">texts</span><span class="p">)</span>
+        <span class="c1"># cleanup metadata
+</span>        <span class="n">meta_batch</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="sh">"</span><span class="s">title</span><span class="sh">"</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">title</span><span class="sh">"</span><span class="p">],</span>
+                <span class="sh">"</span><span class="s">type</span><span class="sh">"</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">type</span><span class="sh">"</span><span class="p">],</span>
+                <span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">],</span>
+                <span class="sh">"</span><span class="s">chunk_index</span><span class="sh">"</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">chunk_index</span><span class="sh">"</span><span class="p">],</span>
+            <span class="p">}</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">batch</span>
+        <span class="p">]</span>
+        <span class="n">to_upsert</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">embed</span><span class="p">,</span> <span class="n">meta</span> <span class="ow">in</span> <span class="nf">list</span><span class="p">(</span><span class="nf">zip</span><span class="p">(</span><span class="n">ids_batch</span><span class="p">,</span> <span class="n">embeds</span><span class="p">,</span> <span class="n">meta_batch</span><span class="p">)):</span>
+            <span class="n">to_upsert</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="sh">"</span><span class="s">id</span><span class="sh">"</span><span class="p">:</span> <span class="nb">id</span><span class="p">,</span>
+                    <span class="sh">"</span><span class="s">values</span><span class="sh">"</span><span class="p">:</span> <span class="n">embed</span><span class="p">,</span>
+                    <span class="sh">"</span><span class="s">metadata</span><span class="sh">"</span><span class="p">:</span> <span class="n">meta</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+        <span class="c1"># upsert to Pinecone
+</span>        <span class="n">index</span><span class="p">.</span><span class="nf">upsert_documents</span><span class="p">(</span><span class="n">to_upsert</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>For more information on OpenAI’s Text Embedding API, refer to the <a href="https://platform.openai.com/docs/api-reference">OpenAI API documentation</a>. For more details on Pinecone, check out the <a href="https://docs.pinecone.io/docs">Pinecone documentation</a>.</p>
+
+<h2 id="3-user-query-and-communication">3. User Query and Communication</h2>
+<p>Finally, with all the necessary components in place, we can witness the powerful functionality of our tool as it matches user queries with relevant context and provides accurate answers.</p>
+
+<p>When a user submits a query, our system leverages the stored embeddings and advanced search capabilities to identify the most relevant documents based on their semantic similarity to the query. By analyzing the contextual information captured in the embeddings, our tool can retrieve the documents that contain the desired information.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">query_and_combine</span><span class="p">(</span>
+    <span class="n">self</span><span class="p">,</span> <span class="n">query_vector</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">top_k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.75</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">Query Pinecone index and combine responses to string
+
+    Args:
+        query_embedding (list): Query embedding
+        index (str): Pinecone index to query
+        top_k (int, optional): Number of top results to return. Defaults to 5.
+        threshold : The similarity threshold. Defaults to 0.75
+
+    Returns:
+        str: Combined responses
+    </span><span class="sh">"""</span>
+    <span class="n">responses</span> <span class="o">=</span> <span class="n">index</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span><span class="n">query_vector</span><span class="o">=</span><span class="n">query_vector</span><span class="p">,</span> <span class="n">top_k</span><span class="o">=</span><span class="n">top_k</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">_responses</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">responses</span><span class="p">[</span><span class="sh">"</span><span class="s">matches</span><span class="sh">"</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">sample</span><span class="p">[</span><span class="sh">"</span><span class="s">score</span><span class="sh">"</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="sh">"</span><span class="s">text</span><span class="sh">"</span> <span class="ow">in</span> <span class="n">sample</span><span class="p">[</span><span class="sh">"</span><span class="s">metadata</span><span class="sh">"</span><span class="p">]:</span>
+            <span class="n">_responses</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="sh">"</span><span class="s">metadata</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_responses</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nf">str</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="sh">"</span><span class="s">metadata</span><span class="sh">"</span><span class="p">]))</span>
+
+    <span class="k">return</span> <span class="sh">"</span><span class="s"> </span><span class="se">\n</span><span class="s"> --- </span><span class="se">\n</span><span class="s"> </span><span class="sh">"</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">_responses</span><span class="p">).</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">---</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s"> </span><span class="se">\n</span><span class="s"> --- </span><span class="se">\n</span><span class="s"> </span><span class="sh">"</span><span class="p">).</span><span class="nf">strip</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">generate_answer</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">language</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sh">"</span><span class="s">English</span><span class="sh">"</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">
+    Generates an answer to a user</span><span class="sh">'</span><span class="s">s query using the context from Pinecone search results
+    and OpenAI</span><span class="sh">'</span><span class="s">s chat models.
+
+    The function takes the user</span><span class="sh">'</span><span class="s">s query, creates a text embedding from it, performs a
+    Pinecone query to find relevant context, and then generates an answer using OpenAI</span><span class="sh">'</span><span class="s">s
+    chat models with the given context.
+
+    Returns:
+        A JSON object containing the generated answer.
+
+    Note:
+        This function assumes that Pinecone and the associated index have already been 
+        initialized properly, and that the OpenAI API is set up correctly. Please 
+        make sure to initialize Pinecone and the OpenAI API first.
+    </span><span class="sh">"""</span>
+    <span class="n">query_embed</span> <span class="o">=</span> <span class="nf">create_embeddings</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">query</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">augmented_query</span> <span class="o">=</span> <span class="nf">query_and_combine</span><span class="p">(</span>
+        <span class="n">query_embed</span><span class="p">,</span>
+        <span class="n">top_k</span><span class="o">=</span><span class="n">app</span><span class="p">.</span><span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">top_n</span><span class="sh">"</span><span class="p">],</span>
+        <span class="n">threshold</span><span class="o">=</span><span class="n">app</span><span class="p">.</span><span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">pinecone_threshold</span><span class="sh">"</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="c1">## Creating the prompt for model
+</span>    <span class="n">primer</span> <span class="o">=</span> <span class="sh">"""</span><span class="s">You are Q&amp;A bot. A highly intelligent system that answers
+    user questions based on the context provided by the user above
+    each question. If the information can not be found in the context
+    provided by the user you truthfully say </span><span class="sh">"</span><span class="s">I don</span><span class="sh">'</span><span class="s">t know</span><span class="sh">"</span><span class="s">. Be as concise as possible.
+    </span><span class="sh">"""</span>
+    <span class="n">augmented_query</span> <span class="o">=</span> <span class="n">augmented_query</span> <span class="k">if</span> <span class="n">augmented_query</span> <span class="o">!=</span> <span class="sh">""</span> <span class="k">else</span> <span class="sh">"</span><span class="s">No context found</span><span class="sh">"</span>
+
+    <span class="n">text</span><span class="p">,</span> <span class="n">usage</span> <span class="o">=</span> <span class="n">openai</span><span class="p">.</span><span class="n">ChatCompletion</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span>
+        <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">{</span><span class="sh">"</span><span class="s">role</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">system</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="n">primer</span><span class="p">},</span>
+            <span class="p">{</span>
+                <span class="sh">"</span><span class="s">role</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">user</span><span class="sh">"</span><span class="p">,</span>
+                <span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Context: </span><span class="se">\n</span><span class="s"> </span><span class="si">{</span><span class="n">augmented_query</span><span class="si">}</span><span class="s"> </span><span class="se">\n</span><span class="s"> --- </span><span class="se">\n</span><span class="s"> Question: </span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s"> </span><span class="se">\n</span><span class="s"> Answer in </span><span class="si">{</span><span class="n">language</span><span class="si">}</span><span class="sh">"</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">],</span>
+        <span class="n">model</span><span class="o">=</span><span class="n">app</span><span class="p">.</span><span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">chat_model</span><span class="sh">"</span><span class="p">],</span>
+        <span class="n">temperature</span><span class="o">=</span><span class="n">app</span><span class="p">.</span><span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">temperature</span><span class="sh">"</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">text</span>
+</code></pre></div></div>
+
+<p>The code consists of two functions.</p>
+<ol>
+  <li><strong>query_and_combine()</strong> queries a Pinecone index using a query vector, retrieves the top matching responses, and combines them into a single string. It filters the responses based on a similarity threshold and extracts the relevant text or metadata to be included in the combined result.</li>
+  <li><strong>generate_answer()</strong> generates an answer to a user query. It creates an embedding for the query, performs a combined query on the Pinecone index, and uses the obtained augmented query as context for a chat-based language model. The model generates an answer based on the context and user query, which is then returned as the response.
+Overall, the code enables querying a Pinecone index, combining responses, and generating answers using a language model based on the given query and context.</li>
+</ol>
+
+<p>As you reach the end of this blog, we hope you have gained valuable insights into the powerful combination of Google Cloud Platform, Pinecone, and Language Models for revolutionizing document interactions. To dive deeper and explore the code behind this innovative solution, visit our <a href="https://github.com/subramanya1997/documents-converse">GitHub repository</a>. Feel free to clone, modify, and contribute to the project, and don’t hesitate to share your thoughts and experiences. I would also like to thank <a href="https://www.linkedin.com/in/tasheerhussain">Tasheer Hussain B</a> for his contributions.  Happy coding!</p>
+
+<h2 id="references">References</h2>
+<ul>
+  <li><a href="https://cloud.google.com/document-ai">Google Document AI</a></li>
+  <li><a href="https://docs.pinecone.io/docs/gen-qa-openai">Retrieval Enhanced Generative Question Answering with OpenAI</a></li>
+  <li><a href="https://flask.palletsprojects.com/en/2.3.x/quickstart">Introduction to Flask</a></li>
+  <li><a href="https://github.com/subramanya1997/documents-converse">GitHub repository</a></li>
+</ul>]]></content><author><name>Subramanya N, Tasheer Hussain B</name></author><category term="GCP" /><category term="Pinecone" /><category term="Large Language Models" /><category term="OpenAI" /><category term="Document AI" /><summary type="html"><![CDATA[Explore the groundbreaking fusion of Google Cloud Platform for OCR, Pinecone, and Large Language Model that is transforming information retrieval. This blog delves into how these potent tools collaborate to enable seamless interactions with documents using natural language. Discover how Google Cloud Platform offers a solid foundation, Pinecone provides rapid similarity searches for effective document retrieval, and LLM elevates language comprehension and generation capabilities.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://subramanya.ai/assets/images/system_design_with_document_ai_gpt_pinecone.jpeg" /><media:content medium="image" url="https://subramanya.ai/assets/images/system_design_with_document_ai_gpt_pinecone.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Hybrid Search for E-Commerce with Pinecone and LLMs</title><link href="https://subramanya.ai/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/" rel="alternate" type="text/html" title="Hybrid Search for E-Commerce with Pinecone and LLMs" /><published>2023-05-02T00:00:00+00:00</published><updated>2023-05-02T00:00:00+00:00</updated><id>https://subramanya.ai/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM</id><content type="html" xml:base="https://subramanya.ai/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/"><![CDATA[<p>Searching and finding relevant products is a critical component of an e-commerce website. Providing fast and accurate search results can make the difference between high user satisfaction and user frustration. With recent advancements in natural language understanding and vector search technologies, enhanced search systems have become more accessible and efficient, leading to better user experiences and improved conversion rates.</p>
+
+<p>In this blog post, we’ll explore how to implement a hybrid search system for e-commerce using Pinecone, a high-performance vector search engine, and fine-tuned domain-specific language models. By the end of this post, you’ll not only have a strong understanding of hybrid search but also a practical step-by-step guide to implementing it.</p>
+
+<h2 id="what-is-hybrid-search">What is Hybrid Search?</h2>
+
+<p><img src="/assets/images/pinecone_hybrid_index.jpg" alt="Pinecone Hybrid Index" class="post-img" />
+<span class="post-img-caption">High-level view of simple Pinecone Hybrid Index</span></p>
+
+<p>Before diving into the implementation, let’s quickly understand what hybrid search means. Hybrid search is an approach that combines the strengths of both traditional search (sparse vector search) and vector search (dense vector search) to achieve better search performance across a wide range of domains.</p>
+
+<p>Dense vector search extracts high-quality vector embeddings from text data and performs a similarity search to find relevant documents. However, it often struggles with out-of-domain data when it’s not fine-tuned on domain-specific datasets.</p>
+
+<p>On the other hand, traditional search uses sparse vector representations, like term frequency-inverse document frequency (TF-IDF) or BM25, and does not require any domain-specific fine-tuning. While it can handle new domains, its performance is limited by its inability to understand semantic relations between words and lacks the intelligence of dense retrieval.</p>
+
+<p>Hybrid search tries to mitigate the weaknesses of both approaches by combining them in a single system, leveraging the performance potential of dense vector search and the zero-shot adaptability of traditional search.</p>
+
+<p>Now that we have a basic understanding of hybrid search, let’s dive into its implementation.</p>
+
+<h2 id="building-a-hybrid-search-system">Building a Hybrid Search System</h2>
+
+<p>We’ll cover the following steps for implementing a hybrid search system:</p>
+
+<ol>
+  <li>Leveraging Domain-Specific Language Models</li>
+  <li>Creating Sparse and Dense Vectors</li>
+  <li>Setting Up Pinecone</li>
+  <li>Implementing the Hybrid Search Pipeline</li>
+  <li>Making Queries and Tuning Parameters</li>
+</ol>
+
+<h3 id="1-leveraging-domain-specific-language-models">1. Leveraging Domain-Specific Language Models</h3>
+
+<p>In recent years, large-scale pre-trained language models like OpenAI’s GPT and Cohere have become increasingly popular for a variety of tasks, including natural language understanding and generation. These models can be fine-tuned on domain-specific data to improve their performance and adapt to specific tasks, such as e-commerce product search.</p>
+
+<p>In our example, we will use a fine-tuned domain-specific language model to generate dense vector embeddings for products and queries. However, you can choose other models or even create your own custom embeddings based on your specific domain.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">torch</span>
+<span class="kn">from</span> <span class="n">transformers</span> <span class="kn">import</span> <span class="n">AutoTokenizer</span><span class="p">,</span> <span class="n">AutoModel</span>
+
+<span class="c1"># Load a pre-trained domain-specific language model
+</span><span class="n">model_name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">your-domain-specific-model</span><span class="sh">"</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="p">.</span><span class="nf">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">AutoModel</span><span class="p">.</span><span class="nf">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+
+<span class="c1"># Generate dense vector embeddings for a product description
+</span><span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Nike Air Max sports shoes for men</span><span class="sh">"</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="nf">tokenizer</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="sh">"</span><span class="s">pt</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">torch</span><span class="p">.</span><span class="nf">no_grad</span><span class="p">():</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">)</span>
+    <span class="n">dense_embedding</span> <span class="o">=</span> <span class="n">outputs</span><span class="p">.</span><span class="n">last_hidden_state</span><span class="p">.</span><span class="nf">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">).</span><span class="nf">numpy</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="2-creating-sparse-and-dense-vectors">2. Creating Sparse and Dense Vectors</h3>
+
+<p>Hybrid search requires both sparse and dense vector representations for our e-commerce data. We’ll now describe how to generate these vectors.</p>
+
+<h4 id="sparse-vectors">Sparse Vectors</h4>
+
+<p>Sparse vector representations, like TF-IDF or BM25, can be created using standard text processing techniques, such as tokenization, stopword removal, and stemming. An example of generating sparse vectors can be achieved using a vocabulary matrix.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This function generates sparse vector representations of a list of product descriptions
+</span><span class="k">def</span> <span class="nf">generate_sparse_vectors</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="sh">'''</span><span class="s">Generates sparse vector representations for a list of product descriptions
+
+    Args:
+        text (list): A list of product descriptions
+
+    Returns:
+        sparse_vector (dict): A dictionary of indices and values
+    </span><span class="sh">'''</span>
+    <span class="n">sparse_vector</span> <span class="o">=</span> <span class="n">bm25</span><span class="p">.</span><span class="nf">encode_queries</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sparse_vector</span>
+
+<span class="kn">from</span> <span class="n">pinecone_text.sparse</span> <span class="kn">import</span> <span class="n">BM25Encoder</span>
+
+<span class="c1"># Create the BM25 encoder and fit the data
+</span><span class="n">bm25</span> <span class="o">=</span> <span class="nc">BM25Encoder</span><span class="p">()</span>
+<span class="n">bm25</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">new_df</span><span class="p">.</span><span class="n">full_data</span><span class="p">)</span>
+
+<span class="c1"># Create the sparse vectors
+</span><span class="n">sparse_vectors</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">product_description</span> <span class="ow">in</span> <span class="n">product_descriptions</span><span class="p">:</span>
+    <span class="n">sparse_vectors</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nf">generate_sparse_vectors</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">product_description</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4 id="dense-vectors">Dense Vectors</h4>
+
+<p>Dense vector representations can be generated using pre-trained or custom domain-specific language models. In our previous example, we used a domain-specific language model to generate dense vector embeddings for a product description.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">generate_dense_vector</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="sh">'''</span><span class="s">Generates dense vector embeddings for a list of product descriptions
+
+    Args:
+        text (list): A list of product descriptions
+
+    Returns:
+        dense_embedding (np.array): A numpy array of dense vector embeddings
+    </span><span class="sh">'''</span>
+    <span class="c1"># Tokenize the text and convert to PyTorch tensors
+</span>    <span class="n">inputs</span> <span class="o">=</span> <span class="nf">tokenizer</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="sh">"</span><span class="s">pt</span><span class="sh">"</span><span class="p">)</span>
+    <span class="c1"># Generate the embeddings with the pre-trained model
+</span>    <span class="k">with</span> <span class="n">torch</span><span class="p">.</span><span class="nf">no_grad</span><span class="p">():</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">)</span>
+        <span class="n">dense_vector</span> <span class="o">=</span> <span class="n">outputs</span><span class="p">.</span><span class="n">last_hidden_state</span><span class="p">.</span><span class="nf">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">).</span><span class="nf">numpy</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">dense_vector</span>
+
+<span class="c1"># Generate dense vector embeddings for a list of product descriptions
+</span><span class="n">dense_vectors</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">product_description</span> <span class="ow">in</span> <span class="n">product_descriptions</span><span class="p">:</span>
+    <span class="n">dense_vectors</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nf">generate_dense_vector</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">product_description</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h3 id="3-setting-up-pinecone">3. Setting Up Pinecone</h3>
+
+<p>Pinecone is a high-performance vector search engine that supports hybrid search. It enables the creation of a single index for both sparse and dense vectors and seamlessly handles search queries across different data modalities.</p>
+
+<p>To use Pinecone, you’ll need to sign up for an account, install the Pinecone client, and set up your API key and environment.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Create a Pinecone hybrid search index
+</span><span class="kn">import</span> <span class="n">pinecone</span>
+
+<span class="n">pinecone</span><span class="p">.</span><span class="nf">init</span><span class="p">(</span>
+    <span class="n">api_key</span><span class="o">=</span><span class="sh">"</span><span class="s">YOUR_API_KEY</span><span class="sh">"</span><span class="p">,</span>  <span class="c1"># app.pinecone.io
+</span>    <span class="n">environment</span><span class="o">=</span><span class="sh">"</span><span class="s">YOUR_ENV</span><span class="sh">"</span>  <span class="c1"># find next to api key in console
+</span><span class="p">)</span>
+
+<span class="c1"># Create a Pinecone hybrid search index
+</span><span class="n">index_name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">ecommerce-hybrid-search</span><span class="sh">"</span>
+<span class="n">pinecone</span><span class="p">.</span><span class="nf">create_index</span><span class="p">(</span>
+    <span class="n">index_name</span> <span class="o">=</span> <span class="n">index_name</span><span class="p">,</span>
+    <span class="n">dimension</span> <span class="o">=</span> <span class="n">MODEL_DIMENSION</span><span class="p">,</span>  <span class="c1"># dimensionality of dense model
+</span>    <span class="n">metric</span> <span class="o">=</span> <span class="sh">"</span><span class="s">dotproduct</span><span class="sh">"</span>
+<span class="p">)</span>
+<span class="c1"># connect to the index
+</span><span class="n">index</span> <span class="o">=</span> <span class="n">pinecone</span><span class="p">.</span><span class="nc">Index</span><span class="p">(</span><span class="n">index_name</span><span class="o">=</span><span class="n">index_name</span><span class="p">)</span>
+<span class="c1"># view index stats
+</span><span class="n">index</span><span class="p">.</span><span class="nf">describe_index_stats</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="4-implementing-the-hybrid-search-pipeline">4. Implementing the Hybrid Search Pipeline</h3>
+
+<p>With our sparse and dense vectors generated and Pinecone set up, we can now build a hybrid search pipeline. This pipeline includes the following steps:</p>
+
+<ol>
+  <li>Adding product data to the Pinecone index</li>
+  <li>Retrieving results using both sparse and dense vectors</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add_product_data_to_index</span><span class="p">(</span><span class="n">product_ids</span><span class="p">,</span> <span class="n">sparse_vectors</span><span class="p">,</span> <span class="n">dense_vectors</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">Upserts product data to the Pinecone index.
+
+    Args:
+        product_ids (`list` of `str`): Product IDs.
+        sparse_vectors (`list` of `list` of `float`): Sparse vectors.
+        dense_vectors (`list` of `list` of `float`): Dense vectors.
+        metadata (`list` of `list` of `str`): Optional metadata.
+
+    Returns:
+        None
+    </span><span class="sh">"""</span>
+    <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">32</span>
+
+    <span class="c1"># Loop through the product IDs in batches.
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">product_ids</span><span class="p">),</span> <span class="n">batch_size</span><span class="p">):</span>
+        <span class="n">i_end</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">batch_size</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">product_ids</span><span class="p">))</span>
+        <span class="n">ids</span> <span class="o">=</span> <span class="n">product_ids</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i_end</span><span class="p">]</span>
+        <span class="n">sparse_batch</span> <span class="o">=</span> <span class="n">sparse_vectors</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i_end</span><span class="p">]</span>
+        <span class="n">dense_batch</span> <span class="o">=</span> <span class="n">dense_vectors</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i_end</span><span class="p">]</span>
+        <span class="n">meta_batch</span> <span class="o">=</span> <span class="n">metadata</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i_end</span><span class="p">]</span> <span class="k">if</span> <span class="n">metadata</span> <span class="k">else</span> <span class="p">[]</span>
+
+        <span class="n">vectors</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">_id</span><span class="p">,</span> <span class="n">sparse</span><span class="p">,</span> <span class="n">dense</span><span class="p">,</span> <span class="n">meta</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">(</span><span class="n">ids</span><span class="p">,</span> <span class="n">sparse_batch</span><span class="p">,</span> <span class="n">dense_batch</span><span class="p">,</span> <span class="n">meta_batch</span><span class="p">):</span>
+            <span class="n">vectors</span><span class="p">.</span><span class="nf">append</span><span class="p">({</span>
+                <span class="sh">'</span><span class="s">id</span><span class="sh">'</span><span class="p">:</span> <span class="n">_id</span><span class="p">,</span>
+                <span class="sh">'</span><span class="s">sparse_values</span><span class="sh">'</span><span class="p">:</span> <span class="n">sparse</span><span class="p">,</span>
+                <span class="sh">'</span><span class="s">values</span><span class="sh">'</span><span class="p">:</span> <span class="n">dense</span><span class="p">,</span>
+                <span class="sh">'</span><span class="s">metadata</span><span class="sh">'</span><span class="p">:</span> <span class="n">meta</span>
+            <span class="p">})</span>
+
+        <span class="c1"># Upsert the vectors into the Pinecone index.
+</span>        <span class="n">index</span><span class="p">.</span><span class="nf">upsert</span><span class="p">(</span><span class="n">vectors</span><span class="o">=</span><span class="n">vectors</span><span class="p">)</span>
+
+<span class="nf">add_product_data_to_index</span><span class="p">(</span><span class="n">product_ids</span><span class="p">,</span> <span class="n">sparse_vectors</span><span class="p">,</span> <span class="n">dense_vectors</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Now that our data is indexed, we can perform hybrid search queries.</p>
+
+<h3 id="5-making-queries-and-tuning-parameters">5. Making Queries and Tuning Parameters</h3>
+
+<p><img src="/assets/images/pinecone_hybrid_query.jpg" alt="Pinecone Hybrid Query" class="post-img" />
+<span class="post-img-caption">High-level view of simple Pinecone Hybrid Query</span></p>
+
+<p>To make hybrid search queries, we’ll create a function that takes a query, the number of top results, and an alpha parameter to control the weighting between dense and sparse vector search scores.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">hybrid_scale</span><span class="p">(</span><span class="n">dense</span><span class="p">,</span> <span class="n">sparse</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">Hybrid vector scaling using a convex combination
+
+    alpha * dense + (1 - alpha) * sparse
+
+    Args:
+        dense: Array of floats representing
+        sparse: a dict of `indices` and `values`
+        alpha: float between 0 and 1 where 0 == sparse only
+               and 1 == dense only
+    </span><span class="sh">"""</span>
+    <span class="k">if</span> <span class="n">alpha</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">alpha</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">"</span><span class="s">Alpha must be between 0 and 1</span><span class="sh">"</span><span class="p">)</span>
+    <span class="c1"># scale sparse and dense vectors to create hybrid search vecs
+</span>    <span class="n">hsparse</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="sh">'</span><span class="s">indices</span><span class="sh">'</span><span class="p">:</span> <span class="n">sparse</span><span class="p">[</span><span class="sh">'</span><span class="s">indices</span><span class="sh">'</span><span class="p">],</span>
+        <span class="sh">'</span><span class="s">values</span><span class="sh">'</span><span class="p">:</span>  <span class="p">[</span><span class="n">v</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">sparse</span><span class="p">[</span><span class="sh">'</span><span class="s">values</span><span class="sh">'</span><span class="p">]]</span>
+    <span class="p">}</span>
+    <span class="n">hdense</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="o">*</span> <span class="n">alpha</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">dense</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">hdense</span><span class="p">,</span> <span class="n">hsparse</span>
+
+<span class="k">def</span> <span class="nf">search_products</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">top_k</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+    <span class="c1"># Generate sparse query vector
+</span>    <span class="n">sparse_query_vector</span> <span class="o">=</span> <span class="nf">generate_sparse_vector</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+    <span class="c1"># Generate dense query vector
+</span>    <span class="n">dense_query_vector</span> <span class="o">=</span> <span class="nf">generate_dense_vector</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+    <span class="c1"># Calculate hybrid query vector
+</span>    <span class="n">dense_query_vector</span><span class="p">,</span> <span class="n">sparse_query_vector</span> <span class="o">=</span> <span class="nf">hybrid_scale</span><span class="p">(</span><span class="n">dense_query_vector</span><span class="p">,</span> <span class="n">sparse_query_vector</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
+
+    <span class="c1"># Search products using Pinecone
+</span>    <span class="n">results</span> <span class="o">=</span> <span class="n">index</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span>
+        <span class="n">vector</span><span class="o">=</span><span class="n">dense_query_vector</span><span class="p">,</span>
+        <span class="n">sparse_vector</span><span class="o">=</span><span class="n">sparse_query_vector</span><span class="p">,</span>
+        <span class="n">top_k</span><span class="o">=</span><span class="n">top_k</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">results</span>
+</code></pre></div></div>
+
+<p>We can then use this function to search for relevant products in our e-commerce dataset.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span> <span class="o">=</span> <span class="sh">"</span><span class="s">running shoes for women</span><span class="sh">"</span>
+<span class="n">results</span> <span class="o">=</span> <span class="nf">search_products</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">top_k</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="sh">'</span><span class="s">id</span><span class="sh">'</span><span class="p">],</span> <span class="n">result</span><span class="p">[</span><span class="sh">'</span><span class="s">metadata</span><span class="sh">'</span><span class="p">][</span><span class="sh">'</span><span class="s">product_name</span><span class="sh">'</span><span class="p">],</span> <span class="n">result</span><span class="p">[</span><span class="sh">'</span><span class="s">score</span><span class="sh">'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Experimenting with different values for the alpha parameter will help you find the optimal balance between sparse and dense vector search for your specific domain.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In this blog post, we demonstrated how to build a hybrid search system for e-commerce using Pinecone and domain-specific language models. Hybrid search enables us to combine the strengths of both traditional search and vector search, improving search performance and adaptability across diverse domains.</p>
+
+<p>By following the steps and code snippets provided in this post, you can implement your own hybrid search system tailored to your e-commerce website’s specific requirements. Start exploring Pinecone and improve your e-commerce search experience today!</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li><a href="https://colab.research.google.com/github/pinecone-io/examples/blob/master/search/hybrid-search/ecommerce-search/ecommerce-search.ipynb">Ecommerce Search using Hybrid Search Techniques in Pinecone (Google Colab Notebook)</a>: A practical guide showcasing the implementation of e-commerce search using Pinecone’s hybrid search techniques.</li>
+  <li><a href="https://docs.pinecone.io/docs/ecommerce-search">Pinecone Ecommerce Search Documentation</a>: Official Pinecone documentation for building e-commerce search systems.</li>
+  <li><a href="https://colab.research.google.com/github/pinecone-io/examples/blob/master/pinecone/sparse/bm25/bm25-vector-generation.ipynb">BM25 Vector Generation using Pinecone (Google Colab Notebook)</a>: A guide for generating BM25 sparse vectors using Pinecone.</li>
+  <li><a href="https://github.com/pinecone-io/pinecone-text">Pinecone Text Repository on GitHub</a>: A collection of text processing and vector generation resources using Pinecone.</li>
+  <li><a href="https://www.pinecone.io/learn/hybrid-search-intro/">Introduction to Hybrid Search on Pinecone’s Website</a>: An overview of hybrid search, its benefits, and use cases in the context of pinecone’s capabilities.</li>
+</ul>]]></content><author><name>Subramanya N</name></author><category term="Pinecone" /><category term="Hybrid Search" /><category term="E-Commerce" /><category term="Large Language Models" /><category term="Vector Database" /><summary type="html"><![CDATA[Learn how to build a powerful hybrid search system for e-commerce applications by combining traditional information retrieval methods with machine learning models like Language Models (LLMs) and Pinecone, a managed vector database. Discover the benefits of hybrid search for e-commerce, including improved search relevance, personalization, handling long-tail queries, and simpler infrastructure management.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://subramanya.ai/assets/images/pinecone_hybrid_index.jpg" /><media:content medium="image" url="https://subramanya.ai/assets/images/pinecone_hybrid_index.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Demystifying the Shell Scripting: Working with Files and Directories</title><link href="https://subramanya.ai/2023/01/04/demystifying-the-shell-scripting-working-with-files-and-directories/" rel="alternate" type="text/html" title="Demystifying the Shell Scripting: Working with Files and Directories" /><published>2023-01-04T00:00:00+00:00</published><updated>2023-01-04T00:00:00+00:00</updated><id>https://subramanya.ai/2023/01/04/demystifying-the-shell-scripting-working-with-files-and-directories</id><content type="html" xml:base="https://subramanya.ai/2023/01/04/demystifying-the-shell-scripting-working-with-files-and-directories/"><![CDATA[<p>In my previous blog posts, we covered the basics of using the shell, introduced shell scripting for beginners, and explored advanced techniques and best practices. In this blog post, we will focus on working with files and directories in shell scripts. We will discuss common tasks such as creating, copying, moving, and deleting files and directories, as well as reading and writing to files. We will also provide some resources for further learning.</p>
+
+<h2 id="creating-files-and-directories">Creating Files and Directories</h2>
+
+<p>To create a new file in a shell script, you can use the <code class="language-plaintext highlighter-rouge">touch</code> command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">touch </span>new_file.txt
+</code></pre></div></div>
+
+<p>To create a new directory, you can use the <code class="language-plaintext highlighter-rouge">mkdir</code> command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>new_directory
+</code></pre></div></div>
+
+<h2 id="copying-and-moving-files-and-directories">Copying and Moving Files and Directories</h2>
+
+<p>To copy a file, you can use the <code class="language-plaintext highlighter-rouge">cp</code> command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp </span>source_file.txt destination_file.txt
+</code></pre></div></div>
+
+<p>To copy a directory, you can use the <code class="language-plaintext highlighter-rouge">-r</code> (recursive) option:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> <span class="nt">-r</span> source_directory destination_directory
+</code></pre></div></div>
+
+<p>To move a file or directory, you can use the <code class="language-plaintext highlighter-rouge">mv</code> command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mv </span>source_file.txt destination_file.txt
+</code></pre></div></div>
+
+<h2 id="deleting-files-and-directories">Deleting Files and Directories</h2>
+
+<p>To delete a file, you can use the <code class="language-plaintext highlighter-rouge">rm</code> command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">rm </span>file_to_delete.txt
+</code></pre></div></div>
+
+<p>To delete a directory, you can use the <code class="language-plaintext highlighter-rouge">-r</code> (recursive) option:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">rm</span> <span class="nt">-r</span> directory_to_delete
+</code></pre></div></div>
+
+<h2 id="reading-and-writing-to-files">Reading and Writing to Files</h2>
+
+<p>To read the contents of a file, you can use the <code class="language-plaintext highlighter-rouge">cat</code> command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat </span>file_to_read.txt
+</code></pre></div></div>
+
+<p>To write to a file, you can use the <code class="language-plaintext highlighter-rouge">&gt;</code> operator to overwrite the file or the <code class="language-plaintext highlighter-rouge">&gt;&gt;</code> operator to append to the file:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"This is a new line"</span> <span class="o">&gt;</span> file_to_write.txt
+<span class="nb">echo</span> <span class="s2">"This is another new line"</span> <span class="o">&gt;&gt;</span> file_to_write.txt
+</code></pre></div></div>
+
+<p>To read a file line by line, you can use a <code class="language-plaintext highlighter-rouge">while</code> loop with the <code class="language-plaintext highlighter-rouge">read</code> command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+<span class="k">while </span><span class="nv">IFS</span><span class="o">=</span> <span class="nb">read</span> <span class="nt">-r</span> line<span class="p">;</span> <span class="k">do
+  </span><span class="nb">echo</span> <span class="s2">"Line: </span><span class="nv">$line</span><span class="s2">"</span>
+<span class="k">done</span> &lt; file_to_read.txt
+</code></pre></div></div>
+
+<h2 id="searching-for-files-and-directories">Searching for Files and Directories</h2>
+
+<p>To search for files and directories, you can use the <code class="language-plaintext highlighter-rouge">find</code> command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find /path/to/search <span class="nt">-name</span> <span class="s2">"file_pattern"</span>
+</code></pre></div></div>
+
+<p>For example, to find all <code class="language-plaintext highlighter-rouge">.txt</code> files in the <code class="language-plaintext highlighter-rouge">/home/user</code> directory, you can use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find /home/user <span class="nt">-name</span> <span class="s2">"*.txt"</span>
+</code></pre></div></div>
+
+<h2 id="resources">Resources</h2>
+
+<p>To further improve your skills in working with files and directories in shell scripts, here are some resources:</p>
+
+<ul>
+  <li><a href="https://www.tecmint.com/linux-file-management-commands/">File Management Commands in Linux</a>: A comprehensive guide to file management commands in Linux.</li>
+  <li><a href="https://www.howtogeek.com/112674/how-to-find-files-and-folders-in-linux-using-the-command-line/">Linux Find Command Examples</a>: A collection of examples for using the <code class="language-plaintext highlighter-rouge">find</code> command in Linux.</li>
+</ul>
+
+<p>In conclusion, working with files and directories is an essential aspect of shell scripting. By mastering common tasks such as creating, copying, moving, and deleting files and directories, as well as reading and writing to files, you will be well-equipped to handle a wide range of shell scripting tasks.</p>]]></content><author><name>Subramanya N</name></author><category term="Shell Scripting" /><category term="Bash" /><category term="Shell" /><category term="File Management" /><category term="Directory Management" /><summary type="html"><![CDATA[Master the art of working with files and directories in shell scripting to streamline your tasks and improve efficiency. Learn how to create, copy, move, and delete files and directories, as well as read and write to files using practical examples. Discover the power of searching for files and directories with the `find` command. Enhance your shell scripting skills with valuable resources and tutorials, and unlock the full potential of file and directory management in the shell.]]></summary></entry><entry><title type="html">Demystifying the Shell: A Beginner’s Guide</title><link href="https://subramanya.ai/2022/12/28/demystifying-the-shell-a-beginners-guide/" rel="alternate" type="text/html" title="Demystifying the Shell: A Beginner’s Guide" /><published>2022-12-28T00:00:00+00:00</published><updated>2022-12-28T00:00:00+00:00</updated><id>https://subramanya.ai/2022/12/28/demystifying-the-shell-a-beginners-guide</id><content type="html" xml:base="https://subramanya.ai/2022/12/28/demystifying-the-shell-a-beginners-guide/"><![CDATA[<p>The shell is an essential tool for any developer, system administrator, or even a casual computer user. It allows you to interact with your computer’s operating system using text-based commands, giving you more control and flexibility than graphical user interfaces (GUIs). In this blog post, we will explore the basics of using the shell, navigating within it, connecting programs, and some miscellaneous tips and tricks. We will also provide some resources for further learning.</p>
+
+<h2 id="what-is-the-shell">What is the Shell?</h2>
+
+<p>The shell is a command-line interface (CLI) that allows you to interact with your computer’s operating system by typing commands. It is a program that takes your commands, interprets them, and then sends them to the operating system to be executed. There are various types of shells available, such as Bash (Bourne Again SHell), Zsh (Z Shell), and Fish (Friendly Interactive SHell), each with its own unique features and capabilities.</p>
+
+<h2 id="using-the-shell">Using the Shell</h2>
+
+<p>To start using the shell, you need to open a terminal emulator. On Linux and macOS, you can usually find the terminal application in your Applications or Utilities folder. On Windows, you can use the Command Prompt, PowerShell, or install a third-party terminal emulator like Git Bash or Windows Subsystem for Linux (WSL).</p>
+
+<p>Once you have opened the terminal, you can start typing commands. For example, to list the files and directories in your current directory, you can type the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span>
+</code></pre></div></div>
+
+<p>This command will display the contents of your current directory. You can also use flags (options) to modify the behavior of a command. For example, to display the contents of a directory in a more detailed format, you can use the <code class="language-plaintext highlighter-rouge">-l</code> flag:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-l</span>
+</code></pre></div></div>
+
+<h2 id="navigating-in-the-shell">Navigating in the Shell</h2>
+
+<p>Navigating within the shell is quite simple. You can use the <code class="language-plaintext highlighter-rouge">cd</code> (change directory) command to move between directories. For example, to move to the <code class="language-plaintext highlighter-rouge">/home/user/Documents</code> directory, you can type:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /home/user/Documents
+</code></pre></div></div>
+
+<p>To move up one directory level, you can use the <code class="language-plaintext highlighter-rouge">..</code> notation:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ..
+</code></pre></div></div>
+
+<p>You can also use the <code class="language-plaintext highlighter-rouge">pwd</code> (print working directory) command to display the current directory you are in:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">pwd</span>
+</code></pre></div></div>
+
+<h2 id="connecting-programs">Connecting Programs</h2>
+
+<p>In the shell, you can connect multiple programs together using pipes (<code class="language-plaintext highlighter-rouge">|</code>). This allows you to pass the output of one program as input to another program. For example, you can use the <code class="language-plaintext highlighter-rouge">grep</code> command to search for a specific word in a file, and then use the <code class="language-plaintext highlighter-rouge">wc</code> (word count) command to count the number of lines containing that word:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">grep</span> <span class="s1">'search_word'</span> file.txt | <span class="nb">wc</span> <span class="nt">-l</span>
+</code></pre></div></div>
+
+<p>This command will first search for the word ‘search_word’ in the file ‘file.txt’ and then count the number of lines containing that word.</p>
+
+<h2 id="miscellaneous">Miscellaneous</h2>
+
+<p>Here are some miscellaneous tips and tricks for using the shell:</p>
+
+<ul>
+  <li>Use the <code class="language-plaintext highlighter-rouge">history</code> command to view your command history.</li>
+  <li>Use the <code class="language-plaintext highlighter-rouge">clear</code> command to clear the terminal screen.</li>
+  <li>Use the <code class="language-plaintext highlighter-rouge">man</code> command followed by a command name to view the manual page for that command (e.g., <code class="language-plaintext highlighter-rouge">man ls</code>).</li>
+  <li>Use the <code class="language-plaintext highlighter-rouge">TAB</code> key to auto-complete file and directory names.</li>
+  <li>Use the <code class="language-plaintext highlighter-rouge">CTRL + C</code> keyboard shortcut to cancel a running command.</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<p>To further improve your shell skills, here are some resources:</p>
+
+<ul>
+  <li><strong><a href="https://linuxcommand.org/">LinuxCommand.org</a></strong>: This website provides a wealth of information on using the shell, including tutorials, examples, and reference material.</li>
+  <li><strong><a href="https://explainshell.com/">ExplainShell</a></strong>: This is an online tool that allows you to enter a shell command and receive a detailed explanation of what each part of the command does.</li>
+  <li><strong><a href="https://devhints.io/bash">Bash Cheat Sheet</a></strong>: This is a handy reference guide that provides a quick overview of common Bash commands and syntax.</li>
+  <li><strong><a href="https://www.shellcheck.net/">ShellCheck</a></strong>: This is an online tool that can help you find and fix issues in your shell scripts. It provides suggestions and explanations for common mistakes and best practices.</li>
+</ul>
+
+<p>In conclusion, mastering the shell is an essential skill for any computer user. It allows you to interact with your computer’s operating system more efficiently and effectively than using graphical user interfaces. By understanding the basics of using the shell, navigating within it, connecting programs, and learning some miscellaneous tips and tricks, you will be well on your way to becoming a shell expert.</p>]]></content><author><name>Subramanya N</name></author><category term="Bash" /><category term="Shell" /><summary type="html"><![CDATA[Discover the power of the shell, a command-line interface that allows you to interact with your computer's operating system more directly and efficiently. Learn the basics of using the shell, navigating within it, and connecting programs using simple examples. Enhance your skills with miscellaneous tips and resources, including tab completion, command history, keyboard shortcuts, and helpful online tools. Embrace the command line and unlock the full potential of the shell!]]></summary></entry><entry><title type="html">Demystifying the Shell Scripting: A Beginner’s Guide</title><link href="https://subramanya.ai/2022/12/28/demystifying-the-shell-scripting-a-beginners-guide/" rel="alternate" type="text/html" title="Demystifying the Shell Scripting: A Beginner’s Guide" /><published>2022-12-28T00:00:00+00:00</published><updated>2022-12-28T00:00:00+00:00</updated><id>https://subramanya.ai/2022/12/28/demystifying-the-shell-scripting-a-beginners-guide</id><content type="html" xml:base="https://subramanya.ai/2022/12/28/demystifying-the-shell-scripting-a-beginners-guide/"><![CDATA[<p>In my previous blog post, we introduced the basics of using the shell, navigating within it, connecting programs, and some miscellaneous tips and tricks. Now that you have a good understanding of the shell, it’s time to take your skills to the next level by learning shell scripting. Shell scripting allows you to automate tasks, perform complex operations, and create custom commands. In this blog post, we will explore the basics of shell scripting, including variables, control structures, loops, and functions. We will also provide some resources for further learning.</p>
+
+<h2 id="what-is-shell-scripting">What is Shell Scripting?</h2>
+
+<p>Shell scripting is the process of writing a series of commands in a text file (called a script) that can be executed by the shell. These scripts can be used to automate repetitive tasks, perform complex operations, and create custom commands. Shell scripts are typically written in the same language as the shell itself (e.g., Bash, Zsh, or Fish).</p>
+
+<h2 id="creating-a-shell-script">Creating a Shell Script</h2>
+
+<p>To create a shell script, simply create a new text file with the extension <code class="language-plaintext highlighter-rouge">.sh</code> (e.g., <code class="language-plaintext highlighter-rouge">myscript.sh</code>). The first line of the script should be a “shebang” (<code class="language-plaintext highlighter-rouge">#!</code>) followed by the path to the shell interpreter (e.g., <code class="language-plaintext highlighter-rouge">#!/bin/bash</code> for Bash scripts). This line tells the operating system which interpreter to use when executing the script.</p>
+
+<p>Here’s an example of a simple shell script that prints “Hello, World!” to the console:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+<span class="nb">echo</span> <span class="s2">"Hello, World!"</span>
+</code></pre></div></div>
+
+<p>To execute the script, you need to make it executable by changing its permissions using the <code class="language-plaintext highlighter-rouge">chmod</code> command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod</span> +x myscript.sh
+</code></pre></div></div>
+
+<p>Now you can run the script by typing <code class="language-plaintext highlighter-rouge">./myscript.sh</code> in the terminal.</p>
+
+<h2 id="variables">Variables</h2>
+
+<p>Variables in shell scripts are used to store values that can be referenced and manipulated throughout the script. To create a variable, use the <code class="language-plaintext highlighter-rouge">=</code> operator without any spaces:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">my_variable</span><span class="o">=</span><span class="s2">"Hello, World!"</span>
+</code></pre></div></div>
+
+<p>To reference the value of a variable, use the <code class="language-plaintext highlighter-rouge">$</code> symbol:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="nv">$my_variable</span>
+</code></pre></div></div>
+
+<h2 id="control-structures">Control Structures</h2>
+
+<p>Control structures, such as <code class="language-plaintext highlighter-rouge">if</code> statements and <code class="language-plaintext highlighter-rouge">case</code> statements, allow you to add conditional logic to your shell scripts. Here’s an example of an <code class="language-plaintext highlighter-rouge">if</code> statement:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+<span class="nv">number</span><span class="o">=</span>5
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$number</span> <span class="nt">-gt</span> 3 <span class="o">]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"The number is greater than 3."</span>
+<span class="k">else
+  </span><span class="nb">echo</span> <span class="s2">"The number is not greater than 3."</span>
+<span class="k">fi</span>
+</code></pre></div></div>
+
+<p>In this example, the script checks if the value of the <code class="language-plaintext highlighter-rouge">number</code> variable is greater than 3 and prints a message accordingly.</p>
+
+<h2 id="loops">Loops</h2>
+
+<p>Loops allow you to execute a block of code multiple times. There are two main types of loops in shell scripting: <code class="language-plaintext highlighter-rouge">for</code> loops and <code class="language-plaintext highlighter-rouge">while</code> loops. Here’s an example of a <code class="language-plaintext highlighter-rouge">for</code> loop:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+<span class="k">for </span>i <span class="k">in</span> <span class="o">{</span>1..5<span class="o">}</span><span class="p">;</span> <span class="k">do
+  </span><span class="nb">echo</span> <span class="s2">"Iteration </span><span class="nv">$i</span><span class="s2">"</span>
+<span class="k">done</span>
+</code></pre></div></div>
+
+<p>This script will print the message “Iteration X” five times, with X being the current iteration number.</p>
+
+<h2 id="functions">Functions</h2>
+
+<p>Functions are reusable blocks of code that can be called with a specific set of arguments. To create a function, use the <code class="language-plaintext highlighter-rouge">function</code> keyword followed by the function name and a pair of parentheses:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+<span class="k">function </span>greet<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">echo</span> <span class="s2">"Hello, </span><span class="nv">$1</span><span class="s2">!"</span>
+<span class="o">}</span>
+
+greet <span class="s2">"World"</span>
+</code></pre></div></div>
+
+<p>In this example, the <code class="language-plaintext highlighter-rouge">greet</code> function takes one argument (<code class="language-plaintext highlighter-rouge">$1</code>) and prints a greeting message using that argument.</p>
+
+<h2 id="resources">Resources</h2>
+
+<p>To further improve your shell scripting skills, here are some resources:</p>
+
+<ul>
+  <li><a href="https://www.shellscript.sh/">Shell Scripting Tutorial</a>: A comprehensive tutorial covering all aspects of shell scripting.</li>
+  <li><a href="https://tldp.org/LDP/Bash-Beginners-Guide/html/index.html">Bash Guide for Beginners</a>: A beginner-friendly guide to Bash scripting.</li>
+  <li><a href="https://tldp.org/LDP/abs/html/index.html">Advanced Bash-Scripting Guide</a>: A more advanced guide for those looking to deepen their understanding of Bash scripting.</li>
+</ul>
+
+<p>In conclusion, shell scripting is a powerful tool that allows you to automate tasks, perform complex operations, and create custom commands. By understanding the basics of shell scripting, including variables, control structures, loops, and functions, you will be well on your way to becoming a shell scripting expert.</p>]]></content><author><name>Subramanya N</name></author><category term="Shell Scripting" /><category term="Bash" /><category term="Shell" /><summary type="html"><![CDATA[Shell scripting is a powerful tool that enables users to automate tasks, perform complex operations, and create custom commands. In this beginner's guide, we will explore the basics of shell scripting, including creating and executing scripts, working with variables, control structures, loops, and functions. By understanding these fundamental concepts, you will be well on your way to mastering shell scripting and unlocking its full potential.]]></summary></entry><entry><title type="html">Demystifying the Shell Scripting: Advanced Techniques and Best Practices</title><link href="https://subramanya.ai/2022/12/28/demystifying-the-shell-scripting-advanced-techniques-and-best-practices/" rel="alternate" type="text/html" title="Demystifying the Shell Scripting: Advanced Techniques and Best Practices" /><published>2022-12-28T00:00:00+00:00</published><updated>2022-12-28T00:00:00+00:00</updated><id>https://subramanya.ai/2022/12/28/demystifying-the-shell-scripting-advanced-techniques-and-best-practices</id><content type="html" xml:base="https://subramanya.ai/2022/12/28/demystifying-the-shell-scripting-advanced-techniques-and-best-practices/"><![CDATA[<p>In my previous blog posts, we covered the basics of using the shell and introduced shell scripting for beginners. Now that you have a solid foundation in shell scripting, it’s time to explore some advanced techniques and best practices that will help you write more efficient, robust, and maintainable scripts. In this blog post, we will discuss error handling, command substitution, process management, and best practices for writing shell scripts. We will also provide some resources for further learning.</p>
+
+<h2 id="error-handling">Error Handling</h2>
+
+<p>Error handling is an essential aspect of writing robust shell scripts. By default, shell scripts continue to execute subsequent commands even if an error occurs. To change this behavior and make your script exit immediately if a command fails, you can use the <code class="language-plaintext highlighter-rouge">set -e</code> option:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="nb">set</span> <span class="nt">-e</span>
+
+<span class="c"># Your script here</span>
+</code></pre></div></div>
+
+<p>You can also use the <code class="language-plaintext highlighter-rouge">trap</code> command to define custom error handling behavior. For example, you can create a cleanup function that will be called if your script exits unexpectedly:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+<span class="k">function </span>cleanup<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">echo</span> <span class="s2">"Cleaning up before exiting..."</span>
+  <span class="c"># Your cleanup code here</span>
+<span class="o">}</span>
+
+<span class="nb">trap </span>cleanup EXIT
+
+<span class="c"># Your script here</span>
+</code></pre></div></div>
+
+<h2 id="command-substitution">Command Substitution</h2>
+
+<p>Command substitution allows you to capture the output of a command and store it in a variable. This can be useful for processing the output of a command within your script. There are two ways to perform command substitution:</p>
+
+<ol>
+  <li>Using backticks (` `):</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">output</span><span class="o">=</span><span class="sb">`</span><span class="nb">ls</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Using <code class="language-plaintext highlighter-rouge">$()</code>:</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">output</span><span class="o">=</span><span class="si">$(</span><span class="nb">ls</span><span class="si">)</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">$()</code> syntax is preferred because it is more readable and can be easily nested.</p>
+
+<h2 id="process-management">Process Management</h2>
+
+<p>Shell scripts often need to manage background processes, such as starting, stopping, or monitoring them. Here are some useful commands for process management:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">&amp;</code>: Run a command in the background by appending an ampersand (<code class="language-plaintext highlighter-rouge">&amp;</code>) to the command.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>long_running_command &amp;
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">wait</code>: Wait for a background process to complete before continuing with the script.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>long_running_command &amp;
+<span class="nb">wait</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">kill</code>: Terminate a process by sending a signal to it.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">kill</span> <span class="nt">-9</span> process_id
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">ps</code>: List running processes and their process IDs.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ps aux
+</code></pre></div></div>
+
+<h2 id="best-practices">Best Practices</h2>
+
+<p>Here are some best practices for writing shell scripts:</p>
+
+<ul>
+  <li>Use meaningful variable and function names.</li>
+  <li>Add comments to explain complex or non-obvious code.</li>
+  <li>Use indentation and whitespace to improve readability.</li>
+  <li>Keep your scripts modular by breaking them into smaller functions.</li>
+  <li>Use the <code class="language-plaintext highlighter-rouge">local</code> keyword to limit the scope of variables within functions.</li>
+  <li>Always quote your variables to prevent issues with spaces and special characters.</li>
+  <li>Use the <code class="language-plaintext highlighter-rouge">[[ ]]</code> syntax for conditional expressions, as it is more robust than <code class="language-plaintext highlighter-rouge">[ ]</code>.</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<p>To further improve your shell scripting skills, here are some resources:</p>
+
+<ul>
+  <li><a href="https://google.github.io/styleguide/shellguide.html">Google Shell Style Guide</a>: A comprehensive style guide for writing shell scripts, created by Google.</li>
+  <li><a href="https://www.shellcheck.net/">ShellCheck</a>: A static analysis tool for shell scripts that can help you identify and fix potential issues in your code.</li>
+  <li><a href="https://github.com/alebcay/awesome-shell">Awesome Shell</a>: A curated list of awesome command-line frameworks, toolkits, guides, and other resources for shell scripting.</li>
+</ul>
+
+<p>In conclusion, mastering advanced techniques and best practices in shell scripting will help you write more efficient, robust, and maintainable scripts. By understanding error handling, command substitution, process management, and following best practices, you will be well on your way to becoming a shell scripting expert.</p>]]></content><author><name>Subramanya N</name></author><category term="Shell Scripting" /><category term="Bash" /><category term="Shell" /><category term="Error Handling" /><category term="Command Substitution" /><category term="Process Management" /><category term="Best Practices" /><summary type="html"><![CDATA[Building upon the fundamentals of shell scripting, this guide delves into advanced techniques and best practices that will elevate your scripting skills. We will explore error handling, command substitution, process management, and share valuable tips for writing efficient, robust, and maintainable scripts. By mastering these advanced concepts, you will be well-equipped to tackle complex scripting challenges and harness the full power of shell scripting.]]></summary></entry><entry><title type="html">Version Control (Git)</title><link href="https://subramanya.ai/2022/12/21/version-control/" rel="alternate" type="text/html" title="Version Control (Git)" /><published>2022-12-21T00:00:00+00:00</published><updated>2022-12-21T00:00:00+00:00</updated><id>https://subramanya.ai/2022/12/21/version-control</id><content type="html" xml:base="https://subramanya.ai/2022/12/21/version-control/"><![CDATA[<p>Version control systems (VCSs) are tools used to track changes to source code (or other collections of files and folders). As the name implies, these tools help maintain a history of changes; furthermore, they facilitate collaboration. VCSs track changes to a folder and its contents in a series of snapshots, where
+each snapshot encapsulates the entire state of files/folders within a top-level directory. VCSs also maintain metadata like who created each snapshot, messages associated with each snapshot, and so on.</p>
+
+<p>Why is version control useful? Even when you’re working by yourself, it can let you look at old snapshots of a project, keep a log of why certain changes were
+made, work on parallel branches of development, and much more. When working with others, it’s an invaluable tool for seeing what other people have changed, as well as resolving conflicts in concurrent development.</p>
+
+<p>Modern VCSs also let you easily (and often automatically) answer questions like:</p>
+
+<ul>
+  <li>Who wrote this module?</li>
+  <li>When was this particular line of this particular file edited? By whom? Why was it edited?</li>
+  <li>Over the last 1000 revisions, when/why did a particular unit test stop working?</li>
+</ul>
+
+<p>While other VCSs exist, <strong>Git</strong> is the de facto standard for version control.
+This <a href="https://xkcd.com/1597/">XKCD comic</a> captures Git’s reputation:</p>
+
+<p><img src="https://imgs.xkcd.com/comics/git.png" alt="xkcd 1597" /></p>
+
+<p>Because Git’s interface is a leaky abstraction, learning Git top-down (starting with its interface / command-line interface) can lead to a lot of confusion. It’s possible to memorize a handful of commands and think of them as magic incantations, and follow the approach in the comic above whenever anything goes wrong.</p>
+
+<p>While Git admittedly has an ugly interface, its underlying design and ideas are beautiful. While an ugly interface has to be <em>memorized</em>, a beautiful design can be <em>understood</em>. For this reason, we give a bottom-up explanation of Git, starting with its data model and later covering the command-line interface. Once the data model is understood, the commands can be better understood in terms of how they manipulate the underlying data model.</p>
+
+<h1 id="gits-data-model">Git’s data model</h1>
+
+<p>There are many ad-hoc approaches you could take to version control. Git has a well-thought-out model that enables all the nice features of version control, like maintaining history, supporting branches, and enabling collaboration.</p>
+
+<h2 id="snapshots">Snapshots</h2>
+
+<p>Git models the history of a collection of files and folders within some top-level directory as a series of snapshots. In Git terminology, a file is called a “blob”, and it’s just a bunch of bytes. A directory is called a “tree”, and it maps names to blobs or trees (so directories can contain other directories). A snapshot is the top-level tree that is being tracked. For example, we might have a tree as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;root&gt; (tree)
+|
++- foo (tree)
+|  |
+|  + bar.txt (blob, contents = "hello world")
+|
++- baz.txt (blob, contents = "git is wonderful")
+</code></pre></div></div>
+
+<p>The top-level tree contains two elements, a tree “foo” (that itself contains one element, a blob “bar.txt”), and a blob “baz.txt”.</p>
+
+<h2 id="modeling-history-relating-snapshots">Modeling history: relating snapshots</h2>
+
+<p>How should a version control system relate snapshots? One simple model would be to have a linear history. A history would be a list of snapshots in time-order. For many reasons, Git doesn’t use a simple model like this.</p>
+
+<p>In Git, a history is a directed acyclic graph (DAG) of snapshots. That may sound like a fancy math word, but don’t be intimidated. All this means is that each snapshot in Git refers to a set of “parents”, the snapshots that preceded it. It’s a set of parents rather than a single parent (as would be the case in a linear history) because a snapshot might descend from multiple parents, for example, due to combining (merging) two parallel branches of development.</p>
+
+<p>Git calls these snapshots “commit”s. Visualizing a commit history might look something like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>o &lt;-- o &lt;-- o &lt;-- o
+            ^
+             \
+              --- o &lt;-- o
+</code></pre></div></div>
+
+<p>In the ASCII art above, the <code class="language-plaintext highlighter-rouge">o</code>s correspond to individual commits (snapshots). The arrows point to the parent of each commit (it’s a “comes before” relation, not “comes after”). After the third commit, the history branches into two separate branches. This might correspond to, for example, two separate features being developed in parallel, independently from each other. In the future, these branches may be merged to create a new snapshot that incorporates both of the features, producing a new history that looks like this, with the newly created merge commit shown in bold:</p>
+
+<pre class="highlight">
+<code>
+o &lt;-- o &lt;-- o &lt;-- o &lt;---- <strong>o</strong>
+            ^            /
+             \          v
+              --- o &lt;-- o
+</code>
+</pre>
+
+<p>Commits in Git are immutable. This doesn’t mean that mistakes can’t be corrected, however; it’s just that “edits” to the commit history are actually creating entirely new commits, and references (see below) are updated to point to the new ones.</p>
+
+<h2 id="data-model-as-pseudocode">Data model, as pseudocode</h2>
+
+<p>It may be instructive to see Git’s data model written down in pseudocode:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// a file is a bunch of bytes
+type blob = array&lt;byte&gt;
+
+// a directory contains named files and directories
+type tree = map&lt;string, tree | blob&gt;
+
+// a commit has parents, metadata, and the top-level tree
+type commit = struct {
+    parents: array&lt;commit&gt;
+    author: string
+    message: string
+    snapshot: tree
+}
+</code></pre></div></div>
+
+<p>It’s a clean, simple model of history.</p>
+
+<h2 id="objects-and-content-addressing">Objects and content-addressing</h2>
+
+<p>An “object” is a blob, tree, or commit:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type object = blob | tree | commit
+</code></pre></div></div>
+
+<p>In Git data store, all objects are content-addressed by their <a href="https://en.wikipedia.org/wiki/SHA-1">SHA-1
+hash</a>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>objects = map&lt;string, object&gt;
+
+def store(object):
+    id = sha1(object)
+    objects[id] = object
+
+def load(id):
+    return objects[id]
+</code></pre></div></div>
+
+<p>Blobs, trees, and commits are unified in this way: they are all objects. When they reference other objects, they don’t actually <em>contain</em> them in their on-disk representation, but have a reference to them by their hash.</p>
+
+<p>For example, the tree for the example directory structure <a href="#snapshots">above</a>
+(visualized using <code class="language-plaintext highlighter-rouge">git cat-file -p 698281bc680d1995c5f4caaf3359721a5a58d48d</code>),
+looks like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100644 blob 4448adbf7ecd394f42ae135bbeed9676e894af85    baz.txt
+040000 tree c68d233a33c5c06e0340e4c224f0afca87c8ce87    foo
+</code></pre></div></div>
+
+<p>The tree itself contains pointers to its contents, <code class="language-plaintext highlighter-rouge">baz.txt</code> (a blob) and <code class="language-plaintext highlighter-rouge">foo</code>
+(a tree). If we look at the contents addressed by the hash corresponding to
+baz.txt with <code class="language-plaintext highlighter-rouge">git cat-file -p 4448adbf7ecd394f42ae135bbeed9676e894af85</code>, we get
+the following:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git is wonderful
+</code></pre></div></div>
+
+<h2 id="references">References</h2>
+
+<p>Now, all snapshots can be identified by their SHA-1 hashes. That’s inconvenient, because humans aren’t good at remembering strings of 40 hexadecimal characters.</p>
+
+<p>Git’s solution to this problem is human-readable names for SHA-1 hashes, called “references”. References are pointers to commits. Unlike objects, which are
+immutable, references are mutable (can be updated to point to a new commit). For example, the <code class="language-plaintext highlighter-rouge">master</code> reference usually points to the latest commit in the
+main branch of development.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>references = map&lt;string, string&gt;
+
+def update_reference(name, id):
+    references[name] = id
+
+def read_reference(name):
+    return references[name]
+
+def load_reference(name_or_id):
+    if name_or_id in references:
+        return load(references[name_or_id])
+    else:
+        return load(name_or_id)
+</code></pre></div></div>
+
+<p>With this, Git can use human-readable names like “master” to refer to a particular snapshot in the history, instead of a long hexadecimal string.</p>
+
+<p>One detail is that we often want a notion of “where we currently are” in the history, so that when we take a new snapshot, we know what it is relative to (how we set the <code class="language-plaintext highlighter-rouge">parents</code> field of the commit). In Git, that “where we currently are” is a special reference called “HEAD”.</p>
+
+<h2 id="repositories">Repositories</h2>
+
+<p>Finally, we can define what (roughly) is a Git <em>repository</em>: it is the data <code class="language-plaintext highlighter-rouge">objects</code> and <code class="language-plaintext highlighter-rouge">references</code>.</p>
+
+<p>On disk, all Git stores are objects and references: that’s all there is to Git’s data model. All <code class="language-plaintext highlighter-rouge">git</code> commands map to some manipulation of the commit DAG by
+adding objects and adding/updating references.</p>
+
+<p>Whenever you’re typing in any command, think about what manipulation the command is making to the underlying graph data structure. Conversely, if you’re trying to make a particular kind of change to the commit DAG, e.g. “discard uncommitted changes and make the ‘master’ ref point to commit <code class="language-plaintext highlighter-rouge">5d83f9e</code>”, there’s probably a command to do it (e.g. in this case, <code class="language-plaintext highlighter-rouge">git checkout master; git reset --hard 5d83f9e</code>).</p>
+
+<h1 id="staging-area">Staging area</h1>
+
+<p>This is another concept that’s orthogonal to the data model, but it’s a part of the interface to create commits.</p>
+
+<p>One way you might imagine implementing snapshotting as described above is to have a “create snapshot” command that creates a new snapshot based on the <em>current state</em> of the working directory. Some version control tools work like this, but not Git. We want clean snapshots, and it might not always be ideal to make a snapshot from the current state. For example, imagine a scenario where you’ve implemented two separate features, and you want to create two separate commits, where the first introduces the first feature, and the next introduces the second feature. Or imagine a scenario where you have debugging print statements added all over your code, along with a bugfix; you want to commit the bugfix while discarding all the print statements.</p>
+
+<p>Git accommodates such scenarios by allowing you to specify which modifications should be included in the next snapshot through a mechanism called the “staging area”.</p>
+
+<h1 id="git-command-line-interface">Git command-line interface</h1>
+
+<p>To avoid duplicating information, we’re not going to explain the commands below in detail. See the highly recommended <a href="https://git-scm.com/book/en/v2">Pro Git</a> for more information.</p>
+
+<h2 id="basics">Basics</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">git init</code> command initializes a new Git repository, with repository metadata being stored in the <code class="language-plaintext highlighter-rouge">.git</code> directory:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">mkdir </span>myproject
+<span class="gp">$</span><span class="w"> </span><span class="nb">cd </span>myproject
+<span class="gp">$</span><span class="w"> </span>git init
+<span class="go">Initialized empty Git repository in .git
+</span><span class="gp">$</span><span class="w"> </span>git status
+<span class="go">On branch master
+No commits yet
+nothing to commit (create/copy files and use "git add" to track)
+</span></code></pre></div></div>
+
+<p>How do we interpret this output? “No commits yet” basically means our version
+history is empty. Let’s fix that.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="s2">"hello, git"</span> <span class="o">&gt;</span> hello.txt
+<span class="gp">$</span><span class="w"> </span>git add hello.txt
+<span class="gp">$</span><span class="w"> </span>git status
+<span class="go">On branch master
+No commits yet
+Changes to be committed:
+</span><span class="gp">  (use "git rm --cached &lt;file&gt;</span>...<span class="s2">" to unstage)
+</span><span class="go">        new file:   hello.txt
+</span><span class="gp">$</span><span class="w"> </span>git commit <span class="nt">-m</span> <span class="s1">'Initial commit'</span>
+<span class="go">[master (root-commit) 4515d17] Initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.txt
+</span></code></pre></div></div>
+
+<p>With this, we’ve <code class="language-plaintext highlighter-rouge">git add</code>ed a file to the staging area, and then <code class="language-plaintext highlighter-rouge">git commit</code>ed that change, adding a simple commit message “Initial commit”. If we didn’t specify a <code class="language-plaintext highlighter-rouge">-m</code> option, Git would open our text editor to allow us type a commit message.</p>
+
+<p>Now that we have a non-empty version history, we can visualize the history. Visualizing the history as a DAG can be especially helpful in understanding the current status of the repo and connecting it with your understanding of the Git data model.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">git log</code> command visualizes history. By default, it shows a flattened version, which hides the graph structure. If you use a command like <code class="language-plaintext highlighter-rouge">git log --all --graph --decorate</code>, it will show you the full version history of the repository, visualized in graph form.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>git log <span class="nt">--all</span> <span class="nt">--graph</span> <span class="nt">--decorate</span>
+<span class="gp">* commit 4515d17a167bdef0a91ee7d50d75b12c9c2652aa (HEAD -&gt;</span><span class="w"> </span>master<span class="o">)</span>
+<span class="gp">  Author: Subramanya N &lt;snagabhushan@umass.edu&gt;</span><span class="w">
+</span><span class="go">  Date: Tue Dec 21 22:18:36 2020 -0500
+      Initial commit
+</span></code></pre></div></div>
+
+<p>This doesn’t look all that graph-like, because it only contains a single node. Let’s make some more changes, author a new commit, and visualize the history once more.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="s2">"another line"</span> <span class="o">&gt;&gt;</span> hello.txt
+<span class="gp">$</span><span class="w"> </span>git status
+<span class="go">On branch master
+Changes not staged for commit:
+</span><span class="gp">  (use "git add &lt;file&gt;</span>...<span class="s2">" to update what will be committed)
+</span><span class="gp">  (use "git checkout -- &lt;file&gt;</span><span class="s2">..."</span> to discard changes <span class="k">in </span>working directory<span class="o">)</span>
+<span class="go">        modified:   hello.txt
+no changes added to commit (use "git add" and/or "git commit -a")
+</span><span class="gp">$</span><span class="w"> </span>git add hello.txt
+<span class="gp">$</span><span class="w"> </span>git status
+<span class="go">On branch master
+Changes to be committed:
+</span><span class="gp">  (use "git reset HEAD &lt;file&gt;</span>...<span class="s2">" to unstage)
+</span><span class="go">        modified:   hello.txt
+</span><span class="gp">$</span><span class="w"> </span>git commit <span class="nt">-m</span> <span class="s1">'Add a line'</span>
+<span class="go">[master 35f60a8] Add a line
+ 1 file changed, 1 insertion(+)
+</span></code></pre></div></div>
+
+<p>Now, if we visualize the history again, we’ll see some of the graph structure:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* commit 35f60a825be0106036dd2fbc7657598eb7b04c67 (HEAD -&gt; master)
+| Author: Subramanya N &lt;snagabhushan@umass.edu&gt;
+| Date:   Tue Dec 21 22:26:20 2020 -0500
+|     Add a line
+* commit 4515d17a167bdef0a91ee7d50d75b12c9c2652aa
+  Author: Subramanya N &lt;snagabhushan@umass.edu&gt;
+  Date: Tue Dec 21 22:18:36 2020 -0500
+      Initial commit
+</code></pre></div></div>
+
+<p>Also, note that it shows the current HEAD, along with the current branch
+(master).</p>
+
+<p>We can look at old versions using the <code class="language-plaintext highlighter-rouge">git checkout</code> command.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>git checkout 4515d17  <span class="c"># previous commit hash; yours will be different</span>
+<span class="go">Note: checking out '4515d17'.
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+</span><span class="gp">  git checkout -b &lt;new-branch-name&gt;</span><span class="w">
+</span><span class="go">HEAD is now at 4515d17 Initial commit
+</span><span class="gp">$</span><span class="w"> </span><span class="nb">cat </span>hello.txt
+<span class="go">hello, git
+</span><span class="gp">$</span><span class="w"> </span>git checkout master
+<span class="go">Previous HEAD position was 4515d17 Initial commit
+Switched to branch 'master'
+</span><span class="gp">$</span><span class="w"> </span><span class="nb">cat </span>hello.txt
+<span class="go">hello, git
+another line
+</span></code></pre></div></div>
+
+<p>Git can show you how files have evolved (differences, or diffs) using the <code class="language-plaintext highlighter-rouge">git
+diff</code> command:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>git diff 4515d17 hello.txt
+<span class="go">diff --git c/hello.txt w/hello.txt
+index 94bab17..f0013b2 100644
+--- c/hello.txt
++++ w/hello.txt
+@@ -1 +1,2 @@
+ hello, git
+ +another line
+</span></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">git help &lt;command&gt;</code>: get help for a git command</li>
+  <li><code class="language-plaintext highlighter-rouge">git init</code>: creates a new git repo, with data stored in the <code class="language-plaintext highlighter-rouge">.git</code> directory</li>
+  <li><code class="language-plaintext highlighter-rouge">git status</code>: tells you what’s going on</li>
+  <li><code class="language-plaintext highlighter-rouge">git add &lt;filename&gt;</code>: adds files to staging area</li>
+  <li><code class="language-plaintext highlighter-rouge">git commit</code>: creates a new commit
+    <ul>
+      <li>Write <a href="https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">good commit messages</a>!</li>
+      <li>Even more reasons to write <a href="https://chris.beams.io/posts/git-commit/">good commit messages</a>!</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">git log</code>: shows a flattened log of history</li>
+  <li><code class="language-plaintext highlighter-rouge">git log --all --graph --decorate</code>: visualizes history as a DAG</li>
+  <li><code class="language-plaintext highlighter-rouge">git diff &lt;filename&gt;</code>: show changes you made relative to the staging area</li>
+  <li><code class="language-plaintext highlighter-rouge">git diff &lt;revision&gt; &lt;filename&gt;</code>: shows differences in a file between snapshots</li>
+  <li><code class="language-plaintext highlighter-rouge">git checkout &lt;revision&gt;</code>: updates HEAD and current branch</li>
+</ul>
+
+<h2 id="branching-and-merging">Branching and merging</h2>
+
+<p>Branching allows you to “fork” version history. It can be helpful for working on independent features or bug fixes in parallel. The <code class="language-plaintext highlighter-rouge">git branch</code> command can be used to create new branches; <code class="language-plaintext highlighter-rouge">git checkout -b &lt;branch name&gt;</code> creates and branch and checks it out.</p>
+
+<p>Merging is the opposite of branching: it allows you to combine forked version histories, e.g. merging a feature branch back into master. The <code class="language-plaintext highlighter-rouge">git merge</code> command is used for merging.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">git branch</code>: shows branches</li>
+  <li><code class="language-plaintext highlighter-rouge">git branch &lt;name&gt;</code>: creates a branch</li>
+  <li><code class="language-plaintext highlighter-rouge">git checkout -b &lt;name&gt;</code>: creates a branch and switches to it
+    <ul>
+      <li>same as <code class="language-plaintext highlighter-rouge">git branch &lt;name&gt;; git checkout &lt;name&gt;</code></li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">git merge &lt;revision&gt;</code>: merges into current branch</li>
+  <li><code class="language-plaintext highlighter-rouge">git mergetool</code>: use a fancy tool to help resolve merge conflicts</li>
+  <li><code class="language-plaintext highlighter-rouge">git rebase</code>: rebase set of patches onto a new base</li>
+</ul>
+
+<h2 id="remotes">Remotes</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">git remote</code>: list remotes</li>
+  <li><code class="language-plaintext highlighter-rouge">git remote add &lt;name&gt; &lt;url&gt;</code>: add a remote</li>
+  <li><code class="language-plaintext highlighter-rouge">git push &lt;remote&gt; &lt;local branch&gt;:&lt;remote branch&gt;</code>: send objects to remote, and update remote reference</li>
+  <li><code class="language-plaintext highlighter-rouge">git branch --set-upstream-to=&lt;remote&gt;/&lt;remote branch&gt;</code>: set up correspondence between local and remote branch</li>
+  <li><code class="language-plaintext highlighter-rouge">git fetch</code>: retrieve objects/references from a remote</li>
+  <li><code class="language-plaintext highlighter-rouge">git pull</code>: same as <code class="language-plaintext highlighter-rouge">git fetch; git merge</code></li>
+  <li><code class="language-plaintext highlighter-rouge">git clone</code>: download repository from remote</li>
+</ul>
+
+<h2 id="undo">Undo</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">git commit --amend</code>: edit a commit’s contents/message</li>
+  <li><code class="language-plaintext highlighter-rouge">git reset HEAD &lt;file&gt;</code>: unstage a file</li>
+  <li><code class="language-plaintext highlighter-rouge">git checkout -- &lt;file&gt;</code>: discard changes</li>
+</ul>
+
+<h1 id="advanced-git">Advanced Git</h1>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">git config</code>: Git is <a href="https://git-scm.com/docs/git-config">highly customizable</a></li>
+  <li><code class="language-plaintext highlighter-rouge">git clone --depth=1</code>: shallow clone, without entire version history</li>
+  <li><code class="language-plaintext highlighter-rouge">git add -p</code>: interactive staging</li>
+  <li><code class="language-plaintext highlighter-rouge">git rebase -i</code>: interactive rebasing</li>
+  <li><code class="language-plaintext highlighter-rouge">git blame</code>: show who last edited which line</li>
+  <li><code class="language-plaintext highlighter-rouge">git stash</code>: temporarily remove modifications to working directory</li>
+  <li><code class="language-plaintext highlighter-rouge">git bisect</code>: binary search history (e.g. for regressions)</li>
+  <li><code class="language-plaintext highlighter-rouge">.gitignore</code>: <a href="https://git-scm.com/docs/gitignore">specify</a> intentionally untracked files to ignore</li>
+</ul>
+
+<h1 id="miscellaneous">Miscellaneous</h1>
+
+<ul>
+  <li><strong>GUIs</strong>: there are many <a href="https://git-scm.com/downloads/guis">GUI clients</a>
+out there for Git. We personally don’t use them and use the command-line
+interface instead.</li>
+  <li><strong>Shell integration</strong>: it’s super handy to have a Git status as part of your
+shell prompt (<a href="https://github.com/olivierverdier/zsh-git-prompt">zsh</a>,
+<a href="https://github.com/magicmonty/bash-git-prompt">bash</a>). Often included in
+frameworks like <a href="https://github.com/ohmyzsh/ohmyzsh">Oh My Zsh</a>.</li>
+  <li><strong>Editor integration</strong>: similarly to the above, handy integrations with many
+features. <a href="https://github.com/tpope/vim-fugitive">fugitive.vim</a> is the standard
+one for Vim.</li>
+  <li><strong>Workflows</strong>: we taught you the data model, plus some basic commands; we
+didn’t tell you what practices to follow when working on big projects (and
+there are <a href="https://nvie.com/posts/a-successful-git-branching-model/">many</a>
+<a href="https://www.endoflineblog.com/gitflow-considered-harmful">different</a>
+<a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">approaches</a>).</li>
+  <li><strong>GitHub</strong>: Git is not GitHub. GitHub has a specific way of contributing code
+to other projects, called <a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests">pull
+requests</a>.</li>
+  <li><strong>Other Git providers</strong>: GitHub is not special: there are many Git repository
+hosts, like <a href="https://about.gitlab.com/">GitLab</a> and
+<a href="https://bitbucket.org/">BitBucket</a>.</li>
+</ul>
+
+<h1 id="resources">Resources</h1>
+
+<ul>
+  <li><a href="https://git-scm.com/book/en/v2">Pro Git</a> is <strong>highly recommended reading</strong>.
+Going through Chapters 1–5 should teach you most of what you need to use Git
+proficiently, now that you understand the data model. The later chapters have
+some interesting, advanced material.</li>
+  <li><a href="https://ohshitgit.com/">Oh Shit, Git!?!</a> is a short guide on how to recover
+from some common Git mistakes.</li>
+  <li><a href="https://eagain.net/articles/git-for-computer-scientists/">Git for Computer
+Scientists</a> is a
+short explanation of Git’s data model, with less pseudocode and more fancy
+diagrams than these lecture notes.</li>
+  <li><a href="https://jwiegley.github.io/git-from-the-bottom-up/">Git from the Bottom Up</a>
+is a detailed explanation of Git’s implementation details beyond just the data
+model, for the curious.</li>
+  <li><a href="https://smusamashah.github.io/blog/2017/10/14/explain-git-in-simple-words">How to explain git in simple
+words</a></li>
+  <li><a href="https://learngitbranching.js.org/">Learn Git Branching</a> is a browser-based
+game that teaches you Git.</li>
+</ul>]]></content><author><name>Subramanya N</name></author><category term="Git" /><category term="Version Control" /><summary type="html"><![CDATA[How to use version control _properly_, and take advantage of it to save you from disaster, collaborate with others, and quickly find and isolate problematic changes. No more `rm -rf; git clone`. No more merge conflicts (well, fewer of them at least). No more huge blocks of commented-out code. No more fretting over how to find what broke your code. No more "oh no, did we delete the working code?!".]]></summary></entry></feed>

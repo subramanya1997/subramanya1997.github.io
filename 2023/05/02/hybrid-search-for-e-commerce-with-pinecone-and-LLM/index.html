@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hybrid Search for E-Commerce with Pinecone and LLMs | Subramanya N</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Welcome to my personal website, a space where I blog and share my musings on academic and professional topics. Dive in to explore my intellectual journey and gain insights from my experiences in various fields!">
+    <meta name="theme-color" content="#555555">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Hybrid Search for E-Commerce with Pinecone and LLMs">
+    <meta property="og:description" content="Learn how to build a powerful hybrid search system for e-commerce applications by combining traditional information retrieval methods with machine learning m...">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://subramanya.ai/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/">
+    <meta property="og:site_name" content="Subramanya N">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hybrid Search for E-Commerce with Pinecone and LLMs">
+    <meta name="twitter:description" content="Learn how to build a powerful hybrid search system for e-commerce applications by combining traditional information retrieval methods with machine learning m...">
+    <meta name="twitter:url" content="https://subramanya.ai/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/">
+    <meta name="twitter:site" content="@subramanya1997">
+    <meta name="twitter:creator" content="@subramanya1997">
+    <meta name="linkedin:profile" content="https://www.linkedin.com/in/nsubramanya">
+
+    
+    <meta property="og:image" content="https://subramanya.ai/assets/images/pinecone_hybrid_index.jpg">
+    <meta name="twitter:image" content="https://subramanya.ai/assets/images/pinecone_hybrid_index.jpg">
+    
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="/assets/favicon/favicon-128x128.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon/favicon-64x64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#555555">
+    <meta name="msapplication-TileImage" content="/assets/favicon/mstile-144x144.png">
+
+    <link rel="canonical" href="https://subramanya.ai/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-04B5H1S8SJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-04B5H1S8SJ');
+    </script>
+    <script src="https://www.googleoptimize.com/optimize.js?id=OPT-PHBLQWB"></script>
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+
+  <div class="wrap" style="max-width: 800px; margin: 0 auto;">
+    <a class="site-title animated-link" href="/">Subramanya N</a>
+    
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+          <path fill="#111" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#111" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#111" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+        
+          
+            <a class="page-link animated-link" href="/blog/">Blog</a>
+          
+        
+          
+            <a class="page-link animated-link" href="/books/">Books</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <a class="page-link animated-link" href="/work/">Work</a>
+          
+        
+          
+        
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrap">
+      <div class="post-container">
+  <div class="post">
+    <header class="post-header">
+      <h1>Hybrid Search for E-Commerce with Pinecone and LLMs</h1>
+      
+      
+      <div class="post-tags">
+        
+          <span class="tag">Pinecone</span>
+        
+          <span class="tag">Hybrid Search</span>
+        
+          <span class="tag">E-Commerce</span>
+        
+          <span class="tag">Large Language Models</span>
+        
+          <span class="tag">Vector Database</span>
+        
+      </div>
+      
+      
+      <div class="post-meta">
+        <span class="post-date">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          May 2, 2023
+        </span>
+        
+        <span class="post-reading-time">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          7 mins read
+        </span>
+        
+        
+        <span class="post-author">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          Subramanya N
+        </span>
+        
+        
+        <div class="social-share">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://subramanya.ai/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/" 
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Share on Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com/intent/tweet?text=Hybrid Search for E-Commerce with Pinecone and LLMs&url=https://subramanya.ai/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/" 
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Share on Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://subramanya.ai/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/&title=Hybrid Search for E-Commerce with Pinecone and LLMs&summary=Learn how to build a powerful hybrid search system for e-commerce applications by combining traditional information retrieval methods with machine learning models like Language Models (LLMs) and Pinecone, a managed vector database. Discover the benefits of hybrid search for e-commerce, including improved search relevance, personalization, handling long-tail queries, and simpler infrastructure management." 
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Share on LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <article class="post-content">
+      <p>Searching and finding relevant products is a critical component of an e-commerce website. Providing fast and accurate search results can make the difference between high user satisfaction and user frustration. With recent advancements in natural language understanding and vector search technologies, enhanced search systems have become more accessible and efficient, leading to better user experiences and improved conversion rates.</p>
+
+<p>In this blog post, we’ll explore how to implement a hybrid search system for e-commerce using Pinecone, a high-performance vector search engine, and fine-tuned domain-specific language models. By the end of this post, you’ll not only have a strong understanding of hybrid search but also a practical step-by-step guide to implementing it.</p>
+
+<h2 id="what-is-hybrid-search">What is Hybrid Search?</h2>
+
+<p><img src="/assets/images/pinecone_hybrid_index.jpg" alt="Pinecone Hybrid Index" class="post-img" />
+<span class="post-img-caption">High-level view of simple Pinecone Hybrid Index</span></p>
+
+<p>Before diving into the implementation, let’s quickly understand what hybrid search means. Hybrid search is an approach that combines the strengths of both traditional search (sparse vector search) and vector search (dense vector search) to achieve better search performance across a wide range of domains.</p>
+
+<p>Dense vector search extracts high-quality vector embeddings from text data and performs a similarity search to find relevant documents. However, it often struggles with out-of-domain data when it’s not fine-tuned on domain-specific datasets.</p>
+
+<p>On the other hand, traditional search uses sparse vector representations, like term frequency-inverse document frequency (TF-IDF) or BM25, and does not require any domain-specific fine-tuning. While it can handle new domains, its performance is limited by its inability to understand semantic relations between words and lacks the intelligence of dense retrieval.</p>
+
+<p>Hybrid search tries to mitigate the weaknesses of both approaches by combining them in a single system, leveraging the performance potential of dense vector search and the zero-shot adaptability of traditional search.</p>
+
+<p>Now that we have a basic understanding of hybrid search, let’s dive into its implementation.</p>
+
+<h2 id="building-a-hybrid-search-system">Building a Hybrid Search System</h2>
+
+<p>We’ll cover the following steps for implementing a hybrid search system:</p>
+
+<ol>
+  <li>Leveraging Domain-Specific Language Models</li>
+  <li>Creating Sparse and Dense Vectors</li>
+  <li>Setting Up Pinecone</li>
+  <li>Implementing the Hybrid Search Pipeline</li>
+  <li>Making Queries and Tuning Parameters</li>
+</ol>
+
+<h3 id="1-leveraging-domain-specific-language-models">1. Leveraging Domain-Specific Language Models</h3>
+
+<p>In recent years, large-scale pre-trained language models like OpenAI’s GPT and Cohere have become increasingly popular for a variety of tasks, including natural language understanding and generation. These models can be fine-tuned on domain-specific data to improve their performance and adapt to specific tasks, such as e-commerce product search.</p>
+
+<p>In our example, we will use a fine-tuned domain-specific language model to generate dense vector embeddings for products and queries. However, you can choose other models or even create your own custom embeddings based on your specific domain.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">torch</span>
+<span class="kn">from</span> <span class="n">transformers</span> <span class="kn">import</span> <span class="n">AutoTokenizer</span><span class="p">,</span> <span class="n">AutoModel</span>
+
+<span class="c1"># Load a pre-trained domain-specific language model
+</span><span class="n">model_name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">your-domain-specific-model</span><span class="sh">"</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="p">.</span><span class="nf">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">AutoModel</span><span class="p">.</span><span class="nf">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+
+<span class="c1"># Generate dense vector embeddings for a product description
+</span><span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Nike Air Max sports shoes for men</span><span class="sh">"</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="nf">tokenizer</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="sh">"</span><span class="s">pt</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">torch</span><span class="p">.</span><span class="nf">no_grad</span><span class="p">():</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">)</span>
+    <span class="n">dense_embedding</span> <span class="o">=</span> <span class="n">outputs</span><span class="p">.</span><span class="n">last_hidden_state</span><span class="p">.</span><span class="nf">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">).</span><span class="nf">numpy</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="2-creating-sparse-and-dense-vectors">2. Creating Sparse and Dense Vectors</h3>
+
+<p>Hybrid search requires both sparse and dense vector representations for our e-commerce data. We’ll now describe how to generate these vectors.</p>
+
+<h4 id="sparse-vectors">Sparse Vectors</h4>
+
+<p>Sparse vector representations, like TF-IDF or BM25, can be created using standard text processing techniques, such as tokenization, stopword removal, and stemming. An example of generating sparse vectors can be achieved using a vocabulary matrix.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This function generates sparse vector representations of a list of product descriptions
+</span><span class="k">def</span> <span class="nf">generate_sparse_vectors</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="sh">'''</span><span class="s">Generates sparse vector representations for a list of product descriptions
+
+    Args:
+        text (list): A list of product descriptions
+
+    Returns:
+        sparse_vector (dict): A dictionary of indices and values
+    </span><span class="sh">'''</span>
+    <span class="n">sparse_vector</span> <span class="o">=</span> <span class="n">bm25</span><span class="p">.</span><span class="nf">encode_queries</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sparse_vector</span>
+
+<span class="kn">from</span> <span class="n">pinecone_text.sparse</span> <span class="kn">import</span> <span class="n">BM25Encoder</span>
+
+<span class="c1"># Create the BM25 encoder and fit the data
+</span><span class="n">bm25</span> <span class="o">=</span> <span class="nc">BM25Encoder</span><span class="p">()</span>
+<span class="n">bm25</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">new_df</span><span class="p">.</span><span class="n">full_data</span><span class="p">)</span>
+
+<span class="c1"># Create the sparse vectors
+</span><span class="n">sparse_vectors</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">product_description</span> <span class="ow">in</span> <span class="n">product_descriptions</span><span class="p">:</span>
+    <span class="n">sparse_vectors</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nf">generate_sparse_vectors</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">product_description</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h4 id="dense-vectors">Dense Vectors</h4>
+
+<p>Dense vector representations can be generated using pre-trained or custom domain-specific language models. In our previous example, we used a domain-specific language model to generate dense vector embeddings for a product description.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">generate_dense_vector</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="sh">'''</span><span class="s">Generates dense vector embeddings for a list of product descriptions
+
+    Args:
+        text (list): A list of product descriptions
+
+    Returns:
+        dense_embedding (np.array): A numpy array of dense vector embeddings
+    </span><span class="sh">'''</span>
+    <span class="c1"># Tokenize the text and convert to PyTorch tensors
+</span>    <span class="n">inputs</span> <span class="o">=</span> <span class="nf">tokenizer</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="sh">"</span><span class="s">pt</span><span class="sh">"</span><span class="p">)</span>
+    <span class="c1"># Generate the embeddings with the pre-trained model
+</span>    <span class="k">with</span> <span class="n">torch</span><span class="p">.</span><span class="nf">no_grad</span><span class="p">():</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">)</span>
+        <span class="n">dense_vector</span> <span class="o">=</span> <span class="n">outputs</span><span class="p">.</span><span class="n">last_hidden_state</span><span class="p">.</span><span class="nf">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">).</span><span class="nf">numpy</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">dense_vector</span>
+
+<span class="c1"># Generate dense vector embeddings for a list of product descriptions
+</span><span class="n">dense_vectors</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">product_description</span> <span class="ow">in</span> <span class="n">product_descriptions</span><span class="p">:</span>
+    <span class="n">dense_vectors</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nf">generate_dense_vector</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">product_description</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h3 id="3-setting-up-pinecone">3. Setting Up Pinecone</h3>
+
+<p>Pinecone is a high-performance vector search engine that supports hybrid search. It enables the creation of a single index for both sparse and dense vectors and seamlessly handles search queries across different data modalities.</p>
+
+<p>To use Pinecone, you’ll need to sign up for an account, install the Pinecone client, and set up your API key and environment.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Create a Pinecone hybrid search index
+</span><span class="kn">import</span> <span class="n">pinecone</span>
+
+<span class="n">pinecone</span><span class="p">.</span><span class="nf">init</span><span class="p">(</span>
+    <span class="n">api_key</span><span class="o">=</span><span class="sh">"</span><span class="s">YOUR_API_KEY</span><span class="sh">"</span><span class="p">,</span>  <span class="c1"># app.pinecone.io
+</span>    <span class="n">environment</span><span class="o">=</span><span class="sh">"</span><span class="s">YOUR_ENV</span><span class="sh">"</span>  <span class="c1"># find next to api key in console
+</span><span class="p">)</span>
+
+<span class="c1"># Create a Pinecone hybrid search index
+</span><span class="n">index_name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">ecommerce-hybrid-search</span><span class="sh">"</span>
+<span class="n">pinecone</span><span class="p">.</span><span class="nf">create_index</span><span class="p">(</span>
+    <span class="n">index_name</span> <span class="o">=</span> <span class="n">index_name</span><span class="p">,</span>
+    <span class="n">dimension</span> <span class="o">=</span> <span class="n">MODEL_DIMENSION</span><span class="p">,</span>  <span class="c1"># dimensionality of dense model
+</span>    <span class="n">metric</span> <span class="o">=</span> <span class="sh">"</span><span class="s">dotproduct</span><span class="sh">"</span>
+<span class="p">)</span>
+<span class="c1"># connect to the index
+</span><span class="n">index</span> <span class="o">=</span> <span class="n">pinecone</span><span class="p">.</span><span class="nc">Index</span><span class="p">(</span><span class="n">index_name</span><span class="o">=</span><span class="n">index_name</span><span class="p">)</span>
+<span class="c1"># view index stats
+</span><span class="n">index</span><span class="p">.</span><span class="nf">describe_index_stats</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="4-implementing-the-hybrid-search-pipeline">4. Implementing the Hybrid Search Pipeline</h3>
+
+<p>With our sparse and dense vectors generated and Pinecone set up, we can now build a hybrid search pipeline. This pipeline includes the following steps:</p>
+
+<ol>
+  <li>Adding product data to the Pinecone index</li>
+  <li>Retrieving results using both sparse and dense vectors</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add_product_data_to_index</span><span class="p">(</span><span class="n">product_ids</span><span class="p">,</span> <span class="n">sparse_vectors</span><span class="p">,</span> <span class="n">dense_vectors</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">Upserts product data to the Pinecone index.
+
+    Args:
+        product_ids (`list` of `str`): Product IDs.
+        sparse_vectors (`list` of `list` of `float`): Sparse vectors.
+        dense_vectors (`list` of `list` of `float`): Dense vectors.
+        metadata (`list` of `list` of `str`): Optional metadata.
+
+    Returns:
+        None
+    </span><span class="sh">"""</span>
+    <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">32</span>
+
+    <span class="c1"># Loop through the product IDs in batches.
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">product_ids</span><span class="p">),</span> <span class="n">batch_size</span><span class="p">):</span>
+        <span class="n">i_end</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">batch_size</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">product_ids</span><span class="p">))</span>
+        <span class="n">ids</span> <span class="o">=</span> <span class="n">product_ids</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i_end</span><span class="p">]</span>
+        <span class="n">sparse_batch</span> <span class="o">=</span> <span class="n">sparse_vectors</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i_end</span><span class="p">]</span>
+        <span class="n">dense_batch</span> <span class="o">=</span> <span class="n">dense_vectors</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i_end</span><span class="p">]</span>
+        <span class="n">meta_batch</span> <span class="o">=</span> <span class="n">metadata</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i_end</span><span class="p">]</span> <span class="k">if</span> <span class="n">metadata</span> <span class="k">else</span> <span class="p">[]</span>
+
+        <span class="n">vectors</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">_id</span><span class="p">,</span> <span class="n">sparse</span><span class="p">,</span> <span class="n">dense</span><span class="p">,</span> <span class="n">meta</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">(</span><span class="n">ids</span><span class="p">,</span> <span class="n">sparse_batch</span><span class="p">,</span> <span class="n">dense_batch</span><span class="p">,</span> <span class="n">meta_batch</span><span class="p">):</span>
+            <span class="n">vectors</span><span class="p">.</span><span class="nf">append</span><span class="p">({</span>
+                <span class="sh">'</span><span class="s">id</span><span class="sh">'</span><span class="p">:</span> <span class="n">_id</span><span class="p">,</span>
+                <span class="sh">'</span><span class="s">sparse_values</span><span class="sh">'</span><span class="p">:</span> <span class="n">sparse</span><span class="p">,</span>
+                <span class="sh">'</span><span class="s">values</span><span class="sh">'</span><span class="p">:</span> <span class="n">dense</span><span class="p">,</span>
+                <span class="sh">'</span><span class="s">metadata</span><span class="sh">'</span><span class="p">:</span> <span class="n">meta</span>
+            <span class="p">})</span>
+
+        <span class="c1"># Upsert the vectors into the Pinecone index.
+</span>        <span class="n">index</span><span class="p">.</span><span class="nf">upsert</span><span class="p">(</span><span class="n">vectors</span><span class="o">=</span><span class="n">vectors</span><span class="p">)</span>
+
+<span class="nf">add_product_data_to_index</span><span class="p">(</span><span class="n">product_ids</span><span class="p">,</span> <span class="n">sparse_vectors</span><span class="p">,</span> <span class="n">dense_vectors</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Now that our data is indexed, we can perform hybrid search queries.</p>
+
+<h3 id="5-making-queries-and-tuning-parameters">5. Making Queries and Tuning Parameters</h3>
+
+<p><img src="/assets/images/pinecone_hybrid_query.jpg" alt="Pinecone Hybrid Query" class="post-img" />
+<span class="post-img-caption">High-level view of simple Pinecone Hybrid Query</span></p>
+
+<p>To make hybrid search queries, we’ll create a function that takes a query, the number of top results, and an alpha parameter to control the weighting between dense and sparse vector search scores.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">hybrid_scale</span><span class="p">(</span><span class="n">dense</span><span class="p">,</span> <span class="n">sparse</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">Hybrid vector scaling using a convex combination
+
+    alpha * dense + (1 - alpha) * sparse
+
+    Args:
+        dense: Array of floats representing
+        sparse: a dict of `indices` and `values`
+        alpha: float between 0 and 1 where 0 == sparse only
+               and 1 == dense only
+    </span><span class="sh">"""</span>
+    <span class="k">if</span> <span class="n">alpha</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">alpha</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">"</span><span class="s">Alpha must be between 0 and 1</span><span class="sh">"</span><span class="p">)</span>
+    <span class="c1"># scale sparse and dense vectors to create hybrid search vecs
+</span>    <span class="n">hsparse</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="sh">'</span><span class="s">indices</span><span class="sh">'</span><span class="p">:</span> <span class="n">sparse</span><span class="p">[</span><span class="sh">'</span><span class="s">indices</span><span class="sh">'</span><span class="p">],</span>
+        <span class="sh">'</span><span class="s">values</span><span class="sh">'</span><span class="p">:</span>  <span class="p">[</span><span class="n">v</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">sparse</span><span class="p">[</span><span class="sh">'</span><span class="s">values</span><span class="sh">'</span><span class="p">]]</span>
+    <span class="p">}</span>
+    <span class="n">hdense</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="o">*</span> <span class="n">alpha</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">dense</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">hdense</span><span class="p">,</span> <span class="n">hsparse</span>
+
+<span class="k">def</span> <span class="nf">search_products</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">top_k</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+    <span class="c1"># Generate sparse query vector
+</span>    <span class="n">sparse_query_vector</span> <span class="o">=</span> <span class="nf">generate_sparse_vector</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+    <span class="c1"># Generate dense query vector
+</span>    <span class="n">dense_query_vector</span> <span class="o">=</span> <span class="nf">generate_dense_vector</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+    <span class="c1"># Calculate hybrid query vector
+</span>    <span class="n">dense_query_vector</span><span class="p">,</span> <span class="n">sparse_query_vector</span> <span class="o">=</span> <span class="nf">hybrid_scale</span><span class="p">(</span><span class="n">dense_query_vector</span><span class="p">,</span> <span class="n">sparse_query_vector</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
+
+    <span class="c1"># Search products using Pinecone
+</span>    <span class="n">results</span> <span class="o">=</span> <span class="n">index</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span>
+        <span class="n">vector</span><span class="o">=</span><span class="n">dense_query_vector</span><span class="p">,</span>
+        <span class="n">sparse_vector</span><span class="o">=</span><span class="n">sparse_query_vector</span><span class="p">,</span>
+        <span class="n">top_k</span><span class="o">=</span><span class="n">top_k</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">results</span>
+</code></pre></div></div>
+
+<p>We can then use this function to search for relevant products in our e-commerce dataset.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span> <span class="o">=</span> <span class="sh">"</span><span class="s">running shoes for women</span><span class="sh">"</span>
+<span class="n">results</span> <span class="o">=</span> <span class="nf">search_products</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">top_k</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="sh">'</span><span class="s">id</span><span class="sh">'</span><span class="p">],</span> <span class="n">result</span><span class="p">[</span><span class="sh">'</span><span class="s">metadata</span><span class="sh">'</span><span class="p">][</span><span class="sh">'</span><span class="s">product_name</span><span class="sh">'</span><span class="p">],</span> <span class="n">result</span><span class="p">[</span><span class="sh">'</span><span class="s">score</span><span class="sh">'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Experimenting with different values for the alpha parameter will help you find the optimal balance between sparse and dense vector search for your specific domain.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In this blog post, we demonstrated how to build a hybrid search system for e-commerce using Pinecone and domain-specific language models. Hybrid search enables us to combine the strengths of both traditional search and vector search, improving search performance and adaptability across diverse domains.</p>
+
+<p>By following the steps and code snippets provided in this post, you can implement your own hybrid search system tailored to your e-commerce website’s specific requirements. Start exploring Pinecone and improve your e-commerce search experience today!</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li><a href="https://colab.research.google.com/github/pinecone-io/examples/blob/master/search/hybrid-search/ecommerce-search/ecommerce-search.ipynb">Ecommerce Search using Hybrid Search Techniques in Pinecone (Google Colab Notebook)</a>: A practical guide showcasing the implementation of e-commerce search using Pinecone’s hybrid search techniques.</li>
+  <li><a href="https://docs.pinecone.io/docs/ecommerce-search">Pinecone Ecommerce Search Documentation</a>: Official Pinecone documentation for building e-commerce search systems.</li>
+  <li><a href="https://colab.research.google.com/github/pinecone-io/examples/blob/master/pinecone/sparse/bm25/bm25-vector-generation.ipynb">BM25 Vector Generation using Pinecone (Google Colab Notebook)</a>: A guide for generating BM25 sparse vectors using Pinecone.</li>
+  <li><a href="https://github.com/pinecone-io/pinecone-text">Pinecone Text Repository on GitHub</a>: A collection of text processing and vector generation resources using Pinecone.</li>
+  <li><a href="https://www.pinecone.io/learn/hybrid-search-intro/">Introduction to Hybrid Search on Pinecone’s Website</a>: An overview of hybrid search, its benefits, and use cases in the context of pinecone’s capabilities.</li>
+</ul>
+
+    </article>
+    
+    <div class="post-navigation">
+      
+      <a class="prev-post" href="/2023/01/04/demystifying-the-shell-scripting-working-with-files-and-directories/">
+        <span>Previous</span>
+        <strong>Demystifying the Shell Scripting: Working with Files and Directories</strong>
+      </a>
+      
+      
+      
+      <a class="next-post" href="/2023/06/10/enhancing-document-interactions/">
+        <span>Next</span>
+        <strong>Enhancing Document Interactions - Leveraging the synergy of Google Cloud Platform, Pinecone, and LLM in Natural Language Communication</strong>
+      </a>
+      
+    </div>
+
+    <!-- mathjax -->
+    
+  </div>
+</div>
+
+<style>
+  .post-container {
+    display: flex;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .post {
+    background: transparent;
+    border-radius: 0;
+    padding: 20px 0;
+    box-shadow: none;
+    flex: 1;
+  }
+  
+  .post-header {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .post-header h1 {
+    margin-bottom: 10px;
+  }
+  
+  .post-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .post-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 0;
+  }
+  
+  .post-date, .post-author, .post-reading-time {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #666666;
+  }
+  
+  .social-share {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icon {
+    color: #666666;
+  }
+  
+  .social-icon:hover {
+    color: #333333;
+  }
+  
+  .post-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .prev-post, .next-post {
+    display: flex;
+    flex-direction: column;
+    max-width: 45%;
+  }
+  
+  .prev-post span, .next-post span {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 5px;
+  }
+  
+  .next-post {
+    text-align: right;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .post-container {
+      flex-direction: column;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .post {
+      padding: 25px;
+    }
+    
+    .post-meta {
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .social-share {
+      margin-left: 0;
+    }
+  }
+</style>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrap" style="max-width: 800px; margin: 0 auto;">
+    <div class="footer-col-1 column">
+      <ul>
+        <li><b class="footer-heading">Subramanya N</b></li>
+        <li>
+          <a href="mailto:" class="animated-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            snagabhushan@umass.edu
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col-2 column">
+      
+      <ul class="social-links">
+        <li>
+          <a href="https://www.linkedin.com/in/nsubramanya" target="_blank" rel="noopener" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/subramanya1997" target="_blank" rel="noopener" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+            <span>GitHub</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/subramanya1997" target="_blank" rel="noopener" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+            </svg>
+            <span>Twitter</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col-3 column">
+      
+        <p class="text">"The harder you work, the luckier you get." -- Gary Player</p>
+      
+      <p class="copyright">© 2025 Subramanya N</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+  }
+  
+  .social-link:hover {
+    color: #333333;
+    transform: translateX(3px);
+  }
+  
+  .copyright {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+  }
+</style>
+
+    </body>
+</html>

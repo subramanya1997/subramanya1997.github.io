@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Enhancing Document Interactions - Leveraging the synergy of Google Cloud Platform, Pinecone, and LLM in Natural Language Communication | Subramanya N</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Welcome to my personal website, a space where I blog and share my musings on academic and professional topics. Dive in to explore my intellectual journey and gain insights from my experiences in various fields!">
+    <meta name="theme-color" content="#555555">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Enhancing Document Interactions - Leveraging the synergy of Google Cloud Platform, Pinecone, and LLM in Natural Language Communication">
+    <meta property="og:description" content="Explore the groundbreaking fusion of Google Cloud Platform for OCR, Pinecone, and Large Language Model that is transforming information retrieval. This blog ...">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://subramanya.ai/2023/06/10/enhancing-document-interactions/">
+    <meta property="og:site_name" content="Subramanya N">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Enhancing Document Interactions - Leveraging the synergy of Google Cloud Platform, Pinecone, and LLM in Natural Language Communication">
+    <meta name="twitter:description" content="Explore the groundbreaking fusion of Google Cloud Platform for OCR, Pinecone, and Large Language Model that is transforming information retrieval. This blog ...">
+    <meta name="twitter:url" content="https://subramanya.ai/2023/06/10/enhancing-document-interactions/">
+    <meta name="twitter:site" content="@subramanya1997">
+    <meta name="twitter:creator" content="@subramanya1997">
+    <meta name="linkedin:profile" content="https://www.linkedin.com/in/nsubramanya">
+
+    
+    <meta property="og:image" content="https://subramanya.ai/assets/images/system_design_with_document_ai_gpt_pinecone.jpeg">
+    <meta name="twitter:image" content="https://subramanya.ai/assets/images/system_design_with_document_ai_gpt_pinecone.jpeg">
+    
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="/assets/favicon/favicon-128x128.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon/favicon-64x64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#555555">
+    <meta name="msapplication-TileImage" content="/assets/favicon/mstile-144x144.png">
+
+    <link rel="canonical" href="https://subramanya.ai/2023/06/10/enhancing-document-interactions/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-04B5H1S8SJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-04B5H1S8SJ');
+    </script>
+    <script src="https://www.googleoptimize.com/optimize.js?id=OPT-PHBLQWB"></script>
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+
+  <div class="wrap" style="max-width: 800px; margin: 0 auto;">
+    <a class="site-title animated-link" href="/">Subramanya N</a>
+    
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+          <path fill="#111" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#111" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#111" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+        
+          
+            <a class="page-link animated-link" href="/blog/">Blog</a>
+          
+        
+          
+            <a class="page-link animated-link" href="/books/">Books</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <a class="page-link animated-link" href="/work/">Work</a>
+          
+        
+          
+        
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrap">
+      <div class="post-container">
+  <div class="post">
+    <header class="post-header">
+      <h1>Enhancing Document Interactions - Leveraging the synergy of Google Cloud Platform, Pinecone, and LLM in Natural Language Communication</h1>
+      
+      
+      <div class="post-tags">
+        
+          <span class="tag">GCP</span>
+        
+          <span class="tag">Pinecone</span>
+        
+          <span class="tag">Large Language Models</span>
+        
+          <span class="tag">OpenAI</span>
+        
+          <span class="tag">Document AI</span>
+        
+      </div>
+      
+      
+      <div class="post-meta">
+        <span class="post-date">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          Jun 10, 2023
+        </span>
+        
+        <span class="post-reading-time">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          9 mins read
+        </span>
+        
+        
+        <span class="post-author">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          Subramanya N, Tasheer Hussain B
+        </span>
+        
+        
+        <div class="social-share">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://subramanya.ai/2023/06/10/enhancing-document-interactions/" 
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Share on Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com/intent/tweet?text=Enhancing Document Interactions - Leveraging the synergy of Google Cloud Platform, Pinecone, and LLM in Natural Language Communication&url=https://subramanya.ai/2023/06/10/enhancing-document-interactions/" 
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Share on Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://subramanya.ai/2023/06/10/enhancing-document-interactions/&title=Enhancing Document Interactions - Leveraging the synergy of Google Cloud Platform, Pinecone, and LLM in Natural Language Communication&summary=Explore the groundbreaking fusion of Google Cloud Platform for OCR, Pinecone, and Large Language Model that is transforming information retrieval. This blog delves into how these potent tools collaborate to enable seamless interactions with documents using natural language. Discover how Google Cloud Platform offers a solid foundation, Pinecone provides rapid similarity searches for effective document retrieval, and LLM elevates language comprehension and generation capabilities." 
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Share on LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <article class="post-content">
+      <p><img src="/assets/images/system_design_with_document_ai_gpt_pinecone.jpeg" alt="High-level view of system design with Document AI, OpenAI, Pinecone" class="post-img" />
+<span class="post-img-caption">High-level view of system design with Document AI, OpenAI, Pinecone</span></p>
+
+<p>In today’s digital era, accessing crucial information from government documents can be overwhelming and time-consuming due to their scanned and non-digitized formats. To address this issue, there is a need for an innovative tool that simplifies navigation, scanning, and digitization of these documents, making them easily readable and searchable. This user-friendly solution will revolutionize the way people interact with government documents, leading to better decision-making, improved public services, and a more informed and engaged citizenry. Developing such a tool is essential for ensuring transparency and accessibility of vital information in the modern world.</p>
+
+<p>To achieve our goal, we will follow a systematic approach consisting of the following steps:</p>
+
+<ol>
+  <li>We will use the powerful Document AI API provided by Google Cloud Platform to convert PDF / Image documents into text format. This step allows us to extract textual content from the documents, making it easier to process and analyze.</li>
+  <li>Next, we will employ a Language Model (LLM) to generate embeddings for each text extracted from the documents. These embeddings capture the semantic representation of the text, enabling us to effectively analyze and compare documents based on their content.</li>
+  <li>To optimize the retrieval process, we will utilize Pinecone, a robust indexing and similarity search system. By storing the generated embeddings in PineCone, we can quickly search for documents that closely match a user’s query.</li>
+  <li>With the acquired knowledge and enhanced search capabilities, our tool will efficiently answer user queries by retrieving the most relevant documents based on their content.</li>
+</ol>
+
+<p>For demonstration of this process, we utilized documents from the <a href="https://ceg.karnataka.gov.in/krdh/public/english">Karnataka Resident Data Hub (KRDH)</a> by web scraping.</p>
+<video controls="" class="post-img">
+    <source src="/assets/videos/documents_converse_demo.mp4" type="video/mp4" />
+</video>
+<p><span class="post-img-caption">Demo: Building a powerful question/answering for government documents using Document AI, OpenAI, Pinecone, and Flask</span></p>
+
+<h2 id="1-setting-up-google-cloud-platform---document-ai">1. Setting Up Google Cloud Platform - Document AI</h2>
+
+<p>Document AI is a document understanding platform that converts unstructured data from documents into structured data, making it easier to comprehend, analyze, and utilize. To set up Document AI in your Google Cloud Platform (GCP) Console, follow these steps:</p>
+
+<ul>
+  <li>Enable the <a href="https://console.cloud.google.com/flows/enableapi?apiid=documentai.googleapis.com">Document AI API</a>.</li>
+  <li>Create a service account:
+    <ul>
+      <li>Navigate to the <a href="https://console.cloud.google.com/projectselector2/iam-admin/serviceaccounts/create?supportedpurview=project">create service account page</a> in the Google Cloud console.</li>
+      <li>Choose your project.</li>
+      <li>Enter a name in the Service account name field. The Google Cloud console will automatically fill in the Service account ID field based on this name.</li>
+      <li>Click Create and continue.</li>
+      <li>Grant the Project &gt; Owner role to your service account to provide access to your project.</li>
+      <li>Click Continue.</li>
+      <li>Click Done to complete the service account creation process. (Do not close your browser window, as you will need it in the next step.)</li>
+    </ul>
+  </li>
+  <li>Create a service account key:
+    <ul>
+      <li>In the Google Cloud console, click the email address for the service account you created.</li>
+      <li>Click Keys.</li>
+      <li>Click Add key, then click Create new key.</li>
+      <li>Click Create. A JSON key file will be downloaded to your computer.</li>
+      <li>Click Close.</li>
+    </ul>
+  </li>
+  <li>Set the environment variable GOOGLE_APPLICATION_CREDENTIALS to the path of the JSON file containing your service account key. This variable applies only to your current shell session, so if you open a new session, you will need to set the variable again.</li>
+  <li>Install the Client Library:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">google</span><span class="o">-</span><span class="n">cloud</span><span class="o">-</span><span class="n">documentai</span> 
+</code></pre></div>    </div>
+  </li>
+  <li>Create a Processor:
+    <ul>
+      <li>In the Document AI section of the Google Cloud console, go to the <a href="https://console.cloud.google.com/ai/document-ai/processors">Processors</a> page.</li>
+      <li>Click +Create processor.</li>
+      <li>Choose the processor type you want to create from the list.</li>
+      <li>In the Create processor window, specify a processor name.</li>
+      <li>Select your desired region from the list.</li>
+      <li>Click Create to generate your processor.</li>
+      <li>Take note of the Processor ID and location.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>After completing these steps, you are ready to use the Document AI API in your code.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">convert_pdf_images_to_text</span><span class="p">(</span><span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">
+    Convert PDF or image file containing text into plain text using Google Document AI.
+    Args:
+        file_path (str): The file path of the PDF or image file.
+
+    Returns:
+        str: The extracted plain text from the input file.
+    </span><span class="sh">"""</span>
+    <span class="n">extention</span> <span class="o">=</span> <span class="n">file_path</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sh">"</span><span class="s">.</span><span class="sh">"</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="nf">strip</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">extention</span> <span class="o">==</span> <span class="sh">"</span><span class="s">pdf</span><span class="sh">"</span><span class="p">:</span>
+        <span class="n">mime_type</span> <span class="o">=</span> <span class="sh">"</span><span class="s">application/pdf</span><span class="sh">"</span>
+    <span class="k">elif</span> <span class="n">extention</span> <span class="o">==</span> <span class="sh">"</span><span class="s">png</span><span class="sh">"</span><span class="p">:</span>
+        <span class="n">mime_type</span> <span class="o">=</span> <span class="sh">"</span><span class="s">image/png</span><span class="sh">"</span>
+    <span class="k">elif</span> <span class="n">extention</span> <span class="o">==</span> <span class="sh">"</span><span class="s">jpg</span><span class="sh">"</span> <span class="ow">or</span> <span class="n">extention</span> <span class="o">==</span> <span class="sh">"</span><span class="s">jpeg</span><span class="sh">"</span><span class="p">:</span>
+        <span class="n">mime_type</span> <span class="o">=</span> <span class="sh">"</span><span class="s">image/jpeg</span><span class="sh">"</span>
+    <span class="n">opts</span> <span class="o">=</span> <span class="nc">ClientOptions</span><span class="p">(</span>
+        <span class="n">api_endpoint</span><span class="o">=</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">location</span><span class="si">}</span><span class="s">-documentai.googleapis.com</span><span class="sh">"</span>
+    <span class="p">)</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">documentai</span><span class="p">.</span><span class="nc">DocumentProcessorServiceClient</span><span class="p">(</span><span class="n">client_options</span><span class="o">=</span><span class="n">opts</span><span class="p">)</span>
+    <span class="c1"># Add the credentials obtained, Project ID, Location and the Processor ID
+</span>    <span class="n">name</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">processor_path</span><span class="p">(</span>
+        <span class="n">project_id</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">processor_id</span>
+    <span class="p">)</span>
+    <span class="c1"># Read the file into memory
+</span>    <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="sh">"</span><span class="s">rb</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">image</span><span class="p">:</span>
+        <span class="n">image_content</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
+    <span class="c1"># Load Binary Data into Document AI RawDocument Object
+</span>    <span class="n">raw_document</span> <span class="o">=</span> <span class="n">documentai</span><span class="p">.</span><span class="nc">RawDocument</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="n">image_content</span><span class="p">,</span> <span class="n">mime_type</span><span class="o">=</span><span class="n">mime_type</span><span class="p">)</span>
+    <span class="c1"># Configure the process request
+</span>    <span class="n">request</span> <span class="o">=</span> <span class="n">documentai</span><span class="p">.</span><span class="nc">ProcessRequest</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">raw_document</span><span class="o">=</span><span class="n">raw_document</span><span class="p">)</span>
+    <span class="n">result_document</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">process_document</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">).</span><span class="n">document</span>
+    <span class="k">return</span> <span class="n">result_document</span><span class="p">.</span><span class="n">text</span>
+</code></pre></div></div>
+
+<h2 id="2-embeddings-generation-and-pinecone">2. Embeddings Generation and Pinecone</h2>
+
+<p>In this step, we will use the OpenAI Text Embedding API to generate embeddings that capture the semantic meaning of the extracted text. These embeddings serve as numerical representations of the textual data, allowing us to understand the underlying context and nuances.</p>
+
+<p>After generating the embeddings, we will securely store them in Pinecone, a powerful indexing and similarity search system. By leveraging Pinecone’s efficient storage capabilities, we can effectively organize and index the embeddings for quick and precise retrieval.</p>
+
+<p>With the embeddings stored in Pinecone, our system gains the ability to perform similarity searches. This enables us to find documents that closely match a given query or exhibit similar semantic characteristics.</p>
+
+<p>The following code uses OpenAI’s Text Embedding model to create embeddings for text data. It divides the input text into chunks, generates embeddings for each chunk, and then upserts the embeddings along with associated metadata to a Pinecone search index for efficient searching and retrieval.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">create_embeddings</span><span class="p">(</span>
+    <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sh">"</span><span class="s">text-embedding-ada-002</span><span class="sh">"</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">
+    Creates a text embedding using OpenAI</span><span class="sh">'</span><span class="s">s Text Embedding model.
+
+    Args:
+        text (str): The text to embed
+        model (str, optional): The name of the text embedding model to use.
+            Defaults to </span><span class="sh">"</span><span class="s">text-embedding-ada-002</span><span class="sh">"</span><span class="s">.
+
+    Returns:
+        List[float]: The text embedding.
+    </span><span class="sh">"""</span>
+    <span class="k">if</span> <span class="nf">type</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">openai</span><span class="p">.</span><span class="n">Embedding</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="nb">input</span><span class="o">=</span><span class="n">text</span><span class="p">).</span><span class="n">data</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="sh">"</span><span class="s">embedding</span><span class="sh">"</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">response</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">openai</span><span class="p">.</span><span class="n">Embedding</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span>
+            <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="nb">input</span><span class="o">=</span><span class="p">[</span><span class="n">text</span><span class="p">]).</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="sh">"</span><span class="s">embedding</span><span class="sh">"</span><span class="p">]]</span><span class="err">∂</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">generate_embeddings_upload_to_pinecone</span><span class="p">(</span><span class="n">documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]):</span>
+    <span class="sh">"""</span><span class="s">
+    Generates text embeddings from the provided documents, then uploads and indexes 
+    them to Pinecone.
+
+    Args:
+        documents (List[Dict[str, Any]]): A list of dictionaries containing 
+        document information.
+            Each dictionary should include the following keys:
+                - </span><span class="sh">"</span><span class="s">Content</span><span class="sh">"</span><span class="s">: The text content of the document.
+                - </span><span class="sh">"</span><span class="s">DocumentName</span><span class="sh">"</span><span class="s">: The name of the document.
+                - </span><span class="sh">"</span><span class="s">DocumentType</span><span class="sh">"</span><span class="s">: The type/category of the document.
+
+    Note:
+        This function assumes that Pinecone and the associated index have already
+        been initialized properly. Please make sure to initialize Pinecone first
+        and set up the index accordingly.
+    </span><span class="sh">"""</span>
+    <span class="c1"># create chunks
+</span>    <span class="n">chunks</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">documents</span><span class="p">:</span>
+        <span class="n">texts</span> <span class="o">=</span> <span class="nf">create_chunks</span><span class="p">(</span><span class="n">document</span><span class="p">[</span><span class="sh">"</span><span class="s">Content</span><span class="sh">"</span><span class="p">])</span>
+        <span class="n">chunks</span><span class="p">.</span><span class="nf">extend</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="sh">"</span><span class="s">id</span><span class="sh">"</span><span class="p">:</span> <span class="nf">str</span><span class="p">(</span><span class="nf">uuid4</span><span class="p">()),</span>
+                    <span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">:</span> <span class="n">texts</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                    <span class="sh">"</span><span class="s">chunk_index</span><span class="sh">"</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span>
+                    <span class="sh">"</span><span class="s">title</span><span class="sh">"</span><span class="p">:</span> <span class="n">document</span><span class="p">[</span><span class="sh">"</span><span class="s">DocumentName</span><span class="sh">"</span><span class="p">],</span>
+                    <span class="sh">"</span><span class="s">type</span><span class="sh">"</span><span class="p">:</span> <span class="n">document</span><span class="p">[</span><span class="sh">"</span><span class="s">DocumentType</span><span class="sh">"</span><span class="p">],</span>
+                <span class="p">}</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">texts</span><span class="p">))</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+    <span class="c1"># initialize Pinecone index, create embeddings, and upsert to Pinecone
+</span>    <span class="n">index</span> <span class="o">=</span> <span class="n">pinecone</span><span class="p">.</span><span class="nc">Index</span><span class="p">(</span><span class="sh">"</span><span class="s">pinecone-index</span><span class="sh">"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">tqdm</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">chunks</span><span class="p">),</span> <span class="mi">100</span><span class="p">)):</span>
+        <span class="c1"># find end of batch
+</span>        <span class="n">i_end</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">chunks</span><span class="p">),</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="n">batch</span> <span class="o">=</span> <span class="n">chunks</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i_end</span><span class="p">]</span>
+        <span class="n">ids_batch</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">id</span><span class="sh">"</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">]</span>
+        <span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">]</span>
+        <span class="n">embeds</span> <span class="o">=</span> <span class="nf">create_embeddings</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">texts</span><span class="p">)</span>
+        <span class="c1"># cleanup metadata
+</span>        <span class="n">meta_batch</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="sh">"</span><span class="s">title</span><span class="sh">"</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">title</span><span class="sh">"</span><span class="p">],</span>
+                <span class="sh">"</span><span class="s">type</span><span class="sh">"</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">type</span><span class="sh">"</span><span class="p">],</span>
+                <span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">],</span>
+                <span class="sh">"</span><span class="s">chunk_index</span><span class="sh">"</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">chunk_index</span><span class="sh">"</span><span class="p">],</span>
+            <span class="p">}</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">batch</span>
+        <span class="p">]</span>
+        <span class="n">to_upsert</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">embed</span><span class="p">,</span> <span class="n">meta</span> <span class="ow">in</span> <span class="nf">list</span><span class="p">(</span><span class="nf">zip</span><span class="p">(</span><span class="n">ids_batch</span><span class="p">,</span> <span class="n">embeds</span><span class="p">,</span> <span class="n">meta_batch</span><span class="p">)):</span>
+            <span class="n">to_upsert</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="sh">"</span><span class="s">id</span><span class="sh">"</span><span class="p">:</span> <span class="nb">id</span><span class="p">,</span>
+                    <span class="sh">"</span><span class="s">values</span><span class="sh">"</span><span class="p">:</span> <span class="n">embed</span><span class="p">,</span>
+                    <span class="sh">"</span><span class="s">metadata</span><span class="sh">"</span><span class="p">:</span> <span class="n">meta</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+        <span class="c1"># upsert to Pinecone
+</span>        <span class="n">index</span><span class="p">.</span><span class="nf">upsert_documents</span><span class="p">(</span><span class="n">to_upsert</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>For more information on OpenAI’s Text Embedding API, refer to the <a href="https://platform.openai.com/docs/api-reference">OpenAI API documentation</a>. For more details on Pinecone, check out the <a href="https://docs.pinecone.io/docs">Pinecone documentation</a>.</p>
+
+<h2 id="3-user-query-and-communication">3. User Query and Communication</h2>
+<p>Finally, with all the necessary components in place, we can witness the powerful functionality of our tool as it matches user queries with relevant context and provides accurate answers.</p>
+
+<p>When a user submits a query, our system leverages the stored embeddings and advanced search capabilities to identify the most relevant documents based on their semantic similarity to the query. By analyzing the contextual information captured in the embeddings, our tool can retrieve the documents that contain the desired information.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">query_and_combine</span><span class="p">(</span>
+    <span class="n">self</span><span class="p">,</span> <span class="n">query_vector</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">top_k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.75</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">Query Pinecone index and combine responses to string
+
+    Args:
+        query_embedding (list): Query embedding
+        index (str): Pinecone index to query
+        top_k (int, optional): Number of top results to return. Defaults to 5.
+        threshold : The similarity threshold. Defaults to 0.75
+
+    Returns:
+        str: Combined responses
+    </span><span class="sh">"""</span>
+    <span class="n">responses</span> <span class="o">=</span> <span class="n">index</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span><span class="n">query_vector</span><span class="o">=</span><span class="n">query_vector</span><span class="p">,</span> <span class="n">top_k</span><span class="o">=</span><span class="n">top_k</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">_responses</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">responses</span><span class="p">[</span><span class="sh">"</span><span class="s">matches</span><span class="sh">"</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">sample</span><span class="p">[</span><span class="sh">"</span><span class="s">score</span><span class="sh">"</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="sh">"</span><span class="s">text</span><span class="sh">"</span> <span class="ow">in</span> <span class="n">sample</span><span class="p">[</span><span class="sh">"</span><span class="s">metadata</span><span class="sh">"</span><span class="p">]:</span>
+            <span class="n">_responses</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="sh">"</span><span class="s">metadata</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">text</span><span class="sh">"</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_responses</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nf">str</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="sh">"</span><span class="s">metadata</span><span class="sh">"</span><span class="p">]))</span>
+
+    <span class="k">return</span> <span class="sh">"</span><span class="s"> </span><span class="se">\n</span><span class="s"> --- </span><span class="se">\n</span><span class="s"> </span><span class="sh">"</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">_responses</span><span class="p">).</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">---</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s"> </span><span class="se">\n</span><span class="s"> --- </span><span class="se">\n</span><span class="s"> </span><span class="sh">"</span><span class="p">).</span><span class="nf">strip</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">generate_answer</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">language</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sh">"</span><span class="s">English</span><span class="sh">"</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">
+    Generates an answer to a user</span><span class="sh">'</span><span class="s">s query using the context from Pinecone search results
+    and OpenAI</span><span class="sh">'</span><span class="s">s chat models.
+
+    The function takes the user</span><span class="sh">'</span><span class="s">s query, creates a text embedding from it, performs a
+    Pinecone query to find relevant context, and then generates an answer using OpenAI</span><span class="sh">'</span><span class="s">s
+    chat models with the given context.
+
+    Returns:
+        A JSON object containing the generated answer.
+
+    Note:
+        This function assumes that Pinecone and the associated index have already been 
+        initialized properly, and that the OpenAI API is set up correctly. Please 
+        make sure to initialize Pinecone and the OpenAI API first.
+    </span><span class="sh">"""</span>
+    <span class="n">query_embed</span> <span class="o">=</span> <span class="nf">create_embeddings</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">query</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">augmented_query</span> <span class="o">=</span> <span class="nf">query_and_combine</span><span class="p">(</span>
+        <span class="n">query_embed</span><span class="p">,</span>
+        <span class="n">top_k</span><span class="o">=</span><span class="n">app</span><span class="p">.</span><span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">top_n</span><span class="sh">"</span><span class="p">],</span>
+        <span class="n">threshold</span><span class="o">=</span><span class="n">app</span><span class="p">.</span><span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">pinecone_threshold</span><span class="sh">"</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="c1">## Creating the prompt for model
+</span>    <span class="n">primer</span> <span class="o">=</span> <span class="sh">"""</span><span class="s">You are Q&amp;A bot. A highly intelligent system that answers
+    user questions based on the context provided by the user above
+    each question. If the information can not be found in the context
+    provided by the user you truthfully say </span><span class="sh">"</span><span class="s">I don</span><span class="sh">'</span><span class="s">t know</span><span class="sh">"</span><span class="s">. Be as concise as possible.
+    </span><span class="sh">"""</span>
+    <span class="n">augmented_query</span> <span class="o">=</span> <span class="n">augmented_query</span> <span class="k">if</span> <span class="n">augmented_query</span> <span class="o">!=</span> <span class="sh">""</span> <span class="k">else</span> <span class="sh">"</span><span class="s">No context found</span><span class="sh">"</span>
+
+    <span class="n">text</span><span class="p">,</span> <span class="n">usage</span> <span class="o">=</span> <span class="n">openai</span><span class="p">.</span><span class="n">ChatCompletion</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span>
+        <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">{</span><span class="sh">"</span><span class="s">role</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">system</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="n">primer</span><span class="p">},</span>
+            <span class="p">{</span>
+                <span class="sh">"</span><span class="s">role</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">user</span><span class="sh">"</span><span class="p">,</span>
+                <span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Context: </span><span class="se">\n</span><span class="s"> </span><span class="si">{</span><span class="n">augmented_query</span><span class="si">}</span><span class="s"> </span><span class="se">\n</span><span class="s"> --- </span><span class="se">\n</span><span class="s"> Question: </span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s"> </span><span class="se">\n</span><span class="s"> Answer in </span><span class="si">{</span><span class="n">language</span><span class="si">}</span><span class="sh">"</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">],</span>
+        <span class="n">model</span><span class="o">=</span><span class="n">app</span><span class="p">.</span><span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">chat_model</span><span class="sh">"</span><span class="p">],</span>
+        <span class="n">temperature</span><span class="o">=</span><span class="n">app</span><span class="p">.</span><span class="n">config</span><span class="p">[</span><span class="sh">"</span><span class="s">temperature</span><span class="sh">"</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">text</span>
+</code></pre></div></div>
+
+<p>The code consists of two functions.</p>
+<ol>
+  <li><strong>query_and_combine()</strong> queries a Pinecone index using a query vector, retrieves the top matching responses, and combines them into a single string. It filters the responses based on a similarity threshold and extracts the relevant text or metadata to be included in the combined result.</li>
+  <li><strong>generate_answer()</strong> generates an answer to a user query. It creates an embedding for the query, performs a combined query on the Pinecone index, and uses the obtained augmented query as context for a chat-based language model. The model generates an answer based on the context and user query, which is then returned as the response.
+Overall, the code enables querying a Pinecone index, combining responses, and generating answers using a language model based on the given query and context.</li>
+</ol>
+
+<p>As you reach the end of this blog, we hope you have gained valuable insights into the powerful combination of Google Cloud Platform, Pinecone, and Language Models for revolutionizing document interactions. To dive deeper and explore the code behind this innovative solution, visit our <a href="https://github.com/subramanya1997/documents-converse">GitHub repository</a>. Feel free to clone, modify, and contribute to the project, and don’t hesitate to share your thoughts and experiences. I would also like to thank <a href="https://www.linkedin.com/in/tasheerhussain">Tasheer Hussain B</a> for his contributions.  Happy coding!</p>
+
+<h2 id="references">References</h2>
+<ul>
+  <li><a href="https://cloud.google.com/document-ai">Google Document AI</a></li>
+  <li><a href="https://docs.pinecone.io/docs/gen-qa-openai">Retrieval Enhanced Generative Question Answering with OpenAI</a></li>
+  <li><a href="https://flask.palletsprojects.com/en/2.3.x/quickstart">Introduction to Flask</a></li>
+  <li><a href="https://github.com/subramanya1997/documents-converse">GitHub repository</a></li>
+</ul>
+
+    </article>
+    
+    <div class="post-navigation">
+      
+      <a class="prev-post" href="/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/">
+        <span>Previous</span>
+        <strong>Hybrid Search for E-Commerce with Pinecone and LLMs</strong>
+      </a>
+      
+      
+      
+      <a class="next-post" href="/2024/01/11/the-nockout-story/">
+        <span>Next</span>
+        <strong>The Nockout Story</strong>
+      </a>
+      
+    </div>
+
+    <!-- mathjax -->
+    
+  </div>
+</div>
+
+<style>
+  .post-container {
+    display: flex;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .post {
+    background: transparent;
+    border-radius: 0;
+    padding: 20px 0;
+    box-shadow: none;
+    flex: 1;
+  }
+  
+  .post-header {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .post-header h1 {
+    margin-bottom: 10px;
+  }
+  
+  .post-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .post-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 0;
+  }
+  
+  .post-date, .post-author, .post-reading-time {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #666666;
+  }
+  
+  .social-share {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icon {
+    color: #666666;
+  }
+  
+  .social-icon:hover {
+    color: #333333;
+  }
+  
+  .post-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .prev-post, .next-post {
+    display: flex;
+    flex-direction: column;
+    max-width: 45%;
+  }
+  
+  .prev-post span, .next-post span {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 5px;
+  }
+  
+  .next-post {
+    text-align: right;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .post-container {
+      flex-direction: column;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .post {
+      padding: 25px;
+    }
+    
+    .post-meta {
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .social-share {
+      margin-left: 0;
+    }
+  }
+</style>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrap" style="max-width: 800px; margin: 0 auto;">
+    <div class="footer-col-1 column">
+      <ul>
+        <li><b class="footer-heading">Subramanya N</b></li>
+        <li>
+          <a href="mailto:" class="animated-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            snagabhushan@umass.edu
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col-2 column">
+      
+      <ul class="social-links">
+        <li>
+          <a href="https://www.linkedin.com/in/nsubramanya" target="_blank" rel="noopener" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/subramanya1997" target="_blank" rel="noopener" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+            <span>GitHub</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/subramanya1997" target="_blank" rel="noopener" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+            </svg>
+            <span>Twitter</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col-3 column">
+      
+        <p class="text">"The harder you work, the luckier you get." -- Gary Player</p>
+      
+      <p class="copyright">© 2025 Subramanya N</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+  }
+  
+  .social-link:hover {
+    color: #333333;
+    transform: translateX(3px);
+  }
+  
+  .copyright {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+  }
+</style>
+
+    </body>
+</html>

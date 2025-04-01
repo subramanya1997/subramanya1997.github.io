@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Version Control (Git) | Subramanya N</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Welcome to my personal website, a space where I blog and share my musings on academic and professional topics. Dive in to explore my intellectual journey and gain insights from my experiences in various fields!">
+    <meta name="theme-color" content="#555555">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Version Control (Git)">
+    <meta property="og:description" content="How to use version control _properly_, and take advantage of it to save you from disaster, collaborate with others, and quickly find and isolate problematic ...">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://subramanya.ai/2022/12/21/version-control/">
+    <meta property="og:site_name" content="Subramanya N">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Version Control (Git)">
+    <meta name="twitter:description" content="How to use version control _properly_, and take advantage of it to save you from disaster, collaborate with others, and quickly find and isolate problematic ...">
+    <meta name="twitter:url" content="https://subramanya.ai/2022/12/21/version-control/">
+    <meta name="twitter:site" content="@subramanya1997">
+    <meta name="twitter:creator" content="@subramanya1997">
+    <meta name="linkedin:profile" content="https://www.linkedin.com/in/nsubramanya">
+
+    
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="/assets/favicon/favicon-128x128.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon/favicon-64x64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#555555">
+    <meta name="msapplication-TileImage" content="/assets/favicon/mstile-144x144.png">
+
+    <link rel="canonical" href="https://subramanya.ai/2022/12/21/version-control/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-04B5H1S8SJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-04B5H1S8SJ');
+    </script>
+    <script src="https://www.googleoptimize.com/optimize.js?id=OPT-PHBLQWB"></script>
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+
+  <div class="wrap" style="max-width: 800px; margin: 0 auto;">
+    <a class="site-title animated-link" href="/">Subramanya N</a>
+    
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+          <path fill="#111" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#111" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#111" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+        
+          
+            <a class="page-link animated-link" href="/blog/">Blog</a>
+          
+        
+          
+            <a class="page-link animated-link" href="/books/">Books</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <a class="page-link animated-link" href="/work/">Work</a>
+          
+        
+          
+        
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrap">
+      <div class="post-container">
+  <div class="post">
+    <header class="post-header">
+      <h1>Version Control (Git)</h1>
+      
+      
+      <div class="post-tags">
+        
+          <span class="tag">Git</span>
+        
+          <span class="tag">Version Control</span>
+        
+      </div>
+      
+      
+      <div class="post-meta">
+        <span class="post-date">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          Dec 21, 2022
+        </span>
+        
+        <span class="post-reading-time">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          13 mins read
+        </span>
+        
+        
+        <span class="post-author">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          Subramanya N
+        </span>
+        
+        
+        <div class="social-share">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://subramanya.ai/2022/12/21/version-control/" 
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Share on Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com/intent/tweet?text=Version Control (Git)&url=https://subramanya.ai/2022/12/21/version-control/" 
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Share on Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://subramanya.ai/2022/12/21/version-control/&title=Version Control (Git)&summary=How to use version control _properly_, and take advantage of it to save you from disaster, collaborate with others, and quickly find and isolate problematic changes. No more `rm -rf; git clone`. No more merge conflicts (well, fewer of them at least). No more huge blocks of commented-out code. No more fretting over how to find what broke your code. No more "oh no, did we delete the working code?!"." 
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Share on LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <article class="post-content">
+      <p>Version control systems (VCSs) are tools used to track changes to source code (or other collections of files and folders). As the name implies, these tools help maintain a history of changes; furthermore, they facilitate collaboration. VCSs track changes to a folder and its contents in a series of snapshots, where
+each snapshot encapsulates the entire state of files/folders within a top-level directory. VCSs also maintain metadata like who created each snapshot, messages associated with each snapshot, and so on.</p>
+
+<p>Why is version control useful? Even when you’re working by yourself, it can let you look at old snapshots of a project, keep a log of why certain changes were
+made, work on parallel branches of development, and much more. When working with others, it’s an invaluable tool for seeing what other people have changed, as well as resolving conflicts in concurrent development.</p>
+
+<p>Modern VCSs also let you easily (and often automatically) answer questions like:</p>
+
+<ul>
+  <li>Who wrote this module?</li>
+  <li>When was this particular line of this particular file edited? By whom? Why was it edited?</li>
+  <li>Over the last 1000 revisions, when/why did a particular unit test stop working?</li>
+</ul>
+
+<p>While other VCSs exist, <strong>Git</strong> is the de facto standard for version control.
+This <a href="https://xkcd.com/1597/">XKCD comic</a> captures Git’s reputation:</p>
+
+<p><img src="https://imgs.xkcd.com/comics/git.png" alt="xkcd 1597" /></p>
+
+<p>Because Git’s interface is a leaky abstraction, learning Git top-down (starting with its interface / command-line interface) can lead to a lot of confusion. It’s possible to memorize a handful of commands and think of them as magic incantations, and follow the approach in the comic above whenever anything goes wrong.</p>
+
+<p>While Git admittedly has an ugly interface, its underlying design and ideas are beautiful. While an ugly interface has to be <em>memorized</em>, a beautiful design can be <em>understood</em>. For this reason, we give a bottom-up explanation of Git, starting with its data model and later covering the command-line interface. Once the data model is understood, the commands can be better understood in terms of how they manipulate the underlying data model.</p>
+
+<h1 id="gits-data-model">Git’s data model</h1>
+
+<p>There are many ad-hoc approaches you could take to version control. Git has a well-thought-out model that enables all the nice features of version control, like maintaining history, supporting branches, and enabling collaboration.</p>
+
+<h2 id="snapshots">Snapshots</h2>
+
+<p>Git models the history of a collection of files and folders within some top-level directory as a series of snapshots. In Git terminology, a file is called a “blob”, and it’s just a bunch of bytes. A directory is called a “tree”, and it maps names to blobs or trees (so directories can contain other directories). A snapshot is the top-level tree that is being tracked. For example, we might have a tree as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;root&gt; (tree)
+|
++- foo (tree)
+|  |
+|  + bar.txt (blob, contents = "hello world")
+|
++- baz.txt (blob, contents = "git is wonderful")
+</code></pre></div></div>
+
+<p>The top-level tree contains two elements, a tree “foo” (that itself contains one element, a blob “bar.txt”), and a blob “baz.txt”.</p>
+
+<h2 id="modeling-history-relating-snapshots">Modeling history: relating snapshots</h2>
+
+<p>How should a version control system relate snapshots? One simple model would be to have a linear history. A history would be a list of snapshots in time-order. For many reasons, Git doesn’t use a simple model like this.</p>
+
+<p>In Git, a history is a directed acyclic graph (DAG) of snapshots. That may sound like a fancy math word, but don’t be intimidated. All this means is that each snapshot in Git refers to a set of “parents”, the snapshots that preceded it. It’s a set of parents rather than a single parent (as would be the case in a linear history) because a snapshot might descend from multiple parents, for example, due to combining (merging) two parallel branches of development.</p>
+
+<p>Git calls these snapshots “commit”s. Visualizing a commit history might look something like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>o &lt;-- o &lt;-- o &lt;-- o
+            ^
+             \
+              --- o &lt;-- o
+</code></pre></div></div>
+
+<p>In the ASCII art above, the <code class="language-plaintext highlighter-rouge">o</code>s correspond to individual commits (snapshots). The arrows point to the parent of each commit (it’s a “comes before” relation, not “comes after”). After the third commit, the history branches into two separate branches. This might correspond to, for example, two separate features being developed in parallel, independently from each other. In the future, these branches may be merged to create a new snapshot that incorporates both of the features, producing a new history that looks like this, with the newly created merge commit shown in bold:</p>
+
+<pre class="highlight">
+<code>
+o &lt;-- o &lt;-- o &lt;-- o &lt;---- <strong>o</strong>
+            ^            /
+             \          v
+              --- o &lt;-- o
+</code>
+</pre>
+
+<p>Commits in Git are immutable. This doesn’t mean that mistakes can’t be corrected, however; it’s just that “edits” to the commit history are actually creating entirely new commits, and references (see below) are updated to point to the new ones.</p>
+
+<h2 id="data-model-as-pseudocode">Data model, as pseudocode</h2>
+
+<p>It may be instructive to see Git’s data model written down in pseudocode:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// a file is a bunch of bytes
+type blob = array&lt;byte&gt;
+
+// a directory contains named files and directories
+type tree = map&lt;string, tree | blob&gt;
+
+// a commit has parents, metadata, and the top-level tree
+type commit = struct {
+    parents: array&lt;commit&gt;
+    author: string
+    message: string
+    snapshot: tree
+}
+</code></pre></div></div>
+
+<p>It’s a clean, simple model of history.</p>
+
+<h2 id="objects-and-content-addressing">Objects and content-addressing</h2>
+
+<p>An “object” is a blob, tree, or commit:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type object = blob | tree | commit
+</code></pre></div></div>
+
+<p>In Git data store, all objects are content-addressed by their <a href="https://en.wikipedia.org/wiki/SHA-1">SHA-1
+hash</a>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>objects = map&lt;string, object&gt;
+
+def store(object):
+    id = sha1(object)
+    objects[id] = object
+
+def load(id):
+    return objects[id]
+</code></pre></div></div>
+
+<p>Blobs, trees, and commits are unified in this way: they are all objects. When they reference other objects, they don’t actually <em>contain</em> them in their on-disk representation, but have a reference to them by their hash.</p>
+
+<p>For example, the tree for the example directory structure <a href="#snapshots">above</a>
+(visualized using <code class="language-plaintext highlighter-rouge">git cat-file -p 698281bc680d1995c5f4caaf3359721a5a58d48d</code>),
+looks like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100644 blob 4448adbf7ecd394f42ae135bbeed9676e894af85    baz.txt
+040000 tree c68d233a33c5c06e0340e4c224f0afca87c8ce87    foo
+</code></pre></div></div>
+
+<p>The tree itself contains pointers to its contents, <code class="language-plaintext highlighter-rouge">baz.txt</code> (a blob) and <code class="language-plaintext highlighter-rouge">foo</code>
+(a tree). If we look at the contents addressed by the hash corresponding to
+baz.txt with <code class="language-plaintext highlighter-rouge">git cat-file -p 4448adbf7ecd394f42ae135bbeed9676e894af85</code>, we get
+the following:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git is wonderful
+</code></pre></div></div>
+
+<h2 id="references">References</h2>
+
+<p>Now, all snapshots can be identified by their SHA-1 hashes. That’s inconvenient, because humans aren’t good at remembering strings of 40 hexadecimal characters.</p>
+
+<p>Git’s solution to this problem is human-readable names for SHA-1 hashes, called “references”. References are pointers to commits. Unlike objects, which are
+immutable, references are mutable (can be updated to point to a new commit). For example, the <code class="language-plaintext highlighter-rouge">master</code> reference usually points to the latest commit in the
+main branch of development.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>references = map&lt;string, string&gt;
+
+def update_reference(name, id):
+    references[name] = id
+
+def read_reference(name):
+    return references[name]
+
+def load_reference(name_or_id):
+    if name_or_id in references:
+        return load(references[name_or_id])
+    else:
+        return load(name_or_id)
+</code></pre></div></div>
+
+<p>With this, Git can use human-readable names like “master” to refer to a particular snapshot in the history, instead of a long hexadecimal string.</p>
+
+<p>One detail is that we often want a notion of “where we currently are” in the history, so that when we take a new snapshot, we know what it is relative to (how we set the <code class="language-plaintext highlighter-rouge">parents</code> field of the commit). In Git, that “where we currently are” is a special reference called “HEAD”.</p>
+
+<h2 id="repositories">Repositories</h2>
+
+<p>Finally, we can define what (roughly) is a Git <em>repository</em>: it is the data <code class="language-plaintext highlighter-rouge">objects</code> and <code class="language-plaintext highlighter-rouge">references</code>.</p>
+
+<p>On disk, all Git stores are objects and references: that’s all there is to Git’s data model. All <code class="language-plaintext highlighter-rouge">git</code> commands map to some manipulation of the commit DAG by
+adding objects and adding/updating references.</p>
+
+<p>Whenever you’re typing in any command, think about what manipulation the command is making to the underlying graph data structure. Conversely, if you’re trying to make a particular kind of change to the commit DAG, e.g. “discard uncommitted changes and make the ‘master’ ref point to commit <code class="language-plaintext highlighter-rouge">5d83f9e</code>”, there’s probably a command to do it (e.g. in this case, <code class="language-plaintext highlighter-rouge">git checkout master; git reset --hard 5d83f9e</code>).</p>
+
+<h1 id="staging-area">Staging area</h1>
+
+<p>This is another concept that’s orthogonal to the data model, but it’s a part of the interface to create commits.</p>
+
+<p>One way you might imagine implementing snapshotting as described above is to have a “create snapshot” command that creates a new snapshot based on the <em>current state</em> of the working directory. Some version control tools work like this, but not Git. We want clean snapshots, and it might not always be ideal to make a snapshot from the current state. For example, imagine a scenario where you’ve implemented two separate features, and you want to create two separate commits, where the first introduces the first feature, and the next introduces the second feature. Or imagine a scenario where you have debugging print statements added all over your code, along with a bugfix; you want to commit the bugfix while discarding all the print statements.</p>
+
+<p>Git accommodates such scenarios by allowing you to specify which modifications should be included in the next snapshot through a mechanism called the “staging area”.</p>
+
+<h1 id="git-command-line-interface">Git command-line interface</h1>
+
+<p>To avoid duplicating information, we’re not going to explain the commands below in detail. See the highly recommended <a href="https://git-scm.com/book/en/v2">Pro Git</a> for more information.</p>
+
+<h2 id="basics">Basics</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">git init</code> command initializes a new Git repository, with repository metadata being stored in the <code class="language-plaintext highlighter-rouge">.git</code> directory:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">mkdir </span>myproject
+<span class="gp">$</span><span class="w"> </span><span class="nb">cd </span>myproject
+<span class="gp">$</span><span class="w"> </span>git init
+<span class="go">Initialized empty Git repository in .git
+</span><span class="gp">$</span><span class="w"> </span>git status
+<span class="go">On branch master
+No commits yet
+nothing to commit (create/copy files and use "git add" to track)
+</span></code></pre></div></div>
+
+<p>How do we interpret this output? “No commits yet” basically means our version
+history is empty. Let’s fix that.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="s2">"hello, git"</span> <span class="o">&gt;</span> hello.txt
+<span class="gp">$</span><span class="w"> </span>git add hello.txt
+<span class="gp">$</span><span class="w"> </span>git status
+<span class="go">On branch master
+No commits yet
+Changes to be committed:
+</span><span class="gp">  (use "git rm --cached &lt;file&gt;</span>...<span class="s2">" to unstage)
+</span><span class="go">        new file:   hello.txt
+</span><span class="gp">$</span><span class="w"> </span>git commit <span class="nt">-m</span> <span class="s1">'Initial commit'</span>
+<span class="go">[master (root-commit) 4515d17] Initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.txt
+</span></code></pre></div></div>
+
+<p>With this, we’ve <code class="language-plaintext highlighter-rouge">git add</code>ed a file to the staging area, and then <code class="language-plaintext highlighter-rouge">git commit</code>ed that change, adding a simple commit message “Initial commit”. If we didn’t specify a <code class="language-plaintext highlighter-rouge">-m</code> option, Git would open our text editor to allow us type a commit message.</p>
+
+<p>Now that we have a non-empty version history, we can visualize the history. Visualizing the history as a DAG can be especially helpful in understanding the current status of the repo and connecting it with your understanding of the Git data model.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">git log</code> command visualizes history. By default, it shows a flattened version, which hides the graph structure. If you use a command like <code class="language-plaintext highlighter-rouge">git log --all --graph --decorate</code>, it will show you the full version history of the repository, visualized in graph form.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>git log <span class="nt">--all</span> <span class="nt">--graph</span> <span class="nt">--decorate</span>
+<span class="gp">* commit 4515d17a167bdef0a91ee7d50d75b12c9c2652aa (HEAD -&gt;</span><span class="w"> </span>master<span class="o">)</span>
+<span class="gp">  Author: Subramanya N &lt;snagabhushan@umass.edu&gt;</span><span class="w">
+</span><span class="go">  Date: Tue Dec 21 22:18:36 2020 -0500
+      Initial commit
+</span></code></pre></div></div>
+
+<p>This doesn’t look all that graph-like, because it only contains a single node. Let’s make some more changes, author a new commit, and visualize the history once more.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="s2">"another line"</span> <span class="o">&gt;&gt;</span> hello.txt
+<span class="gp">$</span><span class="w"> </span>git status
+<span class="go">On branch master
+Changes not staged for commit:
+</span><span class="gp">  (use "git add &lt;file&gt;</span>...<span class="s2">" to update what will be committed)
+</span><span class="gp">  (use "git checkout -- &lt;file&gt;</span><span class="s2">..."</span> to discard changes <span class="k">in </span>working directory<span class="o">)</span>
+<span class="go">        modified:   hello.txt
+no changes added to commit (use "git add" and/or "git commit -a")
+</span><span class="gp">$</span><span class="w"> </span>git add hello.txt
+<span class="gp">$</span><span class="w"> </span>git status
+<span class="go">On branch master
+Changes to be committed:
+</span><span class="gp">  (use "git reset HEAD &lt;file&gt;</span>...<span class="s2">" to unstage)
+</span><span class="go">        modified:   hello.txt
+</span><span class="gp">$</span><span class="w"> </span>git commit <span class="nt">-m</span> <span class="s1">'Add a line'</span>
+<span class="go">[master 35f60a8] Add a line
+ 1 file changed, 1 insertion(+)
+</span></code></pre></div></div>
+
+<p>Now, if we visualize the history again, we’ll see some of the graph structure:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* commit 35f60a825be0106036dd2fbc7657598eb7b04c67 (HEAD -&gt; master)
+| Author: Subramanya N &lt;snagabhushan@umass.edu&gt;
+| Date:   Tue Dec 21 22:26:20 2020 -0500
+|     Add a line
+* commit 4515d17a167bdef0a91ee7d50d75b12c9c2652aa
+  Author: Subramanya N &lt;snagabhushan@umass.edu&gt;
+  Date: Tue Dec 21 22:18:36 2020 -0500
+      Initial commit
+</code></pre></div></div>
+
+<p>Also, note that it shows the current HEAD, along with the current branch
+(master).</p>
+
+<p>We can look at old versions using the <code class="language-plaintext highlighter-rouge">git checkout</code> command.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>git checkout 4515d17  <span class="c"># previous commit hash; yours will be different</span>
+<span class="go">Note: checking out '4515d17'.
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+</span><span class="gp">  git checkout -b &lt;new-branch-name&gt;</span><span class="w">
+</span><span class="go">HEAD is now at 4515d17 Initial commit
+</span><span class="gp">$</span><span class="w"> </span><span class="nb">cat </span>hello.txt
+<span class="go">hello, git
+</span><span class="gp">$</span><span class="w"> </span>git checkout master
+<span class="go">Previous HEAD position was 4515d17 Initial commit
+Switched to branch 'master'
+</span><span class="gp">$</span><span class="w"> </span><span class="nb">cat </span>hello.txt
+<span class="go">hello, git
+another line
+</span></code></pre></div></div>
+
+<p>Git can show you how files have evolved (differences, or diffs) using the <code class="language-plaintext highlighter-rouge">git
+diff</code> command:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>git diff 4515d17 hello.txt
+<span class="go">diff --git c/hello.txt w/hello.txt
+index 94bab17..f0013b2 100644
+--- c/hello.txt
++++ w/hello.txt
+@@ -1 +1,2 @@
+ hello, git
+ +another line
+</span></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">git help &lt;command&gt;</code>: get help for a git command</li>
+  <li><code class="language-plaintext highlighter-rouge">git init</code>: creates a new git repo, with data stored in the <code class="language-plaintext highlighter-rouge">.git</code> directory</li>
+  <li><code class="language-plaintext highlighter-rouge">git status</code>: tells you what’s going on</li>
+  <li><code class="language-plaintext highlighter-rouge">git add &lt;filename&gt;</code>: adds files to staging area</li>
+  <li><code class="language-plaintext highlighter-rouge">git commit</code>: creates a new commit
+    <ul>
+      <li>Write <a href="https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">good commit messages</a>!</li>
+      <li>Even more reasons to write <a href="https://chris.beams.io/posts/git-commit/">good commit messages</a>!</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">git log</code>: shows a flattened log of history</li>
+  <li><code class="language-plaintext highlighter-rouge">git log --all --graph --decorate</code>: visualizes history as a DAG</li>
+  <li><code class="language-plaintext highlighter-rouge">git diff &lt;filename&gt;</code>: show changes you made relative to the staging area</li>
+  <li><code class="language-plaintext highlighter-rouge">git diff &lt;revision&gt; &lt;filename&gt;</code>: shows differences in a file between snapshots</li>
+  <li><code class="language-plaintext highlighter-rouge">git checkout &lt;revision&gt;</code>: updates HEAD and current branch</li>
+</ul>
+
+<h2 id="branching-and-merging">Branching and merging</h2>
+
+<p>Branching allows you to “fork” version history. It can be helpful for working on independent features or bug fixes in parallel. The <code class="language-plaintext highlighter-rouge">git branch</code> command can be used to create new branches; <code class="language-plaintext highlighter-rouge">git checkout -b &lt;branch name&gt;</code> creates and branch and checks it out.</p>
+
+<p>Merging is the opposite of branching: it allows you to combine forked version histories, e.g. merging a feature branch back into master. The <code class="language-plaintext highlighter-rouge">git merge</code> command is used for merging.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">git branch</code>: shows branches</li>
+  <li><code class="language-plaintext highlighter-rouge">git branch &lt;name&gt;</code>: creates a branch</li>
+  <li><code class="language-plaintext highlighter-rouge">git checkout -b &lt;name&gt;</code>: creates a branch and switches to it
+    <ul>
+      <li>same as <code class="language-plaintext highlighter-rouge">git branch &lt;name&gt;; git checkout &lt;name&gt;</code></li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">git merge &lt;revision&gt;</code>: merges into current branch</li>
+  <li><code class="language-plaintext highlighter-rouge">git mergetool</code>: use a fancy tool to help resolve merge conflicts</li>
+  <li><code class="language-plaintext highlighter-rouge">git rebase</code>: rebase set of patches onto a new base</li>
+</ul>
+
+<h2 id="remotes">Remotes</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">git remote</code>: list remotes</li>
+  <li><code class="language-plaintext highlighter-rouge">git remote add &lt;name&gt; &lt;url&gt;</code>: add a remote</li>
+  <li><code class="language-plaintext highlighter-rouge">git push &lt;remote&gt; &lt;local branch&gt;:&lt;remote branch&gt;</code>: send objects to remote, and update remote reference</li>
+  <li><code class="language-plaintext highlighter-rouge">git branch --set-upstream-to=&lt;remote&gt;/&lt;remote branch&gt;</code>: set up correspondence between local and remote branch</li>
+  <li><code class="language-plaintext highlighter-rouge">git fetch</code>: retrieve objects/references from a remote</li>
+  <li><code class="language-plaintext highlighter-rouge">git pull</code>: same as <code class="language-plaintext highlighter-rouge">git fetch; git merge</code></li>
+  <li><code class="language-plaintext highlighter-rouge">git clone</code>: download repository from remote</li>
+</ul>
+
+<h2 id="undo">Undo</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">git commit --amend</code>: edit a commit’s contents/message</li>
+  <li><code class="language-plaintext highlighter-rouge">git reset HEAD &lt;file&gt;</code>: unstage a file</li>
+  <li><code class="language-plaintext highlighter-rouge">git checkout -- &lt;file&gt;</code>: discard changes</li>
+</ul>
+
+<h1 id="advanced-git">Advanced Git</h1>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">git config</code>: Git is <a href="https://git-scm.com/docs/git-config">highly customizable</a></li>
+  <li><code class="language-plaintext highlighter-rouge">git clone --depth=1</code>: shallow clone, without entire version history</li>
+  <li><code class="language-plaintext highlighter-rouge">git add -p</code>: interactive staging</li>
+  <li><code class="language-plaintext highlighter-rouge">git rebase -i</code>: interactive rebasing</li>
+  <li><code class="language-plaintext highlighter-rouge">git blame</code>: show who last edited which line</li>
+  <li><code class="language-plaintext highlighter-rouge">git stash</code>: temporarily remove modifications to working directory</li>
+  <li><code class="language-plaintext highlighter-rouge">git bisect</code>: binary search history (e.g. for regressions)</li>
+  <li><code class="language-plaintext highlighter-rouge">.gitignore</code>: <a href="https://git-scm.com/docs/gitignore">specify</a> intentionally untracked files to ignore</li>
+</ul>
+
+<h1 id="miscellaneous">Miscellaneous</h1>
+
+<ul>
+  <li><strong>GUIs</strong>: there are many <a href="https://git-scm.com/downloads/guis">GUI clients</a>
+out there for Git. We personally don’t use them and use the command-line
+interface instead.</li>
+  <li><strong>Shell integration</strong>: it’s super handy to have a Git status as part of your
+shell prompt (<a href="https://github.com/olivierverdier/zsh-git-prompt">zsh</a>,
+<a href="https://github.com/magicmonty/bash-git-prompt">bash</a>). Often included in
+frameworks like <a href="https://github.com/ohmyzsh/ohmyzsh">Oh My Zsh</a>.</li>
+  <li><strong>Editor integration</strong>: similarly to the above, handy integrations with many
+features. <a href="https://github.com/tpope/vim-fugitive">fugitive.vim</a> is the standard
+one for Vim.</li>
+  <li><strong>Workflows</strong>: we taught you the data model, plus some basic commands; we
+didn’t tell you what practices to follow when working on big projects (and
+there are <a href="https://nvie.com/posts/a-successful-git-branching-model/">many</a>
+<a href="https://www.endoflineblog.com/gitflow-considered-harmful">different</a>
+<a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">approaches</a>).</li>
+  <li><strong>GitHub</strong>: Git is not GitHub. GitHub has a specific way of contributing code
+to other projects, called <a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests">pull
+requests</a>.</li>
+  <li><strong>Other Git providers</strong>: GitHub is not special: there are many Git repository
+hosts, like <a href="https://about.gitlab.com/">GitLab</a> and
+<a href="https://bitbucket.org/">BitBucket</a>.</li>
+</ul>
+
+<h1 id="resources">Resources</h1>
+
+<ul>
+  <li><a href="https://git-scm.com/book/en/v2">Pro Git</a> is <strong>highly recommended reading</strong>.
+Going through Chapters 1–5 should teach you most of what you need to use Git
+proficiently, now that you understand the data model. The later chapters have
+some interesting, advanced material.</li>
+  <li><a href="https://ohshitgit.com/">Oh Shit, Git!?!</a> is a short guide on how to recover
+from some common Git mistakes.</li>
+  <li><a href="https://eagain.net/articles/git-for-computer-scientists/">Git for Computer
+Scientists</a> is a
+short explanation of Git’s data model, with less pseudocode and more fancy
+diagrams than these lecture notes.</li>
+  <li><a href="https://jwiegley.github.io/git-from-the-bottom-up/">Git from the Bottom Up</a>
+is a detailed explanation of Git’s implementation details beyond just the data
+model, for the curious.</li>
+  <li><a href="https://smusamashah.github.io/blog/2017/10/14/explain-git-in-simple-words">How to explain git in simple
+words</a></li>
+  <li><a href="https://learngitbranching.js.org/">Learn Git Branching</a> is a browser-based
+game that teaches you Git.</li>
+</ul>
+
+    </article>
+    
+    <div class="post-navigation">
+      
+      
+      
+      <a class="next-post" href="/2022/12/28/demystifying-the-shell-a-beginners-guide/">
+        <span>Next</span>
+        <strong>Demystifying the Shell: A Beginner's Guide</strong>
+      </a>
+      
+    </div>
+
+    <!-- mathjax -->
+    
+  </div>
+</div>
+
+<style>
+  .post-container {
+    display: flex;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .post {
+    background: transparent;
+    border-radius: 0;
+    padding: 20px 0;
+    box-shadow: none;
+    flex: 1;
+  }
+  
+  .post-header {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .post-header h1 {
+    margin-bottom: 10px;
+  }
+  
+  .post-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .post-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 0;
+  }
+  
+  .post-date, .post-author, .post-reading-time {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #666666;
+  }
+  
+  .social-share {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icon {
+    color: #666666;
+  }
+  
+  .social-icon:hover {
+    color: #333333;
+  }
+  
+  .post-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .prev-post, .next-post {
+    display: flex;
+    flex-direction: column;
+    max-width: 45%;
+  }
+  
+  .prev-post span, .next-post span {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 5px;
+  }
+  
+  .next-post {
+    text-align: right;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .post-container {
+      flex-direction: column;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .post {
+      padding: 25px;
+    }
+    
+    .post-meta {
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .social-share {
+      margin-left: 0;
+    }
+  }
+</style>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrap" style="max-width: 800px; margin: 0 auto;">
+    <div class="footer-col-1 column">
+      <ul>
+        <li><b class="footer-heading">Subramanya N</b></li>
+        <li>
+          <a href="mailto:" class="animated-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            snagabhushan@umass.edu
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col-2 column">
+      
+      <ul class="social-links">
+        <li>
+          <a href="https://www.linkedin.com/in/nsubramanya" target="_blank" rel="noopener" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/subramanya1997" target="_blank" rel="noopener" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+            <span>GitHub</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/subramanya1997" target="_blank" rel="noopener" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+            </svg>
+            <span>Twitter</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col-3 column">
+      
+        <p class="text">"The harder you work, the luckier you get." -- Gary Player</p>
+      
+      <p class="copyright">© 2025 Subramanya N</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+  }
+  
+  .social-link:hover {
+    color: #333333;
+    transform: translateX(3px);
+  }
+  
+  .copyright {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+  }
+</style>
+
+    </body>
+</html>
