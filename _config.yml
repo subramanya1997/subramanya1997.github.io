@@ -9,9 +9,6 @@ data_dir: _data
 markdown: kramdown
 permalink: pretty
 
-# Plugin settings
-plugins_dir: _plugins
-
 # collections
 collections:
   books:

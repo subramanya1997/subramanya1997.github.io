@@ -56,13 +56,6 @@ layout: default
         <div class="book-entry">
           <div class="book-meta">
             <span class="book-date">{{ book.date | date: "%Y-%m-%d" }}</span>
-            <span class="book-reading-time">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-              {{ book.content | reading_time }}
-            </span>
           </div>
           <h2 class="book-title"><a href="{{ book.web_url | prepend: site.baseurl }}">{{ book.title }}</a></h2>
           
@@ -106,7 +99,7 @@ layout: default
                 <circle cx="12" cy="12" r="10"></circle>
                 <polyline points="12 6 12 12 16 14"></polyline>
               </svg>
-              {{ post.content | reading_time }}
+              {% include reading_time.html content=post.content %}
             </span>
           </div>
           <h2 class="post-title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
