@@ -17,7 +17,7 @@ custom_layout: true
               <circle cx="12" cy="12" r="10"></circle>
               <polyline points="12 6 12 12 16 14"></polyline>
             </svg>
-            {{ post.content | reading_time }}
+            {% include reading_time.html content=post.content %}
           </span>
         </div>
         <h2 class="post-title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
