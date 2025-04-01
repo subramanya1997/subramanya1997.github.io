@@ -16,6 +16,41 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://localhost:4000/assets/images/logos/dylog.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:4000/assets/images/logos/meta.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:4000/assets/images/logos/nie.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:4000/assets/images/logos/renderpub.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:4000/assets/images/logos/ribbon.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:4000/assets/images/logos/umass.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:4000/assets/images/logos/vertica.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:4000/assets/images/menlo_ventures_ai_agents_market_map.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
