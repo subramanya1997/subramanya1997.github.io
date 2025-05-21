@@ -14,7 +14,7 @@ module Jekyll
         media_sitemap_content += "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n"
   
         asset_files.each do |file|
-          media_url = "#{site.config['url']}#{file}"
+          media_url = "#{site.config['url']}#{site.config['baseurl']}#{file}"
           media_sitemap_content += "  <url>\n"
           media_sitemap_content += "    <loc>#{media_url}</loc>\n"
           media_sitemap_content += "    <changefreq>weekly</changefreq>\n"
