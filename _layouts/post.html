@@ -103,23 +103,25 @@ layout: default
   "headline": "{{ page.title }}",
   "author": {
     "@type": "Person",
-    "name": "{% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %}"
+    "name": "{% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %}",
+    "url": "{{ site.url }}"
   },
-  "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
-  "dateModified": "{{ page.date | date: '%Y-%m-%d' }}",
+  "datePublished": "{{ page.date | date: '%Y-%m-%dT%H:%M:%S' }}+00:00",
+  "dateModified": "{{ page.date | date: '%Y-%m-%dT%H:%M:%S' }}+00:00",
   "publisher": {
     "@type": "Organization",
     "name": "{{ site.title }}",
     "url": "{{ site.url }}"
   },
-  "description": {% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | jsonify }}{% endif %},
+  "description": {% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | jsonify }}{% else %}"{{ site.description }}"{% endif %},
   "url": "{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"
   },
   "keywords": "{{ page.tags | join: ', ' }}",
-  "inLanguage": "en"
+  "inLanguage": "en"{% if page.image %},
+  "image": "{{ page.image | prepend: site.baseurl | prepend: site.url }}"{% endif %}
 }
 </script>
 
