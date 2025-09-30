@@ -95,6 +95,34 @@ layout: default
   </div>
 </div>
 
+<!-- Structured Data for Scholarly Articles -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "{{ page.title }}",
+  "author": {
+    "@type": "Person",
+    "name": "{% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %}"
+  },
+  "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+  "dateModified": "{{ page.date | date: '%Y-%m-%d' }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "url": "{{ site.url }}"
+  },
+  "description": {% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | jsonify }}{% endif %},
+  "url": "{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"
+  },
+  "keywords": "{{ page.tags | join: ', ' }}",
+  "inLanguage": "en"
+}
+</script>
+
 <style>
   .post-container {
     display: flex;
