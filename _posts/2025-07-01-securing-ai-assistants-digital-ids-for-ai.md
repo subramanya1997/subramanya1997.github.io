@@ -134,9 +134,9 @@ For users, this mostly happens behind the scenes, but the result is more trustwo
 
 The next time you ask an AI assistant to book a flight or post content for you, remember that its digital identity is what ensures it can only do what you've authorized—nothing more, nothing less.
 
----
-
 **References:**
-1. SPIFFE - Secure Production Identity Framework for Everyone. [https://spiffe.io/](https://spiffe.io/)
-2. Olden, E. (2025). "Why Agentic Identities Matter for Accountability and Trust." Strata.io Blog. [https://www.strata.io/blog/agentic-identity/why-agentic-identities-matter-1b/](https://www.strata.io/blog/agentic-identity/why-agentic-identities-matter-1b/)
+
+[1] [SPIFFE - Secure Production Identity Framework for Everyone.](https://spiffe.io/)
+
+[2] [Olden, E. (2025). "Why Agentic Identities Matter for Accountability and Trust." Strata.io Blog.](https://www.strata.io/blog/agentic-identity/why-agentic-identities-matter-1b/)
 

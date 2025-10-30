@@ -30,7 +30,7 @@ The above image is an example of Anscombe's quartet. It's a set of four datasets
 
 Consider the following example:
 
-<table class="custom-table">
+<table>
     <thead>
         <tr>
             <th>Query_id</th>
@@ -73,7 +73,7 @@ The average score is 0.58. However, if we analyze the queries within segments, w
 
 It is very important to understand the limitations of your system and to be able to confidently understand the characteristics of your system beyond summary statistics. This is because not all systems are made equal. The behavior of a probabilistic system could be very different from the previous example. Consider the following dataset:
 
-<table class="custom-table">
+<table>
     <thead>
         <tr>
             <th>Query_id</th>
@@ -104,7 +104,7 @@ A system like this also has the same average score of 0.58, but it's not as easy
 ### Learning to say no
 Consider an RAG application where a large proportion of the queries are regarding timeline queries. If our search engines do not support this time constraint, we will likely be unable to perform well.
 
-<table class="custom-table">
+<table>
     <thead>
         <tr>
             <th>Query_id</th>
@@ -165,32 +165,3 @@ When we're front-loaded, the ability to use GPT-4 to make predictions, and time 
 
 ### Final thoughts
 The MVP for an AI application is not as simple as shipping a product with 80% of the features. Instead, it requires a deep understanding of the segments of your users that you can serve well and the ability to educate your users about the segments that you don't serve well. By understanding the limitations of your system and niching down, you can build a product that is memorable and provides something that has repeated use. This will allow you to get feedback quickly and iterate quickly, ultimately leading to a better product, by identifying your feats of strength.
-
-<style>
-.custom-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.custom-table th, .custom-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-}
-
-.custom-table th {
-    background-color: #f2f2f2;
-}
-
-.custom-table tr:nth-child(even){background-color: #f9f9f9;}
-
-.custom-table tr:hover {background-color: #ddd;}
-
-.custom-table td {
-    color: #666;
-}
-
-.custom-table td:nth-child(2) { /* Targeting the score column */
-    text-align: center;
-}
-</style>
