@@ -95,6 +95,126 @@ layout: default
   </div>
 </div>
 
+<!-- References auto-linking script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const content = document.querySelector('.post-content');
+    if (!content) return;
+    
+    // Find all reference citations in the text (e.g., [1], [2], etc.)
+    const citationRegex = /\[(\d+)\]/g;
+    
+    let referenceSection = null;
+    
+    // Find the References section - check for both H2 and bold paragraph formats
+    const allElements = Array.from(content.children);
+    
+    for (let i = 0; i < allElements.length; i++) {
+      const element = allElements[i];
+      const text = element.textContent.trim();
+      
+      // Check if it's an H2 heading with "References"
+      if (element.tagName === 'H2' && /^References:?$/i.test(text)) {
+        referenceSection = element;
+        break;
+      }
+      
+      // Check if it's a paragraph with bold "References:"
+      if (element.tagName === 'P') {
+        const strong = element.querySelector('strong');
+        if (strong && /^References:?$/i.test(strong.textContent.trim())) {
+          referenceSection = element;
+          break;
+        }
+      }
+    }
+    
+    // If we found a References section, process it
+    if (referenceSection) {
+      // Add class to references section
+      referenceSection.classList.add('references-section');
+      
+      // Find all reference items (paragraphs or list items starting with [1], [2], etc.)
+      let nextElement = referenceSection.nextElementSibling;
+      let refNum = 1;
+      
+      while (nextElement) {
+        const text = nextElement.textContent.trim();
+        const match = text.match(/^\[?(\d+)\]?[.\):]?\s/);
+        
+        if (match) {
+          const num = match[1];
+          nextElement.id = `ref-${num}`;
+          nextElement.classList.add('reference-item');
+          
+          // Make the reference number clickable to jump back
+          const refHTML = nextElement.innerHTML;
+          // Handle both [1] and 1. formats
+          nextElement.innerHTML = refHTML.replace(
+            /^(\[(\d+)\]|(\d+)[.\):])/,
+            '<span class="ref-number" id="ref-source-$2$3">[$2$3]</span>'
+          );
+          
+          nextElement = nextElement.nextElementSibling;
+        } else if (nextElement.tagName === 'UL' || nextElement.tagName === 'OL') {
+          // Handle list-based references
+          const listItems = nextElement.querySelectorAll('li');
+          listItems.forEach((li, index) => {
+            const num = index + 1;
+            li.id = `ref-${num}`;
+            li.classList.add('reference-item');
+          });
+          break;
+        } else if (text.length > 0 && !text.match(/^https?:\/\//)) {
+          // Stop if we hit a non-reference, non-empty element
+          break;
+        } else {
+          nextElement = nextElement.nextElementSibling;
+        }
+      }
+      
+      // Now link all citations in the main text
+      const referenceSectionIndex = allElements.indexOf(referenceSection);
+      const mainText = allElements.slice(0, referenceSectionIndex);
+      
+      mainText.forEach(element => {
+        if (element.classList.contains('references-section')) return;
+        
+        const walker = document.createTreeWalker(
+          element,
+          NodeFilter.SHOW_TEXT,
+          null,
+          false
+        );
+        
+        const nodesToReplace = [];
+        let textNode;
+        
+        while (textNode = walker.nextNode()) {
+          if (citationRegex.test(textNode.nodeValue)) {
+            nodesToReplace.push(textNode);
+          }
+        }
+        
+        nodesToReplace.forEach(textNode => {
+          const parent = textNode.parentElement;
+          // Don't process if already in a link or heading
+          if (parent.tagName === 'A' || /^H\d$/.test(parent.tagName)) return;
+          
+          const html = textNode.nodeValue.replace(
+            /\[(\d+)\]/g,
+            '<a href="#ref-$1" class="citation-link" title="Jump to reference $1">[$1]</a>'
+          );
+          
+          const span = document.createElement('span');
+          span.innerHTML = html;
+          textNode.replaceWith(span);
+        });
+      });
+    }
+  });
+</script>
+
 <!-- Structured Data for Scholarly Articles -->
 <script type="application/ld+json">
 {
@@ -229,5 +349,114 @@ layout: default
     .social-share {
       margin-left: 0;
     }
+  }
+  
+  /* References Section Styling */
+  .references-section {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 2px solid rgba(0,0,0,0.1);
+  }
+  
+  /* Style H2 references title */
+  h2.references-section {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding-bottom: 8px;
+  }
+  
+  .reference-item {
+    margin: 12px 0;
+    padding: 10px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+    scroll-margin-top: 100px; /* Account for sticky header */
+  }
+  
+  .reference-item:target {
+    background-color: #fff9e6;
+    padding: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    border-radius: 4px;
+    animation: highlight-fade 2s ease-out;
+  }
+  
+  @keyframes highlight-fade {
+    0% {
+      background-color: #ffeb99;
+    }
+    100% {
+      background-color: #fff9e6;
+    }
+  }
+  
+  .ref-number {
+    display: inline-block;
+    font-weight: 600;
+    color: #555555;
+    margin-right: 8px;
+    min-width: 30px;
+  }
+  
+  .citation-link {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 2px 4px;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    top: -2px;
+    font-size: 0.9em;
+  }
+  
+  .citation-link:hover {
+    background-color: #e6f2ff;
+    color: #0052a3;
+    text-decoration: none;
+  }
+  
+  .citation-link:visited {
+    color: #0066cc;
+  }
+  
+  .reference-item a {
+    color: #0066cc;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 102, 204, 0.3);
+    transition: all 0.2s ease;
+  }
+  
+  .reference-item a:hover {
+    border-bottom-color: #0066cc;
+    background-color: #f0f7ff;
+  }
+  
+  /* List-based references */
+  .references-section + ul,
+  .references-section + ol {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .references-section + ul li.reference-item,
+  .references-section + ol li.reference-item {
+    margin: 12px 0;
+    padding: 10px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+  }
+  
+  .references-section + ul li.reference-item:target,
+  .references-section + ol li.reference-item:target {
+    background-color: #fff9e6;
+    padding: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    border-radius: 4px;
+    animation: highlight-fade 2s ease-out;
   }
 </style>
