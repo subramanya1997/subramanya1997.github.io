@@ -83,6 +83,11 @@ layout: default
       {% endif %}
     </div>
 
+    <!-- Comments Section -->
+    <div class="comments-section">
+      {% include utterances.html %}
+    </div>
+
     <!-- mathjax -->
     {% if page.mathjax %}
     <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -220,28 +225,28 @@ layout: default
 {
   "@context": "https://schema.org",
   "@type": "ScholarlyArticle",
-  "headline": "{{ page.title }}",
+  "headline": {{ page.title | jsonify }},
   "author": {
     "@type": "Person",
-    "name": "{% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %}",
-    "url": "{{ site.url }}"
+    "name": {% if page.author %}{{ page.author | jsonify }}{% else %}{{ site.title | jsonify }}{% endif %},
+    "url": {{ site.url | jsonify }}
   },
   "datePublished": "{{ page.date | date: '%Y-%m-%dT%H:%M:%S' }}+00:00",
   "dateModified": "{{ page.date | date: '%Y-%m-%dT%H:%M:%S' }}+00:00",
   "publisher": {
     "@type": "Organization",
-    "name": "{{ site.title }}",
-    "url": "{{ site.url }}"
+    "name": {{ site.title | jsonify }},
+    "url": {{ site.url | jsonify }}
   },
-  "description": {% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | jsonify }}{% else %}"{{ site.description }}"{% endif %},
-  "url": "{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}",
+  "description": {% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | jsonify }}{% else %}{{ site.description | jsonify }}{% endif %},
+  "url": {{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url | jsonify }},
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"
+    "@id": {{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url | jsonify }}
   },
-  "keywords": "{{ page.tags | join: ', ' }}",
+  "keywords": {{ page.tags | join: ', ' | jsonify }},
   "inLanguage": "en"{% if page.image %},
-  "image": "{{ page.image | prepend: site.baseurl | prepend: site.url }}"{% endif %}
+  "image": {{ page.image | prepend: site.baseurl | prepend: site.url | jsonify }}{% endif %}
 }
 </script>
 
@@ -458,5 +463,16 @@ layout: default
     margin-right: -10px;
     border-radius: 4px;
     animation: highlight-fade 2s ease-out;
+  }
+  
+  /* Comments Section Styling */
+  .comments-section {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .comments-section .utterances {
+    max-width: 100%;
   }
 </style>
