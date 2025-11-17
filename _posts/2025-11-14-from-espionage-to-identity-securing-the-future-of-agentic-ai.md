@@ -61,8 +61,6 @@ The path forward requires building robust delegation frameworks, implementing pr
 
 We cannot afford to let the open, extensible nature of protocols like MCP become a permanent backdoor for malicious actors. The future of agentic AI depends on our ability to build security into these systems from the ground up, making enterprise adoption not just possible, but secure and responsible.
 
----
-
 **References:**
 
 [1] [Anthropic. (2025, November). *Disrupting the first reported AI-orchestrated cyber espionage campaign*. Anthropic.](https://assets.anthropic.com/m/ec212e6566a0d47/original/Disrupting-the-first-reported-AI-orchestrated-cyber-espionage-campaign.pdf)
