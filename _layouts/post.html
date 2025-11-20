@@ -106,8 +106,8 @@ layout: default
     const content = document.querySelector('.post-content');
     if (!content) return;
     
-    // Find all reference citations in the text (e.g., [1], [2], etc.)
-    const citationRegex = /\[(\d+)\]/g;
+    // Find all reference citations in the text (e.g., [1], [2], [1, 2], etc.)
+    const citationRegex = /\[[\d,\s]+\]/g;
     
     let referenceSection = null;
     
@@ -206,9 +206,20 @@ layout: default
           // Don't process if already in a link or heading
           if (parent.tagName === 'A' || /^H\d$/.test(parent.tagName)) return;
           
+          // Handle both single citations [1] and multiple citations [1, 2] or [1, 2, 3]
           const html = textNode.nodeValue.replace(
-            /\[(\d+)\]/g,
-            '<a href="#ref-$1" class="citation-link" title="Jump to reference $1">[$1]</a>'
+            /\[([\d,\s]+)\]/g,
+            function(match, numbers) {
+              // Split by comma and trim spaces
+              const nums = numbers.split(',').map(n => n.trim());
+              
+              // Create individual links for each number
+              const links = nums.map(num => 
+                `<a href="#ref-${num}" class="citation-link" title="Jump to reference ${num}">${num}</a>`
+              ).join(', ');
+              
+              return `[${links}]`;
+            }
           );
           
           const span = document.createElement('span');
