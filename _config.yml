@@ -1,5 +1,5 @@
 title: Subramanya N
-email: snagabhushan@umass.edu
+email: subramanyanagabhushan@gmail.com
 description: Welcome to my personal website, a space where I blog and share my musings on academic and professional topics. Dive in to explore my intellectual journey and gain insights from my experiences in various fields!
 baseurl: ""
 url: "https://subramanya.ai"
@@ -22,3 +22,7 @@ kramdown:
 
 keep_files:
   - sitemap-media.xml
+
+# Google Analytics
+google_analytics: G-04B5H1S8SJ
+google_optimize: OPT-PHBLQWB

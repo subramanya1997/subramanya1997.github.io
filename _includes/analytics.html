@@ -1,0 +1,301 @@
+{% if site.google_analytics and jekyll.environment == 'production' %}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  // Basic configuration with enhanced measurement
+  gtag('config', '{{ site.google_analytics }}', {
+    'send_page_view': true,
+    'anonymize_ip': true,
+    'allow_google_signals': true,
+    'allow_ad_personalization_signals': false
+    {% if page.layout == 'post' %}{% assign word_count = page.content | number_of_words %}{% assign reading_time_mins = word_count | divided_by: 200 %}{% if reading_time_mins == 0 %}{% assign reading_time_mins = 1 %}{% endif %},
+    'custom_map': {
+      'dimension1': 'post_category',
+      'dimension2': 'post_tags',
+      'dimension3': 'reading_time',
+      'dimension4': 'post_date',
+      'dimension5': 'word_count'
+    },
+    'post_category': '{{ page.categories | first | default: "uncategorized" }}',
+    'post_tags': '{{ page.tags | join: ", " | escape }}',
+    'reading_time': {{ reading_time_mins }},
+    'post_date': '{{ page.date | date: "%Y-%m-%d" }}',
+    'word_count': {{ word_count }}
+    {% endif %}
+  });
+
+  {% if page.title %}
+  // Track page view with custom parameters
+  gtag('event', 'page_view', {
+    'page_title': '{{ page.title | escape }}',
+    'page_location': window.location.href,
+    'page_path': '{{ page.url }}',
+    {% if page.layout == 'post' %}
+    'content_type': 'blog_post',
+    'content_category': '{{ page.categories | first | default: "uncategorized" }}',
+    {% elsif page.layout == 'page' %}
+    'content_type': 'page',
+    {% endif %}
+  });
+  {% endif %}
+</script>
+
+{% if site.google_optimize %}
+<!-- Google Optimize -->
+<script src="https://www.googleoptimize.com/optimize.js?id={{ site.google_optimize }}"></script>
+{% endif %}
+
+<!-- Enhanced Event Tracking -->
+<script>
+  // Track all outbound links
+  document.addEventListener('DOMContentLoaded', function() {
+    // Outbound link tracking
+    document.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var href = this.getAttribute('href');
+        var isOutbound = href && (href.startsWith('http') && !href.includes(window.location.hostname));
+        var isDownload = href && (href.endsWith('.pdf') || href.endsWith('.mp4') || href.endsWith('.zip'));
+        
+        if (isOutbound) {
+          gtag('event', 'click', {
+            'event_category': 'outbound_link',
+            'event_label': href,
+            'transport_type': 'beacon'
+          });
+        }
+        
+        if (isDownload) {
+          var fileName = href.split('/').pop();
+          gtag('event', 'file_download', {
+            'event_category': 'downloads',
+            'event_label': fileName,
+            'file_extension': fileName.split('.').pop(),
+            'file_name': fileName
+          });
+        }
+      });
+    });
+
+    // Social media click tracking
+    var socialSelectors = [
+      'a[href*="linkedin.com"]',
+      'a[href*="github.com"]',
+      'a[href*="twitter.com"]',
+      'a[href*="x.com"]'
+    ];
+    
+    socialSelectors.forEach(function(selector) {
+      document.querySelectorAll(selector).forEach(function(link) {
+        link.addEventListener('click', function() {
+          var platform = this.href.match(/(linkedin|github|twitter|x\.com)/i)[0];
+          gtag('event', 'social_click', {
+            'event_category': 'social_media',
+            'event_label': platform,
+            'social_network': platform
+          });
+        });
+      });
+    });
+
+    // Email click tracking
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        gtag('event', 'email_click', {
+          'event_category': 'contact',
+          'event_label': 'email'
+        });
+      });
+    });
+
+    // Navigation click tracking
+    document.querySelectorAll('nav a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        gtag('event', 'navigation_click', {
+          'event_category': 'navigation',
+          'event_label': this.textContent.trim(),
+          'link_url': this.getAttribute('href')
+        });
+      });
+    });
+
+    // Scroll depth tracking
+    var scrollDepths = [25, 50, 75, 90, 100];
+    var scrollDepthsReached = [];
+    
+    window.addEventListener('scroll', function() {
+      var scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+      
+      scrollDepths.forEach(function(depth) {
+        if (scrollPercent >= depth && scrollDepthsReached.indexOf(depth) === -1) {
+          scrollDepthsReached.push(depth);
+          gtag('event', 'scroll', {
+            'event_category': 'engagement',
+            'event_label': depth + '%',
+            'value': depth,
+            'non_interaction': true
+          });
+        }
+      });
+    });
+
+    {% if page.layout == 'post' %}
+    // Blog post specific tracking
+    
+    // Track reading progress
+    var readingStartTime = new Date().getTime();
+    var readingProgressTracked = [];
+    
+    window.addEventListener('scroll', function() {
+      var articleElement = document.querySelector('article') || document.querySelector('.post-content');
+      if (articleElement) {
+        var articleTop = articleElement.offsetTop;
+        var articleHeight = articleElement.offsetHeight;
+        var scrollPosition = window.scrollY + window.innerHeight;
+        var progress = Math.min(100, Math.round(((scrollPosition - articleTop) / articleHeight) * 100));
+        
+        [25, 50, 75, 100].forEach(function(milestone) {
+          if (progress >= milestone && readingProgressTracked.indexOf(milestone) === -1) {
+            readingProgressTracked.push(milestone);
+            gtag('event', 'reading_progress', {
+              'event_category': 'blog_engagement',
+              'event_label': '{{ page.title | escape }}',
+              'value': milestone,
+              'non_interaction': true
+            });
+          }
+        });
+      }
+    });
+    
+    // Track time on page (send at intervals)
+    var timeIntervals = [30, 60, 120, 300]; // seconds
+    timeIntervals.forEach(function(interval) {
+      setTimeout(function() {
+        gtag('event', 'time_on_page', {
+          'event_category': 'blog_engagement',
+          'event_label': '{{ page.title | escape }}',
+          'value': interval,
+          'non_interaction': true
+        });
+      }, interval * 1000);
+    });
+    
+    // Track when user leaves (engagement time)
+    window.addEventListener('beforeunload', function() {
+      var readingTime = Math.round((new Date().getTime() - readingStartTime) / 1000);
+      gtag('event', 'blog_read_time', {
+        'event_category': 'blog_engagement',
+        'event_label': '{{ page.title | escape }}',
+        'value': readingTime,
+        'non_interaction': true,
+        'transport_type': 'beacon'
+      });
+    });
+
+    // Track code block interactions (if any)
+    document.querySelectorAll('pre code').forEach(function(codeBlock) {
+      codeBlock.addEventListener('click', function() {
+        gtag('event', 'code_interaction', {
+          'event_category': 'blog_engagement',
+          'event_label': 'code_block_click',
+          'language': this.className.replace('language-', '')
+        });
+      });
+    });
+    {% endif %}
+
+    // Track video interactions
+    document.querySelectorAll('video').forEach(function(video) {
+      video.addEventListener('play', function() {
+        gtag('event', 'video_start', {
+          'event_category': 'video',
+          'event_label': this.src
+        });
+      });
+      
+      video.addEventListener('ended', function() {
+        gtag('event', 'video_complete', {
+          'event_category': 'video',
+          'event_label': this.src
+        });
+      });
+    });
+
+    // Track image loading errors (broken images)
+    document.querySelectorAll('img').forEach(function(img) {
+      img.addEventListener('error', function() {
+        gtag('event', 'exception', {
+          'description': 'Image load error: ' + this.src,
+          'fatal': false
+        });
+      });
+    });
+
+    // Track visibility changes (tab switching)
+    var visibilityStartTime = new Date().getTime();
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) {
+        var activeTime = Math.round((new Date().getTime() - visibilityStartTime) / 1000);
+        gtag('event', 'tab_hidden', {
+          'event_category': 'engagement',
+          'event_label': 'visibility_change',
+          'value': activeTime,
+          'non_interaction': true
+        });
+      } else {
+        visibilityStartTime = new Date().getTime();
+        gtag('event', 'tab_visible', {
+          'event_category': 'engagement',
+          'event_label': 'visibility_change',
+          'non_interaction': true
+        });
+      }
+    });
+
+    // Track search functionality (if you add it later)
+    var searchInput = document.querySelector('input[type="search"]');
+    if (searchInput) {
+      searchInput.addEventListener('blur', function() {
+        if (this.value) {
+          gtag('event', 'search', {
+            'search_term': this.value
+          });
+        }
+      });
+    }
+
+    // Track 404 errors
+    {% if page.url contains '404' %}
+    gtag('event', 'exception', {
+      'description': '404 Error - Page not found: ' + window.location.pathname,
+      'fatal': false
+    });
+    {% endif %}
+  });
+
+  // Track print action
+  window.addEventListener('beforeprint', function() {
+    gtag('event', 'print', {
+      'event_category': 'engagement',
+      'event_label': document.title
+    });
+  });
+
+  // Track copy events (useful for code snippets)
+  document.addEventListener('copy', function() {
+    var selection = window.getSelection().toString();
+    if (selection.length > 20) {
+      gtag('event', 'content_copy', {
+        'event_category': 'engagement',
+        'event_label': document.title,
+        'value': selection.length
+      });
+    }
+  });
+</script>
+{% endif %}
+
