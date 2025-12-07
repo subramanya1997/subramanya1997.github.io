@@ -232,7 +232,7 @@ The `git log` command visualizes history. By default, it shows a flattened versi
 ```console
 $ git log --all --graph --decorate
 * commit 4515d17a167bdef0a91ee7d50d75b12c9c2652aa (HEAD -> master)
-  Author: Subramanya N <snagabhushan@umass.edu>
+  Author: Subramanya N <subramanyanagabhushan@gmail.com>
   Date: Tue Dec 21 22:18:36 2020 -0500
       Initial commit
 ```
@@ -263,11 +263,11 @@ Now, if we visualize the history again, we'll see some of the graph structure:
 
 ```
 * commit 35f60a825be0106036dd2fbc7657598eb7b04c67 (HEAD -> master)
-| Author: Subramanya N <snagabhushan@umass.edu>
+| Author: Subramanya N <subramanyanagabhushan@gmail.com>
 | Date:   Tue Dec 21 22:26:20 2020 -0500
 |     Add a line
 * commit 4515d17a167bdef0a91ee7d50d75b12c9c2652aa
-  Author: Subramanya N <snagabhushan@umass.edu>
+  Author: Subramanya N <subramanyanagabhushan@gmail.com>
   Date: Tue Dec 21 22:18:36 2020 -0500
       Initial commit
 ```
