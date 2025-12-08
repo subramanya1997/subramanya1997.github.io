@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-12-08T01:41:29.443539",
+  "last_updated": "2025-12-08T01:30:31.324646",
   "view_counts": [
     {
       "url": "/2025/04/28/oidc-a-proposal/",
@@ -9,9 +9,9 @@
     },
     {
       "url": "/2025/05/21/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway/",
-      "views": 896,
-      "avg_duration_seconds": 102.8,
-      "engagement_rate": 43.69
+      "views": 895,
+      "avg_duration_seconds": 102.9,
+      "engagement_rate": 43.74
     },
     {
       "url": "/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/",
@@ -21,9 +21,9 @@
     },
     {
       "url": "/2025/06/21/from-gateway-to-guardian-the-evolution-of-mcp-security/",
-      "views": 282,
-      "avg_duration_seconds": 58.7,
-      "engagement_rate": 41.75
+      "views": 281,
+      "avg_duration_seconds": 58.9,
+      "engagement_rate": 41.9
     },
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
@@ -63,3 +63,4 @@
     }
   ]
 }
+
