@@ -8,14 +8,11 @@ custom_layout: true
 
 <div class="blog-container">
   <div class="blog-posts">
-    {% assign popular_urls = site.data.popular_posts.posts | map: "url" %}
     {% for post in site.posts %}
-      {% assign is_trending = false %}
-      {% assign post_url_normalized = post.url %}
-      {% for popular_post in site.data.popular_posts.posts %}
-        {% assign popular_url_normalized = popular_post.url %}
-        {% if post_url_normalized == popular_url_normalized %}
-          {% assign is_trending = true %}
+      {% assign post_views = nil %}
+      {% for view_data in site.data.view_count.view_counts %}
+        {% if post.url == view_data.url %}
+          {% assign post_views = view_data.views %}
           {% break %}
         {% endif %}
       {% endfor %}
@@ -23,11 +20,12 @@ custom_layout: true
         <div class="post-meta">
           <span class="post-date" data-date="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%Y-%m-%d" }}</span>
           <span class="post-reading-time">
-            {% if is_trending %}
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trending-icon" title="Trending">
-                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                <polyline points="17 6 23 6 23 12"></polyline>
+            {% if post_views %}
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="views-icon" title="Total views">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
               </svg>
+              <span class="views-count">{{ post_views }}</span>
             {% endif %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
@@ -105,9 +103,16 @@ custom_layout: true
     flex-shrink: 0;
   }
   
-  .post-reading-time .trending-icon {
-    stroke: #ff6b6b;
-    cursor: help;
+  .post-reading-time .views-icon {
+    color: #6b7280;
+    margin-right: 4px;
+  }
+  
+  .post-reading-time .views-count {
+    font-size: 14px;
+    color: #6b7280;
+    margin-right: 8px;
+    font-weight: 500;
   }
   
   .post-title {
@@ -208,6 +213,15 @@ custom_layout: true
       }
       
       el.textContent = month + ' ' + day + suffix + ', ' + year;
+    });
+    
+    // Format view counts with commas (e.g., "1,938")
+    const viewElements = document.querySelectorAll('.views-count');
+    viewElements.forEach(function(el) {
+      const count = parseInt(el.textContent);
+      if (!isNaN(count)) {
+        el.textContent = count.toLocaleString();
+      }
     });
   });
 </script>
