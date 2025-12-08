@@ -1,0 +1,29 @@
+---
+layout: none
+---
+[
+  {% for post in site.posts %}
+    {
+      "title"    : "{{ post.title | escape }}",
+      "category" : "{{ post.categories | join: ', ' }}",
+      "tags"     : "{{ post.tags | join: ', ' }}",
+      "url"      : "{{ site.baseurl }}{{ post.url }}",
+      "date"     : "{{ post.date | date: '%B %-d, %Y' }}",
+      "excerpt"  : "{{ post.excerpt | strip_html | strip_newlines | escape }}",
+      "content"  : {{ post.content | strip_html | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+  {% if site.posts.size > 0 and site.books.size > 0 %},{% endif %}
+  {% for book in site.books %}
+    {
+      "title"    : "{{ book.title | escape }}",
+      "category" : "book",
+      "tags"     : "{{ book.tags | join: ', ' }}",
+      "url"      : "{{ site.baseurl }}{{ book.url }}",
+      "date"     : "{{ book.date | date: '%B %-d, %Y' }}",
+      "excerpt"  : "{{ book.excerpt | strip_html | strip_newlines | escape }}",
+      "content"  : {{ book.content | strip_html | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
+

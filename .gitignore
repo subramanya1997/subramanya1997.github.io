@@ -1,5 +1,28 @@
-_drafts/
-_site/
-.jekyll-cache/
-Gemfile.lock
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
 .DS_Store
+Gemfile.lock
+
+# Analytics credentials - NEVER commit these!
+*-credentials.json
+service-account*.json
+google-credentials.json
+scripts/*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

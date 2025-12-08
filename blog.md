@@ -7,6 +7,9 @@ custom_layout: true
 ---
 
 <div class="blog-container">
+  <!-- Popular Posts Widget -->
+  {% include popular-posts.html %}
+
   <div class="blog-posts">
     {% for post in site.posts %}
       <div class="blog-post">

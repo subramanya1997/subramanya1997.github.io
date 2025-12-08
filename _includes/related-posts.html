@@ -1,0 +1,186 @@
+{% assign maxRelated = 4 %}
+{% assign minCommonTags = 1 %}
+{% assign maxRelatedCounter = 0 %}
+
+<!-- Find posts with matching tags -->
+{% assign relatedPosts = "" | split: "" %}
+
+{% for post in site.posts %}
+  {% if post.url != page.url %}
+    {% assign commonTags = 0 %}
+    {% assign sameCategory = false %}
+    
+    {% for tag in post.tags %}
+      {% if page.tags contains tag %}
+        {% assign commonTags = commonTags | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+    
+    {% if post.categories.first == page.categories.first %}
+      {% assign sameCategory = true %}
+    {% endif %}
+    
+    {% if commonTags >= minCommonTags or sameCategory %}
+      {% assign relatedPosts = relatedPosts | push: post %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+<!-- If no related posts found, use recent posts -->
+{% if relatedPosts.size == 0 %}
+  {% for post in site.posts limit:4 %}
+    {% if post.url != page.url %}
+      {% assign relatedPosts = relatedPosts | push: post %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% if relatedPosts.size > 0 %}
+<section class="related-posts">
+  <h3 class="related-posts-title">Related Posts</h3>
+  <div class="related-posts-grid">
+    {% for post in relatedPosts limit:maxRelated %}
+      <article class="related-post-card">
+        <div class="related-post-content">
+          <time class="related-post-date" datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%b %-d, %Y" }}
+          </time>
+          <h4 class="related-post-title">
+            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h4>
+          {% if post.excerpt %}
+            <p class="related-post-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+          {% endif %}
+          {% if post.tags.size > 0 %}
+            <div class="related-post-tags">
+              {% for tag in post.tags limit:3 %}
+                <span class="tag">{{ tag }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+  .related-posts {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 2px solid var(--border-color);
+  }
+  
+  .related-posts-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .related-posts-title:after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--accent);
+  }
+  
+  .related-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 32px;
+  }
+  
+  .related-post-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .related-post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px var(--shadow-medium);
+    border-color: var(--accent);
+  }
+  
+  .related-post-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .related-post-date {
+    font-size: 13px;
+    color: var(--text-tertiary);
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .related-post-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  
+  .related-post-title a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .related-post-title a:hover {
+    color: var(--accent);
+  }
+  
+  .related-post-excerpt {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 12px;
+    flex: 1;
+  }
+  
+  .related-post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: auto;
+  }
+  
+  .related-post-tags .tag {
+    font-size: 12px;
+    padding: 4px 10px;
+    background-color: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+  
+  .related-post-card:hover .related-post-tags .tag {
+    background-color: var(--accent);
+    color: white;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .related-posts-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .related-posts-title {
+      font-size: 20px;
+    }
+  }
+</style>
+{% endif %}
+

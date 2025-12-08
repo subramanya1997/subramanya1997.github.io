@@ -45,7 +45,7 @@ layout: default
       </div>
     </div>
     <div class="profile-image">
-      <img alt="profile photo" src="/assets/images/profile_picture.webp" class="profile-img" />
+      <img alt="profile photo" src="/assets/images/profile_picture.webp" loading="lazy" class="profile-img" />
     </div>
   </div>
 
@@ -89,6 +89,10 @@ layout: default
 
   <div class="content-section">
     <h2 class="section-heading">Blog</h2>
+    
+    <!-- Popular Posts Widget -->
+    {% include popular-posts.html %}
+    
     <div class="blog-posts">
       {% for post in site.posts %}
         <div class="blog-post">
