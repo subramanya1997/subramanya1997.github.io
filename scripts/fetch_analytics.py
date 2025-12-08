@@ -77,7 +77,8 @@ def fetch_popular_posts(property_id, days=None, limit=None):
     try:
         response = client.run_report(request)
         
-        popular_posts = []
+        # Aggregate posts by URL (combine duplicates)
+        posts_dict = {}
         for row in response.rows:
             page_path = row.dimension_values[0].value
             page_title = row.dimension_values[1].value
@@ -88,19 +89,43 @@ def fetch_popular_posts(property_id, days=None, limit=None):
             # Filter for blog posts (adjust pattern based on your URL structure)
             # Assuming blog posts are in /YYYY/MM/DD/ format
             if is_blog_post(page_path):
-                popular_posts.append({
-                    "url": page_path,
-                    "title": page_title,
-                    "views": page_views,
-                    "avg_duration_seconds": round(avg_duration, 1),
-                    "engagement_rate": round(engagement_rate, 2),
-                })
-                
-                # Stop when we have enough posts (if limit is set)
-                if limit and len(popular_posts) >= limit:
-                    break
+                if page_path in posts_dict:
+                    # Aggregate views for duplicate URLs
+                    posts_dict[page_path]["views"] += page_views
+                    # Average the duration and engagement rate
+                    posts_dict[page_path]["total_duration"] += avg_duration * page_views
+                    posts_dict[page_path]["total_engagement"] += engagement_rate * page_views
+                    posts_dict[page_path]["count"] += 1
+                else:
+                    posts_dict[page_path] = {
+                        "url": page_path,
+                        "title": page_title,
+                        "views": page_views,
+                        "total_duration": avg_duration * page_views,
+                        "total_engagement": engagement_rate * page_views,
+                        "count": 1
+                    }
         
-        return popular_posts
+        # Calculate weighted averages and filter by views > 100
+        view_counts = []
+        for post_data in posts_dict.values():
+            views = post_data["views"]
+            if views > 100:  # Only include posts with more than 100 views
+                view_counts.append({
+                    "url": post_data["url"],
+                    "views": views,
+                    "avg_duration_seconds": round(post_data["total_duration"] / views, 1),
+                    "engagement_rate": round(post_data["total_engagement"] / views, 2),
+                })
+        
+        # Sort by views (descending)
+        view_counts.sort(key=lambda x: x["views"], reverse=True)
+        
+        # Apply limit if specified
+        if limit:
+            view_counts = view_counts[:limit]
+        
+        return view_counts
     
     except Exception as e:
         print(f"Error fetching analytics data: {e}")
@@ -123,7 +148,7 @@ def save_to_json(data, output_file):
     """Save data to JSON file."""
     output_data = {
         "last_updated": datetime.now().isoformat(),
-        "posts": data
+        "view_counts": data
     }
     
     # Ensure directory exists
@@ -132,7 +157,7 @@ def save_to_json(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(output_data, f, indent=2, ensure_ascii=False)
     
-    print(f"Saved {len(data)} popular posts to {output_file}")
+    print(f"Saved {len(data)} posts with view counts to {output_file}")
 
 
 def main():
@@ -141,14 +166,14 @@ def main():
     if not property_id:
         raise ValueError("GA_PROPERTY_ID environment variable not set")
     
-    print("Fetching all-time popular posts from Google Analytics...")
+    print("Fetching all-time view counts from Google Analytics...")
     # Get all-time data (days=None) for all posts (limit=None)
-    popular_posts = fetch_popular_posts(property_id, days=None, limit=None)
+    view_counts = fetch_popular_posts(property_id, days=None, limit=None)
     
-    output_file = '_data/popular_posts.json'
-    save_to_json(popular_posts, output_file)
+    output_file = '_data/view_count.json'
+    save_to_json(view_counts, output_file)
     
-    print(f"Done! Fetched {len(popular_posts)} posts with all-time views.")
+    print(f"Done! Fetched {len(view_counts)} posts with all-time views.")
 
 
 if __name__ == "__main__":

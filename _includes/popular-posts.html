@@ -1,4 +1,4 @@
-{% if site.data.popular_posts.posts.size > 0 %}
+{% if site.data.view_count.view_counts.size > 0 %}
 <div class="popular-posts-widget">
   <div class="widget-header">
     <h3>
@@ -8,24 +8,24 @@
       </svg>
       Trending Posts
     </h3>
-    <span class="update-time" title="Last updated: {{ site.data.popular_posts.last_updated | date: '%B %d, %Y at %I:%M %p' }}">
+    <span class="update-time" title="Last updated: {{ site.data.view_count.last_updated | date: '%B %d, %Y at %I:%M %p' }}">
       All-time views
     </span>
   </div>
   
   <div class="popular-posts-list">
-    {% for post in site.data.popular_posts.posts limit:5 %}
-      {% assign post_obj = site.posts | where_exp: "item", "item.url == post.url" | first %}
+    {% for view_data in site.data.view_count.view_counts limit:5 %}
+      {% assign post_obj = site.posts | where_exp: "item", "item.url == view_data.url" | first %}
       
       <div class="popular-post-item">
         <div class="post-rank">{{ forloop.index }}</div>
         <div class="post-info">
           <h4>
-            <a href="{{ post.url }}">
+            <a href="{{ view_data.url }}">
               {% if post_obj %}
                 {{ post_obj.title }}
               {% else %}
-                {{ post.title }}
+                Post
               {% endif %}
             </a>
           </h4>
@@ -35,13 +35,13 @@
                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                 <circle cx="12" cy="12" r="3"></circle>
               </svg>
-              {{ post.views | divided_by: 1000.0 | round: 1 }}k views
+              {{ view_data.views | divided_by: 1000.0 | round: 1 }}k views
             </span>
             <span class="stat" title="Engagement rate">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
               </svg>
-              {{ post.engagement_rate }}%
+              {{ view_data.engagement_rate }}%
             </span>
           </div>
         </div>
