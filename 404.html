@@ -1,0 +1,132 @@
+---
+layout: default
+permalink: /404.html
+---
+
+<style>
+  .error-container {
+    max-width: 600px;
+    margin: 80px auto;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .error-code {
+    font-size: 120px;
+    font-weight: 700;
+    color: var(--accent, #555555);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+  
+  .error-message {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-primary, #111);
+  }
+  
+  .error-description {
+    font-size: 16px;
+    color: var(--text-secondary, #666);
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+  
+  .error-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .error-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: var(--accent, #555555);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .error-button:hover {
+    background-color: var(--text-primary, #333333);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  
+  .error-links {
+    margin-top: 30px;
+  }
+  
+  .error-links a {
+    color: var(--accent, #555555);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+  }
+  
+  .error-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .error-search {
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-color, #e5e5e5);
+  }
+  
+  .error-search h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--text-primary, #111);
+  }
+  
+  @media screen and (max-width: 600px) {
+    .error-code {
+      font-size: 80px;
+    }
+    
+    .error-message {
+      font-size: 24px;
+    }
+  }
+</style>
+
+<div class="error-container">
+  <div class="error-code">404</div>
+  <h1 class="error-message">Page Not Found</h1>
+  <p class="error-description">
+    Oops! The page you're looking for doesn't exist. It might have been moved or deleted.
+  </p>
+  
+  <div class="error-actions">
+    <a href="{{ site.baseurl }}/" class="error-button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+      Go Home
+    </a>
+  </div>
+  
+  <div class="error-links">
+    <a href="{{ site.baseurl }}/blog/">Browse Blog</a>
+    <a href="{{ site.baseurl }}/books/">View Books</a>
+    <a href="{{ site.baseurl }}/work/">See Work</a>
+  </div>
+</div>
+
+<script>
+  // Show search section if search is available
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof SimpleJekyllSearch !== 'undefined') {
+      document.getElementById('search-section').style.display = 'block';
+    }
+  });
+</script>
+

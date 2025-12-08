@@ -1,7 +1,15 @@
 ---
 layout: default
 ---
+<!-- Reading Progress Bar -->
+<div class="reading-progress-bar" id="reading-progress"></div>
+
 <div class="post-container">
+  <!-- Table of Contents Sidebar (Left) -->
+  <aside class="post-toc-sidebar">
+    {% include toc.html %}
+  </aside>
+  
   <div class="post">
     <header class="post-header">
       <h1>{{ page.title }}</h1>
@@ -67,6 +75,9 @@ layout: default
       {{ content }}
     </article>
     
+    <!-- Related Posts -->
+    {% include related-posts.html %}
+    
     <div class="post-navigation">
       {% if page.previous.url %}
       <a class="prev-post" href="{{page.previous.url}}">
@@ -87,7 +98,13 @@ layout: default
     <div class="comments-section">
       {% include utterances.html %}
     </div>
+  </div>
+</div>
 
+<div style="clear: both;"></div>
+
+<!-- Post Scripts -->
+<div>
     <!-- mathjax -->
     {% if page.mathjax %}
     <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -97,8 +114,175 @@ layout: default
     {% if page.mermaid %}
     {% include mermaid.html %}
     {% endif %}
-  </div>
 </div>
+
+<!-- Lazy Loading Images Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Add lazy loading to all images in post content
+    document.querySelectorAll('.post-content img').forEach(function(img) {
+      if (!img.hasAttribute('loading')) {
+        img.setAttribute('loading', 'lazy');
+      }
+    });
+  });
+</script>
+
+<!-- Reading Progress Bar Script -->
+<script>
+  (function() {
+    const progressBar = document.getElementById('reading-progress');
+    
+    if (progressBar) {
+      function updateProgressBar() {
+        const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        progressBar.style.width = Math.min(scrolled, 100) + '%';
+      }
+      
+      window.addEventListener('scroll', updateProgressBar);
+      window.addEventListener('resize', updateProgressBar);
+      updateProgressBar(); // Initial call
+    }
+  })();
+</script>
+
+<!-- Copy Code Buttons Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Add copy button to all code blocks
+    document.querySelectorAll('pre code').forEach(function(codeBlock) {
+      const pre = codeBlock.parentElement;
+      
+      // Create wrapper if not already wrapped
+      if (!pre.classList.contains('code-wrapper')) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'code-wrapper';
+        pre.parentNode.insertBefore(wrapper, pre);
+        wrapper.appendChild(pre);
+        
+        // Create copy button
+        const button = document.createElement('button');
+        button.className = 'copy-code-button';
+        button.type = 'button';
+        button.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span class="copy-text">Copy</span>
+        `;
+        button.setAttribute('aria-label', 'Copy code to clipboard');
+        
+        // Add click handler
+        button.addEventListener('click', async function() {
+          const code = codeBlock.textContent;
+          
+          try {
+            await navigator.clipboard.writeText(code);
+            button.classList.add('copied');
+            button.querySelector('.copy-text').textContent = 'Copied!';
+            
+            setTimeout(function() {
+              button.classList.remove('copied');
+              button.querySelector('.copy-text').textContent = 'Copy';
+            }, 2000);
+          } catch (err) {
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = code;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+              document.execCommand('copy');
+              button.querySelector('.copy-text').textContent = 'Copied!';
+              setTimeout(function() {
+                button.querySelector('.copy-text').textContent = 'Copy';
+              }, 2000);
+            } catch (err) {
+              console.error('Failed to copy:', err);
+            }
+            document.body.removeChild(textArea);
+          }
+        });
+        
+        wrapper.insertBefore(button, pre);
+      }
+    });
+  });
+</script>
+
+<style>
+  .reading-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 10000;
+    transition: width 0.1s ease;
+  }
+  
+  .code-wrapper {
+    position: relative;
+    margin: 1.5rem 0;
+  }
+  
+  .copy-code-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+  }
+  
+  .copy-code-button:hover {
+    background-color: var(--accent);
+    color: white;
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+  
+  .copy-code-button.copied {
+    background-color: #22c55e;
+    border-color: #22c55e;
+    color: white;
+  }
+  
+  .copy-code-button svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .code-wrapper pre {
+    margin: 0;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .copy-code-button .copy-text {
+      display: none;
+    }
+    
+    .copy-code-button {
+      padding: 8px;
+    }
+  }
+</style>
 
 <!-- References auto-linking script -->
 <script>
@@ -265,8 +449,9 @@ layout: default
   .post-container {
     display: flex;
     gap: 40px;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
+    position: relative;
   }
   
   .post {
@@ -275,6 +460,12 @@ layout: default
     padding: 20px 0;
     box-shadow: none;
     flex: 1;
+    min-width: 0; /* Allow flex item to shrink */
+  }
+  
+  .post-toc-sidebar {
+    flex: 0 0 280px;
+    min-width: 280px;
   }
   
   .post-header {
@@ -344,6 +535,16 @@ layout: default
   
   .next-post {
     text-align: right;
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .post-container {
+      max-width: 800px;
+    }
+    
+    .post-toc-sidebar {
+      display: none;
+    }
   }
   
   @media screen and (max-width: 1024px) {
