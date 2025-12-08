@@ -1,0 +1,169 @@
+<div class="header-search">
+  <input 
+    type="text" 
+    id="search-input" 
+    class="header-search-input" 
+    placeholder="Search posts and books..." 
+    autocomplete="off"
+    aria-label="Search">
+</div>
+
+<style>
+  .header-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    flex: 1;
+    max-width: 500px;
+  }
+  
+  .header-search .search-icon {
+    color: #999;
+    flex-shrink: 0;
+  }
+  
+  .header-search-input {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 14px;
+    color: #111;
+    outline: none;
+    width: 100%;
+    padding: 6px 0;
+    transition: border-color 0.2s ease;
+  }
+  
+  .header-search-input:focus {
+    border-bottom-color: #555;
+  }
+  
+  .header-search-input::placeholder {
+    color: #999;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .header-search {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // Search functionality that updates page content
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('search-input');
+    if (!searchInput) return;
+    
+    let searchData = [];
+    let originalContent = null;
+    
+    // Fetch search index
+    fetch('{{ "/search.json" | prepend: site.baseurl }}')
+      .then(response => response.json())
+      .then(data => {
+        searchData = data;
+      })
+      .catch(err => console.error('Error loading search index:', err));
+    
+    // Search and display results on page
+    searchInput.addEventListener('input', function() {
+      const query = this.value.trim().toLowerCase();
+      const pageContent = document.querySelector('.page-content .wrap');
+      
+      if (!pageContent) return;
+      
+      // Save original content on first search
+      if (!originalContent && query.length > 0) {
+        originalContent = pageContent.innerHTML;
+      }
+      
+      // Restore original content if search is cleared
+      if (query.length === 0 && originalContent) {
+        pageContent.innerHTML = originalContent;
+        return;
+      }
+      
+      // Perform search
+      if (query.length > 1) {
+        const results = searchData.filter(item => {
+          return item.title.toLowerCase().includes(query) ||
+                 item.tags.toLowerCase().includes(query) ||
+                 item.excerpt.toLowerCase().includes(query) ||
+                 item.content.toLowerCase().includes(query);
+        }).slice(0, 20);
+        
+        // Display results using exact blog.md layout
+        if (results.length > 0) {
+          let html = '<style>';
+          html += '.blog-container { max-width: 800px; margin: 0 auto; padding: 0 20px; }';
+          html += '.blog-posts { margin-top: 20px; }';
+          html += '.blog-post { margin-bottom: 30px; }';
+          html += '.post-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }';
+          html += '.post-date { font-size: 14px; color: #555; }';
+          html += '.post-reading-time { display: flex; align-items: center; gap: 5px; font-size: 14px; color: #555; }';
+          html += '.post-reading-time svg { flex-shrink: 0; }';
+          html += '.post-title { font-size: 24px; font-weight: 600; margin: 0 0 10px 0; }';
+          html += '.post-title a { color: #111; text-decoration: none; }';
+          html += '.post-title a:hover { color: #555555; }';
+          html += '.post-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }';
+          html += '.post-excerpt { font-size: 14px; line-height: 1.6; color: #444; margin-bottom: 12px; }';
+          html += '.continue-reading { display: inline-flex; align-items: center; gap: 5px; color: #555555; font-size: 14px; font-weight: 500; text-decoration: none; }';
+          html += '.continue-reading:hover { color: #333333; text-decoration: underline; }';
+          html += '.continue-reading svg { transition: transform 0.2s ease; }';
+          html += '.continue-reading:hover svg { transform: translateX(3px); }';
+          html += '.post-divider { border: none; border-top: 1px solid #e5e5e5; margin: 30px 0; }';
+          html += '@media (max-width: 768px) { .blog-container { padding: 0 15px; } .post-title { font-size: 22px; } }';
+          html += '</style>';
+          
+          html += '<div class="blog-container">';
+          html += '<div class="blog-posts">';
+          
+          results.forEach((result, index) => {
+            html += '<div class="blog-post">';
+            html += '<div class="post-meta">';
+            html += '<span class="post-date">' + result.date + '</span>';
+            html += '</div>';
+            html += '<h2 class="post-title"><a href="' + result.url + '">' + result.title + '</a></h2>';
+            
+            if (result.tags) {
+              const tags = result.tags.split(',').map(t => t.trim()).filter(t => t);
+              if (tags.length > 0) {
+                html += '<div class="post-tags">';
+                tags.forEach(tag => {
+                  html += '<span class="tag">' + tag + '</span>';
+                });
+                html += '</div>';
+              }
+            }
+            
+            html += '<div class="post-excerpt">' + result.excerpt + '</div>';
+            html += '<a href="' + result.url + '" class="continue-reading">';
+            html += 'Continue reading';
+            html += '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">';
+            html += '<line x1="5" y1="12" x2="19" y2="12"></line>';
+            html += '<polyline points="12 5 19 12 12 19"></polyline>';
+            html += '</svg>';
+            html += '</a>';
+            html += '</div>';
+            
+            if (index < results.length - 1) {
+              html += '<hr class="post-divider">';
+            }
+          });
+          
+          html += '</div></div>';
+          pageContent.innerHTML = html;
+        } else {
+          let html = '<style>';
+          html += '.blog-container { max-width: 800px; margin: 0 auto; padding: 0 20px; }';
+          html += '</style>';
+          html += '<div class="blog-container"><p style="text-align: center; color: #666; padding: 60px 20px; font-size: 16px;">No results found. Try different keywords.</p></div>';
+          pageContent.innerHTML = html;
+        }
+      }
+    });
+  });
+</script>
+

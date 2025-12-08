@@ -1,0 +1,207 @@
+{% if site.data.popular_posts.posts.size > 0 %}
+<div class="popular-posts-widget">
+  <div class="widget-header">
+    <h3>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+        <polyline points="17 6 23 6 23 12"></polyline>
+      </svg>
+      Trending Posts
+    </h3>
+    <span class="update-time" title="Last updated: {{ site.data.popular_posts.last_updated | date: '%B %d, %Y at %I:%M %p' }}">
+      Last 30 days
+    </span>
+  </div>
+  
+  <div class="popular-posts-list">
+    {% for post in site.data.popular_posts.posts limit:5 %}
+      {% assign post_obj = site.posts | where_exp: "item", "item.url == post.url" | first %}
+      
+      <div class="popular-post-item">
+        <div class="post-rank">{{ forloop.index }}</div>
+        <div class="post-info">
+          <h4>
+            <a href="{{ post.url }}">
+              {% if post_obj %}
+                {{ post_obj.title }}
+              {% else %}
+                {{ post.title }}
+              {% endif %}
+            </a>
+          </h4>
+          <div class="post-stats">
+            <span class="stat" title="Page views">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              {{ post.views | divided_by: 1000.0 | round: 1 }}k views
+            </span>
+            <span class="stat" title="Engagement rate">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+              {{ post.engagement_rate }}%
+            </span>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .popular-posts-widget {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 30px 0;
+  }
+
+  .popular-posts-widget .widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-color);
+  }
+
+  .popular-posts-widget .widget-header h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-primary);
+  }
+
+  .popular-posts-widget .widget-header h3 svg {
+    color: var(--accent);
+  }
+
+  .popular-posts-widget .update-time {
+    font-size: 12px;
+    color: var(--text-tertiary);
+  }
+
+  .popular-posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .popular-post-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+
+  .popular-post-item:hover {
+    background-color: var(--bg-tertiary);
+  }
+
+  .popular-post-item .post-rank {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .popular-post-item:nth-child(1) .post-rank {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #333;
+  }
+
+  .popular-post-item:nth-child(2) .post-rank {
+    background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
+    color: #333;
+  }
+
+  .popular-post-item:nth-child(3) .post-rank {
+    background: linear-gradient(135deg, #cd7f32, #e8a87c);
+    color: #333;
+  }
+
+  .popular-post-item .post-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .popular-post-item h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+  }
+
+  .popular-post-item h4 a {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+
+  .popular-post-item h4 a:hover {
+    color: var(--accent);
+  }
+
+  .popular-post-item .post-stats {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .popular-post-item .stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  .popular-post-item .stat svg {
+    flex-shrink: 0;
+    color: var(--text-tertiary);
+  }
+
+  @media screen and (max-width: 768px) {
+    .popular-posts-widget {
+      padding: 15px;
+    }
+
+    .popular-posts-widget .widget-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .popular-post-item {
+      padding: 10px;
+    }
+
+    .popular-post-item h4 {
+      font-size: 14px;
+    }
+
+    .popular-post-item .post-stats {
+      gap: 10px;
+    }
+
+    .popular-post-item .stat {
+      font-size: 12px;
+    }
+  }
+</style>
+{% endif %}
+
