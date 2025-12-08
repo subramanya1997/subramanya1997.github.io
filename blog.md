@@ -7,15 +7,28 @@ custom_layout: true
 ---
 
 <div class="blog-container">
-  <!-- Popular Posts Widget -->
-  {% include popular-posts.html %}
-
   <div class="blog-posts">
+    {% assign popular_urls = site.data.popular_posts.posts | map: "url" %}
     {% for post in site.posts %}
+      {% assign is_trending = false %}
+      {% assign post_url_normalized = post.url %}
+      {% for popular_post in site.data.popular_posts.posts %}
+        {% assign popular_url_normalized = popular_post.url %}
+        {% if post_url_normalized == popular_url_normalized %}
+          {% assign is_trending = true %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
       <div class="blog-post">
         <div class="post-meta">
-          <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+          <span class="post-date" data-date="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%Y-%m-%d" }}</span>
           <span class="post-reading-time">
+            {% if is_trending %}
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trending-icon" title="Trending">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+            {% endif %}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <polyline points="12 6 12 12 16 14"></polyline>
@@ -92,6 +105,11 @@ custom_layout: true
     flex-shrink: 0;
   }
   
+  .post-reading-time .trending-icon {
+    stroke: #ff6b6b;
+    cursor: help;
+  }
+  
   .post-title {
     font-size: 24px;
     font-weight: 600;
@@ -160,3 +178,36 @@ custom_layout: true
     }
   }
 </style>
+
+<script>
+  // Format dates with ordinal suffixes (e.g., "December 8th, 2025")
+  document.addEventListener('DOMContentLoaded', function() {
+    const dateElements = document.querySelectorAll('.post-date[data-date]');
+    
+    dateElements.forEach(function(el) {
+      const dateStr = el.getAttribute('data-date');
+      if (!dateStr) return;
+      
+      const date = new Date(dateStr + 'T00:00:00');
+      if (isNaN(date.getTime())) return;
+      
+      const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+                     'July', 'August', 'September', 'October', 'November', 'December'];
+      const day = date.getDate();
+      const month = months[date.getMonth()];
+      const year = date.getFullYear();
+      
+      // Get ordinal suffix
+      let suffix = 'th';
+      if (day === 1 || day === 21 || day === 31) {
+        suffix = 'st';
+      } else if (day === 2 || day === 22) {
+        suffix = 'nd';
+      } else if (day === 3 || day === 23) {
+        suffix = 'rd';
+      }
+      
+      el.textContent = month + ' ' + day + suffix + ', ' + year;
+    });
+  });
+</script>
