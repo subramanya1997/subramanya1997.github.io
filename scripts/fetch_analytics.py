@@ -27,14 +27,14 @@ def get_credentials():
     return Credentials.from_service_account_info(creds_dict)
 
 
-def fetch_popular_posts(property_id, days=30, limit=10):
+def fetch_popular_posts(property_id, days=None, limit=None):
     """
     Fetch popular posts from Google Analytics.
     
     Args:
         property_id: GA4 property ID
-        days: Number of days to look back
-        limit: Number of posts to return
+        days: Number of days to look back (None for all-time)
+        limit: Number of posts to return (None for all posts)
     
     Returns:
         List of popular posts with metadata
@@ -44,7 +44,11 @@ def fetch_popular_posts(property_id, days=30, limit=10):
     
     # Calculate date range
     end_date = datetime.now()
-    start_date = end_date - timedelta(days=days)
+    if days:
+        start_date = end_date - timedelta(days=days)
+    else:
+        # All-time data (GA4 typically retains data from 2020 onwards)
+        start_date = datetime(2020, 1, 1)
     
     request = RunReportRequest(
         property=f"properties/{property_id}",
@@ -61,7 +65,7 @@ def fetch_popular_posts(property_id, days=30, limit=10):
             Metric(name="averageSessionDuration"),
             Metric(name="engagementRate"),
         ],
-        limit=100,  # Fetch more than needed to filter blog posts
+        limit=1000,  # Fetch all blog posts (increased limit)
         order_bys=[{
             "metric": {
                 "metric_name": "screenPageViews"
@@ -92,8 +96,8 @@ def fetch_popular_posts(property_id, days=30, limit=10):
                     "engagement_rate": round(engagement_rate, 2),
                 })
                 
-                # Stop when we have enough posts
-                if len(popular_posts) >= limit:
+                # Stop when we have enough posts (if limit is set)
+                if limit and len(popular_posts) >= limit:
                     break
         
         return popular_posts
@@ -137,13 +141,14 @@ def main():
     if not property_id:
         raise ValueError("GA_PROPERTY_ID environment variable not set")
     
-    print("Fetching popular posts from Google Analytics...")
-    popular_posts = fetch_popular_posts(property_id, days=30, limit=10)
+    print("Fetching all-time popular posts from Google Analytics...")
+    # Get all-time data (days=None) for all posts (limit=None)
+    popular_posts = fetch_popular_posts(property_id, days=None, limit=None)
     
     output_file = '_data/popular_posts.json'
     save_to_json(popular_posts, output_file)
     
-    print("Done!")
+    print(f"Done! Fetched {len(popular_posts)} posts with all-time views.")
 
 
 if __name__ == "__main__":
