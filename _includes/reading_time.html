@@ -65,15 +65,15 @@
 
 {% if reading_time_minutes > 0 %}
   {% if reading_time_minutes == 1 %}
-    {% assign reading_time_text = "1 min read" %}
+    {% assign reading_time_text = "1 min" %}
   {% else %}
-    {% assign reading_time_text = reading_time_minutes | append: " mins read" %}
+    {% assign reading_time_text = reading_time_minutes | append: " mins" %}
   {% endif %}
 {% else %}
   {% if reading_time_remainder < 50 %}
-    {% assign reading_time_text = "less than a minute read" %}
+    {% assign reading_time_text = "< 1 min" %}
   {% else %}
-    {% assign reading_time_text = "1 min read" %}
+    {% assign reading_time_text = "1 min" %}
   {% endif %}
 {% endif %}
 
