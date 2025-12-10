@@ -17,7 +17,7 @@ This explosive growth signals a new phase of enterprise adoption. The conversati
 
 ## The Money Flows to Applications, and Enterprises are Buying
 
-So, where is this money going? Over half of all enterprise AI spend—**$19 billion**—is flowing directly into the application layer [3]. This indicates a clear preference for immediate productivity gains over long-term, in-house infrastructure projects. The "buy vs. build" debate has decisively tilted towards buying, with **76% of AI use cases now being purchased** from vendors, a dramatic reversal from 2024 when the split was nearly even [3].
+So, where is this money going? Over half of all enterprise AI spend **$19 billion** is flowing directly into the application layer [3]. This indicates a clear preference for immediate productivity gains over long-term, in-house infrastructure projects. The "buy vs. build" debate has decisively tilted towards buying, with **76% of AI use cases now being purchased** from vendors, a dramatic reversal from 2024 when the split was nearly even [3].
 
 ![Generative AI Spend by Category](/assets/images/genai_spend_by_category_menlo.webp)
 
