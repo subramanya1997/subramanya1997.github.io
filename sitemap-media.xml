@@ -1,187 +1,217 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://subramanya.ai/assets/favicon/android-chrome-192x192.png</loc>
+    <loc>http://localhost:4000/assets/favicon/android-chrome-192x192.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/favicon/android-chrome-512x512.png</loc>
+    <loc>http://localhost:4000/assets/favicon/android-chrome-512x512.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/favicon/apple-touch-icon.png</loc>
+    <loc>http://localhost:4000/assets/favicon/apple-touch-icon.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/favicon/favicon-128x128.png</loc>
+    <loc>http://localhost:4000/assets/favicon/favicon-128x128.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/favicon/favicon-16x16.png</loc>
+    <loc>http://localhost:4000/assets/favicon/favicon-16x16.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/favicon/favicon-32x32.png</loc>
+    <loc>http://localhost:4000/assets/favicon/favicon-32x32.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/favicon/favicon-64x64.png</loc>
+    <loc>http://localhost:4000/assets/favicon/favicon-64x64.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/favicon/favicon.ico</loc>
+    <loc>http://localhost:4000/assets/favicon/favicon.ico</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/favicon/favicon.svg</loc>
+    <loc>http://localhost:4000/assets/favicon/favicon.svg</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/favicon/mstile-144x144.png</loc>
+    <loc>http://localhost:4000/assets/favicon/mstile-144x144.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/favicon/site.webmanifest</loc>
+    <loc>http://localhost:4000/assets/favicon/site.webmanifest</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/Agent Directory.png</loc>
+    <loc>http://localhost:4000/assets/images/Agent Directory.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/MCP Registry.png</loc>
+    <loc>http://localhost:4000/assets/images/MCP Registry.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/NockOut_1080x540.png</loc>
+    <loc>http://localhost:4000/assets/images/NockOut_1080x540.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/ai-code-assistants.webp</loc>
+    <loc>http://localhost:4000/assets/images/ai-code-assistants.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/ai_cyberattack_lifecycle_diagram.webp</loc>
+    <loc>http://localhost:4000/assets/images/ai_cyberattack_lifecycle_diagram.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/anscombes_quartet.png</loc>
+    <loc>http://localhost:4000/assets/images/anscombes_quartet.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/dev-ops.webp</loc>
+    <loc>http://localhost:4000/assets/images/anthropic_coding_agents.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/governance_stack.png</loc>
+    <loc>http://localhost:4000/assets/images/anthropic_multistep_workflows.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/logos/dylog.png</loc>
+    <loc>http://localhost:4000/assets/images/dev-ops.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/logos/meta.png</loc>
+    <loc>http://localhost:4000/assets/images/enterprise_ai_growth_menlo.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/logos/nie.png</loc>
+    <loc>http://localhost:4000/assets/images/genai_spend_by_category_menlo.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/logos/renderpub.png</loc>
+    <loc>http://localhost:4000/assets/images/governance_stack.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/logos/ribbon.png</loc>
+    <loc>http://localhost:4000/assets/images/logos/dylog.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/logos/umass.png</loc>
+    <loc>http://localhost:4000/assets/images/logos/meta.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/logos/vertica.png</loc>
+    <loc>http://localhost:4000/assets/images/logos/nie.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/low-code.webp</loc>
+    <loc>http://localhost:4000/assets/images/logos/renderpub.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/mcp_anniversary.jpg</loc>
+    <loc>http://localhost:4000/assets/images/logos/ribbon.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/menlo_ventures_ai_agents_market_map.webp</loc>
+    <loc>http://localhost:4000/assets/images/logos/umass.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/pinecone_hybrid_index.jpg</loc>
+    <loc>http://localhost:4000/assets/images/logos/vertica.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/pinecone_hybrid_query.jpg</loc>
+    <loc>http://localhost:4000/assets/images/low-code.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/platform_convergence.png</loc>
+    <loc>http://localhost:4000/assets/images/mcp_anniversary.jpg</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/profile_picture.webp</loc>
+    <loc>http://localhost:4000/assets/images/menlo_ventures_ai_agents_market_map.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/system_design_with_document_ai_gpt_pinecone.jpeg</loc>
+    <loc>http://localhost:4000/assets/images/openai_industry_growth.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/js/toc.js</loc>
+    <loc>http://localhost:4000/assets/images/openai_productivity_gains.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/resume/CV.pdf</loc>
+    <loc>http://localhost:4000/assets/images/pinecone_hybrid_index.jpg</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/videos/documents_converse_demo.mp4</loc>
+    <loc>http://localhost:4000/assets/images/pinecone_hybrid_query.jpg</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:4000/assets/images/platform_convergence.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:4000/assets/images/profile_picture.webp</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:4000/assets/images/system_design_with_document_ai_gpt_pinecone.jpeg</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:4000/assets/js/toc.js</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:4000/assets/resume/CV.pdf</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:4000/assets/videos/documents_converse_demo.mp4</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
