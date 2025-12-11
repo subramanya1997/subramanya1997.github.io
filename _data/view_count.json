@@ -1,17 +1,17 @@
 {
-  "last_updated": "2025-12-10T00:20:16.841764",
+  "last_updated": "2025-12-11T00:20:28.157116",
   "view_counts": [
     {
       "url": "/2025/04/28/oidc-a-proposal/",
-      "views": 1963,
-      "avg_duration_seconds": 110.1,
-      "engagement_rate": 37.5
+      "views": 1965,
+      "avg_duration_seconds": 110.2,
+      "engagement_rate": 37.57
     },
     {
       "url": "/2025/05/21/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway/",
-      "views": 921,
-      "avg_duration_seconds": 106.3,
-      "engagement_rate": 45.1
+      "views": 927,
+      "avg_duration_seconds": 105.6,
+      "engagement_rate": 45.3
     },
     {
       "url": "/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/",
@@ -27,9 +27,9 @@
     },
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
-      "views": 262,
-      "avg_duration_seconds": 125.2,
-      "engagement_rate": 37.21
+      "views": 274,
+      "avg_duration_seconds": 122.4,
+      "engagement_rate": 39.74
     },
     {
       "url": "/2024/12/10/ai-agents-agentic-security-enterprise-automation/",
@@ -57,9 +57,15 @@
     },
     {
       "url": "/2024/02/20/a-feat-of-strength-mvp-for-ai-apps/",
-      "views": 119,
-      "avg_duration_seconds": 51.1,
-      "engagement_rate": 42.49
+      "views": 121,
+      "avg_duration_seconds": 50.2,
+      "engagement_rate": 43.52
+    },
+    {
+      "url": "/2022/12/21/version-control/",
+      "views": 101,
+      "avg_duration_seconds": 104.3,
+      "engagement_rate": 36.7
     }
   ]
 }
