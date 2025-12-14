@@ -1,17 +1,17 @@
 {
-  "last_updated": "2025-12-13T00:19:40.700887",
+  "last_updated": "2025-12-14T00:22:08.604069",
   "view_counts": [
     {
       "url": "/2025/04/28/oidc-a-proposal/",
-      "views": 1981,
-      "avg_duration_seconds": 110.8,
-      "engagement_rate": 37.99
+      "views": 1995,
+      "avg_duration_seconds": 110.9,
+      "engagement_rate": 38.36
     },
     {
       "url": "/2025/05/21/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway/",
-      "views": 945,
-      "avg_duration_seconds": 105.9,
-      "engagement_rate": 46.26
+      "views": 957,
+      "avg_duration_seconds": 108.1,
+      "engagement_rate": 46.56
     },
     {
       "url": "/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/",
@@ -21,9 +21,9 @@
     },
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
-      "views": 311,
-      "avg_duration_seconds": 126.1,
-      "engagement_rate": 45.88
+      "views": 323,
+      "avg_duration_seconds": 150.2,
+      "engagement_rate": 48.11
     },
     {
       "url": "/2025/06/21/from-gateway-to-guardian-the-evolution-of-mcp-security/",
@@ -39,15 +39,15 @@
     },
     {
       "url": "/2024/01/11/the-nockout-story/",
-      "views": 191,
-      "avg_duration_seconds": 49.2,
-      "engagement_rate": 51.59
+      "views": 193,
+      "avg_duration_seconds": 48.7,
+      "engagement_rate": 52.09
     },
     {
       "url": "/2025/09/09/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms/",
-      "views": 145,
-      "avg_duration_seconds": 85.0,
-      "engagement_rate": 48.18
+      "views": 147,
+      "avg_duration_seconds": 83.9,
+      "engagement_rate": 48.86
     },
     {
       "url": "/2025/07/01/securing-ai-assistants-digital-ids-for-ai/",
