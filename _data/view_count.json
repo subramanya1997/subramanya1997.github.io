@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-12-14T00:22:08.604069",
+  "last_updated": "2025-12-15T00:22:05.857644",
   "view_counts": [
     {
       "url": "/2025/04/28/oidc-a-proposal/",
@@ -21,9 +21,9 @@
     },
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
-      "views": 323,
-      "avg_duration_seconds": 150.2,
-      "engagement_rate": 48.11
+      "views": 326,
+      "avg_duration_seconds": 149.4,
+      "engagement_rate": 48.28
     },
     {
       "url": "/2025/06/21/from-gateway-to-guardian-the-evolution-of-mcp-security/",
@@ -39,9 +39,9 @@
     },
     {
       "url": "/2024/01/11/the-nockout-story/",
-      "views": 193,
-      "avg_duration_seconds": 48.7,
-      "engagement_rate": 52.09
+      "views": 195,
+      "avg_duration_seconds": 48.2,
+      "engagement_rate": 52.59
     },
     {
       "url": "/2025/09/09/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms/",
@@ -57,9 +57,9 @@
     },
     {
       "url": "/2024/02/20/a-feat-of-strength-mvp-for-ai-apps/",
-      "views": 121,
-      "avg_duration_seconds": 50.2,
-      "engagement_rate": 43.52
+      "views": 122,
+      "avg_duration_seconds": 49.8,
+      "engagement_rate": 43.99
     },
     {
       "url": "/2022/12/21/version-control/",
