@@ -1,35 +1,35 @@
 {
-  "last_updated": "2025-12-17T00:19:55.207372",
+  "last_updated": "2025-12-18T00:17:41.906860",
   "view_counts": [
     {
       "url": "/2025/04/28/oidc-a-proposal/",
-      "views": 2003,
-      "avg_duration_seconds": 111.1,
-      "engagement_rate": 38.51
+      "views": 2009,
+      "avg_duration_seconds": 110.9,
+      "engagement_rate": 38.66
     },
     {
       "url": "/2025/05/21/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway/",
-      "views": 963,
-      "avg_duration_seconds": 110.7,
-      "engagement_rate": 46.96
+      "views": 975,
+      "avg_duration_seconds": 111.9,
+      "engagement_rate": 47.54
     },
     {
       "url": "/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/",
-      "views": 796,
-      "avg_duration_seconds": 107.9,
-      "engagement_rate": 46.09
+      "views": 798,
+      "avg_duration_seconds": 107.8,
+      "engagement_rate": 46.22
     },
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
-      "views": 358,
-      "avg_duration_seconds": 152.5,
-      "engagement_rate": 51.95
+      "views": 373,
+      "avg_duration_seconds": 152.2,
+      "engagement_rate": 53.04
     },
     {
       "url": "/2025/06/21/from-gateway-to-guardian-the-evolution-of-mcp-security/",
-      "views": 287,
-      "avg_duration_seconds": 57.5,
-      "engagement_rate": 42.33
+      "views": 289,
+      "avg_duration_seconds": 57.2,
+      "engagement_rate": 42.73
     },
     {
       "url": "/2024/12/10/ai-agents-agentic-security-enterprise-automation/",
@@ -39,15 +39,15 @@
     },
     {
       "url": "/2024/01/11/the-nockout-story/",
-      "views": 201,
-      "avg_duration_seconds": 46.8,
-      "engagement_rate": 54.03
+      "views": 203,
+      "avg_duration_seconds": 46.4,
+      "engagement_rate": 54.49
     },
     {
       "url": "/2025/09/09/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms/",
-      "views": 153,
-      "avg_duration_seconds": 89.3,
-      "engagement_rate": 51.11
+      "views": 159,
+      "avg_duration_seconds": 135.4,
+      "engagement_rate": 53.74
     },
     {
       "url": "/2025/07/01/securing-ai-assistants-digital-ids-for-ai/",
@@ -66,6 +66,12 @@
       "views": 103,
       "avg_duration_seconds": 102.2,
       "engagement_rate": 37.94
+    },
+    {
+      "url": "/2025/12/10/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026/",
+      "views": 102,
+      "avg_duration_seconds": 441.0,
+      "engagement_rate": 93.52
     }
   ]
 }
