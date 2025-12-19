@@ -55,8 +55,6 @@ This new reality is creating a widening performance gap. OpenAI's data shows tha
 
 The state of enterprise AI in 2026 is clear: the gold rush is over, and the era of building the railroads has begun. Success is no longer defined by having the best model, but by having the best platform to deploy, manage, and secure intelligence at scale.
 
----
-
 **References:**
 
 [1] [Anthropic. (2025). *The 2026 State of AI Agents Report*. Anthropic.](https://cdn.sanity.io/files/4zrzovbb/website/cd77281ebc251e6b860543d8943ede8d06c4ef50.pdf)
