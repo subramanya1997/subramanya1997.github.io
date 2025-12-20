@@ -1,17 +1,17 @@
 {
-  "last_updated": "2025-12-19T00:20:49.041026",
+  "last_updated": "2025-12-20T00:19:44.008311",
   "view_counts": [
     {
       "url": "/2025/04/28/oidc-a-proposal/",
-      "views": 2019,
-      "avg_duration_seconds": 112.9,
-      "engagement_rate": 38.92
+      "views": 2021,
+      "avg_duration_seconds": 112.8,
+      "engagement_rate": 38.97
     },
     {
       "url": "/2025/05/21/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway/",
-      "views": 977,
-      "avg_duration_seconds": 111.8,
-      "engagement_rate": 47.6
+      "views": 985,
+      "avg_duration_seconds": 111.4,
+      "engagement_rate": 48.07
     },
     {
       "url": "/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/",
@@ -21,9 +21,9 @@
     },
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
-      "views": 377,
-      "avg_duration_seconds": 151.4,
-      "engagement_rate": 53.77
+      "views": 400,
+      "avg_duration_seconds": 147.3,
+      "engagement_rate": 55.84
     },
     {
       "url": "/2025/06/21/from-gateway-to-guardian-the-evolution-of-mcp-security/",
@@ -33,9 +33,9 @@
     },
     {
       "url": "/2024/01/11/the-nockout-story/",
-      "views": 205,
-      "avg_duration_seconds": 45.9,
-      "engagement_rate": 54.94
+      "views": 207,
+      "avg_duration_seconds": 45.5,
+      "engagement_rate": 55.38
     },
     {
       "url": "/2024/12/10/ai-agents-agentic-security-enterprise-automation/",
@@ -51,9 +51,9 @@
     },
     {
       "url": "/2025/07/01/securing-ai-assistants-digital-ids-for-ai/",
-      "views": 127,
-      "avg_duration_seconds": 518.8,
-      "engagement_rate": 69.37
+      "views": 129,
+      "avg_duration_seconds": 510.2,
+      "engagement_rate": 69.88
     },
     {
       "url": "/2024/02/20/a-feat-of-strength-mvp-for-ai-apps/",
@@ -62,16 +62,16 @@
       "engagement_rate": 43.99
     },
     {
-      "url": "/2025/11/20/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale/",
-      "views": 104,
-      "avg_duration_seconds": 142.2,
-      "engagement_rate": 65.18
+      "url": "/2025/12/10/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026/",
+      "views": 108,
+      "avg_duration_seconds": 418.7,
+      "engagement_rate": 93.86
     },
     {
-      "url": "/2025/12/10/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026/",
-      "views": 104,
-      "avg_duration_seconds": 433.0,
-      "engagement_rate": 93.64
+      "url": "/2025/11/20/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale/",
+      "views": 106,
+      "avg_duration_seconds": 137.7,
+      "engagement_rate": 64.36
     },
     {
       "url": "/2022/12/21/version-control/",
