@@ -1,17 +1,17 @@
 {
-  "last_updated": "2025-12-20T00:19:44.008311",
+  "last_updated": "2025-12-21T00:22:06.392746",
   "view_counts": [
     {
       "url": "/2025/04/28/oidc-a-proposal/",
-      "views": 2021,
+      "views": 2025,
       "avg_duration_seconds": 112.8,
-      "engagement_rate": 38.97
+      "engagement_rate": 39.17
     },
     {
       "url": "/2025/05/21/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway/",
       "views": 985,
       "avg_duration_seconds": 111.4,
-      "engagement_rate": 48.07
+      "engagement_rate": 47.97
     },
     {
       "url": "/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/",
@@ -21,9 +21,9 @@
     },
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
-      "views": 400,
-      "avg_duration_seconds": 147.3,
-      "engagement_rate": 55.84
+      "views": 410,
+      "avg_duration_seconds": 144.7,
+      "engagement_rate": 56.85
     },
     {
       "url": "/2025/06/21/from-gateway-to-guardian-the-evolution-of-mcp-security/",
@@ -62,16 +62,16 @@
       "engagement_rate": 43.99
     },
     {
+      "url": "/2025/11/20/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale/",
+      "views": 108,
+      "avg_duration_seconds": 137.8,
+      "engagement_rate": 64.99
+    },
+    {
       "url": "/2025/12/10/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026/",
       "views": 108,
       "avg_duration_seconds": 418.7,
       "engagement_rate": 93.86
-    },
-    {
-      "url": "/2025/11/20/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale/",
-      "views": 106,
-      "avg_duration_seconds": 137.7,
-      "engagement_rate": 64.36
     },
     {
       "url": "/2022/12/21/version-control/",
