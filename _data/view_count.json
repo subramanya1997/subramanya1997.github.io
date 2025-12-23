@@ -1,17 +1,17 @@
 {
-  "last_updated": "2025-12-22T00:21:24.977091",
+  "last_updated": "2025-12-23T00:20:32.004335",
   "view_counts": [
     {
       "url": "/2025/04/28/oidc-a-proposal/",
-      "views": 2032,
+      "views": 2034,
       "avg_duration_seconds": 112.6,
-      "engagement_rate": 39.32
+      "engagement_rate": 39.38
     },
     {
       "url": "/2025/05/21/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway/",
-      "views": 989,
-      "avg_duration_seconds": 111.3,
-      "engagement_rate": 48.25
+      "views": 991,
+      "avg_duration_seconds": 114.0,
+      "engagement_rate": 48.46
     },
     {
       "url": "/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/",
@@ -21,9 +21,9 @@
     },
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
-      "views": 429,
-      "avg_duration_seconds": 142.1,
-      "engagement_rate": 57.47
+      "views": 448,
+      "avg_duration_seconds": 148.6,
+      "engagement_rate": 59.06
     },
     {
       "url": "/2025/06/21/from-gateway-to-guardian-the-evolution-of-mcp-security/",
@@ -33,9 +33,9 @@
     },
     {
       "url": "/2024/01/11/the-nockout-story/",
-      "views": 211,
-      "avg_duration_seconds": 44.6,
-      "engagement_rate": 56.24
+      "views": 213,
+      "avg_duration_seconds": 44.2,
+      "engagement_rate": 56.65
     },
     {
       "url": "/2024/12/10/ai-agents-agentic-security-enterprise-automation/",
@@ -63,15 +63,15 @@
     },
     {
       "url": "/2025/11/20/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale/",
-      "views": 116,
-      "avg_duration_seconds": 137.8,
-      "engagement_rate": 67.63
+      "views": 118,
+      "avg_duration_seconds": 138.0,
+      "engagement_rate": 68.15
     },
     {
       "url": "/2025/12/10/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026/",
-      "views": 108,
-      "avg_duration_seconds": 418.7,
-      "engagement_rate": 93.86
+      "views": 110,
+      "avg_duration_seconds": 411.4,
+      "engagement_rate": 93.97
     },
     {
       "url": "/2022/12/21/version-control/",
