@@ -1,0 +1,16 @@
+---
+layout: null
+permalink: /llms-full.txt
+---
+# {{ site.title }} - Full Content
+
+{% for post in site.posts %}
+## {{ post.title }}
+URL: {{ site.url }}{{ post.url }}
+Date: {{ post.date | date: "%Y-%m-%d" }}
+Tags: {{ post.tags | join: ", " }}
+
+{{ post.content }}
+
+---
+{% endfor %}

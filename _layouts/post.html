@@ -51,6 +51,32 @@ layout: default
         </span>
         {% endif %}
         
+        <div class="copy-page-wrapper">
+          <button class="copy-page-btn" id="copyPageBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span>Copy Page</span>
+          </button>
+          <button class="copy-dropdown-toggle" id="copyDropdownToggle" aria-label="More options">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          
+          <div class="copy-dropdown" id="copyDropdown">
+            <button class="copy-option" data-ai="claude">
+              <img src="{{ '/assets/images/logos/claude.svg' | prepend: site.baseurl }}" alt="Claude" class="ai-logo">
+              Open in Claude
+            </button>
+            <button class="copy-option" data-ai="chatgpt">
+              <img src="{{ '/assets/images/logos/openai.svg' | prepend: site.baseurl }}" alt="OpenAI" class="ai-logo">
+              Open in ChatGPT
+            </button>
+          </div>
+        </div>
+        
         <div class="social-share">
           <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" 
             onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
@@ -437,6 +463,230 @@ layout: default
         
         wrapper.insertBefore(button, pre);
       }
+    });
+  });
+</script>
+
+<!-- Copy Page as Markdown -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const copyPageBtn = document.getElementById('copyPageBtn');
+    const dropdownToggle = document.getElementById('copyDropdownToggle');
+    const dropdown = document.getElementById('copyDropdown');
+    const aiOptions = document.querySelectorAll('.copy-option[data-ai]');
+    const wrapper = document.querySelector('.copy-page-wrapper');
+    
+    if (!copyPageBtn) return;
+    
+    function htmlToMarkdown(element) {
+      let markdown = '';
+      
+      // Clone element to avoid modifying the actual page
+      const clone = element.cloneNode(true);
+      
+      // Remove UI elements that shouldn't be copied
+      clone.querySelectorAll('.code-wrapper button, .heading-anchor, .copy-code-button, script, style').forEach(el => el.remove());
+      
+      function processNode(node, indent = '') {
+        if (node.nodeType === Node.TEXT_NODE) {
+          const text = node.textContent.trim();
+          if (text) markdown += text + ' ';
+          return;
+        }
+        
+        if (node.nodeType !== Node.ELEMENT_NODE) return;
+        
+        const tag = node.tagName.toLowerCase();
+        
+        // Headings
+        if (tag.match(/^h([1-6])$/)) {
+          const level = tag[1];
+          markdown += '\n\n' + '#'.repeat(level) + ' ';
+          processChildren(node);
+          markdown += '\n\n';
+        }
+        // Code blocks
+        else if (tag === 'pre') {
+          const codeBlock = node.querySelector('code');
+          if (codeBlock) {
+            const language = (codeBlock.className.match(/language-(\w+)/) || ['', ''])[1];
+            const code = codeBlock.textContent;
+            markdown += '\n\n```' + language + '\n' + code + '\n```\n\n';
+          }
+        }
+        // Tables
+        else if (tag === 'table') {
+          markdown += '\n\n';
+          const rows = Array.from(node.querySelectorAll('tr'));
+          rows.forEach((row, rowIndex) => {
+            const cells = Array.from(row.querySelectorAll('th, td'));
+            markdown += '| ' + cells.map(cell => cell.textContent.trim()).join(' | ') + ' |\n';
+            
+            // Add separator after header row
+            if (rowIndex === 0 && row.querySelector('th')) {
+              markdown += '| ' + cells.map(() => '---').join(' | ') + ' |\n';
+            }
+          });
+          markdown += '\n';
+        }
+        // Blockquotes
+        else if (tag === 'blockquote') {
+          markdown += '\n\n> ';
+          processChildren(node);
+          markdown += '\n\n';
+        }
+        // Lists
+        else if (tag === 'ul' || tag === 'ol') {
+          markdown += '\n';
+          const items = Array.from(node.children).filter(child => child.tagName === 'LI');
+          items.forEach((item, index) => {
+            const bullet = tag === 'ul' ? '-' : (index + 1) + '.';
+            markdown += indent + bullet + ' ';
+            processChildren(item, indent + '  ');
+            markdown += '\n';
+          });
+          markdown += '\n';
+        }
+        // Paragraphs
+        else if (tag === 'p') {
+          markdown += '\n\n';
+          processChildren(node);
+          markdown += '\n\n';
+        }
+        // Links
+        else if (tag === 'a') {
+          const href = node.getAttribute('href');
+          const text = node.textContent.trim();
+          markdown += `[${text}](${href})`;
+        }
+        // Bold
+        else if (tag === 'strong' || tag === 'b') {
+          markdown += '**';
+          processChildren(node);
+          markdown += '**';
+        }
+        // Italic
+        else if (tag === 'em' || tag === 'i') {
+          markdown += '*';
+          processChildren(node);
+          markdown += '*';
+        }
+        // Inline code
+        else if (tag === 'code' && node.parentElement.tagName !== 'PRE') {
+          markdown += '`' + node.textContent + '`';
+        }
+        // Line breaks
+        else if (tag === 'br') {
+          markdown += '\n';
+        }
+        // Default: process children
+        else {
+          processChildren(node, indent);
+        }
+      }
+      
+      function processChildren(node, indent = '') {
+        Array.from(node.childNodes).forEach(child => processNode(child, indent));
+      }
+      
+      processNode(clone);
+      
+      // Clean up extra whitespace
+      markdown = markdown
+        .replace(/\n{3,}/g, '\n\n')  // Max 2 consecutive newlines
+        .replace(/ +/g, ' ')           // Remove extra spaces
+        .trim();
+      
+      return markdown;
+    }
+    
+    copyPageBtn.addEventListener('click', async function() {
+      const title = document.querySelector('.post-header h1')?.textContent?.trim() || document.title;
+      const url = window.location.href;
+      const postContent = document.querySelector('.post-content');
+      
+      if (!postContent) return;
+      
+      // Track copy page event in Google Analytics
+      if (typeof gtag === 'function') {
+        gtag('event', 'copy_page', {
+          'event_category': 'ai_assistant',
+          'event_label': title,
+          'page_url': url
+        });
+      }
+      
+      // Build markdown document
+      let markdown = `# ${title}\n\n${url}\n\n---\n\n`;
+      markdown += htmlToMarkdown(postContent);
+      
+      try {
+        await navigator.clipboard.writeText(markdown);
+        
+        // Visual feedback
+        const originalHTML = this.innerHTML;
+        this.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Copied!</span>';
+        this.classList.add('copied');
+        
+        setTimeout(() => {
+          this.innerHTML = originalHTML;
+          this.classList.remove('copied');
+        }, 2000);
+      } catch (err) {
+        console.error('Failed to copy:', err);
+      }
+    });
+    
+    // Dropdown toggle functionality
+    if (dropdownToggle && dropdown) {
+      dropdownToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('show');
+      });
+      
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function(e) {
+        if (wrapper && !wrapper.contains(e.target)) {
+          dropdown.classList.remove('show');
+        }
+      });
+    }
+    
+    // AI assistant options
+    aiOptions.forEach(option => {
+      option.addEventListener('click', function() {
+        const ai = this.dataset.ai;
+        const title = document.querySelector('.post-header h1')?.textContent?.trim() || document.title;
+        const url = window.location.href;
+        
+        // Track AI assistant click in Google Analytics
+        if (typeof gtag === 'function') {
+          gtag('event', 'open_in_ai', {
+            'event_category': 'ai_assistant',
+            'event_label': ai,
+            'page_title': title,
+            'page_url': url
+          });
+        }
+        
+        // Create the prefilled prompt
+        const prompt = `Help me understand "${title}" about ${url}`;
+        const encodedPrompt = encodeURIComponent(prompt);
+        
+        let aiUrl = '';
+        if (ai === 'claude') {
+          // Claude.ai URL with prefilled prompt
+          aiUrl = `https://claude.ai/new?q=${encodedPrompt}`;
+        } else if (ai === 'chatgpt') {
+          // ChatGPT URL with prefilled prompt
+          aiUrl = `https://chat.openai.com/?q=${encodedPrompt}`;
+        }
+        
+        if (aiUrl) {
+          window.open(aiUrl, '_blank', 'noopener,noreferrer');
+          dropdown.classList.remove('show');
+        }
+      });
     });
   });
 </script>
@@ -1048,6 +1298,139 @@ layout: default
     .lightbox-control-btn {
       font-size: 16px;
       padding: 6px 10px;
+    }
+  }
+  
+  /* Copy Page Split Button */
+  .copy-page-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: stretch;
+  }
+
+  .copy-page-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px 0 0 6px;
+    border-right: none;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .copy-page-btn:hover {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+  }
+  
+  .copy-page-btn.copied {
+    background-color: #22c55e;
+    color: white;
+    border-color: #22c55e;
+  }
+
+  .copy-page-btn svg {
+    flex-shrink: 0;
+  }
+  
+  .copy-dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 8px;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 0 6px 6px 0;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .copy-dropdown-toggle:hover {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+  }
+  
+  .copy-page-wrapper:hover .copy-page-btn,
+  .copy-page-wrapper:hover .copy-dropdown-toggle {
+    border-color: var(--accent);
+  }
+  
+  .copy-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    min-width: 180px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all 0.2s ease;
+    z-index: 100;
+    overflow: hidden;
+  }
+
+  .copy-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .copy-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 14px;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+  }
+
+  .copy-option:hover {
+    background-color: var(--bg-tertiary);
+  }
+
+  .copy-option svg {
+    flex-shrink: 0;
+  }
+  
+  .ai-logo {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    display: inline-block;
+  }
+
+  @media screen and (max-width: 600px) {
+    .copy-page-btn span {
+      display: none;
+    }
+    
+    .copy-page-btn {
+      padding: 8px 10px;
+    }
+    
+    .copy-dropdown-toggle {
+      padding: 8px 6px;
+    }
+    
+    .copy-dropdown {
+      right: auto;
+      left: 0;
     }
   }
 </style>
