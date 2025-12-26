@@ -1,0 +1,23 @@
+---
+layout: null
+permalink: /llms.txt
+---
+# {{ site.title }}
+
+> {{ site.description }}
+
+## About
+- [Home]({{ site.url }}/)
+- [Work Experience]({{ site.url }}/work/)
+- [Publications]({{ site.url }}/publications/)
+- [Resume/CV]({{ site.url }}/assets/resume/CV.pdf)
+
+## Blog Posts
+{% for post in site.posts %}
+- [{{ post.title }}]({{ site.url }}{{ post.url }}): {{ post.excerpt | strip_html | truncatewords: 20 }}
+{% endfor %}
+
+## Books
+{% for book in site.books %}
+- [{{ book.title }}]({{ site.url }}{{ book.web_url }})
+{% endfor %}
