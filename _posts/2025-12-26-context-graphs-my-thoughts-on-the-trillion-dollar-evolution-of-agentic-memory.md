@@ -1,15 +1,15 @@
 ---
 layout: post
-title: "Context Graphs: My Thoughts on the Trillion Dollar Evolution of Agentic Memory"
-excerpt: "After reading Jaya Gupta's post about Context Graphs, I have not been able to stop thinking about it. For me, it did something personal: it gave a name to the architectural pattern I have been circling around in my own work on agentic infrastructure for the past year. Gupta's thesis is simple but profound—the last generation of enterprise software created trillion dollar companies by becoming systems of record. The question now is whether a new layer will emerge on top of them: a system of record for decisions."
+title: "Context Graphs: My Thoughts on the Trillion Dollar Evolution of Agentic Infrastructure"
+excerpt: "After reading Jaya Gupta's post about Context Graphs, I have not been able to stop thinking about it. For me, it did something personal: it gave a name to the architectural pattern I have been circling around in the agentic infrastructure discussions on this blog for the past year. Gupta's thesis is simple but profound—the last generation of enterprise software created trillion dollar companies by becoming systems of record. The question now is whether a new layer will emerge on top of them: a system of record for decisions."
 author: Subramanya N
 date: 2025-12-26
-tags: [Context Graphs, Agentic AI, Enterprise AI, MCP, Agent Skills, AI Memory, AI Infrastructure, Decision Traces, AI Governance, Systems of Record]
+tags: [Context Graphs, Agentic AI, Enterprise AI, MCP, Agent Skills, AI Infrastructure, Decision Traces, AI Governance, Systems of Record]
 image: /assets/images/context-graphs.png
 ready: true
 ---
 
-After reading Jaya Gupta's post about Context Graphs, I have not been able to stop thinking about it [1]. For me, it did something personal: it gave a name to the architectural pattern I have been circling around in my own work on agentic infrastructure for the past year.
+After reading Jaya Gupta's post about Context Graphs, I have not been able to stop thinking about it [1]. For me, it did something personal: it gave a name to the architectural pattern I have been circling around in the agentic infrastructure discussions on this blog for the past year.
 
 Gupta's thesis is simple but profound. The last generation of enterprise software (Salesforce, Workday, SAP) created trillion dollar companies by becoming **systems of record**. Own the canonical data, own the workflow, own the lock in. The question now is whether those systems survive the shift to agents. Gupta argues they will, but that a new layer will emerge on top of them: **a system of record for decisions**.
 
@@ -25,7 +25,7 @@ None of this is captured in our systems of record. The CRM shows the final price
 
 This is the wall that every enterprise hits when they try to scale agents. The wall is not missing data. It is missing **decision traces**.
 
-## From Tools to Skills to Memory: The Evolution I Have Been Documenting
+## From Tools to Skills to Context: The Evolution I Have Been Documenting
 
 Reading Gupta's post, I realized that the evolution I have been documenting on this blog (from MCP to Agent Skills to governance) is really a story about building the infrastructure for context graphs. Let me explain.
 
@@ -33,13 +33,13 @@ Reading Gupta's post, I realized that the evolution I have been documenting on t
 
 **Phase 2** was about **skills**. Anthropic's Agent Skills standard gave us a way to codify procedural knowledge, the "how to" guides that teach agents to use tools effectively. Skills are the brain of the agent. They turn tribal knowledge into portable, composable assets. But even skills are not enough. An agent with a hammer and a carpentry manual is still not a master carpenter.
 
-**Phase 3** is about **memory**. This is where context graphs come in. A context graph is the experiential memory of the agentic workforce. It is the accumulated record of every decision, every exception, and every outcome. It answers the question, "What happened last time?" It turns exceptions into precedents and tribal knowledge into institutional memory.
+**Phase 3** is about **context**. This is where context graphs come in. A context graph is the accumulated record of every decision, every exception, and every outcome. It answers the question, "What happened last time?" It turns exceptions into precedents and tribal knowledge into institutional knowledge.
 
 | **Phase** | **Primitive** | **What It Provides** | **My Analogy** |
 |---|---|---|---|
 | **Phase 1** | Tools (MCP) | Capability | The agent has a hammer. |
 | **Phase 2** | Skills (Agent Skills) | Expertise | The agent has a carpentry manual. |
-| **Phase 3** | Memory (Context Graphs) | Experience | The agent remembers every house it has ever built. |
+| **Phase 3** | Context (Context Graphs) | Experience | The agent has access to the record of every house it has ever built. |
 
 ## Why This Matters for the Governance Stack
 
@@ -51,9 +51,9 @@ Without this infrastructure, decision traces are ephemeral. They exist for a mom
 
 Gupta is right that agent first startups have a structural advantage here. They sit in the execution path. They see the full context at decision time. Incumbents, built on current state storage, simply cannot capture this.
 
-But the bigger insight for me is this: **we are not just building agents. We are building the memory of the enterprise.** The context graph is not a feature; it is the foundation of a new kind of system of record. The enterprises that win in the agentic era will be those that recognize this and invest in the infrastructure to capture, store, and leverage their decision traces.
+But the bigger insight for me is this: **we are not just building agents. We are building the decision record of the enterprise.** The context graph is not a feature; it is the foundation of a new kind of system of record. The enterprises that win in the agentic era will be those that recognize this and invest in the infrastructure to capture, store, and leverage their decision traces.
 
-We started by giving agents tools. Then we taught them skills. Now, we must give them memory. That is the trillion dollar evolution.
+We started by giving agents tools. Then we taught them skills. Now, we must give them context. That is the trillion dollar evolution.
 
 **References:**
 
