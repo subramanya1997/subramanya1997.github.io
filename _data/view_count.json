@@ -1,11 +1,11 @@
 {
-  "last_updated": "2025-12-30T00:20:26.813266",
+  "last_updated": "2025-12-31T00:21:25.145036",
   "view_counts": [
     {
       "url": "/2025/04/28/oidc-a-proposal/",
-      "views": 2054,
-      "avg_duration_seconds": 113.4,
-      "engagement_rate": 40.06
+      "views": 2062,
+      "avg_duration_seconds": 113.7,
+      "engagement_rate": 40.29
     },
     {
       "url": "/2025/05/21/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway/",
@@ -16,26 +16,26 @@
     {
       "url": "/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/",
       "views": 798,
-      "avg_duration_seconds": 107.8,
-      "engagement_rate": 46.22
+      "avg_duration_seconds": 107.6,
+      "engagement_rate": 46.17
     },
     {
       "url": "/2025/12/26/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory/",
-      "views": 746,
-      "avg_duration_seconds": 320.2,
-      "engagement_rate": 94.68
+      "views": 798,
+      "avg_duration_seconds": 310.7,
+      "engagement_rate": 94.53
     },
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
-      "views": 597,
-      "avg_duration_seconds": 146.7,
-      "engagement_rate": 67.29
+      "views": 620,
+      "avg_duration_seconds": 158.8,
+      "engagement_rate": 68.08
     },
     {
       "url": "/2025/12/23/2025-the-year-agentic-ai-got-real-and-what-comes-next/",
-      "views": 399,
-      "avg_duration_seconds": 222.4,
-      "engagement_rate": 96.33
+      "views": 423,
+      "avg_duration_seconds": 229.3,
+      "engagement_rate": 96.41
     },
     {
       "url": "/2025/06/21/from-gateway-to-guardian-the-evolution-of-mcp-security/",
@@ -45,15 +45,15 @@
     },
     {
       "url": "/2024/01/11/the-nockout-story/",
-      "views": 227,
-      "avg_duration_seconds": 41.5,
-      "engagement_rate": 59.36
+      "views": 229,
+      "avg_duration_seconds": 41.1,
+      "engagement_rate": 59.72
     },
     {
       "url": "/2025/12/18/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle/",
-      "views": 210,
-      "avg_duration_seconds": 455.9,
-      "engagement_rate": 92.33
+      "views": 218,
+      "avg_duration_seconds": 456.1,
+      "engagement_rate": 92.65
     },
     {
       "url": "/2024/12/10/ai-agents-agentic-security-enterprise-automation/",
@@ -63,15 +63,21 @@
     },
     {
       "url": "/2025/09/09/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms/",
-      "views": 173,
-      "avg_duration_seconds": 162.7,
-      "engagement_rate": 57.01
+      "views": 175,
+      "avg_duration_seconds": 160.9,
+      "engagement_rate": 57.48
     },
     {
       "url": "/2025/11/20/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale/",
-      "views": 142,
-      "avg_duration_seconds": 140.6,
-      "engagement_rate": 72.47
+      "views": 148,
+      "avg_duration_seconds": 139.8,
+      "engagement_rate": 73.52
+    },
+    {
+      "url": "/2025/12/10/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026/",
+      "views": 138,
+      "avg_duration_seconds": 346.4,
+      "engagement_rate": 93.24
     },
     {
       "url": "/2025/07/01/securing-ai-assistants-digital-ids-for-ai/",
@@ -80,16 +86,16 @@
       "engagement_rate": 71.31
     },
     {
-      "url": "/2025/12/10/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026/",
-      "views": 134,
-      "avg_duration_seconds": 352.5,
-      "engagement_rate": 94.45
-    },
-    {
       "url": "/2024/02/20/a-feat-of-strength-mvp-for-ai-apps/",
       "views": 124,
       "avg_duration_seconds": 48.9,
       "engagement_rate": 44.97
+    },
+    {
+      "url": "/2025/12/01/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap/",
+      "views": 107,
+      "avg_duration_seconds": 144.8,
+      "engagement_rate": 71.93
     },
     {
       "url": "/2025/12/07/the-three-platform-problem-in-enterprise-ai/",
@@ -102,12 +108,6 @@
       "views": 103,
       "avg_duration_seconds": 102.2,
       "engagement_rate": 37.94
-    },
-    {
-      "url": "/2025/12/01/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap/",
-      "views": 103,
-      "avg_duration_seconds": 137.7,
-      "engagement_rate": 71.55
     }
   ]
 }
