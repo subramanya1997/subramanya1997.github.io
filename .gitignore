@@ -26,3 +26,5 @@ env/
 *.swp
 *.swo
 *~
+
+.env
