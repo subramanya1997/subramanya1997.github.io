@@ -1,8 +1,32 @@
 <nav id="table-of-contents" class="table-of-contents" aria-label="Table of Contents">
   <div class="toc-header">
-    <h4>On this page</h4>
+    <h4 id="toc-title">On this page</h4>
   </div>
   <ul id="toc-list" class="toc-list"></ul>
+  
+  <!-- Social Share Section -->
+  <div class="toc-social-share">
+    <div class="toc-social-header">
+      <h4 id="toc-share-title">Share</h4>
+    </div>
+    <div class="toc-social-links">
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" 
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        target="_blank" rel="noopener noreferrer" class="toc-social-icon" aria-label="Share on Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}" 
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        target="_blank" rel="noopener noreferrer" class="toc-social-icon" aria-label="Share on Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}&title={{ page.title }}&summary={{ page.excerpt | strip_html }}" 
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        target="_blank" rel="noopener noreferrer" class="toc-social-icon" aria-label="Share on LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+  </div>
 </nav>
 
 <style>
@@ -78,6 +102,54 @@
     font-size: 13px;
   }
   
+  /* Social Share Section */
+  .toc-social-share {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  .toc-social-header {
+    margin-bottom: 12px;
+  }
+  
+  .toc-social-header h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+  }
+  
+  .toc-social-links {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+  
+  .toc-social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--bg-primary);
+    transition: all 0.2s ease;
+    font-size: 14px;
+  }
+  
+  .toc-social-icon:hover {
+    color: var(--text-primary);
+    border-color: var(--accent);
+    background-color: var(--bg-tertiary);
+    transform: translateY(-1px);
+  }
+  
   /* Custom scrollbar for TOC */
   .table-of-contents::-webkit-scrollbar {
     width: 4px;
@@ -101,66 +173,131 @@
     .table-of-contents {
       display: none !important; /* Hide on tablet and mobile */
     }
+    
+    .toc-social-share {
+      display: none !important; /* Hide social share in TOC on mobile */
+    }
   }
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const toc = document.getElementById('table-of-contents');
-    const tocList = document.getElementById('toc-list');
-    const postContent = document.querySelector('.post-content');
+  (function() {
+    'use strict';
     
-    if (!toc || !tocList || !postContent) return;
+    // TOC translations (loaded from Jekyll data)
+    const tocTranslations = {
+      en: { on_this_page: "On this page", share: "Share" },
+      es: { on_this_page: "En esta página", share: "Compartir" },
+      zh: { on_this_page: "本页目录", share: "分享" },
+      hi: { on_this_page: "इस पृष्ठ पर", share: "साझा करें" },
+      pt: { on_this_page: "Nesta página", share: "Compartilhar" },
+      fr: { on_this_page: "Sur cette page", share: "Partager" },
+      de: { on_this_page: "Auf dieser Seite", share: "Teilen" },
+      ja: { on_this_page: "このページの目次", share: "共有" },
+      ko: { on_this_page: "이 페이지에서", share: "공유" }
+    };
     
-    // Get all h2 and h3 headings from post content
-    const headings = postContent.querySelectorAll('h2, h3');
+    let tocItems = [];
+    let lastActiveIndex = -1;
+    let scrollHandler = null;
     
-    // Only show TOC if there are at least 3 headings
-    if (headings.length < 3) return;
-    
-    // Generate TOC
-    const tocItems = [];
-    headings.forEach(function(heading, index) {
-      // Add ID to heading if it doesn't have one
-      if (!heading.id) {
-        heading.id = 'heading-' + index;
+    /**
+     * Generate the TOC from headings in post content
+     */
+    function generateTOC() {
+      const toc = document.getElementById('table-of-contents');
+      const tocList = document.getElementById('toc-list');
+      const postContent = document.querySelector('.post-content');
+      
+      if (!toc || !tocList || !postContent) return;
+      
+      // Clear existing TOC items
+      tocList.innerHTML = '';
+      tocItems = [];
+      lastActiveIndex = -1;
+      
+      // Get all h2 and h3 headings from post content
+      const headings = postContent.querySelectorAll('h2, h3');
+      
+      // Only show TOC if there are at least 3 headings
+      if (headings.length < 3) {
+        toc.style.display = 'none';
+        return;
       }
       
-      const level = heading.tagName.toLowerCase();
-      const text = heading.textContent;
-      const id = heading.id;
-      
-      const li = document.createElement('li');
-      li.className = 'toc-' + level;
-      
-      const a = document.createElement('a');
-      a.href = '#' + id;
-      a.textContent = text;
-      a.setAttribute('data-heading-id', id);
-      
-      // Smooth scroll on click
-      a.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.getElementById(id);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          // Update URL without jumping
-          history.pushState(null, null, '#' + id);
+      // Generate TOC
+      headings.forEach(function(heading, index) {
+        // Add ID to heading if it doesn't have one
+        if (!heading.id) {
+          heading.id = 'heading-' + index;
         }
+        
+        const level = heading.tagName.toLowerCase();
+        const text = heading.textContent;
+        const id = heading.id;
+        
+        const li = document.createElement('li');
+        li.className = 'toc-' + level;
+        
+        const a = document.createElement('a');
+        a.href = '#' + id;
+        a.textContent = text;
+        a.setAttribute('data-heading-id', id);
+        
+        // Smooth scroll on click
+        a.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.getElementById(id);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Update URL without jumping
+            history.pushState(null, null, '#' + id);
+          }
+        });
+        
+        li.appendChild(a);
+        tocList.appendChild(li);
+        tocItems.push({ element: heading, link: a, id: id });
       });
       
-      li.appendChild(a);
-      tocList.appendChild(li);
-      tocItems.push({ element: heading, link: a, id: id });
-    });
+      // Show TOC
+      toc.style.display = 'block';
+      
+      // Update active heading
+      updateActiveHeading();
+    }
     
-    // Show TOC
-    toc.style.display = 'block';
+    /**
+     * Update the TOC labels based on language
+     * @param {string} lang - Language code
+     */
+    function updateTOCLabels(lang) {
+      const translations = tocTranslations[lang] || tocTranslations.en;
+      
+      const tocTitle = document.getElementById('toc-title');
+      const shareTitle = document.getElementById('toc-share-title');
+      const mobileShareTitle = document.getElementById('mobile-share-title');
+      
+      if (tocTitle) {
+        tocTitle.textContent = translations.on_this_page;
+      }
+      
+      if (shareTitle) {
+        shareTitle.textContent = translations.share;
+      }
+      
+      // Also update mobile share title
+      if (mobileShareTitle) {
+        mobileShareTitle.textContent = translations.share;
+      }
+    }
     
-    // Highlight current section on scroll
-    let lastActiveIndex = -1;
-    
+    /**
+     * Highlight the current section in the TOC based on scroll position
+     */
     function updateActiveHeading() {
+      if (tocItems.length === 0) return;
+      
       const scrollPosition = window.scrollY + 100; // Offset for header
       
       let activeIndex = -1;
@@ -187,20 +324,63 @@
       }
     }
     
-    // Throttle scroll event for performance
-    let ticking = false;
-    window.addEventListener('scroll', function() {
-      if (!ticking) {
-        window.requestAnimationFrame(function() {
-          updateActiveHeading();
-          ticking = false;
-        });
-        ticking = true;
-      }
+    /**
+     * Initialize scroll handler for active section tracking
+     */
+    function initScrollHandler() {
+      if (scrollHandler) return; // Already initialized
+      
+      let ticking = false;
+      scrollHandler = function() {
+        if (!ticking) {
+          window.requestAnimationFrame(function() {
+            updateActiveHeading();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      };
+      
+      window.addEventListener('scroll', scrollHandler);
+    }
+    
+    /**
+     * Handle language change events
+     */
+    function handleLanguageChange(event) {
+      const lang = event.detail?.lang || 'en';
+      
+      // Update TOC labels
+      updateTOCLabels(lang);
+      
+      // Regenerate TOC after a short delay to allow content to update
+      setTimeout(function() {
+        generateTOC();
+      }, 100);
+    }
+    
+    // Initialize on DOM ready
+    document.addEventListener('DOMContentLoaded', function() {
+      generateTOC();
+      initScrollHandler();
+      
+      // Get initial language from URL or i18n module
+      const urlParams = new URLSearchParams(window.location.search);
+      const initialLang = urlParams.get('lang') || 'en';
+      updateTOCLabels(initialLang);
     });
     
-    // Initial call
-    updateActiveHeading();
-  });
+    // Listen for translation loaded events (from i18n.js)
+    document.addEventListener('i18n:translationLoaded', handleLanguageChange);
+    
+    // Also listen for language changed events as a backup
+    document.addEventListener('i18n:languageChanged', handleLanguageChange);
+    
+    // Expose for external access if needed
+    window.tocModule = {
+      regenerate: generateTOC,
+      updateLabels: updateTOCLabels
+    };
+  })();
 </script>
 

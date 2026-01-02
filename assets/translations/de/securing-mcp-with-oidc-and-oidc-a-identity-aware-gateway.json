@@ -1,0 +1,8 @@
+{
+  "title": "MCP mit OIDC & OIDC-A absichern: Identitätsbewusste API-Gateways jenseits von „verherrlichten API-Aufrufen",
+  "excerpt": "Integration von OpenID Connect (OIDC) und der neuen OIDC-A-Agentenerweiterung mit einem identitätsbewussten API-Gateway zur sicheren Authentifizierung von Benutzern, LLM-Agenten und MCP-Tools – weit über einfaches API-Proxying hinaus.",
+  "content_html": "<p>KI-Agenten entwickeln sich schnell von Forschungsdemos zu echten Unternehmensanwendungen, die große Sprachmodelle (LLMs) mit Unternehmensdaten und -diensten verbinden. Ein gängiger Ansatz ist die Verwendung von Tools oder Plugins, um einem LLM das Abrufen von Kontext oder das Ausführen von Aktionen zu ermöglichen – aber einige tun dies als bloße „verherrlichte API-Aufrufe",
+  "source_hash": "sha256:2e298f37ca328b0eb320a81887dd3640aeb212ad3bf1d820c547bb98ab9e3b19",
+  "model": "claude-sonnet-4-5-20250929",
+  "generated_at": "2026-01-02T02:00:24.848345+00:00"
+}

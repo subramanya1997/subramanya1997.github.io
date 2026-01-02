@@ -23,6 +23,37 @@ kramdown:
 keep_files:
   - sitemap-media.xml
 
+# Internationalization (i18n)
+default_lang: en
+languages:
+  - code: en
+    name: English
+    native: English
+  - code: es
+    name: Spanish
+    native: Español
+  - code: zh
+    name: Chinese
+    native: 中文
+  - code: hi
+    name: Hindi
+    native: हिन्दी
+  - code: pt
+    name: Portuguese
+    native: Português
+  - code: fr
+    name: French
+    native: Français
+  - code: de
+    name: German
+    native: Deutsch
+  - code: ja
+    name: Japanese
+    native: 日本語
+  - code: ko
+    name: Korean
+    native: 한국어
+
 # Google Analytics
 google_analytics: G-04B5H1S8SJ
 google_optimize: OPT-PHBLQWB

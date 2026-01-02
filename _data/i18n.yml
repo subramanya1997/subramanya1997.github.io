@@ -1,0 +1,155 @@
+# Internationalization UI strings
+# Used by the language switcher and translation toast components
+
+en:
+  language_switcher:
+    label: "Language"
+    current: "English"
+  toast:
+    message: "You are viewing the original English content."
+    view_original: "View original"
+    dismiss: "Dismiss"
+  labels:
+    translated_content: "Translated content"
+    original_content: "Original content"
+    auto_translated: "Auto-translated"
+    reading_time: "min read"
+  toc:
+    on_this_page: "On this page"
+    share: "Share"
+
+es:
+  language_switcher:
+    label: "Idioma"
+    current: "Español"
+  toast:
+    message: "Esta página ha sido traducida automáticamente al español."
+    view_original: "Ver original en inglés"
+    dismiss: "Cerrar"
+  labels:
+    translated_content: "Contenido traducido"
+    original_content: "Contenido original"
+    auto_translated: "Traducido automáticamente"
+    reading_time: "min de lectura"
+  toc:
+    on_this_page: "En esta página"
+    share: "Compartir"
+
+zh:
+  language_switcher:
+    label: "语言"
+    current: "中文"
+  toast:
+    message: "此页面已自动翻译成中文。"
+    view_original: "查看英文原文"
+    dismiss: "关闭"
+  labels:
+    translated_content: "翻译内容"
+    original_content: "原始内容"
+    auto_translated: "自动翻译"
+    reading_time: "分钟阅读"
+  toc:
+    on_this_page: "本页目录"
+    share: "分享"
+
+hi:
+  language_switcher:
+    label: "भाषा"
+    current: "हिन्दी"
+  toast:
+    message: "यह पृष्ठ स्वचालित रूप से हिंदी में अनुवादित किया गया है।"
+    view_original: "अंग्रेज़ी में मूल देखें"
+    dismiss: "बंद करें"
+  labels:
+    translated_content: "अनुवादित सामग्री"
+    original_content: "मूल सामग्री"
+    auto_translated: "स्वतः अनुवादित"
+    reading_time: "मिनट पढ़ें"
+  toc:
+    on_this_page: "इस पृष्ठ पर"
+    share: "साझा करें"
+
+pt:
+  language_switcher:
+    label: "Idioma"
+    current: "Português"
+  toast:
+    message: "Esta página foi traduzida automaticamente para o português."
+    view_original: "Ver original em inglês"
+    dismiss: "Fechar"
+  labels:
+    translated_content: "Conteúdo traduzido"
+    original_content: "Conteúdo original"
+    auto_translated: "Traduzido automaticamente"
+    reading_time: "min de leitura"
+  toc:
+    on_this_page: "Nesta página"
+    share: "Compartilhar"
+
+fr:
+  language_switcher:
+    label: "Langue"
+    current: "Français"
+  toast:
+    message: "Cette page a été traduite automatiquement en français."
+    view_original: "Voir l'original en anglais"
+    dismiss: "Fermer"
+  labels:
+    translated_content: "Contenu traduit"
+    original_content: "Contenu original"
+    auto_translated: "Traduit automatiquement"
+    reading_time: "min de lecture"
+  toc:
+    on_this_page: "Sur cette page"
+    share: "Partager"
+
+de:
+  language_switcher:
+    label: "Sprache"
+    current: "Deutsch"
+  toast:
+    message: "Diese Seite wurde automatisch ins Deutsche übersetzt."
+    view_original: "Original auf Englisch anzeigen"
+    dismiss: "Schließen"
+  labels:
+    translated_content: "Übersetzter Inhalt"
+    original_content: "Originalinhalt"
+    auto_translated: "Automatisch übersetzt"
+    reading_time: "Min. Lesezeit"
+  toc:
+    on_this_page: "Auf dieser Seite"
+    share: "Teilen"
+
+ja:
+  language_switcher:
+    label: "言語"
+    current: "日本語"
+  toast:
+    message: "このページは日本語に自動翻訳されています。"
+    view_original: "英語の原文を見る"
+    dismiss: "閉じる"
+  labels:
+    translated_content: "翻訳されたコンテンツ"
+    original_content: "オリジナルコンテンツ"
+    auto_translated: "自動翻訳"
+    reading_time: "分で読めます"
+  toc:
+    on_this_page: "このページの目次"
+    share: "共有"
+
+ko:
+  language_switcher:
+    label: "언어"
+    current: "한국어"
+  toast:
+    message: "이 페이지는 한국어로 자동 번역되었습니다."
+    view_original: "영어 원문 보기"
+    dismiss: "닫기"
+  labels:
+    translated_content: "번역된 콘텐츠"
+    original_content: "원본 콘텐츠"
+    auto_translated: "자동 번역됨"
+    reading_time: "분 소요"
+  toc:
+    on_this_page: "이 페이지에서"
+    share: "공유"

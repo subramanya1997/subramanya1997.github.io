@@ -1,0 +1,510 @@
+<!-- Translation Warning Toast Component -->
+<div class="translation-toast" id="translationToast" role="alert" aria-live="polite" aria-atomic="true">
+  <div class="toast-content">
+    <div class="toast-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+    </div>
+    <div class="toast-text">
+      <span class="toast-message" id="toastMessage">
+        This page has been automatically translated.
+      </span>
+      <a href="#" class="toast-link" id="toastOriginalLink">
+        View original in English
+      </a>
+    </div>
+    <button class="toast-dismiss" id="toastDismiss" type="button" aria-label="Dismiss notification">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  <div class="toast-progress" id="toastProgress"></div>
+</div>
+
+<style>
+/* Translation Toast Styles */
+.translation-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(120px);
+  max-width: calc(100vw - 48px);
+  width: auto;
+  min-width: 320px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.4s ease,
+              visibility 0.4s ease;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .translation-toast {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.4);
+  border-color: var(--border-color);
+}
+
+.translation-toast.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.translation-toast.hiding {
+  opacity: 0;
+  transform: translateX(-50%) translateY(20px);
+}
+
+.toast-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+}
+
+.toast-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+  color: white;
+}
+
+.toast-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.toast-message {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.toast-link {
+  font-size: 13px;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s ease;
+}
+
+.toast-link:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+.toast-link::after {
+  content: '→';
+  font-size: 12px;
+  transition: transform 0.2s ease;
+}
+
+.toast-link:hover::after {
+  transform: translateX(3px);
+}
+
+.toast-dismiss {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 2px;
+}
+
+.toast-dismiss:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.toast-dismiss:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Progress bar for auto-dismiss */
+.toast-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+  background-size: 200% 100%;
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform linear;
+  animation: shimmer 2s infinite;
+}
+
+.translation-toast:not(.visible) .toast-progress {
+  transform: scaleX(0);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Toast animation entrance */
+@keyframes toast-bounce {
+  0% {
+    transform: translateX(-50%) translateY(120px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+  80% {
+    transform: translateX(-50%) translateY(4px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.translation-toast.animate-in {
+  animation: toast-bounce 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 480px) {
+  .translation-toast {
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    transform: translateX(0) translateY(120px);
+    min-width: auto;
+    max-width: none;
+  }
+  
+  .translation-toast.visible {
+    transform: translateX(0) translateY(0);
+  }
+  
+  .translation-toast.hiding {
+    transform: translateX(0) translateY(20px);
+  }
+  
+  .translation-toast.animate-in {
+    animation: toast-bounce-mobile 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  @keyframes toast-bounce-mobile {
+    0% {
+      transform: translateX(0) translateY(120px);
+    }
+    60% {
+      transform: translateX(0) translateY(-8px);
+    }
+    80% {
+      transform: translateX(0) translateY(4px);
+    }
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+  }
+  
+  .toast-content {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+  
+  .toast-icon {
+    width: 34px;
+    height: 34px;
+  }
+  
+  .toast-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .toast-message {
+    font-size: 13px;
+  }
+  
+  .toast-link {
+    font-size: 12px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .translation-toast,
+  .toast-progress,
+  .toast-link::after {
+    transition-duration: 0.1s;
+    animation: none;
+  }
+  
+  .translation-toast.animate-in {
+    animation: none;
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+</style>
+
+<script>
+(function() {
+  'use strict';
+  
+  const toast = document.getElementById('translationToast');
+  const toastMessage = document.getElementById('toastMessage');
+  const toastLink = document.getElementById('toastOriginalLink');
+  const toastDismiss = document.getElementById('toastDismiss');
+  const toastProgress = document.getElementById('toastProgress');
+  
+  if (!toast || !toastMessage || !toastLink || !toastDismiss) return;
+  
+  const AUTO_DISMISS_DURATION = 8000; // 8 seconds
+  const DISMISS_MEMORY_KEY = 'translationToastDismissed';
+  const DISMISS_MEMORY_DURATION = 24 * 60 * 60 * 1000; // 24 hours
+  
+  let autoDismissTimeout = null;
+  let isVisible = false;
+  
+  // Toast messages in target languages
+  const toastMessages = {
+    en: {
+      message: 'This page is displayed in English.',
+      link: 'View original'
+    },
+    es: {
+      message: 'Esta página ha sido traducida automáticamente al español.',
+      link: 'Ver original en inglés'
+    },
+    zh: {
+      message: '此页面已自动翻译成中文。',
+      link: '查看英文原文'
+    },
+    hi: {
+      message: 'इस पृष्ठ का हिंदी में स्वचालित रूप से अनुवाद किया गया है।',
+      link: 'मूल अंग्रेजी में देखें'
+    },
+    pt: {
+      message: 'Esta página foi traduzida automaticamente para português.',
+      link: 'Ver original em inglês'
+    },
+    fr: {
+      message: 'Cette page a été automatiquement traduite en français.',
+      link: 'Voir l\'original en anglais'
+    },
+    de: {
+      message: 'Diese Seite wurde automatisch ins Deutsche übersetzt.',
+      link: 'Original auf Englisch anzeigen'
+    },
+    ja: {
+      message: 'このページは日本語に自動翻訳されています。',
+      link: '英語の原文を表示'
+    },
+    ko: {
+      message: '이 페이지는 한국어로 자동 번역되었습니다.',
+      link: '영어 원문 보기'
+    }
+  };
+  
+  /**
+   * Check if toast was recently dismissed
+   */
+  function wasRecentlyDismissed() {
+    try {
+      const dismissedData = localStorage.getItem(DISMISS_MEMORY_KEY);
+      if (!dismissedData) return false;
+      
+      const { timestamp } = JSON.parse(dismissedData);
+      const now = Date.now();
+      
+      // Clear old dismissal memory
+      if (now - timestamp > DISMISS_MEMORY_DURATION) {
+        localStorage.removeItem(DISMISS_MEMORY_KEY);
+        return false;
+      }
+      
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+  
+  /**
+   * Remember that toast was dismissed
+   */
+  function rememberDismissal() {
+    try {
+      localStorage.setItem(DISMISS_MEMORY_KEY, JSON.stringify({
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // localStorage might be disabled
+    }
+  }
+  
+  /**
+   * Show the toast notification
+   */
+  function showToast(langCode) {
+    // Don't show if recently dismissed or already visible
+    if (wasRecentlyDismissed() || isVisible) return;
+    
+    // Don't show for default language (English)
+    if (langCode === '{{ site.default_lang }}') return;
+    
+    // Update message based on language
+    const messages = toastMessages[langCode] || toastMessages.en;
+    toastMessage.textContent = messages.message;
+    toastLink.textContent = messages.link;
+    
+    // Set link to switch to English
+    // Dispatch i18n:languageChange event for i18n.js to handle the switch
+    toastLink.href = '#';
+    toastLink.onclick = (e) => {
+      e.preventDefault();
+      hideToast();
+      document.dispatchEvent(new CustomEvent('i18n:languageChange', { 
+        detail: { lang: '{{ site.default_lang }}' } 
+      }));
+    };
+    
+    // Show toast with animation
+    isVisible = true;
+    toast.classList.add('visible', 'animate-in');
+    
+    // Start progress bar animation
+    if (toastProgress) {
+      toastProgress.style.transition = `transform ${AUTO_DISMISS_DURATION}ms linear`;
+      requestAnimationFrame(() => {
+        toastProgress.style.transform = 'scaleX(0)';
+      });
+    }
+    
+    // Auto-dismiss after duration
+    clearTimeout(autoDismissTimeout);
+    autoDismissTimeout = setTimeout(() => {
+      hideToast();
+    }, AUTO_DISMISS_DURATION);
+  }
+  
+  /**
+   * Hide the toast notification
+   */
+  function hideToast(remember = false) {
+    if (!isVisible) return;
+    
+    clearTimeout(autoDismissTimeout);
+    isVisible = false;
+    
+    toast.classList.add('hiding');
+    toast.classList.remove('animate-in');
+    
+    setTimeout(() => {
+      toast.classList.remove('visible', 'hiding');
+      
+      // Reset progress bar
+      if (toastProgress) {
+        toastProgress.style.transition = 'none';
+        toastProgress.style.transform = 'scaleX(1)';
+      }
+    }, 400);
+    
+    if (remember) {
+      rememberDismissal();
+    }
+  }
+  
+  /**
+   * Pause auto-dismiss on hover
+   */
+  function pauseAutoDismiss() {
+    clearTimeout(autoDismissTimeout);
+    if (toastProgress) {
+      const computedStyle = getComputedStyle(toastProgress);
+      toastProgress.style.transition = 'none';
+      toastProgress.style.transform = computedStyle.transform;
+    }
+  }
+  
+  /**
+   * Resume auto-dismiss on mouse leave
+   */
+  function resumeAutoDismiss() {
+    if (!isVisible) return;
+    
+    // Calculate remaining time based on progress bar position
+    const remainingTime = AUTO_DISMISS_DURATION * 0.4; // Resume with 40% time
+    
+    if (toastProgress) {
+      toastProgress.style.transition = `transform ${remainingTime}ms linear`;
+      requestAnimationFrame(() => {
+        toastProgress.style.transform = 'scaleX(0)';
+      });
+    }
+    
+    autoDismissTimeout = setTimeout(() => {
+      hideToast();
+    }, remainingTime);
+  }
+  
+  // Event: Dismiss button click
+  toastDismiss.addEventListener('click', () => {
+    hideToast(true);
+  });
+  
+  // Event: Pause on hover
+  toast.addEventListener('mouseenter', pauseAutoDismiss);
+  toast.addEventListener('mouseleave', resumeAutoDismiss);
+  
+  // Event: Touch support
+  toast.addEventListener('touchstart', pauseAutoDismiss, { passive: true });
+  toast.addEventListener('touchend', resumeAutoDismiss, { passive: true });
+  
+  // Event: Keyboard dismiss (Escape)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isVisible) {
+      hideToast(true);
+    }
+  });
+  
+  // Event: Listen for translation loaded events from i18n.js
+  // i18n.js dispatches 'i18n:translationLoaded' on document after content is applied
+  document.addEventListener('i18n:translationLoaded', (e) => {
+    if (e.detail && e.detail.lang) {
+      showToast(e.detail.lang);
+    }
+  });
+  
+  // Expose functions globally for i18n.js integration
+  window.TranslationToast = {
+    show: showToast,
+    hide: hideToast
+  };
+})();
+</script>

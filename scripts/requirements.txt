@@ -1,0 +1,14 @@
+# Python dependencies for blog translation system
+# Install with: pip install -r requirements.txt
+
+# Anthropic API for Claude 4.5 Sonnet
+anthropic>=0.75.0
+
+# YAML parsing for Jekyll front matter
+pyyaml>=6.0
+
+# Load environment variables from .env file
+python-dotenv>=1.0.0
+
+# Simple progress bars
+tqdm>=4.66.0
