@@ -223,5 +223,22 @@ custom_layout: true
         el.textContent = count.toLocaleString();
       }
     });
+    
+    // Preserve language parameter in post links
+    const urlParams = new URLSearchParams(window.location.search);
+    const currentLang = urlParams.get('lang');
+    
+    if (currentLang) {
+      // Add language parameter to all post links
+      const postLinks = document.querySelectorAll('.blog-post a');
+      postLinks.forEach(function(link) {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('/')) {
+          const url = new URL(href, window.location.origin);
+          url.searchParams.set('lang', currentLang);
+          link.setAttribute('href', url.pathname + url.search);
+        }
+      });
+    }
   });
 </script>

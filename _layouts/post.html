@@ -23,76 +23,48 @@ layout: default
       {% endif %}
       
       <div class="post-meta">
-        <span class="post-date">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y2="10"></line>
-          </svg>
-          {{ page.date | date: "%b %-d, %Y" }}
-        </span>
-        
-        <span class="post-reading-time">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
-          </svg>
-          {% include reading_time.html content=content %}
-        </span>
-        
-        {% if page.author %}
-        <span class="post-author">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
-          {{ page.author }}
-        </span>
-        {% endif %}
-        
-        <div class="copy-page-wrapper">
-          <button class="copy-page-btn" id="copyPageBtn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="9" y="9" width="13" height="13" rx="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            <span>Copy Page</span>
-          </button>
-          <button class="copy-dropdown-toggle" id="copyDropdownToggle" aria-label="More options">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          
-          <div class="copy-dropdown" id="copyDropdown">
-            <button class="copy-option" data-ai="claude">
-              <img src="{{ '/assets/images/logos/claude.svg' | prepend: site.baseurl }}" alt="Claude" class="ai-logo">
-              Open in Claude
-            </button>
-            <button class="copy-option" data-ai="chatgpt">
-              <img src="{{ '/assets/images/logos/openai.svg' | prepend: site.baseurl }}" alt="OpenAI" class="ai-logo">
-              Open in ChatGPT
-            </button>
+        <div class="post-meta-info">
+          {% if page.author %}
+          <div class="post-author">
+            {{ page.author }}
+          </div>
+          {% endif %}
+          <div class="post-date-time">
+            <span class="post-date">{{ page.date | date: "%b %-d, %Y" }}</span>
+            <span class="meta-dot">·</span>
+            <span class="post-reading-time">{% include reading_time.html content=content %}</span>
           </div>
         </div>
         
-        <div class="social-share">
-          <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" 
-            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
-            target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Share on Facebook">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}" 
-            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
-            target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Share on Twitter">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}&title={{ page.title }}&summary={{ page.excerpt | strip_html }}" 
-            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
-            target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Share on LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
+        <div class="post-meta-actions">
+          <div class="copy-page-wrapper">
+            <button class="copy-page-btn" id="copyPageBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span>Copy Page</span>
+            </button>
+            <button class="copy-dropdown-toggle" id="copyDropdownToggle" aria-label="More options">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            
+            <div class="copy-dropdown" id="copyDropdown">
+              <button class="copy-option" data-ai="claude">
+                <img src="{{ '/assets/images/logos/claude.svg' | prepend: site.baseurl }}" alt="Claude" class="ai-logo">
+                Open in Claude
+              </button>
+              <button class="copy-option" data-ai="chatgpt">
+                <img src="{{ '/assets/images/logos/openai.svg' | prepend: site.baseurl }}" alt="OpenAI" class="ai-logo">
+                Open in ChatGPT
+              </button>
+            </div>
+          </div>
+          
+          <!-- Language Switcher -->
+          {% include language-switcher.html %}
         </div>
       </div>
     </header>
@@ -100,6 +72,33 @@ layout: default
     <article class="post-content">
       {{ content }}
     </article>
+    
+    <!-- Mobile Social Share (visible only on mobile/tablet) -->
+    <div class="mobile-social-share">
+      <div class="mobile-social-header">
+        <h4 id="mobile-share-title">Share</h4>
+      </div>
+      <div class="mobile-social-links">
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" 
+          onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+          target="_blank" rel="noopener noreferrer" class="mobile-social-icon" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-f"></i>
+          <span>Facebook</span>
+        </a>
+        <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}" 
+          onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+          target="_blank" rel="noopener noreferrer" class="mobile-social-icon" aria-label="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+          <span>Twitter</span>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}&title={{ page.title }}&summary={{ page.excerpt | strip_html }}" 
+          onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+          target="_blank" rel="noopener noreferrer" class="mobile-social-icon" aria-label="Share on LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
     
     <!-- Related Posts -->
     {% include related-posts.html %}
@@ -963,30 +962,46 @@ layout: default
   
   .post-meta {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 20px;
     margin-bottom: 0;
   }
   
-  .post-date, .post-author, .post-reading-time {
+  .post-meta-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .post-author {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 15px;
+  }
+  
+  .post-date-time {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
+    color: #666666;
+    font-size: 14px;
+  }
+  
+  .post-date, .post-reading-time {
     color: #666666;
   }
   
-  .social-share {
+  .meta-dot {
+    color: #999999;
+    font-weight: 500;
+  }
+  
+  .post-meta-actions {
     display: flex;
-    gap: 15px;
-  }
-  
-  .social-icon {
-    color: #666666;
-  }
-  
-  .social-icon:hover {
-    color: #333333;
+    align-items: center;
+    gap: 12px;
   }
   
   .post-navigation {
@@ -1029,6 +1044,65 @@ layout: default
     }
   }
   
+  /* Mobile Social Share */
+  .mobile-social-share {
+    display: none;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .mobile-social-header {
+    margin-bottom: 16px;
+  }
+  
+  .mobile-social-header h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+  }
+  
+  .mobile-social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .mobile-social-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    color: #666666;
+    text-decoration: none;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 6px;
+    background-color: var(--bg-secondary);
+    transition: all 0.2s ease;
+    font-size: 14px;
+  }
+  
+  .mobile-social-icon:hover {
+    color: #333333;
+    border-color: var(--accent);
+    background-color: var(--bg-tertiary);
+  }
+  
+  .mobile-social-icon i {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .mobile-social-share {
+      display: block;
+    }
+  }
+  
   @media screen and (max-width: 600px) {
     .post {
       padding: 25px;
@@ -1036,11 +1110,19 @@ layout: default
     
     .post-meta {
       flex-direction: column;
+      align-items: flex-start;
       gap: 15px;
     }
     
-    .social-share {
-      margin-left: 0;
+    .post-meta-info {
+      align-items: flex-start;
+      width: 100%;
+    }
+    
+    .post-meta-actions {
+      width: 100%;
+      justify-content: flex-start;
+      flex-wrap: wrap;
     }
   }
   
@@ -1434,3 +1516,9 @@ layout: default
     }
   }
 </style>
+
+<!-- Translation Toast -->
+{% include translation-toast.html %}
+
+<!-- i18n Script for Translation Support -->
+<script src="{{ '/assets/js/i18n.js' | prepend: site.baseurl }}"></script>
