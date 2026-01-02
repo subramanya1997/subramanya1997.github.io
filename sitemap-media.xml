@@ -311,6 +311,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://localhost:4000/assets/translations/de/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:4000/assets/translations/de/from-espionage-to-identity-securing-the-future-of-agentic-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -757,6 +762,11 @@
   </url>
   <url>
     <loc>http://localhost:4000/assets/translations/hi/securing-ai-assistants-digital-ids-for-ai.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:4000/assets/translations/hi/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1316,6 +1326,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://localhost:4000/assets/translations/zh/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:4000/assets/translations/zh/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1332,6 +1347,11 @@
   </url>
   <url>
     <loc>http://localhost:4000/assets/translations/zh/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:4000/assets/translations/zh/the-three-platform-problem-in-enterprise-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
