@@ -1,1377 +1,1397 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost:4000/assets/favicon/android-chrome-192x192.png</loc>
+    <loc>https://subramanya.ai/assets/favicon/android-chrome-192x192.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/favicon/android-chrome-512x512.png</loc>
+    <loc>https://subramanya.ai/assets/favicon/android-chrome-512x512.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/favicon/apple-touch-icon.png</loc>
+    <loc>https://subramanya.ai/assets/favicon/apple-touch-icon.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/favicon/favicon-128x128.png</loc>
+    <loc>https://subramanya.ai/assets/favicon/favicon-128x128.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/favicon/favicon-16x16.png</loc>
+    <loc>https://subramanya.ai/assets/favicon/favicon-16x16.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/favicon/favicon-32x32.png</loc>
+    <loc>https://subramanya.ai/assets/favicon/favicon-32x32.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/favicon/favicon-64x64.png</loc>
+    <loc>https://subramanya.ai/assets/favicon/favicon-64x64.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/favicon/favicon.ico</loc>
+    <loc>https://subramanya.ai/assets/favicon/favicon.ico</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/favicon/favicon.svg</loc>
+    <loc>https://subramanya.ai/assets/favicon/favicon.svg</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/favicon/mstile-144x144.png</loc>
+    <loc>https://subramanya.ai/assets/favicon/mstile-144x144.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/favicon/site.webmanifest</loc>
+    <loc>https://subramanya.ai/assets/favicon/site.webmanifest</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/Agent Directory.png</loc>
+    <loc>https://subramanya.ai/assets/images/Agent Directory.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/MCP Registry.png</loc>
+    <loc>https://subramanya.ai/assets/images/MCP Registry.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/NockOut_1080x540.png</loc>
+    <loc>https://subramanya.ai/assets/images/NockOut_1080x540.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/agent-skills.png</loc>
+    <loc>https://subramanya.ai/assets/images/agent-skills.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/agentic-ai-2025-review.png</loc>
+    <loc>https://subramanya.ai/assets/images/agentic-ai-2025-review.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/ai-code-assistants.webp</loc>
+    <loc>https://subramanya.ai/assets/images/ai-code-assistants.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/ai_cyberattack_lifecycle_diagram.webp</loc>
+    <loc>https://subramanya.ai/assets/images/ai_cyberattack_lifecycle_diagram.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/anscombes_quartet.png</loc>
+    <loc>https://subramanya.ai/assets/images/anscombes_quartet.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/anthropic_coding_agents.webp</loc>
+    <loc>https://subramanya.ai/assets/images/anthropic_coding_agents.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/anthropic_multistep_workflows.webp</loc>
+    <loc>https://subramanya.ai/assets/images/anthropic_multistep_workflows.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/context-graphs.png</loc>
+    <loc>https://subramanya.ai/assets/images/context-graphs.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/context_graphs_followup.png</loc>
+    <loc>https://subramanya.ai/assets/images/context_graphs_followup.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/dev-ops.webp</loc>
+    <loc>https://subramanya.ai/assets/images/cursor-at-mentions.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/enterprise_ai_growth_menlo.webp</loc>
+    <loc>https://subramanya.ai/assets/images/cursor-custom-commands.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/genai_spend_by_category_menlo.webp</loc>
+    <loc>https://subramanya.ai/assets/images/cursor-mcp-integrations.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/governance_stack.png</loc>
+    <loc>https://subramanya.ai/assets/images/cursor-plan-mode.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/logos/claude.svg</loc>
+    <loc>https://subramanya.ai/assets/images/dev-ops.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/logos/dylog.png</loc>
+    <loc>https://subramanya.ai/assets/images/enterprise_ai_growth_menlo.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/logos/meta.png</loc>
+    <loc>https://subramanya.ai/assets/images/genai_spend_by_category_menlo.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/logos/nie.png</loc>
+    <loc>https://subramanya.ai/assets/images/governance_stack.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/logos/openai.svg</loc>
+    <loc>https://subramanya.ai/assets/images/logos/claude.svg</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/logos/renderpub.png</loc>
+    <loc>https://subramanya.ai/assets/images/logos/dylog.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/logos/ribbon.png</loc>
+    <loc>https://subramanya.ai/assets/images/logos/meta.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/logos/umass.png</loc>
+    <loc>https://subramanya.ai/assets/images/logos/nie.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/logos/vertica.png</loc>
+    <loc>https://subramanya.ai/assets/images/logos/openai.svg</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/low-code.webp</loc>
+    <loc>https://subramanya.ai/assets/images/logos/renderpub.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/mcp_anniversary.jpg</loc>
+    <loc>https://subramanya.ai/assets/images/logos/ribbon.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/mcp_before_after.png</loc>
+    <loc>https://subramanya.ai/assets/images/logos/umass.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/menlo_ventures_ai_agents_market_map.webp</loc>
+    <loc>https://subramanya.ai/assets/images/logos/vertica.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/openai_industry_growth.webp</loc>
+    <loc>https://subramanya.ai/assets/images/low-code.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/openai_productivity_gains.webp</loc>
+    <loc>https://subramanya.ai/assets/images/mcp_anniversary.jpg</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/pinecone_hybrid_index.jpg</loc>
+    <loc>https://subramanya.ai/assets/images/mcp_before_after.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/pinecone_hybrid_query.jpg</loc>
+    <loc>https://subramanya.ai/assets/images/menlo_ventures_ai_agents_market_map.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/platform_convergence.png</loc>
+    <loc>https://subramanya.ai/assets/images/openai_industry_growth.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/profile_picture.webp</loc>
+    <loc>https://subramanya.ai/assets/images/openai_productivity_gains.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/images/system_design_with_document_ai_gpt_pinecone.jpeg</loc>
+    <loc>https://subramanya.ai/assets/images/pinecone_hybrid_index.jpg</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/js/i18n.js</loc>
+    <loc>https://subramanya.ai/assets/images/pinecone_hybrid_query.jpg</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/js/toc.js</loc>
+    <loc>https://subramanya.ai/assets/images/platform_convergence.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/resume/CV.pdf</loc>
+    <loc>https://subramanya.ai/assets/images/profile_picture.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/2025-the-year-agentic-ai-got-real-and-what-comes-next.json</loc>
+    <loc>https://subramanya.ai/assets/images/system_design_with_document_ai_gpt_pinecone.jpeg</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/a-feat-of-strength-mvp-for-ai-apps.json</loc>
+    <loc>https://subramanya.ai/assets/js/i18n.js</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle.json</loc>
+    <loc>https://subramanya.ai/assets/js/toc.js</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/ai-agents-agentic-security-enterprise-automation.json</loc>
+    <loc>https://subramanya.ai/assets/resume/CV.pdf</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/2025-the-year-agentic-ai-got-real-and-what-comes-next.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/a-feat-of-strength-mvp-for-ai-apps.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/demystifying-the-shell-a-beginners-guide.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/ai-agents-agentic-security-enterprise-automation.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/demystifying-the-shell-scripting-a-beginners-guide.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/demystifying-the-shell-scripting-advanced-techniques-and-best-practices.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/demystifying-the-shell-scripting-working-with-files-and-directories.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/do-agents-need-their-own-identity.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/demystifying-the-shell-a-beginners-guide.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/demystifying-the-shell-scripting-a-beginners-guide.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/from-espionage-to-identity-securing-the-future-of-agentic-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/demystifying-the-shell-scripting-advanced-techniques-and-best-practices.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/from-gateway-to-guardian-the-evolution-of-mcp-security.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/demystifying-the-shell-scripting-working-with-files-and-directories.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/hybrid-search-for-e-commerce-with-pinecone-and-LLM.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/do-agents-need-their-own-identity.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/oidc-a-proposal.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/from-espionage-to-identity-securing-the-future-of-agentic-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/securing-ai-assistants-digital-ids-for-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/from-gateway-to-guardian-the-evolution-of-mcp-security.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/hybrid-search-for-e-commerce-with-pinecone-and-LLM.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/oidc-a-proposal.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/the-nockout-story.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/securing-ai-assistants-digital-ids-for-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/the-three-platform-problem-in-enterprise-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/version-control.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/what-are-context-graphs-really.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/the-nockout-story.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/de/why-private-registries-are-the-future-of-enterprise-agentic-infrastructure.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/2025-the-year-agentic-ai-got-real-and-what-comes-next.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/the-three-platform-problem-in-enterprise-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/a-feat-of-strength-mvp-for-ai-apps.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/version-control.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/what-are-context-graphs-really.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/ai-agents-agentic-security-enterprise-automation.json</loc>
+    <loc>https://subramanya.ai/assets/translations/de/why-private-registries-are-the-future-of-enterprise-agentic-infrastructure.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/2025-the-year-agentic-ai-got-real-and-what-comes-next.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/a-feat-of-strength-mvp-for-ai-apps.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/demystifying-the-shell-a-beginners-guide.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/ai-agents-agentic-security-enterprise-automation.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/demystifying-the-shell-scripting-a-beginners-guide.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/demystifying-the-shell-scripting-advanced-techniques-and-best-practices.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/demystifying-the-shell-scripting-working-with-files-and-directories.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/do-agents-need-their-own-identity.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/demystifying-the-shell-a-beginners-guide.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/demystifying-the-shell-scripting-a-beginners-guide.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/from-espionage-to-identity-securing-the-future-of-agentic-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/demystifying-the-shell-scripting-advanced-techniques-and-best-practices.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/from-gateway-to-guardian-the-evolution-of-mcp-security.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/demystifying-the-shell-scripting-working-with-files-and-directories.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/hybrid-search-for-e-commerce-with-pinecone-and-LLM.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/do-agents-need-their-own-identity.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/oidc-a-proposal.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/from-espionage-to-identity-securing-the-future-of-agentic-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/securing-ai-assistants-digital-ids-for-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/from-gateway-to-guardian-the-evolution-of-mcp-security.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/hybrid-search-for-e-commerce-with-pinecone-and-LLM.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/oidc-a-proposal.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/the-nockout-story.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/securing-ai-assistants-digital-ids-for-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/the-three-platform-problem-in-enterprise-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/version-control.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/what-are-context-graphs-really.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/the-nockout-story.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/es/why-private-registries-are-the-future-of-enterprise-agentic-infrastructure.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/2025-the-year-agentic-ai-got-real-and-what-comes-next.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/the-three-platform-problem-in-enterprise-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/a-feat-of-strength-mvp-for-ai-apps.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/version-control.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/what-are-context-graphs-really.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/ai-agents-agentic-security-enterprise-automation.json</loc>
+    <loc>https://subramanya.ai/assets/translations/es/why-private-registries-are-the-future-of-enterprise-agentic-infrastructure.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/2025-the-year-agentic-ai-got-real-and-what-comes-next.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/a-feat-of-strength-mvp-for-ai-apps.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/demystifying-the-shell-a-beginners-guide.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/ai-agents-agentic-security-enterprise-automation.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/demystifying-the-shell-scripting-a-beginners-guide.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/demystifying-the-shell-scripting-advanced-techniques-and-best-practices.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/demystifying-the-shell-scripting-working-with-files-and-directories.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/do-agents-need-their-own-identity.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/demystifying-the-shell-a-beginners-guide.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/demystifying-the-shell-scripting-a-beginners-guide.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/from-espionage-to-identity-securing-the-future-of-agentic-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/demystifying-the-shell-scripting-advanced-techniques-and-best-practices.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/from-gateway-to-guardian-the-evolution-of-mcp-security.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/demystifying-the-shell-scripting-working-with-files-and-directories.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/hybrid-search-for-e-commerce-with-pinecone-and-LLM.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/do-agents-need-their-own-identity.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/oidc-a-proposal.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/from-espionage-to-identity-securing-the-future-of-agentic-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/securing-ai-assistants-digital-ids-for-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/from-gateway-to-guardian-the-evolution-of-mcp-security.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/hybrid-search-for-e-commerce-with-pinecone-and-LLM.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/oidc-a-proposal.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/the-nockout-story.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/securing-ai-assistants-digital-ids-for-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/the-three-platform-problem-in-enterprise-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/version-control.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/what-are-context-graphs-really.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/the-nockout-story.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/fr/why-private-registries-are-the-future-of-enterprise-agentic-infrastructure.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/2025-the-year-agentic-ai-got-real-and-what-comes-next.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/the-three-platform-problem-in-enterprise-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/a-feat-of-strength-mvp-for-ai-apps.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/version-control.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/what-are-context-graphs-really.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/ai-agents-agentic-security-enterprise-automation.json</loc>
+    <loc>https://subramanya.ai/assets/translations/fr/why-private-registries-are-the-future-of-enterprise-agentic-infrastructure.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/2025-the-year-agentic-ai-got-real-and-what-comes-next.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/a-feat-of-strength-mvp-for-ai-apps.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/demystifying-the-shell-a-beginners-guide.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/ai-agents-agentic-security-enterprise-automation.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/demystifying-the-shell-scripting-a-beginners-guide.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/demystifying-the-shell-scripting-advanced-techniques-and-best-practices.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/demystifying-the-shell-scripting-working-with-files-and-directories.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/do-agents-need-their-own-identity.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/demystifying-the-shell-a-beginners-guide.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/demystifying-the-shell-scripting-a-beginners-guide.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/from-espionage-to-identity-securing-the-future-of-agentic-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/demystifying-the-shell-scripting-advanced-techniques-and-best-practices.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/from-gateway-to-guardian-the-evolution-of-mcp-security.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/demystifying-the-shell-scripting-working-with-files-and-directories.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/hybrid-search-for-e-commerce-with-pinecone-and-LLM.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/do-agents-need-their-own-identity.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/oidc-a-proposal.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/from-espionage-to-identity-securing-the-future-of-agentic-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/securing-ai-assistants-digital-ids-for-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/from-gateway-to-guardian-the-evolution-of-mcp-security.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/hybrid-search-for-e-commerce-with-pinecone-and-LLM.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/oidc-a-proposal.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/the-nockout-story.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/securing-ai-assistants-digital-ids-for-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/the-three-platform-problem-in-enterprise-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/version-control.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/what-are-context-graphs-really.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/the-nockout-story.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/hi/why-private-registries-are-the-future-of-enterprise-agentic-infrastructure.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/2025-the-year-agentic-ai-got-real-and-what-comes-next.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/the-three-platform-problem-in-enterprise-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/a-feat-of-strength-mvp-for-ai-apps.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/version-control.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/what-are-context-graphs-really.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/ai-agents-agentic-security-enterprise-automation.json</loc>
+    <loc>https://subramanya.ai/assets/translations/hi/why-private-registries-are-the-future-of-enterprise-agentic-infrastructure.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/2025-the-year-agentic-ai-got-real-and-what-comes-next.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/a-feat-of-strength-mvp-for-ai-apps.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/demystifying-the-shell-a-beginners-guide.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/ai-agents-agentic-security-enterprise-automation.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/demystifying-the-shell-scripting-a-beginners-guide.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/demystifying-the-shell-scripting-advanced-techniques-and-best-practices.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/demystifying-the-shell-scripting-working-with-files-and-directories.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/do-agents-need-their-own-identity.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/demystifying-the-shell-a-beginners-guide.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/demystifying-the-shell-scripting-a-beginners-guide.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/from-espionage-to-identity-securing-the-future-of-agentic-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/demystifying-the-shell-scripting-advanced-techniques-and-best-practices.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/from-gateway-to-guardian-the-evolution-of-mcp-security.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/demystifying-the-shell-scripting-working-with-files-and-directories.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/hybrid-search-for-e-commerce-with-pinecone-and-LLM.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/do-agents-need-their-own-identity.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/oidc-a-proposal.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/from-espionage-to-identity-securing-the-future-of-agentic-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/securing-ai-assistants-digital-ids-for-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/from-gateway-to-guardian-the-evolution-of-mcp-security.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/hybrid-search-for-e-commerce-with-pinecone-and-LLM.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/oidc-a-proposal.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/the-nockout-story.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/securing-ai-assistants-digital-ids-for-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/the-three-platform-problem-in-enterprise-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/version-control.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/what-are-context-graphs-really.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/the-nockout-story.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ja/why-private-registries-are-the-future-of-enterprise-agentic-infrastructure.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/2025-the-year-agentic-ai-got-real-and-what-comes-next.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/the-three-platform-problem-in-enterprise-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/a-feat-of-strength-mvp-for-ai-apps.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/version-control.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/what-are-context-graphs-really.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/ai-agents-agentic-security-enterprise-automation.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ja/why-private-registries-are-the-future-of-enterprise-agentic-infrastructure.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/2025-the-year-agentic-ai-got-real-and-what-comes-next.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/a-feat-of-strength-mvp-for-ai-apps.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/demystifying-the-shell-a-beginners-guide.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/ai-agents-agentic-security-enterprise-automation.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/demystifying-the-shell-scripting-a-beginners-guide.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/demystifying-the-shell-scripting-advanced-techniques-and-best-practices.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/demystifying-the-shell-scripting-working-with-files-and-directories.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/do-agents-need-their-own-identity.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/demystifying-the-shell-a-beginners-guide.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/demystifying-the-shell-scripting-a-beginners-guide.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/from-espionage-to-identity-securing-the-future-of-agentic-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/demystifying-the-shell-scripting-advanced-techniques-and-best-practices.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/from-gateway-to-guardian-the-evolution-of-mcp-security.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/demystifying-the-shell-scripting-working-with-files-and-directories.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/hybrid-search-for-e-commerce-with-pinecone-and-LLM.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/do-agents-need-their-own-identity.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/oidc-a-proposal.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/from-espionage-to-identity-securing-the-future-of-agentic-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/securing-ai-assistants-digital-ids-for-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/from-gateway-to-guardian-the-evolution-of-mcp-security.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/hybrid-search-for-e-commerce-with-pinecone-and-LLM.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/oidc-a-proposal.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/the-nockout-story.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/securing-ai-assistants-digital-ids-for-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/the-three-platform-problem-in-enterprise-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/version-control.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/what-are-context-graphs-really.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/the-nockout-story.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/ko/why-private-registries-are-the-future-of-enterprise-agentic-infrastructure.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/2025-the-year-agentic-ai-got-real-and-what-comes-next.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/the-three-platform-problem-in-enterprise-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/a-feat-of-strength-mvp-for-ai-apps.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/version-control.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/what-are-context-graphs-really.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/ai-agents-agentic-security-enterprise-automation.json</loc>
+    <loc>https://subramanya.ai/assets/translations/ko/why-private-registries-are-the-future-of-enterprise-agentic-infrastructure.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/2025-the-year-agentic-ai-got-real-and-what-comes-next.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/a-feat-of-strength-mvp-for-ai-apps.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/demystifying-the-shell-a-beginners-guide.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/ai-agents-agentic-security-enterprise-automation.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/demystifying-the-shell-scripting-a-beginners-guide.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/demystifying-the-shell-scripting-advanced-techniques-and-best-practices.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/demystifying-the-shell-scripting-working-with-files-and-directories.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/do-agents-need-their-own-identity.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/demystifying-the-shell-a-beginners-guide.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/demystifying-the-shell-scripting-a-beginners-guide.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/from-espionage-to-identity-securing-the-future-of-agentic-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/demystifying-the-shell-scripting-advanced-techniques-and-best-practices.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/from-gateway-to-guardian-the-evolution-of-mcp-security.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/demystifying-the-shell-scripting-working-with-files-and-directories.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/hybrid-search-for-e-commerce-with-pinecone-and-LLM.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/do-agents-need-their-own-identity.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/oidc-a-proposal.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/from-espionage-to-identity-securing-the-future-of-agentic-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/securing-ai-assistants-digital-ids-for-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/from-gateway-to-guardian-the-evolution-of-mcp-security.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/hybrid-search-for-e-commerce-with-pinecone-and-LLM.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/oidc-a-proposal.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/the-nockout-story.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/securing-ai-assistants-digital-ids-for-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/the-three-platform-problem-in-enterprise-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/version-control.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/what-are-context-graphs-really.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/the-nockout-story.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/pt/why-private-registries-are-the-future-of-enterprise-agentic-infrastructure.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/2025-the-year-agentic-ai-got-real-and-what-comes-next.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/the-three-platform-problem-in-enterprise-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/a-feat-of-strength-mvp-for-ai-apps.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/version-control.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/what-are-context-graphs-really.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/ai-agents-agentic-security-enterprise-automation.json</loc>
+    <loc>https://subramanya.ai/assets/translations/pt/why-private-registries-are-the-future-of-enterprise-agentic-infrastructure.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/2025-the-year-agentic-ai-got-real-and-what-comes-next.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/a-feat-of-strength-mvp-for-ai-apps.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/demystifying-the-shell-a-beginners-guide.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/ai-agents-agentic-security-enterprise-automation.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/demystifying-the-shell-scripting-a-beginners-guide.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/demystifying-the-shell-scripting-advanced-techniques-and-best-practices.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/demystifying-the-shell-scripting-working-with-files-and-directories.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/do-agents-need-their-own-identity.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/demystifying-the-shell-a-beginners-guide.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/demystifying-the-shell-scripting-a-beginners-guide.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/from-espionage-to-identity-securing-the-future-of-agentic-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/demystifying-the-shell-scripting-advanced-techniques-and-best-practices.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/from-gateway-to-guardian-the-evolution-of-mcp-security.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/demystifying-the-shell-scripting-working-with-files-and-directories.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/hybrid-search-for-e-commerce-with-pinecone-and-LLM.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/do-agents-need-their-own-identity.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/oidc-a-proposal.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/from-espionage-to-identity-securing-the-future-of-agentic-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/securing-ai-assistants-digital-ids-for-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/from-gateway-to-guardian-the-evolution-of-mcp-security.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/hybrid-search-for-e-commerce-with-pinecone-and-LLM.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/oidc-a-proposal.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/the-nockout-story.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/securing-ai-assistants-digital-ids-for-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/the-three-platform-problem-in-enterprise-ai.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/version-control.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/what-are-context-graphs-really.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/the-nockout-story.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/translations/zh/why-private-registries-are-the-future-of-enterprise-agentic-infrastructure.json</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:4000/assets/videos/documents_converse_demo.mp4</loc>
+    <loc>https://subramanya.ai/assets/translations/zh/the-three-platform-problem-in-enterprise-ai.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/zh/version-control.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/zh/what-are-context-graphs-really.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/zh/why-private-registries-are-the-future-of-enterprise-agentic-infrastructure.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/videos/documents_converse_demo.mp4</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
