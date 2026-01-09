@@ -281,6 +281,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/de/a-year-with-cursor-how-my-workflow-evolved-from-agent-to-architect.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/de/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -417,6 +422,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/es/a-feat-of-strength-mvp-for-ai-apps.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/es/a-year-with-cursor-how-my-workflow-evolved-from-agent-to-architect.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -561,6 +571,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/fr/a-year-with-cursor-how-my-workflow-evolved-from-agent-to-architect.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/fr/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -697,6 +712,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/hi/a-feat-of-strength-mvp-for-ai-apps.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/hi/a-year-with-cursor-how-my-workflow-evolved-from-agent-to-architect.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -841,6 +861,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/ja/a-year-with-cursor-how-my-workflow-evolved-from-agent-to-architect.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/ja/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -977,6 +1002,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/ko/a-feat-of-strength-mvp-for-ai-apps.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/ko/a-year-with-cursor-how-my-workflow-evolved-from-agent-to-architect.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1121,6 +1151,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/pt/a-year-with-cursor-how-my-workflow-evolved-from-agent-to-architect.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/pt/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1257,6 +1292,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/zh/a-feat-of-strength-mvp-for-ai-apps.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/zh/a-year-with-cursor-how-my-workflow-evolved-from-agent-to-architect.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
