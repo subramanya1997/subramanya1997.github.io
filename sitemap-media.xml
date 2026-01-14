@@ -111,7 +111,27 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/images/context_graphs_agentic_loop.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/context_graphs_evolution.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/images/context_graphs_followup.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/context_graphs_opportunity.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/context_graphs_telemetry.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
