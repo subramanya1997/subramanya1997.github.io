@@ -1,35 +1,35 @@
 {
-  "last_updated": "2026-01-13T00:17:54.510325",
+  "last_updated": "2026-01-14T00:21:34.477781",
   "view_counts": [
     {
       "url": "/2025/04/28/oidc-a-proposal/",
-      "views": 2102,
-      "avg_duration_seconds": 114.1,
-      "engagement_rate": 41.29
+      "views": 2118,
+      "avg_duration_seconds": 114.9,
+      "engagement_rate": 41.63
     },
     {
       "url": "/2025/12/26/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory/",
-      "views": 1153,
-      "avg_duration_seconds": 383.9,
-      "engagement_rate": 92.6
+      "views": 1168,
+      "avg_duration_seconds": 384.0,
+      "engagement_rate": 92.53
     },
     {
       "url": "/2025/05/21/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway/",
-      "views": 1037,
-      "avg_duration_seconds": 118.9,
-      "engagement_rate": 49.7
+      "views": 1041,
+      "avg_duration_seconds": 119.0,
+      "engagement_rate": 49.9
     },
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
-      "views": 909,
-      "avg_duration_seconds": 194.1,
-      "engagement_rate": 74.17
+      "views": 939,
+      "avg_duration_seconds": 193.2,
+      "engagement_rate": 74.6
     },
     {
       "url": "/2026/01/01/what-are-context-graphs-really/",
-      "views": 820,
-      "avg_duration_seconds": 330.2,
-      "engagement_rate": 89.96
+      "views": 841,
+      "avg_duration_seconds": 321.4,
+      "engagement_rate": 89.69
     },
     {
       "url": "/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/",
@@ -39,9 +39,9 @@
     },
     {
       "url": "/2026/01/04/a-year-with-cursor-how-my-workflow-evolved-from-agent-to-architect/",
-      "views": 565,
-      "avg_duration_seconds": 332.4,
-      "engagement_rate": 93.27
+      "views": 572,
+      "avg_duration_seconds": 328.1,
+      "engagement_rate": 92.87
     },
     {
       "url": "/2025/12/23/2025-the-year-agentic-ai-got-real-and-what-comes-next/",
@@ -50,22 +50,22 @@
       "engagement_rate": 95.23
     },
     {
-      "url": "/2025/06/21/from-gateway-to-guardian-the-evolution-of-mcp-security/",
-      "views": 313,
-      "avg_duration_seconds": 53.3,
-      "engagement_rate": 47.08
+      "url": "/2025/12/18/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle/",
+      "views": 316,
+      "avg_duration_seconds": 362.4,
+      "engagement_rate": 92.47
     },
     {
-      "url": "/2025/12/18/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle/",
-      "views": 310,
-      "avg_duration_seconds": 370.4,
-      "engagement_rate": 92.56
+      "url": "/2025/06/21/from-gateway-to-guardian-the-evolution-of-mcp-security/",
+      "views": 315,
+      "avg_duration_seconds": 53.0,
+      "engagement_rate": 47.41
     },
     {
       "url": "/2024/01/11/the-nockout-story/",
-      "views": 273,
-      "avg_duration_seconds": 35.8,
-      "engagement_rate": 66.29
+      "views": 275,
+      "avg_duration_seconds": 35.5,
+      "engagement_rate": 66.54
     },
     {
       "url": "/2024/12/10/ai-agents-agentic-security-enterprise-automation/",
@@ -81,9 +81,9 @@
     },
     {
       "url": "/2025/09/09/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms/",
-      "views": 189,
-      "avg_duration_seconds": 162.1,
-      "engagement_rate": 60.67
+      "views": 190,
+      "avg_duration_seconds": 161.3,
+      "engagement_rate": 60.38
     },
     {
       "url": "/2025/12/10/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026/",
@@ -105,9 +105,9 @@
     },
     {
       "url": "/2025/12/01/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap/",
-      "views": 123,
-      "avg_duration_seconds": 127.8,
-      "engagement_rate": 74.02
+      "views": 125,
+      "avg_duration_seconds": 141.9,
+      "engagement_rate": 74.96
     },
     {
       "url": "/2025/12/07/the-three-platform-problem-in-enterprise-ai/",
@@ -117,9 +117,9 @@
     },
     {
       "url": "/2022/12/21/version-control/",
-      "views": 107,
-      "avg_duration_seconds": 97.4,
-      "engagement_rate": 39.94
+      "views": 109,
+      "avg_duration_seconds": 95.7,
+      "engagement_rate": 41.06
     }
   ]
 }
