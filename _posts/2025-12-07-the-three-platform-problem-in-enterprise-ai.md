@@ -19,7 +19,7 @@ This isn't a "too many choices" problem. It's an architectural one. Gartner trac
 
 Platforms like Microsoft Power Apps, Mendix, and OutSystems let business users build applications quickly without writing code. They excel at UI, rapid prototyping, and workflow automation.
 
-![Gartner Magic Quadrant for Enterprise Low-Code Application Platforms](/assets/images/low-code.webp){:.post-img}
+![Gartner Magic Quadrant for Enterprise Low-Code Application Platforms](/assets/images/low-code.webp){: .post-img width="900" height="983" }
 <span class="post-img-caption">Gartner Magic Quadrant for Enterprise Low-Code Application Platforms</span>
 
 **What they do well:** Speed to prototype, accessibility for non-developers, business process automation.
@@ -30,7 +30,7 @@ Platforms like Microsoft Power Apps, Mendix, and OutSystems let business users b
 
 GitLab, Microsoft Azure DevOps, and Atlassian provide CI/CD pipelines, source control, and deployment infrastructure. They answer the "how do we ship and operate this reliably?" question.
 
-![Gartner Magic Quadrant for DevOps Platforms](/assets/images/dev-ops.webp){:.post-img}
+![Gartner Magic Quadrant for DevOps Platforms](/assets/images/dev-ops.webp){: .post-img width="933" height="968" }
 <span class="post-img-caption">Gartner Magic Quadrant for DevOps Platforms</span>
 
 **What they do well:** Security, governance, testing, deployment automation, operational excellence.
@@ -41,7 +41,7 @@ GitLab, Microsoft Azure DevOps, and Atlassian provide CI/CD pipelines, source co
 
 Cloud providers (AWS, GCP, Azure) and specialized vendors offer models, MLOps tooling, and inference infrastructure. They provide the intelligence layer.
 
-![Gartner Magic Quadrant for AI Code Assistants](/assets/images/ai-code-assistants.webp){:.post-img}
+![Gartner Magic Quadrant for AI Code Assistants](/assets/images/ai-code-assistants.webp){: .post-img width="1464" height="1600" }
 <span class="post-img-caption">Gartner Magic Quadrant for AI Code Assistants</span>
 
 **What they do well:** Model access, training infrastructure, inference at scale.

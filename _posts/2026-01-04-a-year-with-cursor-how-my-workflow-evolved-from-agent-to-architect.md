@@ -27,7 +27,7 @@ Then came the **@ mentions**. This was my first taste of giving the agent real c
 
 This was a huge leap. Suddenly, the agent wasn't guessing; it was working with the same context I had. I could say "refactor this function to match the pattern in `@file:utils/helpers.ts`" and it would actually understand.
 
-![Cursor @ mention context](/assets/images/cursor-at-mentions.png){:.post-img}
+![Cursor @ mention context](/assets/images/cursor-at-mentions.png){: .post-img width="1639" height="935" }
 <span class="post-img-caption">The @ mention dropdown in Cursor, showing context options like @file, @folder, @codebase, @web, and @docs that allow explicit context control</span>
 
 But even with better context, I'd often find myself in a loop of generating, debugging, and regenerating. The agent lacked the architectural vision for larger tasks.
@@ -45,7 +45,7 @@ I started integrating MCPs for:
 
 With MCP, I could say "implement the feature described in Linear issue #234" and the agent would fetch the issue, understand the requirements, and start building. It was no longer just about code; it was about connecting the dots across my entire development ecosystem.
 
-![MCP integrations in Cursor](/assets/images/cursor-mcp-integrations.png){:.post-img}
+![MCP integrations in Cursor](/assets/images/cursor-mcp-integrations.png){: .post-img width="1639" height="935" }
 <span class="post-img-caption">MCP configuration panel showing connected integrations like GitHub, Linear, Slack, and custom servers that extend Cursor's capabilities across the development ecosystem</span>
 
 ## Phase 3: The Rise of the Planner
@@ -58,7 +58,7 @@ The introduction of **Plan Mode** was the next game-changer. It was the first ti
 
 This workflow was a massive improvement. It separated the "what" from the "how," and it gave me a reviewable artifact—the plan—that I could edit and approve before any code was written. It also saved a ton of money on tokens.
 
-![Cursor Plan Mode workflow](/assets/images/cursor-plan-mode.png){:.post-img}
+![Cursor Plan Mode workflow](/assets/images/cursor-plan-mode.png){: .post-img width="1639" height="935" }
 <span class="post-img-caption">A split view showing a detailed implementation plan in a `.cursor/plans/` file on the left, and the corresponding generated code on the right, demonstrating the separation of architecture from execution</span>
 
 ## Phase 4: The Architect Emerges (Commands + Planning)
@@ -78,7 +78,7 @@ This is where I live today. While Plan Mode is still central to my workflow, I'v
 
 **Queued Messages:** I use `Ctrl+Enter` to queue follow-up instructions while the agent is working. This lets me think ahead and keep the momentum going without interrupting the current task.
 
-![Cursor custom commands and rules](/assets/images/cursor-custom-commands.png){:.post-img}
+![Cursor custom commands and rules](/assets/images/cursor-custom-commands.png){: .post-img width="1639" height="935" }
 <span class="post-img-caption">The Cursor command palette showing custom commands like /plan, /refactor, /test, and /review, alongside a `.cursorrules` file that defines coding standards and architectural constraints</span>
 
 ## The Evolution at a Glance

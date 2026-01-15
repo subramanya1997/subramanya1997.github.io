@@ -9,7 +9,7 @@ image: /assets/images/system_design_with_document_ai_gpt_pinecone.jpeg
 ready: false
 ---
 
-![High-level view of system design with Document AI, OpenAI, Pinecone](/assets/images/system_design_with_document_ai_gpt_pinecone.jpeg){:.post-img}
+![High-level view of system design with Document AI, OpenAI, Pinecone](/assets/images/system_design_with_document_ai_gpt_pinecone.jpeg){: .post-img width="1640" height="827" }
 <span class="post-img-caption">High-level view of system design with Document AI, OpenAI, Pinecone</span>
 
 In today's digital era, accessing crucial information from government documents can be overwhelming and time-consuming due to their scanned and non-digitized formats. To address this issue, there is a need for an innovative tool that simplifies navigation, scanning, and digitization of these documents, making them easily readable and searchable. This user-friendly solution will revolutionize the way people interact with government documents, leading to better decision-making, improved public services, and a more informed and engaged citizenry. Developing such a tool is essential for ensuring transparency and accessibility of vital information in the modern world.

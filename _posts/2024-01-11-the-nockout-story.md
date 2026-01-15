@@ -8,7 +8,7 @@ tags: [Sports, Technology, Community, Innovation]
 image: /assets/images/NockOut_1080x540.png
 ready: true
 ---
-![Nockout Logo](/assets/images/NockOut_1080x540.png){:.post-img}
+![Nockout Logo](/assets/images/NockOut_1080x540.png){: .post-img width="1080" height="540" }
 
 As the co-founders of [**Nockout**](https://nockout.co), Yash and I, Subramanya, have been on a quest to solve a problem that plagues every sports enthusiast: finding the right place and the right people for playing sports. Our personal struggles with organizing sports activities have led us to create a platform that not only eases these challenges but also promotes a sense of community among sports lovers.
 

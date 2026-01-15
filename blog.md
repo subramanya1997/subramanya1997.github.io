@@ -18,7 +18,14 @@ custom_layout: true
       {% endfor %}
       <div class="blog-post">
         <div class="post-meta">
-          <span class="post-date" data-date="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%Y-%m-%d" }}</span>
+          {% assign day = post.date | date: "%-d" %}
+          {% assign month = post.date | date: "%B" %}
+          {% assign year = post.date | date: "%Y" %}
+          {% if day == "1" or day == "21" or day == "31" %}{% assign suffix = "st" %}
+          {% elsif day == "2" or day == "22" %}{% assign suffix = "nd" %}
+          {% elsif day == "3" or day == "23" %}{% assign suffix = "rd" %}
+          {% else %}{% assign suffix = "th" %}{% endif %}
+          <span class="post-date">{{ month }} {{ day }}{{ suffix }}, {{ year }}</span>
           <span class="post-reading-time">
             {% if post_views %}
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="views-icon" title="Total views">
@@ -113,6 +120,7 @@ custom_layout: true
     color: #6b7280;
     margin-right: 8px;
     font-weight: 500;
+    font-variant-numeric: tabular-nums; /* Prevent width changes across different numbers */
   }
   
   .post-title {
@@ -185,45 +193,7 @@ custom_layout: true
 </style>
 
 <script>
-  // Format dates with ordinal suffixes (e.g., "December 8th, 2025")
   document.addEventListener('DOMContentLoaded', function() {
-    const dateElements = document.querySelectorAll('.post-date[data-date]');
-    
-    dateElements.forEach(function(el) {
-      const dateStr = el.getAttribute('data-date');
-      if (!dateStr) return;
-      
-      const date = new Date(dateStr + 'T00:00:00');
-      if (isNaN(date.getTime())) return;
-      
-      const months = ['January', 'February', 'March', 'April', 'May', 'June', 
-                     'July', 'August', 'September', 'October', 'November', 'December'];
-      const day = date.getDate();
-      const month = months[date.getMonth()];
-      const year = date.getFullYear();
-      
-      // Get ordinal suffix
-      let suffix = 'th';
-      if (day === 1 || day === 21 || day === 31) {
-        suffix = 'st';
-      } else if (day === 2 || day === 22) {
-        suffix = 'nd';
-      } else if (day === 3 || day === 23) {
-        suffix = 'rd';
-      }
-      
-      el.textContent = month + ' ' + day + suffix + ', ' + year;
-    });
-    
-    // Format view counts with commas (e.g., "1,938")
-    const viewElements = document.querySelectorAll('.views-count');
-    viewElements.forEach(function(el) {
-      const count = parseInt(el.textContent);
-      if (!isNaN(count)) {
-        el.textContent = count.toLocaleString();
-      }
-    });
-    
     // Preserve language parameter in post links
     const urlParams = new URLSearchParams(window.location.search);
     const currentLang = urlParams.get('lang');

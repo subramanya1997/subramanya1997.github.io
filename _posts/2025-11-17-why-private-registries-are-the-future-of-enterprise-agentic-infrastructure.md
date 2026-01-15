@@ -17,7 +17,7 @@ The solution lies in a new class of enterprise software: the **Private Agent and
 
 The first step to managing agentic chaos is to establish a single source of truth. You cannot govern what you cannot see. A private agent registry provides a comprehensive, real-time inventory of every agent operating within the enterprise, whether built in-house or sourced from a third-party vendor.
 
-![Agent Directory](/assets/images/Agent Directory.png){:.post-img}
+![Agent Directory](/assets/images/Agent Directory.png){: .post-img width="3004" height="2132" }
 <span class="post-img-caption">A centralized agent directory, as shown in the Agentic Trust platform, provides a complete inventory for governance and oversight.</span>
 
 As the screenshot of the Agentic Trust directory illustrates, this is more than just a list. A mature registry tracks critical metadata for each agent, including:
@@ -34,7 +34,7 @@ This centralized view eliminates blind spots and provides the traceability requi
 
 Autonomous agents are only as powerful as the tools they can access. The Model Context Protocol (MCP) has become a standard for providing agents with these tools, but an uncontrolled proliferation of MCP servers creates another layer of risk. A private registry addresses this by functioning as a curated, internal "app store" or marketplace for MCPs.
 
-![MCP Registry](/assets/images/MCP Registry.png){:.post-img}
+![MCP Registry](/assets/images/MCP Registry.png){: .post-img width="3004" height="2134" }
 <span class="post-img-caption">An MCP Registry, like this one from Agentic Trust, allows enterprises to create a governed marketplace of approved tools for their AI agents.</span>
 
 Instead of allowing agents to connect to any public MCP, the enterprise can define a catalog of approved, vetted, and secure tools. As shown in the Agentic Trust MCP Registry, this allows organizations to:

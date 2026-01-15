@@ -19,7 +19,7 @@ The most telling sign of this shift is the sheer volume of capital deployed. Acc
 
 Crucially, over half of this spending ($19 billion) flowed directly into the application layer, demonstrating a clear enterprise priority for immediate productivity gains over long-term infrastructure bets. This investment is validated by strong adoption metrics, with a recent PwC survey finding that **79% of companies** are already adopting AI agents [2].
 
-![Enterprise AI Spend by Category 2023-2025](/assets/images/genai_spend_by_category_menlo.webp)
+![Enterprise AI Spend by Category 2023-2025](/assets/images/genai_spend_by_category_menlo.webp){: width="768" height="486" }
 *Source: Menlo Ventures, 2025: The State of Generative AI in the Enterprise [1]*
 
 ## Solving the Interoperability Crisis: The Standardization of 2025
@@ -32,7 +32,7 @@ The Model Context Protocol (MCP), introduced in late 2024, became the de facto s
 
 This culminated in the December 9th announcement that Anthropic, along with Block and OpenAI, was donating MCP to the newly formed **Agentic AI Foundation (AAIF)** under the Linux Foundation [4]. With over 10,000 active public MCP servers and 97 million monthly SDK downloads, MCP's transition to a neutral, community-driven standard solidifies its role as the foundational protocol for the agentic economy.
 
-![Before and After MCP](/assets/images/mcp_before_after.png)
+![Before and After MCP](/assets/images/mcp_before_after.png){: width="960" height="540" }
 *The shift from fragmented, proprietary APIs to a unified, MCP-based approach simplifies agent-tool integration.*
 
 ### 2. The Dawn of Portable Skills

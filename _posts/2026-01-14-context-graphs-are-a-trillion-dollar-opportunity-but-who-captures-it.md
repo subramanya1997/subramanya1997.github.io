@@ -31,11 +31,11 @@ But where does that raw material go? It evaporates. It is ephemeral, living for 
 
 This is the central irony of the current agentic landscape. The most advanced agentic tools are the perfect instruments for creating context graphs, yet they are not being used for that purpose. They are generating a constant stream of valuable decision data that is simply being discarded.
 
-![The Ephemeral Nature of Decision Traces in Today's Agents](/assets/images/context_graphs_agentic_loop.png)
+![The Ephemeral Nature of Decision Traces in Today's Agents](/assets/images/context_graphs_agentic_loop.png){: width="2752" height="1536" }
 
 *The Ephemeral Nature of Decision Traces in Today's Agents*
 
-![The Evolution of Agentic Infrastructure](/assets/images/context_graphs_evolution.png)
+![The Evolution of Agentic Infrastructure](/assets/images/context_graphs_evolution.png){: width="2752" height="1536" }
 
 ## Why Incumbents Can't Just Add This Feature
 
@@ -46,7 +46,7 @@ Incumbents are structurally disadvantaged from capturing this opportunity. They 
 
 Trying to retrofit decision trace capture onto these systems is like trying to understand a chess game by only looking at the final board position. You have lost the move-by-move history that contains all the strategic insight.
 
-![The Context Graph Opportunity Landscape](/assets/images/context_graphs_opportunity.png)
+![The Context Graph Opportunity Landscape](/assets/images/context_graphs_opportunity.png){: width="2752" height="1536" }
 
 ## The Real Race: Who Builds the "Event Clock" for Agents?
 
@@ -59,7 +59,7 @@ So, who are the real contenders?
 
 This brings us to a critical distinction. The goal is not to simply monitor agents. Agent observability and telemetry tools are useful for capturing the *what*—metrics, logs, and traces of execution. They can tell you an agent made 10 API calls and wrote 3 files. But they cannot tell you *why*.
 
-![Telemetry vs. Decision Traces](/assets/images/context_graphs_telemetry.png)
+![Telemetry vs. Decision Traces](/assets/images/context_graphs_telemetry.png){: width="2752" height="1536" }
 
 A **decision trace** captures the reasoning, the context, and the precedents that led to an action. This is a fundamentally different and more valuable asset than telemetry. The trillion-dollar prize will go to whoever successfully builds the **event clock** for the agentic era—the system that captures the decision traces of every agent, human, and automated process in the enterprise. My bet is on a new category of company to emerge: one that is purpose-built to be this system of record for decisions.
 

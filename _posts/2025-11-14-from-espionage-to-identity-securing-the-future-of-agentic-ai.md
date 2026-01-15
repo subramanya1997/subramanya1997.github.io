@@ -11,7 +11,7 @@ ready: true
 
 Anthropic has detailed its disruption of the first publicly reported cyber espionage campaign orchestrated by a sophisticated AI agent [1]. The incident, attributed to a state-sponsored group designated **GTG-1002**, is more than just a security bulletin; it is a clear signal that the age of autonomous, agentic AI threats is here. It also serves as a critical case study, validating the urgent need for a new generation of identity and access management protocols specifically designed for AI.
 
-![AI Cyberattack Lifecycle](/assets/images/ai_cyberattack_lifecycle_diagram.webp){:.post-img}
+![AI Cyberattack Lifecycle](/assets/images/ai_cyberattack_lifecycle_diagram.webp){: .post-img width="1159" height="862" }
 
 This post will dissect the anatomy of the attack, connect it to the foundational security challenges facing agentic AI, and explore how emerging standards like **OpenID Connect for Agents (OIDC-A)** provide a necessary path forward [2, 3].
 
