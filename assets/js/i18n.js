@@ -200,10 +200,13 @@
     getPostSlug() {
       const path = window.location.pathname;
       
-      // Match blog post URLs like /blog/2026/01/01/post-title/ or /blog/post-title/
-      const match = path.match(/\/blog\/(?:\d{4}\/\d{2}\/\d{2}\/)?([^\/]+)\/?$/);
+      // Match blog post URLs:
+      // - /blog/2026/01/01/post-title/ or /blog/post-title/
+      // - /2026/01/01/post-title/ (direct date-based URLs)
+      // - /post-title/ (simple URLs)
+      const match = path.match(/(?:\/blog)?\/(?:\d{4}\/\d{2}\/\d{2}\/)?([^\/]+)\/?$/);
       
-      if (match) {
+      if (match && match[1]) {
         return match[1];
       }
       
@@ -225,9 +228,11 @@
     /**
      * Detect the best language based on priority:
      * 1. URL query param (?lang=es)
-     * 2. localStorage preference
-     * 3. Browser language
-     * 4. Default (English)
+     * 2. Browser native language (auto-detect from system)
+     * 3. Default (English)
+     * 
+     * Note: localStorage is NOT used for auto-detection, only for persisting
+     * explicit user selections via the language switcher.
      * 
      * @returns {string} Language code
      */
@@ -238,19 +243,13 @@
         return urlLang;
       }
 
-      // Priority 2: localStorage preference
-      const storedLang = storage.getPreferredLanguage();
-      if (storedLang && CONFIG.languages[storedLang]) {
-        return storedLang;
-      }
-
-      // Priority 3: Browser language
+      // Priority 2: Browser native language (from system settings)
       const browserLang = this.getBrowserLanguage();
       if (browserLang) {
         return browserLang;
       }
 
-      // Priority 4: Default
+      // Priority 3: Default (English)
       return CONFIG.defaultLang;
     },
 
@@ -643,8 +642,11 @@
       // Store original content before any modifications
       replacer.storeOriginalContent();
 
-      // Detect language
-      this.currentLang = detector.detectLanguage();
+      // Detect language, but do NOT set currentLang yet.
+      // On first load, setting currentLang to the detected language would cause
+      // switchLanguage() to early-return (previousLang === lang) and skip
+      // actually fetching/applying the translation.
+      const detectedLang = detector.detectLanguage();
 
       // Initialize language switcher if present
       this.initLanguageSwitcher();
@@ -658,9 +660,13 @@
         }
       });
 
-      // Apply translation if not English
-      if (this.currentLang !== CONFIG.defaultLang) {
-        await this.switchLanguage(this.currentLang, { updateStorage: false, updateUrl: true });
+      // Apply translation on first load if needed
+      if (detectedLang !== CONFIG.defaultLang) {
+        await this.switchLanguage(detectedLang, { updateStorage: false, updateUrl: true });
+      } else {
+        // Keep internal state consistent even if we don't switch
+        this.currentLang = CONFIG.defaultLang;
+        this.updateSwitcherUI(CONFIG.defaultLang);
       }
 
       // Listen for popstate (browser back/forward)

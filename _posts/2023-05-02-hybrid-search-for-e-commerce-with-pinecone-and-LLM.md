@@ -15,7 +15,7 @@ In this blog post, we'll explore how to implement a hybrid search system for e-c
 
 ## What is Hybrid Search?
 
-![Pinecone Hybrid Index](/assets/images/pinecone_hybrid_index.jpg){:.post-img}
+![Pinecone Hybrid Index](/assets/images/pinecone_hybrid_index.jpg){: .post-img width="2360" height="921" }
 <span class="post-img-caption">High-level view of simple Pinecone Hybrid Index</span>
 
 
@@ -201,7 +201,7 @@ Now that our data is indexed, we can perform hybrid search queries.
 
 ### 5. Making Queries and Tuning Parameters
 
-![Pinecone Hybrid Query](/assets/images/pinecone_hybrid_query.jpg){:.post-img}
+![Pinecone Hybrid Query](/assets/images/pinecone_hybrid_query.jpg){: .post-img width="2360" height="892" }
 <span class="post-img-caption">High-level view of simple Pinecone Hybrid Query</span>
 
 To make hybrid search queries, we'll create a function that takes a query, the number of top results, and an alpha parameter to control the weighting between dense and sparse vector search scores.

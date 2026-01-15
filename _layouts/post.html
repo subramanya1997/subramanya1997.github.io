@@ -707,6 +707,11 @@ layout: default
     margin: 1.5rem 0;
   }
   
+  /* Match pre margin to code-wrapper to prevent CLS when wrapping */
+  .post-content pre {
+    margin: 1.5rem 0;
+  }
+  
   .copy-code-button {
     position: absolute;
     top: 8px;
@@ -1240,6 +1245,7 @@ layout: default
     margin-top: 60px;
     padding-top: 40px;
     border-top: 1px solid rgba(0,0,0,0.05);
+    min-height: 200px; /* Reserve space to prevent CLS when utterances loads */
   }
   
   .comments-section .utterances {

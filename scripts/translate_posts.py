@@ -35,6 +35,7 @@ from pathlib import Path
 from typing import Optional
 
 import anthropic
+import httpx
 import yaml
 from dotenv import load_dotenv
 from pydantic import BaseModel
@@ -48,6 +49,12 @@ load_dotenv(Path(__file__).parent.parent / ".env")
 MAX_RETRIES = 5
 INITIAL_RETRY_DELAY = 5  # seconds
 MAX_RETRY_DELAY = 300  # 5 minutes
+
+# Timeout settings for streaming API
+CONNECTION_TIMEOUT = 30.0     # seconds to establish connection
+READ_TIMEOUT = 600.0          # seconds between receiving data chunks (10 min)
+WRITE_TIMEOUT = 60.0          # seconds to send request
+TOTAL_TIMEOUT = 1200.0        # total request timeout (20 min)
 
 # Supported languages with their native names
 SUPPORTED_LANGUAGES = {
@@ -116,8 +123,8 @@ Examples:
         "--concurrency",
         "-c",
         type=int,
-        default=5,
-        help="Number of parallel translation requests (default: 5)",
+        default=10,
+        help="Number of parallel translation requests (default: 10)",
     )
     parser.add_argument(
         "--max-retries",
@@ -197,6 +204,12 @@ def get_post_slug(filename: str) -> str:
     return name
 
 
+def estimate_tokens(text: str) -> int:
+    """Estimate token count for text (approximation: 1 word ≈ 1.3 tokens)."""
+    word_count = len(text.split())
+    return int(word_count * 1.3)
+
+
 def get_cached_translation(lang: str, slug: str) -> Optional[dict]:
     """Load cached translation if it exists."""
     translation_path = TRANSLATIONS_DIR / lang / f"{slug}.json"
@@ -242,9 +255,13 @@ def build_translation_messages(
     body: str,
     target_language: str,
     target_native: str,
-) -> tuple[str, list[dict]]:
-    """Build the translation messages for Claude with structured output."""
-    system_prompt = """You are a professional translator.
+) -> tuple[list[dict], list[dict]]:
+    """Build the translation messages for Claude with structured output and prompt caching."""
+    # System prompt blocks with cache control
+    system_blocks = [
+        {
+            "type": "text",
+            "text": """You are a professional translator.
 
 CRITICAL: You MUST respond with valid JSON only, no markdown, no explanations, just pure JSON.
 
@@ -263,7 +280,10 @@ Rules:
 - Keep URLs and image paths unchanged
 - Preserve reference links [1], [2], etc. exactly as they appear
 - Convert markdown to HTML for the content_html field
-- Return ONLY valid JSON, nothing else"""
+- Return ONLY valid JSON, nothing else""",
+            "cache_control": {"type": "ephemeral"}  # Cache this system prompt
+        }
+    ]
 
     user_message = f"""Translate this blog post to {target_language} ({target_native}) and return ONLY valid JSON:
 
@@ -280,7 +300,7 @@ Remember: Return ONLY valid JSON with "title", "excerpt", and "content_html" fie
         {"role": "user", "content": user_message},
     ]
     
-    return system_prompt, messages
+    return system_blocks, messages
 
 
 # Pydantic model for structured output (required for streaming API)
@@ -303,10 +323,10 @@ async def translate_with_claude_async(
 ) -> dict:
     """Translate content using Claude API with streaming and structured outputs (async version).
     
-    Uses streaming API to support long-running translations (>10 minutes).
+    Uses streaming API with prompt caching to support long-running translations (>10 minutes).
     """
     lang_info = SUPPORTED_LANGUAGES[lang_code]
-    system_prompt, messages = build_translation_messages(
+    system_blocks, messages = build_translation_messages(
         title=title,
         excerpt=excerpt,
         body=body,
@@ -319,14 +339,14 @@ async def translate_with_claude_async(
     
     for attempt in range(max_retries):
         try:
-            # Use streaming API for long-running operations (>10 minutes)
-            # Using structured outputs to guarantee valid JSON responses
+            # Use streaming API with prompt caching for better performance
+            # Prompt caching reduces cost by 45-80% and improves TTFT by 13-31%
             async with client.beta.messages.stream(
                 model=CLAUDE_MODEL,
                 max_tokens=50000,  # Increased for very long posts
                 temperature=0,  # Deterministic output for consistent translations
-                betas=["structured-outputs-2025-11-13"],
-                system=system_prompt,
+                betas=["structured-outputs-2025-11-13", "prompt-caching-2024-07-31"],
+                system=system_blocks,  # System blocks with cache_control
                 messages=messages,
                 output_format=TranslationOutput,  # Pass Pydantic model directly for streaming
                 service_tier="auto",  # Auto-select service tier for better performance and reliability
@@ -472,11 +492,16 @@ async def translate_task(
     lang: str,
     content_hash: str,
     pbar: tqdm,
+    token_counter: dict,
     max_retries: int = MAX_RETRIES,
     retry_delay: int = INITIAL_RETRY_DELAY,
 ) -> dict:
     """Single translation task that respects concurrency limits."""
     lang_info = SUPPORTED_LANGUAGES[lang]
+    
+    # Calculate tokens for this translation
+    content = f"{title}\n\n{excerpt}\n\n{body}"
+    token_count = estimate_tokens(content)
     
     async with semaphore:
         try:
@@ -501,13 +526,15 @@ async def translate_task(
                 source_hash=content_hash,
             )
             
+            # Update token counter (thread-safe)
+            with token_counter['lock']:
+                token_counter['processed'] += token_count
+                tokens_k = token_counter['processed'] / 1000
+            
             pbar.update(1)
-            pbar.set_postfix_str(f"✓ {slug[:15]} ({lang})")
+            pbar.set_postfix_str(f"✓ {slug[:15]} ({lang}) | {tokens_k:.1f}k tokens")
             
-            # Wait 120 seconds before allowing next request to proceed
-            await asyncio.sleep(120)
-            
-            return {"status": "success", "lang": lang, "slug": slug}
+            return {"status": "success", "lang": lang, "slug": slug, "tokens": token_count}
             
         except TimeoutError as e:
             error_msg = f"Timeout: {str(e)[:60]}"
@@ -555,7 +582,15 @@ async def run_translations_async(args: argparse.Namespace):
     # Initialize async Claude client
     client = None
     if not args.dry_run:
-        client = anthropic.AsyncAnthropic(api_key=api_key)
+        client = anthropic.AsyncAnthropic(
+            api_key=api_key,
+            timeout=httpx.Timeout(
+                TOTAL_TIMEOUT,      # 20 minutes total timeout
+                connect=CONNECTION_TIMEOUT,  # 30s to establish connection
+                read=READ_TIMEOUT,    # 10 minutes read timeout (for "thinking" pauses)
+                write=WRITE_TIMEOUT,    # 60s write timeout
+            ),
+        )
     
     # Get target languages
     if args.lang:
@@ -626,6 +661,10 @@ async def run_translations_async(args: argparse.Namespace):
                 stats["to_translate"] += 1
                 stats["by_language"][lang]["to_translate"] += 1
                 
+                # Calculate token count for this task
+                content = f"{title}\n\n{excerpt}\n\n{body}"
+                tokens = estimate_tokens(content)
+                
                 if not args.dry_run:
                     # Add to tasks list
                     tasks_to_run.append({
@@ -635,30 +674,43 @@ async def run_translations_async(args: argparse.Namespace):
                         "body": body,
                         "lang": lang,
                         "content_hash": content_hash,
+                        "tokens": tokens,
                     })
+                else:
+                    # Track tokens even in dry-run for estimation
+                    tasks_to_run.append({"tokens": tokens})
     
     # Skip cache analysis output (will show in dashboard)
     
     if args.dry_run:
+        total_tokens = sum(task["tokens"] for task in tasks_to_run)
         print(f"\n🔍 Dry run - would translate {stats['to_translate']} posts (cached: {stats['cached']})")
+        print(f"   Estimated tokens: {total_tokens:,} (~{total_tokens/1000:.1f}k)")
         return
     
     if not tasks_to_run:
         print("\n✓ All translations are up to date!")
         return
     
+    # Calculate total tokens
+    total_tokens = sum(task["tokens"] for task in tasks_to_run)
+    
     # Show summary
     print(f"\nTranslating {stats['to_translate']} posts to {len(target_languages)} languages")
     print(f"Cached: {stats['cached']} | New: {stats['to_translate']} | Total: {stats['total_possible']}")
+    print(f"Estimated tokens: {total_tokens:,} (~{total_tokens/1000:.1f}k)")
     
     # Create semaphore for concurrency control
     semaphore = asyncio.Semaphore(args.concurrency)
+    
+    # Create shared token counter with lock
+    token_counter = {'processed': 0, 'lock': threading.Lock()}
     
     # Record start time
     start_time = datetime.now()
     
     # Create progress bar
-    with tqdm(total=len(tasks_to_run), desc="Translating", unit="post", ncols=100) as pbar:
+    with tqdm(total=len(tasks_to_run), desc="Translating", unit="translation", ncols=120) as pbar:
         # Create async tasks
         async_tasks = [
             translate_task(
@@ -671,6 +723,7 @@ async def run_translations_async(args: argparse.Namespace):
                 lang=task["lang"],
                 content_hash=task["content_hash"],
                 pbar=pbar,
+                token_counter=token_counter,
                 max_retries=args.max_retries,
                 retry_delay=args.retry_delay,
             )
@@ -684,9 +737,11 @@ async def run_translations_async(args: argparse.Namespace):
     end_time = datetime.now()
     duration = (end_time - start_time).total_seconds()
     
-    # Collect failed tasks
+    # Collect failed tasks and count tokens
     failed_tasks = []
     successful = 0
+    tokens_processed = 0
+    
     for result in results:
         if isinstance(result, Exception):
             failed_tasks.append({"error": str(result)})
@@ -694,6 +749,7 @@ async def run_translations_async(args: argparse.Namespace):
             failed_tasks.append(result)
         elif result.get("status") == "success":
             successful += 1
+            tokens_processed += result.get("tokens", 0)
     
     failed = len(failed_tasks)
     
@@ -705,9 +761,11 @@ async def run_translations_async(args: argparse.Namespace):
     print(f"  Newly translated: {successful}")
     if failed > 0:
         print(f"  Failed: {failed}")
+    print(f"  Tokens processed: {tokens_processed:,} (~{tokens_processed/1000:.1f}k)")
     print(f"  Time taken: {duration:.1f}s")
     if successful > 0:
         print(f"  Avg per translation: {duration/successful:.1f}s")
+        print(f"  Throughput: {tokens_processed/duration:.0f} tokens/sec")
     print(f"{'='*60}")
     
     # Show failures if any
