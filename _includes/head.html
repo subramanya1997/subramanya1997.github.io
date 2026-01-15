@@ -86,7 +86,33 @@
     <meta name="msapplication-TileColor" content="#555555">
     <meta name="msapplication-TileImage" content="{{ '/assets/favicon/mstile-144x144.png' | prepend: site.baseurl }}">
 
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" id="canonical-link">
+    
+    <!-- Dynamic Canonical & Lang Attribute Update -->
+    <script>
+      (function() {
+        // Get language from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const lang = urlParams.get('lang');
+        
+        // Update canonical URL to include lang parameter if present and not 'en'
+        if (lang && lang !== 'en') {
+          const canonicalLink = document.getElementById('canonical-link');
+          if (canonicalLink) {
+            const currentUrl = canonicalLink.getAttribute('href');
+            const separator = currentUrl.includes('?') ? '&' : '?';
+            canonicalLink.setAttribute('href', currentUrl + separator + 'lang=' + lang);
+          }
+        }
+        
+        // Update html lang attribute
+        if (lang) {
+          document.documentElement.setAttribute('lang', lang);
+        } else {
+          document.documentElement.setAttribute('lang', 'en');
+        }
+      })();
+    </script>
     
     <!-- Hreflang tags for internationalization (i18n) -->
     {% if page.layout == 'post' %}
