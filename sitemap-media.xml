@@ -326,6 +326,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/de/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/de/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -467,6 +472,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/es/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/es/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -616,6 +626,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/fr/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/fr/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -757,6 +772,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/hi/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/hi/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -906,6 +926,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/ja/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/ja/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1047,6 +1072,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/ko/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/ko/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1196,6 +1226,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/pt/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/pt/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1337,6 +1372,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/zh/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/zh/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
