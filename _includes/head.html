@@ -128,14 +128,18 @@
     {% endfor %}
     {% endif %}
 
-    <!-- Fonts -->
+    <!-- Fonts - Preconnect for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+
+    <!-- Font Awesome - Load with media="print" trick for non-blocking load, then swap to all -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"></noscript>
 
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}">
