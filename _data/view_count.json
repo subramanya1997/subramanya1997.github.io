@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-18T00:22:47.215104",
+  "last_updated": "2026-01-19T00:22:34.640173",
   "view_counts": [
     {
       "url": "/2025/04/28/oidc-a-proposal/",
@@ -9,27 +9,27 @@
     },
     {
       "url": "/2025/12/26/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory/",
-      "views": 1237,
-      "avg_duration_seconds": 368.8,
-      "engagement_rate": 92.72
+      "views": 1249,
+      "avg_duration_seconds": 365.9,
+      "engagement_rate": 92.8
     },
     {
       "url": "/2025/05/21/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway/",
-      "views": 1056,
-      "avg_duration_seconds": 119.9,
-      "engagement_rate": 50.5
+      "views": 1057,
+      "avg_duration_seconds": 119.8,
+      "engagement_rate": 50.45
     },
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
-      "views": 1038,
-      "avg_duration_seconds": 187.5,
-      "engagement_rate": 75.7
+      "views": 1042,
+      "avg_duration_seconds": 188.9,
+      "engagement_rate": 75.82
     },
     {
       "url": "/2026/01/01/what-are-context-graphs-really/",
-      "views": 922,
-      "avg_duration_seconds": 317.8,
-      "engagement_rate": 89.26
+      "views": 952,
+      "avg_duration_seconds": 314.1,
+      "engagement_rate": 89.43
     },
     {
       "url": "/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/",
@@ -39,21 +39,21 @@
     },
     {
       "url": "/2026/01/04/a-year-with-cursor-how-my-workflow-evolved-from-agent-to-architect/",
-      "views": 604,
-      "avg_duration_seconds": 314.8,
-      "engagement_rate": 92.38
+      "views": 614,
+      "avg_duration_seconds": 314.9,
+      "engagement_rate": 92.45
     },
     {
       "url": "/2025/12/23/2025-the-year-agentic-ai-got-real-and-what-comes-next/",
-      "views": 573,
-      "avg_duration_seconds": 191.1,
-      "engagement_rate": 95.36
+      "views": 579,
+      "avg_duration_seconds": 189.2,
+      "engagement_rate": 95.4
     },
     {
       "url": "/2025/12/18/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle/",
-      "views": 346,
-      "avg_duration_seconds": 336.2,
-      "engagement_rate": 92.76
+      "views": 355,
+      "avg_duration_seconds": 327.6,
+      "engagement_rate": 92.93
     },
     {
       "url": "/2025/06/21/from-gateway-to-guardian-the-evolution-of-mcp-security/",
@@ -63,9 +63,9 @@
     },
     {
       "url": "/2024/01/11/the-nockout-story/",
-      "views": 285,
-      "avg_duration_seconds": 34.3,
-      "engagement_rate": 67.73
+      "views": 287,
+      "avg_duration_seconds": 34.1,
+      "engagement_rate": 67.96
     },
     {
       "url": "/2025/11/20/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale/",
@@ -87,27 +87,27 @@
     },
     {
       "url": "/2025/12/10/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026/",
-      "views": 148,
-      "avg_duration_seconds": 323.7,
-      "engagement_rate": 93.12
+      "views": 150,
+      "avg_duration_seconds": 319.7,
+      "engagement_rate": 93.21
+    },
+    {
+      "url": "/2026/01/14/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it/",
+      "views": 146,
+      "avg_duration_seconds": 330.1,
+      "engagement_rate": 97.72
+    },
+    {
+      "url": "/2025/12/01/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap/",
+      "views": 143,
+      "avg_duration_seconds": 126.9,
+      "engagement_rate": 77.86
     },
     {
       "url": "/2025/07/01/securing-ai-assistants-digital-ids-for-ai/",
       "views": 141,
       "avg_duration_seconds": 464.9,
       "engagement_rate": 72.62
-    },
-    {
-      "url": "/2025/12/01/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap/",
-      "views": 137,
-      "avg_duration_seconds": 131.7,
-      "engagement_rate": 77.0
-    },
-    {
-      "url": "/2026/01/14/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it/",
-      "views": 130,
-      "avg_duration_seconds": 365.6,
-      "engagement_rate": 97.3
     },
     {
       "url": "/2024/02/20/a-feat-of-strength-mvp-for-ai-apps/",
