@@ -1,0 +1,8 @@
+{
+  "title": "OpenClaw 与用户自建智能的崛起:SaaS 的警钟",
+  "excerpt": "OpenClaw 在短短两个月内获得了超过 114,000 个 GitHub 星标,人气爆棚。它代表了用户与软件交互方式的根本性转变——对传统 SaaS 模式的直接挑战。当 SaaS 平台成为记录系统时,用户现在正在其上构建自己的智能层。",
+  "content_html": "<p>在过去几周里,AI 社区被一个项目所吸引,这不是一个新模型,而是一个新范式。OpenClaw,一个开源的个人 AI 助手,人气爆棚,在短短两个月内获得了超过 114,000 个 GitHub 星标 [1]。Andrej Karpathy,AI 领域最受尊敬的声音之一,将其描述为",
+  "source_hash": "sha256:b6f2149b6138ce3b160b79c15c8bb0fa36924b638b7a2b436e99e6ac00699a5d",
+  "model": "claude-sonnet-4-5-20250929",
+  "generated_at": "2026-02-01T11:54:59.470956+00:00"
+}
