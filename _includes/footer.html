@@ -45,6 +45,10 @@
       <p class="copyright">© {{ site.time | date: '%Y' }} {{ site.title }}</p>
     </div>
   </div>
+
+  {% unless page.layout == 'post' %}
+    {% include newsletter.html %}
+  {% endunless %}
 </footer>
 
 <style>

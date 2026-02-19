@@ -54,6 +54,16 @@ languages:
     name: Korean
     native: 한국어
 
+# Newsletter (Google Forms)
+newsletter:
+  enabled: true
+  google_form_action: "https://docs.google.com/forms/d/e/1FAIpQLSc4eTHxYn-6z_NzAR-ilXcEHk0v0L-wTkiuLoJmr_ea0-3m1Q/formResponse"
+  google_form_entry: "emailAddress"
+  heading: "Stay in the loop"
+  tagline: "Get bi-weekly insights on AI agents, SaaS strategy, and the future of software - straight to your inbox."
+  button_text: "Subscribe"
+  success_message: "You're subscribed! Check your inbox soon."
+
 # Google Analytics
 google_analytics: G-04B5H1S8SJ
 google_optimize: OPT-PHBLQWB
