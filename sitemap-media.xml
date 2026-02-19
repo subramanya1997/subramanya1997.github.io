@@ -71,6 +71,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/images/a-feat-of-strength-mvp-for-ai-apps-og.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/images/agent-skills.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -102,6 +107,16 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/images/anthropic_multistep_workflows.webp</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms-og.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies-og.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -161,7 +176,32 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/images/demystifying-the-shell-a-beginners-guide-og.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/demystifying-the-shell-scripting-a-beginners-guide-og.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/demystifying-the-shell-scripting-advanced-techniques-and-best-practices-og.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/demystifying-the-shell-scripting-working-with-files-and-directories-og.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/images/dev-ops.webp</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/do-agents-need-their-own-identity-og.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -172,6 +212,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/images/enterprise_ai_growth_menlo.webp</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/from-gateway-to-guardian-the-evolution-of-mcp-security-og.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -251,12 +296,22 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/images/oidc-a-proposal-og.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/images/openai_industry_growth.webp</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://subramanya.ai/assets/images/openai_productivity_gains.webp</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/openclaw-and-the-rise-of-user-built-intelligence-a-wake-up-call-for-saas-og.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -286,7 +341,32 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/images/securing-ai-assistants-digital-ids-for-ai-og.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway-og.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/images/system_design_with_document_ai_gpt_pinecone.jpeg</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns-og.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/the-year-saas-disappeared-into-the-conversation-og.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/version-control-og.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -461,6 +541,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/de/the-year-saas-disappeared-into-the-conversation.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/de/version-control.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -617,6 +702,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/es/the-three-platform-problem-in-enterprise-ai.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/es/the-year-saas-disappeared-into-the-conversation.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -781,6 +871,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/fr/the-year-saas-disappeared-into-the-conversation.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/fr/version-control.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -937,6 +1032,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/hi/the-three-platform-problem-in-enterprise-ai.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/hi/the-year-saas-disappeared-into-the-conversation.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1101,6 +1201,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/ja/the-year-saas-disappeared-into-the-conversation.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/ja/version-control.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1257,6 +1362,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/ko/the-three-platform-problem-in-enterprise-ai.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/ko/the-year-saas-disappeared-into-the-conversation.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1421,6 +1531,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/pt/the-year-saas-disappeared-into-the-conversation.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/pt/version-control.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1577,6 +1692,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/zh/the-three-platform-problem-in-enterprise-ai.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/zh/the-year-saas-disappeared-into-the-conversation.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -69,7 +69,7 @@ SUPPORTED_LANGUAGES = {
 }
 
 # Model to use for translations
-CLAUDE_MODEL = "claude-sonnet-4-5-20250929"
+CLAUDE_MODEL = "claude-sonnet-4-6"
 
 # Project paths
 PROJECT_ROOT = Path(__file__).parent.parent

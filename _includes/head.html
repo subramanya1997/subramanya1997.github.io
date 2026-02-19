@@ -58,19 +58,25 @@
     <meta name="DC.rights" content="© {{ page.date | date: '%Y' }} {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %}">
     {% endif %}
 
-    {% if page.image %}
-    <meta property="og:image" content="{{ page.image | prepend: site.baseurl | prepend: site.url }}">
-    <meta property="og:image:alt" content="{{ page.title | default: site.title }}">
+    {% assign social_image_path = '/assets/images/profile_picture.webp' %}
+    {% assign social_image_alt = site.title %}
+    {% if page.layout == 'post' %}
+      {% if page.image %}
+        {% assign social_image_path = page.image %}
+      {% else %}
+        {% assign social_image_path = '/assets/images/' | append: page.slug | append: '-og.png' %}
+      {% endif %}
+      {% assign social_image_alt = page.title | default: site.title %}
+    {% elsif page.image %}
+      {% assign social_image_path = page.image %}
+      {% assign social_image_alt = page.title | default: site.title %}
+    {% endif %}
+    <meta property="og:image" content="{{ social_image_path | prepend: site.baseurl | prepend: site.url }}">
+    <meta property="og:image:alt" content="{{ social_image_alt }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta name="twitter:image" content="{{ page.image | prepend: site.baseurl | prepend: site.url }}">
-    <meta name="twitter:image:alt" content="{{ page.title | default: site.title }}">
-    {% else %}
-    <meta property="og:image" content="{{ '/assets/images/profile_picture.webp' | prepend: site.baseurl | prepend: site.url }}">
-    <meta property="og:image:alt" content="{{ site.title }}">
-    <meta name="twitter:image" content="{{ '/assets/images/profile_picture.webp' | prepend: site.baseurl | prepend: site.url }}">
-    <meta name="twitter:image:alt" content="{{ site.title }}">
-    {% endif %}
+    <meta name="twitter:image" content="{{ social_image_path | prepend: site.baseurl | prepend: site.url }}">
+    <meta name="twitter:image:alt" content="{{ social_image_alt }}">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicon/apple-touch-icon.png' | prepend: site.baseurl }}">
