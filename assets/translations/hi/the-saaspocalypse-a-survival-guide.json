@@ -1,0 +1,8 @@
+{
+  "title": "SaaSpocalypse: एक सर्वाइवल गाइड",
+  "excerpt": "एक हफ्ते में सॉफ्टवेयर शेयरों से करीब $1 ट्रिलियन साफ हो गए। यह सामूहिक विनाश नहीं है—यह एक शुद्धिकरण की आग है। यहाँ outcome economy में SaaS कंपनियों के लिए सर्वाइवल प्लेबुक है।",
+  "content_html": "<p>यह एक प्रेस रिलीज़ से शुरू हुआ। 30 जनवरी 2026 को, AI स्टार्टअप Anthropic ने अपने Claude Cowork agent के लिए 11 विशेष plugins की घोषणा की, जो sales, finance, legal और HR में जटिल workflows को संभालने में सक्षम थे [1]। Wall Street की प्रतिक्रिया सिर्फ नकारात्मक नहीं थी; वह विनाशकारी थी। उसके बाद के एक हफ्ते में, software और services शेयरों से करीब <strong>$1 ट्रिलियन</strong> की वैल्यू साफ हो गई—इतनी क्रूर बिकवाली कि Jefferies के traders ने इसके लिए एक नया शब्द गढ़ा: <strong>",
+  "source_hash": "sha256:bc14ca6746285f549275491e9c3f65e664c34f01af507c34b1acae530bbacf83",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-02-23T04:43:40.986256+00:00"
+}

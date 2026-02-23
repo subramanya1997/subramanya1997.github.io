@@ -71,7 +71,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/a-feat-of-strength-mvp-for-ai-apps-og.png</loc>
+    <loc>https://subramanya.ai/assets/images/a-feat-of-strength-mvp-for-ai-apps.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -111,12 +111,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms-og.png</loc>
+    <loc>https://subramanya.ai/assets/images/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies-og.png</loc>
+    <loc>https://subramanya.ai/assets/images/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -176,22 +176,22 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/demystifying-the-shell-a-beginners-guide-og.png</loc>
+    <loc>https://subramanya.ai/assets/images/demystifying-the-shell-a-beginners-guide.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/demystifying-the-shell-scripting-a-beginners-guide-og.png</loc>
+    <loc>https://subramanya.ai/assets/images/demystifying-the-shell-scripting-a-beginners-guide.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/demystifying-the-shell-scripting-advanced-techniques-and-best-practices-og.png</loc>
+    <loc>https://subramanya.ai/assets/images/demystifying-the-shell-scripting-advanced-techniques-and-best-practices.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/demystifying-the-shell-scripting-working-with-files-and-directories-og.png</loc>
+    <loc>https://subramanya.ai/assets/images/demystifying-the-shell-scripting-working-with-files-and-directories.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -201,7 +201,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/do-agents-need-their-own-identity-og.png</loc>
+    <loc>https://subramanya.ai/assets/images/do-agents-need-their-own-identity.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -216,7 +216,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/from-gateway-to-guardian-the-evolution-of-mcp-security-og.png</loc>
+    <loc>https://subramanya.ai/assets/images/from-gateway-to-guardian-the-evolution-of-mcp-security.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -296,7 +296,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/oidc-a-proposal-og.png</loc>
+    <loc>https://subramanya.ai/assets/images/oidc-a-proposal.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -311,7 +311,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/openclaw-and-the-rise-of-user-built-intelligence-a-wake-up-call-for-saas-og.png</loc>
+    <loc>https://subramanya.ai/assets/images/openclaw-and-the-rise-of-user-built-intelligence-a-wake-up-call-for-saas.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -341,12 +341,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/securing-ai-assistants-digital-ids-for-ai-og.png</loc>
+    <loc>https://subramanya.ai/assets/images/securing-ai-assistants-digital-ids-for-ai.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway-og.png</loc>
+    <loc>https://subramanya.ai/assets/images/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -356,17 +356,22 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns-og.png</loc>
+    <loc>https://subramanya.ai/assets/images/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/the-year-saas-disappeared-into-the-conversation-og.png</loc>
+    <loc>https://subramanya.ai/assets/images/the-saaspocalypse-a-survival-guide.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://subramanya.ai/assets/images/version-control-og.png</loc>
+    <loc>https://subramanya.ai/assets/images/the-year-saas-disappeared-into-the-conversation.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/version-control.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -536,6 +541,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/de/the-saaspocalypse-a-survival-guide.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/de/the-three-platform-problem-in-enterprise-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -697,6 +707,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/es/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/es/the-saaspocalypse-a-survival-guide.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -866,6 +881,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/fr/the-saaspocalypse-a-survival-guide.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/fr/the-three-platform-problem-in-enterprise-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1027,6 +1047,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/hi/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/hi/the-saaspocalypse-a-survival-guide.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1196,6 +1221,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/ja/the-saaspocalypse-a-survival-guide.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/ja/the-three-platform-problem-in-enterprise-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1357,6 +1387,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/ko/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/ko/the-saaspocalypse-a-survival-guide.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1526,6 +1561,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/pt/the-saaspocalypse-a-survival-guide.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/pt/the-three-platform-problem-in-enterprise-ai.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1687,6 +1727,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/zh/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/zh/the-saaspocalypse-a-survival-guide.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

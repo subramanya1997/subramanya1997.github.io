@@ -11,7 +11,7 @@ custom_layout: true
     {% for book in site.books %}
       <div class="book-entry">
         <div class="book-date">{{ book.date | date: "%Y-%m-%d" }}</div>
-        <h2 class="book-title"><a href="{{ book.web_url | prepend: site.baseurl }}">{{ book.title }}</a></h2>
+        <h2 class="book-title"><a href="{{ book.url }}">{{ book.title }}</a></h2>
         
         {% if book.tags.size > 0 %}
         <div class="book-tags">
@@ -25,7 +25,7 @@ custom_layout: true
           {{ book.excerpt }}
         </div>
         
-        <a href="{{ book.web_url | prepend: site.baseurl }}" class="continue-reading">
+        <a href="{{ book.url }}" class="continue-reading">
           Continue reading
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"></line>

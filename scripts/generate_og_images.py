@@ -352,7 +352,7 @@ def main() -> None:
             skipped += 1
             continue
 
-        output_path = OUTPUT_DIR / f"{slug}-og.png"
+        output_path = OUTPUT_DIR / f"{slug}.png"
         if output_path.exists() and not args.force:
             skipped += 1
             continue

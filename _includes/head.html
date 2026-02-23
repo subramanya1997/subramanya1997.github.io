@@ -64,7 +64,7 @@
       {% if page.image %}
         {% assign social_image_path = page.image %}
       {% else %}
-        {% assign social_image_path = '/assets/images/' | append: page.slug | append: '-og.png' %}
+        {% assign social_image_path = '/assets/images/' | append: page.slug | append: '.png' %}
       {% endif %}
       {% assign social_image_alt = page.title | default: site.title %}
     {% elsif page.image %}

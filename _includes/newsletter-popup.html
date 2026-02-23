@@ -47,7 +47,7 @@
 <script>
 (function() {
   var STORAGE_KEY = 'nl_subscribed';
-  var SCROLL_PX = 800;
+  var SCROLL_THRESHOLD = 0.85;
 
   if (localStorage.getItem(STORAGE_KEY)) return;
   if (sessionStorage.getItem('nl_popup_closed')) return;
@@ -73,7 +73,9 @@
   }
 
   function onScroll() {
-    if (window.scrollY >= SCROLL_PX) showPopup();
+    var scrolled = window.scrollY + window.innerHeight;
+    var total = document.documentElement.scrollHeight;
+    if (scrolled / total >= SCROLL_THRESHOLD) showPopup();
   }
 
   window.addEventListener('scroll', onScroll);

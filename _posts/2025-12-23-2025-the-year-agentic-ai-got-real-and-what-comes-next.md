@@ -67,7 +67,7 @@ The groundwork laid in 2025 was monumental. It moved us from a world of isolated
 
 [2] [PwC. (2025, May 16). *PwC's AI Agent Survey*. PwC.](https://www.pwc.com/us/en/tech-effect/ai-analytics/ai-agent-survey.html)
 
-[3] [Model Context Protocol. (2025, November 25). *One Year of MCP: November 2025 Spec Release*. Model Context Protocol Blog.](http://blog.modelcontextprotocol.io/posts/2025-11-25-first-mcp-anniversary/)
+[3] [Model Context Protocol. (2025, November 25). *One Year of MCP: November 2025 Spec Release*. Model Context Protocol Blog.](https://blog.modelcontextprotocol.io/posts/2025-11-25-first-mcp-anniversary/)
 
 [4] [Anthropic. (2025, December 9). *Donating the Model Context Protocol and establishing the Agentic AI Foundation*. Anthropic.](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation)
 

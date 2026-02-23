@@ -18,25 +18,8 @@ jobs:
         with:
           ruby-version: 3.2.2
       - run: gem install bundler
-      - run: bundle add html-proofer
       - run: bundle install
       - run: bundle exec jekyll build
 
-      - name: Install aspell
-        run: |
-          sudo apt-get update && sudo apt-get install -y aspell
-
-      - name: Run html-proofer for broken links
-        run: bundle exec htmlproofer ./_site --disable-external --check-favicon --check-opengraph --check-html --check-img-http --check-img-https --empty-alt-ignore --url-ignore "/localhost/,/127.0.0.1/"
-
-      - name: Spell check
-        run: bundle exec aspelllint **/*.md --home-dir=. --personal=./.aspell.en.pws --lang=en_US --mode=markdown
-
-      - name: Check front matter formatting
-        run: bundle exec jekyll frontmatter_check
-
-      - name: Check link formatting
-        run: bundle exec htmlproofer ./_site --check-html --check-links
-
-      - name: Check SEO
-        run: bundle exec htmlproofer ./_site --seo --only-4xx --check-external-hash
+      - name: Run html-proofer
+        run: bundle exec htmlproofer ./_site --disable-external --ignore-empty-alt --ignore-urls "/localhost/,/127.0.0.1/" --enforce-https

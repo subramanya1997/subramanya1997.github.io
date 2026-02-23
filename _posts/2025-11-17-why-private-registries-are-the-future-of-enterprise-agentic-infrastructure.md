@@ -110,5 +110,5 @@ For enterprises embarking on this journey, the message is clear: you cannot scal
 
 [3] [TrueFoundry. (2025, September 10). *What is AI Agent Registry*. TrueFoundry.](https://www.truefoundry.com/blog/ai-agent-registry)
 
-[4] [Model Context Protocol. (2025, September 8). *Introducing the MCP Registry*. Model Context Protocol.](http://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/)
+[4] [Model Context Protocol. (2025, September 8). *Introducing the MCP Registry*. Model Context Protocol.](https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/)
 
