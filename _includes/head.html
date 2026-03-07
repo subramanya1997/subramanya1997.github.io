@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta name="theme-color" content="#555555">
+    {% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
@@ -142,6 +143,11 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
+    {% if page.page_stylesheets %}
+      {% for stylesheet in page.page_stylesheets %}
+    <link rel="stylesheet" href="{{ stylesheet | prepend: site.baseurl }}">
+      {% endfor %}
+    {% endif %}
 
     <!-- Font Awesome - Load with media="print" trick for non-blocking load, then swap to all -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" media="print" onload="this.media='all'">

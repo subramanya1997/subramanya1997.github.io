@@ -1,42 +1,32 @@
-# Personal website (Jekyll)
+# Personal Website
 
-This repo contains my personal website, built with **Jekyll** and hosted on **GitHub Pages**.
+Personal site built with Jekyll and hosted on GitHub Pages.
 
-- **Live site**: `https://subramanya.ai`
+- Live site: `https://subramanya.ai`
 
-## Local development
-
-### Prerequisites
-
-- Ruby + Bundler
-
-### Install and run
+## Quickstart
 
 ```bash
 bundle install
 bundle exec jekyll serve --livereload
 ```
 
-Then open the URL shown by Jekyll (typically `http://127.0.0.1:4000`).
+## Validation
 
-## Content structure
+```bash
+bundle exec jekyll build
+bundle exec htmlproofer ./_site --disable-external --ignore-empty-alt --ignore-urls "/localhost/,/127.0.0.1/" --enforce-https
+ruby scripts/validate_content.rb
+```
 
-- **Posts**: `_posts/`
-- **Layouts**: `_layouts/`
-- **Includes/partials**: `_includes/`
-- **Static assets**: `assets/`
-- **Data files**: `_data/`
-- **Books collection**: `_books/`
+## Documentation
+
+- `docs/architecture.md`: system overview and change map
+- `docs/development.md`: contributor and maintenance workflow
+- `docs/content-model.md`: front matter and data contract
 
 ## Automation
 
-This repo includes a scheduled GitHub Actions workflow that updates analytics-derived data:
-
-- **Workflow**: `.github/workflows/update-analytics.yml`
-- **Script**: `scripts/fetch_analytics.py`
-- **Output**: `_data/view_count.json`
-
-It requires the following repository secrets to run:
-
-- `GA_PROPERTY_ID`
-- `GA_CREDENTIALS`
+- Scheduled analytics refresh: `.github/workflows/update-analytics.yml`
+- Analytics fetch script: `scripts/fetch_analytics.py`
+- Analytics data output: `_data/view_count.json`

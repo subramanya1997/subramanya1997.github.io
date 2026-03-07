@@ -17,7 +17,7 @@ layout: default
       {% if page.tags.size > 0 %}
       <div class="post-tags">
         {% for tag in page.tags %}
-          <span class="tag">{{ tag }}</span>
+          <a class="tag" href="{{ '/tags/' | prepend: site.baseurl }}{{ tag | slugify }}/#posts" data-preserve-lang>{{ tag }}</a>
         {% endfor %}
       </div>
       {% endif %}
@@ -108,14 +108,14 @@ layout: default
     
     <div class="post-navigation">
       {% if page.previous.url %}
-      <a class="prev-post" href="{{page.previous.url}}">
+      <a class="prev-post" href="{{page.previous.url}}" data-preserve-lang>
         <span>Previous</span>
         <strong>{{page.previous.title}}</strong>
       </a>
       {% endif %}
       
       {% if page.next.url %}
-      <a class="next-post" href="{{page.next.url}}">
+      <a class="next-post" href="{{page.next.url}}" data-preserve-lang>
         <span>Next</span>
         <strong>{{page.next.title}}</strong>
       </a>

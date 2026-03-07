@@ -46,7 +46,7 @@
             {{ post.date | date: "%b %-d, %Y" }}
           </time>
           <h4 class="related-post-title">
-            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            <a href="{{ post.url | prepend: site.baseurl }}" data-preserve-lang>{{ post.title }}</a>
           </h4>
           {% if post.excerpt %}
             <p class="related-post-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
@@ -54,7 +54,7 @@
           {% if post.tags.size > 0 %}
             <div class="related-post-tags">
               {% for tag in post.tags limit:3 %}
-                <span class="tag">{{ tag }}</span>
+                <a class="tag" href="{{ '/tags/' | prepend: site.baseurl }}{{ tag | slugify }}/#posts" data-preserve-lang>{{ tag }}</a>
               {% endfor %}
             </div>
           {% endif %}
@@ -183,4 +183,3 @@
   }
 </style>
 {% endif %}
-

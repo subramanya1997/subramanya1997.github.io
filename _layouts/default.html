@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+  lang="{{ site.default_lang }}"
+  data-default-lang="{{ site.default_lang }}"
+  data-supported-languages="{{ site.languages | map: 'code' | join: ',' }}"
+  data-baseurl="{{ site.baseurl }}"
+>
 
   {% include head.html %}
 
@@ -22,9 +27,6 @@
         <polyline points="5 12 12 5 19 12"></polyline>
       </svg>
     </button>
-
-    <!-- Simple Jekyll Search -->
-    <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
 
     <!-- Sticky Header Scroll Effect -->
     <script>
@@ -115,7 +117,15 @@
       })();
     </script>
 
+    <script src="{{ '/assets/js/components/site-language.js' | prepend: site.baseurl }}" defer></script>
+
     {% include newsletter-popup.html %}
+
+    {% if page.page_scripts %}
+      {% for script in page.page_scripts %}
+    <script src="{{ script | prepend: site.baseurl }}" defer></script>
+      {% endfor %}
+    {% endif %}
 
     </body>
 </html>

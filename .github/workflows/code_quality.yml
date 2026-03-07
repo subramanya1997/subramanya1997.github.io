@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  pull_request:
 
 jobs:
   build-and-test:
@@ -11,7 +12,7 @@ jobs:
     
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Ruby and Jekyll
         uses: ruby/setup-ruby@v1
@@ -23,3 +24,6 @@ jobs:
 
       - name: Run html-proofer
         run: bundle exec htmlproofer ./_site --disable-external --ignore-empty-alt --ignore-urls "/localhost/,/127.0.0.1/" --enforce-https
+
+      - name: Run content validation
+        run: ruby scripts/validate_content.rb

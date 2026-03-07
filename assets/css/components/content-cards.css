@@ -1,0 +1,122 @@
+.books-list,
+.blog-posts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.book-entry,
+.blog-post {
+  margin-bottom: 30px;
+}
+
+.book-meta,
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.book-date,
+.post-date {
+  font-size: 14px;
+  color: #555;
+  font-variant-numeric: tabular-nums;
+}
+
+.post-reading-time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+.post-reading-time svg {
+  flex-shrink: 0;
+}
+
+.post-reading-time .views-icon {
+  color: #6b7280;
+  margin-right: 4px;
+}
+
+.post-reading-time .views-count {
+  font-size: 14px;
+  color: #6b7280;
+  margin-right: 8px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.book-title,
+.post-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.book-title a,
+.post-title a {
+  color: #111;
+  text-decoration: none;
+}
+
+.book-title a:hover,
+.post-title a:hover {
+  color: #555555;
+}
+
+.book-tags,
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.book-excerpt,
+.post-excerpt {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.continue-reading {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #555555;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.continue-reading:hover {
+  color: #333333;
+  text-decoration: underline;
+}
+
+.continue-reading svg {
+  transition: transform 0.2s ease;
+}
+
+.continue-reading:hover svg {
+  transform: translateX(3px);
+}
+
+.book-divider,
+.post-divider {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  margin: 30px 0;
+}
+
+@media (max-width: 768px) {
+  .book-title,
+  .post-title {
+    font-size: 22px;
+  }
+}

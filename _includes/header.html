@@ -5,7 +5,7 @@
 <header class="site-header" role="banner">
 
   <div class="wrap header-wrap">
-    <a class="site-title animated-link" href="{{ site.baseurl }}/" aria-label="Home - {{ site.title }}">{{ site.title }}</a>
+    <a class="site-title animated-link" href="{{ site.baseurl }}/" aria-label="Home - {{ site.title }}" data-preserve-lang>{{ site.title }}</a>
     
     {% include search.html %}
     
@@ -25,7 +25,7 @@
       <div class="trigger" id="nav-menu">
         {% for page in site.pages %}
           {% if page.title and page.includelink %}
-            <a class="page-link animated-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+            <a class="page-link animated-link" href="{{ page.url | prepend: site.baseurl }}" data-preserve-lang>{{ page.title }}</a>
           {% endif %}
         {% endfor %}
       </div>

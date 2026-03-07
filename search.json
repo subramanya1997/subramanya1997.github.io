@@ -3,27 +3,61 @@ layout: none
 ---
 [
   {% for post in site.posts %}
+    {% assign post_views = 0 %}
+    {% for view_data in site.data.view_count.view_counts %}
+      {% if post.url == view_data.url %}
+        {% assign post_views = view_data.views %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% assign words = post.content | number_of_words %}
+    {% assign reading_minutes = words | divided_by: 200 %}
+    {% if reading_minutes == 0 %}
+      {% assign reading_minutes = 1 %}
+    {% endif %}
     {
-      "title"    : "{{ post.title | escape }}",
-      "category" : "{{ post.categories | join: ', ' }}",
-      "tags"     : "{{ post.tags | join: ', ' }}",
-      "url"      : "{{ site.baseurl }}{{ post.url }}",
-      "date"     : "{{ post.date | date: '%B %-d, %Y' }}",
-      "excerpt"  : "{{ post.excerpt | strip_html | strip_newlines | escape }}",
-      "content"  : {{ post.content | strip_html | jsonify }}
-    }{% unless forloop.last %},{% endunless %}
+      "kind": "post",
+      "title": {{ post.title | jsonify }},
+      "url": {{ post.url | prepend: site.baseurl | jsonify }},
+      "date_display": {{ post.date | date: "%B %-d, %Y" | jsonify }},
+      "date_iso": {{ post.date | date: "%Y-%m-%d" | jsonify }},
+      "excerpt": {{ post.excerpt | strip_html | strip_newlines | strip | jsonify }},
+      "content": {{ post.content | strip_html | strip_newlines | jsonify }},
+      "views": {{ post_views | jsonify }},
+      "reading_minutes": {{ reading_minutes | jsonify }},
+      "tags": [
+        {% for tag in post.tags %}
+          {% capture tag_url %}{{ '/tags/' | prepend: site.baseurl }}{{ tag | slugify }}/#posts{% endcapture %}
+          {
+            "name": {{ tag | jsonify }},
+            "slug": {{ tag | slugify | jsonify }},
+            "url": {{ tag_url | jsonify }}
+          }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }{% unless forloop.last and site.books.size == 0 %},{% endunless %}
   {% endfor %}
-  {% if site.posts.size > 0 and site.books.size > 0 %},{% endif %}
   {% for book in site.books %}
     {
-      "title"    : "{{ book.title | escape }}",
-      "category" : "book",
-      "tags"     : "{{ book.tags | join: ', ' }}",
-      "url"      : "{{ site.baseurl }}{{ book.url }}",
-      "date"     : "{{ book.date | date: '%B %-d, %Y' }}",
-      "excerpt"  : "{{ book.excerpt | strip_html | strip_newlines | escape }}",
-      "content"  : {{ book.content | strip_html | jsonify }}
+      "kind": "book",
+      "title": {{ book.title | jsonify }},
+      "url": {{ book.url | prepend: site.baseurl | jsonify }},
+      "date_display": {{ book.date | date: "%B %-d, %Y" | jsonify }},
+      "date_iso": {{ book.date | date: "%Y-%m-%d" | jsonify }},
+      "excerpt": {{ book.excerpt | strip_html | strip_newlines | strip | jsonify }},
+      "content": {{ book.content | strip_html | strip_newlines | jsonify }},
+      "views": null,
+      "reading_minutes": null,
+      "tags": [
+        {% for tag in book.tags %}
+          {% capture tag_url %}{{ '/tags/' | prepend: site.baseurl }}{{ tag | slugify }}/#books{% endcapture %}
+          {
+            "name": {{ tag | jsonify }},
+            "slug": {{ tag | slugify | jsonify }},
+            "url": {{ tag_url | jsonify }}
+          }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
     }{% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]
-

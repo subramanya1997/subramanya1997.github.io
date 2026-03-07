@@ -1,0 +1,42 @@
+{% if include.entry_type == "experience" %}
+  {% assign org_name = include.entry.company %}
+  {% assign role = include.entry.position %}
+{% else %}
+  {% assign org_name = include.entry.institution %}
+  {% assign role = include.entry.degree %}
+{% endif %}
+
+<div class="work-entry">
+  <div class="company-logo">
+    {% if include.entry.logo %}
+      <img src="{{ include.entry.logo }}" alt="{{ org_name }} logo">
+    {% else %}
+      <div class="logo-placeholder">
+        {% assign first_letter = org_name | slice: 0 %}
+        {{ first_letter }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="work-details">
+    <div class="company-name">{{ org_name }}</div>
+    <div class="position">{{ role }}</div>
+    <div class="period">{{ include.entry.period }}</div>
+    <div class="work-description">
+      <p>{{ include.entry.description }}</p>
+      <ul>
+        {% if include.entry_type == "experience" %}
+          {% for achievement in include.entry.achievements %}
+            <li>{{ achievement }}</li>
+          {% endfor %}
+        {% else %}
+          {% for detail in include.entry.details %}
+            {% for item in detail %}
+              <li><strong>{{ item[0] }}:</strong> {{ item[1] }}</li>
+            {% endfor %}
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>

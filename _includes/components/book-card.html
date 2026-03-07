@@ -1,0 +1,38 @@
+<div class="book-entry">
+  <div class="book-meta">
+    {% if include.date_mode == "human" %}
+      {% assign day = include.book.date | date: "%-d" %}
+      {% assign month = include.book.date | date: "%B" %}
+      {% assign year = include.book.date | date: "%Y" %}
+      {% if day == "1" or day == "21" or day == "31" %}{% assign suffix = "st" %}
+      {% elsif day == "2" or day == "22" %}{% assign suffix = "nd" %}
+      {% elsif day == "3" or day == "23" %}{% assign suffix = "rd" %}
+      {% else %}{% assign suffix = "th" %}{% endif %}
+      <span class="book-date">{{ month }} {{ day }}{{ suffix }}, {{ year }}</span>
+    {% else %}
+      <span class="book-date">{{ include.book.date | date: "%Y-%m-%d" }}</span>
+    {% endif %}
+  </div>
+
+  <h2 class="book-title"><a href="{{ include.book.url | prepend: site.baseurl }}" data-preserve-lang>{{ include.book.title }}</a></h2>
+
+  {% if include.book.tags.size > 0 %}
+    <div class="book-tags">
+      {% for tag in include.book.tags %}
+        <a class="tag" href="{{ '/tags/' | prepend: site.baseurl }}{{ tag | slugify }}/#books" data-preserve-lang>{{ tag }}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="book-excerpt">
+    {{ include.book.excerpt }}
+  </div>
+
+  <a href="{{ include.book.url | prepend: site.baseurl }}" class="continue-reading" data-preserve-lang>
+    Continue reading
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <polyline points="12 5 19 12 12 19"></polyline>
+    </svg>
+  </a>
+</div>

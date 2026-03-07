@@ -4,6 +4,10 @@ title: Stats
 permalink: /stats/
 includelink: true
 custom_layout: true
+page_stylesheets:
+  - /assets/css/pages/stats.css
+page_scripts:
+  - /assets/js/pages/stats.js
 ---
 
 <div class="stats-container">
@@ -163,63 +167,3 @@ custom_layout: true
     </div>
   </section>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Format numbers with commas
-  function formatNumber(num) {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
-  
-  // Format time in seconds to readable format (e.g., "2m 30s" or "5.5m")
-  function formatTime(seconds) {
-    const mins = Math.round(seconds / 60 * 10) / 10; // Round to 1 decimal
-    if (mins < 1) {
-      return Math.round(seconds) + 's';
-    }
-    return mins + 'm';
-  }
-  
-  // Format the total views
-  const totalViewsEl = document.getElementById('total-views');
-  if (totalViewsEl) {
-    const rawValue = parseInt(totalViewsEl.textContent.trim());
-    if (!isNaN(rawValue)) {
-      totalViewsEl.textContent = formatNumber(rawValue);
-    }
-  }
-  
-  // Format all stat values that are numbers
-  document.querySelectorAll('.stats-metric-value').forEach(function(el) {
-    const text = el.textContent.trim();
-    
-    // Handle time values with data-seconds attribute
-    if (el.dataset.seconds) {
-      const seconds = parseFloat(el.dataset.seconds);
-      if (!isNaN(seconds)) {
-        el.textContent = formatTime(seconds);
-      }
-      return;
-    }
-    
-    // Handle regular numbers
-    const num = parseInt(text);
-    if (!isNaN(num) && !text.includes('%') && !text.includes('m') && !text.includes('s')) {
-      el.textContent = formatNumber(num);
-    }
-  });
-  
-  // Add animation on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-  
-  document.querySelectorAll('.stat-card, .stats-row').forEach(el => {
-    observer.observe(el);
-  });
-});
-</script>

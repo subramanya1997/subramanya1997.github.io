@@ -1,0 +1,53 @@
+<div class="blog-post">
+  <div class="post-meta">
+    {% if include.date_mode == "human" %}
+      {% assign day = include.post.date | date: "%-d" %}
+      {% assign month = include.post.date | date: "%B" %}
+      {% assign year = include.post.date | date: "%Y" %}
+      {% if day == "1" or day == "21" or day == "31" %}{% assign suffix = "st" %}
+      {% elsif day == "2" or day == "22" %}{% assign suffix = "nd" %}
+      {% elsif day == "3" or day == "23" %}{% assign suffix = "rd" %}
+      {% else %}{% assign suffix = "th" %}{% endif %}
+      <span class="post-date">{{ month }} {{ day }}{{ suffix }}, {{ year }}</span>
+    {% else %}
+      <span class="post-date" data-date="{{ include.post.date | date: "%Y-%m-%d" }}">{{ include.post.date | date: "%Y-%m-%d" }}</span>
+    {% endif %}
+
+    <span class="post-reading-time">
+      {% if include.post_views %}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="views-icon" title="Total views">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+        <span class="views-count">{{ include.post_views }}</span>
+      {% endif %}
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="12 6 12 12 16 14"></polyline>
+      </svg>
+      {% include reading_time.html content=include.post.content %}
+    </span>
+  </div>
+
+  <h2 class="post-title"><a href="{{ include.post.url | prepend: site.baseurl }}" data-preserve-lang>{{ include.post.title }}</a></h2>
+
+  {% if include.post.tags.size > 0 %}
+    <div class="post-tags">
+      {% for tag in include.post.tags %}
+        <a class="tag" href="{{ '/tags/' | prepend: site.baseurl }}{{ tag | slugify }}/#posts" data-preserve-lang>{{ tag }}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="post-excerpt">
+    {{ include.post.excerpt }}
+  </div>
+
+  <a href="{{ include.post.url | prepend: site.baseurl }}" class="continue-reading" data-preserve-lang>
+    Continue reading
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <polyline points="12 5 19 12 12 19"></polyline>
+    </svg>
+  </a>
+</div>

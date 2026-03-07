@@ -1,0 +1,15 @@
+.work-container {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.experience {
+  flex: 1;
+}
+
+@media screen and (max-width: 1024px) {
+  .work-container {
+    flex-direction: column;
+  }
+}

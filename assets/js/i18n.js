@@ -32,9 +32,8 @@
     
     defaultLang: 'en',
     
-    // Storage keys
+    // Storage key
     storageKey: 'preferredLanguage',
-    toastDismissedKey: 'translationToastDismissed',
     
     // Translation files base path
     translationsPath: '/assets/translations',
@@ -47,8 +46,7 @@
       postTitle: '.post-header h1',
       postContent: '.post-content',
       postExcerpt: '.post-excerpt',
-      languageSwitcher: '#languageSwitcher',
-      translationToast: '#translationToast'
+      languageSwitcher: '#languageSwitcher'
     },
     
     // ========================================================================
@@ -131,28 +129,6 @@
       }
     },
 
-    /**
-     * Check if translation toast was dismissed for this session
-     * @returns {boolean}
-     */
-    isToastDismissed() {
-      try {
-        return sessionStorage.getItem(CONFIG.toastDismissedKey) === 'true';
-      } catch (e) {
-        return false;
-      }
-    },
-
-    /**
-     * Mark translation toast as dismissed for this session
-     */
-    dismissToast() {
-      try {
-        sessionStorage.setItem(CONFIG.toastDismissedKey, 'true');
-      } catch (e) {
-        console.warn('[i18n] Could not save toast state:', e);
-      }
-    }
   };
 
   // ============================================================================
@@ -228,11 +204,9 @@
     /**
      * Detect the best language based on priority:
      * 1. URL query param (?lang=es)
-     * 2. Browser native language (auto-detect from system)
-     * 3. Default (English)
-     * 
-     * Note: localStorage is NOT used for auto-detection, only for persisting
-     * explicit user selections via the language switcher.
+     * 2. Stored language preference
+     * 3. Browser native language (auto-detect from system)
+     * 4. Default (English)
      * 
      * @returns {string} Language code
      */
@@ -243,13 +217,19 @@
         return urlLang;
       }
 
-      // Priority 2: Browser native language (from system settings)
+      // Priority 2: Explicit stored preference
+      const storedLang = storage.getPreferredLanguage();
+      if (this.isValidLanguage(storedLang)) {
+        return storedLang;
+      }
+
+      // Priority 3: Browser native language (from system settings)
       const browserLang = this.getBrowserLanguage();
       if (browserLang) {
         return browserLang;
       }
 
-      // Priority 3: Default (English)
+      // Priority 4: Default (English)
       return CONFIG.defaultLang;
     },
 
@@ -556,67 +536,16 @@
   // ============================================================================
   
   const toast = {
-    /**
-     * Show translation warning toast
-     * @param {string} lang - Current language code
-     */
     show(lang) {
-      // Don't show for English or if already dismissed
-      if (lang === CONFIG.defaultLang || storage.isToastDismissed()) {
-        return;
-      }
-
-      const toastEl = document.querySelector(CONFIG.selectors.translationToast);
-      if (!toastEl) return;
-
-      // Update toast content with current language
-      const langInfo = CONFIG.languages[lang];
-      const langName = langInfo ? langInfo.native : lang;
-      
-      const messageEl = toastEl.querySelector('.toast-message');
-      if (messageEl) {
-        messageEl.innerHTML = this.getToastMessage(lang, langName);
-      }
-
-      // Show the toast
-      toastEl.classList.add('visible');
-
-      // Auto-dismiss after 5 seconds
-      setTimeout(() => {
-        this.hide();
-      }, 5000);
-    },
-
-    /**
-     * Hide the translation toast
-     */
-    hide() {
-      const toastEl = document.querySelector(CONFIG.selectors.translationToast);
-      if (toastEl) {
-        toastEl.classList.remove('visible');
-        storage.dismissToast();
+      if (window.TranslationToast && typeof window.TranslationToast.show === 'function') {
+        window.TranslationToast.show(lang);
       }
     },
 
-    /**
-     * Get localized toast message
-     * @param {string} lang - Language code
-     * @param {string} langName - Language native name
-     * @returns {string} Toast message HTML
-     */
-    getToastMessage(lang, langName) {
-      const messages = {
-        es: `🌐 Esta página ha sido traducida automáticamente al ${langName}. <a href="?lang=en">Ver original en inglés</a>`,
-        zh: `🌐 此页面已自动翻译成${langName}。<a href="?lang=en">查看英文原文</a>`,
-        hi: `🌐 यह पृष्ठ स्वचालित रूप से ${langName} में अनुवादित किया गया है। <a href="?lang=en">अंग्रेजी में मूल देखें</a>`,
-        pt: `🌐 Esta página foi traduzida automaticamente para ${langName}. <a href="?lang=en">Ver original em inglês</a>`,
-        fr: `🌐 Cette page a été automatiquement traduite en ${langName}. <a href="?lang=en">Voir l'original en anglais</a>`,
-        de: `🌐 Diese Seite wurde automatisch ins ${langName} übersetzt. <a href="?lang=en">Original auf Englisch ansehen</a>`,
-        ja: `🌐 このページは${langName}に自動翻訳されました。<a href="?lang=en">英語の原文を見る</a>`,
-        ko: `🌐 이 페이지는 ${langName}로 자동 번역되었습니다. <a href="?lang=en">영어 원문 보기</a>`
-      };
-
-      return messages[lang] || `🌐 This page has been automatically translated to ${langName}. <a href="?lang=en">View original in English</a>`;
+    hide(remember) {
+      if (window.TranslationToast && typeof window.TranslationToast.hide === 'function') {
+        window.TranslationToast.hide(remember);
+      }
     }
   };
 
@@ -699,6 +628,7 @@
       }
       
       const { updateStorage = true, updateUrl = true } = options;
+      let resolvedLang = lang;
       
       if (!detector.isValidLanguage(lang)) {
         console.warn(`[i18n] Invalid language: ${lang}`);
@@ -748,7 +678,6 @@
           const translation = await loader.fetchTranslation(slug, lang);
           if (translation) {
             replacer.applyTranslation(translation);
-            toast.show(lang);
             
             // Dispatch translation loaded event
             document.dispatchEvent(new CustomEvent(CONFIG.events.TRANSLATION_LOADED, {
@@ -759,22 +688,27 @@
             console.info(`[i18n] No translation available, falling back to English`);
             replacer.restoreOriginalContent();
             this.currentLang = CONFIG.defaultLang;
+            resolvedLang = CONFIG.defaultLang;
+            toast.hide();
             // Only update URL if we're allowed to (respect updateUrl flag)
             if (updateUrl) {
               urlHandler.setLanguageInURL(CONFIG.defaultLang);
             }
             this.updateSwitcherUI(CONFIG.defaultLang);
+            document.dispatchEvent(new CustomEvent(CONFIG.events.TRANSLATION_LOADED, {
+              detail: { lang: CONFIG.defaultLang, slug, isOriginal: true }
+            }));
           }
         }
       }
 
       // Dispatch language changed event (for UI components to update their state)
       document.dispatchEvent(new CustomEvent(CONFIG.events.LANGUAGE_CHANGED, {
-        detail: { lang, previous: previousLang }
+        detail: { lang: resolvedLang, previous: previousLang }
       }));
 
       // Track in analytics if available
-      this.trackLanguageChange(lang);
+      this.trackLanguageChange(resolvedLang);
     },
 
     /**
