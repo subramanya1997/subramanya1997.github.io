@@ -1,29 +1,29 @@
 {
-  "last_updated": "2026-03-07T00:24:58.046676",
+  "last_updated": "2026-03-08T00:26:00.310027",
   "view_counts": [
     {
       "url": "/2025/04/28/oidc-a-proposal/",
-      "views": 2613,
-      "avg_duration_seconds": 135.9,
-      "engagement_rate": 50.6
+      "views": 2615,
+      "avg_duration_seconds": 136.8,
+      "engagement_rate": 50.67
     },
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
-      "views": 2090,
-      "avg_duration_seconds": 202.6,
-      "engagement_rate": 82.87
+      "views": 2119,
+      "avg_duration_seconds": 201.0,
+      "engagement_rate": 83.0
     },
     {
       "url": "/2026/01/01/what-are-context-graphs-really/",
       "views": 1738,
-      "avg_duration_seconds": 344.2,
-      "engagement_rate": 89.28
+      "avg_duration_seconds": 343.7,
+      "engagement_rate": 89.2
     },
     {
       "url": "/2025/12/26/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory/",
-      "views": 1577,
-      "avg_duration_seconds": 388.2,
-      "engagement_rate": 91.91
+      "views": 1579,
+      "avg_duration_seconds": 388.0,
+      "engagement_rate": 91.92
     },
     {
       "url": "/2025/05/21/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway/",
@@ -33,9 +33,9 @@
     },
     {
       "url": "/2026/01/04/a-year-with-cursor-how-my-workflow-evolved-from-agent-to-architect/",
-      "views": 858,
-      "avg_duration_seconds": 326.4,
-      "engagement_rate": 90.19
+      "views": 865,
+      "avg_duration_seconds": 326.2,
+      "engagement_rate": 90.01
     },
     {
       "url": "/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/",
@@ -51,21 +51,21 @@
     },
     {
       "url": "/2026/01/14/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it/",
-      "views": 655,
-      "avg_duration_seconds": 216.0,
-      "engagement_rate": 92.84
+      "views": 657,
+      "avg_duration_seconds": 215.3,
+      "engagement_rate": 92.75
     },
     {
       "url": "/2025/12/18/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle/",
-      "views": 561,
-      "avg_duration_seconds": 248.8,
-      "engagement_rate": 91.53
+      "views": 565,
+      "avg_duration_seconds": 247.1,
+      "engagement_rate": 91.59
     },
     {
       "url": "/2026/02/01/openclaw-and-the-rise-of-user-built-intelligence-a-wake-up-call-for-saas/",
-      "views": 515,
-      "avg_duration_seconds": 155.0,
-      "engagement_rate": 92.02
+      "views": 517,
+      "avg_duration_seconds": 156.2,
+      "engagement_rate": 92.05
     },
     {
       "url": "/2024/01/11/the-nockout-story/",
@@ -87,9 +87,9 @@
     },
     {
       "url": "/2025/09/09/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms/",
-      "views": 246,
-      "avg_duration_seconds": 165.6,
-      "engagement_rate": 66.01
+      "views": 252,
+      "avg_duration_seconds": 163.5,
+      "engagement_rate": 66.46
     },
     {
       "url": "/2024/12/10/ai-agents-agentic-security-enterprise-automation/",
@@ -99,21 +99,21 @@
     },
     {
       "url": "/2026/01/19/the-agentic-workspace-a-strategic-imperative-for-the-next-era-of-saas/",
-      "views": 214,
-      "avg_duration_seconds": 159.4,
-      "engagement_rate": 88.71
+      "views": 216,
+      "avg_duration_seconds": 165.2,
+      "engagement_rate": 88.49
     },
     {
       "url": "/2025/12/01/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap/",
-      "views": 210,
-      "avg_duration_seconds": 131.2,
-      "engagement_rate": 80.28
+      "views": 214,
+      "avg_duration_seconds": 129.1,
+      "engagement_rate": 80.61
     },
     {
       "url": "/2025/12/10/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026/",
-      "views": 185,
-      "avg_duration_seconds": 267.4,
-      "engagement_rate": 93.98
+      "views": 187,
+      "avg_duration_seconds": 264.7,
+      "engagement_rate": 94.04
     },
     {
       "url": "/2025/07/01/securing-ai-assistants-digital-ids-for-ai/",
@@ -129,9 +129,9 @@
     },
     {
       "url": "/2025/12/02/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first/",
-      "views": 137,
-      "avg_duration_seconds": 168.2,
-      "engagement_rate": 82.11
+      "views": 139,
+      "avg_duration_seconds": 166.1,
+      "engagement_rate": 82.35
     },
     {
       "url": "/2025/12/07/the-three-platform-problem-in-enterprise-ai/",
@@ -141,15 +141,15 @@
     },
     {
       "url": "/2022/12/21/version-control/",
-      "views": 125,
-      "avg_duration_seconds": 86.5,
-      "engagement_rate": 47.38
+      "views": 127,
+      "avg_duration_seconds": 85.1,
+      "engagement_rate": 48.22
     },
     {
       "url": "/2026/02/23/the-saaspocalypse-a-survival-guide/",
-      "views": 117,
-      "avg_duration_seconds": 109.2,
-      "engagement_rate": 89.88
+      "views": 118,
+      "avg_duration_seconds": 108.5,
+      "engagement_rate": 89.18
     },
     {
       "url": "/2026/02/19/the-year-saas-disappeared-into-the-conversation/",
