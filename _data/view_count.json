@@ -1,23 +1,23 @@
 {
-  "last_updated": "2026-03-27T00:29:22.681204",
+  "last_updated": "2026-03-28T00:26:52.189408",
   "view_counts": [
     {
       "url": "/2025/04/28/oidc-a-proposal/",
-      "views": 2773,
-      "avg_duration_seconds": 163.8,
-      "engagement_rate": 52.91
+      "views": 2775,
+      "avg_duration_seconds": 164.2,
+      "engagement_rate": 52.93
     },
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
-      "views": 2592,
-      "avg_duration_seconds": 183.6,
-      "engagement_rate": 84.91
+      "views": 2612,
+      "avg_duration_seconds": 183.1,
+      "engagement_rate": 84.95
     },
     {
       "url": "/2026/01/01/what-are-context-graphs-really/",
-      "views": 1835,
-      "avg_duration_seconds": 390.5,
-      "engagement_rate": 88.86
+      "views": 1841,
+      "avg_duration_seconds": 389.1,
+      "engagement_rate": 88.84
     },
     {
       "url": "/2025/12/26/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory/",
@@ -33,9 +33,9 @@
     },
     {
       "url": "/2026/01/04/a-year-with-cursor-how-my-workflow-evolved-from-agent-to-architect/",
-      "views": 1006,
-      "avg_duration_seconds": 314.8,
-      "engagement_rate": 90.57
+      "views": 1012,
+      "avg_duration_seconds": 316.5,
+      "engagement_rate": 90.61
     },
     {
       "url": "/2025/12/23/2025-the-year-agentic-ai-got-real-and-what-comes-next/",
@@ -51,21 +51,21 @@
     },
     {
       "url": "/2026/01/14/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it/",
-      "views": 709,
-      "avg_duration_seconds": 207.1,
-      "engagement_rate": 91.83
+      "views": 711,
+      "avg_duration_seconds": 207.0,
+      "engagement_rate": 91.85
     },
     {
       "url": "/2025/12/18/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle/",
-      "views": 660,
-      "avg_duration_seconds": 223.3,
-      "engagement_rate": 92.12
+      "views": 662,
+      "avg_duration_seconds": 222.6,
+      "engagement_rate": 92.14
     },
     {
       "url": "/2026/02/01/openclaw-and-the-rise-of-user-built-intelligence-a-wake-up-call-for-saas/",
-      "views": 578,
-      "avg_duration_seconds": 154.4,
-      "engagement_rate": 91.73
+      "views": 580,
+      "avg_duration_seconds": 154.0,
+      "engagement_rate": 91.75
     },
     {
       "url": "/2024/01/11/the-nockout-story/",
@@ -81,15 +81,15 @@
     },
     {
       "url": "/2025/11/20/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale/",
-      "views": 330,
-      "avg_duration_seconds": 142.6,
-      "engagement_rate": 81.6
+      "views": 333,
+      "avg_duration_seconds": 141.4,
+      "engagement_rate": 81.48
     },
     {
       "url": "/2025/09/09/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms/",
-      "views": 293,
-      "avg_duration_seconds": 164.7,
-      "engagement_rate": 70.79
+      "views": 306,
+      "avg_duration_seconds": 158.2,
+      "engagement_rate": 72.02
     },
     {
       "url": "/2026/01/19/the-agentic-workspace-a-strategic-imperative-for-the-next-era-of-saas/",
@@ -111,9 +111,9 @@
     },
     {
       "url": "/2026/02/23/the-saaspocalypse-a-survival-guide/",
-      "views": 237,
-      "avg_duration_seconds": 151.9,
-      "engagement_rate": 88.89
+      "views": 243,
+      "avg_duration_seconds": 150.0,
+      "engagement_rate": 89.13
     },
     {
       "url": "/2024/12/10/ai-agents-agentic-security-enterprise-automation/",
@@ -153,21 +153,21 @@
     },
     {
       "url": "/2026/02/19/the-year-saas-disappeared-into-the-conversation/",
-      "views": 129,
-      "avg_duration_seconds": 1333.3,
-      "engagement_rate": 97.04
+      "views": 131,
+      "avg_duration_seconds": 1298.4,
+      "engagement_rate": 97.13
+    },
+    {
+      "url": "/2023/06/10/enhancing-document-interactions/",
+      "views": 107,
+      "avg_duration_seconds": 66.2,
+      "engagement_rate": 72.76
     },
     {
       "url": "/2025/07/21/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns/",
       "views": 106,
       "avg_duration_seconds": 726.8,
       "engagement_rate": 76.76
-    },
-    {
-      "url": "/2023/06/10/enhancing-document-interactions/",
-      "views": 102,
-      "avg_duration_seconds": 68.9,
-      "engagement_rate": 71.63
     },
     {
       "url": "/2025/11/17/why-private-registries-are-the-future-of-enterprise-agentic-infrastructure/",
