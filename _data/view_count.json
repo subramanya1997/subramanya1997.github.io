@@ -1,17 +1,17 @@
 {
-  "last_updated": "2026-03-28T00:26:52.189408",
+  "last_updated": "2026-03-29T00:30:40.502454",
   "view_counts": [
     {
       "url": "/2025/04/28/oidc-a-proposal/",
-      "views": 2775,
-      "avg_duration_seconds": 164.2,
-      "engagement_rate": 52.93
+      "views": 2783,
+      "avg_duration_seconds": 163.9,
+      "engagement_rate": 53.08
     },
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
-      "views": 2612,
-      "avg_duration_seconds": 183.1,
-      "engagement_rate": 84.95
+      "views": 2630,
+      "avg_duration_seconds": 182.9,
+      "engagement_rate": 85.05
     },
     {
       "url": "/2026/01/01/what-are-context-graphs-really/",
@@ -27,21 +27,21 @@
     },
     {
       "url": "/2025/05/21/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway/",
-      "views": 1339,
-      "avg_duration_seconds": 130.3,
-      "engagement_rate": 57.36
+      "views": 1340,
+      "avg_duration_seconds": 130.2,
+      "engagement_rate": 57.32
     },
     {
       "url": "/2026/01/04/a-year-with-cursor-how-my-workflow-evolved-from-agent-to-architect/",
-      "views": 1012,
-      "avg_duration_seconds": 316.5,
-      "engagement_rate": 90.61
+      "views": 1021,
+      "avg_duration_seconds": 314.2,
+      "engagement_rate": 90.6
     },
     {
       "url": "/2025/12/23/2025-the-year-agentic-ai-got-real-and-what-comes-next/",
-      "views": 839,
-      "avg_duration_seconds": 152.9,
-      "engagement_rate": 95.12
+      "views": 840,
+      "avg_duration_seconds": 152.8,
+      "engagement_rate": 95.01
     },
     {
       "url": "/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/",
@@ -52,8 +52,8 @@
     {
       "url": "/2026/01/14/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it/",
       "views": 711,
-      "avg_duration_seconds": 207.0,
-      "engagement_rate": 91.85
+      "avg_duration_seconds": 206.6,
+      "engagement_rate": 91.75
     },
     {
       "url": "/2025/12/18/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle/",
@@ -81,9 +81,9 @@
     },
     {
       "url": "/2025/11/20/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale/",
-      "views": 333,
-      "avg_duration_seconds": 141.4,
-      "engagement_rate": 81.48
+      "views": 334,
+      "avg_duration_seconds": 141.1,
+      "engagement_rate": 81.26
     },
     {
       "url": "/2025/09/09/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms/",
@@ -92,10 +92,16 @@
       "engagement_rate": 72.02
     },
     {
+      "url": "/2026/02/23/the-saaspocalypse-a-survival-guide/",
+      "views": 249,
+      "avg_duration_seconds": 146.9,
+      "engagement_rate": 89.35
+    },
+    {
       "url": "/2026/01/19/the-agentic-workspace-a-strategic-imperative-for-the-next-era-of-saas/",
-      "views": 247,
-      "avg_duration_seconds": 185.6,
-      "engagement_rate": 89.63
+      "views": 249,
+      "avg_duration_seconds": 185.4,
+      "engagement_rate": 89.7
     },
     {
       "url": "/2025/12/10/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026/",
@@ -105,15 +111,9 @@
     },
     {
       "url": "/2025/12/01/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap/",
-      "views": 243,
-      "avg_duration_seconds": 224.1,
-      "engagement_rate": 81.93
-    },
-    {
-      "url": "/2026/02/23/the-saaspocalypse-a-survival-guide/",
-      "views": 243,
-      "avg_duration_seconds": 150.0,
-      "engagement_rate": 89.13
+      "views": 245,
+      "avg_duration_seconds": 222.5,
+      "engagement_rate": 82.07
     },
     {
       "url": "/2024/12/10/ai-agents-agentic-security-enterprise-automation/",
@@ -123,9 +123,9 @@
     },
     {
       "url": "/2025/12/02/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first/",
-      "views": 179,
-      "avg_duration_seconds": 134.5,
-      "engagement_rate": 85.41
+      "views": 181,
+      "avg_duration_seconds": 133.1,
+      "engagement_rate": 85.57
     },
     {
       "url": "/2025/07/01/securing-ai-assistants-digital-ids-for-ai/",
