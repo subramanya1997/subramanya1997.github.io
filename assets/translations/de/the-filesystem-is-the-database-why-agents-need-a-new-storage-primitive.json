@@ -1,0 +1,8 @@
+{
+  "title": "Das Dateisystem ist die Datenbank: Warum Agenten ein neues Speicher-Primitiv brauchen",
+  "excerpt": "RAG-Pipelines gaben Agenten Gedächtnis. Aber die nächste Welle agentischer Infrastruktur konvergiert auf ein völlig anderes Primitiv: das virtuelle Dateisystem. Von Mintlifys ChromaFs über Tursos AgentFS bis hin zu Boxs Enterprise-VFS-Schicht ist das Muster unverkennbar. Das Dateisystem wird zur universellen Schnittstelle für agentische Kognition, und die Datenbank wird still und leise zu ihrem Substrat.",
+  "content_html": "<p>Im Bereich der agentischen Infrastruktur geschieht etwas Interessantes – und es ist nicht das, was die meisten erwartet haben. Seit zwei Jahren war das dominierende Paradigma, um Agenten Zugang zu Wissen zu verschaffen, Retrieval-Augmented Generation: Dokumente einbetten, in einer Vektordatenbank speichern und das Modell zur Inferenzzeit darauf zugreifen lassen. RAG hat funktioniert. Es war gut genug. Aber „gut genug",
+  "source_hash": "sha256:ea80be6a7f1e92f4b1cd368f4ce0178d49cbe7579c9693b08d174d40c5961953",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-04-13T19:25:15.019237+00:00"
+}
