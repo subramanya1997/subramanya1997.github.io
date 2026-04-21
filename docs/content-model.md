@@ -1,4 +1,10 @@
-# Content Model
+---
+layout: page
+title: Content Model
+description: Front-matter and data contracts for posts, books, data files, and top-level pages.
+permalink: /docs/content-model/
+robots: noindex, follow
+---
 
 ## Posts
 

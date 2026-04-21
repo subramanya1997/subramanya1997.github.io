@@ -1,0 +1,18 @@
+---
+layout: null
+permalink: /.well-known/openid-configuration.json
+sitemap: false
+---
+{
+  "issuer": "{{ site.url }}",
+  "authorization_endpoint": "{{ site.url }}/.well-known/oauth-noop",
+  "token_endpoint": "{{ site.url }}/.well-known/oauth-noop",
+  "jwks_uri": "{{ site.url }}/.well-known/jwks.json",
+  "grant_types_supported": [],
+  "response_types_supported": ["none"],
+  "subject_types_supported": ["public"],
+  "id_token_signing_alg_values_supported": ["none"],
+  "scopes_supported": [],
+  "service_documentation": "{{ site.url }}/",
+  "op_policy_uri": "{{ site.url }}/"
+}

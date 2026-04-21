@@ -14,6 +14,12 @@
     <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <meta property="og:site_name" content="{{ site.title }}">
     <meta property="og:locale" content="en_US">
+
+    {% if page.markdown_url %}
+    <!-- Markdown for Agents: parallel markdown representation of this page. -->
+    <link rel="alternate" type="text/markdown" href="{{ page.markdown_url | prepend: site.baseurl | prepend: site.url }}">
+    <meta name="agent-markdown" content="{{ page.markdown_url | prepend: site.baseurl | prepend: site.url }}">
+    {% endif %}
     {% if page.layout == 'post' %}
     <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
     <meta property="article:modified_time" content="{{ page.date | date_to_xmlschema }}">
@@ -155,6 +161,21 @@
 
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}">
+
+    <!--
+      Agent discovery (RFC 8288 Web Linking + RFC 9727 api-catalog).
+      GitHub Pages cannot emit HTTP Link response headers, so we publish the
+      equivalent <link> elements here. Real user agents, search crawlers, and
+      agent frameworks parse these the same way they would parse a Link: header.
+      The api-catalog linkset is generated from api-catalog.json.
+    -->
+    <link rel="api-catalog" type="application/linkset+json" href="{{ '/.well-known/api-catalog' | prepend: site.baseurl | prepend: site.url }}" title="Agent resource catalog (RFC 9727)">
+    <link rel="describedby" type="text/plain" href="{{ '/llms.txt' | prepend: site.baseurl | prepend: site.url }}" title="Machine-readable site summary (llms.txt)">
+    <link rel="describedby" type="text/plain" href="{{ '/llms-full.txt' | prepend: site.baseurl | prepend: site.url }}" title="Full site content for LLM ingestion (llms-full.txt)">
+    <link rel="service-doc" type="text/html" href="{{ '/docs/' | prepend: site.baseurl | prepend: site.url }}" title="Architecture and developer documentation">
+    <link rel="sitemap" type="application/xml" href="{{ '/sitemap.xml' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="search" type="text/html" href="{{ '/search/' | prepend: site.baseurl | prepend: site.url }}" title="Site search">
+    <link rel="author" type="text/html" href="{{ '/work/' | prepend: site.baseurl | prepend: site.url }}" title="{{ site.title }}">
 
     {% include analytics.html %}
 </head>

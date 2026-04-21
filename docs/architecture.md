@@ -1,4 +1,10 @@
-# Architecture
+---
+layout: page
+title: Architecture
+description: "System overview of the Jekyll-based subramanya.ai site: build flow, rendering model, data contracts, and where to change things."
+permalink: /docs/architecture/
+robots: noindex, follow
+---
 
 ## Overview
 
@@ -9,7 +15,7 @@ This repository is a Jekyll-based personal site hosted on GitHub Pages. The site
 1. Jekyll reads `_config.yml` to configure collections, URLs, markdown, and site-level metadata.
 2. Content is loaded from `_posts/`, `_books/`, top-level pages such as `index.html` and `blog.md`, and data files in `_data/`.
 3. Layouts in `_layouts/` wrap page content and compose shared includes from `_includes/`.
-4. Static assets are served from `assets/`, `css/`, and top-level generated endpoints such as `feed.xml`, `search.json`, `llms.txt`, and `llms-full.txt`.
+4. Static assets are served from `assets/`, `css/`, and top-level generated endpoints such as `feed.xml`, `search.json`, `llms.txt`, `llms-full.txt`, `/.well-known/api-catalog` (RFC 9727 API catalog, RFC 9264 Linkset), and `/.well-known/openid-configuration` (OIDC Discovery 1.0).
 5. Jekyll outputs the generated site to `_site/`.
 
 ## Repository Structure
@@ -86,6 +92,9 @@ This repository is a Jekyll-based personal site hosted on GitHub Pages. The site
 - Global metadata and per-page stylesheet loading: `_includes/head.html`
 - Search behavior: `_includes/search.html`, `search.md`, `search.json`, `assets/js/components/discovery.js`, and `assets/js/pages/search.js`
 - Tag archives and topic browsing: `tags.md`, `_plugins/tag_pages_generator.rb`, `_includes/tag-archive.html`, and `assets/css/pages/tags.css`
+- Agent discovery (RFC 8288 / RFC 9727): `api-catalog.json` emits `/.well-known/api-catalog.json`, and `_plugins/api_catalog_alias.rb` copies that output to the canonical extensionless `/.well-known/api-catalog` path so both URLs work. The catalog is a Linkset per RFC 9264 and enumerates every machine-readable endpoint on the site. `_includes/head.html` advertises the same endpoints via RFC 8288 `<link>` elements on every page (`api-catalog`, `describedby`, `service-doc`, `sitemap`, `search`, `author`, `alternate`). GitHub Pages cannot emit HTTP `Link` response headers directly, so HTML `<link>` elements are the RFC 8288 HTML-equivalent path.
+- OpenID Connect discovery (OIDC Discovery 1.0): `openid-configuration.json` emits `/.well-known/openid-configuration.json`, and `_plugins/api_catalog_alias.rb` copies it to the canonical extensionless `/.well-known/openid-configuration`. The document is an intentionally inert stub: the site exposes no protected APIs, so `grant_types_supported` and `scopes_supported` are empty and `response_types_supported` / `id_token_signing_alg_values_supported` are `["none"]`. `jwks.json` emits `/.well-known/jwks.json` as an empty keyset, and `oauth-noop.json` emits `/.well-known/oauth-noop.json` (also aliased to `/.well-known/oauth-noop`) returning an RFC 6749 §5.2 `invalid_client` error for any agent that follows the authorization/token endpoints. Extend the `ALIASES` list in `_plugins/api_catalog_alias.rb` to add more extensionless well-known URIs.
+- Developer documentation hub: `docs.md` emits `/docs/` as the landing page; each `docs/*.md` file is a Jekyll page served at `/docs/<name>/`. The `/docs/` URL is also the target of the `service-doc` link relation.
 - Analytics configuration: `_includes/analytics.html`
 - Analytics-derived stats data: `_data/view_count.json` and `scripts/fetch_analytics.py`
 - Translation loading and UI: `assets/js/i18n.js`, `assets/js/components/site-language.js`, `_includes/language-switcher.html`, `_includes/translation-toast.html`, and `assets/translations/`

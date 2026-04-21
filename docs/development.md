@@ -1,4 +1,10 @@
-# Development
+---
+layout: page
+title: Development
+description: "Contributor and maintenance workflow: local setup, validation commands, content update flow, and Python maintenance scripts."
+permalink: /docs/development/
+robots: noindex, follow
+---
 
 ## Prerequisites
 

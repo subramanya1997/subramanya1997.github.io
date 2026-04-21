@@ -6,18 +6,25 @@ permalink: /llms.txt
 
 > {{ site.description }}
 
+Every HTML page below has a parallel markdown representation at `<page-url>index.md`,
+served by GitHub Pages with `Content-Type: text/markdown; charset=utf-8`. Agents
+that prefer markdown can fetch those URLs directly or follow the
+`<link rel="alternate" type="text/markdown">` advertised in each page's `<head>`.
+
 ## About
-- [Home]({{ site.url }}/)
-- [Work Experience]({{ site.url }}/work/)
-- [Publications]({{ site.url }}/publications/)
+- [Home]({{ site.url }}/) (md: {{ site.url }}/index.md)
+- [Work Experience]({{ site.url }}/work/) (md: {{ site.url }}/work/index.md)
+- [Blog]({{ site.url }}/blog/) (md: {{ site.url }}/blog/index.md)
+- [Books]({{ site.url }}/books/) (md: {{ site.url }}/books/index.md)
+- [Tags]({{ site.url }}/tags/) (md: {{ site.url }}/tags/index.md)
 - [Resume/CV]({{ site.url }}/assets/resume/CV.pdf)
 
 ## Blog Posts
 {% for post in site.posts %}
-- [{{ post.title }}]({{ site.url }}{{ post.url }}): {{ post.excerpt | strip_html | truncatewords: 20 }}
+- [{{ post.title }}]({{ site.url }}{{ post.url }}) (md: {{ site.url }}{{ post.url }}index.md): {{ post.excerpt | strip_html | truncatewords: 20 }}
 {% endfor %}
 
 ## Books
 {% for book in site.books %}
-- [{{ book.title }}]({{ site.url }}{{ book.web_url }})
+- [{{ book.title }}]({{ site.url }}{{ book.web_url }}) (md: {{ site.url }}{{ book.url }}index.md)
 {% endfor %}

@@ -1,0 +1,10 @@
+---
+layout: null
+permalink: /.well-known/oauth-noop.json
+sitemap: false
+---
+{
+  "error": "invalid_client",
+  "error_description": "subramanya.ai publishes OpenID Connect discovery metadata for agent-readiness scanners but exposes no protected APIs. This endpoint is intentionally inert and performs no authorization or token issuance.",
+  "error_uri": "{{ site.url }}/"
+}

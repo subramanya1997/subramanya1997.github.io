@@ -1,0 +1,87 @@
+---
+layout: null
+permalink: /.well-known/api-catalog.json
+sitemap: false
+---
+{
+  "linkset": [
+    {
+      "anchor": "{{ site.url }}/",
+      "describedby": [
+        { "href": "{{ site.url }}/llms.txt", "type": "text/plain", "title": "Machine-readable site summary (llms.txt)" },
+        { "href": "{{ site.url }}/llms-full.txt", "type": "text/plain", "title": "Full site content for LLM ingestion (llms-full.txt)" }
+      ],
+      "service-doc": [
+        { "href": "{{ site.url }}/docs/", "type": "text/html", "title": "Architecture, content-model, and development documentation" }
+      ],
+      "sitemap": [
+        { "href": "{{ site.url }}/sitemap.xml", "type": "application/xml", "title": "Sitemaps 0.9" },
+        { "href": "{{ site.url }}/sitemapindex.xml", "type": "application/xml", "title": "Sitemap index" }
+      ],
+      "alternate": [
+        { "href": "{{ site.url }}/feed.xml", "type": "application/rss+xml", "title": "Blog RSS feed" }
+      ],
+      "search": [
+        { "href": "{{ site.url }}/search/", "type": "text/html", "title": "Site search (posts and books)" },
+        { "href": "{{ site.url }}/search.json", "type": "application/json", "title": "Search index (machine-readable)" }
+      ],
+      "author": [
+        { "href": "{{ site.url }}/work/", "type": "text/html", "title": "{{ site.title }} - work history and biography" }
+      ],
+      "collection": [
+        { "href": "{{ site.url }}/blog/", "type": "text/html", "title": "Blog posts index" },
+        { "href": "{{ site.url }}/books/", "type": "text/html", "title": "Books index" },
+        { "href": "{{ site.url }}/tags/", "type": "text/html", "title": "Tag index" }
+      ]
+    },
+    {
+      "anchor": "{{ site.url }}/search.json",
+      "service-desc": [
+        { "href": "{{ site.url }}/search.json", "type": "application/json", "title": "Search index (posts and books)" }
+      ],
+      "service-doc": [
+        { "href": "{{ site.url }}/search/", "type": "text/html", "title": "Search UI" }
+      ],
+      "status": [
+        { "href": "{{ site.url }}/", "type": "text/html" }
+      ]
+    },
+    {
+      "anchor": "{{ site.url }}/feed.xml",
+      "service-desc": [
+        { "href": "https://www.rssboard.org/rss-2-0", "type": "text/html", "title": "RSS 2.0 specification" }
+      ],
+      "service-doc": [
+        { "href": "{{ site.url }}/blog/", "type": "text/html", "title": "Blog index" }
+      ],
+      "status": [
+        { "href": "{{ site.url }}/", "type": "text/html" }
+      ]
+    },
+    {
+      "anchor": "{{ site.url }}/sitemap.xml",
+      "service-desc": [
+        { "href": "https://www.sitemaps.org/protocol.html", "type": "text/html", "title": "Sitemaps 0.9 protocol" }
+      ],
+      "service-doc": [
+        { "href": "https://www.sitemaps.org/", "type": "text/html" }
+      ],
+      "status": [
+        { "href": "{{ site.url }}/", "type": "text/html" }
+      ]
+    },
+    {
+      "anchor": "{{ site.url }}/llms.txt",
+      "service-desc": [
+        { "href": "{{ site.url }}/llms.txt", "type": "text/plain", "title": "Short LLM-readable summary" },
+        { "href": "{{ site.url }}/llms-full.txt", "type": "text/plain", "title": "Full LLM-readable content" }
+      ],
+      "service-doc": [
+        { "href": "https://llmstxt.org/", "type": "text/html", "title": "llms.txt specification" }
+      ],
+      "status": [
+        { "href": "{{ site.url }}/", "type": "text/html" }
+      ]
+    }
+  ]
+}

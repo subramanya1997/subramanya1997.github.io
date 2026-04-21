@@ -421,6 +421,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/images/vfs-agents.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/js/analytics-enhanced.js</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -596,6 +601,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/de/the-filesystem-is-the-database-why-agents-need-a-new-storage-primitive.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/de/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -762,6 +772,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/es/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/es/the-filesystem-is-the-database-why-agents-need-a-new-storage-primitive.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -936,6 +951,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/fr/the-filesystem-is-the-database-why-agents-need-a-new-storage-primitive.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/fr/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1102,6 +1122,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/hi/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/hi/the-filesystem-is-the-database-why-agents-need-a-new-storage-primitive.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1276,6 +1301,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/ja/the-filesystem-is-the-database-why-agents-need-a-new-storage-primitive.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/ja/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1442,6 +1472,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/ko/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/ko/the-filesystem-is-the-database-why-agents-need-a-new-storage-primitive.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1616,6 +1651,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/pt/the-filesystem-is-the-database-why-agents-need-a-new-storage-primitive.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/pt/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1782,6 +1822,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/zh/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/zh/the-filesystem-is-the-database-why-agents-need-a-new-storage-primitive.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -4,9 +4,13 @@ permalink: /llms-full.txt
 ---
 # {{ site.title }} - Full Content
 
+Every post below has a machine-consumable markdown twin at `<post-url>index.md`,
+served by GitHub Pages with `Content-Type: text/markdown; charset=utf-8`.
+
 {% for post in site.posts %}
 ## {{ post.title }}
 URL: {{ site.url }}{{ post.url }}
+Markdown: {{ site.url }}{{ post.url }}index.md
 Date: {{ post.date | date: "%Y-%m-%d" }}
 Tags: {{ post.tags | join: ", " }}
 
