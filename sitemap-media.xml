@@ -166,6 +166,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/images/context-engineering-why-prompt-engineering-was-never-enough.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/images/context-graphs.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -686,6 +691,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/es/context-engineering-why-prompt-engineering-was-never-enough.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/es/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -857,6 +867,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/fr/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/fr/context-engineering-why-prompt-engineering-was-never-enough.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1036,6 +1051,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/hi/context-engineering-why-prompt-engineering-was-never-enough.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/hi/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1207,6 +1227,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/ja/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/ja/context-engineering-why-prompt-engineering-was-never-enough.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1386,6 +1411,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/ko/context-engineering-why-prompt-engineering-was-never-enough.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/ko/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1557,6 +1587,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/pt/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/pt/context-engineering-why-prompt-engineering-was-never-enough.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

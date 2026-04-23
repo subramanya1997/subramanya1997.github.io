@@ -311,6 +311,28 @@ class TranslationOutput(BaseModel):
     content_html: str
 
 
+def validate_translation_output(body: str, translation: dict) -> None:
+    """Reject obviously incomplete translations that still satisfy the JSON schema."""
+    content_html = translation["content_html"].strip()
+    if not content_html:
+        raise ValueError("Translation appears truncated: content_html is empty")
+
+    source_chars = len(re.sub(r"\s+", " ", body).strip())
+    translated_chars = len(re.sub(r"\s+", " ", content_html).strip())
+    structural_tags = len(re.findall(r"</(?:p|h[1-6]|li|blockquote|pre|ul|ol)>", content_html))
+
+    # Long-form posts should not collapse into a few dozen characters or a single tag.
+    min_chars = 500 if source_chars > 3000 else max(150, source_chars // 8)
+    if translated_chars < min_chars:
+        raise ValueError(
+            f"Translation appears truncated: content_html too short ({translated_chars} chars for {source_chars}-char source)"
+        )
+    if source_chars > 3000 and structural_tags < 5:
+        raise ValueError(
+            f"Translation appears truncated: too few HTML blocks ({structural_tags}) for long-form content"
+        )
+
+
 async def translate_with_claude_async(
     client: anthropic.AsyncAnthropic,
     title: str,
@@ -366,6 +388,7 @@ async def translate_with_claude_async(
             try:
                 parsed = TranslationOutput.model_validate_json(response_text)
                 result = parsed.model_dump()
+                validate_translation_output(body, result)
             except Exception as json_error:
                 # Log the raw response snippet for debugging
                 response_snippet = response_text[:500] if len(response_text) > 500 else response_text
