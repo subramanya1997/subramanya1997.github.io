@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "From Boom to Build-Out: The State of Enterprise AI in 2026"
+description: "The state of enterprise AI in 2026: generative AI spend, agentic workflows, AI adoption, platform strategy, and infrastructure build-out."
 excerpt: "The era of AI experimentation is over. What began as a speculative boom has rapidly industrialized into the fastest-scaling software category in history. Enterprise spending on generative AI skyrocketed to $37 billion in 2025, a stunning 3.2x increase from the previous year."
 author: Subramanya N
 date: 2025-12-10
@@ -62,4 +63,3 @@ The state of enterprise AI in 2026 is clear: the gold rush is over, and the era 
 [2] [OpenAI. (2025). *The state of enterprise AI 2025 report*. OpenAI.](https://cdn.openai.com/pdf/7ef17d82-96bf-4dd1-9df2-228f7f377a29/the-state-of-enterprise-ai_2025-report.pdf)
 
 [3] [Menlo Ventures. (2025, December 9). *2025: The State of Generative AI in the Enterprise*. Menlo Ventures.](https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/)
-

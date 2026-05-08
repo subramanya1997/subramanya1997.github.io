@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "A Year with Cursor: How My Workflow Evolved from Agent to Architect"
+description: "Cursor AI workflow lessons from a year of using agents, MCP, Plan Mode, custom commands, context engineering, and architectural review."
 excerpt: "My journey with Cursor mirrors the maturation of the tool itself: from a simple agent to a sophisticated architectural partner. This post details how my workflow evolved through @ mentions, MCP, Plan Mode, and custom commands."
 author: Subramanya N
 date: 2026-01-04

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Why Private Registries are the Future of Enterprise Agentic Infrastructure"
+description: "Why enterprises need private agent and MCP registries for AI governance, approved tools, security reviews, compliance, and operational visibility."
 excerpt: "With 79% of companies already adopting AI agents, a critical governance gap has emerged. Without robust management frameworks, organizations risk a chaotic landscape of shadow AI, creating significant security vulnerabilities and operational inefficiencies. The solution lies in Private Agent and MCP Registries—command centers for agentic infrastructure that provide the visibility, governance, and security necessary to scale AI responsibly."
 author: Subramanya N
 date: 2025-11-17
@@ -111,4 +112,3 @@ For enterprises embarking on this journey, the message is clear: you cannot scal
 [3] [TrueFoundry. (2025, September 10). *What is AI Agent Registry*. TrueFoundry.](https://www.truefoundry.com/blog/ai-agent-registry)
 
 [4] [Model Context Protocol. (2025, September 8). *Introducing the MCP Registry*. Model Context Protocol.](https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/)
-

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 'AI Agents and Agentic Security: The Next Frontier in Enterprise Automation'
+description: "AI agents and agentic security in enterprise automation, including autonomous workflows, security operations, governance, and AI agent infrastructure."
 excerpt: Exploring the potential of AI agents in enterprise security and automation, and how they can enhance security operations.
 author: Subramanya N
 date: 2024-12-10

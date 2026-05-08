@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "From Espionage to Identity: Securing the Future of Agentic AI"
+description: "What AI-driven cyber espionage means for agentic AI security, identity, OIDC-A, MCP, zero trust, and autonomous threat governance."
 excerpt: "Anthropic has detailed its disruption of the first publicly reported cyber espionage campaign orchestrated by a sophisticated AI agent. The incident, attributed to state-sponsored group GTG-1002, signals that the age of autonomous, agentic AI threats is here. This post dissects the anatomy of the attack and explores how emerging standards like OpenID Connect for Agents (OIDC-A) provide a necessary path forward."
 author: Subramanya N
 date: 2025-11-14
@@ -68,4 +69,3 @@ We cannot afford to let the open, extensible nature of protocols like MCP become
 [2] [Subramanya, N. (2025, April 28). *OpenID Connect for Agents (OIDC-A) 1.0 Proposal*. subramanya.ai.](https://subramanya.ai/2025/04/28/oidc-a-proposal/)
 
 [3] [South, T. (Ed.). (2025, October). *Identity Management for Agentic AI: The new frontier of authorization, authentication, and security for an AI agent world*. arXiv.](https://arxiv.org/pdf/2510.25819)
-

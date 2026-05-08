@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Governance Stack: Operationalizing AI Agent Governance at Enterprise Scale"
+description: "AI agent governance stack for enterprise scale: policy enforcement, identity, MCP/tool registries, audit trails, compliance, and lifecycle control."
 excerpt: "With 88% of organizations now deploying AI agents in production, governance has shifted from a theoretical concern to an operational imperative. Yet 40% of technology executives admit their governance programs are insufficient. This article presents the technical infrastructure—the 'governance stack'—required to transform governance frameworks from policy documents into automated, enforceable reality across the entire agentic workforce lifecycle."
 author: Subramanya N
 date: 2025-11-20
@@ -161,5 +162,4 @@ For technology leaders navigating this landscape, the path is clear: governance 
 [6] [Subramanya, N. (2025, November 14). *From Espionage to Identity: Securing the Future of Agentic AI*. subramanya.ai.](https://subramanya.ai/2025/11/14/from-espionage-to-identity-securing-the-future-of-agentic-ai/)
 
 [7] [TrueFoundry. (2025, September 10). *What is AI Agent Registry*. TrueFoundry.](https://www.truefoundry.com/blog/ai-agent-registry)
-
 

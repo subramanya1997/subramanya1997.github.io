@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "What Are Context Graphs, Really?"
+description: "What context graphs are, why they matter for enterprise AI agents, and how they differ from graph databases, vector stores, and memory."
 excerpt: "The conversation around context graphs has exploded, but the term itself has become a Rorschach test. This is not about adding memory to your agent—it's about rethinking our assumptions about data, time, and organizational knowledge. The Two Clocks Problem reveals why we're missing half of time in enterprise systems, and why this is fundamentally a representation problem, not a database problem."
 author: Subramanya N
 date: 2026-01-01

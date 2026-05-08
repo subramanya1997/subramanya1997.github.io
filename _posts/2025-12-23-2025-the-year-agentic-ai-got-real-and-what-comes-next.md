@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "2025: The Year Agentic AI Got Real (What Comes Next)"
+description: "A 2025 agentic AI review covering enterprise adoption, MCP, Agent Skills, multi-agent systems, AI infrastructure, governance, and what comes next."
 excerpt: "If 2024 was the year of AI experimentation, 2025 was the year of industrialization. The speculative boom around generative AI has rapidly matured into the fastest-scaling software category in history, with autonomous agents moving from the lab to the core of enterprise operations."
 author: Subramanya N
 date: 2025-12-23
@@ -76,4 +77,3 @@ The groundwork laid in 2025 was monumental. It moved us from a world of isolated
 [6] [Anthropic. (2025, June 13). *How we built our multi-agent research system*. Anthropic Engineering.](https://www.anthropic.com/engineering/multi-agent-research-system)
 
 [7] [Y Combinator. (2025). *Den: Cursor for knowledge workers*. Y Combinator.](https://www.ycombinator.com/companies/den)
-

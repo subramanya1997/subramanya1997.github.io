@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Agent Skills: The Missing Piece of the Enterprise AI Puzzle"
+description: "Agent Skills explained for enterprise AI: portable procedural knowledge, organizational context, MCP complementarity, governance, and agent workflows."
 excerpt: "The enterprise AI landscape is at a critical juncture. We have powerful general-purpose models and a growing ecosystem of tools. But we are missing a crucial piece: a standardized, portable way to equip agents with the procedural knowledge and organizational context they need to perform real work."
 author: Subramanya N
 date: 2025-12-18
@@ -65,4 +66,3 @@ Agent Skills are not just a new feature; they are a new architectural primitive 
 [2] [Anthropic. (2025, October 16). *Equipping agents for the real world with Agent Skills*. Anthropic Blog.](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)
 
 [3] [Willison, S. (2025, December 19). *Agent Skills*. Simon Willison's Weblog.](https://simonwillison.net/2025/Dec/19/agent-skills/)
-

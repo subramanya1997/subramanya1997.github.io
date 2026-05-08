@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Beyond \"Non-Deterministic\": Deconstructing the Illusion of Randomness in LLMs"
+description: "Why LLM behavior is often mislabeled as non-deterministic, and what prompt sensitivity, context, architecture, and emergence reveal instead."
 excerpt: "Attributing an LLM's behavior to 'non-determinism' is like blaming a complex system's emergent behavior on magic. It's an admission of incomprehension, not an explanation. The truth is far more fascinating and, for architects and engineers, far more critical to understand."
 author: Subramanya N
 date: 2025-09-09

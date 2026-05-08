@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Three-Platform Problem in Enterprise AI"
+description: "Enterprise AI's three-platform problem: why low-code tools, DevOps platforms, and AI infrastructure are fragmented and need a unified architecture."
 excerpt: "Enterprise AI has a platform problem. The tools to build AI-powered applications exist, but they're scattered across three disconnected ecosystems—each solving part of the puzzle, none providing a complete solution. This isn't a 'too many choices' problem. It's an architectural one."
 author: Subramanya N
 date: 2025-12-07
@@ -89,4 +90,3 @@ Look for:
 - **Platform-level governance.** Are security, compliance, and cost controls configured once and inherited everywhere, or are they per-tool?
 
 The platforms winning in this space aren't the ones with the longest feature lists. They're the ones that recognized the three-ecosystem problem and architected around it from day one.
-

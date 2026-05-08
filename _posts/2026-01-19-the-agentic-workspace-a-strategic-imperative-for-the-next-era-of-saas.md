@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Agentic Workspace: A Strategic Imperative for the Next Era of SaaS"
+description: "Why SaaS companies must become agentic workspaces that orchestrate AI agents, capture context graphs, deliver outcomes, and build defensible moats."
 excerpt: "Traditional SaaS is under siege from AI agents. The winners won't just add AI features—they'll become agentic workspaces that orchestrate autonomous outcomes. Here's why every SaaS company must make this transition now, and how to build the defensible moat that will define the next decade."
 author: Subramanya N
 date: 2026-01-19

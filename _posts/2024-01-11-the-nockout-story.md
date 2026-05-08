@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The Nockout Story
+description: "The story behind Nockout, a sports activity platform for booking courts, finding players, matching skill levels, and building sports communities."
 excerpt: Discover how Nockout is transforming the way we find and enjoy sports activities. No more hassle in booking courts, no more mismatches in skill levels, just pure joy of playing your favorite sports.
 author: Subramanya N, Yash Kejariwal
 date: 2024-01-11

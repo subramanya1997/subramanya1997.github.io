@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 'OpenID Connect for Agents (OIDC-A) 1.0 Proposal'
+description: "OIDC-A proposal for OpenID Connect agent identity, delegation chains, attestation evidence, and authorization claims for LLM-based agents."
 excerpt: Technical proposal for extending OpenID Connect Core 1.0 to provide a framework for representing, authenticating, and authorizing LLM-based agents within the OAuth 2.0 ecosystem.
 author: Subramanya N
 date: 2025-04-28
@@ -545,4 +546,4 @@ OIDC-A 1.0 is designed for compatibility with OAuth 2.0 [RFC6749], OIDC Core 1.0
     border-radius: 3px;
     font-size: 90%;
 }
-</style> 
+</style>

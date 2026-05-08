@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Architectural Revolution: Why AI Agents Shatter Traditional Design Patterns"
+description: "Why AI agents challenge traditional software architecture, microservices, system design, control boundaries, and predictable execution patterns."
 excerpt: "For decades, software architects have operated under a fundamental assumption: we design systems, and systems execute our designs. AI agents are rewriting this contract entirely. Unlike the monoliths and microservices that came before them, AI agents don't just execute architecture—they evolve it."
 author: Subramanya N
 date: 2025-07-21
@@ -262,4 +263,4 @@ For software architects, this represents both an unprecedented opportunity and a
 
 The future belongs to architects who can embrace this uncertainty and learn to design systems that are robust enough to evolve safely, flexible enough to adapt to unexpected challenges, and aligned enough to maintain coherence with business objectives. We're not just building the next generation of software—we're participating in the emergence of truly intelligent systems that will reshape how we think about technology, automation, and human-computer collaboration.
 
-The architectural revolution is just beginning. The question isn't whether agent-based systems will become dominant—it's whether we'll be ready to design and manage them effectively when they do. 
+The architectural revolution is just beginning. The question isn't whether agent-based systems will become dominant—it's whether we'll be ready to design and manage them effectively when they do.

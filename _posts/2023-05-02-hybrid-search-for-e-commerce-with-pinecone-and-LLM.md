@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Hybrid Search for E-Commerce with Pinecone and LLMs
+description: "How to build hybrid search for e-commerce with Pinecone, sparse and dense vectors, LLM embeddings, relevance tuning, and product search."
 excerpt: Learn how to build a powerful hybrid search system for e-commerce applications by combining traditional information retrieval methods with machine learning models like Language Models (LLMs) and Pinecone, a managed vector database. Discover the benefits of hybrid search for e-commerce, including improved search relevance, personalization, handling long-tail queries, and simpler infrastructure management.
 author: Subramanya N
 date: 2023-05-02

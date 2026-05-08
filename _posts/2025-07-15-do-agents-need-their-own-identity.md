@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Do Agents Need Their Own Identity?
+description: "Should AI agents use user credentials or their own identities? A practical look at agent identity, trust, delegation, governance, and security."
 excerpt: "As AI agents become more sophisticated and autonomous, a fundamental question is emerging: should agents operate under user credentials, or do they need their own distinct identities? This isn't just a technical curiosity—it's a critical trust and security decision that will shape how we build reliable, accountable AI systems."
 author: Subramanya N
 date: 2025-07-15
@@ -50,4 +51,4 @@ The dual identity model also enables more sophisticated scenarios, like agent-to
 
 Getting agent identity right isn't just a technical challenge—it's fundamental to building AI systems that organizations can trust at scale. As agents become more autonomous, we need identity frameworks that provide clear attribution, appropriate authorization, and robust governance.
 
-The community is still working through delegation mechanisms, revocation strategies, and authentication protocols for agent interactions. But one thing is clear—the simple days of "just use the user's token" are behind us. The future of trustworthy AI depends on solving these identity challenges with security and accountability as primary design principles. 
+The community is still working through delegation mechanisms, revocation strategies, and authentication protocols for agent interactions. But one thing is clear—the simple days of "just use the user's token" are behind us. The future of trustworthy AI depends on solving these identity challenges with security and accountability as primary design principles.

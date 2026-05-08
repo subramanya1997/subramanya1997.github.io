@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 'Securing MCP with OIDC & OIDC-A: Identity-Aware API Gateways Beyond "Glorified API Calls"'
+description: "How to secure MCP servers with OIDC, OIDC-A, identity-aware API gateways, policy enforcement, routing, and audit controls."
 excerpt: Integrating OpenID Connect (OIDC) and the new OIDC-A agent extension with an identity-aware API gateway to securely authenticate users, LLM agents, and MCP tools—going far beyond basic API proxying.
 author: Subramanya N
 date: 2025-05-21
@@ -9,7 +10,7 @@ mermaid: true
 ready: true
 --- 
 
-AI agents are quickly moving from research demos to real enterprise applications, connecting large language models (LLMs) with company data and services. A common approach is using tools or plugins to let an LLM fetch context or take actions – but some dismiss these as just "glorified API calls." In reality, securely integrating AI with business systems is far more complex. This is where the **Model Context Protocol (MCP)** comes in, and why a robust **proxy architecture with OpenID Connect (OIDC)** identity is crucial for enterprise-scale deployments.
+AI agents are quickly moving from research demos to real enterprise applications, connecting large language models (LLMs) with company data and services. A common approach is using tools or plugins to let an LLM fetch context or take actions – but some dismiss these as just "glorified API calls." In reality, securely integrating AI with business systems is far more complex. This is where the **Model Context Protocol (MCP)** comes in, and why a robust **proxy architecture with OpenID Connect (OIDC)** identity is crucial for enterprise-scale deployments. If you are comparing agent customization primitives, start with my broader guide to [Claude Skills vs MCP](/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/).
 
 ```mermaid
 graph TB

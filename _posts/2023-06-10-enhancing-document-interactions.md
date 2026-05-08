@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Enhancing Document Interactions - Leveraging the synergy of Google Cloud Platform, Pinecone, and LLM in Natural Language Communication
+description: "Document AI architecture using Google Cloud Platform OCR, Pinecone vector search, and LLMs for natural-language document retrieval."
 excerpt: Explore the groundbreaking fusion of Google Cloud Platform for OCR, Pinecone, and Large Language Model that is transforming information retrieval. This blog delves into how these potent tools collaborate to enable seamless interactions with documents using natural language. Discover how Google Cloud Platform offers a solid foundation, Pinecone provides rapid similarity searches for effective document retrieval, and LLM elevates language comprehension and generation capabilities. 
 author: Subramanya N, Tasheer Hussain B
 date: 2023-06-10

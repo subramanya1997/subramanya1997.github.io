@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "MCP Enterprise Readiness: How the 2025-11-25 Spec Closes the Production Gap"
+description: "What changed in the MCP 2025-11-25 specification, including enterprise OAuth, async Tasks, extensions, and production readiness gaps."
 excerpt: "The Model Context Protocol's first anniversary release isn't just a milestone—it's a strategic inflection point. With asynchronous Tasks, enterprise-grade OAuth, and a formal extensions framework, the 2025-11-25 spec directly addresses the operational barriers that have kept organizations from deploying agent-tool ecosystems at scale. This post examines how these new primitives transform MCP from a development convenience into production-grade infrastructure."
 author: Subramanya N
 date: 2025-12-01
@@ -9,7 +10,7 @@ image: /assets/images/mcp_anniversary.jpg
 ready: true
 ---
 
-Just over a week ago, the Model Context Protocol celebrated its first anniversary with the release of the 2025-11-25 specification [1]. The announcement was rightly triumphant—MCP has evolved from an experimental open-source project to a foundational standard backed by GitHub, OpenAI, Microsoft, and Block, with thousands of active servers in production [1].
+Just over a week ago, the Model Context Protocol celebrated its first anniversary with the release of the 2025-11-25 specification [1]. The announcement was rightly triumphant—MCP has evolved from an experimental open-source project to a foundational standard backed by GitHub, OpenAI, Microsoft, and Block, with thousands of active servers in production [1]. For readers comparing the protocol to Anthropic's procedural customization layer, I cover [Claude Skills vs MCP](/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/) separately.
 
 But beneath the celebration lies a more interesting story: this spec release is not just an evolution; it's a strategic pivot toward enterprise readiness. For the past year, MCP has succeeded as a developer tool—a convenient way to connect AI models to data and capabilities during experimentation. The 2025-11-25 spec is different. It introduces features explicitly designed to solve the operational, security, and governance challenges that prevent organizations from deploying agent-tool ecosystems at enterprise scale.
 
@@ -174,5 +175,4 @@ For technology leaders evaluating whether to invest in MCP-based infrastructure,
 [4] [Subramanya, N. (2025, November 20). *The Governance Stack: Operationalizing AI Agent Governance at Enterprise Scale*. subramanya.ai.](https://subramanya.ai/2025/11/20/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale/)
 
 [5] [Subramanya, N. (2025, November 17). *Why Private Registries are the Future of Enterprise Agentic Infrastructure*. subramanya.ai.](https://subramanya.ai/2025/11/17/why-private-registries-are-the-future-of-enterprise-agentic-infrastructure/)
-
 

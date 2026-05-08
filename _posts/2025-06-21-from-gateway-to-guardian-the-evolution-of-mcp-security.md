@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 'From Gateway to Guardian: The Evolution of MCP Security'
+description: "MCP security architecture beyond gateways: identity-aware proxies, agent firewalls, tool governance, policy enforcement, and enterprise risk controls."
 excerpt: While AWS's MCP Gateway solves operational challenges, production AI systems demand evolution from basic centralization to identity-aware security guardians that address the "lethal trifecta" of vulnerabilities in enterprise deployments.
 author: Subramanya N
 date: 2025-06-21
@@ -219,4 +220,3 @@ The transformation represents the natural maturation of enterprise AI infrastruc
 [2] [N, S. (2025, June 16). The MCP Security Crisis: Understanding the 'Wild West' of AI Agent Infrastructure. Agentic Trust Blog.](https://agentictrust.com/blog/mcp-security-crisis-wild-west-ai-agent-infrastructure-cover)
 
 [3] [N, S. (2025, May 21). Securing MCP with OIDC & OIDC-A: Identity-Aware API Gateways Beyond "Glorified API Calls". Subramanya N.](https://subramanya.ai/2025/05/21/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway/)
-

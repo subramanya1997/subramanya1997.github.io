@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 'Securing AI Assistants: Why Your Favorite Apps Need Digital IDs for Their AI'
+description: "Why AI assistants need digital identities, delegated authorization, SPIFFE-style identity, and secure agent authentication for consumer apps."
 excerpt: As AI assistants on platforms like Instagram, Facebook, and Booking.com become more autonomous, they need proper digital identities to securely act on our behalf. Learn how AI identity systems work and why they matter for consumer platforms.
 author: Subramanya N
 date: 2025-07-01
@@ -139,4 +140,3 @@ The next time you ask an AI assistant to book a flight or post content for you, 
 [1] [SPIFFE - Secure Production Identity Framework for Everyone.](https://spiffe.io/)
 
 [2] [Olden, E. (2025). "Why Agentic Identities Matter for Accountability and Trust." Strata.io Blog.](https://www.strata.io/blog/agentic-identity/why-agentic-identities-matter-1b/)
-

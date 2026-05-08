@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Context Graphs: My Thoughts on the Trillion Dollar Evolution of Agentic Infrastructure"
+description: "Context graphs as the next system of record for enterprise decisions, agent memory, decision traces, and agentic infrastructure."
 excerpt: "After reading Jaya Gupta's post about Context Graphs, I have not been able to stop thinking about it. For me, it did something personal: it gave a name to the architectural pattern I have been circling around in the agentic infrastructure discussions on this blog for the past year. Gupta's thesis is simple but profound—the last generation of enterprise software created trillion dollar companies by becoming systems of record. The question now is whether a new layer will emerge on top of them: a system of record for decisions."
 author: Subramanya N
 date: 2025-12-26
@@ -9,7 +10,7 @@ image: /assets/images/context-graphs.png
 ready: true
 ---
 
-After reading Jaya Gupta's post about Context Graphs, I have not been able to stop thinking about it [1]. For me, it did something personal: it gave a name to the architectural pattern I have been circling around in the agentic infrastructure discussions on this blog for the past year.
+After reading Jaya Gupta's post about Context Graphs, I have not been able to stop thinking about it [1]. For me, it did something personal: it gave a name to the architectural pattern I have been circling around in the agentic infrastructure discussions on this blog for the past year. I later wrote a more direct explainer on [what are context graphs](/2026/01/01/what-are-context-graphs-really/) and why the term means more than agent memory.
 
 Gupta's thesis is simple but profound. The last generation of enterprise software (Salesforce, Workday, SAP) created trillion dollar companies by becoming **systems of record**. Own the canonical data, own the workflow, own the lock in. The question now is whether those systems survive the shift to agents. Gupta argues they will, but that a new layer will emerge on top of them: **a system of record for decisions**.
 

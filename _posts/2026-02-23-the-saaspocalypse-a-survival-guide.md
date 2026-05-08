@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The SaaSpocalypse: A Survival Guide"
+description: "What the SaaSpocalypse means for software companies, AI agents, outcome pricing, enterprise SaaS moats, and survival strategy."
 excerpt: "Nearly $1 trillion wiped from software stocks in a week. This is not a mass extinction—it's a cleansing fire. Here's the survival playbook for SaaS companies in the outcome economy."
 author: Subramanya N
 date: 2026-02-23

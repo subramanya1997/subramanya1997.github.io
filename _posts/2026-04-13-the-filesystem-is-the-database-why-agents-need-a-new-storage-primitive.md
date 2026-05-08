@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Filesystem Is the Database: Why Agents Need a New Storage Primitive"
+description: "Why virtual filesystems may become the storage primitive for AI agents, replacing RAG pipelines with AgentFS, ChromaFs, VFS, and context databases."
 excerpt: "RAG pipelines gave agents memory. But the next wave of agentic infrastructure is converging on a different primitive entirely: the virtual filesystem. From Mintlify's ChromaFs to Turso's AgentFS to Box's enterprise VFS layer, the pattern is unmistakable. The filesystem is becoming the universal interface for agent cognition, and the database is quietly becoming its substrate."
 author: Subramanya N
 date: 2026-04-13

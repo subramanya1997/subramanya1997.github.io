@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Context Graphs Are a Trillion-Dollar Opportunity. But Who Actually Captures It?"
+description: "Who captures the context graph opportunity: why agentic tools, decision traces, Claude Code, and Claude Cowork may define enterprise AI."
 excerpt: "The concept of Context Graphs has rapidly captured the industry's imagination. The thesis is that the next trillion-dollar enterprise platforms will not be systems of record for data, but systems of record for decisions. But who actually captures this opportunity? The answer is hiding in plain sight—in the agentic tools that are already operating in the wild, generating decision traces every second."
 author: Subramanya N
 date: 2026-01-14
@@ -9,7 +10,7 @@ image: /assets/images/context_graphs_opportunity.png
 ready: true
 ---
 
-The concept of **Context Graphs**, first articulated by Jaya Gupta of Foundation Capital, has rapidly captured the industry's imagination [1]. The thesis is that the next trillion-dollar enterprise platforms will not be systems of record for data, but systems of record for **decisions**.
+The concept of **Context Graphs**, first articulated by Jaya Gupta of Foundation Capital, has rapidly captured the industry's imagination [1]. The thesis is that the next trillion-dollar enterprise platforms will not be systems of record for data, but systems of record for **decisions**. For the underlying definition, see my explainer on [what are context graphs](/2026/01/01/what-are-context-graphs-really/).
 
 The thesis is compelling. But the most pressing question remains: **who actually captures this trillion-dollar opportunity?**
 
