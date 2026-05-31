@@ -1,0 +1,8 @@
+{
+  "title": "nouveau blog",
+  "excerpt": "D'ici 2026, le véritable enjeu des systèmes d'IA modernes ne sera pas d'écrire une prompt astucieuse. Il s'agira de décider ce que le modèle voit, quand il le voit, et comment ce contexte est structuré, persisté et transformé en mémoire durable.",
+  "content_html": "<p>nouveau blog</p>",
+  "source_hash": "sha256:27ffb92b426b3254353c03480016ba78a8247f3a579103596c44f7720c3202c7",
+  "model": "moonshotai/kimi-k2.6",
+  "generated_at": "2026-05-31T02:53:07.686653+00:00"
+}

@@ -1,0 +1,8 @@
+{
+  "title": "novo blog",
+  "excerpt": "Até 2026, o trabalho real em sistemas modernos de IA não é escrever um prompt inteligente. É decidir o que o modelo vê, quando vê, e como esse contexto é estruturado, persistido e transformado em memória durável.",
+  "content_html": "<p>novo blog</p>",
+  "source_hash": "sha256:27ffb92b426b3254353c03480016ba78a8247f3a579103596c44f7720c3202c7",
+  "model": "moonshotai/kimi-k2.6",
+  "generated_at": "2026-05-31T02:53:04.830687+00:00"
+}

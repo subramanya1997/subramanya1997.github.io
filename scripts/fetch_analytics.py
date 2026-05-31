@@ -160,6 +160,21 @@ def save_to_json(data, output_file):
     print(f"Saved {len(data)} posts with view counts to {output_file}")
 
 
+def has_existing_view_counts(output_file):
+    """Return True when the existing analytics file has usable view data."""
+    if not os.path.exists(output_file):
+        return False
+
+    try:
+        with open(output_file, 'r', encoding='utf-8') as f:
+            existing_data = json.load(f)
+    except (OSError, json.JSONDecodeError) as e:
+        print(f"Could not read existing analytics data: {e}")
+        return False
+
+    return bool(existing_data.get("view_counts"))
+
+
 def main():
     """Main function."""
     property_id = os.environ.get('GA_PROPERTY_ID')
@@ -171,6 +186,10 @@ def main():
     view_counts = fetch_popular_posts(property_id, days=None, limit=None)
     
     output_file = '_data/view_count.json'
+    if not view_counts and has_existing_view_counts(output_file):
+        print("Fetched 0 posts; keeping existing analytics data instead of overwriting it.")
+        return
+
     save_to_json(view_counts, output_file)
     
     print(f"Done! Fetched {len(view_counts)} posts with all-time views.")
@@ -178,4 +197,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

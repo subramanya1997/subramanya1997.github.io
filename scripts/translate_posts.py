@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Translate blog posts to multiple languages using Claude 4.5 Sonnet.
+Translate blog posts to multiple languages using OpenRouter and Kimi K2.6.
 Implements smart caching via content hashing to avoid unnecessary API calls.
 Supports parallel execution for faster processing with rate limit handling.
 
@@ -17,7 +17,7 @@ Usage:
     python scripts/translate_posts.py --post "post-slug.md"  # Translate specific post
     python scripts/translate_posts.py --lang es              # Only translate to Spanish
     python scripts/translate_posts.py --dry-run              # Show what would be translated
-    python scripts/translate_posts.py --concurrency 10       # Run 10 translations in parallel
+    python scripts/translate_posts.py --concurrency 3        # Run 3 translations in parallel
     python scripts/translate_posts.py --max-retries 10       # Retry up to 10 times on failure
     python scripts/translate_posts.py --retry-delay 10       # Start with 10s retry delay
 """
@@ -34,7 +34,6 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
-import anthropic
 import httpx
 import yaml
 from dotenv import load_dotenv
@@ -50,7 +49,7 @@ MAX_RETRIES = 5
 INITIAL_RETRY_DELAY = 5  # seconds
 MAX_RETRY_DELAY = 300  # 5 minutes
 
-# Timeout settings for streaming API
+# Timeout settings for OpenRouter API
 CONNECTION_TIMEOUT = 30.0     # seconds to establish connection
 READ_TIMEOUT = 600.0          # seconds between receiving data chunks (10 min)
 WRITE_TIMEOUT = 60.0          # seconds to send request
@@ -68,8 +67,11 @@ SUPPORTED_LANGUAGES = {
     "ko": {"name": "Korean", "native": "한국어"},
 }
 
-# Model to use for translations
-CLAUDE_MODEL = "claude-sonnet-4-6"
+# OpenRouter settings
+OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions"
+DEFAULT_OPENROUTER_MODEL = "moonshotai/kimi-k2.6"
+OPENROUTER_SITE_URL = "https://subramanya.ai"
+OPENROUTER_APP_NAME = "subramanya1997.github.io translation script"
 
 # Project paths
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -81,7 +83,7 @@ ERROR_LOG_FILE = PROJECT_ROOT / "scripts" / "translation_errors.log"
 def parse_args() -> argparse.Namespace:
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(
-        description="Translate blog posts to multiple languages using Claude 4.5 Sonnet.",
+        description="Translate blog posts to multiple languages using OpenRouter and Kimi K2.6.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -123,8 +125,8 @@ Examples:
         "--concurrency",
         "-c",
         type=int,
-        default=10,
-        help="Number of parallel translation requests (default: 10)",
+        default=int(os.environ.get("TRANSLATION_CONCURRENCY", "3")),
+        help="Number of parallel translation requests (default: 3, or TRANSLATION_CONCURRENCY)",
     )
     parser.add_argument(
         "--max-retries",
@@ -137,6 +139,12 @@ Examples:
         type=int,
         default=5,
         help="Initial retry delay in seconds (default: 5)",
+    )
+    parser.add_argument(
+        "--model",
+        type=str,
+        default=os.environ.get("OPENROUTER_MODEL", DEFAULT_OPENROUTER_MODEL),
+        help=f"OpenRouter model id (default: {DEFAULT_OPENROUTER_MODEL}, or OPENROUTER_MODEL)",
     )
     return parser.parse_args()
 
@@ -255,37 +263,36 @@ def build_translation_messages(
     body: str,
     target_language: str,
     target_native: str,
-) -> tuple[list[dict], list[dict]]:
-    """Build the translation messages for Claude with structured output and prompt caching."""
-    # System prompt blocks with cache control
-    system_blocks = [
-        {
-            "type": "text",
-            "text": """You are a professional translator.
+) -> list[dict]:
+    """Build the translation messages for OpenRouter."""
+    system_message = """You are a professional translator.
 
-CRITICAL: You MUST respond with valid JSON only, no markdown, no explanations, just pure JSON.
-
-Output Format (JSON):
-{
-  "title": "translated title",
-  "excerpt": "translated excerpt",
-  "content_html": "translated content as HTML"
-}
+CRITICAL JSON OUTPUT REQUIREMENT:
+- Return only one valid JSON object.
+- The JSON object must have exactly these keys: "title", "excerpt", "content_html".
+- Do not wrap the JSON in markdown fences.
+- Do not add explanations, comments, prose, or any text outside the JSON object.
+- Escape quotes, backslashes, and newlines correctly so json.loads can parse the response.
 
 Rules:
 - Preserve all markdown formatting, code blocks, and HTML tags exactly
 - Keep technical terms, proper nouns, and code in English
 - Maintain the author's voice and writing style
 - Translate naturally, not literally
+- Translate the full CONTENT from first word to last; do not summarize or omit sections
 - Keep URLs and image paths unchanged
 - Preserve reference links [1], [2], etc. exactly as they appear
 - Convert markdown to HTML for the content_html field
-- Return ONLY valid JSON, nothing else""",
-            "cache_control": {"type": "ephemeral"}  # Cache this system prompt
-        }
-    ]
+- The content_html value must contain the complete translated post"""
 
-    user_message = f"""Translate this blog post to {target_language} ({target_native}) and return ONLY valid JSON:
+    user_message = f"""Translate this blog post to {target_language} ({target_native}).
+
+Return only valid JSON with exactly this shape:
+{{
+  "title": "translated title",
+  "excerpt": "translated excerpt",
+  "content_html": "complete translated content converted to HTML"
+}}
 
 TITLE: {title}
 
@@ -294,21 +301,50 @@ EXCERPT: {excerpt}
 CONTENT:
 {body}
 
-Remember: Return ONLY valid JSON with "title", "excerpt", and "content_html" fields. No markdown, no explanations."""
+Remember: Return ONLY the JSON object. No markdown fences. No prose. No explanations."""
 
     messages = [
+        {"role": "system", "content": system_message},
         {"role": "user", "content": user_message},
     ]
-    
-    return system_blocks, messages
+
+    return messages
 
 
-# Pydantic model for structured output (required for streaming API)
+# Pydantic model for translation responses.
 class TranslationOutput(BaseModel):
     """Structured output model for translations."""
     title: str
     excerpt: str
     content_html: str
+
+
+TRANSLATION_RESPONSE_FORMAT = {
+    "type": "json_schema",
+    "json_schema": {
+        "name": "translation_output",
+        "strict": True,
+        "schema": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "description": "The translated blog post title.",
+                },
+                "excerpt": {
+                    "type": "string",
+                    "description": "The translated blog post excerpt.",
+                },
+                "content_html": {
+                    "type": "string",
+                    "description": "The complete translated post body converted to HTML.",
+                },
+            },
+            "required": ["title", "excerpt", "content_html"],
+            "additionalProperties": False,
+        },
+    },
+}
 
 
 def validate_translation_output(body: str, translation: dict) -> None:
@@ -322,7 +358,12 @@ def validate_translation_output(body: str, translation: dict) -> None:
     structural_tags = len(re.findall(r"</(?:p|h[1-6]|li|blockquote|pre|ul|ol)>", content_html))
 
     # Long-form posts should not collapse into a few dozen characters or a single tag.
-    min_chars = 500 if source_chars > 3000 else max(150, source_chars // 8)
+    if source_chars < 150:
+        min_chars = max(1, source_chars // 2)
+    elif source_chars > 3000:
+        min_chars = 500
+    else:
+        min_chars = max(150, source_chars // 8)
     if translated_chars < min_chars:
         raise ValueError(
             f"Translation appears truncated: content_html too short ({translated_chars} chars for {source_chars}-char source)"
@@ -333,71 +374,108 @@ def validate_translation_output(body: str, translation: dict) -> None:
         )
 
 
-async def translate_with_claude_async(
-    client: anthropic.AsyncAnthropic,
+def parse_translation_response(body: str, response_text: str) -> dict:
+    """Parse model JSON, tolerating fenced JSON despite the prompt."""
+    text = response_text.strip()
+    fenced = re.match(r"^```(?:json)?\s*(.*?)\s*```$", text, flags=re.DOTALL | re.IGNORECASE)
+    if fenced:
+        text = fenced.group(1).strip()
+    elif not text.startswith("{"):
+        start = text.find("{")
+        end = text.rfind("}")
+        if start != -1 and end != -1 and end > start:
+            text = text[start:end + 1]
+
+    parsed = TranslationOutput.model_validate_json(text)
+    result = parsed.model_dump()
+    validate_translation_output(body, result)
+    return result
+
+
+class OpenRouterAPIError(Exception):
+    """Error returned by OpenRouter or its upstream provider."""
+
+    def __init__(self, status_code: int, message: str):
+        super().__init__(message)
+        self.status_code = status_code
+
+
+async def translate_with_openrouter_async(
+    client: httpx.AsyncClient,
     title: str,
     excerpt: str,
     body: str,
     lang_code: str,
+    model: str,
     max_retries: int = MAX_RETRIES,
     initial_delay: int = INITIAL_RETRY_DELAY,
     verbose: bool = False,
 ) -> dict:
-    """Translate content using Claude API with streaming and structured outputs (async version).
-    
-    Uses streaming API with prompt caching to support long-running translations (>10 minutes).
-    """
+    """Translate content using OpenRouter chat completions."""
     lang_info = SUPPORTED_LANGUAGES[lang_code]
-    system_blocks, messages = build_translation_messages(
+    messages = build_translation_messages(
         title=title,
         excerpt=excerpt,
         body=body,
         target_language=lang_info["name"],
         target_native=lang_info["native"],
     )
+    payload = {
+        "model": model,
+        "messages": messages,
+        "max_tokens": 50000,
+        "temperature": 0,
+        "response_format": TRANSLATION_RESPONSE_FORMAT,
+        "provider": {
+            "require_parameters": True,
+        },
+    }
     
     retry_delay = initial_delay
     last_exception = None
     
     for attempt in range(max_retries):
         try:
-            # Use streaming API with prompt caching for better performance
-            # Prompt caching reduces cost by 45-80% and improves TTFT by 13-31%
-            async with client.beta.messages.stream(
-                model=CLAUDE_MODEL,
-                max_tokens=50000,  # Increased for very long posts
-                temperature=0,  # Deterministic output for consistent translations
-                betas=["structured-outputs-2025-11-13", "prompt-caching-2024-07-31"],
-                system=system_blocks,  # System blocks with cache_control
-                messages=messages,
-                output_format=TranslationOutput,  # Pass Pydantic model directly for streaming
-                service_tier="auto",  # Auto-select service tier for better performance and reliability
-            ) as stream:
-                message = await stream.get_final_message()
-            
-            # Check for refusal
-            if message.stop_reason == "refusal":
-                raise ValueError("Claude refused to translate this content")
-            
-            # Check if response was truncated due to token limit
-            if message.stop_reason == "max_tokens":
+            response = await client.post(OPENROUTER_API_URL, json=payload)
+            if response.status_code >= 400:
+                try:
+                    error_data = response.json()
+                    error_message = error_data.get("error", {}).get("message") or response.text
+                except Exception:
+                    error_message = response.text
+                raise OpenRouterAPIError(response.status_code, error_message)
+
+            data = response.json()
+            choice = data["choices"][0]
+            finish_reason = choice.get("finish_reason")
+            if finish_reason in {"length", "max_tokens"}:
                 raise ValueError("Response truncated due to max_tokens limit - increase max_tokens or reduce content")
-            
-            # Parse and validate the structured JSON response with Pydantic
-            response_text = message.content[0].text
-            try:
-                parsed = TranslationOutput.model_validate_json(response_text)
+
+            content = choice.get("message", {}).get("content", "")
+            if content is None:
+                raise ValueError("Model returned empty content")
+            if isinstance(content, dict):
+                parsed = TranslationOutput.model_validate(content)
                 result = parsed.model_dump()
                 validate_translation_output(body, result)
+                return result
+            if isinstance(content, list):
+                content = "\n".join(
+                    part.get("text", "") if isinstance(part, dict) else str(part)
+                    for part in content
+                )
+
+            try:
+                result = parse_translation_response(body, content)
             except Exception as json_error:
                 # Log the raw response snippet for debugging
-                response_snippet = response_text[:500] if len(response_text) > 500 else response_text
+                response_snippet = content[:500] if len(content) > 500 else content
                 raise ValueError(f"Failed to parse translation JSON: {json_error}. Response snippet: {response_snippet}")
             
             return result
             
-        except asyncio.TimeoutError:
-            last_exception = TimeoutError(f"API request timed out after 600s")
+        except httpx.TimeoutException:
+            last_exception = TimeoutError("API request timed out")
             if attempt < max_retries - 1:
                 if verbose:
                     print(f"    Request timed out. Retrying in {retry_delay}s...")
@@ -405,24 +483,22 @@ async def translate_with_claude_async(
                 retry_delay = min(retry_delay * 2, MAX_RETRY_DELAY)
             else:
                 raise TimeoutError(f"API request timed out after {max_retries} attempts")
-            
-        except anthropic.RateLimitError as e:
+
+        except OpenRouterAPIError as e:
             last_exception = e
-            if attempt < max_retries - 1:
+            if attempt < max_retries - 1 and e.status_code in {408, 429, 500, 502, 503, 504}:
                 if verbose:
-                    print(f"    Rate limited. Retrying in {retry_delay}s...")
+                    print(f"    API error (status {e.status_code}). Retrying in {retry_delay}s...")
                 await asyncio.sleep(retry_delay)
                 retry_delay = min(retry_delay * 2, MAX_RETRY_DELAY)
             else:
                 raise
-                
-        except anthropic.APIError as e:
+
+        except httpx.HTTPError as e:
             last_exception = e
-            # Handle 499 (client closed request) and 5xx errors
-            if attempt < max_retries - 1 and (hasattr(e, 'status_code') and (e.status_code >= 500 or e.status_code == 499)):
+            if attempt < max_retries - 1:
                 if verbose:
-                    status = getattr(e, 'status_code', 'unknown')
-                    print(f"    API error (status {status}). Retrying in {retry_delay}s...")
+                    print(f"    Network error. Retrying in {retry_delay}s...")
                 await asyncio.sleep(retry_delay)
                 retry_delay = min(retry_delay * 2, MAX_RETRY_DELAY)
             else:
@@ -463,6 +539,7 @@ def save_translation(
     slug: str,
     translation: dict,
     source_hash: str,
+    model: str,
 ) -> Path:
     """Save translation to JSON file."""
     # Ensure directory exists
@@ -475,7 +552,7 @@ def save_translation(
         "excerpt": translation["excerpt"],
         "content_html": translation["content_html"],
         "source_hash": source_hash,
-        "model": CLAUDE_MODEL,
+        "model": model,
         "generated_at": datetime.now(timezone.utc).isoformat(),
     }
     
@@ -507,13 +584,14 @@ def get_posts_to_translate(specific_post: Optional[str] = None) -> list[Path]:
 
 async def translate_task(
     semaphore: asyncio.Semaphore,
-    client: anthropic.AsyncAnthropic,
+    client: httpx.AsyncClient,
     slug: str,
     title: str,
     excerpt: str,
     body: str,
     lang: str,
     content_hash: str,
+    model: str,
     pbar: tqdm,
     token_counter: dict,
     max_retries: int = MAX_RETRIES,
@@ -530,12 +608,13 @@ async def translate_task(
         try:
             pbar.set_description(f"Translating {slug[:20]}... ({lang})")
             
-            translation = await translate_with_claude_async(
+            translation = await translate_with_openrouter_async(
                 client=client,
                 title=title,
                 excerpt=excerpt,
                 body=body,
                 lang_code=lang,
+                model=model,
                 max_retries=max_retries,
                 initial_delay=retry_delay,
                 verbose=False,
@@ -547,6 +626,7 @@ async def translate_task(
                 slug=slug,
                 translation=translation,
                 source_hash=content_hash,
+                model=model,
             )
             
             # Update token counter (thread-safe)
@@ -566,22 +646,22 @@ async def translate_task(
             pbar.write(f"⏱ Timeout: {slug} ({lang})")
             return {"status": "failed", "lang": lang, "slug": slug, "error": error_msg}
             
-        except anthropic.RateLimitError as e:
-            error_msg = f"Rate limited: {str(e)[:60]}"
+        except OpenRouterAPIError as e:
+            status_code = getattr(e, "status_code", "unknown")
+            error_msg = f"API error ({status_code}): {str(e)[:60]}"
             log_error_to_file(slug, lang, e)
             pbar.update(1)
-            pbar.write(f"⚠ Rate limited: {slug} ({lang})")
-            return {"status": "failed", "lang": lang, "slug": slug, "error": error_msg}
-            
-        except anthropic.APIError as e:
-            status_code = getattr(e, 'status_code', 'unknown')
-            if status_code == 499:
-                error_msg = f"Client closed request (499) - connection interrupted"
+            if status_code == 429:
+                pbar.write(f"⚠ Rate limited: {slug} ({lang})")
             else:
-                error_msg = f"API error ({status_code}): {str(e)[:60]}"
+                pbar.write(f"✗ API error ({status_code}): {slug} ({lang})")
+            return {"status": "failed", "lang": lang, "slug": slug, "error": error_msg}
+
+        except httpx.HTTPError as e:
+            error_msg = f"Network error: {str(e)[:60]}"
             log_error_to_file(slug, lang, e)
             pbar.update(1)
-            pbar.write(f"✗ API error ({status_code}): {slug} ({lang})")
+            pbar.write(f"✗ Network error: {slug} ({lang})")
             return {"status": "failed", "lang": lang, "slug": slug, "error": error_msg}
             
         except Exception as e:
@@ -596,24 +676,11 @@ async def translate_task(
 async def run_translations_async(args: argparse.Namespace):
     """Run translations asynchronously with concurrency control."""
     # Check for API key
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    api_key = os.environ.get("OPENROUTER_API_KEY")
     if not api_key and not args.dry_run:
-        print("Error: ANTHROPIC_API_KEY environment variable not set")
-        print("Set it with: export ANTHROPIC_API_KEY='your-api-key'")
+        print("Error: OPENROUTER_API_KEY environment variable not set")
+        print("Set it with: export OPENROUTER_API_KEY='your-api-key'")
         sys.exit(1)
-    
-    # Initialize async Claude client
-    client = None
-    if not args.dry_run:
-        client = anthropic.AsyncAnthropic(
-            api_key=api_key,
-            timeout=httpx.Timeout(
-                TOTAL_TIMEOUT,      # 20 minutes total timeout
-                connect=CONNECTION_TIMEOUT,  # 30s to establish connection
-                read=READ_TIMEOUT,    # 10 minutes read timeout (for "thinking" pauses)
-                write=WRITE_TIMEOUT,    # 60s write timeout
-            ),
-        )
     
     # Get target languages
     if args.lang:
@@ -722,6 +789,22 @@ async def run_translations_async(args: argparse.Namespace):
     print(f"\nTranslating {stats['to_translate']} posts to {len(target_languages)} languages")
     print(f"Cached: {stats['cached']} | New: {stats['to_translate']} | Total: {stats['total_possible']}")
     print(f"Estimated tokens: {total_tokens:,} (~{total_tokens/1000:.1f}k)")
+    print(f"Model: {args.model}")
+
+    client = httpx.AsyncClient(
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+            "HTTP-Referer": OPENROUTER_SITE_URL,
+            "X-Title": OPENROUTER_APP_NAME,
+        },
+        timeout=httpx.Timeout(
+            TOTAL_TIMEOUT,      # 20 minutes total timeout
+            connect=CONNECTION_TIMEOUT,  # 30s to establish connection
+            read=READ_TIMEOUT,    # 10 minutes read timeout (for "thinking" pauses)
+            write=WRITE_TIMEOUT,    # 60s write timeout
+        ),
+    )
     
     # Create semaphore for concurrency control
     semaphore = asyncio.Semaphore(args.concurrency)
@@ -732,29 +815,33 @@ async def run_translations_async(args: argparse.Namespace):
     # Record start time
     start_time = datetime.now()
     
-    # Create progress bar
-    with tqdm(total=len(tasks_to_run), desc="Translating", unit="translation", ncols=120) as pbar:
-        # Create async tasks
-        async_tasks = [
-            translate_task(
-                semaphore=semaphore,
-                client=client,
-                slug=task["slug"],
-                title=task["title"],
-                excerpt=task["excerpt"],
-                body=task["body"],
-                lang=task["lang"],
-                content_hash=task["content_hash"],
-                pbar=pbar,
-                token_counter=token_counter,
-                max_retries=args.max_retries,
-                retry_delay=args.retry_delay,
-            )
-            for task in tasks_to_run
-        ]
-        
-        # Run all tasks concurrently
-        results = await asyncio.gather(*async_tasks, return_exceptions=True)
+    try:
+        # Create progress bar
+        with tqdm(total=len(tasks_to_run), desc="Translating", unit="translation", ncols=120) as pbar:
+            # Create async tasks
+            async_tasks = [
+                translate_task(
+                    semaphore=semaphore,
+                    client=client,
+                    slug=task["slug"],
+                    title=task["title"],
+                    excerpt=task["excerpt"],
+                    body=task["body"],
+                    lang=task["lang"],
+                    content_hash=task["content_hash"],
+                    model=args.model,
+                    pbar=pbar,
+                    token_counter=token_counter,
+                    max_retries=args.max_retries,
+                    retry_delay=args.retry_delay,
+                )
+                for task in tasks_to_run
+            ]
+
+            # Run all tasks concurrently
+            results = await asyncio.gather(*async_tasks, return_exceptions=True)
+    finally:
+        await client.aclose()
     
     # Calculate time taken
     end_time = datetime.now()

@@ -10,6 +10,9 @@ page_scripts:
   - /assets/js/pages/stats.js
 ---
 
+{% assign view_counts = site.data.view_count.view_counts %}
+{% assign view_count_size = view_counts | size %}
+
 <div class="stats-container">
   <header class="stats-header">
     <h1>Site Statistics</h1>
@@ -27,7 +30,7 @@ page_scripts:
       <h3 class="stat-label">Total Views</h3>
       <p class="stat-value" id="total-views">
         {% assign total_views = 0 %}
-        {% for item in site.data.view_count.view_counts %}
+        {% for item in view_counts %}
           {% assign total_views = total_views | plus: item.views %}
         {% endfor %}
         {{ total_views }}
@@ -49,12 +52,15 @@ page_scripts:
       <h3 class="stat-label">Avg. Engagement</h3>
       <p class="stat-value" id="avg-engagement">
         {% assign total_engagement = 0 %}
-        {% assign count = site.data.view_count.view_counts | size %}
-        {% for item in site.data.view_count.view_counts %}
+        {% for item in view_counts %}
           {% assign total_engagement = total_engagement | plus: item.engagement_rate %}
         {% endfor %}
-        {% assign avg = total_engagement | divided_by: count | round %}
-        {{ avg }}%
+        {% if view_count_size > 0 %}
+          {% assign avg = total_engagement | divided_by: view_count_size | round %}
+          {{ avg }}%
+        {% else %}
+          0%
+        {% endif %}
       </p>
       <p class="stat-description">Average reader engagement</p>
     </div>
@@ -70,13 +76,16 @@ page_scripts:
       <h3 class="stat-label">Avg. Read Time</h3>
       <p class="stat-value" id="avg-read-time">
         {% assign total_duration = 0 %}
-        {% assign count = site.data.view_count.view_counts | size %}
-        {% for item in site.data.view_count.view_counts %}
+        {% for item in view_counts %}
           {% assign total_duration = total_duration | plus: item.avg_duration_seconds %}
         {% endfor %}
-        {% assign avg_seconds = total_duration | divided_by: count | round %}
-        {% assign avg_minutes = avg_seconds | divided_by: 60 | round %}
-        {{ avg_minutes }}m
+        {% if view_count_size > 0 %}
+          {% assign avg_seconds = total_duration | divided_by: view_count_size | round %}
+          {% assign avg_minutes = avg_seconds | divided_by: 60 | round %}
+          {{ avg_minutes }}m
+        {% else %}
+          0m
+        {% endif %}
       </p>
       <p class="stat-description">Time spent reading</p>
     </div>
@@ -106,7 +115,7 @@ page_scripts:
         <span class="stat-number">05</span>
       </div>
       <h3 class="stat-label">Tracked Posts</h3>
-      <p class="stat-value">{{ site.data.view_count.view_counts | size }}</p>
+      <p class="stat-value">{{ view_count_size }}</p>
       <p class="stat-description">Posts with 100+ views</p>
     </div>
   </section>
@@ -114,7 +123,8 @@ page_scripts:
   <section class="stats-section">
     <h2 class="stats-section-title">Top Performing Posts</h2>
     <div class="stats-table">
-      {% for item in site.data.view_count.view_counts %}
+      {% if view_count_size > 0 %}
+      {% for item in view_counts %}
         {% assign post_title = nil %}
         {% for post in site.posts %}
           {% if post.url == item.url %}
@@ -146,6 +156,17 @@ page_scripts:
           </div>
         </div>
       {% endfor %}
+      {% else %}
+        <div class="stats-row">
+          <div class="stats-row-content">
+            <span class="stats-rank">0</span>
+            <div class="stats-row-info">
+              <span class="stats-row-title">No analytics data available</span>
+              <span class="stats-row-url">The dashboard will update when view data is available.</span>
+            </div>
+          </div>
+        </div>
+      {% endif %}
     </div>
   </section>
 

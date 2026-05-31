@@ -516,6 +516,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/de/context-engineering-why-prompt-engineering-was-never-enough.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/de/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -572,6 +577,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/de/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/de/new-blog.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -756,6 +766,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/es/new-blog.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/es/oidc-a-proposal.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -932,6 +947,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/fr/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/fr/new-blog.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1116,6 +1136,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/hi/new-blog.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/hi/oidc-a-proposal.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1292,6 +1317,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/ja/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/ja/new-blog.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1476,6 +1506,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/ko/new-blog.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/ko/oidc-a-proposal.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1656,6 +1691,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/pt/new-blog.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/pt/oidc-a-proposal.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1771,6 +1811,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/zh/context-engineering-why-prompt-engineering-was-never-enough.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/zh/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1827,6 +1872,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/zh/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/translations/zh/new-blog.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

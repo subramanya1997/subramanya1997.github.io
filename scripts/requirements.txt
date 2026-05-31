@@ -1,8 +1,11 @@
 # Python dependencies for blog translation system
 # Install with: pip install -r requirements.txt
 
-# Anthropic API for Claude 4.5 Sonnet
-anthropic>=0.75.0
+# OpenRouter API calls
+httpx>=0.27.0
+
+# Structured response validation
+pydantic>=2.0.0
 
 # YAML parsing for Jekyll front matter
 pyyaml>=6.0

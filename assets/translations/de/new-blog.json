@@ -1,0 +1,8 @@
+{
+  "title": "Neuer Blog",
+  "excerpt": "Bis 2026 besteht die eigentliche Aufgabe in modernen KI-Systemen nicht darin, einen cleveren Prompt zu verfassen. Es geht darum zu entscheiden, was das Modell sieht, wann es das sieht und wie dieser Kontext strukturiert, persistiert und in dauerhaftes Gedächtnis umgewandelt wird.",
+  "content_html": "<p>Neuer Blog</p>",
+  "source_hash": "sha256:27ffb92b426b3254353c03480016ba78a8247f3a579103596c44f7720c3202c7",
+  "model": "moonshotai/kimi-k2.6",
+  "generated_at": "2026-05-31T02:53:10.886306+00:00"
+}
