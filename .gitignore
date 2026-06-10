@@ -29,3 +29,4 @@ env/
 
 .env
 .gstack/
+scripts/translation_errors.log
