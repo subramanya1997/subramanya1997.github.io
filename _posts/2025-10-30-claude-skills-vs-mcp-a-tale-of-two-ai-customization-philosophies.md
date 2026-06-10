@@ -5,6 +5,7 @@ description: "Claude Skills vs MCP explained: key differences, use cases, archit
 excerpt: "Anthropic has introduced two powerful but distinct approaches to AI customization: Claude Skills and the Model Context Protocol (MCP). While both aim to make AI more useful and integrated into our workflows, they operate on fundamentally different principles. This post explores their differences, synergies, and the exciting future they represent."
 author: Subramanya N
 date: 2025-10-30
+image: /assets/images/og/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.png
 tags: [AI, Claude, MCP, Claude Skills, Agent Skills, AI Customization, LLM, Anthropic, Integration, Workflows]
 ready: true
 ---

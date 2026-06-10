@@ -4,6 +4,7 @@ title: "Demystifying the Shell Scripting: Working with Files and Directories"
 description: "Shell scripting guide for files and directories: create, copy, move, delete, read, write, and search files using practical Bash examples."
 excerpt: Master the art of working with files and directories in shell scripting to streamline your tasks and improve efficiency. Learn how to create, copy, move, and delete files and directories, as well as read and write to files using practical examples. Discover the power of searching for files and directories with the `find` command. Enhance your shell scripting skills with valuable resources and tutorials, and unlock the full potential of file and directory management in the shell.
 date: 2023-01-04
+image: /assets/images/og/demystifying-the-shell-scripting-working-with-files-and-directories.png
 tags: [Shell Scripting, Bash, Shell, File Management, Directory Management]
 ready: true
 ---

@@ -5,6 +5,7 @@ description: "OIDC-A proposal for OpenID Connect agent identity, delegation chai
 excerpt: Technical proposal for extending OpenID Connect Core 1.0 to provide a framework for representing, authenticating, and authorizing LLM-based agents within the OAuth 2.0 ecosystem.
 author: Subramanya N
 date: 2025-04-28
+image: /assets/images/og/oidc-a-proposal.png
 tags: [OpenID, OAuth, AI, Agents, Security, Identity, Authentication, Authorization, Standards, Proposal, Specification]
 ready: true
 ---

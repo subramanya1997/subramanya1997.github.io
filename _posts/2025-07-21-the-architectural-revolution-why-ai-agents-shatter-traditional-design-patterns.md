@@ -5,6 +5,7 @@ description: "Why AI agents challenge traditional software architecture, microse
 excerpt: "For decades, software architects have operated under a fundamental assumption: we design systems, and systems execute our designs. AI agents are rewriting this contract entirely. Unlike the monoliths and microservices that came before them, AI agents don't just execute architecture—they evolve it."
 author: Subramanya N
 date: 2025-07-21
+image: /assets/images/og/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns.png
 tags: [AI, Agents, Architecture, Software Design, Microservices, Evolution, Emergence]
 mermaid: true
 ready: true

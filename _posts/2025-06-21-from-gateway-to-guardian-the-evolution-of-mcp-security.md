@@ -5,6 +5,7 @@ description: "MCP security architecture beyond gateways: identity-aware proxies,
 excerpt: While AWS's MCP Gateway solves operational challenges, production AI systems demand evolution from basic centralization to identity-aware security guardians that address the "lethal trifecta" of vulnerabilities in enterprise deployments.
 author: Subramanya N
 date: 2025-06-21
+image: /assets/images/og/from-gateway-to-guardian-the-evolution-of-mcp-security.png
 tags: [MCP, Security, API Gateway, AI Agents, Architecture, Evolution]
 mermaid: true
 ready: true

@@ -5,6 +5,7 @@ description: "How to define an MVP for AI apps by focusing on user value, realis
 excerpt: Exploring the concept of a Minimum Viable Product (MVP) in AI applications, focusing on delivering value by understanding and addressing user needs effectively.
 author: Subramanya N
 date: 2024-02-20
+image: /assets/images/og/a-feat-of-strength-mvp-for-ai-apps.png
 tags: [AI, MVP, Product Development, User Feedback, Innovation]
 ready: true
 ---

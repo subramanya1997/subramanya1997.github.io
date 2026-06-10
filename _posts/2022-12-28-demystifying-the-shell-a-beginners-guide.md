@@ -4,6 +4,7 @@ title: "Demystifying the Shell: A Beginner's Guide"
 description: "Learn shell basics for beginners: command-line navigation, connecting programs, tab completion, history, shortcuts, and practical CLI tips."
 excerpt: Discover the power of the shell, a command-line interface that allows you to interact with your computer's operating system more directly and efficiently. Learn the basics of using the shell, navigating within it, and connecting programs using simple examples. Enhance your skills with miscellaneous tips and resources, including tab completion, command history, keyboard shortcuts, and helpful online tools. Embrace the command line and unlock the full potential of the shell!
 date: 2022-12-28
+image: /assets/images/og/demystifying-the-shell-a-beginners-guide.png
 tags: [Bash, Shell]
 ready: true
 ---

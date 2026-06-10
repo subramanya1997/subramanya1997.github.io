@@ -5,6 +5,7 @@ description: "How to secure MCP servers with OIDC, OIDC-A, identity-aware API ga
 excerpt: Integrating OpenID Connect (OIDC) and the new OIDC-A agent extension with an identity-aware API gateway to securely authenticate users, LLM agents, and MCP tools—going far beyond basic API proxying.
 author: Subramanya N
 date: 2025-05-21
+image: /assets/images/og/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway.png
 tags: [OIDC, API Gateway, Security, Authentication, Authorization, Cloud, MCP, Architecture]
 mermaid: true
 ready: true

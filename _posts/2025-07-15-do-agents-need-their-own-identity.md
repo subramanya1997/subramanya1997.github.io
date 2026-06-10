@@ -5,6 +5,7 @@ description: "Should AI agents use user credentials or their own identities? A p
 excerpt: "As AI agents become more sophisticated and autonomous, a fundamental question is emerging: should agents operate under user credentials, or do they need their own distinct identities? This isn't just a technical curiosity—it's a critical trust and security decision that will shape how we build reliable, accountable AI systems."
 author: Subramanya N
 date: 2025-07-15
+image: /assets/images/og/do-agents-need-their-own-identity.png
 tags: [AI, Agents, Identity, Security, Trust, Governance]
 ready: true
 ---

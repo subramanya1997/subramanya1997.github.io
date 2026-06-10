@@ -5,6 +5,7 @@ description: "Context engineering explained: why modern AI systems depend on wha
 excerpt: "By 2026, the real job in modern AI systems is not writing a clever prompt. It is deciding what the model sees, when it sees it, and how that context is structured, persisted, and turned into durable memory."
 author: Subramanya N
 date: 2026-04-23
+image: /assets/images/og/context-engineering-why-prompt-engineering-was-never-enough.png
 tags: [Context Engineering, Context Graphs, AI Agents, RAG, Prompt Engineering, MCP, Enterprise AI, Agent Architecture, Agent Memory]
 mermaid: true
 ready: true

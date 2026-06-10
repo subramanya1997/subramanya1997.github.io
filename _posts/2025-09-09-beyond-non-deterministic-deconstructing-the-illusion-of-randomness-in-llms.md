@@ -5,6 +5,7 @@ description: "Why LLM behavior is often mislabeled as non-deterministic, and wha
 excerpt: "Attributing an LLM's behavior to 'non-determinism' is like blaming a complex system's emergent behavior on magic. It's an admission of incomprehension, not an explanation. The truth is far more fascinating and, for architects and engineers, far more critical to understand."
 author: Subramanya N
 date: 2025-09-09
+image: /assets/images/og/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms.png
 tags: [AI, LLM, Determinism, Architecture, Machine Learning, Prompt Engineering, Emergence]
 ready: true
 ---

@@ -23,6 +23,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          # Always build the tip of main: when called from update-analytics,
+          # the run's trigger SHA predates the data commit made mid-run.
+          ref: main
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

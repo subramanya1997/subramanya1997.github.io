@@ -5,6 +5,7 @@ description: "Why AI assistants need digital identities, delegated authorization
 excerpt: As AI assistants on platforms like Instagram, Facebook, and Booking.com become more autonomous, they need proper digital identities to securely act on our behalf. Learn how AI identity systems work and why they matter for consumer platforms.
 author: Subramanya N
 date: 2025-07-01
+image: /assets/images/og/securing-ai-assistants-digital-ids-for-ai.png
 tags: [AI, Security, Identity, AI Agents, Consumer Platforms, SPIFFE]
 mermaid: true
 ready: true

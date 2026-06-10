@@ -5,6 +5,7 @@ description: "A beginner-friendly guide to Git and version control: snapshots, c
 excerpt: How to use version control _properly_, and take advantage of it to save you from disaster, collaborate with others, and quickly find and isolate problematic changes. No more `rm -rf; git clone`. No more merge conflicts (well, fewer of them at least). No more huge blocks of commented-out code. No more fretting over how to find what broke your code. No more "oh no, did we delete the working code?!".
 author: Subramanya N
 date: 2022-12-21
+image: /assets/images/og/version-control.png
 tags: [Git, Version Control]
 ready: true
 ---
