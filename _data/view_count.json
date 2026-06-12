@@ -1,95 +1,95 @@
 {
-  "last_updated": "2026-06-10T19:39:06.929439",
+  "last_updated": "2026-06-12T01:53:26.366502",
   "view_counts": [
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
-      "views": 3531,
-      "avg_duration_seconds": 157.8,
-      "engagement_rate": 87.93
+      "views": 3555,
+      "avg_duration_seconds": 157.3,
+      "engagement_rate": 87.81
     },
     {
       "url": "/2025/04/28/oidc-a-proposal/",
-      "views": 3385,
+      "views": 3389,
       "avg_duration_seconds": 173.3,
-      "engagement_rate": 59.35
+      "engagement_rate": 59.54
     },
     {
       "url": "/2026/01/01/what-are-context-graphs-really/",
-      "views": 2380,
-      "avg_duration_seconds": 339.4,
-      "engagement_rate": 89.46
+      "views": 2393,
+      "avg_duration_seconds": 339.0,
+      "engagement_rate": 89.44
     },
     {
       "url": "/2025/12/26/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory/",
       "views": 1760,
-      "avg_duration_seconds": 384.2,
-      "engagement_rate": 91.88
+      "avg_duration_seconds": 384.0,
+      "engagement_rate": 91.89
     },
     {
       "url": "/2025/05/21/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway/",
       "views": 1578,
-      "avg_duration_seconds": 198.2,
-      "engagement_rate": 62.61
+      "avg_duration_seconds": 198.1,
+      "engagement_rate": 62.58
     },
     {
       "url": "/2026/01/04/a-year-with-cursor-how-my-workflow-evolved-from-agent-to-architect/",
-      "views": 1411,
-      "avg_duration_seconds": 283.9,
-      "engagement_rate": 92.04
+      "views": 1420,
+      "avg_duration_seconds": 288.5,
+      "engagement_rate": 91.92
     },
     {
       "url": "/2025/12/23/2025-the-year-agentic-ai-got-real-and-what-comes-next/",
-      "views": 980,
-      "avg_duration_seconds": 132.9,
-      "engagement_rate": 94.95
+      "views": 982,
+      "avg_duration_seconds": 132.6,
+      "engagement_rate": 94.73
     },
     {
       "url": "/2025/12/18/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle/",
-      "views": 915,
-      "avg_duration_seconds": 177.5,
-      "engagement_rate": 93.24
+      "views": 916,
+      "avg_duration_seconds": 178.1,
+      "engagement_rate": 93.07
     },
     {
       "url": "/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/",
       "views": 886,
-      "avg_duration_seconds": 103.6,
-      "engagement_rate": 50.44
+      "avg_duration_seconds": 103.4,
+      "engagement_rate": 50.62
     },
     {
       "url": "/2026/01/14/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it/",
-      "views": 866,
-      "avg_duration_seconds": 188.8,
-      "engagement_rate": 91.53
+      "views": 869,
+      "avg_duration_seconds": 187.9,
+      "engagement_rate": 91.46
     },
     {
       "url": "/2026/02/01/openclaw-and-the-rise-of-user-built-intelligence-a-wake-up-call-for-saas/",
-      "views": 774,
-      "avg_duration_seconds": 123.6,
-      "engagement_rate": 93.25
+      "views": 776,
+      "avg_duration_seconds": 123.3,
+      "engagement_rate": 93.51
     },
     {
       "url": "/2026/04/13/the-filesystem-is-the-database-why-agents-need-a-new-storage-primitive/",
-      "views": 562,
-      "avg_duration_seconds": 441.1,
-      "engagement_rate": 90.35
+      "views": 564,
+      "avg_duration_seconds": 443.5,
+      "engagement_rate": 90.02
     },
     {
       "url": "/2025/09/09/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms/",
-      "views": 526,
-      "avg_duration_seconds": 126.0,
-      "engagement_rate": 81.31
+      "views": 528,
+      "avg_duration_seconds": 126.4,
+      "engagement_rate": 81.74
     },
     {
       "url": "/2026/02/23/the-saaspocalypse-a-survival-guide/",
-      "views": 519,
-      "avg_duration_seconds": 144.4,
-      "engagement_rate": 91.14
+      "views": 525,
+      "avg_duration_seconds": 143.3,
+      "engagement_rate": 90.84
     },
     {
       "url": "/2025/11/20/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale/",
-      "views": 501,
-      "avg_duration_seconds": 105.2,
-      "engagement_rate": 86.6
+      "views": 504,
+      "avg_duration_seconds": 104.7,
+      "engagement_rate": 86.68
     },
     {
       "url": "/2024/01/11/the-nockout-story/",
@@ -111,21 +111,21 @@
     },
     {
       "url": "/2026/01/19/the-agentic-workspace-a-strategic-imperative-for-the-next-era-of-saas/",
-      "views": 340,
-      "avg_duration_seconds": 153.7,
-      "engagement_rate": 90.17
+      "views": 344,
+      "avg_duration_seconds": 152.2,
+      "engagement_rate": 89.69
+    },
+    {
+      "url": "/2026/04/23/context-engineering-why-prompt-engineering-was-never-enough/",
+      "views": 323,
+      "avg_duration_seconds": 238.0,
+      "engagement_rate": 93.45
     },
     {
       "url": "/2025/12/10/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026/",
       "views": 318,
       "avg_duration_seconds": 168.6,
       "engagement_rate": 92.11
-    },
-    {
-      "url": "/2026/04/23/context-engineering-why-prompt-engineering-was-never-enough/",
-      "views": 315,
-      "avg_duration_seconds": 225.9,
-      "engagement_rate": 93.64
     },
     {
       "url": "/2024/12/10/ai-agents-agentic-security-enterprise-automation/",
@@ -147,9 +147,9 @@
     },
     {
       "url": "/2026/02/19/the-year-saas-disappeared-into-the-conversation/",
-      "views": 194,
-      "avg_duration_seconds": 908.2,
-      "engagement_rate": 97.03
+      "views": 195,
+      "avg_duration_seconds": 894.5,
+      "engagement_rate": 96.04
     },
     {
       "url": "/2025/12/07/the-three-platform-problem-in-enterprise-ai/",
@@ -171,9 +171,9 @@
     },
     {
       "url": "/2025/07/21/the-architectural-revolution-why-ai-agents-shatter-traditional-design-patterns/",
-      "views": 151,
-      "avg_duration_seconds": 549.8,
-      "engagement_rate": 83.3
+      "views": 155,
+      "avg_duration_seconds": 538.0,
+      "engagement_rate": 81.29
     },
     {
       "url": "/2023/06/10/enhancing-document-interactions/",
