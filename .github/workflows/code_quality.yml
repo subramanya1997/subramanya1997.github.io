@@ -23,7 +23,10 @@ jobs:
       - run: bundle exec jekyll build
 
       - name: Run html-proofer
-        run: bundle exec htmlproofer ./_site --disable-external --ignore-empty-alt --ignore-urls "/localhost/,/127.0.0.1/" --enforce-https
+        # The handbook lives in a separate repo deployed at this path (a GitHub
+        # Pages project page under the apex domain), so it is not present in this
+        # repo's _site and html-proofer cannot resolve it locally.
+        run: bundle exec htmlproofer ./_site --disable-external --ignore-empty-alt --ignore-urls "/localhost/,/127.0.0.1/,/navigating-umass-amherst-a-handbook-for-international-students/" --enforce-https
 
       - name: Run content validation
         run: ruby scripts/validate_content.rb

@@ -31,8 +31,9 @@ layout: none
         <title>{{ book.title | xml_escape }}</title>
         <description>{{ book.content | xml_escape }}</description>
         <pubDate>{{ book.date | date_to_rfc822 }}</pubDate>
-        <link>{{ site.url }}{{ site.baseurl }}{{ book.url }}</link>
-        <guid isPermaLink="true">{{ site.url }}{{ site.baseurl }}{{ book.url }}</guid>
+        {% assign book_link = book.web_url | default: book.url %}
+        <link>{{ site.url }}{{ site.baseurl }}{{ book_link }}</link>
+        <guid isPermaLink="true">{{ site.url }}{{ site.baseurl }}{{ book_link }}</guid>
         {% for tag in book.tags %}
         <category>{{ tag | xml_escape }}</category>
         {% endfor %}

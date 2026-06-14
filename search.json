@@ -41,7 +41,8 @@ layout: none
     {
       "kind": "book",
       "title": {{ book.title | jsonify }},
-      "url": {{ book.url | prepend: site.baseurl | jsonify }},
+      {% assign book_link = book.web_url | default: book.url %}
+      "url": {{ book_link | prepend: site.baseurl | jsonify }},
       "date_display": {{ book.date | date: "%B %-d, %Y" | jsonify }},
       "date_iso": {{ book.date | date: "%Y-%m-%d" | jsonify }},
       "excerpt": {{ book.excerpt | strip_html | strip_newlines | strip | jsonify }},
