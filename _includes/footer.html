@@ -36,6 +36,10 @@
           </a>
         </li>{% endif %}
       </ul>
+      <nav class="footer-nav" aria-label="Secondary navigation">
+        <a href="{{ '/publications/' | prepend: site.baseurl }}" data-preserve-lang>Publications</a>
+        <a href="{{ '/stats/' | prepend: site.baseurl }}" data-preserve-lang>Stats</a>
+      </nav>
     </div>
 
     <div class="footer-right">
@@ -83,6 +87,23 @@
     list-style: none;
     margin: 0;
     padding: 0;
+  }
+
+  .footer-nav {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .footer-nav a {
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer-nav a:hover {
+    color: var(--text-primary);
   }
   
   .social-icon-link {

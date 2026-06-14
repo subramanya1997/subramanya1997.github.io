@@ -2,7 +2,6 @@
 layout: page
 title: Stats
 permalink: /stats/
-includelink: true
 custom_layout: true
 page_stylesheets:
   - /assets/css/pages/stats.css
