@@ -3,6 +3,7 @@ cv_file: /assets/resume/CV.pdf
 twitter_username: subramanya
 github_username:  subramanya1997
 linkedin_username: nsubramanya
+scholar_id: IyHluZcAAAAJ
 
 #Bio
 bio: I'm a machine learning engineer working on conversational AI, search, and agentic infrastructure for the enterprise. I'm currently the Founding ML Engineer & Lead Architect at Dylog and a Co-Founder of NockOut.
@@ -112,3 +113,18 @@ education:
     description: Fundamental computer science education with focus on practical implementation.
     details:
       - Coursework: Operating System, Data Structures & Algorithms, Data mining and warehousing
+
+#Publications
+publications:
+  - title: "Identity Management for Agentic AI: The New Frontier of Authorization, Authentication, and Security for an AI Agent World"
+    authors: "Tobin South, <strong>Subramanya Nagabhushanaradhya</strong>, Ayesha Dissanayaka, Sarah Cecchetti, George Fletcher, et al."
+    venue: arXiv preprint arXiv:2510.25819
+    year: 2025
+    url: https://arxiv.org/abs/2510.25819
+
+  - title: "OpenID Connect for Agents (OIDC-A) 1.0: A Standard Extension for LLM-Based Agent Identity and Authorization"
+    authors: "<strong>Subramanya Nagabhushanaradhya</strong>"
+    venue: arXiv preprint arXiv:2509.25974
+    year: 2025
+    url: https://arxiv.org/abs/2509.25974
+    related_post: /2025/04/28/oidc-a-proposal/
