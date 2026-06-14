@@ -1,0 +1,17 @@
+---
+---
+{% assign target = page.web_url | default: page.url | prepend: site.baseurl %}
+<!DOCTYPE html>
+<html lang="{{ site.default_lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting…</title>
+  <link rel="canonical" href="{{ page.web_url | prepend: site.url }}">
+  <meta name="robots" content="noindex, follow">
+  <meta http-equiv="refresh" content="0; url={{ target }}">
+  <script>location.replace("{{ target }}");</script>
+</head>
+<body>
+  <p>This handbook has moved. Redirecting to <a href="{{ target }}">{{ page.title }}</a>.</p>
+</body>
+</html>
