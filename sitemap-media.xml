@@ -291,6 +291,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/images/logos/cursor.svg</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/images/logos/dylog.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

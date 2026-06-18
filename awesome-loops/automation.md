@@ -21,7 +21,7 @@ page_scripts:
     <h1>Automation loop marketplace</h1>
     <p>Curated agent loops as copyable prompts, Agent Skills, Codex instructions, and Cursor rules. Every listing is Markdown, optional metadata stays optional, and every community submission goes through pull-request review.</p>
     <div class="loop-hero-actions">
-      <a href="#submit-loop" class="loop-primary-action">Submit loop</a>
+      <a href="#submit-loop" class="loop-primary-action">Create automation</a>
       <a href="https://github.com/subramanya1997/subramanya1997.github.io/tree/main/_loops" rel="noopener noreferrer">Browse Markdown</a>
     </div>
     <dl class="loop-stats" aria-label="Marketplace stats">
@@ -119,8 +119,8 @@ page_scripts:
   <section class="loop-submit" id="submit-loop">
     <div class="loop-submit-header">
       <p class="loop-eyebrow">Contribute</p>
-      <h2>Submit a loop</h2>
-      <p>Send the prompt or instructions you actually use. Source, attribution, tags, and MCP/resource links are optional.</p>
+      <h2>Create an automation loop</h2>
+      <p>Send the prompt or instructions you actually use. The form creates a Markdown file in `_loops/`; source, attribution, tags, and MCP/resource links are optional.</p>
     </div>
 
     <form class="loop-submit-form" id="loop-submit-form">
@@ -169,7 +169,7 @@ page_scripts:
       </label>
 
       <div class="loop-form-actions">
-        <button type="submit">Open PR contribution</button>
+        <button type="submit">Create automation loop</button>
         <button type="button" id="loop-preview-button">Preview Markdown</button>
       </div>
 

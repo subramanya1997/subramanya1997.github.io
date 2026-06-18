@@ -98,24 +98,31 @@ layout: default
   <section class="loop-export-panel" aria-label="Use this loop">
     <div>
       <p class="loop-eyebrow">Use this loop</p>
-      <h2>Export for your agent</h2>
-      <p>Open the loop as a reviewable prompt in Claude or Cursor, copy it into Codex or Cursor project instructions, or download a standards-shaped Agent Skill.</p>
-      <ul class="loop-export-hints">
-        <li>Skills install as <code>SKILL.md</code> inside <code>.agents/skills/{{ loop_export_slug }}/</code>, <code>.claude/skills/{{ loop_export_slug }}/</code>, or <code>.cursor/skills/{{ loop_export_slug }}/</code>.</li>
-        <li>Cursor rules install as <code>.cursor/rules/{{ loop_export_slug }}.mdc</code>.</li>
-        <li>Deep links open a local review step; they do not run the loop automatically.</li>
-      </ul>
+      <h2>Add to your agent</h2>
+      <p>Choose a platform. Each action opens a review step or copies the automation instructions for that tool.</p>
     </div>
-    <div class="loop-export-actions">
-      <button type="button" data-loop-export="prompt">Copy prompt</button>
-      <button type="button" data-loop-open="claude">Try in Claude</button>
-      <button type="button" data-loop-open="cursor-prompt">Try in Cursor</button>
-      <button type="button" data-loop-open="cursor-rule">Add Cursor rule</button>
-      <button type="button" data-loop-export="skill">Copy Skill.md</button>
-      <button type="button" data-loop-export="agents">Copy AGENTS.md block</button>
-      <button type="button" data-loop-export="cursor">Copy Cursor rule</button>
-      <button type="button" data-loop-download="skill">Download Skill.md</button>
-      <button type="button" data-loop-download="cursor">Download .mdc</button>
+    <div class="loop-platform-actions">
+      <button type="button" class="loop-platform-card" data-loop-open="claude">
+        <img src="{{ '/assets/images/logos/claude.svg' | prepend: site.baseurl }}" alt="" aria-hidden="true" width="40" height="40">
+        <span>
+          <strong>Claude</strong>
+          <small>Open prompt</small>
+        </span>
+      </button>
+      <button type="button" class="loop-platform-card" data-loop-open="cursor-rule">
+        <img src="{{ '/assets/images/logos/cursor.svg' | prepend: site.baseurl }}" alt="" aria-hidden="true" width="40" height="40">
+        <span>
+          <strong>Cursor</strong>
+          <small>Add rule</small>
+        </span>
+      </button>
+      <button type="button" class="loop-platform-card" data-loop-export="agents">
+        <img src="{{ '/assets/images/logos/openai.svg' | prepend: site.baseurl }}" alt="" aria-hidden="true" width="40" height="40">
+        <span>
+          <strong>OpenAI Codex</strong>
+          <small>Copy instructions</small>
+        </span>
+      </button>
     </div>
     <p class="loop-export-status" id="loop-export-status" aria-live="polite"></p>
   </section>

@@ -274,6 +274,11 @@
     if (status) status.textContent = message;
   }
 
+  function platformLabel(button) {
+    var label = button.querySelector("strong");
+    return label ? label.textContent.trim() : button.textContent.trim();
+  }
+
   function exportText(kind, loop) {
     if (kind === "skill") return buildSkill(loop);
     if (kind === "agents") return buildAgentsBlock(loop);
@@ -304,7 +309,7 @@
 
       return {
         url: "claude-cli://open?q=" + promptText,
-        message: "Opening Claude Code with a prompt preview. Review it before running."
+        message: "Opening Claude with a prompt preview. Review it before running."
       };
     }
 
@@ -408,7 +413,7 @@
 
     if (preview && form) {
       preview.addEventListener("click", function() {
-        showGenerated(buildMarkdown(form), "Preview generated. Submit opens GitHub with this Markdown.");
+        showGenerated(buildMarkdown(form), "Preview generated. Submit creates a Markdown loop in the automation collection.");
       });
     }
 
@@ -432,7 +437,7 @@
         });
         var url = root.getAttribute("data-github-new-url") + "?" + params.toString();
 
-        showGenerated(markdown, "Opening GitHub. Use Propose new file, then Create pull request.");
+        showGenerated(markdown, "Opening GitHub to create _loops/" + filename + " in the automation collection.");
 
         if (url.length > 7000) {
           byId("loop-generated-note").textContent = "This loop is long. Copy the Markdown into _loops/" + filename + " and open a pull request.";
@@ -450,7 +455,7 @@
           var kind = button.getAttribute("data-loop-export");
           copyText(exportText(kind, loop))
             .then(function() {
-              setExportStatus("Copied " + button.textContent.trim() + ".");
+              setExportStatus("Copied " + platformLabel(button) + " instructions.");
             })
             .catch(function() {
               setExportStatus("Copy failed. Use Download instead.");
