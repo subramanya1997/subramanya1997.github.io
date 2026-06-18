@@ -39,40 +39,10 @@
     return text.slice(0, 219).replace(/\s+\S*$/g, "") + ".";
   }
 
-  function sourceTitleFromUrl(url) {
-    try {
-      return new URL(url).hostname.replace(/^www\./, "");
-    } catch (error) {
-      return (url || "").replace(/^https?:\/\//, "").replace(/\/$/, "");
-    }
-  }
-
-  function parseLinks(value) {
-    return (value || "")
-      .split(/\r?\n/)
-      .map(function(line) { return line.trim(); })
-      .filter(Boolean)
-      .map(function(line) {
-        var parts = line.split("|").map(function(part) { return part.trim(); }).filter(Boolean);
-        if (parts.length >= 2) {
-          return { title: parts[0], url: parts.slice(1).join(" | ") };
-        }
-
-        return { title: sourceTitleFromUrl(parts[0] || line), url: parts[0] || line };
-      })
-      .filter(function(link) { return present(link.url); });
-  }
-
-  function pushYamlField(lines, key, value) {
-    if (present(value)) lines.push(key + ": " + yamlString(value));
-  }
-
   function buildMarkdown(form) {
     var data = new FormData(form);
     var title = data.get("title") || "Submitted loop";
-    var sourceUrl = data.get("source_url") || "";
     var tags = parseTags(data.get("tags"));
-    var links = parseLinks(data.get("links"));
     var instructions = (data.get("instructions") || "").trim();
     var excerpt = (data.get("excerpt") || "").trim() || deriveExcerpt(instructions);
 
@@ -84,22 +54,10 @@
       "status: submitted"
     ];
 
-    pushYamlField(frontMatter, "source_title", sourceUrl ? sourceTitleFromUrl(sourceUrl) : "");
-    pushYamlField(frontMatter, "source_url", sourceUrl);
-    pushYamlField(frontMatter, "attribution", data.get("attribution"));
-
     if (tags.length > 0) {
       frontMatter.push("tags:");
       tags.forEach(function(tag) {
         frontMatter.push("  - " + yamlString(tag));
-      });
-    }
-
-    if (links.length > 0) {
-      frontMatter.push("links:");
-      links.forEach(function(link) {
-        frontMatter.push("  - title: " + yamlString(link.title || sourceTitleFromUrl(link.url)));
-        frontMatter.push("    url: " + yamlString(link.url));
       });
     }
 

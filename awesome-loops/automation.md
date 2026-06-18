@@ -120,7 +120,7 @@ page_scripts:
     <div class="loop-submit-header">
       <p class="loop-eyebrow">Contribute</p>
       <h2>Create an automation loop</h2>
-      <p>Send the prompt or instructions you actually use. The form creates a Markdown file in `_loops/`; source, attribution, tags, and MCP/resource links are optional.</p>
+      <p>Send the prompt or instructions you actually use. The form creates a Markdown file in `_loops/` for the automation collection.</p>
     </div>
 
     <form class="loop-submit-form" id="loop-submit-form">
@@ -134,23 +134,6 @@ page_scripts:
       <div class="loop-form-row">
         <label for="loop-excerpt">Short pitch optional</label>
         <textarea id="loop-excerpt" name="excerpt" rows="2" maxlength="220" placeholder="Leave blank to derive this from the instructions."></textarea>
-      </div>
-
-      <div class="loop-form-grid">
-        <div class="loop-form-row">
-          <label for="loop-source-url">Source link optional</label>
-          <input id="loop-source-url" name="source_url" type="url" placeholder="https://example.com/source">
-        </div>
-
-        <div class="loop-form-row">
-          <label for="loop-attribution">Attribution optional</label>
-          <input id="loop-attribution" name="attribution" placeholder="Name, handle, or organization">
-        </div>
-      </div>
-
-      <div class="loop-form-row">
-        <label for="loop-links">MCP, repo, docs, or resource links optional</label>
-        <textarea id="loop-links" name="links" rows="3" placeholder="One per line. Use either https://example.com or Label | https://example.com"></textarea>
       </div>
 
       <div class="loop-form-row">
