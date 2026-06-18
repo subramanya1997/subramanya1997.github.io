@@ -26,6 +26,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/css/pages/loop-marketplace.css</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/css/pages/search.css</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -537,6 +542,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/js/pages/home.js</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/js/pages/loop-marketplace.js</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

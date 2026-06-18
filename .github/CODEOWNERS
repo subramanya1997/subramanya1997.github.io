@@ -1,0 +1,7 @@
+# Loop marketplace changes require maintainer review when code owner
+# review is enabled in branch protection.
+/_loops/ @subramanya1997
+/awesome-loops/ @subramanya1997
+/_layouts/loop.html @subramanya1997
+/assets/css/pages/loop-marketplace.css @subramanya1997
+/assets/js/pages/loop-marketplace.js @subramanya1997

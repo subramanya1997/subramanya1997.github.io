@@ -45,4 +45,11 @@ layout: null
       <priority>0.5</priority>
     </url>
   {% endfor %}
+  {% for loop in site.loops %}
+    <url>
+      <loc>{{ site.url }}{{ loop.url }}</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+  {% endfor %}
 </urlset>

@@ -1,0 +1,153 @@
+---
+layout: default
+---
+{% assign loop_export_slug = page.slug | default: page.title | slugify %}
+<article class="loop-detail">
+  <nav class="loop-breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="{{ '/' | prepend: site.baseurl }}" data-preserve-lang>Home</a></li>
+      <li><a href="{{ '/awesome-loops/automation/' | prepend: site.baseurl }}" data-preserve-lang>Loops</a></li>
+      <li aria-current="page">{{ page.title }}</li>
+    </ol>
+  </nav>
+
+  <header class="loop-detail-header">
+    {% if page.category or page.status %}
+      <p class="loop-eyebrow">
+        {% if page.category %}{{ page.category }}{% endif %}
+        {% if page.category and page.status %} / {% endif %}
+        {% if page.status %}{{ page.status }}{% endif %}
+      </p>
+    {% endif %}
+    <h1>{{ page.title }}</h1>
+    <p>{{ page.excerpt }}</p>
+  </header>
+
+  {% if page.category or page.trigger or page.cadence or page.tooling or page.proof or page.stop or page.memory %}
+    <section class="loop-detail-grid" aria-label="Optional loop details">
+      {% if page.category %}
+        <div>
+          <span>Category</span>
+          <strong>{{ page.category }}</strong>
+        </div>
+      {% endif %}
+      {% if page.trigger %}
+        <div>
+          <span>Trigger</span>
+          <strong>{{ page.trigger }}</strong>
+        </div>
+      {% endif %}
+      {% if page.cadence %}
+        <div>
+          <span>Cadence</span>
+          <strong>{{ page.cadence }}</strong>
+        </div>
+      {% endif %}
+      {% if page.tooling %}
+        <div>
+          <span>Tooling</span>
+          <strong>{{ page.tooling }}</strong>
+        </div>
+      {% endif %}
+      {% if page.proof %}
+        <div>
+          <span>Proof</span>
+          <strong>{{ page.proof }}</strong>
+        </div>
+      {% endif %}
+      {% if page.stop %}
+        <div>
+          <span>Stop</span>
+          <strong>{{ page.stop }}</strong>
+        </div>
+      {% endif %}
+      {% if page.memory %}
+        <div>
+          <span>Memory</span>
+          <strong>{{ page.memory }}</strong>
+        </div>
+      {% endif %}
+    </section>
+  {% endif %}
+
+  {% if page.source_url or page.source_title or page.attribution or page.links %}
+    <section class="loop-source-strip" aria-label="Links and attribution">
+      {% if page.source_url or page.source_title %}
+        <span>Source</span>
+        {% if page.source_url %}
+          <a href="{{ page.source_url }}" rel="noopener noreferrer">{{ page.source_title | default: page.source_url }}</a>
+        {% else %}
+          <strong>{{ page.source_title }}</strong>
+        {% endif %}
+      {% endif %}
+      {% if page.attribution %}
+        <span>Attribution</span>
+        <strong>{{ page.attribution }}</strong>
+      {% endif %}
+      {% if page.links %}
+        <span>Links</span>
+        <div class="loop-resource-links">
+          {% for link in page.links %}
+            <a href="{{ link.url }}" rel="noopener noreferrer">{{ link.title | default: link.url }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </section>
+  {% endif %}
+
+  <section class="loop-export-panel" aria-label="Use this loop">
+    <div>
+      <p class="loop-eyebrow">Use this loop</p>
+      <h2>Export for your agent</h2>
+      <p>Open the loop as a reviewable prompt in Claude or Cursor, copy it into Codex or Cursor project instructions, or download a standards-shaped Agent Skill.</p>
+      <ul class="loop-export-hints">
+        <li>Skills install as <code>SKILL.md</code> inside <code>.agents/skills/{{ loop_export_slug }}/</code>, <code>.claude/skills/{{ loop_export_slug }}/</code>, or <code>.cursor/skills/{{ loop_export_slug }}/</code>.</li>
+        <li>Cursor rules install as <code>.cursor/rules/{{ loop_export_slug }}.mdc</code>.</li>
+        <li>Deep links open a local review step; they do not run the loop automatically.</li>
+      </ul>
+    </div>
+    <div class="loop-export-actions">
+      <button type="button" data-loop-export="prompt">Copy prompt</button>
+      <button type="button" data-loop-open="claude">Try in Claude</button>
+      <button type="button" data-loop-open="cursor-prompt">Try in Cursor</button>
+      <button type="button" data-loop-open="cursor-rule">Add Cursor rule</button>
+      <button type="button" data-loop-export="skill">Copy Skill.md</button>
+      <button type="button" data-loop-export="agents">Copy AGENTS.md block</button>
+      <button type="button" data-loop-export="cursor">Copy Cursor rule</button>
+      <button type="button" data-loop-download="skill">Download Skill.md</button>
+      <button type="button" data-loop-download="cursor">Download .mdc</button>
+    </div>
+    <p class="loop-export-status" id="loop-export-status" aria-live="polite"></p>
+  </section>
+
+  <script type="application/json" id="loop-export-data">
+    {
+      "slug": {{ loop_export_slug | jsonify }},
+      "title": {{ page.title | jsonify }},
+      "excerpt": {{ page.excerpt | jsonify }},
+      "category": {{ page.category | jsonify }},
+      "trigger": {{ page.trigger | jsonify }},
+      "cadence": {{ page.cadence | jsonify }},
+      "tooling": {{ page.tooling | jsonify }},
+      "proof": {{ page.proof | jsonify }},
+      "stop": {{ page.stop | jsonify }},
+      "memory": {{ page.memory | jsonify }},
+      "sourceTitle": {{ page.source_title | jsonify }},
+      "sourceUrl": {{ page.source_url | jsonify }},
+      "attribution": {{ page.attribution | jsonify }},
+      "tags": {{ page.tags | jsonify }},
+      "links": {{ page.links | jsonify }},
+      "instructions": {{ page.content | strip | jsonify }}
+    }
+  </script>
+
+  <div class="post">
+    <article class="post-content loop-body">
+      {{ content }}
+    </article>
+  </div>
+
+  <footer class="loop-detail-footer">
+    <a href="https://github.com/subramanya1997/subramanya1997.github.io/edit/main/{{ page.path }}" rel="noopener noreferrer">Suggest an edit</a>
+  </footer>
+</article>

@@ -28,3 +28,9 @@ that prefer markdown can fetch those URLs directly or follow the
 {% for book in site.books %}
 - [{{ book.title }}]({{ site.url }}{{ book.web_url }}) (md: {{ site.url }}{{ book.url }}index.md)
 {% endfor %}
+
+## Automation Loop Marketplace
+- [Awesome Automation Loops]({{ site.url }}/awesome-loops/automation/) (md: {{ site.url }}/awesome-loops/automation/index.md)
+{% for loop in site.loops %}
+- [{{ loop.title }}]({{ site.url }}{{ loop.url }}) (md: {{ site.url }}{{ loop.url }}index.md): {{ loop.excerpt | strip_html | truncatewords: 20 }}
+{% endfor %}

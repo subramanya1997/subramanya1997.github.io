@@ -81,6 +81,7 @@ module Jekyll
 
       attach_twin(site, :post) { |list| list.concat(site.posts.docs) }
       attach_twin(site, :book) { |list| list.concat(site.collections.fetch("books", Collection.new(site, "books")).docs) }
+      attach_twin(site, :loop) { |list| list.concat(site.collections.fetch("loops", Collection.new(site, "loops")).docs) }
       attach_twin(site, :page) do |list|
         site.pages.each do |page|
           list << page if page.url.end_with?("/")
@@ -132,6 +133,8 @@ module Jekyll
       when :post
         [twin_url, document_twin(source, include_date: true)]
       when :book
+        [twin_url, document_twin(source, include_date: false)]
+      when :loop
         [twin_url, document_twin(source, include_date: false)]
       when :page
         [twin_url, page_twin(source)]

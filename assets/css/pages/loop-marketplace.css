@@ -1,0 +1,473 @@
+.loop-marketplace,
+.loop-detail {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+.loop-hero,
+.loop-submit,
+.loop-detail-header {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+}
+
+.loop-eyebrow,
+.loop-card-meta {
+  color: #2f6f64;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.loop-hero h1,
+.loop-detail-header h1 {
+  font-size: 44px;
+  line-height: 1.05;
+  margin: 0 0 16px;
+}
+
+.loop-hero p,
+.loop-detail-header p,
+.loop-submit-header p {
+  color: var(--text-secondary);
+  font-size: 16px;
+  max-width: 760px;
+}
+
+.loop-hero-actions,
+.loop-form-actions,
+.loop-card-footer,
+.loop-tags,
+.loop-source-strip,
+.loop-breadcrumbs ol,
+.loop-back-link,
+.loop-detail-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.loop-hero-actions {
+  margin: 24px 0;
+}
+
+.loop-hero-actions a,
+.loop-form-actions button,
+.loop-detail-footer a,
+.loop-back-link {
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-primary);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  min-height: 40px;
+  padding: 9px 14px;
+  text-decoration: none;
+}
+
+.loop-hero-actions .loop-primary-action,
+.loop-form-actions button[type="submit"] {
+  background: #183f3a;
+  border-color: #183f3a;
+  color: #ffffff;
+}
+
+.loop-stats,
+.loop-detail-grid,
+.loop-card-contract {
+  display: grid;
+  gap: 12px;
+}
+
+.loop-stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 620px;
+}
+
+.loop-stats div,
+.loop-detail-grid div,
+.loop-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.loop-stats div {
+  padding: 14px;
+}
+
+.loop-stats dt {
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.loop-stats dd {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin: 6px 0 0;
+}
+
+.loop-toolbar {
+  align-items: end;
+  display: grid;
+  grid-template-columns: auto minmax(220px, 1fr) auto minmax(160px, 240px) auto;
+  gap: 10px;
+  margin: 0 0 24px;
+}
+
+.loop-toolbar label,
+.loop-form-row label,
+.loop-generated label {
+  color: var(--text-secondary);
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.loop-toolbar input,
+.loop-toolbar select,
+.loop-submit-form input,
+.loop-submit-form select,
+.loop-submit-form textarea,
+.loop-generated textarea {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font: inherit;
+  min-height: 40px;
+  padding: 9px 10px;
+  width: 100%;
+}
+
+.loop-toolbar output {
+  color: var(--text-secondary);
+  font-size: 13px;
+  padding-bottom: 10px;
+  white-space: nowrap;
+}
+
+.loop-listings {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 44px;
+}
+
+.loop-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 100%;
+  padding: 20px;
+}
+
+.loop-card[hidden] {
+  display: none;
+}
+
+.loop-card h2 {
+  font-size: 22px;
+  margin: 0 0 10px;
+}
+
+.loop-card h2 a {
+  color: var(--text-primary);
+}
+
+.loop-card p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.loop-card-contract {
+  grid-template-columns: 1fr;
+}
+
+.loop-card-contract div {
+  border-left: 3px solid #d99042;
+  padding-left: 10px;
+}
+
+.loop-card-contract dt,
+.loop-detail-grid span,
+.loop-source-strip span {
+  color: var(--text-tertiary);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.loop-card-contract dd {
+  color: var(--text-primary);
+  margin: 2px 0 0;
+}
+
+.loop-tags span {
+  background: #eef4f2;
+  border: 1px solid #d7e6e2;
+  border-radius: 999px;
+  color: #204f49;
+  font-size: 12px;
+  padding: 3px 9px;
+}
+
+.loop-card-footer {
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 13px;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+.loop-submit {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.loop-submit-header h2 {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.loop-submit-form {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.loop-form-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.loop-form-row {
+  display: grid;
+  gap: 6px;
+}
+
+.loop-checkbox {
+  align-items: start;
+  color: var(--text-secondary);
+  display: flex;
+  gap: 10px;
+  line-height: 1.4;
+}
+
+.loop-checkbox input {
+  height: 18px;
+  margin-top: 2px;
+  min-height: 0;
+  width: 18px;
+}
+
+.loop-honeypot {
+  left: -9999px;
+  position: absolute;
+}
+
+.loop-generated {
+  display: grid;
+  gap: 8px;
+}
+
+.loop-generated p {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin: 0;
+}
+
+.loop-breadcrumbs {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.loop-breadcrumbs ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.loop-breadcrumbs li {
+  align-items: center;
+  display: inline-flex;
+  gap: 12px;
+}
+
+.loop-breadcrumbs li + li::before {
+  color: var(--text-tertiary);
+  content: "/";
+}
+
+.loop-breadcrumbs a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.loop-breadcrumbs a:hover {
+  color: var(--text-primary);
+}
+
+.loop-back-link {
+  display: inline-flex;
+  margin-bottom: 18px;
+}
+
+.loop-detail-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 20px;
+}
+
+.loop-detail-grid div {
+  padding: 16px;
+}
+
+.loop-detail-grid strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.loop-source-strip {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 22px;
+  padding: 12px 14px;
+}
+
+.loop-resource-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.loop-export-panel {
+  align-items: start;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  margin-bottom: 24px;
+  padding: 18px;
+}
+
+.loop-export-panel h2 {
+  font-size: 24px;
+  margin: 0 0 8px;
+}
+
+.loop-export-panel p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.loop-export-hints {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.45;
+  margin: 12px 0 0;
+  padding-left: 18px;
+}
+
+.loop-export-hints li + li {
+  margin-top: 6px;
+}
+
+.loop-export-hints code {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-size: 12px;
+  padding: 1px 4px;
+}
+
+.loop-export-actions {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.loop-export-actions button {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-primary);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  min-height: 40px;
+  padding: 9px 10px;
+}
+
+.loop-export-actions button:hover,
+.loop-form-actions button:hover,
+.loop-hero-actions a:hover,
+.loop-detail-footer a:hover,
+.loop-back-link:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+
+.loop-export-status {
+  grid-column: 1 / -1;
+  min-height: 20px;
+}
+
+.loop-body > * {
+  max-width: 880px;
+}
+
+.loop-detail-footer {
+  border-top: 1px solid var(--border-color);
+  margin-top: 34px;
+  padding-top: 18px;
+}
+
+@media screen and (max-width: 800px) {
+  .loop-hero h1,
+  .loop-detail-header h1 {
+    font-size: 34px;
+  }
+
+  .loop-toolbar,
+  .loop-listings,
+  .loop-form-grid,
+  .loop-detail-grid,
+  .loop-stats,
+  .loop-export-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .loop-export-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .loop-toolbar {
+    align-items: stretch;
+  }
+
+  .loop-toolbar output {
+    padding-bottom: 0;
+  }
+
+  .loop-submit {
+    padding: 18px;
+  }
+}
