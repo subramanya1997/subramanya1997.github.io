@@ -39,6 +39,85 @@
     return text.slice(0, 219).replace(/\s+\S*$/g, "") + ".";
   }
 
+  function escapeHtml(value) {
+    return (value || "").replace(/[&<>"']/g, function(character) {
+      return {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "\"": "&quot;",
+        "'": "&#39;"
+      }[character];
+    });
+  }
+
+  function renderInline(value) {
+    return escapeHtml(value)
+      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+      .replace(/`([^`]+)`/g, "<code>$1</code>");
+  }
+
+  function markdownToHtml(markdown) {
+    var lines = (markdown || "").trim().split(/\r?\n/);
+    var html = [];
+    var paragraph = [];
+    var listType = null;
+
+    function flushParagraph() {
+      if (paragraph.length > 0) {
+        html.push("<p>" + renderInline(paragraph.join(" ")) + "</p>");
+        paragraph = [];
+      }
+    }
+
+    function flushList() {
+      if (listType) {
+        html.push("</" + listType + ">");
+        listType = null;
+      }
+    }
+
+    lines.forEach(function(line) {
+      var trimmed = line.trim();
+      var heading = /^(#{1,3})\s+(.+)$/.exec(trimmed);
+      var ordered = /^\d+\.\s+(.+)$/.exec(trimmed);
+      var bullet = /^[-*]\s+(.+)$/.exec(trimmed);
+
+      if (!trimmed) {
+        flushParagraph();
+        flushList();
+        return;
+      }
+
+      if (heading) {
+        flushParagraph();
+        flushList();
+        html.push("<h" + Math.min(heading[1].length + 2, 4) + ">" + renderInline(heading[2]) + "</h" + Math.min(heading[1].length + 2, 4) + ">");
+        return;
+      }
+
+      if (ordered || bullet) {
+        flushParagraph();
+        var nextListType = ordered ? "ol" : "ul";
+        if (listType !== nextListType) {
+          flushList();
+          html.push("<" + nextListType + ">");
+          listType = nextListType;
+        }
+        html.push("<li>" + renderInline((ordered || bullet)[1]) + "</li>");
+        return;
+      }
+
+      flushList();
+      paragraph.push(trimmed);
+    });
+
+    flushParagraph();
+    flushList();
+
+    return html.join("") || "<p>Loop instructions will appear here.</p>";
+  }
+
   function buildMarkdown(form) {
     var data = new FormData(form);
     var title = data.get("title") || "Submitted loop";
@@ -185,6 +264,11 @@
     if (status) status.textContent = message;
   }
 
+  function setSubmitNote(message) {
+    var note = byId("loop-submit-note");
+    if (note) note.textContent = message;
+  }
+
   function deepLink(kind, loop) {
     var prompt = buildLoopPrompt(loop);
     var promptText = encodeURIComponent(prompt);
@@ -311,32 +395,69 @@
     if (count) count.textContent = visible + (visible === 1 ? " loop" : " loops");
   }
 
-  function showGenerated(markdown, note) {
-    var panel = byId("loop-generated");
-    var textarea = byId("loop-generated-markdown");
-    var noteEl = byId("loop-generated-note");
+  function updateLoopPreview(form) {
+    var data = new FormData(form);
+    var title = (data.get("title") || "").trim() || "Untitled automation loop";
+    var instructions = (data.get("instructions") || "").trim();
+    var excerpt = (data.get("excerpt") || "").trim() || deriveExcerpt(instructions);
+    var tags = parseTags(data.get("tags"));
+    var titleNode = byId("loop-preview-title");
+    var descriptionNode = byId("loop-preview-description");
+    var tagsNode = byId("loop-preview-tags");
+    var contentNode = byId("loop-preview-content");
+    var markdownNode = byId("loop-markdown-preview");
 
-    if (!panel || !textarea) return;
-    textarea.value = markdown;
-    panel.hidden = false;
-    if (noteEl) noteEl.textContent = note || "";
+    if (titleNode) titleNode.textContent = title;
+    if (descriptionNode) descriptionNode.textContent = excerpt;
+    if (contentNode) contentNode.innerHTML = markdownToHtml(instructions);
+    if (markdownNode) markdownNode.textContent = buildMarkdown(form);
+
+    if (tagsNode) {
+      tagsNode.innerHTML = "";
+      tagsNode.hidden = tags.length === 0;
+      tags.forEach(function(tag) {
+        var node = document.createElement("span");
+        node.textContent = tag;
+        tagsNode.appendChild(node);
+      });
+    }
+  }
+
+  function setPreviewTab(name) {
+    var renderedPanel = byId("loop-rendered-preview");
+    var markdownPanel = byId("loop-markdown-preview-panel");
+
+    document.querySelectorAll("[data-loop-preview-tab]").forEach(function(button) {
+      var selected = button.getAttribute("data-loop-preview-tab") === name;
+      button.classList.toggle("is-active", selected);
+      button.setAttribute("aria-selected", selected ? "true" : "false");
+    });
+
+    if (renderedPanel) renderedPanel.hidden = name !== "rendered";
+    if (markdownPanel) markdownPanel.hidden = name !== "markdown";
   }
 
   function initLoopMarketplace() {
     var search = byId("loop-search");
     var category = byId("loop-category");
     var form = byId("loop-submit-form");
-    var preview = byId("loop-preview-button");
     var root = document.querySelector(".loop-marketplace");
 
     if (search) search.addEventListener("input", updateFilters);
     if (category) category.addEventListener("change", updateFilters);
 
-    if (preview && form) {
-      preview.addEventListener("click", function() {
-        showGenerated(buildMarkdown(form), "Preview generated. Submit creates a Markdown loop in the automation collection.");
+    if (form) {
+      form.addEventListener("input", function() {
+        updateLoopPreview(form);
       });
+      updateLoopPreview(form);
     }
+
+    document.querySelectorAll("[data-loop-preview-tab]").forEach(function(button) {
+      button.addEventListener("click", function() {
+        setPreviewTab(button.getAttribute("data-loop-preview-tab"));
+      });
+    });
 
     if (form && root) {
       form.addEventListener("submit", function(event) {
@@ -358,10 +479,16 @@
         });
         var url = root.getAttribute("data-github-new-url") + "?" + params.toString();
 
-        showGenerated(markdown, "Opening GitHub to create _loops/" + filename + " in the automation collection.");
+        setSubmitNote("Opening GitHub to create _loops/" + filename + ".");
 
         if (url.length > 7000) {
-          byId("loop-generated-note").textContent = "This loop is long. Copy the Markdown into _loops/" + filename + " and open a pull request.";
+          copyText(markdown)
+            .then(function() {
+              setSubmitNote("This loop is long, so the Markdown was copied. Create _loops/" + filename + " on GitHub.");
+            })
+            .catch(function() {
+              setSubmitNote("This loop is too long for a GitHub URL. Shorten it or add _loops/" + filename + " manually.");
+            });
           return;
         }
 

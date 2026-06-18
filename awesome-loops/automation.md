@@ -87,50 +87,73 @@ page_scripts:
   </section>
 
   <section class="loop-submit" id="submit-loop">
-    <div class="loop-submit-header">
-      <p class="loop-eyebrow">Contribute</p>
-      <h2>Create an automation loop</h2>
-      <p>Send the prompt or instructions you actually use. The form creates a Markdown file in `_loops/` for the automation collection.</p>
+    <div class="loop-submit-layout">
+      <form class="loop-submit-form" id="loop-submit-form">
+        <div class="loop-submit-title">
+          <h2>Create automation loop</h2>
+        </div>
+
+        <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" class="loop-honeypot">
+
+        <div class="loop-form-row">
+          <label for="loop-title">Title *</label>
+          <input id="loop-title" name="title" required maxlength="90" placeholder="The production error sweep">
+        </div>
+
+        <div class="loop-form-row">
+          <label for="loop-excerpt">Description optional</label>
+          <textarea id="loop-excerpt" name="excerpt" rows="2" maxlength="220" placeholder="Leave blank to derive this from the instructions."></textarea>
+        </div>
+
+        <div class="loop-form-row">
+          <label for="loop-tags-input">Tags optional</label>
+          <input id="loop-tags-input" name="tags" placeholder="engineering, logs, pr-review">
+        </div>
+
+        <div class="loop-form-row">
+          <label for="loop-instructions">Loop instructions *</label>
+          <textarea id="loop-instructions" name="instructions" required rows="9" placeholder="Paste the prompt or operating instructions. Keep secrets, private code, and private customer data out."></textarea>
+        </div>
+
+        <label class="loop-checkbox">
+          <input type="checkbox" name="rights" required>
+          <span>I have the right to share this loop and understand it may be edited before publication.</span>
+        </label>
+
+        <div class="loop-form-actions">
+          <button type="submit">Create automation loop</button>
+        </div>
+        <p class="loop-submit-note" id="loop-submit-note" aria-live="polite">Submit opens GitHub with a Markdown file ready for review.</p>
+      </form>
+
+      <aside class="loop-preview-panel" aria-label="Loop preview">
+        <div class="loop-preview-header">
+          <span>Preview</span>
+          <div class="loop-preview-tabs" role="tablist" aria-label="Preview type">
+            <button type="button" id="loop-rendered-tab" class="is-active" role="tab" aria-selected="true" aria-controls="loop-rendered-preview" data-loop-preview-tab="rendered">Rendered</button>
+            <button type="button" id="loop-markdown-tab" role="tab" aria-selected="false" aria-controls="loop-markdown-preview-panel" data-loop-preview-tab="markdown">Markdown</button>
+          </div>
+        </div>
+        <div class="loop-preview-pane" id="loop-rendered-preview" role="tabpanel" aria-labelledby="loop-rendered-tab">
+          <table class="loop-preview-table">
+            <tbody>
+              <tr>
+                <th scope="row">title</th>
+                <td id="loop-preview-title">Untitled automation loop</td>
+              </tr>
+              <tr>
+                <th scope="row">description</th>
+                <td id="loop-preview-description">Community-submitted automation loop.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="loop-preview-tags" id="loop-preview-tags" hidden></div>
+          <div class="loop-preview-content" id="loop-preview-content">
+            <p>Loop instructions will appear here.</p>
+          </div>
+        </div>
+        <pre class="loop-markdown-preview" id="loop-markdown-preview-panel" role="tabpanel" aria-labelledby="loop-markdown-tab" hidden><code id="loop-markdown-preview"></code></pre>
+      </aside>
     </div>
-
-    <form class="loop-submit-form" id="loop-submit-form">
-      <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" class="loop-honeypot">
-
-      <div class="loop-form-row">
-        <label for="loop-title">Title *</label>
-        <input id="loop-title" name="title" required maxlength="90" placeholder="The production error sweep">
-      </div>
-
-      <div class="loop-form-row">
-        <label for="loop-excerpt">Short pitch optional</label>
-        <textarea id="loop-excerpt" name="excerpt" rows="2" maxlength="220" placeholder="Leave blank to derive this from the instructions."></textarea>
-      </div>
-
-      <div class="loop-form-row">
-        <label for="loop-tags-input">Tags optional</label>
-        <input id="loop-tags-input" name="tags" placeholder="engineering, logs, pr-review">
-      </div>
-
-      <div class="loop-form-row">
-        <label for="loop-instructions">Loop instructions *</label>
-        <textarea id="loop-instructions" name="instructions" required rows="8" placeholder="Paste the prompt or operating instructions. Keep secrets, private code, and private customer data out."></textarea>
-      </div>
-
-      <label class="loop-checkbox">
-        <input type="checkbox" name="rights" required>
-        <span>I have the right to share this loop and understand it may be edited before publication.</span>
-      </label>
-
-      <div class="loop-form-actions">
-        <button type="submit">Create automation loop</button>
-        <button type="button" id="loop-preview-button">Preview Markdown</button>
-      </div>
-
-      <div class="loop-generated" id="loop-generated" hidden>
-        <label for="loop-generated-markdown">Generated Markdown</label>
-        <textarea id="loop-generated-markdown" readonly rows="12"></textarea>
-        <p id="loop-generated-note" aria-live="polite"></p>
-      </div>
-    </form>
   </section>
 </div>
