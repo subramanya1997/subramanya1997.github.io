@@ -52,6 +52,43 @@ Books live in `_books/` and are rendered through the `books` collection.
 - `author`
 - `ready`
 
+## Automation loops
+
+Automation loop listings live in `_loops/` and are rendered through the `loops` collection.
+
+### Required front matter
+
+- `layout`
+- `title`
+- `excerpt`
+
+The Markdown body is also required because it contains the loop prompt or operating instructions.
+
+### Optional front matter
+
+- `category`
+- `trigger`
+- `cadence`
+- `tooling`
+- `proof`
+- `stop`
+- `memory`
+- `source_title`
+- `source_url`
+- `attribution`
+- `status`
+- `tags`
+- `links`
+
+### Notes
+
+- `layout` should be `loop`.
+- `status`, when present, should be `curated`, `community`, or `submitted`.
+- `links`, when present, should be an array of mappings. Each link requires `url` and may include `title`.
+- The Markdown body should contain the actual loop prompt or operating instructions.
+- Public submissions should enter through a pull request so maintainers can validate safety, usefulness, and any optional attribution or resource links before merge.
+- Loop detail pages derive Agent Skill, Codex/Cursor `AGENTS.md`, Cursor `.mdc`, Claude deep-link, and Cursor deep-link exports from this same front matter plus body content.
+
 ## Non-publishable content
 
 - `_posts/readme.md` is documentation, not a publishable post.

@@ -9,6 +9,7 @@ require "yaml"
 ROOT = Pathname(__dir__).join("..").expand_path
 POSTS_DIR = ROOT.join("_posts")
 BOOKS_DIR = ROOT.join("_books")
+LOOPS_DIR = ROOT.join("_loops")
 DATA_DIR = ROOT.join("_data")
 TOP_LEVEL_PAGES = %w[index.html blog.md books.md work.md stats.md].freeze
 FRONT_MATTER_PATTERN = /\A---[ \t]*\r?\n(.*?)\r?\n---[ \t]*(?:\r?\n|\z)/m
@@ -21,6 +22,7 @@ class ValidationRunner
   def run
     validate_posts
     validate_books
+    validate_loops
     validate_about_data
     validate_view_count_data
     validate_top_level_page_asset_guard
@@ -53,6 +55,48 @@ class ValidationRunner
     BOOKS_DIR.glob("*.md").sort.each do |path|
       validate_front_matter(path, required_keys)
     end
+  end
+
+  def validate_loops
+    required_keys = %w[layout title excerpt]
+
+    LOOPS_DIR.glob("*.md").sort.each do |path|
+      validate_front_matter(path, required_keys)
+      validate_loop_body(path)
+      validate_loop_links(path)
+    end
+  end
+
+  def validate_loop_body(path)
+    _, body = parse_front_matter(path)
+    return if present?(body)
+
+    add_error("#{relative_path(path)}: loop body must contain the prompt or operating instructions")
+  rescue StandardError => e
+    add_error(e.message)
+  end
+
+  def validate_loop_links(path)
+    front_matter, = parse_front_matter(path)
+    links = stringify_keys(front_matter)["links"]
+    return unless links
+
+    unless links.is_a?(Array)
+      add_error("#{relative_path(path)}: links must be an array")
+      return
+    end
+
+    links.each_with_index do |link, index|
+      unless link.is_a?(Hash)
+        add_error("#{relative_path(path)}: links[#{index}] must be a mapping")
+        next
+      end
+
+      normalized = stringify_keys(link)
+      add_error("#{relative_path(path)}: links[#{index}] missing url") unless present?(normalized["url"])
+    end
+  rescue StandardError => e
+    add_error(e.message)
   end
 
   def validate_front_matter(path, required_keys)

@@ -35,7 +35,7 @@ layout: none
           }{% unless forloop.last %},{% endunless %}
         {% endfor %}
       ]
-    }{% unless forloop.last and site.books.size == 0 %},{% endunless %}
+    }{% unless forloop.last and site.books.size == 0 and site.loops.size == 0 %},{% endunless %}
   {% endfor %}
   {% for book in site.books %}
     {
@@ -56,6 +56,28 @@ layout: none
             "name": {{ tag | jsonify }},
             "slug": {{ tag | slugify | jsonify }},
             "url": {{ tag_url | jsonify }}
+          }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }{% unless forloop.last and site.loops.size == 0 %},{% endunless %}
+  {% endfor %}
+  {% for loop in site.loops %}
+    {
+      "kind": "loop",
+      "title": {{ loop.title | jsonify }},
+      "url": {{ loop.url | prepend: site.baseurl | jsonify }},
+      "date_display": null,
+      "date_iso": null,
+      "excerpt": {{ loop.excerpt | strip_html | strip_newlines | strip | jsonify }},
+      "content": {{ loop.content | strip_html | strip_newlines | jsonify }},
+      "views": null,
+      "reading_minutes": null,
+      "tags": [
+        {% for tag in loop.tags %}
+          {
+            "name": {{ tag | jsonify }},
+            "slug": {{ tag | slugify | jsonify }},
+            "url": {{ loop.url | prepend: site.baseurl | jsonify }}
           }{% unless forloop.last %},{% endunless %}
         {% endfor %}
       ]

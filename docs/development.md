@@ -57,6 +57,18 @@ If CI fails, reproduce locally with the same commands first.
 2. Use the required front matter defined in `docs/content-model.md`.
 3. Run the validation commands.
 
+### Automation loops
+
+1. Add or update a Markdown listing in `_loops/`.
+2. Use the required front matter defined in `docs/content-model.md`.
+3. Keep the body concrete: it should be the actual prompt or operating instructions, not a vague idea.
+4. Treat source, attribution, category, trigger, cadence, tooling, proof, memory, stop condition, tags, and MCP/resource links as optional metadata.
+5. Community submissions should arrive as pull requests and should not be merged until safety, usefulness, and validation pass.
+6. Keep exports tool-aware: Agent Skills require `SKILL.md` inside a folder whose name matches the skill `name`, Cursor project rules require `.cursor/rules/*.mdc`, and Claude/Cursor deep links only open a review step in the local app.
+7. Run the validation commands.
+
+Loop PRs are routed through `.github/CODEOWNERS` and `.github/pull_request_template.md`. CODEOWNERS review is mandatory only when `main` branch protection requires code-owner approval.
+
 ### Data-driven pages
 
 - Homepage and work page content comes from `_data/about.yaml`.

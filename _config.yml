@@ -13,6 +13,19 @@ permalink: pretty
 collections:
   books:
     output: true
+  loops:
+    output: true
+    permalink: /awesome-loops/automation/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: loops
+    values:
+      page_stylesheets:
+        - /assets/css/pages/loop-marketplace.css
+      page_scripts:
+        - /assets/js/pages/loop-marketplace.js
 
 highlighter: rouge
 kramdown:

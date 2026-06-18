@@ -13,7 +13,7 @@ This repository is a Jekyll-based personal site hosted on GitHub Pages. The site
 ## Build Flow
 
 1. Jekyll reads `_config.yml` to configure collections, URLs, markdown, and site-level metadata.
-2. Content is loaded from `_posts/`, `_books/`, top-level pages such as `index.html` and `blog.md`, and data files in `_data/`.
+2. Content is loaded from `_posts/`, `_books/`, `_loops/`, top-level pages such as `index.html` and `blog.md`, and data files in `_data/`.
 3. Layouts in `_layouts/` wrap page content and compose shared includes from `_includes/`.
 4. Static assets are served from `assets/`, `css/`, and top-level generated endpoints such as `feed.xml`, `search.json`, `llms.txt`, `llms-full.txt`, `/.well-known/api-catalog` (RFC 9727 API catalog, RFC 9264 Linkset), and `/.well-known/openid-configuration` (OIDC Discovery 1.0).
 5. Jekyll outputs the generated site to `_site/`.
@@ -25,6 +25,7 @@ This repository is a Jekyll-based personal site hosted on GitHub Pages. The site
 - `_includes/`: Shared partials such as head metadata, header/footer, header search form, TOC, analytics, newsletter UI, language switcher, translation toast, related posts, and generated tag archive markup.
 - `_posts/`: Blog posts in dated Markdown files.
 - `_books/`: The custom `books` collection.
+- `_loops/`: Curated automation-loop marketplace listings.
 - `_data/`: Structured data for the homepage, work page, i18n labels, and analytics-derived view counts.
 - `assets/`: Images, JavaScript, translation JSON, video, resume files, and page/component CSS introduced by the current refactor.
 - `css/main.css`: Global site styles shared across the whole site.
@@ -58,6 +59,7 @@ This repository is a Jekyll-based personal site hosted on GitHub Pages. The site
 - `_data/i18n.yml` stores UI strings for translation-related interfaces.
 - `_posts/` uses front matter plus Markdown body content for posts.
 - `_books/` uses front matter plus Markdown body content for the books collection.
+- `_loops/` uses front matter plus Markdown body content for automation-loop marketplace listings. Loop detail pages derive prompt, Agent Skill, Codex/Cursor `AGENTS.md`, Cursor `.mdc`, Claude deep-link, and Cursor deep-link exports from that source content.
 - `search.json` is the structured discovery index consumed by the search page.
 
 ## Runtime JavaScript Responsibilities
@@ -85,6 +87,7 @@ This repository is a Jekyll-based personal site hosted on GitHub Pages. The site
 - Homepage bio/work data: `_data/about.yaml`
 - Blog listing page: `blog.md`
 - Books listing page: `books.md`
+- Loop marketplace page: `awesome-loops/automation.md` and `_loops/*.md`
 - Work page: `work.md`
 - Stats page: `stats.md`
 - Post page layout and post-only UX: `_layouts/post.html`
