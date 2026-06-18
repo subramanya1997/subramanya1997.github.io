@@ -17,101 +17,71 @@ page_scripts:
 
 <div class="loop-marketplace" data-github-new-url="https://github.com/subramanya1997/subramanya1997.github.io/new/main/_loops">
   <header class="loop-hero">
-    <p class="loop-eyebrow">awesome-loops / automation</p>
-    <h1>Automation loop marketplace</h1>
-    <p>Curated agent loops as copyable prompts, Agent Skills, Codex instructions, and Cursor rules. Every listing is Markdown, optional metadata stays optional, and every community submission goes through pull-request review.</p>
-    <div class="loop-hero-actions">
-      <a href="#submit-loop" class="loop-primary-action">Create automation</a>
-      <a href="https://github.com/subramanya1997/subramanya1997.github.io/tree/main/_loops" rel="noopener noreferrer">Browse Markdown</a>
+    <div class="loop-hero-copy">
+      <p class="loop-eyebrow">awesome-loops / automation</p>
+      <h1>Automation loops</h1>
+      <p>Reusable agent workflows you can open in Claude, add to Cursor, or copy into Codex. Every submission is a Markdown automation reviewed through GitHub.</p>
     </div>
-    <dl class="loop-stats" aria-label="Marketplace stats">
-      <div>
-        <dt>{{ site.loops.size }}</dt>
-        <dd>Listings</dd>
+    <div class="loop-hero-panel">
+      <div class="loop-platform-strip" aria-label="Supported platforms">
+        <span><img src="{{ '/assets/images/logos/claude.svg' | prepend: site.baseurl }}" alt="" aria-hidden="true" width="18" height="18">Claude</span>
+        <span><img src="{{ '/assets/images/logos/cursor.svg' | prepend: site.baseurl }}" alt="" aria-hidden="true" width="18" height="18">Cursor</span>
+        <span><img src="{{ '/assets/images/logos/openai.svg' | prepend: site.baseurl }}" alt="" aria-hidden="true" width="18" height="18">Codex</span>
       </div>
-      <div>
-        <dt>1</dt>
-        <dd>Markdown file per loop</dd>
+      <div class="loop-hero-actions">
+        <a href="#submit-loop" class="loop-primary-action">Create automation</a>
+        <a href="https://github.com/subramanya1997/subramanya1997.github.io/tree/main/_loops" rel="noopener noreferrer">Browse Markdown</a>
       </div>
-      <div>
-        <dt>PR</dt>
-        <dd>Review gate</dd>
-      </div>
-    </dl>
+    </div>
   </header>
 
   <section class="loop-toolbar" aria-label="Marketplace filters">
-    <label for="loop-search">Search</label>
-    <input id="loop-search" type="search" placeholder="Search loops, links, source, or attribution" autocomplete="off">
+    <input id="loop-search" type="search" placeholder="Search automations" autocomplete="off" aria-label="Search automations">
 
     {% if categories.size > 0 %}
-      <label for="loop-category">Category</label>
-      <select id="loop-category">
+      <select id="loop-category" aria-label="Filter by category">
         <option value="">All categories</option>
         {% for category in categories %}
           <option value="{{ category | downcase | escape }}">{{ category }}</option>
         {% endfor %}
       </select>
     {% endif %}
-
-    <output id="loop-count" aria-live="polite">{{ site.loops.size }} loops</output>
   </section>
 
   <section class="loop-listings" aria-label="Automation loop listings">
     {% for loop in loops %}
       {% assign loop_search_text = loop.title | append: " " | append: loop.excerpt | append: " " | append: loop.content | append: " " | append: loop.category | append: " " | append: loop.tooling | append: " " | append: loop.proof | append: " " | append: loop.stop | append: " " | append: loop.source_title | append: " " | append: loop.attribution | append: " " | append: loop.tags | append: " " | append: loop.links | downcase %}
       <article class="loop-card" data-category="{{ loop.category | downcase | escape }}" data-search="{{ loop_search_text | strip_html | escape }}">
-        <div class="loop-card-header">
-          {% if loop.category or loop.status %}
-            <p class="loop-card-meta">
-              {% if loop.category %}{{ loop.category }}{% endif %}
-              {% if loop.category and loop.status %} / {% endif %}
-              {% if loop.status %}{{ loop.status }}{% endif %}
-            </p>
+        <div class="loop-card-top">
+          {% if loop.category %}
+            <span class="loop-card-pill">{{ loop.category }}</span>
           {% endif %}
-          <h2><a href="{{ loop.url | prepend: site.baseurl }}">{{ loop.title }}</a></h2>
-          <p>{{ loop.excerpt }}</p>
+          {% if loop.status %}
+            <span class="loop-card-status">{{ loop.status }}</span>
+          {% endif %}
         </div>
 
-        {% if loop.proof or loop.stop %}
-          <dl class="loop-card-contract">
-            {% if loop.proof %}
-              <div>
-                <dt>Verify</dt>
-                <dd>{{ loop.proof }}</dd>
-              </div>
-            {% endif %}
-            {% if loop.stop %}
-              <div>
-                <dt>Stop</dt>
-                <dd>{{ loop.stop }}</dd>
-              </div>
-            {% endif %}
-          </dl>
-        {% endif %}
+        <h2><a href="{{ loop.url | prepend: site.baseurl }}">{{ loop.title }}</a></h2>
+        <p>{{ loop.excerpt }}</p>
 
         {% if loop.tags %}
           <div class="loop-tags" aria-label="Tags">
-            {% for tag in loop.tags %}
+            {% for tag in loop.tags limit: 3 %}
               <span>{{ tag }}</span>
             {% endfor %}
           </div>
         {% endif %}
 
-        {% if loop.source_url or loop.source_title or loop.attribution or loop.links %}
-          <div class="loop-card-footer">
-            {% if loop.source_url %}
-              <a href="{{ loop.source_url }}" rel="noopener noreferrer">{{ loop.source_title | default: loop.source_url }}</a>
-            {% elsif loop.source_title %}
-              <span>{{ loop.source_title }}</span>
-            {% endif %}
-            {% if loop.attribution %}
-              <span>{{ loop.attribution }}</span>
-            {% elsif loop.links %}
-              <span>{{ loop.links.size }} link{% if loop.links.size != 1 %}s{% endif %}</span>
-            {% endif %}
-          </div>
-        {% endif %}
+        <div class="loop-card-footer">
+          {% if loop.source_title %}
+            <span>{{ loop.source_title }}</span>
+          {% elsif loop.attribution %}
+            <span>{{ loop.attribution }}</span>
+          {% else %}
+            <span>Markdown automation</span>
+          {% endif %}
+          <a class="loop-open-link" href="{{ loop.url | prepend: site.baseurl }}">Open</a>
+        </div>
       </article>
     {% endfor %}
   </section>

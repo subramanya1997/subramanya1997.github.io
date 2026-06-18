@@ -8,7 +8,7 @@
 
   {% include head.html %}
 
-    <body>
+    <body{% if page.url == '/awesome-loops/automation/' or page.collection == 'loops' %} class="loop-shell"{% endif %}>
 
     {% include header.html %}
 

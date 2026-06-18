@@ -300,11 +300,7 @@
     };
   }
 
-  function copyText(text) {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      return navigator.clipboard.writeText(text);
-    }
-
+  function legacyCopyText(text) {
     var textarea = document.createElement("textarea");
     textarea.value = text;
     textarea.setAttribute("readonly", "");
@@ -315,6 +311,36 @@
     var ok = document.execCommand("copy");
     document.body.removeChild(textarea);
     return ok ? Promise.resolve() : Promise.reject(new Error("copy failed"));
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text).catch(function() {
+        return legacyCopyText(text);
+      });
+    }
+
+    return legacyCopyText(text);
+  }
+
+  function showExportFallback(text) {
+    var status = byId("loop-export-status");
+    if (!status) return;
+
+    var textarea = byId("loop-export-fallback");
+    if (!textarea) {
+      textarea = document.createElement("textarea");
+      textarea.id = "loop-export-fallback";
+      textarea.className = "loop-export-fallback";
+      textarea.setAttribute("readonly", "");
+      textarea.rows = 6;
+      status.insertAdjacentElement("afterend", textarea);
+    }
+
+    textarea.value = text;
+    textarea.hidden = false;
+    textarea.focus();
+    textarea.select();
   }
 
   function downloadText(filename, text) {
@@ -416,7 +442,8 @@
               setExportStatus("Copied " + platformLabel(button) + " instructions.");
             })
             .catch(function() {
-              setExportStatus("Copy failed. Use Download instead.");
+              showExportFallback(exportText(kind, loop));
+              setExportStatus("Copy blocked by the browser. Select the instructions below to copy them manually.");
             });
         });
       });
