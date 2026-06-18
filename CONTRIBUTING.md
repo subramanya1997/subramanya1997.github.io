@@ -2,7 +2,7 @@
 
 ## Automation Loops
 
-Automation-loop submissions are Markdown files in `_loops/`. Use the form at `/awesome-loops/automation/` or open a pull request that adds one file to `_loops/`.
+Automation-loop submissions are Markdown files in `_loops/`. Use the form at `/awesome-loops/` or open a pull request that adds one file to `_loops/`. The form opens a GitHub issue with a generated Markdown payload; `.github/workflows/loop-submission-pr.yml` turns that issue into a reviewable PR.
 
 Every loop needs a title, a short description, and the actual prompt or operating instructions an agent can run. Source links, attribution, category, trigger, cadence, tooling, proof, memory, stop condition, tags, and MCP/resource links are optional.
 

@@ -87,7 +87,7 @@ This repository is a Jekyll-based personal site hosted on GitHub Pages. The site
 - Homepage bio/work data: `_data/about.yaml`
 - Blog listing page: `blog.md`
 - Books listing page: `books.md`
-- Loop marketplace page: `awesome-loops/automation.md` and `_loops/*.md`
+- Loop marketplace page: `awesome-loops/index.md` and `_loops/*.md`
 - Work page: `work.md`
 - Stats page: `stats.md`
 - Post page layout and post-only UX: `_layouts/post.html`

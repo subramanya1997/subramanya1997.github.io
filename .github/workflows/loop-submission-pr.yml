@@ -1,0 +1,112 @@
+name: Loop submission PR
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  create-loop-pr:
+    if: contains(github.event.issue.body, 'LOOP_SUBMISSION_MARKDOWN_START')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Prepare loop file
+        id: prepare
+        env:
+          GITHUB_EVENT_PATH: ${{ github.event_path }}
+        run: |
+          ruby <<'RUBY'
+          require "fileutils"
+          require "json"
+
+          event = JSON.parse(File.read(ENV.fetch("GITHUB_EVENT_PATH")))
+          issue = event.fetch("issue")
+          body = issue["body"].to_s
+          title = issue["title"].to_s.sub(/\ALoop submission:\s*/i, "").strip
+
+          def slugify(value)
+            slug = value.to_s.downcase.gsub(/['"]/, "").gsub(/[^a-z0-9]+/, "-").gsub(/\A-+|-+\z/, "")
+            slug.empty? ? "submitted-loop" : slug[0, 80].gsub(/-+\z/, "")
+          end
+
+          filename = body[/<!-- LOOP_SUBMISSION_FILENAME:\s*([^>]+?)\s*-->/, 1].to_s.strip
+          filename = "#{slugify(title)}.md" if filename.empty?
+          filename = File.basename(filename).downcase.gsub(/[^a-z0-9._-]/, "-")
+          filename = "#{filename}.md" unless filename.end_with?(".md")
+
+          match = body.match(/<!-- LOOP_SUBMISSION_MARKDOWN_START -->\s*(.*?)\s*<!-- LOOP_SUBMISSION_MARKDOWN_END -->/m)
+          raise "Missing loop submission markdown block" unless match
+
+          markdown = match[1].to_s.strip
+          raise "Loop submission markdown is empty" if markdown.empty?
+          raise "Loop submission must include YAML front matter" unless markdown.start_with?("---")
+
+          FileUtils.mkdir_p("_loops")
+          File.write(File.join("_loops", filename), "#{markdown}\n")
+
+          branch = "loop-submission-#{issue.fetch("number")}-#{slugify(filename.sub(/\.md\z/, ""))}"
+          branch = branch[0, 120].gsub(/-+\z/, "")
+
+          File.open(ENV.fetch("GITHUB_OUTPUT"), "a") do |output|
+            output.puts "branch=#{branch}"
+            output.puts "filename=#{filename}"
+            output.puts "loop_title=#{title.empty? ? filename.sub(/\.md\z/, "") : title}"
+          end
+          RUBY
+
+      - name: Validate content
+        run: ruby scripts/validate_content.rb
+
+      - name: Detect changes
+        id: diff
+        run: |
+          if [ -z "$(git status --porcelain -- "_loops/${{ steps.prepare.outputs.filename }}")" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit loop submission
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          BRANCH: ${{ steps.prepare.outputs.branch }}
+          FILENAME: ${{ steps.prepare.outputs.filename }}
+          LOOP_TITLE: ${{ steps.prepare.outputs.loop_title }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$BRANCH"
+          git add "_loops/$FILENAME"
+          git commit -m "Add loop: $LOOP_TITLE"
+          git push --force-with-lease origin "$BRANCH"
+
+      - name: Open or update pull request
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ steps.prepare.outputs.branch }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          LOOP_TITLE: ${{ steps.prepare.outputs.loop_title }}
+        run: |
+          if gh pr view "$BRANCH" --repo "$GITHUB_REPOSITORY" --json url -q .url >/tmp/loop-pr-url 2>/dev/null; then
+            true
+          else
+            gh pr create \
+              --repo "$GITHUB_REPOSITORY" \
+              --base main \
+              --head "$BRANCH" \
+              --title "Add loop: $LOOP_TITLE" \
+              --body "Created from loop submission issue #$ISSUE_NUMBER. Closes #$ISSUE_NUMBER." \
+              >/tmp/loop-pr-url
+          fi
+
+          PR_URL="$(cat /tmp/loop-pr-url)"
+          gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --body "Created PR for this loop submission: $PR_URL"

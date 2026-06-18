@@ -15,7 +15,7 @@ collections:
     output: true
   loops:
     output: true
-    permalink: /awesome-loops/automation/:path/
+    permalink: /awesome-loops/:path/
 
 defaults:
   - scope:

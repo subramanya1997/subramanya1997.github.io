@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Loops
-description: A curated marketplace of repeatable automation loops for coding agents, research agents, operations, growth, evaluation, and customer workflows.
-permalink: /awesome-loops/automation/
+description: A marketplace of repeatable automation loops for coding agents, research agents, operations, growth, evaluation, and customer workflows.
+permalink: /awesome-loops/
 includelink: true
 custom_layout: true
 page_stylesheets:
@@ -15,10 +15,10 @@ page_scripts:
 {% assign categorized_loops = site.loops | where_exp: "loop", "loop.category" %}
 {% assign categories = categorized_loops | map: "category" | uniq | sort %}
 
-<div class="loop-marketplace" data-github-new-url="https://github.com/subramanya1997/subramanya1997.github.io/new/main/_loops">
+<div class="loop-marketplace" data-github-issue-url="https://github.com/subramanya1997/subramanya1997.github.io/issues/new">
   <header class="loop-hero">
     <div class="loop-hero-copy">
-      <p class="loop-eyebrow">awesome-loops / automation</p>
+      <p class="loop-eyebrow">awesome-loops</p>
       <h1>Automation loops</h1>
       <p>Reusable agent workflows you can open in Claude, add to Cursor, or launch with Codex. Every submission is a Markdown automation reviewed through GitHub.</p>
     </div>
@@ -56,9 +56,6 @@ page_scripts:
           {% if loop.category %}
             <span class="loop-card-pill">{{ loop.category }}</span>
           {% endif %}
-          {% if loop.status %}
-            <span class="loop-card-status">{{ loop.status }}</span>
-          {% endif %}
         </div>
 
         <h2><a href="{{ loop.url | prepend: site.baseurl }}">{{ loop.title }}</a></h2>
@@ -80,21 +77,26 @@ page_scripts:
           {% else %}
             <span>Markdown automation</span>
           {% endif %}
-          <a class="loop-open-link" href="{{ loop.url | prepend: site.baseurl }}">Open</a>
         </div>
       </article>
     {% endfor %}
   </section>
 
   <section class="loop-submit" id="submit-loop">
-    <div class="loop-submit-layout">
-      <form class="loop-submit-form" id="loop-submit-form">
+    <form class="loop-submit-form" id="loop-submit-form" novalidate>
+      <div class="loop-submit-header">
         <div class="loop-submit-title">
           <h2>Create automation loop</h2>
         </div>
+        <div class="loop-submit-tabs" role="tablist" aria-label="Submission view">
+          <button type="button" id="loop-form-tab" class="is-active" role="tab" aria-selected="true" aria-controls="loop-form-panel" data-loop-submit-tab="form">Form</button>
+          <button type="button" id="loop-markdown-tab" role="tab" aria-selected="false" aria-controls="loop-markdown-panel" data-loop-submit-tab="markdown">Markdown</button>
+        </div>
+      </div>
 
-        <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" class="loop-honeypot">
+      <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" class="loop-honeypot">
 
+      <div class="loop-submit-pane" id="loop-form-panel" role="tabpanel" aria-labelledby="loop-form-tab">
         <div class="loop-form-row">
           <label for="loop-title">Title *</label>
           <input id="loop-title" name="title" required maxlength="90" placeholder="The production error sweep">
@@ -119,41 +121,14 @@ page_scripts:
           <input type="checkbox" name="rights" required>
           <span>I have the right to share this loop and understand it may be edited before publication.</span>
         </label>
+      </div>
 
-        <div class="loop-form-actions">
-          <button type="submit">Create automation loop</button>
-        </div>
-        <p class="loop-submit-note" id="loop-submit-note" aria-live="polite">Submit opens GitHub with a Markdown file ready for review.</p>
-      </form>
+      <pre class="loop-markdown-preview" id="loop-markdown-panel" role="tabpanel" aria-labelledby="loop-markdown-tab" hidden><code id="loop-markdown-preview"></code></pre>
 
-      <aside class="loop-preview-panel" aria-label="Loop preview">
-        <div class="loop-preview-header">
-          <span>Preview</span>
-          <div class="loop-preview-tabs" role="tablist" aria-label="Preview type">
-            <button type="button" id="loop-rendered-tab" class="is-active" role="tab" aria-selected="true" aria-controls="loop-rendered-preview" data-loop-preview-tab="rendered">Rendered</button>
-            <button type="button" id="loop-markdown-tab" role="tab" aria-selected="false" aria-controls="loop-markdown-preview-panel" data-loop-preview-tab="markdown">Markdown</button>
-          </div>
-        </div>
-        <div class="loop-preview-pane" id="loop-rendered-preview" role="tabpanel" aria-labelledby="loop-rendered-tab">
-          <table class="loop-preview-table">
-            <tbody>
-              <tr>
-                <th scope="row">title</th>
-                <td id="loop-preview-title">Untitled automation loop</td>
-              </tr>
-              <tr>
-                <th scope="row">description</th>
-                <td id="loop-preview-description">Community-submitted automation loop.</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="loop-preview-tags" id="loop-preview-tags" hidden></div>
-          <div class="loop-preview-content" id="loop-preview-content">
-            <p>Loop instructions will appear here.</p>
-          </div>
-        </div>
-        <pre class="loop-markdown-preview" id="loop-markdown-preview-panel" role="tabpanel" aria-labelledby="loop-markdown-tab" hidden><code id="loop-markdown-preview"></code></pre>
-      </aside>
-    </div>
+      <div class="loop-form-actions">
+        <button type="submit">Create submission issue</button>
+      </div>
+      <p class="loop-submit-note" id="loop-submit-note" aria-live="polite">Submit opens a GitHub issue. A repository workflow turns the issue into a PR.</p>
+    </form>
   </section>
 </div>

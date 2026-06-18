@@ -39,85 +39,6 @@
     return text.slice(0, 219).replace(/\s+\S*$/g, "") + ".";
   }
 
-  function escapeHtml(value) {
-    return (value || "").replace(/[&<>"']/g, function(character) {
-      return {
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        "\"": "&quot;",
-        "'": "&#39;"
-      }[character];
-    });
-  }
-
-  function renderInline(value) {
-    return escapeHtml(value)
-      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
-      .replace(/`([^`]+)`/g, "<code>$1</code>");
-  }
-
-  function markdownToHtml(markdown) {
-    var lines = (markdown || "").trim().split(/\r?\n/);
-    var html = [];
-    var paragraph = [];
-    var listType = null;
-
-    function flushParagraph() {
-      if (paragraph.length > 0) {
-        html.push("<p>" + renderInline(paragraph.join(" ")) + "</p>");
-        paragraph = [];
-      }
-    }
-
-    function flushList() {
-      if (listType) {
-        html.push("</" + listType + ">");
-        listType = null;
-      }
-    }
-
-    lines.forEach(function(line) {
-      var trimmed = line.trim();
-      var heading = /^(#{1,3})\s+(.+)$/.exec(trimmed);
-      var ordered = /^\d+\.\s+(.+)$/.exec(trimmed);
-      var bullet = /^[-*]\s+(.+)$/.exec(trimmed);
-
-      if (!trimmed) {
-        flushParagraph();
-        flushList();
-        return;
-      }
-
-      if (heading) {
-        flushParagraph();
-        flushList();
-        html.push("<h" + Math.min(heading[1].length + 2, 4) + ">" + renderInline(heading[2]) + "</h" + Math.min(heading[1].length + 2, 4) + ">");
-        return;
-      }
-
-      if (ordered || bullet) {
-        flushParagraph();
-        var nextListType = ordered ? "ol" : "ul";
-        if (listType !== nextListType) {
-          flushList();
-          html.push("<" + nextListType + ">");
-          listType = nextListType;
-        }
-        html.push("<li>" + renderInline((ordered || bullet)[1]) + "</li>");
-        return;
-      }
-
-      flushList();
-      paragraph.push(trimmed);
-    });
-
-    flushParagraph();
-    flushList();
-
-    return html.join("") || "<p>Loop instructions will appear here.</p>";
-  }
-
   function buildMarkdown(form) {
     var data = new FormData(form);
     var title = data.get("title") || "Submitted loop";
@@ -143,6 +64,21 @@
     frontMatter.push("---");
 
     return frontMatter.join("\n") + "\n\n" + instructions + "\n";
+  }
+
+  function buildSubmissionIssueBody(filename, markdown) {
+    return [
+      "This issue was generated from the Awesome Loops submission form.",
+      "",
+      "Target file: `_loops/" + filename + "`",
+      "",
+      "<!-- LOOP_SUBMISSION_FILENAME: " + filename + " -->",
+      "<!-- LOOP_SUBMISSION_MARKDOWN_START -->",
+      markdown.trim(),
+      "<!-- LOOP_SUBMISSION_MARKDOWN_END -->",
+      "",
+      "A repository workflow can turn this issue into a reviewable PR."
+    ].join("\n");
   }
 
   function loopTitle(loop) {
@@ -395,45 +331,23 @@
     if (count) count.textContent = visible + (visible === 1 ? " loop" : " loops");
   }
 
-  function updateLoopPreview(form) {
-    var data = new FormData(form);
-    var title = (data.get("title") || "").trim() || "Untitled automation loop";
-    var instructions = (data.get("instructions") || "").trim();
-    var excerpt = (data.get("excerpt") || "").trim() || deriveExcerpt(instructions);
-    var tags = parseTags(data.get("tags"));
-    var titleNode = byId("loop-preview-title");
-    var descriptionNode = byId("loop-preview-description");
-    var tagsNode = byId("loop-preview-tags");
-    var contentNode = byId("loop-preview-content");
+  function updateSubmissionMarkdown(form) {
     var markdownNode = byId("loop-markdown-preview");
 
-    if (titleNode) titleNode.textContent = title;
-    if (descriptionNode) descriptionNode.textContent = excerpt;
-    if (contentNode) contentNode.innerHTML = markdownToHtml(instructions);
     if (markdownNode) markdownNode.textContent = buildMarkdown(form);
-
-    if (tagsNode) {
-      tagsNode.innerHTML = "";
-      tagsNode.hidden = tags.length === 0;
-      tags.forEach(function(tag) {
-        var node = document.createElement("span");
-        node.textContent = tag;
-        tagsNode.appendChild(node);
-      });
-    }
   }
 
-  function setPreviewTab(name) {
-    var renderedPanel = byId("loop-rendered-preview");
-    var markdownPanel = byId("loop-markdown-preview-panel");
+  function setSubmitTab(name) {
+    var formPanel = byId("loop-form-panel");
+    var markdownPanel = byId("loop-markdown-panel");
 
-    document.querySelectorAll("[data-loop-preview-tab]").forEach(function(button) {
-      var selected = button.getAttribute("data-loop-preview-tab") === name;
+    document.querySelectorAll("[data-loop-submit-tab]").forEach(function(button) {
+      var selected = button.getAttribute("data-loop-submit-tab") === name;
       button.classList.toggle("is-active", selected);
       button.setAttribute("aria-selected", selected ? "true" : "false");
     });
 
-    if (renderedPanel) renderedPanel.hidden = name !== "rendered";
+    if (formPanel) formPanel.hidden = name !== "form";
     if (markdownPanel) markdownPanel.hidden = name !== "markdown";
   }
 
@@ -448,14 +362,14 @@
 
     if (form) {
       form.addEventListener("input", function() {
-        updateLoopPreview(form);
+        updateSubmissionMarkdown(form);
       });
-      updateLoopPreview(form);
+      updateSubmissionMarkdown(form);
     }
 
-    document.querySelectorAll("[data-loop-preview-tab]").forEach(function(button) {
+    document.querySelectorAll("[data-loop-submit-tab]").forEach(function(button) {
       button.addEventListener("click", function() {
-        setPreviewTab(button.getAttribute("data-loop-preview-tab"));
+        setSubmitTab(button.getAttribute("data-loop-submit-tab"));
       });
     });
 
@@ -465,29 +379,39 @@
 
         if (form.elements.company && form.elements.company.value) return;
         if (!form.checkValidity()) {
-          form.reportValidity();
+          setSubmitTab("form");
+          requestAnimationFrame(function() {
+            form.reportValidity();
+          });
           return;
         }
 
         var markdown = buildMarkdown(form);
         var title = new FormData(form).get("title") || "Submitted loop";
         var filename = slugify(title) + ".md";
+        var issueBody = buildSubmissionIssueBody(filename, markdown);
+        var issueUrl = root.getAttribute("data-github-issue-url");
         var params = new URLSearchParams({
-          filename: filename,
-          value: markdown,
-          message: "Add loop: " + title
+          title: "Loop submission: " + title,
+          body: issueBody,
+          labels: "loop-submission"
         });
-        var url = root.getAttribute("data-github-new-url") + "?" + params.toString();
+        var url = issueUrl + "?" + params.toString();
 
-        setSubmitNote("Opening GitHub to create _loops/" + filename + ".");
+        setSubmitNote("Opening GitHub to create a loop submission issue.");
 
         if (url.length > 7000) {
-          copyText(markdown)
+          var shortUrl = issueUrl + "?" + new URLSearchParams({
+            title: "Loop submission: " + title,
+            labels: "loop-submission"
+          }).toString();
+          copyText(issueBody)
             .then(function() {
-              setSubmitNote("This loop is long, so the Markdown was copied. Create _loops/" + filename + " on GitHub.");
+              setSubmitNote("This loop is long, so the issue body was copied. Paste it into the GitHub issue.");
+              window.open(shortUrl, "_blank", "noopener");
             })
             .catch(function() {
-              setSubmitNote("This loop is too long for a GitHub URL. Shorten it or add _loops/" + filename + " manually.");
+              setSubmitNote("This loop is too long for a GitHub URL. Shorten it or create an issue manually.");
             });
           return;
         }
