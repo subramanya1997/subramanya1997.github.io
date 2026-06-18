@@ -9,8 +9,6 @@ tooling: "Slack, renderer, browser or computer control, file upload"
 proof: "New artifact version addresses the latest feedback"
 stop: "Reviewer approves or no new feedback remains"
 memory: "Track feedback, version links, and unresolved decisions"
-source_title: "Codex-maxxing"
-source_url: "https://jxnl.co/writing/2026/05/10/codex-maxxing/"
 attribution: "Jason Liu"
 status: curated
 tags:
@@ -18,8 +16,6 @@ tags:
   - rendering
   - slack
 ---
-
-## Loop
 
 Keep artifact review moving after the first handoff.
 

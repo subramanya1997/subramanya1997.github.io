@@ -9,8 +9,6 @@ tooling: "Task list, isolated sessions, scoped permissions, test suite"
 proof: "Representative samples pass before broad execution"
 stop: "Every target file is migrated or explicitly marked failed"
 memory: "Write an audit table of OK, skipped, and failed files"
-source_title: "Claude Code best practices"
-source_url: "https://code.claude.com/docs/en/best-practices"
 attribution: "Anthropic"
 status: curated
 tags:
@@ -18,8 +16,6 @@ tags:
   - parallel
   - batching
 ---
-
-## Loop
 
 Use this when the same transformation can be applied independently to many files.
 

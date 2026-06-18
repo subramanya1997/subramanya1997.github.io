@@ -9,8 +9,6 @@ tooling: "Browser screenshot, design reference, console, responsive viewports"
 proof: "Screenshots show the implemented UI matches the target within agreed differences"
 stop: "No material visual differences remain across target viewports"
 memory: "Attach before and after screenshots to the PR"
-source_title: "Claude Code best practices"
-source_url: "https://code.claude.com/docs/en/best-practices"
 attribution: "Anthropic"
 status: curated
 tags:
@@ -18,8 +16,6 @@ tags:
   - screenshots
   - qa
 ---
-
-## Loop
 
 Use this when "looks good" needs evidence.
 

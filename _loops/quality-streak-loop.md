@@ -9,8 +9,6 @@ tooling: "Scenario generator, browser, tests, benchmark log"
 proof: "The latest N realistic scenarios pass consecutively"
 stop: "N consecutive scenarios pass with failures documented and protected"
 memory: "Track failed cases, fixes, regression tests, and streak count"
-source_title: "Forward Future Loop Library"
-source_url: "https://signals.forwardfuture.ai/loop-library/#top"
 attribution: "Matthew Berman"
 status: curated
 tags:
@@ -18,8 +16,6 @@ tags:
   - qa
   - regression
 ---
-
-## Loop
 
 Use this to force a workflow through varied examples without accepting a lucky pass.
 

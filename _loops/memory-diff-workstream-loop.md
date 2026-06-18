@@ -9,8 +9,6 @@ tooling: "Notes repo, Git, project memory, PR diff"
 proof: "Memory updates are reviewable as file diffs"
 stop: "New decisions, preferences, blockers, and closed loops are recorded"
 memory: "The notes repo is the source of truth"
-source_title: "Codex-maxxing"
-source_url: "https://jxnl.co/writing/2026/05/10/codex-maxxing/"
 attribution: "Jason Liu"
 status: curated
 tags:
@@ -18,8 +16,6 @@ tags:
   - workstreams
   - notes
 ---
-
-## Loop
 
 Use this when a thread or agent should survive beyond one chat.
 

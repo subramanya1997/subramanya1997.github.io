@@ -9,8 +9,6 @@ tooling: "Logs, traces, issue tracker, tests, GitHub, Slack"
 proof: "Error is reproduced or traced, fix is verified, and PR links evidence"
 stop: "Actionable errors are fixed or a clean-log confirmation is posted"
 memory: "Record incident, root cause, fix link, and prevention note"
-source_title: "Forward Future Loop Library"
-source_url: "https://signals.forwardfuture.ai/loop-library/#top"
 attribution: "Matthew Berman"
 status: curated
 tags:
@@ -18,8 +16,6 @@ tags:
   - logs
   - incident
 ---
-
-## Loop
 
 Use this as an operational maintenance check.
 

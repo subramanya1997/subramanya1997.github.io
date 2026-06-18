@@ -63,7 +63,7 @@
 
     frontMatter.push("---");
 
-    return frontMatter.join("\n") + "\n\n## Loop\n\n" + instructions + "\n";
+    return frontMatter.join("\n") + "\n\n" + instructions + "\n";
   }
 
   function loopTitle(loop) {
@@ -71,7 +71,8 @@
   }
 
   function normalizeInstructions(instructions) {
-    return (instructions || "").trim() || "Run the loop using the contract above. Collect proof before stopping.";
+    var text = (instructions || "").trim().replace(/^##\s+Loop\s*/i, "").trim();
+    return text || "Run the loop using the contract above. Collect proof before stopping.";
   }
 
   function loopSlug(loop) {
@@ -110,9 +111,6 @@
 
   function attributionRows(loop) {
     var rows = [];
-    if (present(loop.sourceTitle) || present(loop.sourceUrl)) {
-      rows.push("- Source: " + (loop.sourceTitle || loop.sourceUrl) + (loop.sourceUrl ? " (" + loop.sourceUrl + ")" : ""));
-    }
     if (present(loop.attribution)) rows.push("- Attribution: " + loop.attribution);
     (loop.links || []).forEach(function(link) {
       if (present(link.url)) rows.push("- " + (link.title || link.url) + ": " + link.url);
@@ -145,51 +143,6 @@
     }
 
     return lines.join("\n").trim() + "\n";
-  }
-
-  function buildSkill(loop) {
-    var slug = loopSlug(loop);
-    var metadata = [
-      "  marketplace_url: " + yamlString(window.location.href.split("#")[0])
-    ];
-    if (present(loop.sourceTitle)) metadata.push("  source_title: " + yamlString(loop.sourceTitle));
-    if (present(loop.sourceUrl)) metadata.push("  source_url: " + yamlString(loop.sourceUrl));
-    if (present(loop.attribution)) metadata.push("  attribution: " + yamlString(loop.attribution));
-
-    var lines = [
-      "---",
-      "name: " + yamlString(slug),
-      "description: " + yamlString(skillDescription(loop)),
-      "disable-model-invocation: true",
-      "metadata:",
-    ].concat(metadata).concat([
-      "---",
-      "",
-      "# " + loopTitle(loop),
-      "",
-      "Use this skill to run the automation loop below. Confirm it matches the user's task before taking action.",
-      "",
-      "## Procedure",
-      "",
-      normalizeInstructions(loop.instructions)
-    ]);
-
-    var details = detailRows(loop);
-    var attribution = attributionRows(loop);
-
-    if (details.length > 0) {
-      lines.push("", "## Optional Details", "");
-      details.forEach(function(row) {
-        lines.push("- " + row[0] + ": " + row[1]);
-      });
-    }
-
-    if (attribution.length > 0) {
-      lines.push("", "## Links and Attribution", "");
-      Array.prototype.push.apply(lines, attribution);
-    }
-
-    return lines.join("\n");
   }
 
   function buildAgentsBlock(loop) {
@@ -232,42 +185,37 @@
     if (status) status.textContent = message;
   }
 
-  function platformLabel(button) {
-    var label = button.querySelector("strong");
-    return label ? label.textContent.trim() : button.textContent.trim();
-  }
-
-  function exportText(kind, loop) {
-    if (kind === "skill") return buildSkill(loop);
-    if (kind === "agents") return buildAgentsBlock(loop);
-    if (kind === "cursor") return buildCursorRule(loop);
-    return buildLoopPrompt(loop);
-  }
-
-  function extensionForKind(kind) {
-    if (kind === "cursor") return ".mdc";
-    return ".md";
-  }
-
-  function filenameForKind(kind, loop) {
-    if (kind === "skill") return "SKILL.md";
-    return loopSlug(loop) + extensionForKind(kind);
-  }
-
   function deepLink(kind, loop) {
     var prompt = buildLoopPrompt(loop);
     var promptText = encodeURIComponent(prompt);
 
     if (kind === "claude") {
-      if (prompt.length > 5000) {
+      var claudeUrl = "https://claude.ai/new?q=" + promptText;
+      if (claudeUrl.length > 8000) {
         return {
-          error: "Claude deep links support prompts up to 5,000 characters. Copy the prompt instead."
+          fallbackText: prompt,
+          error: "This loop is too long for a Claude launch URL. Copy the prompt below instead."
         };
       }
 
       return {
-        url: "claude-cli://open?q=" + promptText,
-        message: "Opening Claude with a prompt preview. Review it before running."
+        url: claudeUrl,
+        message: "Opening Claude with the loop loaded. Review it before running."
+      };
+    }
+
+    if (kind === "codex") {
+      var codexUrl = "https://chatgpt.com/?q=" + promptText;
+      if (codexUrl.length > 8000) {
+        return {
+          fallbackText: buildAgentsBlock(loop),
+          error: "This loop is too long for an OpenAI launch URL. Copy the Codex instructions below instead."
+        };
+      }
+
+      return {
+        url: codexUrl,
+        message: "Opening OpenAI with Codex-ready instructions. Review them before running."
       };
     }
 
@@ -290,7 +238,8 @@
     var url = "cursor://anysphere.cursor-deeplink/" + type + "?" + query.toString();
     if (url.length > 8000) {
       return {
-        error: "Cursor deep links support URLs up to 8,000 characters. Copy or download the export instead."
+        fallbackText: text,
+        error: "This Cursor rule is too long for a launch URL. Copy the rule below instead."
       };
     }
 
@@ -341,18 +290,6 @@
     textarea.hidden = false;
     textarea.focus();
     textarea.select();
-  }
-
-  function downloadText(filename, text) {
-    var blob = new Blob([text], { type: "text/markdown;charset=utf-8" });
-    var url = URL.createObjectURL(blob);
-    var link = document.createElement("a");
-    link.href = url;
-    link.download = filename;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
   }
 
   function updateFilters() {
@@ -434,38 +371,29 @@
 
     var loop = readLoopData();
     if (loop) {
-      document.querySelectorAll("[data-loop-export]").forEach(function(button) {
+      document.querySelectorAll("[data-loop-copy]").forEach(function(button) {
         button.addEventListener("click", function() {
-          var kind = button.getAttribute("data-loop-export");
-          copyText(exportText(kind, loop))
+          var prompt = buildLoopPrompt(loop);
+          copyText(prompt)
             .then(function() {
-              setExportStatus("Copied " + platformLabel(button) + " instructions.");
+              setExportStatus("Copied loop instructions.");
             })
             .catch(function() {
-              showExportFallback(exportText(kind, loop));
-              setExportStatus("Copy blocked by the browser. Select the instructions below to copy them manually.");
+              showExportFallback(prompt);
+              setExportStatus("Copy was blocked by the browser. Select the instructions below to copy them manually.");
             });
-        });
-      });
-
-      document.querySelectorAll("[data-loop-download]").forEach(function(button) {
-        button.addEventListener("click", function() {
-          var kind = button.getAttribute("data-loop-download");
-          downloadText(filenameForKind(kind, loop), exportText(kind, loop));
-          if (kind === "skill") {
-            setExportStatus("Downloaded SKILL.md. Place it in a folder named " + loopSlug(loop) + " under .agents/skills, .claude/skills, or .cursor/skills.");
-          } else {
-            setExportStatus("Downloaded " + filenameForKind(kind, loop) + ". Place it under .cursor/rules/.");
-          }
         });
       });
 
       document.querySelectorAll("[data-loop-open]").forEach(function(button) {
         button.addEventListener("click", function() {
           var link = deepLink(button.getAttribute("data-loop-open"), loop);
+          var menu = button.closest("details");
+          if (menu) menu.removeAttribute("open");
 
           if (link.error) {
             setExportStatus(link.error);
+            if (link.fallbackText) showExportFallback(link.fallbackText);
             return;
           }
 

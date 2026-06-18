@@ -9,8 +9,6 @@ tooling: "Goal runner, original tests, build logs, implementation repo"
 proof: "The target implementation passes the reference tests"
 stop: "The full reference suite passes or a blocker is documented"
 memory: "Persist failing tests, fixes, and remaining incompatibilities"
-source_title: "Codex-maxxing"
-source_url: "https://jxnl.co/writing/2026/05/10/codex-maxxing/"
 attribution: "Jason Liu"
 status: curated
 tags:
@@ -18,8 +16,6 @@ tags:
   - goals
   - tests
 ---
-
-## Loop
 
 Use this when a large task needs an external oracle instead of vibes.
 

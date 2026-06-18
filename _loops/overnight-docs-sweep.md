@@ -9,8 +9,6 @@ tooling: "Git diff, docs, build, link checker, GitHub"
 proof: "Docs match the current implementation and checks pass"
 stop: "A focused docs PR is open or no stale docs are found"
 memory: "Record reviewed commits and unchanged docs areas"
-source_title: "Forward Future Loop Library"
-source_url: "https://signals.forwardfuture.ai/loop-library/#top"
 attribution: "Matthew Berman"
 status: curated
 tags:
@@ -18,8 +16,6 @@ tags:
   - pull-request
   - maintenance
 ---
-
-## Loop
 
 Use this when code moves faster than docs.
 

@@ -9,8 +9,6 @@ tooling: "Scenario matrix, browser, logs, tests, rubric"
 proof: "Every scenario meets its original success criteria"
 stop: "The full scenario set passes under the same conditions"
 memory: "Store scenarios, evidence, scores, and fixes in an evaluation report"
-source_title: "Forward Future Loop Library"
-source_url: "https://signals.forwardfuture.ai/loop-library/#top"
 attribution: "Matthew Berman"
 status: curated
 tags:
@@ -18,8 +16,6 @@ tags:
   - qa
   - release
 ---
-
-## Loop
 
 Use this to test a product as users actually experience it.
 

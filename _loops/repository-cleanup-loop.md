@@ -9,8 +9,6 @@ tooling: "Git, GitHub CLI, worktrees, issue tracker"
 proof: "Remaining repo state is current, owned, or intentionally archived"
 stop: "No valuable work is stranded and stale state is removed or documented"
 memory: "Record recovered work, deleted branches, and owners"
-source_title: "Forward Future Loop Library"
-source_url: "https://signals.forwardfuture.ai/loop-library/#top"
 attribution: "Matthew Berman"
 status: curated
 tags:
@@ -18,8 +16,6 @@ tags:
   - cleanup
   - maintenance
 ---
-
-## Loop
 
 Use this when repo state has become hard to trust.
 

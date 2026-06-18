@@ -9,8 +9,6 @@ tooling: "Crawler, search console, answer-engine benchmark, schema validator"
 proof: "Priority queries map to technically sound, answer-ready pages"
 stop: "No high-impact technical or intent gap remains in the benchmark"
 memory: "Keep crawl results, query benchmarks, fixes, and remaining backlog"
-source_title: "Forward Future Loop Library"
-source_url: "https://signals.forwardfuture.ai/loop-library/#top"
 attribution: "Matthew Berman"
 status: curated
 tags:
@@ -18,8 +16,6 @@ tags:
   - geo
   - growth
 ---
-
-## Loop
 
 Use this to turn SEO and AI-answer optimization into a repeatable operating cycle.
 

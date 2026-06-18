@@ -9,8 +9,6 @@ tooling: "Browser or computer control, order details, support chat"
 proof: "Support agent response and refund or escalation result are captured"
 stop: "Refund is completed, escalation is logged, or human input is required"
 memory: "Store order, timestamps, support outcome, and follow-up needs"
-source_title: "Codex-maxxing"
-source_url: "https://jxnl.co/writing/2026/05/10/codex-maxxing/"
 attribution: "Jason Liu"
 status: curated
 tags:
@@ -18,8 +16,6 @@ tags:
   - polling
   - browser
 ---
-
-## Loop
 
 Use this for support queues where the expensive part is waiting and responding promptly.
 

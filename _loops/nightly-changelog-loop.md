@@ -9,8 +9,6 @@ tooling: "Git history, PRs, issue tracker, changelog"
 proof: "User-relevant changes are reflected in the changelog"
 stop: "Changelog is updated and validated, or no user-facing changes are recorded"
 memory: "Store the date, reviewed commits, and release-note decision"
-source_title: "Forward Future Loop Library"
-source_url: "https://signals.forwardfuture.ai/loop-library/#top"
 attribution: "Matthew Berman"
 status: curated
 tags:
@@ -18,8 +16,6 @@ tags:
   - documentation
   - release-notes
 ---
-
-## Loop
 
 Use this to keep release notes from becoming a late-stage archaeology project.
 

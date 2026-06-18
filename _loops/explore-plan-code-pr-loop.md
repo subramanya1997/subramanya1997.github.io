@@ -9,8 +9,6 @@ tooling: "Repo search, tests, build, GitHub"
 proof: "Plan is reflected in the diff and checks pass"
 stop: "PR is open with evidence and no known failing checks"
 memory: "Keep the plan and verification notes in the PR description"
-source_title: "Claude Code best practices"
-source_url: "https://code.claude.com/docs/en/best-practices"
 attribution: "Anthropic"
 status: curated
 tags:
@@ -18,8 +16,6 @@ tags:
   - pull-request
   - tests
 ---
-
-## Loop
 
 Use this when implementation risk comes from not understanding the existing system.
 

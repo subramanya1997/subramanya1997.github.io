@@ -9,8 +9,6 @@ tooling: "Benchmark suite, release SHA, environment metadata"
 proof: "Baseline results are tied to the released revision"
 stop: "Results, conditions, and benchmark version are recorded"
 memory: "Append baseline data to the performance history"
-source_title: "Forward Future Loop Library"
-source_url: "https://signals.forwardfuture.ai/loop-library/#top"
 attribution: "Matthew Berman"
 status: curated
 tags:
@@ -18,8 +16,6 @@ tags:
   - release
   - performance
 ---
-
-## Loop
 
 Use this to keep performance comparisons honest across releases.
 

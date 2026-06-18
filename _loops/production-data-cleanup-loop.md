@@ -9,8 +9,6 @@ tooling: "Database queries, classifier tests, audit report, backup"
 proof: "Post-cleanup sample and tests show remaining records meet the allowed definition"
 stop: "No reviewed record violates the allowed definition"
 memory: "Log removed records, rules changed, and audit sample"
-source_title: "Forward Future Loop Library"
-source_url: "https://signals.forwardfuture.ai/loop-library/#top"
 attribution: "Matthew Berman"
 status: curated
 tags:
@@ -18,8 +16,6 @@ tags:
   - production
   - cleanup
 ---
-
-## Loop
 
 Use this when data cleanup needs repeatable proof rather than one-off deletion.
 

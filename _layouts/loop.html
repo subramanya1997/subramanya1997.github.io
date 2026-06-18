@@ -3,98 +3,98 @@ layout: default
 ---
 {% assign loop_export_slug = page.slug | default: page.title | slugify %}
 <article class="loop-detail">
-  <nav class="loop-breadcrumbs" aria-label="Breadcrumb">
-    <ol>
-      <li><a href="{{ '/' | prepend: site.baseurl }}" data-preserve-lang>Home</a></li>
-      <li><a href="{{ '/awesome-loops/automation/' | prepend: site.baseurl }}" data-preserve-lang>Loops</a></li>
-      <li aria-current="page">{{ page.title }}</li>
-    </ol>
-  </nav>
-
-  <header class="loop-detail-header">
-    <p class="loop-eyebrow">awesome-loops / automation</p>
-    <h1>{{ page.title }}</h1>
-    <p>{{ page.excerpt }}</p>
-  </header>
-
-  {% if page.source_url or page.source_title or page.attribution or page.links %}
-    <section class="loop-source-strip" aria-label="Links and attribution">
-      {% if page.source_url or page.source_title %}
-        <span>Source</span>
-        {% if page.source_url %}
-          <a href="{{ page.source_url }}" rel="noopener noreferrer">{{ page.source_title | default: page.source_url }}</a>
-        {% else %}
-          <strong>{{ page.source_title }}</strong>
-        {% endif %}
-      {% endif %}
-      {% if page.attribution %}
-        <span>Attribution</span>
-        <strong>{{ page.attribution }}</strong>
-      {% endif %}
-      {% if page.links %}
-        <span>Links</span>
-        <div class="loop-resource-links">
-          {% for link in page.links %}
-            <a href="{{ link.url }}" rel="noopener noreferrer">{{ link.title | default: link.url }}</a>
-          {% endfor %}
+  <div class="loop-detail-topbar">
+    <nav class="loop-breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="{{ '/' | prepend: site.baseurl }}" data-preserve-lang>Home</a></li>
+        <li><a href="{{ '/awesome-loops/automation/' | prepend: site.baseurl }}" data-preserve-lang>Loops</a></li>
+        <li aria-current="page">{{ page.title }}</li>
+      </ol>
+    </nav>
+    <div class="loop-detail-actions">
+      <details class="loop-add-menu">
+        <summary>
+          <span class="loop-action-icon-stack" aria-hidden="true">
+            <img src="{{ '/assets/images/logos/cursor.svg' | prepend: site.baseurl }}" alt="" width="16" height="16">
+            <img src="{{ '/assets/images/logos/claude.svg' | prepend: site.baseurl }}" alt="" width="16" height="16">
+            <img src="{{ '/assets/images/logos/openai.svg' | prepend: site.baseurl }}" alt="" width="16" height="16">
+          </span>
+          <strong>Try now</strong>
+        </summary>
+        <div class="loop-add-menu-popover">
+          <button type="button" class="loop-platform-card loop-platform-card-cursor" data-loop-open="cursor-rule">
+            <img src="{{ '/assets/images/logos/cursor.svg' | prepend: site.baseurl }}" alt="" aria-hidden="true" width="20" height="20">
+            <span>
+              <strong>Cursor</strong>
+            </span>
+          </button>
+          <button type="button" class="loop-platform-card" data-loop-open="claude">
+            <img src="{{ '/assets/images/logos/claude.svg' | prepend: site.baseurl }}" alt="" aria-hidden="true" width="20" height="20">
+            <span>
+              <strong>Claude</strong>
+            </span>
+          </button>
+          <button type="button" class="loop-platform-card" data-loop-open="codex">
+            <img src="{{ '/assets/images/logos/openai.svg' | prepend: site.baseurl }}" alt="" aria-hidden="true" width="20" height="20">
+            <span>
+              <strong>Codex</strong>
+            </span>
+          </button>
         </div>
-      {% endif %}
-    </section>
-  {% endif %}
-
-  <section class="loop-export-panel" aria-label="Add this loop to an agent">
-    <span class="loop-export-label">Add to agent</span>
-    <div class="loop-platform-actions">
-      <button type="button" class="loop-platform-card loop-platform-card-cursor" data-loop-open="cursor-rule">
-        <img src="{{ '/assets/images/logos/cursor.svg' | prepend: site.baseurl }}" alt="" aria-hidden="true" width="24" height="24">
-        <span>
-          <strong>Add to Cursor</strong>
-          <small>Rule</small>
-        </span>
-      </button>
-      <button type="button" class="loop-platform-card" data-loop-open="claude">
-        <img src="{{ '/assets/images/logos/claude.svg' | prepend: site.baseurl }}" alt="" aria-hidden="true" width="24" height="24">
-        <span>
-          <strong>Add to Claude</strong>
-          <small>Prompt</small>
-        </span>
-      </button>
-      <button type="button" class="loop-platform-card" data-loop-export="agents">
-        <img src="{{ '/assets/images/logos/openai.svg' | prepend: site.baseurl }}" alt="" aria-hidden="true" width="24" height="24">
-        <span>
-          <strong>Copy for Codex</strong>
-          <small>Instructions</small>
-        </span>
-      </button>
+      </details>
+      <button type="button" class="loop-copy-action" data-loop-copy>Copy</button>
+      <a class="loop-edit-action" href="https://github.com/subramanya1997/subramanya1997.github.io/edit/main/{{ page.path }}" rel="noopener noreferrer">Edit</a>
     </div>
-    <p class="loop-export-status" id="loop-export-status" aria-live="polite"></p>
-  </section>
-
-  <script type="application/json" id="loop-export-data">
-    {
-      "slug": {{ loop_export_slug | jsonify }},
-      "title": {{ page.title | jsonify }},
-      "excerpt": {{ page.excerpt | jsonify }},
-      "category": {{ page.category | jsonify }},
-      "trigger": {{ page.trigger | jsonify }},
-      "cadence": {{ page.cadence | jsonify }},
-      "tooling": {{ page.tooling | jsonify }},
-      "proof": {{ page.proof | jsonify }},
-      "stop": {{ page.stop | jsonify }},
-      "memory": {{ page.memory | jsonify }},
-      "sourceTitle": {{ page.source_title | jsonify }},
-      "sourceUrl": {{ page.source_url | jsonify }},
-      "attribution": {{ page.attribution | jsonify }},
-      "tags": {{ page.tags | jsonify }},
-      "links": {{ page.links | jsonify }},
-      "instructions": {{ page.content | strip | jsonify }}
-    }
-  </script>
+  </div>
 
   <section class="loop-detail-layout">
     <div class="post loop-main-panel">
+      <header class="loop-detail-header">
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.excerpt }}</p>
+        <div class="loop-detail-tags" aria-label="Loop metadata">
+          {% if page.category %}
+            <span>{{ page.category }}</span>
+          {% endif %}
+          {% if page.attribution %}
+            <span>{{ page.attribution }}</span>
+          {% endif %}
+          {% if page.tags %}
+            {% for tag in page.tags limit: 3 %}
+              <span>{{ tag }}</span>
+            {% endfor %}
+          {% endif %}
+          {% if page.links %}
+            {% for link in page.links limit: 2 %}
+              <a href="{{ link.url }}" rel="noopener noreferrer">{{ link.title | default: "Resource" }}</a>
+            {% endfor %}
+          {% endif %}
+        </div>
+        <p class="loop-export-status" id="loop-export-status" aria-live="polite"></p>
+      </header>
+
+      <script type="application/json" id="loop-export-data">
+        {
+          "slug": {{ loop_export_slug | jsonify }},
+          "title": {{ page.title | jsonify }},
+          "excerpt": {{ page.excerpt | jsonify }},
+          "category": {{ page.category | jsonify }},
+          "trigger": {{ page.trigger | jsonify }},
+          "cadence": {{ page.cadence | jsonify }},
+          "tooling": {{ page.tooling | jsonify }},
+          "proof": {{ page.proof | jsonify }},
+          "stop": {{ page.stop | jsonify }},
+          "memory": {{ page.memory | jsonify }},
+          "attribution": {{ page.attribution | jsonify }},
+          "tags": {{ page.tags | jsonify }},
+          "links": {{ page.links | jsonify }},
+          "instructions": {{ page.content | strip | jsonify }}
+        }
+      </script>
+
       <article class="post-content loop-body">
-        {{ content }}
+        {% assign loop_body = content | replace_first: '<h2 id="loop">Loop</h2>', '' %}
+        {{ loop_body }}
       </article>
     </div>
 
@@ -130,8 +130,4 @@ layout: default
       {% endif %}
     </aside>
   </section>
-
-  <footer class="loop-detail-footer">
-    <a href="https://github.com/subramanya1997/subramanya1997.github.io/edit/main/{{ page.path }}" rel="noopener noreferrer">Suggest an edit</a>
-  </footer>
 </article>

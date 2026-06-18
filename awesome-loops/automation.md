@@ -20,7 +20,7 @@ page_scripts:
     <div class="loop-hero-copy">
       <p class="loop-eyebrow">awesome-loops / automation</p>
       <h1>Automation loops</h1>
-      <p>Reusable agent workflows you can open in Claude, add to Cursor, or copy into Codex. Every submission is a Markdown automation reviewed through GitHub.</p>
+      <p>Reusable agent workflows you can open in Claude, add to Cursor, or launch with Codex. Every submission is a Markdown automation reviewed through GitHub.</p>
     </div>
     <div class="loop-hero-panel">
       <div class="loop-platform-strip" aria-label="Supported platforms">
@@ -50,7 +50,7 @@ page_scripts:
 
   <section class="loop-listings" aria-label="Automation loop listings">
     {% for loop in loops %}
-      {% assign loop_search_text = loop.title | append: " " | append: loop.excerpt | append: " " | append: loop.content | append: " " | append: loop.category | append: " " | append: loop.tooling | append: " " | append: loop.proof | append: " " | append: loop.stop | append: " " | append: loop.source_title | append: " " | append: loop.attribution | append: " " | append: loop.tags | append: " " | append: loop.links | downcase %}
+      {% assign loop_search_text = loop.title | append: " " | append: loop.excerpt | append: " " | append: loop.content | append: " " | append: loop.category | append: " " | append: loop.tooling | append: " " | append: loop.proof | append: " " | append: loop.stop | append: " " | append: loop.attribution | append: " " | append: loop.tags | append: " " | append: loop.links | downcase %}
       <article class="loop-card" data-category="{{ loop.category | downcase | escape }}" data-search="{{ loop_search_text | strip_html | escape }}">
         <div class="loop-card-top">
           {% if loop.category %}
@@ -73,10 +73,10 @@ page_scripts:
         {% endif %}
 
         <div class="loop-card-footer">
-          {% if loop.source_title %}
-            <span>{{ loop.source_title }}</span>
-          {% elsif loop.attribution %}
+          {% if loop.attribution %}
             <span>{{ loop.attribution }}</span>
+          {% elsif loop.category %}
+            <span>{{ loop.category }}</span>
           {% else %}
             <span>Markdown automation</span>
           {% endif %}

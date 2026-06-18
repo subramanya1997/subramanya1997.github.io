@@ -9,8 +9,6 @@ tooling: "GitHub, CI, release notes, deployment dashboard"
 proof: "Only current and complete changes are included in the release"
 stop: "The released revision is current main with every selected change integrated"
 memory: "Record included PRs, excluded work, release SHA, and validation"
-source_title: "Forward Future Loop Library"
-source_url: "https://signals.forwardfuture.ai/loop-library/#top"
 attribution: "Matthew Berman"
 status: curated
 tags:
@@ -18,8 +16,6 @@ tags:
   - pull-request
   - ci
 ---
-
-## Loop
 
 Use this when a batch release risks accidentally shipping stale work.
 

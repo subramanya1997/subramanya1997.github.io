@@ -9,8 +9,6 @@ tooling: "Git diff, subagent or second session, tests"
 proof: "Findings cite concrete gaps against the requirements"
 stop: "No correctness or requirement gaps remain"
 memory: "Record accepted findings and rejected non-issues in the PR"
-source_title: "Claude Code best practices"
-source_url: "https://code.claude.com/docs/en/best-practices"
 attribution: "Anthropic"
 status: curated
 tags:
@@ -18,8 +16,6 @@ tags:
   - verification
   - pull-request
 ---
-
-## Loop
 
 Run an independent review after the implementation session finishes.
 

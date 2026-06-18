@@ -9,8 +9,6 @@ tooling: "Slack, Gmail, calendar, browser, memory notes"
 proof: "Draft replies include source context and priority"
 stop: "All actionable messages are drafted, deferred, or marked no-action"
 memory: "Update a daily inbox log with open loops and decisions"
-source_title: "Codex-maxxing"
-source_url: "https://jxnl.co/writing/2026/05/10/codex-maxxing/"
 attribution: "Jason Liu"
 status: curated
 tags:
@@ -19,8 +17,6 @@ tags:
   - gmail
   - operations
 ---
-
-## Loop
 
 Check the active communication surfaces on a schedule.
 

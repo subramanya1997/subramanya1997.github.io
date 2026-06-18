@@ -9,8 +9,6 @@ tooling: "Test runner, coverage report, profiler, CI"
 proof: "Suite is faster with no coverage or behavior regression"
 stop: "Timing target is met or remaining slowness has owners"
 memory: "Record baseline, changes, timing method, and final runtime"
-source_title: "Forward Future Loop Library"
-source_url: "https://signals.forwardfuture.ai/loop-library/#top"
 attribution: "Matthew Berman"
 status: curated
 tags:
@@ -18,8 +16,6 @@ tags:
   - performance
   - ci
 ---
-
-## Loop
 
 Use this when slow tests are causing real workflow drag.
 
