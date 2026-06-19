@@ -1,10 +1,11 @@
 ---
 layout: page
 title: Loops
-description: A marketplace of repeatable automation loops for coding agents, research agents, operations, growth, evaluation, and customer workflows.
+description: Automation loops for Claude, Cursor, and Codex.
 permalink: /awesome-loops/
 includelink: true
 custom_layout: true
+image: /assets/images/og/awesome-loops.png
 page_stylesheets:
   - /assets/css/pages/loop-marketplace.css
 page_scripts:
@@ -19,8 +20,8 @@ page_scripts:
   <header class="loop-hero">
     <div class="loop-hero-copy">
       <p class="loop-eyebrow">awesome-loops</p>
-      <h1>Automation loops</h1>
-      <p>Reusable agent workflows you can open in Claude, add to Cursor, or launch with Codex. Every submission is a Markdown automation reviewed through GitHub.</p>
+      <h1>Automation loops for Claude, Cursor, and Codex</h1>
+      <p>Open them in Claude, add them to Cursor, or launch them with Codex. Every submission is a Markdown automation reviewed through GitHub.</p>
     </div>
     <div class="loop-hero-panel">
       <div class="loop-platform-strip" aria-label="Supported platforms">

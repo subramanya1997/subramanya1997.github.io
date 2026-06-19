@@ -1,11 +1,33 @@
 ---
 ---
 {% assign target = page.web_url | default: page.url | prepend: site.baseurl %}
+{% assign meta_description = page.description | default: page.excerpt | default: site.description %}
+{% assign social_image_path = page.image | default: site.default_social_image | default: '/assets/images/og/default.png' %}
+{% if social_image_path contains '://' %}
+  {% assign social_image_url = social_image_path | replace: ' ', '%20' %}
+{% else %}
+  {% assign social_image_url = social_image_path | replace: ' ', '%20' | prepend: site.baseurl | prepend: site.url %}
+{% endif %}
 <!DOCTYPE html>
 <html lang="{{ site.default_lang | default: 'en' }}">
 <head>
   <meta charset="utf-8">
-  <title>Redirecting…</title>
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ meta_description | strip_html | strip_newlines | truncate: 160 }}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{{ meta_description | strip_html | strip_newlines | truncate: 160 }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.web_url | prepend: site.url }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:image" content="{{ social_image_url }}">
+  <meta property="og:image:alt" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{{ meta_description | strip_html | strip_newlines | truncate: 160 }}">
+  <meta name="twitter:image" content="{{ social_image_url }}">
+  <meta name="twitter:image:alt" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
   <link rel="canonical" href="{{ page.web_url | prepend: site.url }}">
   <meta name="robots" content="noindex, follow">
   <meta http-equiv="refresh" content="0; url={{ target }}">

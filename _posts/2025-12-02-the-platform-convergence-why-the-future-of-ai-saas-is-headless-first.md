@@ -47,7 +47,7 @@ The solution is a unified, headless-first platform with four integrated layers:
 
 **Layer 3: Platform Layer** — Comprehensive APIs and SDKs for developers. REST/GraphQL endpoints, language-specific SDKs, agent lifecycle management, webhook system for event-driven architectures.
 
-**Layer 4: Ecosystem Layer** — Marketplace for discovering and sharing agents, tools, and integrations. Internal registry, reusable components, version control, usage analytics.
+**Layer 4: Ecosystem Layer** — Marketplace for discovering and sharing agents, tools, and integrations. Internal registry, shared components, version control, usage analytics.
 
 ## Speed AND Control
 

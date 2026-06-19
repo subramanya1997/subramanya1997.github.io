@@ -4,6 +4,7 @@ description: Welcome to my personal website, a space where I blog and share my m
 baseurl: ""
 url: "https://subramanya.ai"
 data_dir: _data
+default_social_image: /assets/images/og/default.png
 
 # Build settings
 markdown: kramdown

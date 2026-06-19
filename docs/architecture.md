@@ -49,7 +49,7 @@ This repository is a Jekyll-based personal site hosted on GitHub Pages. The site
 - `_includes/toc.html`: article TOC generation and share UI.
 - `_includes/language-switcher.html` and `_includes/translation-toast.html`: translation UX for post pages.
 - `_includes/analytics.html`: Google Analytics and enhanced analytics script loading.
-- `_includes/components/`: reusable card/row components introduced for top-level pages.
+- `_includes/components/`: shared card/row components introduced for top-level pages.
 - `_includes/tag-archive.html`: server-rendered tag archive body used by generated tag pages.
 
 ## Data and Content

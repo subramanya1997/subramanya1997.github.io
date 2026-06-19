@@ -78,7 +78,7 @@ Without visibility into agent and tool usage, organizations face unpredictable c
 
 ### Challenge: Developer Productivity and Tool Discovery
 
-Developers waste time rebuilding integrations that already exist elsewhere in the organization or struggle to find the right tools for their agents. The registry solves this with searchable catalogs, reusable components, standardized integration patterns, and clear documentation for each available tool [3].
+Developers waste time rebuilding integrations that already exist elsewhere in the organization or struggle to find the right tools for their agents. The registry solves this with searchable catalogs, shared components, standardized integration patterns, and clear documentation for each available tool [3].
 
 ## The Architecture That Enables Scale
 

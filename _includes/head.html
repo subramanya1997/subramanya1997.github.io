@@ -10,7 +10,7 @@
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:description" content="{{ meta_description | strip_html | strip_newlines | truncate: 160 }}">
     <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
     <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <meta property="og:site_name" content="{{ site.title }}">
@@ -33,7 +33,7 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-    <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:description" content="{{ meta_description | strip_html | strip_newlines | truncate: 160 }}">
     <meta name="twitter:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <meta name="twitter:site" content="@{{ site.data.about.twitter_username }}">
     <meta name="twitter:creator" content="@{{ site.data.about.twitter_username }}">
@@ -66,24 +66,49 @@
     <meta name="DC.rights" content="© {{ page.date | date: '%Y' }} {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %}">
     {% endif %}
 
-    {% assign social_image_path = '/assets/images/profile_picture.webp' %}
+    {% assign default_social_image_path = site.default_social_image | default: '/assets/images/og/default.png' %}
+    {% assign social_image_path = page.image | default: default_social_image_path %}
     {% assign social_image_alt = site.title %}
-    {% if page.layout == 'post' %}
+    {% if page.collection == 'loops' %}
       {% if page.image %}
         {% assign social_image_path = page.image %}
       {% else %}
-        {% assign social_image_path = '/assets/images/' | append: page.slug | append: '.png' %}
+        {% assign loop_social_image_path = '/assets/images/og/loops/' | append: page.slug | append: '.png' %}
+        {% assign loop_social_image = site.static_files | where: 'path', loop_social_image_path | first %}
+        {% if loop_social_image %}
+          {% assign social_image_path = loop_social_image_path %}
+        {% else %}
+          {% assign social_image_path = '/assets/images/og/awesome-loops.png' %}
+        {% endif %}
+      {% endif %}
+      {% assign social_image_alt = page.title | default: site.title %}
+    {% elsif page.layout == 'post' %}
+      {% if page.image %}
+        {% assign social_image_path = page.image %}
+      {% else %}
+        {% assign generated_social_image_path = '/assets/images/' | append: page.slug | append: '.png' %}
+        {% assign generated_social_image = site.static_files | where: 'path', generated_social_image_path | first %}
+        {% if generated_social_image %}
+          {% assign social_image_path = generated_social_image_path %}
+        {% else %}
+          {% assign social_image_path = default_social_image_path %}
+        {% endif %}
       {% endif %}
       {% assign social_image_alt = page.title | default: site.title %}
     {% elsif page.image %}
       {% assign social_image_path = page.image %}
       {% assign social_image_alt = page.title | default: site.title %}
     {% endif %}
-    <meta property="og:image" content="{{ social_image_path | prepend: site.baseurl | prepend: site.url }}">
+    {% if social_image_path contains '://' %}
+      {% assign social_image_url = social_image_path | replace: ' ', '%20' %}
+    {% else %}
+      {% assign social_image_url = social_image_path | replace: ' ', '%20' | prepend: site.baseurl | prepend: site.url %}
+    {% endif %}
+    <meta property="og:image" content="{{ social_image_url }}">
     <meta property="og:image:alt" content="{{ social_image_alt }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta name="twitter:image" content="{{ social_image_path | prepend: site.baseurl | prepend: site.url }}">
+    <meta name="twitter:image" content="{{ social_image_url }}">
     <meta name="twitter:image:alt" content="{{ social_image_alt }}">
 
     <!-- Favicons -->

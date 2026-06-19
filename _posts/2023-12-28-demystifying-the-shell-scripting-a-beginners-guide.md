@@ -83,7 +83,7 @@ This script will print the message "Iteration X" five times, with X being the cu
 
 ## Functions
 
-Functions are reusable blocks of code that can be called with a specific set of arguments. To create a function, use the `function` keyword followed by the function name and a pair of parentheses:
+Functions are blocks of code that can be called with a specific set of arguments. To create a function, use the `function` keyword followed by the function name and a pair of parentheses:
 
 ```bash
 #!/bin/bash

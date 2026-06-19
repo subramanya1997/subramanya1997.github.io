@@ -301,6 +301,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/images/logos/gemini.svg</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/images/logos/meta.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -361,6 +366,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/images/og/awesome-loops.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/images/og/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -372,6 +382,11 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/images/og/context-engineering-why-prompt-engineering-was-never-enough.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/og/default.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -402,6 +417,106 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/images/og/from-gateway-to-guardian-the-evolution-of-mcp-security.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/og/loops/adversarial-review-loop.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/og/loops/chief-of-staff-inbox-triage.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/og/loops/explore-plan-code-pr-loop.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/og/loops/fan-out-migration-loop.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/og/loops/feedback-to-render-loop.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/og/loops/full-product-evaluation-loop.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/og/loops/goal-test-suite-migration-loop.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/og/loops/memory-diff-workstream-loop.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/og/loops/nightly-changelog-loop.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/og/loops/overnight-docs-sweep.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/og/loops/post-release-baseline-loop.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/og/loops/production-data-cleanup-loop.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/og/loops/production-error-sweep.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/og/loops/quality-streak-loop.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/og/loops/repository-cleanup-loop.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/og/loops/seo-geo-visibility-loop.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/og/loops/stale-safe-batch-release-loop.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/og/loops/support-refund-polling-loop.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/og/loops/test-suite-speed-loop.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://subramanya.ai/assets/images/og/loops/visual-verification-loop.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
