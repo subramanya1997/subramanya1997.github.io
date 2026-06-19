@@ -5,6 +5,7 @@ baseurl: ""
 url: "https://subramanya.ai"
 data_dir: _data
 default_social_image: /assets/images/og/default.png
+social_image_version: 20260619
 
 # Build settings
 markdown: kramdown

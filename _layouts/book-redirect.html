@@ -8,6 +8,13 @@
 {% else %}
   {% assign social_image_url = social_image_path | replace: ' ', '%20' | prepend: site.baseurl | prepend: site.url %}
 {% endif %}
+{% if site.social_image_version %}
+  {% assign social_image_separator = '?' %}
+  {% if social_image_url contains '?' %}
+    {% assign social_image_separator = '&' %}
+  {% endif %}
+  {% assign social_image_url = social_image_url | append: social_image_separator | append: 'v=' | append: site.social_image_version %}
+{% endif %}
 <!DOCTYPE html>
 <html lang="{{ site.default_lang | default: 'en' }}">
 <head>
@@ -20,6 +27,7 @@
   <meta property="og:url" content="{{ page.web_url | prepend: site.url }}">
   <meta property="og:site_name" content="{{ site.title }}">
   <meta property="og:image" content="{{ social_image_url }}">
+  <meta property="og:image:secure_url" content="{{ social_image_url }}">
   <meta property="og:image:alt" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -27,6 +35,7 @@
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
   <meta name="twitter:description" content="{{ meta_description | strip_html | strip_newlines | truncate: 160 }}">
   <meta name="twitter:image" content="{{ social_image_url }}">
+  <meta name="twitter:image:src" content="{{ social_image_url }}">
   <meta name="twitter:image:alt" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
   <link rel="canonical" href="{{ page.web_url | prepend: site.url }}">
   <meta name="robots" content="noindex, follow">
