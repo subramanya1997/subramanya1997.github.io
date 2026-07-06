@@ -134,47 +134,21 @@
     <meta name="msapplication-TileColor" content="#555555">
     <meta name="msapplication-TileImage" content="{{ '/assets/favicon/mstile-144x144.png' | prepend: site.baseurl }}">
 
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" id="canonical-link">
-    
-    <!-- Dynamic Canonical & Lang Attribute Update -->
+    {% comment %}
+      Translations are rendered client-side by i18n.js, so ?lang= URLs serve the
+      same HTML as the clean URL. The canonical must always be the clean URL and
+      must never be rewritten to include ?lang=, and ?lang= variants must not be
+      advertised via hreflang — otherwise Google crawls hundreds of duplicates it
+      refuses to index.
+    {% endcomment %}
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
     <script>
       (function() {
-        // Get language from URL parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        const lang = urlParams.get('lang');
-        
-        // Update canonical URL to include lang parameter if present and not 'en'
-        if (lang && lang !== 'en') {
-          const canonicalLink = document.getElementById('canonical-link');
-          if (canonicalLink) {
-            const currentUrl = canonicalLink.getAttribute('href');
-            const separator = currentUrl.includes('?') ? '&' : '?';
-            canonicalLink.setAttribute('href', currentUrl + separator + 'lang=' + lang);
-          }
-        }
-        
-        // Update html lang attribute
-        if (lang) {
-          document.documentElement.setAttribute('lang', lang);
-        } else {
-          document.documentElement.setAttribute('lang', 'en');
-        }
+        const lang = new URLSearchParams(window.location.search).get('lang');
+        document.documentElement.setAttribute('lang', lang || 'en');
       })();
     </script>
-    
-    <!-- Hreflang tags for internationalization (i18n) -->
-    {% if page.layout == 'post' %}
-    <!-- Default language (English) -->
-    <link rel="alternate" hreflang="x-default" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
-    <link rel="alternate" hreflang="en" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
-    
-    <!-- Translated versions -->
-    {% for lang in site.languages %}
-    {% if lang.code != 'en' %}
-    <link rel="alternate" hreflang="{{ lang.code }}" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}?lang={{ lang.code }}" />
-    {% endif %}
-    {% endfor %}
-    {% endif %}
 
     <!-- Fonts - Preconnect for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

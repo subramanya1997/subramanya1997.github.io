@@ -12,31 +12,17 @@ layout: null
       </url>
     {% endunless %}
   {% endfor %}
+  {% comment %}
+    ?lang= variants are client-side translations of the same HTML and must not
+    appear in the sitemap — they canonicalize to the clean post URL.
+  {% endcomment %}
   {% for post in site.posts %}
     <url>
       <loc>{{ site.url }}{{ post.url }}</loc>
       <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
-      <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ post.url }}" />
-      <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}{{ post.url }}" />
-      {% for lang in site.languages %}{% if lang.code != 'en' %}
-      <xhtml:link rel="alternate" hreflang="{{ lang.code }}" href="{{ site.url }}{{ post.url }}?lang={{ lang.code }}" />
-      {% endif %}{% endfor %}
     </url>
-    {% for lang in site.languages %}{% if lang.code != 'en' %}
-    <url>
-      <loc>{{ site.url }}{{ post.url }}?lang={{ lang.code }}</loc>
-      <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.5</priority>
-      <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ post.url }}" />
-      <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}{{ post.url }}" />
-      {% for lang2 in site.languages %}{% if lang2.code != 'en' %}
-      <xhtml:link rel="alternate" hreflang="{{ lang2.code }}" href="{{ site.url }}{{ post.url }}?lang={{ lang2.code }}" />
-      {% endif %}{% endfor %}
-    </url>
-    {% endif %}{% endfor %}
   {% endfor %}
   {% for book in site.books %}
     <url>
