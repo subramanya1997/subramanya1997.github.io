@@ -1,6 +1,7 @@
 ---
 layout: null
 permalink: /llms.txt
+sitemap: false
 ---
 # {{ site.title }}
 

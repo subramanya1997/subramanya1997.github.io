@@ -1,6 +1,7 @@
 ---
 layout: null
 permalink: /llms-full.txt
+sitemap: false
 ---
 # {{ site.title }} - Full Content
 
