@@ -1,0 +1,110 @@
+{% comment %}
+  Site-wide schema.org structured data (JSON-LD).
+
+  Every page gets a @graph with the WebSite and Person (site owner) nodes.
+  On top of that:
+    - the homepage is marked up as a ProfilePage about the owner,
+    - posts get only a BreadcrumbList here — the ScholarlyArticle node
+      already lives in _layouts/post.html,
+    - listing pages (blog, tags, books, loops, publications) are
+      CollectionPage, everything else a plain WebPage, each with breadcrumbs.
+{% endcomment %}
+{% assign sd_canonical = page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url %}
+{% assign sd_description = page.description | default: page.excerpt | default: site.description %}
+{% assign sd_description = sd_description | strip_html | strip_newlines | truncate: 300 %}
+{% assign sd_collection_urls = '/blog/|/tags/|/books/|/awesome-loops/|/publications/' | split: '|' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}/#website",
+      "url": "{{ site.url }}/",
+      "name": {{ site.title | jsonify }},
+      "description": {{ site.description | jsonify }},
+      "publisher": { "@id": "{{ site.url }}/#person" },
+      "inLanguage": "en",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "{{ site.url }}/search/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}/#person",
+      "name": {{ site.title | jsonify }},
+      "url": "{{ site.url }}/",
+      "description": {{ site.data.about.bio | strip_html | jsonify }},
+      "jobTitle": "Machine Learning Engineer",
+      "email": "mailto:{{ site.email }}",
+      "sameAs": [
+        "https://x.com/{{ site.data.about.twitter_username }}",
+        "https://github.com/{{ site.data.about.github_username }}",
+        "https://www.linkedin.com/in/{{ site.data.about.linkedin_username }}",
+        "https://scholar.google.com/citations?user={{ site.data.about.scholar_id }}"
+      ]
+    }{% if page.url == '/' %},
+    {
+      "@type": "ProfilePage",
+      "@id": "{{ sd_canonical }}#webpage",
+      "url": "{{ sd_canonical }}",
+      "name": {{ site.title | jsonify }},
+      "description": {{ sd_description | jsonify }},
+      "isPartOf": { "@id": "{{ site.url }}/#website" },
+      "about": { "@id": "{{ site.url }}/#person" },
+      "mainEntity": { "@id": "{{ site.url }}/#person" },
+      "inLanguage": "en"
+    }{% elsif page.layout == 'post' %},
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ sd_canonical }}#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{ site.url }}/blog/" },
+        { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }} }
+      ]
+    }{% else %}
+    {%- assign sd_page_type = 'WebPage' -%}
+    {%- if sd_collection_urls contains page.url -%}
+      {%- assign sd_page_type = 'CollectionPage' -%}
+    {%- endif -%}
+    {%- if page.url contains '/tags/' -%}
+      {%- comment -%} Tag archive pages (/tags/<slug>/) are listings too. {%- endcomment -%}
+      {%- assign sd_page_type = 'CollectionPage' -%}
+    {%- endif -%},
+    {
+      "@type": "{{ sd_page_type }}",
+      "@id": "{{ sd_canonical }}#webpage",
+      "url": "{{ sd_canonical }}",
+      "name": {{ page.title | default: site.title | jsonify }},
+      "description": {{ sd_description | jsonify }},
+      "isPartOf": { "@id": "{{ site.url }}/#website" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ sd_canonical }}#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/" }{% if page.url != '/' and page.title %},
+        {%- if page.collection == 'loops' %}
+        { "@type": "ListItem", "position": 2, "name": "Awesome Loops", "item": "{{ site.url }}/awesome-loops/" },
+        { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }} }
+        {%- elsif page.collection == 'books' %}
+        { "@type": "ListItem", "position": 2, "name": "Books", "item": "{{ site.url }}/books/" },
+        { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }} }
+        {%- elsif page.url contains '/tags/' and page.url != '/tags/' %}
+        { "@type": "ListItem", "position": 2, "name": "Tags", "item": "{{ site.url }}/tags/" },
+        { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }} }
+        {%- else %}
+        { "@type": "ListItem", "position": 2, "name": {{ page.title | jsonify }} }
+        {%- endif %}{% endif %}
+      ]
+    }{% endif %}
+  ]
+}
+</script>
