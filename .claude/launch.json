@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "jekyll-blog",
+      "cwd": "/Users/subramanya/Desktop/projects/subramanya1997.github.io",
+      "runtimeExecutable": "bundle",
+      "runtimeArgs": ["exec", "jekyll", "serve", "--port", "4000", "--drafts"],
+      "port": 4000
+    }
+  ]
+}
