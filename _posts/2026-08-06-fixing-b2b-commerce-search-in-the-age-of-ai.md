@@ -5,7 +5,7 @@ description: "Amazon, DoorDash, and Instacart have published the playbook for LL
 excerpt: "I audited 775,000 product records powering search for four B2B distributors. The consumer giants have already published how to fix catalogs like these with LLMs, but trade distribution hasn't picked up the playbook. Here it is, adapted for HVAC, plumbing, and electrical, with real costs."
 author: Subramanya N
 date: 2026-08-06
-image: /assets/images/b2b-search-field-coverage.png
+image: /assets/images/fixing-b2b-commerce-search-in-the-age-of-ai.png
 tags: [Search, B2B E-commerce, Data Quality, LLMs, UNSPSC, AI Agents, Information Retrieval, Product Catalogs, Distribution]
 mermaid: true
 ready: true
