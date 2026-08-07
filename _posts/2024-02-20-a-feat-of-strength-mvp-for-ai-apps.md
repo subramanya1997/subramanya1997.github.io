@@ -5,8 +5,18 @@ description: "How to define an MVP for AI apps by focusing on user value, realis
 excerpt: Exploring the concept of a Minimum Viable Product (MVP) in AI applications, focusing on delivering value by understanding and addressing user needs effectively.
 author: Subramanya N
 date: 2024-02-20
+last_modified_at: 2026-08-06
 image: /assets/images/og/a-feat-of-strength-mvp-for-ai-apps.png
 tags: [AI, MVP, Product Development, User Feedback, Innovation]
+faq:
+  - q: "What is an MVP for an AI application?"
+    a: "It is not a product with 80 percent of the planned features, but the smallest version that serves a set of user segments well. The analogy used is shipping a skateboard, then a scooter, then a bicycle, rather than a car chassis with no wheels or engine."
+  - q: "Why is an average quality score misleading for AI products?"
+    a: "Two systems can share the same average, such as 0.58, while behaving completely differently. One may serve most queries excellently and fail on an identifiable segment, while the other performs mediocrely on everything and offers no subset you can safely reject."
+  - q: "Should an AI app reject queries it cannot handle well?"
+    a: "Yes. Confidently identifying and declining queries you perform poorly on, such as timeline queries a search engine cannot support, builds trust and lets you ship sooner while educating users about the limits."
+  - q: "How do you identify which user segments your AI serves well?"
+    a: "Build a classifier, use a language model to categorize queries, or cluster the embeddings and compare mean scores within each group. Feeding that segment data into in-system observability shows what proportion of questions are being turned down."
 ready: true
 ---
 A minimum viable product (MVP) is a version of a product with just enough features to be usable by early customers, who can then provide feedback for future product development.

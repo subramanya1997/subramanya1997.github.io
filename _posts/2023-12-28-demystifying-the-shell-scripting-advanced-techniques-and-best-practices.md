@@ -5,8 +5,19 @@ image: /assets/images/og/demystifying-the-shell-scripting-advanced-techniques-an
 description: "Advanced shell scripting techniques and best practices, including error handling, command substitution, process management, and robust Bash scripts."
 excerpt: Building upon the fundamentals of shell scripting, this guide delves into advanced techniques and best practices that will elevate your scripting skills. We will explore error handling, command substitution, process management, and share valuable tips for writing efficient, robust, and maintainable scripts. By mastering these advanced concepts, you will be well-equipped to tackle complex scripting challenges and harness the full power of shell scripting.
 date: 2022-12-28
+last_modified_at: 2026-08-06
 author: Subramanya N
 tags: [Shell Scripting, Bash, Shell, Error Handling, Command Substitution, Process Management, Best Practices]
+schema_type: TechArticle
+faq:
+  - q: "How do I make a Bash script exit when a command fails?"
+    a: "Add `set -e` near the top of the script. By default a shell script keeps running subsequent commands even after one fails."
+  - q: "What is the trap command used for?"
+    a: "`trap` defines custom behavior that runs when the script exits or receives a signal. A common use is `trap cleanup EXIT`, which calls a cleanup function if the script exits unexpectedly."
+  - q: "Should I use backticks or $() for command substitution?"
+    a: "Prefer `$()`. It is more readable than backticks and can be nested easily."
+  - q: "What are the best practices for writing maintainable shell scripts?"
+    a: "Use meaningful names, comment non-obvious code, indent consistently, and break scripts into small functions. Also quote your variables, use `local` inside functions, and prefer `[[ ]]` over `[ ]` for conditionals."
 ready: true
 ---
 

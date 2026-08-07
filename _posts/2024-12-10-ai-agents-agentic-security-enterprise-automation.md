@@ -5,9 +5,19 @@ description: "AI agents and agentic security in enterprise automation, including
 excerpt: Exploring the potential of AI agents in enterprise security and automation, and how they can enhance security operations.
 author: Subramanya N
 date: 2024-12-10
+last_modified_at: 2026-08-06
 tags: [AI, Security, Automation, Enterprise, AI Agents]
 image: /assets/images/menlo_ventures_ai_agents_market_map.webp
 ready: true
+faq:
+  - q: "What is agentic security?"
+    a: "Agentic security is the practice of safeguarding intelligent, autonomous AI systems while keeping them transparent and reliable. It matters most in environments where multiple AI agents operate simultaneously, managing dynamic processes and sensitive data."
+  - q: "How do AI agents differ from RPA and iPaaS automation?"
+    a: "Traditional RPA and iPaaS tools follow rigid, pre-defined rules, require significant manual setup, break when systems change, and struggle with unstructured data such as documents, emails, or images. AI agents instead learn, adapt, and make decisions based on changing circumstances, which lets them handle dynamic and complex tasks."
+  - q: "Why is context-aware security needed for AI agents?"
+    a: "Static security measures are insufficient because agent contexts keep evolving. Context-aware security dynamically adjusts access controls and agent behavior based on situational needs and data sensitivity, mitigating unauthorized escalations, prompt injection attacks, and data breaches."
+  - q: "What does trust require in multi-agent collaboration?"
+    a: "Agents must communicate securely, share information responsibly, and resolve conflicts without compromising the broader system. Establishing that trust requires robust encryption, tamper-proof logs, and mechanisms for conflict resolution to prevent unintended behaviors or system failures."
 ---
 Traditional automation tools like **Robotic Process Automation (RPA)** and **Integration Platform as a Service (iPaaS)** have long served as the backbone of enterprise workflows. These systems, designed to automate repetitive tasks and connect disparate software tools, have delivered undeniable value. However, their inherent limitations are becoming increasingly evident. They require significant manual setup, often break when systems change, and struggle to handle unstructured data such as documents, emails, or images.
 

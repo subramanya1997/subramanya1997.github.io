@@ -5,9 +5,20 @@ description: "What changed in the MCP 2025-11-25 specification, including enterp
 excerpt: "The Model Context Protocol's first anniversary release isn't just a milestone—it's a strategic inflection point. With asynchronous Tasks, enterprise-grade OAuth, and a formal extensions framework, the 2025-11-25 spec directly addresses the operational barriers that have kept organizations from deploying agent-tool ecosystems at scale. This post examines how these new primitives transform MCP from a development convenience into production-grade infrastructure."
 author: Subramanya N
 date: 2025-12-01
+last_modified_at: 2026-08-06
 tags: [MCP, Enterprise AI, Agentic AI, Security, OAuth, Authentication, Infrastructure, Agent Ops, Governance, Enterprise Integration]
 image: /assets/images/mcp_anniversary.jpg
 ready: true
+schema_type: TechArticle
+faq:
+  - q: "What changed in the MCP 2025-11-25 specification?"
+    a: "The release adds asynchronous Tasks for long-running work, enterprise-grade OAuth through Client ID Metadata Documents plus machine-to-machine and Cross App Access extensions, a formal Extensions framework, and Sampling with Tools. Together these target the operational, security, and governance barriers that kept MCP deployments stuck in pilot stage."
+  - q: "How do MCP Tasks handle long-running operations?"
+    a: "Tasks introduce a call-now, fetch-later pattern: the client sends a request with a `task` hint, the server immediately returns a unique `taskId`, the client polls the status (`working`, `completed`, or `failed`), and retrieves the final result when the task completes. This gives one uniform asynchronous abstraction across the entire MCP ecosystem."
+  - q: "What is CIMD and why did it replace Dynamic Client Registration?"
+    a: "Client ID Metadata Documents make the `client_id` a URL that the client controls, from which an authorization server fetches a JSON metadata document describing the client's name, redirect URIs, grant types, and public keys. This creates a decentralized trust model anchored in DNS and HTTPS, removing the need for every client to pre-register with every authorization server."
+  - q: "What problem does Cross App Access (XAA) solve?"
+    a: "XAA inserts the enterprise identity provider as a central policy enforcement point in the authorization flow, so the IdP evaluates organizational policy before issuing tokens to an agent. This closes the governance black hole where the IdP could see only that a user logged in to an AI app, not which systems that user's agent subsequently accessed."
 ---
 
 Just over a week ago, the Model Context Protocol celebrated its first anniversary with the release of the 2025-11-25 specification [1]. The announcement was rightly triumphant—MCP has evolved from an experimental open-source project to a foundational standard backed by GitHub, OpenAI, Microsoft, and Block, with thousands of active servers in production [1]. For readers comparing the protocol to Anthropic's procedural customization layer, I cover [Claude Skills vs MCP](/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/) separately.

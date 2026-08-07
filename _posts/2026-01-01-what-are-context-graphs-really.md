@@ -5,9 +5,20 @@ description: "What context graphs are, why they matter for enterprise AI agents,
 excerpt: "The conversation around context graphs has exploded, but the term itself has become a Rorschach test. This is not about adding memory to your agent—it's about rethinking our assumptions about data, time, and organizational knowledge. The Two Clocks Problem reveals why we're missing half of time in enterprise systems, and why this is fundamentally a representation problem, not a database problem."
 author: Subramanya N
 date: 2026-01-01
+last_modified_at: 2026-08-06
 tags: [Context Graphs, Agentic AI, Enterprise AI, Two Clocks Problem, Event Sourcing, Graph Representation Learning, AI Infrastructure, Organizational Memory]
 image: /assets/images/context_graphs_followup.png
 ready: true
+schema_type: TechArticle
+faq:
+  - q: "What is a context graph, really?"
+    a: "A context graph is a learned representation of organizational reasoning, derived from the trajectories of agents solving problems. It is not a graph database and not a vector store, and it emerges from real agent work rather than from an ontology specified upfront."
+  - q: "What is the Two Clocks Problem?"
+    a: "The Two Clocks Problem is that enterprises have built trillion-dollar infrastructure for the state clock, what is true right now, but almost nothing for the event clock, what happened in what order and with what reasoning. Git blame shows who changed a timeout but not why; a CRM says closed lost but not that you were second choice."
+  - q: "Why is a context graph not just a database problem?"
+    a: "A context graph requires joins across five coordinate systems that do not share keys: events, timeline, semantics, attribution, and outcome. Each has a different geometry, and identities are fluid, so it needs probabilistic joins across all five simultaneously rather than joins on stable keys."
+  - q: "How do agents help build a context graph?"
+    a: "Agents act as informed walkers: each trajectory through a problem is a trace through the organization's state space and an implicit map of its ontology. Accumulating enough problem-directed trajectories lets you learn embeddings that encode organizational structure, the same insight behind graph representation learning such as node2vec."
 ---
 
 Last week, I wrote about my reaction to Jaya Gupta's viral post on Context Graphs [1]. The idea of a "system of record for decisions" resonated deeply, framing the evolution of agentic infrastructure from tools to skills to memory. But since then, the conversation has exploded, and it has become clear that the term "context graph" itself is a bit of a Rorschach test. Everyone sees something different.

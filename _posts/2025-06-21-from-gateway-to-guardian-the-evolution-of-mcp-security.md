@@ -5,10 +5,21 @@ description: "MCP security architecture beyond gateways: identity-aware proxies,
 excerpt: While AWS's MCP Gateway solves operational challenges, production AI systems demand evolution from basic centralization to identity-aware security guardians that address the "lethal trifecta" of vulnerabilities in enterprise deployments.
 author: Subramanya N
 date: 2025-06-21
+last_modified_at: 2026-08-06
 image: /assets/images/og/from-gateway-to-guardian-the-evolution-of-mcp-security.png
 tags: [MCP, Security, API Gateway, AI Agents, Architecture, Evolution]
 mermaid: true
 ready: true
+schema_type: TechArticle
+faq:
+  - q: "What is the \"lethal trifecta\" in MCP security?"
+    a: "It is Simon Willison's term for three capabilities that become dangerous when combined: private data access, exposure to untrusted content that agents process as instructions, and the ability to communicate externally. MCP's modular architecture amplifies the risk by encouraging specialized servers that collectively provide all three."
+  - q: "What is the difference between an MCP gateway and an MCP guardian?"
+    a: "A gateway centralizes MCP servers for operational benefits such as unified discovery, predictable paths, health monitoring, and consistent logging. A guardian adds identity-aware security on top: OIDC authentication, per-user dynamic tool provisioning, context-aware authorization, real-time threat detection, and comprehensive audit trails."
+  - q: "How does guardian architecture stop a prompt injection attack?"
+    a: "When an agent that has consumed malicious web content requests sensitive data, the guardian gateway checks the call against a policy engine before forwarding it. The policy engine denies the request as a suspicious pattern, the agent receives an access-denied response, and the security team is alerted."
+  - q: "How should an organization roll out MCP guardian security?"
+    a: "The post outlines four phases: start with an identity foundation of OIDC integration, token management, and basic authentication, then add an authorization engine with policy-as-code, RBAC, and dynamic tool provisioning. Phase three adds logging, anomaly detection, and automated response, and phase four adds prompt-injection content analysis, dynamic risk assessment, and incident response automation."
 ---
 
 The Model Context Protocol (MCP) has rapidly evolved from experimental tool integration to enterprise-critical infrastructure. While AWS's recent blog highlighted the operational benefits of centralized MCP gateways [1], the security landscape reveals a more complex reality: operational efficiency alone isn't enough for production AI systems.

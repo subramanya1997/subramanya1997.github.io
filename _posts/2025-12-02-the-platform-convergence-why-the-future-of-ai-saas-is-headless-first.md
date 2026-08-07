@@ -5,9 +5,19 @@ description: "Why AI SaaS platforms are converging around headless-first archite
 excerpt: "The AI agent market is fragmenting into two incomplete categories: Agent Builders that democratize creation but lack governance, and AI Gateways that provide control but slow innovation. Drawing lessons from Stripe and Twilio, the future belongs to unified, headless-first platforms that combine intuitive interfaces with programmable infrastructure."
 author: Subramanya N
 date: 2025-12-02
+last_modified_at: 2026-08-06
 tags: [AI Platform, Agentic AI, Enterprise AI, AI Gateway, Agent Builder, Developer Tools, Infrastructure, Platform Architecture, Headless Architecture, AI SaaS]
 image: /assets/images/platform_convergence.png
 ready: true
+faq:
+  - q: "What is a headless-first AI platform?"
+    a: "It is a platform whose primary interface is a powerful, programmable API, with the platform's own UI built on those same public APIs. Stripe, Twilio, and Shopify established the pattern: composable, extensible capabilities that let users start with a no-code UI and graduate to the API without migrating."
+  - q: "Why aren't agent builders and AI gateways sufficient on their own?"
+    a: "Agent builders democratize creation but leave key management, cost tracking, and compliance unanswered, which produces ungoverned shadow IT. Gateways solve governance but are just plumbing that does not accelerate creation, so business users end up waiting in IT queues."
+  - q: "What is the integration tax when combining an agent builder and a gateway?"
+    a: "It is the cost of stitching the two categories together: two authentication systems, two deployment processes, observability broken across disconnected logs, and policy enforcement gaps where builder retry logic conflicts with gateway rate limits."
+  - q: "What layers make up a unified AI agent platform?"
+    a: "Four layers: a UI layer with a no-code agent builder running on the platform's own APIs, a runtime layer where every agent passes through an enterprise-grade gateway, a platform layer of APIs and SDKs for developers, and an ecosystem layer providing a marketplace and internal registry."
 ---
 
 The AI agent market is experiencing its own big bang—but this rapid expansion is creating fundamental fragmentation. Enterprises deploying agents at scale are caught between two incomplete solutions: **Agent Builders** and **AI Gateways**.

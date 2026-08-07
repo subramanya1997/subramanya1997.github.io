@@ -5,8 +5,19 @@ description: "A beginner-friendly guide to Git and version control: snapshots, c
 excerpt: How to use version control _properly_, and take advantage of it to save you from disaster, collaborate with others, and quickly find and isolate problematic changes. No more `rm -rf; git clone`. No more merge conflicts (well, fewer of them at least). No more huge blocks of commented-out code. No more fretting over how to find what broke your code. No more "oh no, did we delete the working code?!".
 author: Subramanya N
 date: 2022-12-21
+last_modified_at: 2026-08-06
 image: /assets/images/og/version-control.png
 tags: [Git, Version Control]
+schema_type: TechArticle
+faq:
+  - q: "What is Git's data model?"
+    a: "Git models history as a series of snapshots stored as three kinds of objects: blobs (files), trees (directories), and commits. Every object is content-addressed by its SHA-1 hash, and a repository is simply the set of objects plus references."
+  - q: "Why does Git use a directed acyclic graph instead of a linear history?"
+    a: "Each commit points to a set of parents rather than a single parent, so a snapshot can descend from more than one commit. That is what makes parallel branches and merge commits possible."
+  - q: "What is the staging area in Git and why does it exist?"
+    a: "The staging area lets you choose exactly which modifications go into the next snapshot instead of committing the whole working directory. It is useful when you want to split two features into separate commits, or commit a bugfix while leaving debugging print statements out."
+  - q: "How do I visualize Git history as a graph?"
+    a: "Run `git log --all --graph --decorate`. Plain `git log` shows a flattened view that hides the graph structure, while the graph form also shows where HEAD and the current branch point."
 ready: true
 ---
 

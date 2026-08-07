@@ -4,8 +4,19 @@ title: "Demystifying the Shell: A Beginner's Guide"
 description: "Learn shell basics for beginners: command-line navigation, connecting programs, tab completion, history, shortcuts, and practical CLI tips."
 excerpt: Discover the power of the shell, a command-line interface that allows you to interact with your computer's operating system more directly and efficiently. Learn the basics of using the shell, navigating within it, and connecting programs using simple examples. Enhance your skills with miscellaneous tips and resources, including tab completion, command history, keyboard shortcuts, and helpful online tools. Embrace the command line and unlock the full potential of the shell!
 date: 2022-12-28
+last_modified_at: 2026-08-06
 image: /assets/images/og/demystifying-the-shell-a-beginners-guide.png
 tags: [Bash, Shell]
+schema_type: TechArticle
+faq:
+  - q: "What is the shell?"
+    a: "The shell is a command-line interface that takes typed commands, interprets them, and sends them to the operating system to execute. Common shells include Bash, Zsh, and Fish, each with its own features."
+  - q: "How do I navigate directories in the shell?"
+    a: "Use `cd` followed by a path to change directory, `cd ..` to move up one level, and `pwd` to print the directory you are currently in."
+  - q: "What does a pipe do in the shell?"
+    a: "A pipe (`|`) passes the output of one program as the input to another. For example, `grep 'search_word' file.txt | wc -l` searches a file and then counts the matching lines."
+  - q: "How do I get help for a shell command?"
+    a: "Run `man` followed by the command name, such as `man ls`, to read its manual page. Online tools like ExplainShell also break down what each part of a command does."
 ready: true
 ---
 

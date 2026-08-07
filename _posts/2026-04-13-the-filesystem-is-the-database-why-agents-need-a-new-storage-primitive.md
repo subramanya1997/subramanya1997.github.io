@@ -5,9 +5,20 @@ description: "Why virtual filesystems may become the storage primitive for AI ag
 excerpt: "RAG pipelines gave agents memory. But the next wave of agentic infrastructure is converging on a different primitive entirely: the virtual filesystem. From Mintlify's ChromaFs to Turso's AgentFS to Box's enterprise VFS layer, the pattern is unmistakable. The filesystem is becoming the universal interface for agent cognition, and the database is quietly becoming its substrate."
 author: Subramanya N
 date: 2026-04-13
+last_modified_at: 2026-08-06
 tags: [Agentic AI, Virtual Filesystem, RAG, Agent Infrastructure, Enterprise AI, Context Engineering, AgentFS, MCP]
 image: /assets/images/vfs-agents.png
 ready: true
+schema_type: TechArticle
+faq:
+  - q: "What is a virtual filesystem for AI agents?"
+    a: "A virtual filesystem exposes agent knowledge as files and directories navigable with `ls`, `cat`, `grep`, and `find`, while a database sits underneath as the actual storage. Examples include Mintlify's ChromaFs backed by Chroma, Turso's AgentFS backed by SQLite, and ByteDance's OpenViking with its `viking://` protocol."
+  - q: "Why are agents moving away from RAG toward filesystems?"
+    a: "RAG pipelines are stateless, they flatten document structure into anonymous chunks, and they get expensive at scale. Agents do not ask one question and leave; they explore, which is a navigation problem rather than a retrieval problem, and Mintlify's switch cut session creation from 46 seconds to 100 milliseconds."
+  - q: "Is RAG dead?"
+    a: "No. Vector search remains valuable for fuzzy semantic queries where the agent does not know what it is looking for, but RAG has been over-applied to cases like documentation retrieval and codebase navigation that a filesystem interface serves better."
+  - q: "Why use a virtual filesystem instead of the native POSIX filesystem?"
+    a: "A native filesystem has no semantic search, no built-in versioning, no tiered access model, no content deduplication, no audit trail, and no MCP interface. In benchmarks of markdownfs, an in-memory Rust VFS, agent operations averaged roughly 130x faster than the native filesystem."
 ---
 
 Something interesting is happening in the agentic infrastructure space, and it is not what most people expected. For the past two years, the dominant paradigm for giving agents access to knowledge has been Retrieval-Augmented Generation: embed your documents, store them in a vector database, and let the model query them at inference time. RAG worked. It was good enough. But "good enough" has a shelf life, and in 2026, that shelf life is expiring.

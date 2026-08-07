@@ -5,9 +5,19 @@ description: "Should AI agents use user credentials or their own identities? A p
 excerpt: "As AI agents become more sophisticated and autonomous, a fundamental question is emerging: should agents operate under user credentials, or do they need their own distinct identities? This isn't just a technical curiosity—it's a critical trust and security decision that will shape how we build reliable, accountable AI systems."
 author: Subramanya N
 date: 2025-07-15
+last_modified_at: 2026-08-06
 image: /assets/images/og/do-agents-need-their-own-identity.png
 tags: [AI, Agents, Identity, Security, Trust, Governance]
 ready: true
+faq:
+  - q: "Do AI agents need their own identity separate from the user's?"
+    a: "Both are necessary rather than one or the other. In a dual identity model the agent operates within authority delegated by the user while maintaining its own identity for the specific decisions it makes."
+  - q: "When is passing the user's token to an agent good enough?"
+    a: "User identity propagation works well when agents behave as sophisticated tools: they operate within the user's session timeframe, perform clearly user-initiated actions, and leave accountability with the user. A Kubernetes troubleshooting agent investigating pod events and logs within the user's existing RBAC permissions is a typical example."
+  - q: "What is the capability mismatch problem with user tokens?"
+    a: "An agent often needs broader access than the user who invoked it, such as a compliance agent that must scan data across departments and read audit logs on behalf of a marketing manager. Using the manager's token forces an impossible choice between an agent that fails for lack of access and a user granted dangerously broad permissions."
+  - q: "Why does agent identity matter for accountability?"
+    a: "With only user identity, every autonomous decision an agent makes is attributed to the user, creating a disconnect between authority and accountability. Organizations need to trace the full chain — user intent, agent interpretation, agent decision, system action — for compliance, audit trails, and risk management."
 ---
 
 As AI agents become more sophisticated and autonomous, a fundamental question is emerging: should agents operate under user credentials, or do they need their own distinct identities? This isn't just a technical curiosity—it's a critical trust and security decision that will shape how we build reliable, accountable AI systems.

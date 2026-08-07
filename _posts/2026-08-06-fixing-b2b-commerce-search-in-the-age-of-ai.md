@@ -5,10 +5,21 @@ description: "Amazon, DoorDash, and Instacart have published the playbook for LL
 excerpt: "I audited 775,000 product records powering search for four B2B distributors. The consumer giants have already published how to fix catalogs like these with LLMs, but trade distribution hasn't picked up the playbook. Here it is, adapted for HVAC, plumbing, and electrical, with real costs."
 author: Subramanya N
 date: 2026-08-06
+last_modified_at: 2026-08-06
 image: /assets/images/fixing-b2b-commerce-search-in-the-age-of-ai.png
 tags: [Search, B2B E-commerce, Data Quality, LLMs, UNSPSC, AI Agents, Information Retrieval, Product Catalogs, Distribution]
 mermaid: true
 ready: true
+schema_type: TechArticle
+faq:
+  - q: "Why is B2B commerce search bad if the ranking algorithm is fine?"
+    a: "The data feeding the index is usually the problem, not the ranking layer. In an audit of 775,051 records across four distributors, none of the dozens of issues found were visible from the ranking layer, yet all of them degraded it."
+  - q: "What are silent pipeline failures in a product catalog?"
+    a: "They are records the ingest pipeline damages without reporting an error. In the audit, 52,570 records were indexed with no primary search field at all because a regex hit the engine's complexity cap, and on the worst catalog that was one product in seven."
+  - q: "Why do null checks miss most catalog data-quality problems?"
+    a: "A placeholder value is populated, so it passes every null check while still being false. One 313K-SKU catalog had 99.99% brand population, but 88.8% of records carried the ERP placeholder \"Approved Vendor,\" which killed every brand facet and boost."
+  - q: "How much does it cost to classify a product catalog into UNSPSC with an LLM?"
+    a: "Roughly 17 cents per thousand SKUs on Claude Haiku 4.5 at Batch API pricing, or about $130 for a 775K-record fleet. Classify hierarchically, picking the family from about 450 options and then the class within it, rather than making one 50,000-way choice."
 ---
 
 B2B commerce search has a dirty secret: the ranking algorithm is rarely the problem.

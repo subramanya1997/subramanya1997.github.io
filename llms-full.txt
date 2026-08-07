@@ -16,6 +16,11 @@ Date: {{ post.date | date: "%Y-%m-%d" }}
 Tags: {{ post.tags | join: ", " }}
 
 {{ post.content }}
-
+{% if post.faq and post.faq.size > 0 %}
+### Quick Answers
+{% for item in post.faq %}
+Q: {{ item.q }}
+A: {{ item.a }}
+{% endfor %}{% endif %}
 ---
 {% endfor %}

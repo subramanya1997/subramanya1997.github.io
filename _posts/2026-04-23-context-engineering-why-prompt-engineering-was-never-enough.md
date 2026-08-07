@@ -5,10 +5,21 @@ description: "Context engineering explained: why modern AI systems depend on wha
 excerpt: "By 2026, the real job in modern AI systems is not writing a clever prompt. It is deciding what the model sees, when it sees it, and how that context is structured, persisted, and turned into durable memory."
 author: Subramanya N
 date: 2026-04-23
+last_modified_at: 2026-08-06
 image: /assets/images/og/context-engineering-why-prompt-engineering-was-never-enough.png
 tags: [Context Engineering, Context Graphs, AI Agents, RAG, Prompt Engineering, MCP, Enterprise AI, Agent Architecture, Agent Memory]
 mermaid: true
 ready: true
+schema_type: TechArticle
+faq:
+  - q: "What is context engineering?"
+    a: "Context engineering is the discipline of deciding what an AI model sees, when it sees it, and how that information is structured, compressed, persisted, and retrieved. It is the layer between the outside world and the model's working memory, covering retrieval, tool design, memory, and orchestration."
+  - q: "How is context engineering different from prompt engineering?"
+    a: "Prompt engineering optimizes the wording of a single, mostly static request; context engineering builds the full information environment for multi-step, stateful systems. Prompt engineering is a subset of context engineering, not a replacement for it."
+  - q: "Do larger context windows make context engineering unnecessary?"
+    a: "No, the research points the opposite way. Lost in the Middle showed models use long contexts unevenly, Databricks found only a few models hold up above 64k tokens, and Chroma's Context Rot report showed even simple tasks degrade as input length grows."
+  - q: "What is the difference between context engineering and a context graph?"
+    a: "Context engineering is the broader discipline of assembling what enters the next context window; a context graph is one possible long-term memory substrate inside it. Context graphs earn their place when temporal truth, provenance, precedent, and cross-entity reasoning all matter."
 ---
 
 For a while, "prompt engineering" was the name we gave to the craft of getting good results from large language models. It made sense in the early days. Most people were using one-shot interactions, and the main lever really did feel like wording: ask more clearly, add an example, constrain the format, and the model behaved better.

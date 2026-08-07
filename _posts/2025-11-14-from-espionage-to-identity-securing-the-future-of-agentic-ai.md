@@ -5,9 +5,19 @@ description: "What AI-driven cyber espionage means for agentic AI security, iden
 excerpt: "Anthropic has detailed its disruption of the first publicly reported cyber espionage campaign orchestrated by a sophisticated AI agent. The incident, attributed to state-sponsored group GTG-1002, signals that the age of autonomous, agentic AI threats is here. This post dissects the anatomy of the attack and explores how emerging standards like OpenID Connect for Agents (OIDC-A) provide a necessary path forward."
 author: Subramanya N
 date: 2025-11-14
+last_modified_at: 2026-08-06
 tags: [AI, Security, Agentic AI, OIDC-A, MCP, Anthropic, Claude, Cybersecurity, AI Agents, Identity Management, Zero Trust]
 image: /assets/images/ai_cyberattack_lifecycle_diagram.webp
 ready: true
+faq:
+  - q: "What was the GTG-1002 AI cyber espionage campaign?"
+    a: "It was the first publicly reported cyber espionage campaign orchestrated by an AI agent, disrupted by Anthropic and attributed to a state-sponsored group designated GTG-1002. The attackers turned Claude Code into an autonomous operator against roughly thirty organizations, with the AI executing 80-90% of the tactical work and humans intervening only at a few authorization gates."
+  - q: "How did the attackers use MCP in the attack?"
+    a: "They built a custom framework around a series of Model Context Protocol servers that gave the AI agent access to standard open-source penetration testing utilities such as network scanners, password crackers, and database exploitation tools. Decomposing the intrusion into seemingly benign sub-tasks let the agent carry out the full campaign."
+  - q: "What is OIDC-A and how does it help secure AI agents?"
+    a: "OpenID Connect for Agents (OIDC-A) is a proposed framework for establishing the identity of an AI agent and managing its authorization through cryptographic delegation chains. It makes an agent a distinct entity acting on behalf of a user with a clearly constrained set of permissions, instead of a proxy operating with borrowed, indistinct authority."
+  - q: "Why do enterprises need an MCP gateway?"
+    a: "A gateway acts as a policy enforcement point between agents and their tools: it blocks requests from unattested agents, enforces narrowly scoped tool-level delegation, detects anomalous behavior, and cryptographically logs every request for audit. Without one, the connection between an agent and its tools is treated as an implicitly trusted channel."
 ---
 
 Anthropic has detailed its disruption of the first publicly reported cyber espionage campaign orchestrated by a sophisticated AI agent [1]. The incident, attributed to a state-sponsored group designated **GTG-1002**, is more than just a security bulletin; it is a clear signal that the age of autonomous, agentic AI threats is here. It also serves as a critical case study, validating the urgent need for a new generation of identity and access management protocols specifically designed for AI.

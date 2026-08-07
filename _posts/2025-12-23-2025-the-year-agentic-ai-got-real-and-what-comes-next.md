@@ -5,9 +5,19 @@ description: "A 2025 agentic AI review covering enterprise adoption, MCP, Agent 
 excerpt: "If 2024 was the year of AI experimentation, 2025 was the year of industrialization. The speculative boom around generative AI has rapidly matured into the fastest-scaling software category in history, with autonomous agents moving from the lab to the core of enterprise operations."
 author: Subramanya N
 date: 2025-12-23
+last_modified_at: 2026-08-06
 tags: [Agentic AI, Enterprise AI, MCP, Agent Skills, AI Agents, AI Infrastructure, Multi-Agent Systems, AI Governance, Open Standards, 2025 Review]
 image: /assets/images/agentic-ai-2025-review.png
 ready: true
+faq:
+  - q: "What made 2025 the year agentic AI got real?"
+    a: "2025 was the year agentic AI industrialized: enterprise generative AI spending hit $37 billion, a 3.2x jump, and 79% of companies reported adopting AI agents. Massive investment combined with standardization moved agents from lab experiments into core enterprise operations."
+  - q: "Why did MCP become the standard for agent tool access?"
+    a: "The Model Context Protocol solved the interoperability crisis of proprietary APIs and fragmented toolsets. Its November 2025 spec release added enterprise features like asynchronous operations and server identity, and in December Anthropic, Block, and OpenAI donated MCP to the Agentic AI Foundation under the Linux Foundation."
+  - q: "Why are multi-agent systems replacing monolithic agents?"
+    a: "Specialization improves accuracy and parallelism improves scale, the same reason companies hire specialists rather than one super-employee. Anthropic's research found a multi-agent system with a lead agent coordinating specialized sub-agents outperformed a single more powerful agent by over 90% on complex research tasks."
+  - q: "What are the main agentic AI challenges for 2026?"
+    a: "Four problems dominate: governance at scale across thousands of skills, reliability and predictability given non-deterministic LLMs, multi-agent orchestration and coordination, and security in a composable world of third-party skills. 2025 solved connection; 2026 is about control and coordination."
 ---
 
 If 2024 was the year of AI experimentation, 2025 was the year of industrialization. The speculative boom around generative AI has rapidly matured into the fastest-scaling software category in history, with autonomous agents moving from the lab to the core of enterprise operations. As we close out the year, it's clear that the agentic AI landscape has been fundamentally reshaped by massive investment, critical standardization, and a clear-eyed focus on solving the hard problems of production readiness.

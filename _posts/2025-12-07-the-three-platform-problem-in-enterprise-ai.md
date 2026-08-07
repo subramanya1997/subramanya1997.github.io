@@ -5,9 +5,19 @@ description: "Enterprise AI's three-platform problem: why low-code tools, DevOps
 excerpt: "Enterprise AI has a platform problem. The tools to build AI-powered applications exist, but they're scattered across three disconnected ecosystems—each solving part of the puzzle, none providing a complete solution. This isn't a 'too many choices' problem. It's an architectural one."
 author: Subramanya N
 date: 2025-12-07
+last_modified_at: 2026-08-06
 tags: [AI Platform, Enterprise AI, Low-Code, DevOps, Platform Architecture, API-First, Infrastructure, Developer Tools, Platform Strategy]
 image: /assets/images/low-code.webp
 ready: true
+faq:
+  - q: "What is the three-platform problem in enterprise AI?"
+    a: "Building production AI applications requires capabilities from three disconnected ecosystems: low-code platforms, DevOps platforms, and AI/ML platforms. Gartner tracks them in separate Magic Quadrants because they serve fundamentally different users, and none of the three provides a complete solution on its own."
+  - q: "Why is stitching together low-code, DevOps, and AI platforms so costly?"
+    a: "You pay an integration tax in three forms: workflow disconnects where a business user's prototype gets rebuilt from scratch for production, observability gaps that make end-to-end request tracing nearly impossible without custom instrumentation, and governance drift where DevOps security policies do not apply to the low-code environment."
+  - q: "What does API-first unification mean for an AI platform?"
+    a: "It means the same infrastructure, deployment system, and security model serve both citizen developers and professional developers, with AI native to the environment rather than bolted on. The UI for non-developers and the API for developers are simply different clients of the same system."
+  - q: "How should enterprises evaluate an AI platform?"
+    a: "Ask whether the platform unifies these concerns or will require writing integration code for years. Look for API-first architecture where the UI runs on the same public APIs, built-in deployment and operations rather than an export button, and platform-level governance that is configured once and inherited everywhere."
 ---
 
 Enterprise AI has a platform problem. The tools to build AI-powered applications exist, but they're scattered across three disconnected ecosystems—each solving part of the puzzle, none providing a complete solution.

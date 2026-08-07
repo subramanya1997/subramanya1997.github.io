@@ -5,9 +5,20 @@ description: "Cursor AI workflow lessons from a year of using agents, MCP, Plan 
 excerpt: "My journey with Cursor mirrors the maturation of the tool itself: from a simple agent to a sophisticated architectural partner. This post details how my workflow evolved through @ mentions, MCP, Plan Mode, and custom commands."
 author: Subramanya N
 date: 2026-01-04
+last_modified_at: 2026-08-06
 tags: [Cursor, AI IDE, MCP, Developer Workflow, AI Agents, Plan Mode, AI Productivity, Agentic AI, Developer Tools]
 image: /assets/images/cursor-custom-commands.png
 ready: true
+schema_type: TechArticle
+faq:
+  - q: "How do Cursor @ mentions improve agent context?"
+    a: "The @ mentions let you tell the agent explicitly what to look at instead of hoping it understands your codebase: `@file` for a specific file, `@folder` for a directory, `@codebase` to search the whole project, `@web` for external documentation, and `@docs` for official library docs."
+  - q: "What does MCP add to a Cursor workflow?"
+    a: "MCP connects Cursor to external tools and data sources such as GitHub, Linear, Slack, and custom internal APIs. That turns the agent from a code generator into an assistant that can, for example, fetch a Linear issue, understand the requirements, and start building."
+  - q: "How should you use Plan Mode with different models?"
+    a: "Use a two-step split: plan with a powerful model like Claude Opus to produce a detailed step-by-step implementation plan with file names, function signatures, and logic, then execute each step with a faster, cheaper model like Sonnet or GPT-5.2. This separates the what from the how, produces a reviewable plan artifact, and saves tokens."
+  - q: "What custom commands and rules are worth setting up?"
+    a: "A `.cursorrules` file defining coding standards, preferred patterns, and architectural constraints that the agent reads before every task. On top of that, commands like `/plan`, `/refactor`, `/test`, and `/review` wrap the most common workflows so they become repeatable."
 ---
 
 It's been over a year since I made Cursor my primary IDE, and it's hard to overstate the impact it's had on my work. As a machine learning engineer building conversational AI platforms at Dylog and experimenting with agentic infrastructure on my personal projects, I've lived through the evolution of AI-native development. My journey with Cursor mirrors the maturation of the tool itself: from a simple agent to a sophisticated architectural partner.

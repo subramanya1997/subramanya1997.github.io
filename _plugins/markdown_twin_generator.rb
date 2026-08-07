@@ -155,7 +155,25 @@ module Jekyll
 
       body = render_liquid(doc.content.to_s, doc)
 
-      "#{to_front_matter(front)}\n# #{doc.data["title"]}\n\n#{body.strip}\n"
+      "#{to_front_matter(front)}\n# #{doc.data["title"]}\n\n#{body.strip}#{faq_section(doc)}\n"
+    end
+
+    # Mirrors the visible FAQ block (_includes/post-faq.html) driven by the
+    # `faq` front-matter list, so the markdown twin carries the Q&A pairs too.
+    def faq_section(doc)
+      faq = doc.data["faq"]
+      return "" unless faq.is_a?(Array) && !faq.empty?
+
+      lines = ["", "", "## Quick Answers", ""]
+      faq.each do |item|
+        next unless item.is_a?(Hash) && item["q"] && item["a"]
+
+        lines << "### #{item["q"]}"
+        lines << ""
+        lines << item["a"].to_s.strip
+        lines << ""
+      end
+      lines.join("\n").rstrip
     end
 
     def page_twin(page)

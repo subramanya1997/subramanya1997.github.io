@@ -5,8 +5,19 @@ description: "Document AI architecture using Google Cloud Platform OCR, Pinecone
 excerpt: Explore the groundbreaking fusion of Google Cloud Platform for OCR, Pinecone, and Large Language Model that is transforming information retrieval. This blog delves into how these potent tools collaborate to enable seamless interactions with documents using natural language. Discover how Google Cloud Platform offers a solid foundation, Pinecone provides rapid similarity searches for effective document retrieval, and LLM elevates language comprehension and generation capabilities. 
 author: Subramanya N, Tasheer Hussain B
 date: 2023-06-10
+last_modified_at: 2026-08-06
 tags: [GCP, Pinecone, Large Language Models, OpenAI, Document AI]
 image: /assets/images/system_design_with_document_ai_gpt_pinecone.jpeg
+schema_type: TechArticle
+faq:
+  - q: "How do you make scanned documents searchable with natural language?"
+    a: "Convert the PDFs or images to text with Google Document AI, generate embeddings for that text with a language model, store the embeddings in Pinecone, and answer user queries by retrieving the most semantically similar chunks. The retrieved text is then passed to a chat model as context."
+  - q: "What is Google Document AI used for here?"
+    a: "Document AI converts unstructured PDF and image documents into structured, plain text. The post calls it through the `documentai.DocumentProcessorServiceClient` with a processor ID, project ID, and location."
+  - q: "Why store embeddings in Pinecone instead of querying documents directly?"
+    a: "Pinecone indexes the embeddings so the system can run fast similarity searches and find documents that closely match a query's meaning. Results below a similarity threshold, 0.75 in the example, are discarded before being used as context."
+  - q: "How does the system avoid making up answers?"
+    a: "The system prompt instructs the model to answer only from the provided context and to truthfully say \"I don't know\" when the information is not there. If no context clears the similarity threshold, the query is sent with \"No context found\"."
 ready: false
 ---
 

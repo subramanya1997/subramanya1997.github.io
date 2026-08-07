@@ -5,10 +5,21 @@ description: "How to secure MCP servers with OIDC, OIDC-A, identity-aware API ga
 excerpt: Integrating OpenID Connect (OIDC) and the new OIDC-A agent extension with an identity-aware API gateway to securely authenticate users, LLM agents, and MCP tools—going far beyond basic API proxying.
 author: Subramanya N
 date: 2025-05-21
+last_modified_at: 2026-08-06
 image: /assets/images/og/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway.png
 tags: [OIDC, API Gateway, Security, Authentication, Authorization, Cloud, MCP, Architecture]
 mermaid: true
 ready: true
+schema_type: TechArticle
+faq:
+  - q: "What is an identity-aware proxy for MCP?"
+    a: "It is a Layer 7 reverse proxy or API gateway placed between AI agents (MCP clients) and MCP servers so that all tool traffic passes through one controlled funnel. It authenticates every request, enforces authorization and RBAC policies, consults a tool registry for routing, and produces audit logs."
+  - q: "How does OIDC secure MCP requests?"
+    a: "Every request hitting the MCP gateway must carry a JWT issued by an identity provider via OpenID Connect, typically in an `Authorization: Bearer <token>` header. The proxy verifies the signature and claims such as issuer, audience, and expiration, rejects anything unauthenticated, and maps token claims to roles or scopes so MCP servers never see an anonymous call."
+  - q: "Why add OIDC-A on top of OIDC for MCP?"
+    a: "Plain OIDC only authenticates the human user, while a production MCP deployment must also identify the LLM agent orchestrating the workflow and the MCP tool being invoked. OIDC-A adds claims such as `agent_type`, `agent_model`, `agent_instance_id`, `delegator_sub`, and `delegation_chain` so the gateway can validate up to three identities per call — user, agent, and tool — in a single policy decision."
+  - q: "Why does an MCP gateway need session affinity?"
+    a: "MCP sessions can be long-lived and involve streaming via Server-Sent Events, so requests belonging to one session must be handled consistently. Session-affinity routing sends a given session's traffic to the same MCP server instance every time, preventing loss of in-memory state or context when multiple instances are running."
 --- 
 
 AI agents are quickly moving from research demos to real enterprise applications, connecting large language models (LLMs) with company data and services. A common approach is using tools or plugins to let an LLM fetch context or take actions – but some dismiss these as just "glorified API calls." In reality, securely integrating AI with business systems is far more complex. This is where the **Model Context Protocol (MCP)** comes in, and why a robust **proxy architecture with OpenID Connect (OIDC)** identity is crucial for enterprise-scale deployments. If you are comparing agent customization primitives, start with my broader guide to [Claude Skills vs MCP](/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/).

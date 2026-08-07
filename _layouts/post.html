@@ -71,8 +71,9 @@ layout: default
 
     <article class="post-content">
       {{ content }}
+      {% include post-faq.html %}
     </article>
-    
+
     <!-- Mobile Social Share (visible only on mobile/tablet) -->
     <div class="mobile-social-share">
       <div class="mobile-social-header">
@@ -265,11 +266,13 @@ layout: default
   }
 </style>
 
-<!-- Structured Data for Scholarly Articles -->
+<!-- Structured Data for the post. Defaults to TechArticle; override per post
+     with `schema_type` in front matter (e.g. ScholarlyArticle for
+     peer-reviewed papers such as the OIDC-A proposal). -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ScholarlyArticle",
+  "@type": "{{ page.schema_type | default: 'TechArticle' }}",
   "headline": {{ page.title | jsonify }},
   "author": {
     "@type": "Person",
@@ -277,7 +280,7 @@ layout: default
     "url": {{ site.url | jsonify }}
   },
   "datePublished": "{{ page.date | date: '%Y-%m-%dT%H:%M:%S' }}+00:00",
-  "dateModified": "{{ page.date | date: '%Y-%m-%dT%H:%M:%S' }}+00:00",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date: '%Y-%m-%dT%H:%M:%S' }}+00:00",
   "publisher": {
     "@type": "Organization",
     "name": {{ site.title | jsonify }},

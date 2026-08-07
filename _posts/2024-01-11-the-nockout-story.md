@@ -5,8 +5,18 @@ description: "The story behind Nockout, a sports activity platform for booking c
 excerpt: Discover how Nockout is transforming the way we find and enjoy sports activities. No more hassle in booking courts, no more mismatches in skill levels, just pure joy of playing your favorite sports.
 author: Subramanya N, Yash Kejariwal
 date: 2024-01-11
+last_modified_at: 2026-08-06
 tags: [Sports, Technology, Community, Innovation]
 image: /assets/images/NockOut_1080x540.png
+faq:
+  - q: "What is Nockout?"
+    a: "Nockout is a sports platform built by co-founders Subramanya N and Yash Kejariwal to help people find places to play and people to play with. It combines venue discovery, skill-based activity matching, and a simple booking process."
+  - q: "What problem does Nockout solve?"
+    a: "Sports enthusiasts struggle to find the right venue and the right people to play with, a frustration the founders saw echoed in tweets and conversations across the community. Nockout addresses both the booking hassle and the mismatch in skill levels."
+  - q: "How does skill-based matching work on Nockout?"
+    a: "The platform recommends players whose skills align with yours so you join activities that match your proficiency in a given sport. The goal is fair play and good competition."
+  - q: "What features are planned for Nockout?"
+    a: "The roadmap includes private spaces for teams and groups, expanded community sharing features, coaching and activities for all skill levels, streamlined payments, and personalized sports and nutrition advice alongside a sports marketplace."
 ready: true
 ---
 ![Nockout Logo](/assets/images/NockOut_1080x540.png){: .post-img width="1080" height="540" }

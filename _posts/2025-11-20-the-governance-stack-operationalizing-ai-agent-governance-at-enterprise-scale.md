@@ -5,9 +5,20 @@ description: "AI agent governance stack for enterprise scale: policy enforcement
 excerpt: "With 88% of organizations now deploying AI agents in production, governance has shifted from a theoretical concern to an operational imperative. Yet 40% of technology executives admit their governance programs are insufficient. This article presents the technical infrastructure—the 'governance stack'—required to transform governance frameworks from policy documents into automated, enforceable reality across the entire agentic workforce lifecycle."
 author: Subramanya N
 date: 2025-11-20
+last_modified_at: 2026-08-06
 tags: [AI, Agents, Agentic AI, Governance, Enterprise AI, Agent Ops, MCP, Security, Infrastructure, Compliance, AI Management]
 image: /assets/images/governance_stack.png
 ready: true
+schema_type: TechArticle
+faq:
+  - q: "What is the AI agent governance stack?"
+    a: "It is the integrated set of platforms, protocols, and enforcement mechanisms that turn governance from policy documents into automated enforcement across the agent lifecycle. It has five layers: identity and attestation, agent and tool registries, policy engine and gateway, observability and monitoring, and human-in-the-loop orchestration."
+  - q: "Why can't traditional governance models handle AI agents?"
+    a: "Traditional governance assumes predetermined logic paths, a single service boundary, deployment-time checks, and static code and logs. Agents reason contextually and exhibit emergent behavior, form recursive delegation chains, require policy enforcement at the moment of action, and produce dynamic decision traces across multiple agents and tools."
+  - q: "What is the governance gap in enterprise AI?"
+    a: "The governance gap is the distance between what existing frameworks prescribe and what existing infrastructure can actually enforce. McKinsey's 2025 survey found 88% of organizations report regular use of AI agents while 40% of technology executives believe their governance programs are insufficient."
+  - q: "Should enterprises build or buy agent governance infrastructure?"
+    a: "The optimal path depends on organizational maturity, existing infrastructure, and the scale of agentic deployment. The options are extending enterprise data governance and MLOps platforms, adopting purpose-built agentic governance products, or assembling a custom stack from open standards such as OIDC-A and MCP."
 ---
 
 Enterprise adoption of AI agents has reached a tipping point. According to McKinsey's 2025 global survey, **88% of organizations now report regular use of AI agents** in at least one business function, with **62% actively experimenting with agentic systems** [1]. Yet this rapid adoption has created a critical disconnect: while organizations understand the *importance* of governance, they struggle with the *implementation* of it. The same survey reveals that **40% of technology executives believe their current governance programs are insufficient** for the scale and complexity of their agentic workforce [1, 2].

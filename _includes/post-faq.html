@@ -1,0 +1,110 @@
+{% comment %}
+  Renders the optional per-post Q&A defined in front matter:
+
+    faq:
+      - q: "Question phrased the way a reader would ask it?"
+        a: "One-to-three sentence direct answer. Markdown allowed."
+
+  Emits a visible "Quick Answers" section at the end of the
+  post — each question a collapsible <details> segment — plus the matching
+  schema.org FAQPage JSON-LD so AI assistants and search engines can
+  extract the Q&A pairs directly.
+{% endcomment %}
+{% if page.faq and page.faq.size > 0 %}
+<section class="post-faq" aria-labelledby="post-faq-title">
+  <h2 id="post-faq-title">Quick Answers</h2>
+  {% for item in page.faq %}
+  <details class="post-faq-item">
+    <summary class="post-faq-question">{{ item.q }}</summary>
+    <div class="post-faq-answer">{{ item.a | markdownify }}</div>
+  </details>
+  {% endfor %}
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "{{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}#faq",
+  "mainEntity": [
+    {% for item in page.faq %}
+    {
+      "@type": "Question",
+      "name": {{ item.q | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ item.a | markdownify | strip_html | strip_newlines | jsonify }}
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+
+<style>
+  .post-faq {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-color, #e0e0e0);
+  }
+
+  .post-faq h2 {
+    margin-bottom: 20px;
+  }
+
+  .post-faq-item {
+    margin-bottom: 12px;
+    border: 1px solid var(--border-color, #e0e0e0);
+    border-radius: 8px;
+    background: var(--card-bg, transparent);
+    overflow: hidden;
+  }
+
+  .post-faq-question {
+    cursor: pointer;
+    padding: 14px 18px;
+    font-weight: 600;
+    font-size: 1.02em;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    user-select: none;
+  }
+
+  .post-faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .post-faq-question::after {
+    content: "+";
+    font-size: 1.3em;
+    font-weight: 400;
+    line-height: 1;
+    opacity: 0.55;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .post-faq-item[open] .post-faq-question::after {
+    transform: rotate(45deg);
+  }
+
+  .post-faq-question:hover {
+    background: rgba(128, 128, 128, 0.06);
+  }
+
+  .post-faq-answer {
+    padding: 0 18px 14px 18px;
+  }
+
+  .post-faq-answer p {
+    margin: 0 0 10px 0;
+  }
+
+  .post-faq-answer p:last-child {
+    margin-bottom: 0;
+  }
+</style>
+{% endif %}

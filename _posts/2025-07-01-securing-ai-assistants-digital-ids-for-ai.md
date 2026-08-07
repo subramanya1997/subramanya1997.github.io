@@ -5,10 +5,21 @@ description: "Why AI assistants need digital identities, delegated authorization
 excerpt: As AI assistants on platforms like Instagram, Facebook, and Booking.com become more autonomous, they need proper digital identities to securely act on our behalf. Learn how AI identity systems work and why they matter for consumer platforms.
 author: Subramanya N
 date: 2025-07-01
+last_modified_at: 2026-08-06
 image: /assets/images/og/securing-ai-assistants-digital-ids-for-ai.png
 tags: [AI, Security, Identity, AI Agents, Consumer Platforms, SPIFFE]
 mermaid: true
 ready: true
+schema_type: TechArticle
+faq:
+  - q: "Why do AI assistants need their own digital identity?"
+    a: "Because platforms need to know which specific AI instance is making a request, who authorized it, what permissions it has, and whether it is behaving as expected. Without that, platforms risk unauthorized actions, an inability to track which AI did what, and security vulnerabilities."
+  - q: "How are AI agents different from normal machine-to-machine clients?"
+    a: "Traditional apps use simple API keys or service accounts, but AI agents are autonomous, making decisions on their own from your instructions; personal, since your assistant behaves differently from someone else's; and delegated, acting on your behalf with your permissions."
+  - q: "How does a digital ID stop an AI assistant from exceeding its permissions?"
+    a: "The assistant receives an identity certificate carrying the specific constraints you authorized, and services verify that identity and its permissions before acting. For example, an assistant authorized to book trips under $500 will have a $600 hotel booking automatically rejected by the booking system."
+  - q: "Can SPIFFE be used for consumer AI assistant identity?"
+    a: "SPIFFE, the Secure Production Identity Framework for Everyone, provides the foundation for this kind of identity. Platforms still need to adapt it for consumer AI use cases rather than using it as-is."
 ---
 
 ## When AI Acts on Your Behalf

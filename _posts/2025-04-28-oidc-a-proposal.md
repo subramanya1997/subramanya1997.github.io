@@ -5,9 +5,20 @@ description: "OIDC-A proposal for OpenID Connect agent identity, delegation chai
 excerpt: Technical proposal for extending OpenID Connect Core 1.0 to provide a framework for representing, authenticating, and authorizing LLM-based agents within the OAuth 2.0 ecosystem.
 author: Subramanya N
 date: 2025-04-28
+last_modified_at: 2026-08-06
 image: /assets/images/og/oidc-a-proposal.png
 tags: [OpenID, OAuth, AI, Agents, Security, Identity, Authentication, Authorization, Standards, Proposal, Specification]
+schema_type: ScholarlyArticle
 ready: true
+faq:
+  - q: "What is OIDC-A?"
+    a: "OpenID Connect for Agents (OIDC-A) 1.0 is a proposed extension to OpenID Connect Core 1.0 for representing, authenticating, and authorizing LLM-based agents within the OAuth 2.0 ecosystem. It defines standard claims, endpoints, and protocols for agent identity, attestation, delegation chains, and attribute-based authorization."
+  - q: "Why do existing OAuth 2.0 and OpenID Connect not cover AI agents?"
+    a: "They were designed primarily for human users and conventional applications, so they lack constructs for agents that act on behalf of users with varying autonomy, operate within delegation chains, hold dynamic model-derived capabilities, and require attestation of their integrity and origin."
+  - q: "What claims does OIDC-A add to an ID Token?"
+    a: "Core identity claims include `agent_type`, `agent_model`, `agent_provider`, and `agent_instance_id` as REQUIRED, with `agent_version` RECOMMENDED. Delegation claims add `delegator_sub`, `delegation_chain`, `delegation_purpose`, and `delegation_constraints`, while capability and trust claims add `agent_capabilities`, `agent_trust_level`, `agent_attestation`, and `agent_context_id`."
+  - q: "How does a relying party validate a delegation chain?"
+    a: "The relying party confirms chronological order via `delegated_at`, verifies each `iss` is trusted, checks that the `aud` of step N matches the `sub` of step N+1, and verifies that each step's `scope` is a subset of the delegator's scopes. It then enforces any constraints, validates signatures where steps are individually signed, and evaluates the chain against authorization policies such as maximum chain length."
 ---
 
 *This document proposes a standard extension to OpenID Connect for representing and verifying the identity of LLM-based agents. It integrates the core proposal with detailed frameworks for verification, attestation, and delegation chains.*

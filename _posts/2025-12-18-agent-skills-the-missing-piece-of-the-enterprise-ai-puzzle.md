@@ -5,9 +5,20 @@ description: "Agent Skills explained for enterprise AI: portable procedural know
 excerpt: "The enterprise AI landscape is at a critical juncture. We have powerful general-purpose models and a growing ecosystem of tools. But we are missing a crucial piece: a standardized, portable way to equip agents with the procedural knowledge and organizational context they need to perform real work."
 author: Subramanya N
 date: 2025-12-18
+last_modified_at: 2026-08-06
 tags: [AI Agents, Agent Skills, Enterprise AI, Anthropic, MCP, Agentic AI, AI Governance, Open Standards, AI Infrastructure, Agent Architecture]
 image: /assets/images/agent-skills.png
 ready: true
+schema_type: TechArticle
+faq:
+  - q: "What is an Agent Skill?"
+    a: "An Agent Skill is a directory containing a `SKILL.md` file plus optional subdirectories for scripts, references, and assets. The `SKILL.md` holds instructions, examples, and best practices that teach an agent how to perform a specific task, functioning like an onboarding guide for a new hire."
+  - q: "How does progressive disclosure work in Agent Skills?"
+    a: "Progressive disclosure loads context in three levels. At startup the agent loads only each skill's `name` and `description`; when a skill is triggered it loads the full `SKILL.md` body; and if more detail is needed it dynamically pulls files from `scripts/`, `references/`, or `assets/`."
+  - q: "What is the difference between Agent Skills and MCP?"
+    a: "MCP tells an agent what tools are available, while Agent Skills teach it how to use those tools effectively. MCP is the plumbing that connects agents to databases and APIs; skills are the procedural memory that supplies best practices and organizational context."
+  - q: "Why does Agent Skills being an open standard matter for enterprises?"
+    a: "An open standard means codified expertise is not tied to a single agent platform, so skills built once can run on any compliant agent. It also enables a marketplace for pre-built skills and accelerates adoption through a shared format, though it raises new governance needs like skill registries and policy engines."
 ---
 
 The enterprise AI landscape is at a critical juncture. We have powerful general-purpose models and a growing ecosystem of tools. But we are missing a crucial piece of the puzzle: a standardized, portable way to equip agents with the procedural knowledge and organizational context they need to perform real work. On December 18, 2025, Anthropic took a major step towards solving this problem by releasing **Agent Skills** as an open standard [1]. This move, following the same playbook that made the Model Context Protocol (MCP) an industry-wide success, is not just another feature release—it is a fundamental shift in how we will build and manage agentic workforces.

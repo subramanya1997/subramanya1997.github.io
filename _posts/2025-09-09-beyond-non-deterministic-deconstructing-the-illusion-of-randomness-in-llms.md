@@ -5,9 +5,20 @@ description: "Why LLM behavior is often mislabeled as non-deterministic, and wha
 excerpt: "Attributing an LLM's behavior to 'non-determinism' is like blaming a complex system's emergent behavior on magic. It's an admission of incomprehension, not an explanation. The truth is far more fascinating and, for architects and engineers, far more critical to understand."
 author: Subramanya N
 date: 2025-09-09
+last_modified_at: 2026-08-06
 image: /assets/images/og/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms.png
 tags: [AI, LLM, Determinism, Architecture, Machine Learning, Prompt Engineering, Emergence]
 ready: true
+schema_type: TechArticle
+faq:
+  - q: "Are large language models actually non-deterministic?"
+    a: "No, the model itself is a deterministic mathematical function that produces the same logits given the same weights and the same input sequence. The apparent randomness comes from the sampling strategy applied to the model's output, not from the model's execution."
+  - q: "What does the temperature parameter actually do in an LLM?"
+    a: "Temperature scales the logits before they pass through the softmax function, controlling how flat or sharp the resulting probability distribution is. A temperature of 0 produces greedy decoding where the highest-probability token is always chosen, while higher temperatures make less likely tokens more probable."
+  - q: "Why does setting temperature to 0 still not guarantee identical outputs?"
+    a: "Minor differences in floating-point arithmetic across different hardware or software library versions can produce minuscule variations in the logits. Those variations can occasionally be enough to tip the selection toward a different token."
+  - q: "Why is prompt engineering so unpredictable if LLMs are deterministic?"
+    a: "Prompt engineering is an ill-posed inverse problem that fails all three of Hadamard's conditions: existence, uniqueness, and stability. The instability condition matters most in practice, because a tiny prompt change can produce a radically different output through sensitive dependence on initial conditions rather than randomness."
 ---
 
 In the rapidly evolving lexicon of AI, few terms are as casually thrown around—and as fundamentally misunderstood—as "non-deterministic." We use it to explain away unexpected outputs, to describe the creative spark of generative models, and to justify the frustrating brittleness of our AI-powered systems. But this term, borrowed from classical computer science, is not just imprecise when applied to Large Language Models (LLMs); it's a conceptual dead end. It obscures the intricate, deterministic machinery humming beneath the surface and distracts us from the real architectural challenges we face.

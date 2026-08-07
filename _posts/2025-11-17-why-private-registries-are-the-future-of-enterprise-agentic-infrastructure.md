@@ -5,9 +5,19 @@ description: "Why enterprises need private agent and MCP registries for AI gover
 excerpt: "With 79% of companies already adopting AI agents, a critical governance gap has emerged. Without robust management frameworks, organizations risk a chaotic landscape of shadow AI, creating significant security vulnerabilities and operational inefficiencies. The solution lies in Private Agent and MCP Registries—command centers for agentic infrastructure that provide the visibility, governance, and security necessary to scale AI responsibly."
 author: Subramanya N
 date: 2025-11-17
+last_modified_at: 2026-08-06
 tags: [AI, Agents, Agentic AI, MCP, Agent Registry, Enterprise AI, Governance, Security, Infrastructure, Private Registry, AI Management]
 image: /assets/images/MCP Registry.png
 ready: true
+faq:
+  - q: "What is a private agent and MCP registry?"
+    a: "It is an enterprise system that serves as a single source of truth for every AI agent and MCP tool in the organization, functioning as a command center rather than just a catalog. It tracks each agent's unique identity, capabilities, lifecycle status, ownership, and activity, and curates an approved marketplace of vetted tools."
+  - q: "Why do enterprises need a private registry instead of using public MCP servers?"
+    a: "Uncontrolled adoption of MCP servers creates security blind spots, compliance risk, and unpredictable costs from autonomous agents making API calls. A private registry lets the enterprise define a catalog of approved and vetted tools, control versions to prevent breaking changes, and monitor usage of paid APIs."
+  - q: "How does a private registry enforce AI governance?"
+    a: "It embeds policy checks directly into the agent lifecycle: mandatory metadata and documentation before registration, automated gates such as a required security review before promotion to production, role-based access control integrated with identity systems like Entra ID or Okta, and audit logging of every registration, tool connection, and permission change."
+  - q: "What components make up an enterprise agent registry architecture?"
+    a: "The core components are a central registry API, a metadata database, a policy engine, a discovery service, a health monitor, and an integration layer connecting to enterprise identity, monitoring, and DevOps systems. The pattern mirrors container registries, API management platforms, and model registries."
 ---
 
 The age of agentic AI is no longer on the horizon; it's in our datacenters, cloud environments, and business units. A recent PwC report highlights that a staggering **79% of companies are already adopting AI agents** in some capacity [1]. As these autonomous systems proliferate, executing tasks and making decisions on behalf of the enterprise, a critical governance gap has emerged. Without a robust management framework, organizations risk a chaotic landscape of "shadow AI," creating significant security vulnerabilities, compliance nightmares, and operational inefficiencies.

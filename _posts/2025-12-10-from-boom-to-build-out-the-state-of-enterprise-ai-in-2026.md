@@ -5,9 +5,19 @@ description: "The state of enterprise AI in 2026: generative AI spend, agentic w
 excerpt: "The era of AI experimentation is over. What began as a speculative boom has rapidly industrialized into the fastest-scaling software category in history. Enterprise spending on generative AI skyrocketed to $37 billion in 2025, a stunning 3.2x increase from the previous year."
 author: Subramanya N
 date: 2025-12-10
+last_modified_at: 2026-08-06
 tags: [Enterprise AI, AI Agents, Agentic Workflows, AI Adoption, Platform Strategy, Developer Tools, AI Infrastructure, Generative AI, Enterprise Software]
 image: /assets/images/enterprise_ai_growth_menlo.webp
 ready: true
+faq:
+  - q: "How much are enterprises spending on generative AI?"
+    a: "Enterprise spending on generative AI reached $37 billion in 2025, a 3.2x increase over the prior year. That makes AI roughly 6% of the entire global SaaS market, a milestone reached in about three years."
+  - q: "Are enterprises building or buying AI capabilities?"
+    a: "Enterprises are overwhelmingly buying: 76% of AI use cases are now purchased from vendors, a sharp reversal from 2024 when build and buy were nearly even. Over half of all enterprise AI spend, about $19 billion, flows into the application layer."
+  - q: "What is the shift from queries to agentic workflows?"
+    a: "Organizations are moving from single-turn chat interactions to structured, multi-step agents embedded in core business processes. Anthropic's 2026 survey found 57% of organizations already deploy agents for multi-stage processes, and 81% plan to tackle cross-functional workflows next year."
+  - q: "What is blocking enterprises from scaling AI?"
+    a: "The top barriers are no longer model capabilities but platform readiness: integration with existing systems (46%), data access and quality (42%), and change management (39%). Firms that treat AI as integrated infrastructure see 2x more engagement per seat than the median."
 ---
 
 The era of AI experimentation is over. What began as a speculative boom has rapidly industrialized into the fastest-scaling software category in history. According to a new report from Menlo Ventures, enterprise spending on generative AI skyrocketed to **$37 billion** in 2025, a stunning **3.2x increase** from the previous year [3]. This isn't just hype; it's a fundamental market shift. AI now commands **6% of the entire global SaaS market**—a milestone reached in just three years [3].

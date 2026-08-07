@@ -5,9 +5,19 @@ description: "Context graphs as the next system of record for enterprise decisio
 excerpt: "After reading Jaya Gupta's post about Context Graphs, I have not been able to stop thinking about it. For me, it did something personal: it gave a name to the architectural pattern I have been circling around in the agentic infrastructure discussions on this blog for the past year. Gupta's thesis is simple but profound—the last generation of enterprise software created trillion dollar companies by becoming systems of record. The question now is whether a new layer will emerge on top of them: a system of record for decisions."
 author: Subramanya N
 date: 2025-12-26
+last_modified_at: 2026-08-06
 tags: [Context Graphs, Agentic AI, Enterprise AI, MCP, Agent Skills, AI Infrastructure, Decision Traces, AI Governance, Systems of Record]
 image: /assets/images/context-graphs.png
 ready: true
+faq:
+  - q: "What is a decision trace?"
+    a: "A decision trace is the reasoning that connects data to action: the exception logic, the approvals, and the precedent from past decisions. Today it lives in Slack threads, deal desk conversations, and people's heads rather than in any system of record."
+  - q: "What is a context graph?"
+    a: "A context graph is the accumulated record of every decision, every exception, and every outcome, answering the question \"What happened last time?\" It turns exceptions into precedents and tribal knowledge into institutional knowledge, forming a system of record for decisions rather than data."
+  - q: "How do tools, skills, and context relate to each other?"
+    a: "They are three phases of agentic infrastructure: MCP tools give an agent capability, Agent Skills give it expertise, and context graphs give it experience. The analogy is an agent with a hammer, then a carpentry manual, then the record of every house it has ever built."
+  - q: "Why can't incumbents capture decision traces?"
+    a: "Incumbent systems are built on current-state storage, so they record the final price or status but not who approved a deviation or why. Agent-first startups sit in the execution path and see the full context at decision time, which is a structural advantage."
 ---
 
 After reading Jaya Gupta's post about Context Graphs, I have not been able to stop thinking about it [1]. For me, it did something personal: it gave a name to the architectural pattern I have been circling around in the agentic infrastructure discussions on this blog for the past year. I later wrote a more direct explainer on [what are context graphs](/2026/01/01/what-are-context-graphs-really/) and why the term means more than agent memory.

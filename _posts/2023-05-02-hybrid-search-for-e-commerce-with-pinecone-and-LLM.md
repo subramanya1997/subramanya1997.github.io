@@ -5,8 +5,19 @@ description: "How to build hybrid search for e-commerce with Pinecone, sparse an
 excerpt: Learn how to build a powerful hybrid search system for e-commerce applications by combining traditional information retrieval methods with machine learning models like Language Models (LLMs) and Pinecone, a managed vector database. Discover the benefits of hybrid search for e-commerce, including improved search relevance, personalization, handling long-tail queries, and simpler infrastructure management.
 author: Subramanya N
 date: 2023-05-02
+last_modified_at: 2026-08-06
 tags: [Pinecone, Hybrid Search, E-Commerce, Large Language Models, Vector Database]
 image: /assets/images/pinecone_hybrid_index.jpg
+schema_type: TechArticle
+faq:
+  - q: "What is hybrid search?"
+    a: "Hybrid search combines traditional sparse vector search, such as TF-IDF or BM25, with dense vector search from embedding models in a single system. It aims to get the semantic performance of dense retrieval along with the zero-shot adaptability of keyword search."
+  - q: "Why not use dense vector search alone for e-commerce?"
+    a: "Dense retrieval often struggles with out-of-domain data unless it is fine-tuned on domain-specific datasets. Sparse search needs no fine-tuning and handles new domains, so combining the two covers each method's weakness."
+  - q: "What does the alpha parameter control in a Pinecone hybrid query?"
+    a: "Alpha is a value between 0 and 1 that weights the convex combination `alpha * dense + (1 - alpha) * sparse`. An alpha of 0 means sparse-only search and an alpha of 1 means dense-only search."
+  - q: "How do I set up a Pinecone index for hybrid search?"
+    a: "Create the index with the dimensionality of your dense model and the `dotproduct` metric, which is what Pinecone requires for hybrid queries. A single index then holds both the sparse and dense values for each product."
 ready: true
 ---
 

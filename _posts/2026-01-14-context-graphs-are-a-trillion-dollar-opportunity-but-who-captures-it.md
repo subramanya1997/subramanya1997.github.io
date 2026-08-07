@@ -5,9 +5,19 @@ description: "Who captures the context graph opportunity: why agentic tools, dec
 excerpt: "The concept of Context Graphs has rapidly captured the industry's imagination. The thesis is that the next trillion-dollar enterprise platforms will not be systems of record for data, but systems of record for decisions. But who actually captures this opportunity? The answer is hiding in plain sight—in the agentic tools that are already operating in the wild, generating decision traces every second."
 author: Subramanya N
 date: 2026-01-14
+last_modified_at: 2026-08-06
 tags: [Context Graphs, Agentic AI, Enterprise AI, Claude Code, Claude Cowork, AI Infrastructure, Systems of Record, Anthropic]
 image: /assets/images/context_graphs_opportunity.png
 ready: true
+faq:
+  - q: "Who is positioned to capture the context graph opportunity?"
+    a: "Whoever sits in the execution path of agentic work, because that is where decision traces are generated. The main contenders are agent providers like Anthropic, which own the agent and execution path, and vendor-neutral orchestration startups working at the cross-system workflow layer."
+  - q: "Why do agentic tools like Claude Code and Cowork not build context graphs today?"
+    a: "They generate rich decision traces every time they refactor a codebase or organize a project folder, but those traces evaporate. They live briefly in the agent's context window or chat history and are never persisted as structured, queryable artifacts, so the why is lost and only the what remains."
+  - q: "Why can't Salesforce or Snowflake just add decision trace capture?"
+    a: "Systems of record like Salesforce and Workday store the current state of an object, so they know a deal is closed-won but not the approvals and exceptions that led there. Data warehouses like Snowflake and Databricks sit in the read path, receiving data via ETL after decisions are made and context is lost."
+  - q: "What is the difference between agent telemetry and a decision trace?"
+    a: "Telemetry and observability tools capture the what: metrics, logs, and execution traces showing an agent made ten API calls and wrote three files. A decision trace captures the reasoning, context, and precedents behind an action, which is a fundamentally different and more valuable asset."
 ---
 
 The concept of **Context Graphs**, first articulated by Jaya Gupta of Foundation Capital, has rapidly captured the industry's imagination [1]. The thesis is that the next trillion-dollar enterprise platforms will not be systems of record for data, but systems of record for **decisions**. For the underlying definition, see my explainer on [what are context graphs](/2026/01/01/what-are-context-graphs-really/).
