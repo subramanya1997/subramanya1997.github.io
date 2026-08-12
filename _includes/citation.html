@@ -1,0 +1,50 @@
+{% unless page.citation == false %}
+{% assign cite_year = page.date | date: "%Y" %}
+{% assign cite_month = page.date | date: "%B" %}
+{% assign cite_slug = page.slug | default: page.url | split: '/' | last | split: '-' | slice: 0, 2 | join: '' %}
+{% if page.citation_key %}{% assign cite_id = page.citation_key %}{% else %}{% assign cite_id = 'nagabhushanaradhya' | append: cite_year | append: cite_slug %}{% endif %}
+{% assign cite_url = page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url %}
+{% assign ob = '{' %}
+{% assign cb = '}' %}
+<section class="citation-section" id="citation">
+  <h4 class="citation-title">Cite this post</h4>
+  <p class="citation-hint">If you reference this post in your work, please cite it as:</p>
+  <pre class="citation-bibtex"><code>@article{{ ob }}{{ cite_id }},
+  author  = {Nagabhushanaradhya, Subramanya},
+  title   = {{ ob }}{{ page.title | strip_html | escape }}{{ cb }},
+  journal = {subramanya.ai},
+  year    = {{ ob }}{{ cite_year }}{{ cb }},
+  month   = {{ ob }}{{ cite_month }}{{ cb }},
+  url     = {{ ob }}{{ cite_url }}{{ cb }}
+}</code></pre>
+</section>
+
+<style>
+  .citation-section {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .citation-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 8px 0;
+  }
+
+  .citation-hint {
+    font-size: 14px;
+    color: var(--text-secondary, #666666);
+    margin: 0 0 12px 0;
+  }
+
+  .citation-bibtex {
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-x: auto;
+  }
+</style>
+{% endunless %}
