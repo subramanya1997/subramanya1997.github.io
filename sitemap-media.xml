@@ -181,6 +181,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/images/break-in-break-out-ai-agent-security-in-2026.png</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/images/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.png</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -746,6 +751,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/de/break-in-break-out-ai-agent-security-in-2026.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/de/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -817,11 +827,6 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/de/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://subramanya.ai/assets/translations/de/new-blog.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -936,6 +941,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/es/break-in-break-out-ai-agent-security-in-2026.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/es/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1007,11 +1017,6 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/es/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://subramanya.ai/assets/translations/es/new-blog.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1126,6 +1131,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/fr/break-in-break-out-ai-agent-security-in-2026.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/fr/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1197,11 +1207,6 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/fr/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://subramanya.ai/assets/translations/fr/new-blog.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1316,6 +1321,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/hi/break-in-break-out-ai-agent-security-in-2026.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/hi/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1387,11 +1397,6 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/hi/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://subramanya.ai/assets/translations/hi/new-blog.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1506,6 +1511,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/ja/break-in-break-out-ai-agent-security-in-2026.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/ja/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1577,11 +1587,6 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/ja/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://subramanya.ai/assets/translations/ja/new-blog.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1696,6 +1701,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/ko/break-in-break-out-ai-agent-security-in-2026.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/ko/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1767,11 +1777,6 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/ko/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://subramanya.ai/assets/translations/ko/new-blog.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1886,6 +1891,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/pt/break-in-break-out-ai-agent-security-in-2026.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/pt/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1957,11 +1967,6 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/pt/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://subramanya.ai/assets/translations/pt/new-blog.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2076,6 +2081,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://subramanya.ai/assets/translations/zh/break-in-break-out-ai-agent-security-in-2026.json</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://subramanya.ai/assets/translations/zh/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2147,11 +2157,6 @@
   </url>
   <url>
     <loc>https://subramanya.ai/assets/translations/zh/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap.json</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://subramanya.ai/assets/translations/zh/new-blog.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
