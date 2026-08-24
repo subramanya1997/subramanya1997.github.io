@@ -37,14 +37,20 @@ page_stylesheets:
         <hr class="post-divider">
       {% endunless %}
     {% endfor %}
-  </div>
-
-  <div class="books-section">
-    <h2>Books</h2>
     {% for book in site.books %}
-      <article class="book-entry">
-        <h3><a href="{{ book.web_url }}" target="_blank" rel="noopener">{{ book.title }}</a></h3>
-        <p>{{ book.excerpt }}</p>
+      <hr class="post-divider">
+      <article class="blog-post">
+        <div class="post-meta">
+          <span class="post-date">Book</span>
+        </div>
+
+        <h2 class="post-title"><a href="{{ book.web_url }}">{{ book.title }}</a></h2>
+
+        <div class="post-excerpt">
+          {{ book.excerpt }}
+        </div>
+
+        <a href="{{ book.web_url }}" class="continue-reading">Continue reading</a>
       </article>
     {% endfor %}
   </div>

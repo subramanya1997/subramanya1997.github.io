@@ -4,14 +4,6 @@
   padding: 0 var(--space-5);
 }
 
-/* Embedded on /publications/: the outer .blog-container already provides the
-   measure and gutter, so the section aligns flush with the list above it. */
-.blog-container .books-container {
-  max-width: none;
-  margin: var(--space-12) 0 0;
-  padding: 0;
-}
-
 .books-list {
   margin-top: var(--space-5);
 }
