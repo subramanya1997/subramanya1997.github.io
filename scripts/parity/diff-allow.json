@@ -15,7 +15,8 @@
   "ignoreMissing": [
     "/scripts/*",
     "/README.md",
-    "/CONTRIBUTING.md"
+    "/CONTRIBUTING.md",
+    "/CNAME"
   ],
   "_ignoreExtraReasons": {
     "/_next/*": "Next.js runtime chunks and manifests.",
@@ -38,5 +39,8 @@
   ],
   "ignoreFields": [],
   "ignorePageFields": {},
-  "renames": {}
+  "renames": {},
+  "notes": {
+    "/CNAME": "GitHub Pages artifact; site moved to Vercel 2026-08-24, CNAME retired"
+  }
 }
