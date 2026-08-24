@@ -16,6 +16,11 @@ export interface PostCardProps {
   readingTime: string;
 }
 
+/** Thousands separators, matching the old client-side formatter byte for byte. */
+function formatCount(views: number): string {
+  return String(views).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 export default function PostCard({ post, postViews, dateMode, readingTime }: PostCardProps) {
   const tags = post.frontmatter.tags ?? [];
   const excerpt = applyLinkAttributes(String(post.frontmatter.excerpt ?? ""), getSiteConfig().url);
@@ -50,7 +55,7 @@ export default function PostCard({ post, postViews, dateMode, readingTime }: Pos
                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                 <circle cx="12" cy="12" r="3"></circle>
               </svg>
-              <span className="views-count">{postViews}</span>
+              <span className="views-count">{formatCount(postViews)}</span>
             </>
           ) : null}
           <svg

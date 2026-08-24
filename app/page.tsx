@@ -4,25 +4,24 @@ import BookCard from "@/components/cards/BookCard";
 import PostCard from "@/components/cards/PostCard";
 import { applyLinkAttributes, readingTime } from "@/components/lib/jekyll";
 import { pageMeta } from "@/components/lib/page-meta";
-import { getAbout, getPostsInJekyllOrder, getSiteConfig, viewsFor } from "@/components/lib/site-data";
+import { getAbout, getSiteConfig, viewsFor } from "@/components/lib/site-data";
 import SiteShell from "@/components/site/SiteShell";
-import { getAllBooks } from "@/lib/content";
-import { renderMarkdown } from "@/lib/markdown";
+import { getAllBooks, getAllPosts } from "@/lib/content";
+import { memoizedHtml } from "@/lib/nonhtml";
 
 const meta = pageMeta({
   url: "/",
   stylesheets: ["/assets/css/components/content-cards.css", "/assets/css/pages/home.css"],
-  scripts: ["/assets/js/pages/home.js"],
 });
 
 export default async function Home() {
   const site = getSiteConfig();
   const about = getAbout();
   const books = getAllBooks();
-  const posts = getPostsInJekyllOrder();
+  const posts = getAllPosts();
 
   const readingTimes = await Promise.all(
-    posts.map(async (post) => readingTime((await renderMarkdown(post.content)).html))
+    posts.map(async (post) => readingTime(await memoizedHtml(post.url, post.content)))
   );
 
   return (
@@ -148,7 +147,7 @@ export default async function Home() {
                 <PostCard
                   post={post}
                   postViews={viewsFor(post.url)}
-                  dateMode="iso"
+                  dateMode="human"
                   readingTime={readingTimes[index]}
                 />
                 {index < posts.length - 1 ? <hr className="post-divider" /> : null}

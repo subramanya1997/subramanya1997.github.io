@@ -157,42 +157,12 @@ export function getAllBooks(): CollectionDoc[] {
 
 // ---------- tags ----------
 
-export interface TagRecord {
-  name: string; // display name, first-seen casing
-  slug: string; // url slug used by /tags/{slug}/ and /tags-{slug}/
-  posts: Post[];
-  books: CollectionDoc[];
-}
-
 /** Jekyll's tag slugify (mode: default): lowercase, spaces/special chars → hyphen. */
 export function slugifyTag(tag: string): string {
   return tag
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
-}
-
-let _tags: TagRecord[] | null = null;
-export function getAllTags(): TagRecord[] {
-  if (_tags) return _tags;
-  const map = new Map<string, TagRecord>();
-  for (const post of getAllPosts()) {
-    for (const tag of post.frontmatter.tags ?? []) {
-      const slug = slugifyTag(tag);
-      if (!map.has(slug)) map.set(slug, { name: tag, slug, posts: [], books: [] });
-      map.get(slug)!.posts.push(post);
-    }
-  }
-  for (const book of getAllBooks()) {
-    const tags = (book.frontmatter.tags as string[] | undefined) ?? [];
-    for (const tag of tags) {
-      const slug = slugifyTag(tag);
-      if (!map.has(slug)) map.set(slug, { name: tag, slug, posts: [], books: [] });
-      map.get(slug)!.books.push(book);
-    }
-  }
-  _tags = [...map.values()].sort((a, b) => a.slug.localeCompare(b.slug));
-  return _tags;
 }
 
 // ---------- data files ----------

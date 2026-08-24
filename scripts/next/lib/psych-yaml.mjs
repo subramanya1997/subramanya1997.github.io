@@ -48,7 +48,7 @@ function wrap(prefix, text) {
 }
 
 /** Emit `hash` the way Psych's YAML.dump would, without the trailing marker. */
-export function dumpYaml(hash) {
+function dumpYaml(hash) {
   const lines = [];
   for (const [key, value] of Object.entries(hash)) {
     if (Array.isArray(value)) {

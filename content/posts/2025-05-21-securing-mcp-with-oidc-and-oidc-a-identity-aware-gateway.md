@@ -391,7 +391,7 @@ While the discussion above focuses on authenticating the **human user**, a produ
 1. The *LLM agent* that is orchestrating the workflow.
 2. The *MCP tool / resource* that is being invoked on the backend.
 
-Our companion post "**OpenID Connect for Agents (OIDC-A) 1.0 Proposal**" ({{ site.baseurl }}/2025/04/28/oidc-a-proposal/) extends OIDC Core 1.0 with a rich set of claims for **agent identity, attestation, and delegation chains**.  In practice this means:
+Our companion post "**OpenID Connect for Agents (OIDC-A) 1.0 Proposal**" (/2025/04/28/oidc-a-proposal/) extends OIDC Core 1.0 with a rich set of claims for **agent identity, attestation, and delegation chains**.  In practice this means:
 
 * When an AI agent starts a session it obtains an **ID Token** that contains the OIDC-A claims (`agent_type`, `agent_model`, `agent_instance_id`, `delegator_sub`, `delegation_chain`, etc.).  This token travels alongside the user's access token in every MCP request.
 * MCP tools can likewise expose their own OIDC identity (or be issued a signed *resource token*) that advertises metadata such as tool capabilities, version, and trust level (`agent_capabilities`, `agent_trust_level`, `agent_attestation`).

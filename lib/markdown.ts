@@ -32,18 +32,6 @@ export { buildTocHtml, slugifyHeading } from "./toc";
 
 export interface RenderMarkdownOptions {
   /**
-   * Values for the handful of Liquid variables that appear inside content
-   * markdown. Mirrors the relevant bits of `site.config.mjs`.
-   */
-  site?: {
-    baseurl?: string;
-    url?: string;
-    email?: string;
-    title?: string;
-    /** Contents of `content/data/*.yml`, keyed by file name (`{ about: { ... } }`). */
-    data?: Record<string, unknown>;
-  };
-  /**
    * Run the `_plugins/link_attributes.rb` port (default `true`).
    *
    * Jekyll applied that plugin in a `:post_render` hook, *after* `page.content`
@@ -167,63 +155,6 @@ function splitHtmlBlocks(md: string): string {
   }
 
   return out.join("\n");
-}
-
-const LIQUID_OUTPUT_RE = /\{\{\s*([^}]*?)\s*\}\}/g;
-
-function resolveLiquid(md: string, options: RenderMarkdownOptions): string {
-  const site = {
-    baseurl: "",
-    url: "https://subramanya.ai",
-    email: "subramanyanagabhushan@gmail.com",
-    title: "Subramanya N",
-    ...(options.site ?? {}),
-  };
-
-  return md.replace(LIQUID_OUTPUT_RE, (whole, expr: string) => {
-    const parts = expr.split("|").map((p) => p.trim());
-    const [head, ...filters] = parts;
-
-    let value: string | undefined;
-    const literal = head.match(/^'([^']*)'$|^"([^"]*)"$/);
-    if (literal) {
-      value = literal[1] ?? literal[2] ?? "";
-    } else if (head.startsWith("site.data.")) {
-      const resolved = head
-        .slice("site.data.".length)
-        .split(".")
-        .reduce<unknown>(
-          (acc, key) =>
-            acc && typeof acc === "object" ? (acc as Record<string, unknown>)[key] : undefined,
-          site.data ?? {},
-        );
-      if (resolved !== undefined && resolved !== null) value = String(resolved);
-    } else if (head.startsWith("site.")) {
-      const key = head.slice("site.".length) as keyof typeof site;
-      if (key in site) value = String(site[key] ?? "");
-    }
-    if (value === undefined) return whole; // leave unknown expressions alone
-
-    for (const filter of filters) {
-      const prepend = filter.match(/^prepend:\s*(.+)$/);
-      if (prepend) {
-        const arg = prepend[1].trim();
-        const argLiteral = arg.match(/^'([^']*)'$|^"([^"]*)"$/);
-        if (argLiteral) value = (argLiteral[1] ?? argLiteral[2] ?? "") + value;
-        else if (arg.startsWith("site.")) {
-          const key = arg.slice("site.".length) as keyof typeof site;
-          value = String(site[key] ?? "") + value;
-        }
-      }
-      const append = filter.match(/^append:\s*(.+)$/);
-      if (append) {
-        const arg = append[1].trim();
-        const argLiteral = arg.match(/^'([^']*)'$|^"([^"]*)"$/);
-        if (argLiteral) value += argLiteral[1] ?? argLiteral[2] ?? "";
-      }
-    }
-    return value;
-  });
 }
 
 // ---------------------------------------------------------------------------
@@ -1382,7 +1313,7 @@ export async function renderMarkdown(
 ): Promise<RenderedMarkdown> {
   const headings: TocEntry[] = [];
   const codeSlots: string[] = [];
-  const source = splitHtmlBlocks(bracketSpacedDestinations(resolveLiquid(md, options)));
+  const source = splitHtmlBlocks(bracketSpacedDestinations(md));
 
   const file = await unified()
     .use(remarkParse)
