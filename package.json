@@ -5,8 +5,7 @@
   "scripts": {
     "predev": "node scripts/next/sync-public.mjs",
     "dev": "next dev",
-    "prebuild": "node scripts/next/sync-public.mjs",
-    "build": "next build && node scripts/next/postbuild.mjs",
+    "build": "node scripts/next/sync-public.mjs && next build",
     "start": "next start",
     "lint": "eslint",
     "parity": "node scripts/parity/diff-manifests.mjs _site out",

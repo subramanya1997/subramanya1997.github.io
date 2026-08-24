@@ -105,6 +105,12 @@ export interface SiteShellProps {
    * contains an HTML comment that JSX cannot express.
    */
   rawContent?: string;
+  /**
+   * Class Jekyll put on <body> (loop pages use "loop-shell"). The App Router
+   * has a single root layout, so it is applied with an inline script that runs
+   * while the body is still parsing — before any content paints.
+   */
+  bodyClass?: string;
 }
 
 export default function SiteShell({
@@ -112,10 +118,18 @@ export default function SiteShell({
   layout = "page",
   children,
   rawContent,
+  bodyClass,
 }: SiteShellProps) {
   return (
     <>
       <PageHead meta={meta} />
+      {bodyClass !== undefined && (
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.body.classList.add(${JSON.stringify(bodyClass)});`,
+          }}
+        />
+      )}
       <Analytics meta={meta} layout={layout} />
 
       <Header />

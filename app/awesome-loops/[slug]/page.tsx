@@ -1,9 +1,7 @@
 // Loop detail pages — the `_loops` collection under
 // `permalink: /awesome-loops/:path/`, rendered by `_layouts/loop.html`.
 //
-// `<body class="loop-shell">` is added by scripts/next/postbuild.mjs: only a
-// root layout can set a body class in the App Router, and the site has one
-// shared root layout. See components/PARITY-NOTES.md.
+// `<body class="loop-shell">` comes from SiteShell's bodyClass prop.
 import { notFound } from "next/navigation";
 import { linkTitle } from "@/components/lib/jekyll";
 import { pageMeta } from "@/components/lib/page-meta";
@@ -70,7 +68,7 @@ export default async function LoopPage({ params }: { params: Promise<{ slug: str
   ].filter((value): value is string => Boolean(value));
 
   return (
-    <SiteShell meta={meta} layout="default">
+    <SiteShell meta={meta} layout="default" bodyClass="loop-shell">
       <article className="loop-detail">
         <div className="loop-detail-topbar">
           <nav className="loop-breadcrumbs" aria-label="Breadcrumb">

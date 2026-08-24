@@ -38,3 +38,4 @@ out/
 public/
 next-env.d.ts
 *.tsbuildinfo
+.vercel

@@ -5,6 +5,8 @@ import { cpSync, mkdirSync, rmSync, existsSync, copyFileSync, readFileSync, writ
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import yaml from "js-yaml";
+import { writeTwins } from "./markdown-twins.mjs";
+import { writeBookRedirects } from "./book-redirects.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const pub = join(root, "public");
@@ -16,7 +18,6 @@ const siteUrl = String(site.url).replace(/\/$/, "");
 const DIRS = ["assets", "css"];
 const FILES = [
   "favicon.ico",
-  "CNAME",
   "robots.txt",
   "sitemap-media.xml", // maintained by hand (Jekyll keep_files); served as-is
   "openapi.json",
@@ -76,5 +77,20 @@ for (const file of WELL_KNOWN) {
     });
   writeFileSync(join(pub, ".well-known", file), body);
 }
+
+// Extensionless canonical copies (RFC 9727 / RFC 8414 / OIDC discovery paths
+// have no file extension) — formerly done post-build; Vercel's standard Next
+// deployment only serves what the build itself contains, so they live in
+// public/ now. vercel.json sets their Content-Type.
+for (const name of ["api-catalog", "openid-configuration", "oauth-noop"]) {
+  const src = join(pub, ".well-known", `${name}.json`);
+  if (existsSync(src)) copyFileSync(src, join(pub, ".well-known", name));
+}
+
+// Markdown twins (an index.md beside every HTML page) and the bare book
+// redirect documents are generated purely from the Jekyll sources, so they can
+// be emitted pre-build into public/ and ride through the standard build.
+console.log(`sync-public: ${writeTwins(pub)} markdown twins emitted`);
+console.log(`sync-public: ${writeBookRedirects(pub)} book redirect pages emitted`);
 
 console.log("public/ synced from repo root");

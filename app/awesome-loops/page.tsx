@@ -1,8 +1,7 @@
 // Port of awesome-loops/index.md — the loop marketplace listing
 // (layout: page, custom_layout: true).
 //
-// `<body class="loop-shell">` is added by scripts/next/postbuild.mjs; see the
-// note in app/awesome-loops/[slug]/page.tsx.
+// `<body class="loop-shell">` comes from SiteShell's bodyClass prop.
 import { stripHtml } from "@/components/lib/jekyll";
 import { pageMeta } from "@/components/lib/page-meta";
 import { sortedLoops, type Loop } from "@/components/loops/loop-data";
@@ -55,7 +54,7 @@ export default async function AwesomeLoops() {
   ) as string[];
 
   return (
-    <PageLayout meta={meta}>
+    <PageLayout meta={meta} bodyClass="loop-shell">
       <div className="loop-marketplace" data-github-issue-url={`${REPO}/issues/new`}>
         <header className="loop-hero">
           <div className="loop-hero-copy">
