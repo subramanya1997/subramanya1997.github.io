@@ -68,6 +68,9 @@ function walk(dir, files = []) {
     }
   }
   rmSync(join(out, "_next"), { recursive: true, force: true });
+  // Next artifacts Jekyll never served: GitHub Pages only uses 404.html.
+  rmSync(join(out, "404"), { recursive: true, force: true });
+  rmSync(join(out, "_not-found"), { recursive: true, force: true });
   console.log(`postbuild: React runtime stripped (${pages} pages de-hydrated, ${rscFiles} RSC payload files removed, _next/ deleted)`);
 }
 

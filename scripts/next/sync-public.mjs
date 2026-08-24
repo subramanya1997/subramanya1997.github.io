@@ -11,7 +11,9 @@ const pub = join(root, "public");
 const site = yaml.load(readFileSync(join(root, "_config.yml"), "utf8"));
 const siteUrl = String(site.url).replace(/\/$/, "");
 
-const DIRS = ["assets", "css", "docs"];
+// NOTE: docs/ is NOT synced — those are markdown sources rendered by the
+// app/docs routes; Jekyll never served the raw .md files either.
+const DIRS = ["assets", "css"];
 const FILES = [
   "favicon.ico",
   "CNAME",
@@ -35,7 +37,12 @@ mkdirSync(pub, { recursive: true });
 
 for (const dir of DIRS) {
   const src = join(root, dir);
-  if (existsSync(src)) cpSync(src, join(pub, dir), { recursive: true });
+  if (existsSync(src))
+    cpSync(src, join(pub, dir), {
+      recursive: true,
+      // Jekyll skips dotfiles (.gitkeep etc.); mirror that.
+      filter: (p) => !p.split("/").pop().startsWith("."),
+    });
 }
 for (const file of FILES) {
   const src = join(root, file);
