@@ -185,7 +185,7 @@ def main():
     # Get all-time data (days=None) for all posts (limit=None)
     view_counts = fetch_popular_posts(property_id, days=None, limit=None)
     
-    output_file = '_data/view_count.json'
+    output_file = 'content/data/view_count.json'
     if not view_counts and has_existing_view_counts(output_file):
         print("Fetched 0 posts; keeping existing analytics data instead of overwriting it.")
         return

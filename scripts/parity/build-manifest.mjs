@@ -29,7 +29,8 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(HERE, "..", "..");
 
 // Paths (relative to the build dir, POSIX-style) that are build artifacts of
-// the parity tooling itself rather than site content. `_config.yml` has no
+// the parity tooling itself rather than site content. The retired Jekyll
+// `_config.yml` had no
 // `exclude:` key, so Jekyll copies the whole `scripts/` tree -- including this
 // directory and any manifest.json written into it -- straight into `_site/`.
 // Those would otherwise show up as "extra" URLs in every Next.js diff.

@@ -75,7 +75,8 @@ OPENROUTER_APP_NAME = "subramanya1997.github.io translation script"
 
 # Project paths
 PROJECT_ROOT = Path(__file__).parent.parent
-POSTS_DIR = PROJECT_ROOT / "_posts"
+CONTENT_DIR = PROJECT_ROOT / "content"
+POSTS_DIR = CONTENT_DIR / "posts"
 TRANSLATIONS_DIR = PROJECT_ROOT / "assets" / "translations"
 ERROR_LOG_FILE = PROJECT_ROOT / "scripts" / "translation_errors.log"
 

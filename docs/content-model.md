@@ -8,7 +8,7 @@ robots: noindex, follow
 
 ## Posts
 
-Posts live in `_posts/` and use dated filenames in the standard `YYYY-MM-DD-slug.md` format.
+Posts live in `content/posts/` and use dated filenames in the standard `YYYY-MM-DD-slug.md` format.
 
 ### Required front matter
 
@@ -37,7 +37,7 @@ Posts live in `_posts/` and use dated filenames in the standard `YYYY-MM-DD-slug
 
 ## Books
 
-Books live in `_books/` and are rendered through the `books` collection.
+Books live in `content/books/` and are rendered through the `books` collection.
 
 ### Required front matter
 
@@ -54,7 +54,7 @@ Books live in `_books/` and are rendered through the `books` collection.
 
 ## Automation loops
 
-Automation loop listings live in `_loops/` and are rendered through the `loops` collection.
+Automation loop listings live in `content/loops/` and are rendered through the `loops` collection.
 
 ### Required front matter
 
@@ -91,12 +91,12 @@ The Markdown body is also required because it contains the loop prompt or operat
 
 ## Non-publishable content
 
-- `_posts/readme.md` is documentation, not a publishable post.
+- `content/posts/readme.md` is documentation, not a publishable post.
 - It is intentionally excluded from automated front matter validation.
 
 ## Data Contracts
 
-### `_data/about.yaml`
+### `content/data/about.yaml`
 
 The site expects at least these keys to exist:
 
@@ -104,7 +104,7 @@ The site expects at least these keys to exist:
 - `experience`
 - `education`
 
-### `_data/view_count.json`
+### `content/data/view_count.json`
 
 The site expects:
 

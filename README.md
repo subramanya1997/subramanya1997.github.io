@@ -1,9 +1,10 @@
 # Personal Website
 
 Personal site built with Next.js (App Router, static export) and deployed on
-Vercel. Content lives in the original Jekyll-era source directories
-(`_posts/`, `_books/`, `_loops/`, `_data/`, `_config.yml`), which remain the
-single source of truth.
+Vercel. Content lives under `content/` (`content/posts/`, `content/books/`,
+`content/loops/`, `content/data/`, `content/books-static/`), with site-wide
+settings in `site.config.mjs` — those are the single source of truth. Page
+sources sit beside the route that renders them (`app/<route>/content.md`).
 
 - Live site: `https://subramanya.ai`
 
@@ -47,4 +48,4 @@ git-connected. Do not deploy manually.
 
 - Scheduled analytics refresh: `.github/workflows/update-analytics.yml`
 - Analytics fetch script: `scripts/fetch_analytics.py`
-- Analytics data output: `_data/view_count.json`
+- Analytics data output: `content/data/view_count.json`

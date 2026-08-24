@@ -3,7 +3,7 @@
 // The post, loop and tag templates ship several hundred lines of hand-written
 // CSS and vanilla JS inside their Liquid includes. Re-typing those into JSX
 // would guarantee drift; instead the include files stay the single source of
-// truth (exactly as `_posts`, `_data` and `_config.yml` do for content) and the
+// truth (exactly as content/ and site.config.mjs do for content) and the
 // blocks are read at build time and injected with `dangerouslySetInnerHTML`.
 //
 // Only the *markup* of each include is hand-ported to JSX — the asset blocks

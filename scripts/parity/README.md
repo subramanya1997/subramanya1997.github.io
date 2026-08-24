@@ -77,7 +77,7 @@ part of the contract, not build noise.
 
 ## Note on `scripts/parity/` itself
 
-`_config.yml` has no `exclude:`, so Jekyll copies the entire `scripts/` tree
+The retired Jekyll `_config.yml` had no `exclude:`, so Jekyll copied the entire `scripts/` tree
 into `_site/` — including this directory and the manifest it writes. The
 manifest builder ignores `scripts/parity/` by default so the baseline does not
 contain its own output. Pass `--include-ignored` to see the raw tree.

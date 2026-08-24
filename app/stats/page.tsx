@@ -16,7 +16,7 @@ const meta = pageMeta({
 });
 
 /**
- * `_data/view_count.json` stores engagement/duration as JSON floats, and Liquid
+ * `content/data/view_count.json` stores engagement/duration as JSON floats, and Liquid
  * prints Ruby floats with a trailing ".0". JSON.parse loses that, so re-add it.
  */
 function floatText(value: number): string {

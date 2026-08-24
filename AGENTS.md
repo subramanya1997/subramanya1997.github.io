@@ -6,11 +6,13 @@ https://subramanya.ai).
 
 ## What this is
 
-A personal site built with Next.js 16 (App Router) from Jekyll-era content
-sources, deployed on Vercel. Content lives in `_posts/`, `_books/`, `_loops/`,
-`_data/`, `assets/`, and `_config.yml` — those directories are the single
-source of truth; the Python scripts in `scripts/` (translations, OG images,
-analytics) write there.
+A personal site built with Next.js 16 (App Router), deployed on Vercel.
+Content lives in `content/posts/`, `content/books/`, `content/loops/`,
+`content/data/` and `assets/`; site-wide settings are in `site.config.mjs`.
+Those are the single source of truth; the Python scripts in `scripts/`
+(translations, OG images, analytics) write there. Page sources sit next to the
+route that renders them (`app/<route>/content.md`), registered in
+`lib/page-sources.mjs`.
 
 ## Commands
 
