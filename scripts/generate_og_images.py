@@ -4,19 +4,22 @@ Generate Open Graph / social share cards for blog posts.
 
 Design
 ------
-1200x630 dark editorial card:
+1200x630 on warm paper, with a generative background drawing:
 
     | accent rail
     |  subramanya.ai                                    (wordmark, top-left)
     |
-    |  TOPIC                                            (eyebrow, first tag)
-    |  A Dominant Title That Wraps                      (display type, bottom-
-    |  Into Balanced Lines                               anchored above the rule)
+    |  TOPIC                                            (eyebrow, from tags)
+    |  A Dominant Title That Wraps                      (display type, centred
+    |  Into Balanced Lines                               in the title band)
     |  ------------------------------------------------ (hairline)
     |  Subramanya N                          Aug 17, 2026
 
-The title is the only loud element. Everything else is quiet: one accent hue,
-one hairline, generous and consistent margins.
+The background is a plotter-style node-and-edge drawing over a fine blueprint
+grid — a different composition for every post, deterministically seeded from
+the slug, so the set reads as one system without any two cards matching. The
+art is veiled wherever type sits on top of it, so the title never has to
+compete with it.
 
 Output paths never change
 -------------------------
@@ -30,6 +33,8 @@ pointing at a hand-made illustration, diagram, or photo are skipped.
 from __future__ import annotations
 
 import argparse
+import math
+import random
 import re
 import sys
 from datetime import date, datetime
@@ -37,7 +42,7 @@ from pathlib import Path
 from typing import Any, Iterable
 
 import yaml
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 POSTS_DIR = PROJECT_ROOT / "_posts"
@@ -51,6 +56,7 @@ HEIGHT = 630
 RAIL_WIDTH = 10         # full-height accent rail on the left edge
 MARGIN_X = 88           # content left/right margin — everything aligns here
 CONTENT_WIDTH = WIDTH - (2 * MARGIN_X)
+TITLE_MEASURE = 880     # narrower than the footer: leaves the right third to the art
 
 WORDMARK_TOP = 62
 CONTENT_TOP = 140       # top of the eyebrow/title band
@@ -59,13 +65,13 @@ RULE_Y = 506            # hairline above the footer
 FOOTER_TOP = 536        # leaves the same optical margin at the foot as the head
 
 # --- palette ----------------------------------------------------------------
-BG = (12, 16, 24)             # near-black slate
-TITLE = (244, 246, 250)
-WORDMARK = (226, 232, 240)
-MUTED = (129, 142, 165)
-HAIRLINE = (33, 41, 56)
-ACCENT = (124, 143, 255)      # muted indigo
-ACCENT_DIM = (72, 86, 158)
+PAPER = (250, 248, 244)       # warm near-white
+INK = (18, 21, 30)            # title
+INK_SOFT = (58, 64, 80)       # wordmark, byline
+MUTED = (127, 134, 151)       # date
+HAIRLINE = (223, 219, 210)
+ACCENT = (74, 84, 214)        # indigo
+ACCENT_WARM = (206, 94, 56)   # terracotta, used sparingly
 
 # --- typography -------------------------------------------------------------
 TITLE_SIZES = (78, 72, 66, 60, 54, 48, 44, 40)
@@ -74,7 +80,7 @@ TITLE_LEADING = 1.14
 
 EYEBROW_SIZE = 22
 EYEBROW_TRACKING = 2.6
-EYEBROW_GAP = 30        # space between eyebrow baseline block and title block
+EYEBROW_GAP = 30        # space between the eyebrow and the title block
 
 WORDMARK_SIZE = 29
 FOOTER_SIZE = 25
@@ -309,6 +315,124 @@ def draw_tracked_text(
 
 
 # ---------------------------------------------------------------------------
+# generative background
+# ---------------------------------------------------------------------------
+Box = tuple[float, float, float, float]
+
+
+def rgba(color: tuple[int, int, int], alpha: int) -> tuple[int, int, int, int]:
+    return (color[0], color[1], color[2], alpha)
+
+
+def seeded_rng(key: str) -> random.Random:
+    """Deterministic per-post randomness. Never `random` — cards must rebuild."""
+    return random.Random(sum((i + 1) * ord(c) for i, c in enumerate(key)) or 1)
+
+
+def draw_grid(draw: ImageDraw.ImageDraw, step: int = 26, major: int = 130) -> None:
+    """The blueprint substrate: a fine grid with a heavier line every N."""
+    for x in range(0, WIDTH + 1, step):
+        weight = 26 if x % major == 0 else 12
+        draw.line([(x, 0), (x, HEIGHT)], fill=rgba(INK, weight), width=1)
+    for y in range(0, HEIGHT + 1, step):
+        weight = 26 if y % major == 0 else 12
+        draw.line([(0, y), (WIDTH, y)], fill=rgba(INK, weight), width=1)
+
+
+def scatter_points(
+    rng: random.Random,
+    count: int,
+    bounds: tuple[int, int, int, int],
+    min_distance: float,
+) -> list[tuple[float, float]]:
+    """Poisson-ish sampling, so marks never clump into an accidental blob."""
+    x0, y0, x1, y1 = bounds
+    points: list[tuple[float, float]] = []
+    for _ in range(count * 40):
+        if len(points) >= count:
+            break
+        candidate = (rng.uniform(x0, x1), rng.uniform(y0, y1))
+        if all(math.dist(candidate, p) >= min_distance for p in points):
+            points.append(candidate)
+    return points
+
+
+def art_blueprint(rng: random.Random, _: str, keep_clear: Box | None) -> Image.Image:
+    """(a) Plotter blueprint: fine grid + a node-and-edge constellation.
+
+    The graph is anchored to the right third and sampled past the canvas edges
+    so it crops rather than floats — a detail of something larger, not a
+    diagram centred in the frame. The type column on the left stays clear.
+    """
+    layer = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(layer)
+    draw_grid(draw)
+
+    nodes = scatter_points(rng, rng.randint(16, 20), (700, -70, WIDTH + 110, HEIGHT + 80), 92)
+    if len(nodes) < 3:
+        return layer
+
+    # A couple of long trunks reaching left, so the drawing engages the card
+    # instead of sitting in a corner. They stay out of the title band: an edge
+    # fading behind type reads as depth, a half-faded node reads as a smudge.
+    for _ in range(rng.randint(1, 2)):
+        y = rng.choice((rng.uniform(20, CONTENT_TOP - 60), rng.uniform(BAND_BOTTOM + 40, HEIGHT - 20)))
+        nodes.append((rng.uniform(400, 640), y))
+
+    # Same rule for the sampled nodes: none may sit inside the type column.
+    if keep_clear:
+        x0, y0, x1, y1 = keep_clear
+        nodes = [p for p in nodes if not (x0 < p[0] < x1 and y0 < p[1] < y1)]
+    if len(nodes) < 3:
+        return layer
+
+    # Connect each node to its two nearest neighbours: a sparse, legible mesh.
+    edges: set[tuple[int, int]] = set()
+    for i, node in enumerate(nodes):
+        order = sorted(range(len(nodes)), key=lambda j: math.dist(node, nodes[j]))
+        for j in order[1:3]:
+            edges.add((min(i, j), max(i, j)))
+
+    for i, j in sorted(edges):
+        draw.line([nodes[i], nodes[j]], fill=rgba(ACCENT, 78), width=2)
+
+    warm_indices = set(rng.sample(range(len(nodes)), max(2, len(nodes) // 6)))
+    for index, (x, y) in enumerate(nodes):
+        radius = rng.uniform(8, 18)
+        box = [(x - radius, y - radius), (x + radius, y + radius)]
+        if index in warm_indices:
+            draw.ellipse(box, fill=rgba(ACCENT_WARM, 195))
+        else:
+            draw.ellipse(box, fill=rgba(PAPER, 255))
+            draw.ellipse(box, outline=rgba(ACCENT, 170), width=3)
+            if rng.random() < 0.35:
+                draw.ellipse(
+                    [(x - radius - 10, y - radius - 10), (x + radius + 10, y + radius + 10)],
+                    outline=rgba(ACCENT, 62),
+                    width=2,
+                )
+    return layer
+
+
+
+BACKGROUNDS = {
+    "blueprint": art_blueprint,
+    "none": lambda rng, key, keep_clear: Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0)),
+}
+
+
+def veil(layer: Image.Image, boxes: list[tuple[float, float, float, float]]) -> Image.Image:
+    """Fade the art out behind type, with a soft edge instead of a panel border."""
+    mask = Image.new("L", (WIDTH, HEIGHT), 255)
+    mask_draw = ImageDraw.Draw(mask)
+    for box in boxes:
+        mask_draw.rectangle(box, fill=26)
+    mask = mask.filter(ImageFilter.GaussianBlur(22))
+    layer.putalpha(ImageChops.multiply(layer.getchannel("A"), mask))
+    return layer
+
+
+# ---------------------------------------------------------------------------
 # the card
 # ---------------------------------------------------------------------------
 def create_card_image(
@@ -317,37 +441,60 @@ def create_card_image(
     author: str,
     date_label: str,
     output_path: Path,
+    seed_key: str = "",
+    background: str = "blueprint",
 ) -> None:
-    image = Image.new("RGB", (WIDTH, HEIGHT), BG)
+    image = Image.new("RGB", (WIDTH, HEIGHT), PAPER)
     draw = ImageDraw.Draw(image)
 
-    # The one accent gesture: a full-height rail on the left edge.
-    draw.rectangle([(0, 0), (RAIL_WIDTH - 1, HEIGHT)], fill=ACCENT)
-
-    # Wordmark, top-left, on the same left edge as everything else.
-    draw.text(
-        (MARGIN_X, WORDMARK_TOP),
-        "subramanya.ai",
-        font=font("semibold", WORDMARK_SIZE),
-        fill=WORDMARK,
-    )
-
-    # Title band: eyebrow + title, optically centred in the band so a one-line
-    # title and a four-line title both look deliberate.
+    # --- lay the type out first, so the art knows what to keep clear of ------
     band_height = BAND_BOTTOM - CONTENT_TOP
     eyebrow_block = (EYEBROW_SIZE + EYEBROW_GAP) if eyebrow else 0
 
+    # Most titles get the narrow measure, which leaves the right third to the
+    # art. A long one may claim the full width if that buys it bigger type —
+    # the art reads the final text box and composes around whatever it gets.
+    smart_title = smarten(title)
     title_font, title_lines, title_size = layout_title(
-        draw,
-        smarten(title),
-        max_width=CONTENT_WIDTH,
-        max_height=band_height - eyebrow_block,
+        draw, smart_title, TITLE_MEASURE, band_height - eyebrow_block
     )
+    if title_size < 60:
+        wide = layout_title(draw, smart_title, CONTENT_WIDTH, band_height - eyebrow_block)
+        if wide[2] > title_size:
+            title_font, title_lines, title_size = wide
 
     line_height = round(title_size * TITLE_LEADING)
     title_height = line_height * len(title_lines)
     group_height = eyebrow_block + title_height
     title_top = CONTENT_TOP + ((band_height - group_height) // 2) + eyebrow_block
+    widest = max((text_width(draw, line, title_font) for line in title_lines), default=0)
+
+    # --- generative background, veiled behind every run of type -------------
+    rng = seeded_rng(seed_key or title)
+    title_box: Box = (
+        MARGIN_X - 34,
+        title_top - eyebrow_block - 26,
+        MARGIN_X + widest + 40,
+        title_top + title_height + 16,
+    )
+    type_boxes: list[Box] = [
+        title_box,
+        (MARGIN_X - 34, WORDMARK_TOP - 20, MARGIN_X + 240, WORDMARK_TOP + WORDMARK_SIZE + 20),
+        (MARGIN_X - 34, RULE_Y - 14, WIDTH - MARGIN_X + 34, FOOTER_TOP + FOOTER_SIZE + 22),
+    ]
+    layer = BACKGROUNDS[background](rng, seed_key or title, title_box)
+    image.paste(veil(layer, type_boxes), (0, 0), layer)
+
+    # The one hard accent gesture: a full-height rail on the left edge.
+    draw.rectangle([(0, 0), (RAIL_WIDTH - 1, HEIGHT)], fill=ACCENT)
+
+    # --- type ---------------------------------------------------------------
+    draw.text(
+        (MARGIN_X, WORDMARK_TOP),
+        "subramanya.ai",
+        font=font("semibold", WORDMARK_SIZE),
+        fill=INK_SOFT,
+    )
 
     if eyebrow:
         draw_tracked_text(
@@ -361,15 +508,14 @@ def create_card_image(
 
     y = title_top
     for line in title_lines:
-        draw.text((MARGIN_X, y), line, font=title_font, fill=TITLE)
+        draw.text((MARGIN_X, y), line, font=title_font, fill=INK)
         y += line_height
 
-    # Hairline + footer.
     draw.rectangle([(MARGIN_X, RULE_Y), (WIDTH - MARGIN_X, RULE_Y)], fill=HAIRLINE)
-    draw.rectangle([(MARGIN_X, RULE_Y), (MARGIN_X + 72, RULE_Y)], fill=ACCENT_DIM)
+    draw.rectangle([(MARGIN_X, RULE_Y), (MARGIN_X + 72, RULE_Y)], fill=ACCENT)
 
     footer_font = font("medium", FOOTER_SIZE)
-    draw.text((MARGIN_X, FOOTER_TOP), author, font=footer_font, fill=WORDMARK)
+    draw.text((MARGIN_X, FOOTER_TOP), author, font=footer_font, fill=INK_SOFT)
 
     date_width = text_width(draw, date_label, footer_font)
     draw.text(
@@ -498,6 +644,12 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         help="Write cards here instead of their real paths (for previewing a redesign).",
     )
+    parser.add_argument(
+        "--background",
+        choices=sorted(BACKGROUNDS),
+        default="blueprint",
+        help="Which generative background to draw.",
+    )
     parser.add_argument("--author", type=str, default="Subramanya N", help="Footer author name.")
     parser.add_argument(
         "--date-source",
@@ -547,6 +699,8 @@ def main() -> None:
             author=args.author,
             date_label=date_label,
             output_path=output_path,
+            seed_key=slug,
+            background=args.background,
         )
         generated += 1
         try:
