@@ -51,6 +51,17 @@ export default function PageHead({ meta }: { meta: PageMeta }) {
         </>
       ) : null}
 
+      {meta.article ? (
+        <>
+          <meta property="article:published_time" content={meta.article.publishedTime} />
+          <meta property="article:modified_time" content={meta.article.publishedTime} />
+          <meta property="article:author" content={meta.article.author} />
+          {meta.article.tags.map((tag) => (
+            <meta key={tag} property="article:tag" content={tag} />
+          ))}
+        </>
+      ) : null}
+
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={ogTitle} />
       <meta name="twitter:description" content={metaDescription} />
@@ -58,10 +69,37 @@ export default function PageHead({ meta }: { meta: PageMeta }) {
       <meta name="twitter:site" content={`@${about.twitter_username}`} />
       <meta name="twitter:creator" content={`@${about.twitter_username}`} />
       <meta name="twitter:label1" content="Reading time" />
+      {meta.article ? (
+        <meta name="twitter:data1" content={`${meta.article.readingMinutes} min read`} />
+      ) : null}
       <meta
         name="linkedin:profile"
         content={`https://www.linkedin.com/in/${about.linkedin_username}`}
       />
+
+      {/* Google Scholar + Dublin Core, posts only. */}
+      {meta.article ? (
+        <>
+          <meta name="citation_title" content={meta.title ?? ""} />
+          <meta name="citation_author" content={meta.article.author} />
+          <meta name="citation_publication_date" content={meta.article.citationDate} />
+          <meta name="citation_online_date" content={meta.article.citationDate} />
+          <meta name="citation_abstract" content={meta.article.abstract} />
+          <meta name="citation_fulltext_html_url" content={canonical} />
+          <meta name="citation_language" content="en" />
+          {meta.article.tags.length > 0 ? (
+            <meta name="citation_keywords" content={meta.article.tags.join(", ")} />
+          ) : null}
+          <meta name="citation_publisher" content={site.title} />
+
+          <meta name="DC.title" content={meta.title ?? ""} />
+          <meta name="DC.creator" content={meta.article.author} />
+          <meta name="DC.date" content={meta.article.isoDate} />
+          <meta name="DC.identifier" content={canonical} />
+          <meta name="DC.language" content="en" />
+          <meta name="DC.rights" content={`© ${meta.article.year} ${meta.article.author}`} />
+        </>
+      ) : null}
 
       <meta property="og:image" content={imageUrl} />
       <meta property="og:image:secure_url" content={imageUrl} />

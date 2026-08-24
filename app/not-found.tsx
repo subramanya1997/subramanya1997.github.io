@@ -8,9 +8,15 @@ import { pageMeta } from "@/components/lib/page-meta";
 import { getSiteConfig } from "@/components/lib/site-data";
 import SiteShell from "@/components/site/SiteShell";
 
+// Next injects its own <meta name="robots" content="noindex"> on not-found
+// routes; override it through the metadata API so the page carries the exact
+// Jekyll directive instead of a duplicate pair.
+export const metadata = {
+  robots: { index: false, follow: true },
+};
+
 const meta = pageMeta({
   url: "/404.html",
-  robots: "noindex, follow",
 });
 
 function body(siteUrl: string): string {

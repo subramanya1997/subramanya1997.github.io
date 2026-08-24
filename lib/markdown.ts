@@ -43,6 +43,17 @@ export interface RenderMarkdownOptions {
     /** Contents of `_data/*.yml`, keyed by file name (`{ about: { ... } }`). */
     data?: Record<string, unknown>;
   };
+  /**
+   * Run the `_plugins/link_attributes.rb` port (default `true`).
+   *
+   * Jekyll applied that plugin in a `:post_render` hook, *after* `page.content`
+   * had already been set to the converter's output — so the handful of Liquid
+   * expressions that read `page.content` (notably `head.html`'s
+   * `twitter:data1`, which is `number_of_words | divided_by: 200`) saw the HTML
+   * without the derived `title` / `target` / `rel` attributes. Set this to
+   * `false` to reproduce that intermediate string.
+   */
+  linkAttributes?: boolean;
 }
 
 export interface RenderedMarkdown {
@@ -1304,6 +1315,11 @@ function rehypeKramdownTableAlign() {
  */
 const TITLE_MAX_LENGTH = 120;
 
+/** Stand-in for `rehypeLinkAttributes` when `linkAttributes: false`. */
+function noopPlugin() {
+  return () => {};
+}
+
 function rehypeLinkAttributes() {
   return (tree: HastRoot) => {
     visit(tree, "element", (node: HastElement) => {
@@ -1383,7 +1399,7 @@ export async function renderMarkdown(
     .use(rehypeEscapeGt)
     .use(rehypeKramdownOrderedLists)
     .use(rehypeKramdownTableAlign)
-    .use(rehypeLinkAttributes)
+    .use(options.linkAttributes === false ? noopPlugin : rehypeLinkAttributes)
     .use(rehypeStringify, {
       allowDangerousHtml: true,
       closeSelfClosing: false,
