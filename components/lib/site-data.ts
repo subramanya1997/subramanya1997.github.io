@@ -160,12 +160,12 @@ export function getTagArchives(): TagArchive[] {
 }
 
 /**
- * The header nav is `site.pages` filtered by `title && includelink`, in
- * Jekyll's page order. The set is static, so it is spelled out here.
+ * The header nav. Curated: /books/ still exists (indexed URL, listed in the
+ * sitemap) but is reachable from the Publications page rather than the nav —
+ * the two were merged into one nav entry to keep the header simple.
  */
 export const NAV_LINKS: { title: string; url: string }[] = [
   { title: "Blog", url: "/blog/" },
-  { title: "Books", url: "/books/" },
   { title: "Loops", url: "/awesome-loops/" },
   { title: "Publications", url: "/publications/" },
   { title: "Work", url: "/work/" },

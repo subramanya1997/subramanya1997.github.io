@@ -8,14 +8,6 @@
   --stats-gold-soft: rgba(234, 179, 8, 0.1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    --stats-gold: #d9a91c;
-    --stats-gold-ink: #0f1114;
-    --stats-gold-soft: rgba(217, 169, 28, 0.12);
-  }
-}
-
 :root[data-theme='dark'] {
   --stats-gold: #d9a91c;
   --stats-gold-ink: #0f1114;

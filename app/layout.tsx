@@ -22,7 +22,7 @@ const LANG_SCRIPT = `
 
 // Applies the stored colour-scheme preference before anything paints, so there
 // is no flash of the wrong theme. With no stored preference the root attribute
-// stays unset and css/main.css falls through to prefers-color-scheme.
+// stays unset and css/main.css renders the light default (dark is opt-in).
 const THEME_SCRIPT = `
       (function() {
         try {
@@ -49,10 +49,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0f1114" },
-  ],
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

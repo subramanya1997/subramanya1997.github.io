@@ -5,7 +5,7 @@
     function activeScheme() {
       var attr = document.documentElement.getAttribute('data-theme');
       if (attr === 'dark' || attr === 'light') return attr;
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      return 'light';
     }
 
     function renderDiagrams() {
@@ -68,7 +68,4 @@
       }
     }).observe(document.documentElement, { attributes: true });
 
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
-      if (!document.documentElement.hasAttribute('data-theme')) repaint();
-    });
   });

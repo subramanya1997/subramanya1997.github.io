@@ -12,19 +12,6 @@
   --loop-invert-ink: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    --loop-green: #7fc9b8;
-    --loop-solid: #7fc9b8;
-    --loop-solid-ink: #0f1114;
-    --loop-pill-bg: #20302d;
-    --loop-pill-line: #31504a;
-    --loop-pill-ink: #bfe3da;
-    --loop-invert: #e7e9ec;
-    --loop-invert-ink: #111111;
-  }
-}
-
 :root[data-theme='dark'] {
   --loop-green: #7fc9b8;
   --loop-solid: #7fc9b8;

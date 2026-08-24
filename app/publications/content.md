@@ -2,7 +2,7 @@
 layout: page
 title: Publications
 permalink: /publications/
-description: Papers and standards proposals by Subramanya N on agentic AI identity, authorization, and security.
+description: Papers, standards proposals, and books by Subramanya N on agentic AI identity, authorization, and security.
 includelink: true
 custom_layout: true
 page_stylesheets:
@@ -36,6 +36,16 @@ page_stylesheets:
       {% unless forloop.last %}
         <hr class="post-divider">
       {% endunless %}
+    {% endfor %}
+  </div>
+
+  <div class="books-section">
+    <h2>Books</h2>
+    {% for book in site.books %}
+      <article class="book-entry">
+        <h3><a href="{{ book.web_url }}" target="_blank" rel="noopener">{{ book.title }}</a></h3>
+        <p>{{ book.excerpt }}</p>
+      </article>
     {% endfor %}
   </div>
 </div>

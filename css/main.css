@@ -3,7 +3,7 @@
 
    Everything visual starts here:
      1. Design tokens (color, type, space, radius, shadow, motion)
-     2. Dark theme (prefers-color-scheme + explicit [data-theme] override)
+     2. Dark theme (opt-in via [data-theme='dark'] toggle; light is default)
      3. Reset + element defaults
      4. Layout chrome (header, footer, page shell)
      5. Long-form post typography
@@ -168,64 +168,11 @@
 /* --------------------------------------------------------------------------
    2. Dark theme
 
-   Default follows the OS; `data-theme` (set by the no-flash boot script in
-   app/layout.tsx) wins in both directions.
+   The site is light by default regardless of the OS preference; dark applies
+   only when the header toggle sets `data-theme="dark"` (persisted by the
+   no-flash boot script in app/layout.tsx).
    -------------------------------------------------------------------------- */
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    color-scheme: dark;
-
-    --paper: #0f1114;
-    --surface: #15181c;
-    --surface-sunken: #1b1f24;
-    --surface-hover: #23272e;
-    --ink: #e7e9ec;
-    --ink-muted: #a3aab4;      /* 9.0:1 on paper */
-    --ink-subtle: #858d97;     /* 6.3:1 on paper */
-    --line: #262a31;
-    --line-strong: #383d45;
-    --accent: #93b2ff;         /* 8.4:1 on paper */
-    --accent-hover: #b6caff;
-    --accent-contrast: #0f1114;
-    --accent-soft: rgba(147, 178, 255, 0.14);
-    --success: #4ec27b;
-    --success-contrast: #0f1114;
-    --highlight-soft: rgba(234, 179, 8, 0.16);
-    --highlight-strong: rgba(234, 179, 8, 0.28);
-
-    --code-bg: #14171b;
-    --code-border: #23272e;
-
-    --header-bg: rgba(15, 17, 20, 0.86);
-    --header-bg-scrolled: rgba(15, 17, 20, 0.8);
-    --overlay: rgba(0, 0, 0, 0.76);
-    --scrim: rgba(0, 0, 0, 0.95);
-
-    --shadow-color: 0 0 0;
-    --shadow-xs: 0 1px 2px rgb(var(--shadow-color) / 0.4);
-    --shadow-sm: 0 1px 3px rgb(var(--shadow-color) / 0.45);
-    --shadow-md: 0 2px 10px rgb(var(--shadow-color) / 0.5);
-    --shadow-lg: 0 10px 34px rgb(var(--shadow-color) / 0.55);
-
-    --syn-comment: #7f8891;
-    --syn-keyword: #d3a9f5;
-    --syn-string: #8ad7a2;
-    --syn-number: #eaad74;
-    --syn-function: #8fb5f5;
-    --syn-type: #6fd0c6;
-    --syn-variable: #f0918f;
-    --syn-error: #f0918f;
-    --syn-ws: #2b3038;
-    --syn-added-bg: rgba(78, 194, 123, 0.14);
-    --syn-added-fg: #8ad7a2;
-    --syn-deleted-bg: rgba(240, 145, 143, 0.13);
-    --syn-deleted-fg: #f0918f;
-
-    --shadow-light: rgb(var(--shadow-color) / 0.45);
-    --shadow-medium: rgb(var(--shadow-color) / 0.55);
-  }
-}
 
 :root[data-theme='dark'] {
   color-scheme: dark;
@@ -607,10 +554,6 @@ button:focus {
 .theme-toggle .icon-moon { display: none; }
 .theme-toggle .icon-sun { display: block; }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) .theme-toggle .icon-sun { display: none; }
-  :root:not([data-theme='light']) .theme-toggle .icon-moon { display: block; }
-}
 :root[data-theme='dark'] .theme-toggle .icon-sun { display: none; }
 :root[data-theme='dark'] .theme-toggle .icon-moon { display: block; }
 :root[data-theme='light'] .theme-toggle .icon-sun { display: block; }

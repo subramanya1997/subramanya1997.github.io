@@ -1,24 +1,29 @@
-// Port of publications.md (layout: page, custom_layout: true).
+// Port of publications.md (layout: page, custom_layout: true), extended with
+// the books list — /books/ still resolves on its own, but the nav points here.
 import { Fragment } from "react";
+import BookCard from "@/components/cards/BookCard";
 import { applyLinkAttributes, linkTitle } from "@/components/lib/jekyll";
 import { pageMeta } from "@/components/lib/page-meta";
 import { getAbout, getSiteConfig } from "@/components/lib/site-data";
 import PageLayout from "@/components/site/PageLayout";
+import { getAllBooks } from "@/lib/content";
 
 const meta = pageMeta({
   title: "Publications",
   url: "/publications/",
   description:
-    "Papers and standards proposals by Subramanya N on agentic AI identity, authorization, and security.",
+    "Papers, standards proposals, and books by Subramanya N on agentic AI identity, authorization, and security.",
   customLayout: true,
   stylesheets: [
     "/assets/css/components/content-cards.css",
     "/assets/css/pages/blog-index.css",
+    "/assets/css/pages/books-index.css",
   ],
 });
 
 export default function Publications() {
   const publications = getAbout().publications;
+  const books = getAllBooks();
   const siteUrl = getSiteConfig().url;
 
   return (
@@ -69,6 +74,20 @@ export default function Publications() {
             </Fragment>
           ))}
         </div>
+
+        <section className="books-container" aria-labelledby="books-heading">
+          <header className="index-header">
+            <h2 id="books-heading">Books</h2>
+          </header>
+          <div className="books-list">
+            {books.map((book, index) => (
+              <Fragment key={book.slug}>
+                <BookCard book={book} dateMode="iso" />
+                {index < books.length - 1 ? <hr className="book-divider" /> : null}
+              </Fragment>
+            ))}
+          </div>
+        </section>
       </div>
     </PageLayout>
   );
