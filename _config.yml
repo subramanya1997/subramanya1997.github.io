@@ -11,6 +11,32 @@ social_image_version: 20260619
 markdown: kramdown
 permalink: pretty
 
+# Keep repo tooling and the Next.js migration sources out of the published
+# site (Jekyll copies unknown files verbatim). scripts/, README, and
+# CONTRIBUTING were being published by accident before this list existed.
+exclude:
+  - app
+  - components
+  - lib
+  - public
+  - out
+  - .next
+  - node_modules
+  - scripts
+  - package.json
+  - bun.lock
+  - tsconfig.json
+  - next.config.ts
+  - next-env.d.ts
+  - eslint.config.mjs
+  - postcss.config.mjs
+  - components.json
+  - README.md
+  - CONTRIBUTING.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
 # collections
 collections:
   books:
