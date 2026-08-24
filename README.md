@@ -17,7 +17,10 @@ bundle exec jekyll serve --livereload
 bundle exec jekyll build
 bundle exec htmlproofer ./_site --disable-external --ignore-empty-alt --ignore-urls "/localhost/,/127.0.0.1/" --enforce-https
 ruby scripts/validate_content.rb
+python3 scripts/validate_api_output.py
 ```
+
+Full pre-deploy steps, including post-deploy live checks: `docs/deploy-checklist.md`.
 
 ## Documentation
 

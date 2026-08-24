@@ -97,8 +97,8 @@
       "get": {
         "operationId": "searchContent",
         "tags": ["discovery", "content"],
-        "summary": "Full-text search index of posts and books",
-        "description": "Returns the complete search index as a JSON array. Each item is a blog post or book with title, URL, plain-text content, tags, view count, and reading time. Agents should fetch this once and filter client-side; there is no server-side query parameter.",
+        "summary": "Full-text search index of posts, books, and loops",
+        "description": "Returns the complete search index as a JSON array (~0.5 MB). Each item is a blog post, book note, or automation-loop prompt with title, URL, plain-text content, tags, view count, and reading time. Agents should fetch this once and filter client-side; there is no server-side query parameter. For a lighter, typed list without full content, use listPosts or listBooks.",
         "responses": {
           "200": {
             "description": "The full search index.",
@@ -297,27 +297,36 @@
       },
       "SearchItem": {
         "type": "object",
-        "description": "One entry in the site search index: a blog post or a book note.",
+        "description": "One entry in the site search index: a blog post, a book note, or an automation-loop prompt.",
         "required": ["kind", "title", "url"],
         "properties": {
           "kind": {
             "type": "string",
-            "enum": ["post", "book"],
-            "description": "Whether this entry is a blog post or a book note."
+            "enum": ["post", "book", "loop"],
+            "description": "Whether this entry is a blog post, a book note, or an automation loop from /awesome-loops/."
           },
-          "title": { "type": "string", "description": "Title of the post or book." },
+          "title": { "type": "string", "description": "Title of the entry." },
           "url": { "type": "string", "description": "Site-relative URL of the HTML page. Append `index.md` for the markdown twin." },
-          "date_display": { "type": "string", "description": "Human-readable publication date, e.g. 'August 17, 2026'." },
-          "date_iso": { "type": "string", "format": "date", "description": "Publication date in YYYY-MM-DD format." },
+          "date_display": { "type": ["string", "null"], "description": "Human-readable publication date, e.g. 'August 17, 2026'. Null for undated entries such as loops." },
+          "date_iso": { "type": ["string", "null"], "description": "Publication date in YYYY-MM-DD format, or null for undated entries." },
           "excerpt": { "type": "string", "description": "Plain-text excerpt." },
           "content": { "type": "string", "description": "Full plain-text content, HTML stripped." },
-          "views": { "type": "integer", "description": "Page views from site analytics (0 when unavailable)." },
-          "reading_minutes": { "type": "integer", "minimum": 1, "description": "Estimated reading time in minutes at 200 wpm." },
+          "views": { "type": ["integer", "null"], "description": "Page views from site analytics; null when analytics are unavailable for the entry." },
+          "reading_minutes": { "type": ["integer", "null"], "minimum": 1, "description": "Estimated reading time in minutes at 200 wpm; null for entries without it." },
           "tags": {
             "type": "array",
-            "items": { "type": "string" },
+            "items": { "$ref": "#/components/schemas/SearchTag" },
             "description": "Topic tags. Tag archive pages live at /tags/."
           }
+        }
+      },
+      "SearchTag": {
+        "type": "object",
+        "description": "A topic tag on a search item.",
+        "required": ["name", "slug"],
+        "properties": {
+          "name": { "type": "string", "description": "Display name of the tag, e.g. 'AI Agents'." },
+          "slug": { "type": "string", "description": "URL slug of the tag; the archive page is /tags/#<slug>." }
         }
       }
     }

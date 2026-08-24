@@ -30,3 +30,6 @@ jobs:
 
       - name: Run content validation
         run: ruby scripts/validate_content.rb
+
+      - name: Run API output validation
+        run: python3 scripts/validate_api_output.py

@@ -18,6 +18,7 @@ to contribute.
 - [Architecture]({{ '/docs/architecture/' | prepend: site.baseurl }}) - system overview, build flow, rendering model, and where to change things.
 - [Content Model]({{ '/docs/content-model/' | prepend: site.baseurl }}) - front-matter and data contracts for posts, books, data files, and top-level pages.
 - [Development]({{ '/docs/development/' | prepend: site.baseurl }}) - local setup, validation commands, content update workflow, and Python maintenance scripts.
+- [Deploy Checklist]({{ '/docs/deploy-checklist/' | prepend: site.baseurl }}) - pre-deploy verification: production build, content/link validation, API-vs-spec checks, and post-deploy live checks.
 
 ## Agent-Readable Endpoints
 
