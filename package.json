@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint",
     "parity": "node scripts/parity/diff-manifests.mjs _site out",
-    "parity:nonhtml": "node scripts/next/nonhtml-parity-check.mjs"
+    "parity:nonhtml": "node scripts/next/nonhtml-parity-check.mjs",
+    "build:export": "node scripts/next/sync-public.mjs && EXPORT_PARITY=1 next build"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
