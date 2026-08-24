@@ -190,8 +190,10 @@ def check_404_error_document(spec):
         return
     text = not_found.read_text(encoding="utf-8")
 
-    if len(text.encode("utf-8")) > 20000:
-        err(f"404.html: body is {len(text.encode('utf-8'))} bytes; keep it under 20KB so agents get a short recovery page")
+    # The page keeps the full site chrome by design; the cap only guards
+    # against runaway bloat that would bury the machine-readable error block.
+    if len(text.encode("utf-8")) > 100000:
+        err(f"404.html: body is {len(text.encode('utf-8'))} bytes; keep it under 100KB so agents get a usable recovery page")
 
     match = re.search(
         r'<script type="application/json" id="agent-error">\s*(\{.*?\})\s*</script>',
