@@ -1,5 +1,4 @@
-<script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
-<script>
+
   document.addEventListener('DOMContentLoaded', function () {
     // Initialize Mermaid diagrams
     mermaid.initialize({
@@ -32,62 +31,3 @@
       });
     });
   });
-</script>
-
-<style>
-/* Fixed-height, scrollable container */
-.mermaid-container {
-  position: relative;
-  max-width: 100%;
-  max-height: 500px; /* Adjust height as desired */
-  overflow: auto;
-  margin: 1.5rem 0;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  background: #fafafa;
-  transition: all 0.25s ease;
-}
-
-.mermaid-container:hover {
-  cursor: zoom-in;
-}
-
-/* Zoomed (full-screen) state */
-.mermaid-container.zoomed {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90vw;
-  height: 90vh;
-  max-height: none;
-  overflow: auto;
-  background: #fff;
-  z-index: 1001;
-  border: 2px solid #666;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-  cursor: zoom-out;
-}
-
-/* Ensure SVG scales nicely inside container */
-.mermaid-container svg {
-  width: 100%;
-  height: auto;
-}
-
-/* Semi-transparent overlay for zoom mode */
-#mermaid-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 1000;
-}
-
-#mermaid-overlay.active {
-  display: block;
-}
-</style> 

@@ -1,6 +1,6 @@
-// Port of _includes/citation.html — the BibTeX block at the foot of a post.
+// The BibTeX block at the foot of a post.
 // Emitted as an HTML string for the same reason as post-faq.ts.
-import { includeStyle } from "@/components/lib/includes";
+import { citationCss } from "./assets";
 import { escapeText } from "@/components/lib/html";
 import { stripHtml } from "@/components/lib/jekyll";
 import { citationId, longMonth } from "@/components/lib/post-extras";
@@ -25,6 +25,6 @@ export function citationHtml(post: Post, canonical: string): string {
     `  <p class="citation-hint">If you reference this post in your work, please cite it as:</p>\n` +
     `  <pre class="citation-bibtex"><code>${escapeText(bibtex)}</code></pre>\n` +
     `</section>\n\n` +
-    `<style>${includeStyle("citation.html")}</style>`
+    `<style>${citationCss()}</style>`
   );
 }

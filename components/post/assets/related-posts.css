@@ -1,70 +1,4 @@
-{% assign maxRelated = 4 %}
-{% assign minCommonTags = 1 %}
-{% assign maxRelatedCounter = 0 %}
 
-<!-- Find posts with matching tags -->
-{% assign relatedPosts = "" | split: "" %}
-
-{% for post in site.posts %}
-  {% if post.url != page.url %}
-    {% assign commonTags = 0 %}
-    {% assign sameCategory = false %}
-    
-    {% for tag in post.tags %}
-      {% if page.tags contains tag %}
-        {% assign commonTags = commonTags | plus: 1 %}
-      {% endif %}
-    {% endfor %}
-    
-    {% if post.categories.first == page.categories.first %}
-      {% assign sameCategory = true %}
-    {% endif %}
-    
-    {% if commonTags >= minCommonTags or sameCategory %}
-      {% assign relatedPosts = relatedPosts | push: post %}
-    {% endif %}
-  {% endif %}
-{% endfor %}
-
-<!-- If no related posts found, use recent posts -->
-{% if relatedPosts.size == 0 %}
-  {% for post in site.posts limit:4 %}
-    {% if post.url != page.url %}
-      {% assign relatedPosts = relatedPosts | push: post %}
-    {% endif %}
-  {% endfor %}
-{% endif %}
-
-{% if relatedPosts.size > 0 %}
-<section class="related-posts">
-  <h3 class="related-posts-title">Related Posts</h3>
-  <div class="related-posts-grid">
-    {% for post in relatedPosts limit:maxRelated %}
-      <article class="related-post-card">
-        <div class="related-post-content">
-          <time class="related-post-date" datetime="{{ post.date | date_to_xmlschema }}">
-            {{ post.date | date: "%b %-d, %Y" }}
-          </time>
-          <h4 class="related-post-title">
-            <a href="{{ post.url | prepend: site.baseurl }}" data-preserve-lang>{{ post.title }}</a>
-          </h4>
-          {% if post.excerpt %}
-            <p class="related-post-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
-          {% endif %}
-          {% if post.tags.size > 0 %}
-            <div class="related-post-tags">
-              {% for tag in post.tags limit:3 %}
-                <a class="tag" href="{{ '/tags/' | prepend: site.baseurl }}{{ tag | slugify }}/#posts" data-preserve-lang>{{ tag }}</a>
-              {% endfor %}
-            </div>
-          {% endif %}
-        </div>
-      </article>
-    {% endfor %}
-  </div>
-</section>
-
-<style>
   .related-posts {
     margin-top: 60px;
     padding-top: 40px;
@@ -181,5 +115,3 @@
       font-size: 20px;
     }
   }
-</style>
-{% endif %}

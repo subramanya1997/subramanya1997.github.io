@@ -1,7 +1,7 @@
-// Port of _includes/toc.html. The list itself is built client-side from the
-// rendered headings, so the server markup is just the shell plus the share
-// links; the CSS and the TOC script come verbatim from the include.
-import { includeScript, includeStyle } from "@/components/lib/includes";
+// Table of contents. The list itself is built client-side from the rendered
+// headings, so the server markup is just the shell plus the share links; the
+// CSS and the TOC script are injected verbatim from components/post/assets.
+import { tocCss, tocJs } from "./assets";
 import { tocShareLinksHtml, type ShareTarget } from "./social-share";
 
 export default function Toc({ target }: { target: ShareTarget }) {
@@ -25,8 +25,8 @@ export default function Toc({ target }: { target: ShareTarget }) {
         </div>
       </nav>
 
-      <style dangerouslySetInnerHTML={{ __html: includeStyle("toc.html") }} />
-      <script dangerouslySetInnerHTML={{ __html: includeScript("toc.html") }} />
+      <style dangerouslySetInnerHTML={{ __html: tocCss() }} />
+      <script dangerouslySetInnerHTML={{ __html: tocJs() }} />
     </>
   );
 }

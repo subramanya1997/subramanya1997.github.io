@@ -54,7 +54,7 @@ tag drifts.
 - `app/`: Next.js App Router routes — one route per page type, plus the non-HTML endpoints.
 - `components/`: React ports of the original site chrome and page templates (header, footer, post layout, cards, search form, structured data).
 - `lib/`: Content loading (`content.ts`), the parity markdown renderer (`markdown.ts`), TOC building (`toc.ts`), and the non-HTML surface builders (`nonhtml.ts`).
-- `_layouts/` and `_includes/`: a small set of original template files that remain the source of truth for inline `<style>`/`<script>` blocks, read at build time by `components/lib/includes.ts` (`_layouts/post.html` plus the citation, language-switcher, mermaid, post-faq, related-posts, toc, and translation-toast includes).
+- `components/post/assets/`: the post chrome's hand-written CSS and vanilla JS, kept as plain `.css`/`.client.js` files (post layout, citation, language switcher, mermaid, post FAQ, related posts, TOC, translation toast). `components/post/assets/index.ts` reads them at build time and the post components inject them inline, byte for byte, where the markup expects them.
 - `scripts/`: Maintenance scripts for analytics fetching, OG image generation, translation generation, and content validation, plus the build tooling in `scripts/next/` and the URL-parity harness in `scripts/parity/`.
 - `.github/workflows/`: CI and scheduled automation.
 
@@ -64,7 +64,7 @@ tag drifts.
 
 - `components/site/SiteShell.tsx` provides the document shell, site header, site footer, global utility scripts, and per-page script loading.
 - `components/site/PageLayout.tsx` renders generic top-level pages and defers to `custom_layout: true` pages when the page provides its own body markup.
-- `components/post/PostLayout.tsx` is the rich article layout. It adds reading progress, TOC, language switching, copy-page actions, related posts, comments, lightbox markup, translation support, and post-specific JavaScript. Its inline style/script payloads are read verbatim from `_layouts/post.html` and the post-related `_includes/` files at build time.
+- `components/post/PostLayout.tsx` is the rich article layout. It adds reading progress, TOC, language switching, copy-page actions, related posts, comments, lightbox markup, translation support, and post-specific JavaScript. Its inline style/script payloads are read verbatim from `components/post/assets/` at build time.
 
 ### Shared Components
 
@@ -116,7 +116,7 @@ tag drifts.
 - Loop marketplace page: `awesome-loops/index.md`, `_loops/*.md`, and `app/awesome-loops/`
 - Work page: `work.md` and `app/work/page.tsx`
 - Stats page: `stats.md` and `app/stats/page.tsx`
-- Post page layout and post-only UX: `components/post/PostLayout.tsx` (inline assets sourced from `_layouts/post.html`)
+- Post page layout and post-only UX: `components/post/PostLayout.tsx` (inline assets sourced from `components/post/assets/`)
 - Global shell behavior and per-page script loading: `components/site/SiteShell.tsx`
 - Global metadata and per-page stylesheet loading: `components/site/PageHead.tsx` and `app/layout.tsx`
 - Search behavior: `components/site/SearchForm.tsx`, `search.md`, the `search.json` builder in `lib/nonhtml.ts`, `assets/js/components/discovery.js`, and `assets/js/pages/search.js`
