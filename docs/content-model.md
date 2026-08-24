@@ -8,7 +8,7 @@ robots: noindex, follow
 
 ## Posts
 
-Posts live in `_posts/` and use dated filenames in the standard Jekyll format.
+Posts live in `_posts/` and use dated filenames in the standard `YYYY-MM-DD-slug.md` format.
 
 ### Required front matter
 
@@ -32,8 +32,8 @@ Posts live in `_posts/` and use dated filenames in the standard Jekyll format.
 - `author` is optional for legacy posts because the templates already fall back to the site title when it is missing.
 - `image` overrides the generated/default social image.
 - `slug` is used for predictable social image paths when a custom `image` is not present.
-- `mermaid` and `mathjax` enable post-only rendering features in `_layouts/post.html`.
-- `ready` is a content workflow flag and is not enforced by Jekyll itself.
+- `mermaid` and `mathjax` enable post-only rendering features in the post layout (`components/post/PostLayout.tsx`).
+- `ready` is a content workflow flag and is not enforced by the build itself.
 
 ## Books
 

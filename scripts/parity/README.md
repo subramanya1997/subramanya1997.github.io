@@ -7,18 +7,17 @@ build stops serving it.
 
 Node built-ins only — no `npm install`, no `package.json`.
 
-## Regenerate the baseline (Jekyll)
+## The baseline is frozen
 
-```sh
-bundle exec jekyll build
-node scripts/parity/build-manifest.mjs _site \
-  --timestamp "$(git rev-parse --short HEAD)-jekyll" \
-  --source "bundle exec jekyll build"
-```
-
-Writes `scripts/parity/manifest.json`. Regenerate it only from a Jekyll build,
-and only when Jekyll's own output legitimately changed — the whole point is
-that it stays a fixed target while the Next.js side moves.
+`scripts/parity/manifest.json` was captured from the final Jekyll build
+before the Jekyll toolchain (Gemfile, `_plugins/`, and all templates except
+the few `_layouts/`/`_includes/` files still read at build time) was removed
+from this repo. It can no longer be regenerated — there is no
+Jekyll build to run it against — so it stays a fixed, permanent baseline.
+New URLs are verified by diffing the Next.js build against this frozen
+manifest with `diff-manifests.mjs`, below; intentional differences from the
+Jekyll-era baseline (retired GitHub Pages artifacts, moved URLs, etc.) go in
+`diff-allow.json` instead of a manifest regeneration.
 
 `--timestamp` is a free-text label you pass in; the script never calls
 `Date.now()`, so rebuilding the same source twice produces an identical file

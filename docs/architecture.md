@@ -1,56 +1,82 @@
 ---
 layout: page
 title: Architecture
-description: "System overview of the Jekyll-based subramanya.ai site: build flow, rendering model, data contracts, and where to change things."
+description: "System overview of the subramanya.ai site: build flow, rendering model, data contracts, and where to change things."
 permalink: /docs/architecture/
 robots: noindex, follow
 ---
 
 ## Overview
 
-This repository is a Jekyll-based personal site hosted on GitHub Pages. The site is generated from Markdown, YAML/JSON data, Liquid templates, generated pages, and static assets. Runtime behavior is added with browser-side JavaScript for search, analytics, translation, TOC behavior, newsletter UI, and post interactions.
+This repository is a Next.js (App Router, static export) personal site
+deployed on Vercel. It was migrated from Jekyll with a hard URL-compatibility
+guarantee: content still lives in the original Jekyll-era source directories,
+and the build reproduces the original published output — URLs, heading ids,
+code-highlighting markup, and machine-readable endpoints included. Runtime
+behavior is added with browser-side JavaScript for search, analytics,
+translation, TOC behavior, newsletter UI, and post interactions.
 
 ## Build Flow
 
-1. Jekyll reads `_config.yml` to configure collections, URLs, markdown, and site-level metadata.
-2. Content is loaded from `_posts/`, `_books/`, `_loops/`, top-level pages such as `index.html` and `blog.md`, and data files in `_data/`.
-3. Layouts in `_layouts/` wrap page content and compose shared includes from `_includes/`.
-4. Static assets are served from `assets/`, `css/`, and top-level generated endpoints such as `feed.xml`, `search.json`, `llms.txt`, `llms-full.txt`, `/.well-known/api-catalog` (RFC 9727 API catalog, RFC 9264 Linkset), and `/.well-known/openid-configuration` (OIDC Discovery 1.0).
-5. Jekyll outputs the generated site to `_site/`.
+1. `scripts/next/sync-public.mjs` (prebuild) reads `_config.yml` and fills
+   `public/`: static assets (`assets/`, `css/`), the `.well-known` discovery
+   documents (plus extensionless aliases), markdown twins (an `index.md`
+   beside every HTML page), book redirect pages, and the vendored static book
+   sites in `_books_static/`.
+2. `lib/content.ts` loads content from `_posts/`, `_books/`, `_loops/`,
+   `_data/`, and the top-level pages such as `index.html` and `blog.md`.
+3. `lib/markdown.ts` renders markdown with byte-level parity to the original
+   kramdown/rouge output (heading ids, token classes, smart quotes).
+4. The App Router routes in `app/` render every page and generate the
+   non-HTML surfaces (`feed.xml`, `search.json`, `sitemap.xml`,
+   `sitemapindex.xml`, `llms.txt`, `llms-full.txt`, `/api/v1/*.json`) from
+   `lib/nonhtml.ts`.
+5. `next build` prerenders every route statically; Vercel runs the standard
+   build and applies the `next.config.ts` headers/rewrites. `bun run
+   build:export` (`EXPORT_PARITY=1`) switches to `output: "export"` and writes
+   `out/` for the local URL-parity harness.
+
+`scripts/parity/` holds the URL-parity harness: `manifest.json` is the frozen
+baseline of every URL the site has ever served, and
+`diff-manifests.mjs` fails the build in CI if a URL disappears or a canonical
+tag drifts.
 
 ## Repository Structure
 
 - `_config.yml`: Site configuration, collections, i18n settings, newsletter settings, and analytics IDs.
-- `_layouts/`: Page shells. `default.html` is the global shell, `page.html` handles generic pages, and `post.html` handles blog posts.
-- `_includes/`: Shared partials such as head metadata, header/footer, header search form, TOC, analytics, newsletter UI, language switcher, translation toast, related posts, and generated tag archive markup.
 - `_posts/`: Blog posts in dated Markdown files.
 - `_books/`: The custom `books` collection.
 - `_loops/`: Curated automation-loop marketplace listings.
 - `_data/`: Structured data for the homepage, work page, i18n labels, and analytics-derived view counts.
-- `assets/`: Images, JavaScript, translation JSON, video, resume files, and page/component CSS introduced by the current refactor.
+- `_books_static/`: Pre-built static book sites served verbatim at their original URLs.
+- `assets/`: Images, JavaScript, translation JSON, video, resume files, and page/component CSS.
 - `css/main.css`: Global site styles shared across the whole site.
-- `scripts/`: Maintenance scripts for analytics fetching, OG image generation, translation generation, and content validation.
+- `app/`: Next.js App Router routes — one route per page type, plus the non-HTML endpoints.
+- `components/`: React ports of the original site chrome and page templates (header, footer, post layout, cards, search form, structured data).
+- `lib/`: Content loading (`content.ts`), the parity markdown renderer (`markdown.ts`), TOC building (`toc.ts`), and the non-HTML surface builders (`nonhtml.ts`).
+- `_layouts/` and `_includes/`: a small set of original template files that remain the source of truth for inline `<style>`/`<script>` blocks, read at build time by `components/lib/includes.ts` (`_layouts/post.html` plus the citation, language-switcher, mermaid, post-faq, related-posts, toc, and translation-toast includes).
+- `scripts/`: Maintenance scripts for analytics fetching, OG image generation, translation generation, and content validation, plus the build tooling in `scripts/next/` and the URL-parity harness in `scripts/parity/`.
 - `.github/workflows/`: CI and scheduled automation.
 
 ## Rendering Model
 
 ### Layouts
 
-- `_layouts/default.html` provides the document shell, site header, site footer, global utility scripts, and per-page script loading.
-- `_layouts/page.html` renders generic top-level pages and defers to `custom_layout: true` pages when the page provides its own body markup.
-- `_layouts/post.html` is the rich article layout. It adds reading progress, TOC, language switching, copy-page actions, related posts, comments, lightbox markup, translation support, and post-specific JavaScript.
+- `components/site/SiteShell.tsx` provides the document shell, site header, site footer, global utility scripts, and per-page script loading.
+- `components/site/PageLayout.tsx` renders generic top-level pages and defers to `custom_layout: true` pages when the page provides its own body markup.
+- `components/post/PostLayout.tsx` is the rich article layout. It adds reading progress, TOC, language switching, copy-page actions, related posts, comments, lightbox markup, translation support, and post-specific JavaScript. Its inline style/script payloads are read verbatim from `_layouts/post.html` and the post-related `_includes/` files at build time.
 
-### Shared Includes
+### Shared Components
 
-- `_includes/head.html`: metadata, canonical/hreflang tags, CSS loading, analytics inclusion, and page-specific stylesheet loading.
-- `_includes/header.html`: skip links, site title, header search form, and navigation links.
-- `_includes/footer.html`: social links, quote, copyright, and newsletter inclusion on non-post pages.
-- `_includes/search.html`: the header search form that routes to `/search/`.
-- `_includes/toc.html`: article TOC generation and share UI.
-- `_includes/language-switcher.html` and `_includes/translation-toast.html`: translation UX for post pages.
-- `_includes/analytics.html`: Google Analytics and enhanced analytics script loading.
-- `_includes/components/`: shared card/row components introduced for top-level pages.
-- `_includes/tag-archive.html`: server-rendered tag archive body used by generated tag pages.
+- `components/site/PageHead.tsx` and `app/layout.tsx`: metadata, canonical/hreflang tags, CSS loading, analytics inclusion, and page-specific stylesheet loading.
+- `components/site/Header.tsx`: skip links, site title, header search form, and navigation links.
+- `components/site/Footer.tsx`: social links, quote, copyright, and newsletter inclusion on non-post pages.
+- `components/site/SearchForm.tsx`: the header search form that routes to `/search/`.
+- `components/post/Toc.tsx`: article TOC generation and share UI.
+- `components/post/LanguageSwitcher.tsx` and `components/post/TranslationToast.tsx`: translation UX for post pages.
+- `components/site/Analytics.tsx`: Google Analytics and enhanced analytics script loading.
+- `components/cards/`: shared card/row components used by the top-level pages.
+- `app/tags/[tag]/page.tsx`: server-rendered tag archive pages.
 
 ## Data and Content
 
@@ -60,7 +86,7 @@ This repository is a Jekyll-based personal site hosted on GitHub Pages. The site
 - `_posts/` uses front matter plus Markdown body content for posts.
 - `_books/` uses front matter plus Markdown body content for the books collection.
 - `_loops/` uses front matter plus Markdown body content for automation-loop marketplace listings. Loop detail pages derive prompt, Agent Skill, Codex/Cursor `AGENTS.md`, Cursor `.mdc`, Claude deep-link, and Cursor deep-link exports from that source content.
-- `search.json` is the structured discovery index consumed by the search page.
+- `search.json` is the structured discovery index consumed by the search page, generated at build time by `lib/nonhtml.ts`.
 
 ## Runtime JavaScript Responsibilities
 
@@ -76,35 +102,46 @@ This repository is a Jekyll-based personal site hosted on GitHub Pages. The site
 - `scripts/fetch_analytics.py`: fetches Google Analytics data and writes `_data/view_count.json`.
 - `scripts/generate_og_images.py`: generates fallback OG images for posts.
 - `scripts/translate_posts.py`: generates translation JSON files in `assets/translations/`.
-- `scripts/validate_content.rb`: validates front matter, data file structure, and top-level page asset guardrails.
-- `_plugins/tag_pages_generator.rb`: generates `/tags/<tag>/` archive pages and the tag index data.
+- `scripts/validate-content.mjs`: validates front matter, data file structure, and top-level page asset guardrails.
+- `scripts/validate_api_output.py`: validates the built `out/` API surface against `openapi.json`.
 - `.github/workflows/update-analytics.yml`: scheduled workflow that updates analytics data.
-- `.github/workflows/code_quality.yml`: build, link checking, and content validation workflow.
+- `.github/workflows/code_quality.yml`: build, URL parity, and content/API validation workflow.
 
 ## Where To Change Things
 
-- Homepage content and structure: `index.html`
+- Homepage content and structure: `index.html` and `app/page.tsx`
 - Homepage bio/work data: `_data/about.yaml`
-- Blog listing page: `blog.md`
-- Books listing page: `books.md`
-- Loop marketplace page: `awesome-loops/index.md` and `_loops/*.md`
-- Work page: `work.md`
-- Stats page: `stats.md`
-- Post page layout and post-only UX: `_layouts/post.html`
-- Global shell behavior and per-page script loading: `_layouts/default.html`
-- Global metadata and per-page stylesheet loading: `_includes/head.html`
-- Search behavior: `_includes/search.html`, `search.md`, `search.json`, `assets/js/components/discovery.js`, and `assets/js/pages/search.js`
-- Tag archives and topic browsing: `tags.md`, `_plugins/tag_pages_generator.rb`, `_includes/tag-archive.html`, and `assets/css/pages/tags.css`
-- Agent discovery (RFC 8288 / RFC 9727): `api-catalog.json` emits `/.well-known/api-catalog.json`, and `_plugins/api_catalog_alias.rb` copies that output to the canonical extensionless `/.well-known/api-catalog` path so both URLs work. The catalog is a Linkset per RFC 9264 and enumerates every machine-readable endpoint on the site. `_includes/head.html` advertises the same endpoints via RFC 8288 `<link>` elements on every page (`api-catalog`, `describedby`, `service-doc`, `sitemap`, `search`, `author`, `alternate`). GitHub Pages cannot emit HTTP `Link` response headers directly, so HTML `<link>` elements are the RFC 8288 HTML-equivalent path.
-- OpenID Connect discovery (OIDC Discovery 1.0): `openid-configuration.json` emits `/.well-known/openid-configuration.json`, and `_plugins/api_catalog_alias.rb` copies it to the canonical extensionless `/.well-known/openid-configuration`. The document is an intentionally inert stub: the site exposes no protected APIs, so `grant_types_supported` and `scopes_supported` are empty and `response_types_supported` / `id_token_signing_alg_values_supported` are `["none"]`. `jwks.json` emits `/.well-known/jwks.json` as an empty keyset, and `oauth-noop.json` emits `/.well-known/oauth-noop.json` (also aliased to `/.well-known/oauth-noop`) returning an RFC 6749 §5.2 `invalid_client` error for any agent that follows the authorization/token endpoints. Extend the `ALIASES` list in `_plugins/api_catalog_alias.rb` to add more extensionless well-known URIs.
-- Developer documentation hub: `docs.md` emits `/docs/` as the landing page; each `docs/*.md` file is a Jekyll page served at `/docs/<name>/`. The `/docs/` URL is also the target of the `service-doc` link relation.
-- Analytics configuration: `_includes/analytics.html`
+- Blog listing page: `blog.md` and `app/blog/page.tsx`
+- Books listing page: `books.md` and `app/books/page.tsx`
+- Loop marketplace page: `awesome-loops/index.md`, `_loops/*.md`, and `app/awesome-loops/`
+- Work page: `work.md` and `app/work/page.tsx`
+- Stats page: `stats.md` and `app/stats/page.tsx`
+- Post page layout and post-only UX: `components/post/PostLayout.tsx` (inline assets sourced from `_layouts/post.html`)
+- Global shell behavior and per-page script loading: `components/site/SiteShell.tsx`
+- Global metadata and per-page stylesheet loading: `components/site/PageHead.tsx` and `app/layout.tsx`
+- Search behavior: `components/site/SearchForm.tsx`, `search.md`, the `search.json` builder in `lib/nonhtml.ts`, `assets/js/components/discovery.js`, and `assets/js/pages/search.js`
+- Tag archives and topic browsing: `tags.md`, `app/tags/`, and `assets/css/pages/tags.css`
+- Agent discovery (RFC 8288 / RFC 9727): `api-catalog.json` is published at `/.well-known/api-catalog.json`, and `scripts/next/sync-public.mjs` copies that output to the canonical extensionless `/.well-known/api-catalog` path so both URLs work (`vercel.json` sets the content type). The catalog is a Linkset per RFC 9264 and enumerates every machine-readable endpoint on the site. The site advertises the same endpoints via RFC 8288 `<link>` elements on every page (`api-catalog`, `describedby`, `service-doc`, `sitemap`, `search`, `author`, `alternate`).
+- OpenID Connect discovery (OIDC Discovery 1.0): `openid-configuration.json` is published at `/.well-known/openid-configuration.json` and copied to the canonical extensionless `/.well-known/openid-configuration`. The document is an intentionally inert stub: the site exposes no protected APIs, so `grant_types_supported` and `scopes_supported` are empty and `response_types_supported` / `id_token_signing_alg_values_supported` are `["none"]`. `jwks.json` is published at `/.well-known/jwks.json` as an empty keyset, and `oauth-noop.json` at `/.well-known/oauth-noop.json` (also aliased to `/.well-known/oauth-noop`) returning an RFC 6749 §5.2 `invalid_client` error for any agent that follows the authorization/token endpoints. Extend the alias list in `scripts/next/sync-public.mjs` to add more extensionless well-known URIs.
+- Developer documentation hub: `docs.md` emits `/docs/` as the landing page; each `docs/*.md` file is rendered by the `app/docs/` routes at `/docs/<name>/`. The `/docs/` URL is also the target of the `service-doc` link relation.
+- Analytics configuration: `components/site/Analytics.tsx`
 - Analytics-derived stats data: `_data/view_count.json` and `scripts/fetch_analytics.py`
-- Translation loading and UI: `assets/js/i18n.js`, `assets/js/components/site-language.js`, `_includes/language-switcher.html`, `_includes/translation-toast.html`, and `assets/translations/`
-- Shared card UI for top-level pages: `_includes/components/` and `assets/css/components/`
+- Translation loading and UI: `assets/js/i18n.js`, `assets/js/components/site-language.js`, `components/post/LanguageSwitcher.tsx`, `components/post/TranslationToast.tsx`, and `assets/translations/`
+- Shared card UI for top-level pages: `components/cards/` and `assets/css/components/`
 
 ## Constraints
 
-- The site intentionally stays Jekyll-first. Do not add a frontend build tool, CSS framework, or client-side application framework unless there is a separate migration plan.
-- Top-level pages can load page-specific static CSS/JS through front matter, but global behavior should remain centralized in the existing layouts/includes.
-- Search, newsletter, TOC, translation toast, language switcher, and the post layout remain feature-rich and tightly coupled; refactor them only with a dedicated change plan.
+- **Never change a URL.** Every published URL is indexed and must keep
+  resolving byte-compatibly. Run `bun run parity` after any routing or build
+  change.
+- Do not swap `lib/markdown.ts` for a stock markdown renderer — heading ids,
+  rouge token classes, and smart quotes are matched to the original published
+  output.
+- The Jekyll-era content directories are the single source of truth; the
+  Python maintenance scripts write there, and the build reads them. Do not
+  duplicate content into `app/` or `public/`.
+- Top-level pages can load page-specific static CSS/JS through front matter,
+  but global behavior should remain centralized in the shared components.
+- Search, newsletter, TOC, translation toast, language switcher, and the post
+  layout remain feature-rich and tightly coupled; refactor them only with a
+  dedicated change plan.

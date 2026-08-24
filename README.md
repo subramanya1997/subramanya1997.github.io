@@ -1,26 +1,41 @@
 # Personal Website
 
-Personal site built with Jekyll and hosted on GitHub Pages.
+Personal site built with Next.js (App Router, static export) and deployed on
+Vercel. Content lives in the original Jekyll-era source directories
+(`_posts/`, `_books/`, `_loops/`, `_data/`, `_config.yml`), which remain the
+single source of truth.
 
 - Live site: `https://subramanya.ai`
 
 ## Quickstart
 
 ```bash
-bundle install
-bundle exec jekyll serve --livereload
+bun install
+bun run dev
 ```
 
 ## Validation
 
 ```bash
-bundle exec jekyll build
-bundle exec htmlproofer ./_site --disable-external --ignore-empty-alt --ignore-urls "/localhost/,/127.0.0.1/" --enforce-https
-ruby scripts/validate_content.rb
-python3 scripts/validate_api_output.py
+bun run build
+bun run build:export
+bun run parity
+node scripts/validate-content.mjs
+python3 scripts/validate_api_output.py out
 ```
 
+`bun run build` is the standard deployment build (what Vercel runs);
+`bun run build:export` writes the static export to `out/`, which
+`bun run parity` diffs against the frozen URL manifest in
+`scripts/parity/manifest.json` — every published URL must keep resolving with
+no canonical drift.
+
 Full pre-deploy steps, including post-deploy live checks: `docs/deploy-checklist.md`.
+
+## Deployment
+
+Pushing to `main` deploys production automatically — the Vercel project is
+git-connected. Do not deploy manually.
 
 ## Documentation
 

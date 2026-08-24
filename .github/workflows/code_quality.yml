@@ -1,4 +1,4 @@
-name: Jekyll Code Quality
+name: Code Quality
 
 on:
   push:
@@ -9,27 +9,30 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Ruby and Jekyll
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.2.2
-      - run: gem install bundler
-      - run: bundle install
-      - run: bundle exec jekyll build
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
 
-      - name: Run html-proofer
-        # The handbook lives in a separate repo deployed at this path (a GitHub
-        # Pages project page under the apex domain), so it is not present in this
-        # repo's _site and html-proofer cannot resolve it locally.
-        run: bundle exec htmlproofer ./_site --disable-external --ignore-empty-alt --ignore-urls "/localhost/,/127.0.0.1/,/navigating-umass-amherst-a-handbook-for-international-students/" --enforce-https
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build site (standard deployment build)
+        run: bun run build
+
+      - name: Build static export (parity harness input)
+        run: bun run build:export
+
+      - name: URL parity gate
+        # The frozen Jekyll-era manifest is the URL contract: the build must
+        # serve every indexed URL with no canonical drift.
+        run: node scripts/parity/diff-manifests.mjs scripts/parity/manifest.json out
 
       - name: Run content validation
-        run: ruby scripts/validate_content.rb
+        run: node scripts/validate-content.mjs
 
       - name: Run API output validation
-        run: python3 scripts/validate_api_output.py
+        run: python3 scripts/validate_api_output.py out

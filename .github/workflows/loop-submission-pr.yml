@@ -23,47 +23,57 @@ jobs:
         env:
           GITHUB_EVENT_PATH: ${{ github.event_path }}
         run: |
-          ruby <<'RUBY'
-          require "fileutils"
-          require "json"
+          node <<'NODE'
+          const fs = require("node:fs");
+          const path = require("node:path");
 
-          event = JSON.parse(File.read(ENV.fetch("GITHUB_EVENT_PATH")))
-          issue = event.fetch("issue")
-          body = issue["body"].to_s
-          title = issue["title"].to_s.sub(/\ALoop submission:\s*/i, "").strip
+          const event = JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH, "utf8"));
+          const issue = event.issue;
+          const body = String(issue.body ?? "");
+          const title = String(issue.title ?? "").replace(/^Loop submission:\s*/i, "").trim();
 
-          def slugify(value)
-            slug = value.to_s.downcase.gsub(/['"]/, "").gsub(/[^a-z0-9]+/, "-").gsub(/\A-+|-+\z/, "")
-            slug.empty? ? "submitted-loop" : slug[0, 80].gsub(/-+\z/, "")
-          end
+          function slugify(value) {
+            const slug = String(value)
+              .toLowerCase()
+              .replace(/['"]/g, "")
+              .replace(/[^a-z0-9]+/g, "-")
+              .replace(/^-+|-+$/g, "");
+            return slug === "" ? "submitted-loop" : slug.slice(0, 80).replace(/-+$/, "");
+          }
 
-          filename = body[/<!-- LOOP_SUBMISSION_FILENAME:\s*([^>]+?)\s*-->/, 1].to_s.strip
-          filename = "#{slugify(title)}.md" if filename.empty?
-          filename = File.basename(filename).downcase.gsub(/[^a-z0-9._-]/, "-")
-          filename = "#{filename}.md" unless filename.end_with?(".md")
+          let filename = (body.match(/<!-- LOOP_SUBMISSION_FILENAME:\s*([^>]+?)\s*-->/)?.[1] ?? "").trim();
+          if (filename === "") filename = `${slugify(title)}.md`;
+          filename = path.basename(filename).toLowerCase().replace(/[^a-z0-9._-]/g, "-");
+          if (!filename.endsWith(".md")) filename = `${filename}.md`;
 
-          match = body.match(/<!-- LOOP_SUBMISSION_MARKDOWN_START -->\s*(.*?)\s*<!-- LOOP_SUBMISSION_MARKDOWN_END -->/m)
-          raise "Missing loop submission markdown block" unless match
+          const match = body.match(/<!-- LOOP_SUBMISSION_MARKDOWN_START -->\s*([\s\S]*?)\s*<!-- LOOP_SUBMISSION_MARKDOWN_END -->/);
+          if (!match) throw new Error("Missing loop submission markdown block");
 
-          markdown = match[1].to_s.strip
-          raise "Loop submission markdown is empty" if markdown.empty?
-          raise "Loop submission must include YAML front matter" unless markdown.start_with?("---")
+          const markdown = match[1].trim();
+          if (markdown === "") throw new Error("Loop submission markdown is empty");
+          if (!markdown.startsWith("---")) throw new Error("Loop submission must include YAML front matter");
 
-          FileUtils.mkdir_p("_loops")
-          File.write(File.join("_loops", filename), "#{markdown}\n")
+          fs.mkdirSync("_loops", { recursive: true });
+          fs.writeFileSync(path.join("_loops", filename), `${markdown}\n`);
 
-          branch = "loop-submission-#{issue.fetch("number")}-#{slugify(filename.sub(/\.md\z/, ""))}"
-          branch = branch[0, 120].gsub(/-+\z/, "")
+          let branch = `loop-submission-${issue.number}-${slugify(filename.replace(/\.md$/, ""))}`;
+          branch = branch.slice(0, 120).replace(/-+$/, "");
 
-          File.open(ENV.fetch("GITHUB_OUTPUT"), "a") do |output|
-            output.puts "branch=#{branch}"
-            output.puts "filename=#{filename}"
-            output.puts "loop_title=#{title.empty? ? filename.sub(/\.md\z/, "") : title}"
-          end
-          RUBY
+          const loopTitle = title === "" ? filename.replace(/\.md$/, "") : title;
+          fs.appendFileSync(
+            process.env.GITHUB_OUTPUT,
+            `branch=${branch}\nfilename=${filename}\nloop_title=${loopTitle}\n`
+          );
+          NODE
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
 
       - name: Validate content
-        run: ruby scripts/validate_content.rb
+        run: node scripts/validate-content.mjs
 
       - name: Detect changes
         id: diff

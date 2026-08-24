@@ -11,8 +11,8 @@ Submissions are reviewed before merge. Maintainers may edit titles, safety langu
 Run these checks before requesting review:
 
 ```bash
-ruby scripts/validate_content.rb
-bundle exec jekyll build
+node scripts/validate-content.mjs
+bun run build
 ```
 
 GitHub code-owner review is enforced only when repository branch protection requires it, so keep branch protection enabled for `main` before treating approvals as mandatory.

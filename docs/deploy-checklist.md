@@ -5,41 +5,45 @@ description: Pre-deploy verification checklist for subramanya.ai - build, conten
 permalink: /docs/deploy-checklist/
 ---
 
-Run through this before pushing to `main` (a push deploys production via
-`.github/workflows/deploy.yml`). Steps 1-3 are enforced by CI
-(`code_quality.yml`), but running them locally first keeps broken commits off
-`main`.
+Run through this before pushing to `main` (a push deploys production
+automatically — the Vercel project is git-connected). Steps 1-3 are enforced
+by CI (`code_quality.yml`), but running them locally first keeps broken
+commits off `main`.
 
 ## 1. Production build
 
 ```bash
-JEKYLL_ENV=production bundle exec jekyll build
+bun run build
 ```
 
-Must finish without errors. Use `JEKYLL_ENV=production` so analytics and any
-production-only includes render the way GitHub Pages will render them.
+Must finish without errors. This is the standard deployment build Vercel
+runs; it syncs the static content directories into `public/` first.
 
-## 2. Content and link validation
+## 2. Content and URL validation
 
 ```bash
-ruby scripts/validate_content.rb
+node scripts/validate-content.mjs
 ```
 
 ```bash
-bundle exec htmlproofer ./_site --disable-external --ignore-empty-alt --ignore-urls "/localhost/,/127.0.0.1/,/navigating-umass-amherst-a-handbook-for-international-students/" --enforce-https
+bun run build:export
+bun run parity
 ```
 
 Front matter contracts, trust pages (`/contact/`, `/privacy/`), llms.txt
 sections, 404 recovery links, and the OpenAPI source are all checked by
-`validate_content.rb`; htmlproofer catches broken internal links.
+`validate-content.mjs`; the parity diff verifies every published URL in the
+frozen manifest (`scripts/parity/manifest.json`) still resolves with no
+canonical drift.
 
 ## 3. API surface validation (spec vs. built output)
 
 ```bash
-python3 scripts/validate_api_output.py
+python3 scripts/validate_api_output.py out
 ```
 
-This validates the **built** `_site/` output, and fails on drift between
+This validates the **exported** `out/` output (from `bun run build:export`
+above), and fails on drift between
 `openapi.json` and reality:
 
 - `openapi.json`, `search.json`, `/api/v1/posts.json`, `/api/v1/books.json`,
@@ -61,7 +65,7 @@ same commit - this script is what makes that contract binding.
 
 ## 4. Post-deploy live checks
 
-After the `Deploy GitHub Pages` workflow finishes (~1-2 min):
+After the Vercel deployment finishes (~1-2 min after the push):
 
 ```bash
 curl -s -o /dev/null -w "%{http_code}\n" https://subramanya.ai/some-path-that-does-not-exist

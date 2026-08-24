@@ -11,5 +11,5 @@
 
 ## Validation
 
-- [ ] `ruby scripts/validate_content.rb`
-- [ ] `bundle exec jekyll build`
+- [ ] `node scripts/validate-content.mjs`
+- [ ] `bun run build`
