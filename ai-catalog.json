@@ -11,49 +11,49 @@ sitemap: false
   },
   "entries": [
     {
-      "identifier": "urn:ai:subramanya.ai:api:content-v1",
+      "identifier": "urn:air:subramanya.ai:content-api-v1",
       "displayName": "Subramanya N Content API",
       "type": "application/json",
       "url": "{{ site.url }}/openapi.json",
       "description": "Read-only JSON API over the site's posts, books, and tags (OpenAPI 3.1 description). Anonymous access, no credentials required."
     },
     {
-      "identifier": "urn:ai:subramanya.ai:doc:llms-txt",
+      "identifier": "urn:air:subramanya.ai:llms-txt",
       "displayName": "llms.txt site summary",
       "type": "text/plain",
       "url": "{{ site.url }}/llms.txt",
       "description": "Machine-readable summary of the site with links to every agent-facing resource."
     },
     {
-      "identifier": "urn:ai:subramanya.ai:doc:llms-full",
+      "identifier": "urn:air:subramanya.ai:llms-full-txt",
       "displayName": "llms-full.txt full content",
       "type": "text/plain",
       "url": "{{ site.url }}/llms-full.txt",
       "description": "Full site content flattened for LLM ingestion."
     },
     {
-      "identifier": "urn:ai:subramanya.ai:catalog:api-catalog",
+      "identifier": "urn:air:subramanya.ai:api-catalog",
       "displayName": "API catalog (RFC 9727)",
       "type": "application/linkset+json",
       "url": "{{ site.url }}/.well-known/api-catalog",
       "description": "Linkset of the site's API descriptions and service documents."
     },
     {
-      "identifier": "urn:ai:subramanya.ai:doc:auth",
+      "identifier": "urn:air:subramanya.ai:auth-md",
       "displayName": "auth.md",
       "type": "text/markdown",
       "url": "{{ site.url }}/auth.md",
       "description": "How agents authenticate: all published content is public and anonymous — no registration or credentials exist."
     },
     {
-      "identifier": "urn:ai:subramanya.ai:skills:index",
+      "identifier": "urn:air:subramanya.ai:agent-skills-index",
       "displayName": "Agent skills index",
       "type": "application/json",
       "url": "{{ site.url }}/.well-known/agent-skills/index.json",
       "description": "Index of the concrete capabilities agents can use against this site."
     },
     {
-      "identifier": "urn:ai:subramanya.ai:feed:rss",
+      "identifier": "urn:air:subramanya.ai:rss-feed",
       "displayName": "RSS feed",
       "type": "application/rss+xml",
       "url": "{{ site.url }}/feed.xml",

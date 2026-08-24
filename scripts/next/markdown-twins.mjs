@@ -425,14 +425,37 @@ export function buildTwins() {
 }
 
 /** Write the twins into `outDir` (usually out/). Returns the file count. */
+/**
+ * Agents read twin front matter as document metadata; make sure every twin
+ * carries a `canonical` alongside `url` (some scanners look only for
+ * description/canonical/last-updated).
+ */
+function withCanonical(content) {
+  const m = content.match(/^---\n([\s\S]*?)\n---\n/);
+  if (!m || /^canonical:/m.test(m[1])) return content;
+  const urlLine = m[1].match(/^url: (.+)$/m);
+  if (!urlLine) return content;
+  return content.replace(urlLine[0], `${urlLine[0]}\ncanonical: ${urlLine[1]}`);
+}
+
 export function writeTwins(outDir) {
   const twins = buildTwins();
-  for (const [relative, content] of Object.entries(twins)) {
+  let count = 0;
+  for (const [relative, rawContent] of Object.entries(twins)) {
+    const content = withCanonical(rawContent);
     const destination = path.join(outDir, relative);
     fs.mkdirSync(path.dirname(destination), { recursive: true });
     fs.writeFileSync(destination, content, "utf8");
+    count += 1;
+    // Extensionless-style fallback: agents also probe `<url-minus-slash>.md`
+    // (e.g. /tags/api-first.md). Serve the same twin there too.
+    const flat = relative.replace(/\/index\.md$/, ".md");
+    if (flat !== relative && flat !== ".md") {
+      fs.writeFileSync(path.join(outDir, flat), content, "utf8");
+      count += 1;
+    }
   }
-  return Object.keys(twins).length;
+  return count;
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
