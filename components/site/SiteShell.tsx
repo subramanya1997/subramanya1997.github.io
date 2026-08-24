@@ -50,12 +50,10 @@ const BACK_TO_TOP_SCRIPT = `
 const THEME_TOGGLE_SCRIPT = `
       (function() {
         const root = document.documentElement;
-        const media = window.matchMedia('(prefers-color-scheme: dark)');
 
+        // Light is the site default; dark applies only via this toggle.
         function effective() {
-          const attr = root.getAttribute('data-theme');
-          if (attr === 'dark' || attr === 'light') return attr;
-          return media.matches ? 'dark' : 'light';
+          return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
         }
 
         function label() {
@@ -72,11 +70,6 @@ const THEME_TOGGLE_SCRIPT = `
           root.setAttribute('data-theme', next);
           try { localStorage.setItem('theme', next); } catch (e) {}
           label();
-        });
-
-        // Follow the OS while the visitor has expressed no preference.
-        media.addEventListener('change', function() {
-          if (!root.hasAttribute('data-theme')) label();
         });
 
         label();

@@ -15,7 +15,7 @@
   border-radius: 0;
   overflow: visible;
   box-shadow: none;
-  margin-bottom: var(--space-16);
+  margin-bottom: var(--space-12);
   width: 100%;
 }
 
@@ -29,24 +29,25 @@
   border-bottom: none;
   padding-bottom: 0;
   margin-bottom: var(--space-4);
-  font-size: var(--text-2xl);
-  letter-spacing: var(--tracking-tighter);
+  font-size: var(--text-xl);
+  letter-spacing: var(--tracking-tight);
 }
 
 /* Lead paragraph — the one-line answer to "who is this". */
 .profile-content > p:first-of-type {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
   line-height: var(--leading-relaxed);
-  letter-spacing: var(--tracking-tight);
   color: var(--ink);
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-3);
   text-wrap: pretty;
 }
 
 .profile-content > p {
+  font-size: var(--text-sm);
   color: var(--ink-muted);
   line-height: var(--leading-relaxed);
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-3);
   text-wrap: pretty;
 }
 
@@ -62,8 +63,8 @@
 }
 
 .profile-image {
-  flex: 0 0 190px;
-  width: 190px;
+  flex: 0 0 156px;
+  width: 156px;
   align-self: flex-start;
   overflow: hidden;
   border-radius: var(--radius-md);
@@ -136,7 +137,7 @@
 }
 
 .index-container .profile-content .section-heading {
-  font-size: var(--text-2xl);
+  font-size: var(--text-xl);
   font-weight: var(--weight-semibold);
   letter-spacing: var(--tracking-tighter);
   text-transform: none;
@@ -159,7 +160,7 @@
 
   .profile-image {
     flex: none;
-    width: 140px;
+    width: 120px;
   }
 
   .profile-content {
