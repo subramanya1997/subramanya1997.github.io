@@ -60,9 +60,15 @@ const booksStatic = join(root, "_books_static");
 if (existsSync(booksStatic)) {
   for (const entry of readdirSync(booksStatic, { withFileTypes: true })) {
     if (!entry.isDirectory() || entry.name.startsWith(".")) continue;
-    cpSync(join(booksStatic, entry.name), join(pub, entry.name), {
+    const bookRoot = join(booksStatic, entry.name);
+    cpSync(bookRoot, join(pub, entry.name), {
       recursive: true,
-      filter: (p) => !p.split("/").pop().startsWith("."),
+      // Jekyll skips dotfiles (.gitkeep etc.); mirror that. The book's own
+      // HonKit-generated sitemap.xml stays vendored as the source for
+      // lib/nonhtml.ts (its URLs are folded into the main /sitemap.xml) but
+      // is not served as a secondary sitemap.
+      filter: (p) =>
+        !p.split("/").pop().startsWith(".") && p !== join(bookRoot, "sitemap.xml"),
     });
   }
 }
