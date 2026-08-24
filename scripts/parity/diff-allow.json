@@ -1,0 +1,42 @@
+{
+  "_comment": "Intentional differences between the Jekyll baseline and the Next.js build. Every entry here is a deliberate decision, not a bug. Keep it short and keep it justified.",
+  "_schema": {
+    "ignoreMissing": "URL globs allowed to disappear from the new build (* matches anything).",
+    "ignoreExtra": "URL globs allowed to be new in the new build.",
+    "ignoreFields": "Page fields skipped on every page: title canonical description ogImage ogUrl robots jsonLdTypes h1Count headingIds.",
+    "ignorePageFields": "Per-URL field skips, e.g. {\"/about/\": [\"description\"]}. Use [\"*\"] to skip a page entirely.",
+    "renames": "Baseline URL -> candidate URL, for URLs that intentionally moved. The old URL must get a redirect."
+  },
+  "_ignoreMissingReasons": {
+    "/scripts/*": "Build tooling. _config.yml has no `exclude:`, so Jekyll copied the whole scripts/ tree into _site and published it (including translation_errors.log). Never linked, never intended to be public; the Next.js build does not copy it.",
+    "/README.md": "Repo documentation accidentally published by the same missing `exclude:`. Not linked from anywhere and not part of the site.",
+    "/CONTRIBUTING.md": "Same as /README.md."
+  },
+  "ignoreMissing": [
+    "/scripts/*",
+    "/README.md",
+    "/CONTRIBUTING.md"
+  ],
+  "_ignoreExtraReasons": {
+    "/_next/*": "Next.js runtime chunks and manifests.",
+    "/404/*": "Next emits both /404.html (the GitHub Pages contract, present in the baseline) and a /404/ directory.",
+    "/_not-found/": "Next's internal catch-all route, exported as a directory. GitHub Pages serves /404.html for unknown paths regardless.",
+    "/*__next*.txt, /*/index.txt": "RSC flight payloads that Next's static export writes next to every prerendered page. Inert for crawlers; not addressable content.",
+    "/assets/translations/*/.gitkeep": "Empty placeholder files copied by scripts/next/sync-public.mjs; Jekyll skipped dotfiles.",
+    "/docs/*.md": "sync-public.mjs copies docs/*.md into public/. Jekyll rendered them as pages instead, so the raw markdown was never published. Harmless (the markdown twins at /docs/<slug>/index.md are the advertised representation)."
+  },
+  "ignoreExtra": [
+    "/_next/*",
+    "/404/*",
+    "/__next*.txt",
+    "/*/__next*.txt",
+    "/index.txt",
+    "/*/index.txt",
+    "/assets/translations/*/.gitkeep",
+    "/docs/*.md",
+    "/_not-found/"
+  ],
+  "ignoreFields": [],
+  "ignorePageFields": {},
+  "renames": {}
+}

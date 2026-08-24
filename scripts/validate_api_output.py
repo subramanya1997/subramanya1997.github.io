@@ -13,7 +13,9 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SITE = ROOT / "_site"
+# Defaults to the Jekyll build; pass a directory to validate another build
+# output (e.g. the Next.js static export in out/).
+SITE = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else ROOT / "_site"
 ORIGIN = "https://subramanya.ai"
 
 errors = []
@@ -255,7 +257,7 @@ def check_discovery_files():
 
 def main():
     if not SITE.exists():
-        print("error: _site/ not found - run `bundle exec jekyll build` first", file=sys.stderr)
+        print(f"error: {SITE} not found - build the site first", file=sys.stderr)
         return 2
 
     spec = load_json("openapi.json")
