@@ -21,6 +21,9 @@ export default function BooksIndex() {
   return (
     <PageLayout meta={meta}>
       <div className="books-container">
+        <header className="index-header">
+          <h1>{meta.title}</h1>
+        </header>
         <div className="books-list">
           {books.map((book, index) => (
             <Fragment key={book.slug}>

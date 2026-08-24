@@ -1,117 +1,121 @@
 
+  /* Related posts — a quiet list of two-line entries, not a card grid. */
+
   .related-posts {
-    margin-top: 60px;
-    padding-top: 40px;
-    border-top: 2px solid var(--border-color);
+    margin-top: var(--space-16);
+    padding-top: var(--space-10);
+    border-top: 1px solid var(--line);
   }
-  
+
   .related-posts-title {
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 24px;
+    font-size: var(--text-2xs);
+    font-weight: var(--weight-semibold);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--ink-subtle);
+    margin-bottom: var(--space-5);
     position: relative;
-    display: inline-block;
+    display: block;
   }
-  
+
   .related-posts-title:after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 40px;
-    height: 3px;
-    background-color: var(--accent);
+    content: none;
   }
-  
+
   .related-posts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-    margin-top: 32px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0 var(--space-8);
+    margin-top: 0;
   }
-  
+
   .related-post-card {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 20px;
-    transition: all 0.3s ease;
+    background: transparent;
+    border: 0;
+    border-top: 1px solid var(--line);
+    border-radius: 0;
+    padding: var(--space-5) 0;
+    transition: none;
     display: flex;
     flex-direction: column;
   }
-  
+
   .related-post-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px var(--shadow-medium);
-    border-color: var(--accent);
+    transform: none;
+    box-shadow: none;
+    border-color: var(--line);
   }
-  
+
   .related-post-content {
     flex: 1;
     display: flex;
     flex-direction: column;
   }
-  
+
   .related-post-date {
-    font-size: 13px;
-    color: var(--text-tertiary);
-    margin-bottom: 8px;
+    font-size: var(--text-xs);
+    color: var(--ink-subtle);
+    margin-bottom: var(--space-2);
     display: block;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: var(--tracking-wide);
   }
-  
+
   .related-post-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 12px;
-    line-height: 1.4;
+    font-size: var(--text-base);
+    font-weight: var(--weight-semibold);
+    letter-spacing: var(--tracking-tight);
+    margin-bottom: var(--space-2);
+    line-height: var(--leading-snug);
+    text-wrap: pretty;
   }
-  
+
   .related-post-title a {
-    color: var(--text-primary);
+    color: var(--ink);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color var(--duration) var(--ease);
   }
-  
+
   .related-post-title a:hover {
     color: var(--accent);
   }
-  
+
   .related-post-excerpt {
-    font-size: 14px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 12px;
+    font-size: var(--text-sm);
+    color: var(--ink-muted);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-3);
     flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
-  
+
   .related-post-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: var(--space-1);
     margin-top: auto;
   }
-  
+
   .related-post-tags .tag {
-    font-size: 12px;
-    padding: 4px 10px;
-    background-color: var(--bg-tertiary);
-    color: var(--text-secondary);
-    border-radius: 6px;
-    transition: all 0.2s ease;
+    font-size: var(--text-2xs);
+    padding: 0.1rem var(--space-2);
+    background-color: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink-subtle);
+    border-radius: var(--radius-sm);
   }
-  
+
   .related-post-card:hover .related-post-tags .tag {
-    background-color: var(--accent);
-    color: white;
+    background-color: transparent;
+    color: var(--ink-subtle);
   }
-  
+
   @media screen and (max-width: 768px) {
     .related-posts-grid {
       grid-template-columns: 1fr;
-    }
-    
-    .related-posts-title {
-      font-size: 20px;
     }
   }

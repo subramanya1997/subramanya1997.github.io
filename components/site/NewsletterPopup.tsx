@@ -68,23 +68,28 @@ const POPUP_STYLE = `
     position: fixed;
     inset: 0;
     z-index: 9999;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(4px);
+    background: var(--overlay, rgba(0, 0, 0, 0.4));
     display: flex;
     align-items: flex-end;
     justify-content: center;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: opacity 0.3s ease, visibility 0.3s ease;
   }
 
   .nl-popup-overlay.visible {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
   }
 
   .nl-popup {
-    background: var(--bg-primary, #fff);
+    background: var(--paper, #fff);
+    border: 1px solid var(--line, #e5e7eb);
+    border-bottom: none;
     border-radius: 16px 16px 0 0;
     padding: 32px 28px 28px;
     max-width: 480px;
@@ -92,7 +97,7 @@ const POPUP_STYLE = `
     position: relative;
     transform: translateY(100%);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--shadow-lg, 0 -4px 30px rgba(0, 0, 0, 0.12));
   }
 
   .nl-popup-overlay.visible .nl-popup {
@@ -116,8 +121,8 @@ const POPUP_STYLE = `
   }
 
   .nl-popup-close:hover {
-    color: var(--text-primary, #111);
-    background: var(--bg-secondary, #f5f5f5);
+    color: var(--ink, #111);
+    background: var(--surface-sunken, #f5f5f5);
   }
 
   .nl-popup-body {
@@ -149,8 +154,8 @@ const POPUP_STYLE = `
     font-size: 15px;
     border: 1px solid var(--border-color, #ddd);
     border-radius: 10px;
-    background: var(--bg-primary, #fff);
-    color: var(--text-primary, #111);
+    background: var(--surface-sunken, #fff);
+    color: var(--ink, #111);
     outline: none;
     transition: border-color 0.2s ease;
   }
@@ -170,18 +175,17 @@ const POPUP_STYLE = `
     padding: 12px 24px;
     font-size: 15px;
     font-weight: 600;
-    color: #fff;
-    background: var(--text-primary, #111);
+    color: var(--paper, #fff);
+    background: var(--ink, #111);
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: opacity 0.2s ease;
     white-space: nowrap;
   }
 
   .nl-popup-btn:hover {
     opacity: 0.85;
-    transform: translateY(-1px);
   }
 
   .nl-popup-btn:disabled {

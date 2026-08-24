@@ -19,6 +19,10 @@ export default function Work() {
 
   return (
     <PageLayout meta={meta}>
+      <header className="index-header work-header">
+        <h1>{meta.title}</h1>
+      </header>
+
       <div className="work-container">
         <div className="experience">
           {about.experience.map((job) => (

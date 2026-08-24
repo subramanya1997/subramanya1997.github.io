@@ -1,346 +1,397 @@
 
+  /* Post shell: article column + sticky TOC/share rail. */
+
+  /* The rail is first in the DOM. It carries no width of its own so that the
+     article re-centres when the TOC decides it has too few headings to show
+     (toc.client.js leaves `.table-of-contents` display:none in that case). */
   .post-container {
     display: flex;
-    gap: 40px;
-    max-width: 1200px;
+    gap: 0;
+    max-width: var(--content-width);
     margin: 0 auto;
     position: relative;
   }
-  
+
   .post {
     background: transparent;
     border-radius: 0;
-    padding: 20px 0;
+    padding: 0 0 var(--space-8);
     box-shadow: none;
-    flex: 1;
-    min-width: 0; /* Allow flex item to shrink */
+    flex: 1 1 auto;
+    max-width: var(--measure-wide);
+    min-width: 0;
+    margin-inline: auto;
   }
-  
+
   .post-toc-sidebar {
-    flex: 0 0 280px;
-    min-width: 280px;
+    flex: 0 0 auto;
+    min-width: 0;
   }
-  
+
+  /* --- Header ------------------------------------------------------------ */
+
   .post-header {
-    margin-bottom: 30px;
-    text-align: center;
+    margin-bottom: var(--space-10);
+    padding-bottom: var(--space-6);
+    border-bottom: 1px solid var(--line);
+    text-align: left;
   }
-  
+
   .post-header h1 {
-    margin-bottom: 10px;
+    margin-bottom: var(--space-4);
+    max-width: 24ch;
   }
-  
-  .post-tags {
+
+  .post-header .post-tags {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 12px;
+    gap: var(--space-2);
+    margin: 0 0 var(--space-5);
   }
-  
+
   .post-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: var(--space-5);
     margin-bottom: 0;
   }
-  
+
   .post-meta-info {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 4px;
+    align-items: flex-start;
+    gap: var(--space-1);
   }
-  
+
   .post-author {
-    font-weight: 600;
-    color: var(--text-primary);
-    font-size: 15px;
+    font-weight: var(--weight-semibold);
+    color: var(--ink);
+    font-size: var(--text-base);
   }
-  
+
   .post-date-time {
     display: flex;
     align-items: center;
-    gap: 8px;
-    color: #666666;
-    font-size: 14px;
+    gap: var(--space-2);
+    color: var(--ink-subtle);
+    font-size: var(--text-sm);
+    font-variant-numeric: tabular-nums;
   }
-  
+
   .post-date, .post-reading-time {
-    color: #666666;
+    color: var(--ink-subtle);
   }
-  
+
   .meta-dot {
-    color: #999999;
-    font-weight: 500;
+    color: var(--line-strong);
+    font-weight: var(--weight-medium);
   }
-  
+
   .post-meta-actions {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: var(--space-3);
   }
-  
+
+  /* --- Prev / next ------------------------------------------------------- */
+
   .post-navigation {
     display: flex;
     justify-content: space-between;
-    margin-top: 60px;
-    padding-top: 30px;
-    border-top: 1px solid rgba(0,0,0,0.05);
+    gap: var(--space-8);
+    margin-top: var(--space-16);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--line);
   }
-  
+
   .prev-post, .next-post {
     display: flex;
     flex-direction: column;
+    gap: var(--space-1);
     max-width: 45%;
+    font-size: var(--text-base);
+    font-weight: var(--weight-medium);
   }
-  
+
   .prev-post span, .next-post span {
-    font-size: 14px;
-    opacity: 0.7;
-    margin-bottom: 5px;
+    font-size: var(--text-2xs);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--ink-subtle);
+    opacity: 1;
+    margin-bottom: var(--space-1);
   }
-  
+
   .next-post {
     text-align: right;
   }
-  
+
   @media screen and (max-width: 1200px) {
     .post-container {
-      max-width: 800px;
+      max-width: 46rem;
     }
-    
+
     .post-toc-sidebar {
       display: none;
     }
   }
-  
+
   @media screen and (max-width: 1024px) {
     .post-container {
       flex-direction: column;
     }
   }
-  
-  /* Mobile Social Share */
+
+  /* --- Mobile social share ----------------------------------------------- */
+
   .mobile-social-share {
     display: none;
-    margin-top: 40px;
-    padding-top: 30px;
-    border-top: 1px solid rgba(0,0,0,0.05);
+    margin-top: var(--space-12);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--line);
   }
-  
+
   .mobile-social-header {
-    margin-bottom: 16px;
+    margin-bottom: var(--space-4);
   }
-  
+
   .mobile-social-header h4 {
-    font-size: 14px;
-    font-weight: 600;
-    color: #666666;
+    font-size: var(--text-2xs);
+    font-weight: var(--weight-semibold);
+    color: var(--ink-subtle);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: var(--tracking-widest);
     margin: 0;
   }
-  
+
   .mobile-social-links {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    flex-wrap: wrap;
+    gap: var(--space-2);
   }
-  
+
   .mobile-social-icon {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 10px 14px;
-    color: #666666;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    color: var(--ink-muted);
     text-decoration: none;
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 6px;
-    background-color: var(--bg-secondary);
-    transition: all 0.2s ease;
-    font-size: 14px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background-color: transparent;
+    transition: color var(--duration) var(--ease),
+      border-color var(--duration) var(--ease),
+      background-color var(--duration) var(--ease);
+    font-size: var(--text-sm);
   }
-  
+
   .mobile-social-icon:hover {
-    color: #333333;
-    border-color: var(--accent);
-    background-color: var(--bg-tertiary);
+    color: var(--ink);
+    border-color: var(--line-strong);
+    background-color: var(--surface-sunken);
   }
-  
+
   .mobile-social-icon i {
-    font-size: 16px;
-    width: 20px;
+    font-size: var(--text-base);
+    width: 16px;
     text-align: center;
+    opacity: 0.8;
   }
-  
+
   @media screen and (max-width: 1024px) {
     .mobile-social-share {
       display: block;
     }
   }
-  
+
   @media screen and (max-width: 600px) {
     .post {
-      padding: 25px;
+      padding: 0 0 var(--space-6);
     }
-    
+
     .post-meta {
       flex-direction: column;
-      align-items: center;
-      gap: 15px;
+      align-items: flex-start;
+      gap: var(--space-4);
     }
-    
+
     .post-meta-info {
-      align-items: center;
+      align-items: flex-start;
       width: 100%;
     }
-    
+
     .post-meta-actions {
       width: 100%;
-      justify-content: center;
+      justify-content: flex-start;
       flex-wrap: wrap;
     }
   }
-  
-  /* References Section Styling */
+
+  /* --- References -------------------------------------------------------- */
+
   .references-section {
-    margin-top: 50px;
-    padding-top: 30px;
-    border-top: 2px solid rgba(0,0,0,0.1);
+    margin-top: var(--space-16);
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--line);
   }
-  
-  /* Style H2 references title */
+
   h2.references-section {
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: var(--space-3);
+    font-size: var(--text-xl);
   }
-  
+
   .reference-item {
-    margin: 12px 0;
-    padding: 10px 0;
-    font-size: 14px;
-    line-height: 1.6;
-    color: #444;
-    scroll-margin-top: 100px; /* Account for sticky header */
+    margin: var(--space-2) 0;
+    padding: var(--space-2) 0;
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    color: var(--ink-muted);
+    scroll-margin-top: calc(var(--header-height) + var(--space-8));
   }
-  
+
   .reference-item:target {
-    background-color: #fff9e6;
-    padding: 10px;
-    margin-left: -10px;
-    margin-right: -10px;
-    border-radius: 4px;
+    background-color: var(--highlight-soft);
+    padding: var(--space-2);
+    margin-left: calc(var(--space-2) * -1);
+    margin-right: calc(var(--space-2) * -1);
+    border-radius: var(--radius-sm);
     animation: highlight-fade 2s ease-out;
   }
-  
+
   @keyframes highlight-fade {
     0% {
-      background-color: #ffeb99;
+      background-color: var(--highlight-strong);
     }
     100% {
-      background-color: #fff9e6;
+      background-color: var(--highlight-soft);
     }
   }
-  
+
   .ref-number {
     display: inline-block;
-    font-weight: 600;
-    color: #555555;
-    margin-right: 8px;
-    min-width: 30px;
+    font-weight: var(--weight-semibold);
+    color: var(--ink-subtle);
+    margin-right: var(--space-2);
+    min-width: 28px;
+    font-variant-numeric: tabular-nums;
   }
-  
+
   .citation-link {
-    color: #0066cc;
+    color: var(--accent);
     text-decoration: none;
-    font-weight: 500;
-    padding: 2px 4px;
-    border-radius: 3px;
-    transition: all 0.2s ease;
+    font-weight: var(--weight-medium);
+    padding: 0 2px;
+    border-radius: var(--radius-xs);
+    transition: background-color var(--duration) var(--ease),
+      color var(--duration) var(--ease);
     cursor: pointer;
     position: relative;
     top: -2px;
-    font-size: 0.9em;
+    font-size: 0.78em;
+    font-variant-numeric: tabular-nums;
   }
-  
+
   .citation-link:hover {
-    background-color: #e6f2ff;
-    color: #0052a3;
+    background-color: var(--accent-soft);
+    color: var(--accent-hover);
     text-decoration: none;
   }
-  
+
   .citation-link:visited {
-    color: #0066cc;
+    color: var(--accent);
   }
-  
+
   .reference-item a {
-    color: #0066cc;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(0, 102, 204, 0.3);
-    transition: all 0.2s ease;
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-color: var(--accent-soft);
+    text-underline-offset: 0.16em;
+    transition: text-decoration-color var(--duration) var(--ease);
   }
-  
+
   .reference-item a:hover {
-    border-bottom-color: #0066cc;
-    background-color: #f0f7ff;
+    text-decoration-color: currentColor;
+    background-color: transparent;
   }
-  
+
   /* List-based references */
   .references-section + ul,
   .references-section + ol {
     list-style: none;
     padding-left: 0;
   }
-  
+
   .references-section + ul li.reference-item,
   .references-section + ol li.reference-item {
-    margin: 12px 0;
-    padding: 10px 0;
-    font-size: 14px;
-    line-height: 1.6;
-    color: #444;
+    margin: var(--space-2) 0;
+    padding: var(--space-2) 0;
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    color: var(--ink-muted);
   }
-  
+
   .references-section + ul li.reference-item:target,
   .references-section + ol li.reference-item:target {
-    background-color: #fff9e6;
-    padding: 10px;
-    margin-left: -10px;
-    margin-right: -10px;
-    border-radius: 4px;
+    background-color: var(--highlight-soft);
+    padding: var(--space-2);
+    margin-left: calc(var(--space-2) * -1);
+    margin-right: calc(var(--space-2) * -1);
+    border-radius: var(--radius-sm);
     animation: highlight-fade 2s ease-out;
   }
-  
-  /* Comments Section Styling */
+
+  /* --- Comments ---------------------------------------------------------- */
+
   .comments-section {
-    margin-top: 60px;
-    padding-top: 40px;
-    border-top: 1px solid rgba(0,0,0,0.05);
+    margin-top: var(--space-16);
+    padding-top: var(--space-10);
+    border-top: 1px solid var(--line);
     min-height: 200px; /* Reserve space to prevent CLS when utterances loads */
   }
-  
+
   .comments-section .utterances {
     max-width: 100%;
   }
-  
-  /* Post Content Images Max Width */
+
+  /* --- Images ------------------------------------------------------------ */
+
   .post-content img {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 2rem auto;
-    border-radius: 8px;
+    margin: var(--space-10) auto;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: var(--surface-sunken);
     cursor: zoom-in;
-    transition: opacity 0.2s ease;
+    transition: border-color var(--duration) var(--ease);
   }
-  
+
   .post-content img:hover {
-    opacity: 0.9;
+    opacity: 1;
+    border-color: var(--line-strong);
   }
-  
-  /* Image Lightbox Modal */
+
+  /* An image alone in a paragraph followed by an emphasised line reads as a
+     figure + caption; style the caption to match. */
+  .post-content img + em,
+  .post-content figcaption {
+    display: block;
+    margin-top: calc(var(--space-6) * -1);
+    margin-bottom: var(--space-10);
+    text-align: center;
+    font-style: normal;
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+    color: var(--ink-subtle);
+  }
+
+  /* --- Lightbox ---------------------------------------------------------- */
+
   .image-lightbox {
     display: none;
     position: fixed;
@@ -348,18 +399,18 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: var(--scrim);
     z-index: 10001;
     cursor: zoom-out;
     overflow: hidden;
   }
-  
+
   .image-lightbox.active {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
+
   .lightbox-content {
     position: relative;
     max-width: 95%;
@@ -368,101 +419,103 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   .lightbox-image {
     max-width: 100%;
     max-height: 90vh;
     object-fit: contain;
     user-select: none;
-    transition: transform 0.3s ease;
+    transition: transform var(--duration-slow) var(--ease);
     cursor: grab;
+    border-radius: var(--radius-sm);
   }
-  
+
   .lightbox-image.grabbing {
     cursor: grabbing;
   }
-  
+
   .lightbox-close {
     position: absolute;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
+    top: var(--space-5);
+    right: var(--space-6);
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
     cursor: pointer;
-    background: rgba(0, 0, 0, 0.5);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 10002;
-    transition: background 0.2s ease;
+    transition: background var(--duration) var(--ease);
   }
-  
+
   .lightbox-close:hover {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(255, 255, 255, 0.22);
   }
-  
+
   .lightbox-controls {
     position: absolute;
-    bottom: 30px;
+    bottom: var(--space-6);
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 15px;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 15px 25px;
-    border-radius: 50px;
+    gap: var(--space-2);
+    background: rgba(255, 255, 255, 0.1);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-full);
     z-index: 10002;
   }
-  
+
   .lightbox-control-btn {
     background: transparent;
     border: none;
-    color: white;
-    font-size: 20px;
+    color: #ffffff;
+    font-size: var(--text-base);
     cursor: pointer;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: background 0.2s ease;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-full);
+    transition: background var(--duration) var(--ease);
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--space-2);
   }
-  
+
   .lightbox-control-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.16);
   }
-  
+
   .lightbox-control-btn svg {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
   }
-  
+
   @media screen and (max-width: 600px) {
     .lightbox-close {
-      top: 10px;
-      right: 10px;
-      width: 40px;
-      height: 40px;
-      font-size: 30px;
+      top: var(--space-2);
+      right: var(--space-2);
+      width: 36px;
+      height: 36px;
+      font-size: 24px;
     }
-    
+
     .lightbox-controls {
-      bottom: 15px;
-      padding: 10px 15px;
-      gap: 10px;
+      bottom: var(--space-4);
+      padding: var(--space-1) var(--space-2);
     }
-    
+
     .lightbox-control-btn {
-      font-size: 16px;
-      padding: 6px 10px;
+      font-size: var(--text-sm);
+      padding: var(--space-2);
     }
   }
-  
-  /* Copy Page Split Button */
+
+  /* --- Copy page split button -------------------------------------------- */
+
   .copy-page-wrapper {
     position: relative;
     display: inline-flex;
@@ -472,72 +525,83 @@
   .copy-page-btn {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    background-color: var(--bg-tertiary);
-    border: 1px solid var(--border-color);
-    border-radius: 6px 0 0 6px;
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-3);
+    background-color: transparent;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
     border-right: none;
-    color: var(--text-secondary);
-    font-size: 14px;
-    font-weight: 500;
+    color: var(--ink-muted);
+    font-family: inherit;
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
     cursor: pointer;
-    transition: all 0.2s ease;
+    min-height: 32px;
+    transition: color var(--duration) var(--ease),
+      background-color var(--duration) var(--ease),
+      border-color var(--duration) var(--ease);
   }
 
   .copy-page-btn:hover {
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
+    background-color: var(--surface-sunken);
+    color: var(--ink);
   }
-  
+
   .copy-page-btn.copied {
-    background-color: #22c55e;
-    color: white;
-    border-color: #22c55e;
+    background-color: var(--success);
+    color: var(--success-contrast);
+    border-color: var(--success);
   }
 
   .copy-page-btn svg {
     flex-shrink: 0;
+    width: 14px;
+    height: 14px;
   }
-  
+
   .copy-dropdown-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 6px 8px;
-    background-color: var(--bg-tertiary);
-    border: 1px solid var(--border-color);
-    border-radius: 0 6px 6px 0;
-    color: var(--text-secondary);
+    padding: var(--space-1) var(--space-2);
+    background-color: transparent;
+    border: 1px solid var(--line);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    color: var(--ink-muted);
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: color var(--duration) var(--ease),
+      background-color var(--duration) var(--ease),
+      border-color var(--duration) var(--ease);
   }
-  
+
   .copy-dropdown-toggle:hover {
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
+    background-color: var(--surface-sunken);
+    color: var(--ink);
   }
-  
+
   .copy-page-wrapper:hover .copy-page-btn,
   .copy-page-wrapper:hover .copy-dropdown-toggle {
-    border-color: var(--accent);
+    border-color: var(--line-strong);
   }
-  
+
   .copy-dropdown {
     position: absolute;
-    top: calc(100% + 4px);
+    top: calc(100% + var(--space-1));
     right: 0;
-    min-width: 180px;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 190px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-8px);
-    transition: all 0.2s ease;
+    transform: translateY(-6px);
+    transition: opacity var(--duration) var(--ease),
+      visibility var(--duration) var(--ease),
+      transform var(--duration) var(--ease);
     z-index: 100;
     overflow: hidden;
+    padding: var(--space-1);
   }
 
   .copy-dropdown.show {
@@ -549,26 +613,28 @@
   .copy-option {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--space-2);
     width: 100%;
-    padding: 10px 14px;
+    padding: var(--space-2) var(--space-3);
     background: none;
     border: none;
-    color: var(--text-primary);
-    font-size: 14px;
+    border-radius: var(--radius-sm);
+    color: var(--ink);
+    font-family: inherit;
+    font-size: var(--text-sm);
     text-align: left;
     cursor: pointer;
-    transition: background-color 0.15s ease;
+    transition: background-color var(--duration-fast) var(--ease);
   }
 
   .copy-option:hover {
-    background-color: var(--bg-tertiary);
+    background-color: var(--surface-sunken);
   }
 
   .copy-option svg {
     flex-shrink: 0;
   }
-  
+
   .ai-logo {
     width: 14px;
     height: 14px;
@@ -577,16 +643,15 @@
   }
 
   @media screen and (max-width: 600px) {
-    /* Keep the text visible on mobile for better clarity */
     .copy-page-btn {
-      padding: 8px 12px;
-      font-size: 13px;
+      padding: var(--space-2) var(--space-3);
+      font-size: var(--text-sm);
     }
-    
+
     .copy-dropdown-toggle {
-      padding: 8px 6px;
+      padding: var(--space-2) var(--space-1);
     }
-    
+
     .copy-dropdown {
       right: auto;
       left: 0;
