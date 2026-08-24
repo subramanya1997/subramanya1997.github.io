@@ -1,0 +1,23 @@
+{
+  "_comment": "Intentional differences between the Jekyll baseline and the Next.js build. Every entry here is a deliberate decision, not a bug. Keep it short and keep it justified.",
+  "_schema": {
+    "ignoreMissing": "URL globs allowed to disappear from the new build (* matches anything).",
+    "ignoreExtra": "URL globs allowed to be new in the new build.",
+    "ignoreFields": "Page fields skipped on every page: title canonical description ogImage ogUrl robots jsonLdTypes h1Count headingIds.",
+    "ignorePageFields": "Per-URL field skips, e.g. {\"/about/\": [\"description\"]}. Use [\"*\"] to skip a page entirely.",
+    "renames": "Baseline URL -> candidate URL, for URLs that intentionally moved. The old URL must get a redirect."
+  },
+
+  "ignoreMissing": [],
+
+  "ignoreExtra": [
+    "/_next/*",
+    "/404/*"
+  ],
+
+  "ignoreFields": [],
+
+  "ignorePageFields": {},
+
+  "renames": {}
+}
