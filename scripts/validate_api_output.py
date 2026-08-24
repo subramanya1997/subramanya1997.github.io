@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Post-build validation of the machine-readable API surface in _site/.
+"""Post-build validation of the machine-readable API surface in out/.
 
-Run after `bundle exec jekyll build`. Checks that every endpoint documented in
+Run after `bun run build`. Checks that every endpoint documented in
 openapi.json exists in the build and that the JSON payloads actually match the
 schemas the spec promises - so spec-vs-reality drift fails CI instead of
 shipping. Stdlib only.
@@ -13,9 +13,9 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-# Defaults to the Jekyll build; pass a directory to validate another build
-# output (e.g. the Next.js static export in out/).
-SITE = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else ROOT / "_site"
+# Defaults to the Next.js static export; pass a directory to validate another
+# build output.
+SITE = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else ROOT / "out"
 ORIGIN = "https://subramanya.ai"
 
 errors = []
@@ -194,8 +194,11 @@ def check_404_error_document(spec):
 
     # The page keeps the full site chrome by design; the cap only guards
     # against runaway bloat that would bury the machine-readable error block.
-    if len(text.encode("utf-8")) > 100000:
-        err(f"404.html: body is {len(text.encode('utf-8'))} bytes; keep it under 100KB so agents get a usable recovery page")
+    # The Next.js static export embeds framework scripts and flight data
+    # (~125KB today), so the budget sits above that; the checks below on the
+    # agent-error block and recovery links are the real invariant.
+    if len(text.encode("utf-8")) > 200000:
+        err(f"404.html: body is {len(text.encode('utf-8'))} bytes; keep it under 200KB so agents get a usable recovery page")
 
     match = re.search(
         r'<script type="application/json" id="agent-error">\s*(\{.*?\})\s*</script>',

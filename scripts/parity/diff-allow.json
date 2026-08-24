@@ -10,12 +10,14 @@
   "_ignoreMissingReasons": {
     "/scripts/*": "Build tooling. _config.yml has no `exclude:`, so Jekyll copied the whole scripts/ tree into _site and published it (including translation_errors.log). Never linked, never intended to be public; the Next.js build does not copy it.",
     "/README.md": "Repo documentation accidentally published by the same missing `exclude:`. Not linked from anywhere and not part of the site.",
-    "/CONTRIBUTING.md": "Same as /README.md."
+    "/CONTRIBUTING.md": "Same as /README.md.",
+    "/CNAME": "GitHub Pages is retired (site now on Vercel); CNAME was the GH Pages domain file and is intentionally not served anymore."
   },
   "ignoreMissing": [
     "/scripts/*",
     "/README.md",
-    "/CONTRIBUTING.md"
+    "/CONTRIBUTING.md",
+    "/CNAME"
   ],
   "_ignoreExtraReasons": {
     "/_next/*": "Next.js runtime chunks and manifests.",

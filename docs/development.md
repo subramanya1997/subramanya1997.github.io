@@ -8,36 +8,43 @@ robots: noindex, follow
 
 ## Prerequisites
 
-- Ruby 3.x with Bundler
+- Bun 1.x (installs dependencies and runs the Next.js build)
 - Python 3.11+ for maintenance scripts
 - Optional: a virtual environment for Python dependencies in `scripts/requirements.txt`
 
 ## Local Setup
 
 ```bash
-bundle install
-bundle exec jekyll serve --livereload
+bun install
+bun run dev
 ```
 
-Jekyll will print the local URL, usually `http://127.0.0.1:4000`.
+The dev server prints the local URL, usually `http://localhost:3000`. The
+`predev` hook syncs the static content directories into `public/` first.
 
 ## Core Validation Commands
 
 Run these before opening a PR:
 
 ```bash
-bundle exec jekyll build
-bundle exec htmlproofer ./_site --disable-external --ignore-empty-alt --ignore-urls "/localhost/,/127.0.0.1/" --enforce-https
-ruby scripts/validate_content.rb
+bun run build
+bun run parity
+node scripts/validate-content.mjs
+python3 scripts/validate_api_output.py out
 ```
+
+`bun run parity` diffs the built `out/` directory against the frozen URL
+manifest in `scripts/parity/manifest.json`; every published URL must keep
+resolving with no canonical drift.
 
 ## CI Parity
 
-The CI workflow in `.github/workflows/code_quality.yml` runs the same three checks:
+The CI workflow in `.github/workflows/code_quality.yml` runs the same checks:
 
-1. `bundle exec jekyll build`
-2. `bundle exec htmlproofer ./_site --disable-external --ignore-empty-alt --ignore-urls "/localhost/,/127.0.0.1/" --enforce-https`
-3. `ruby scripts/validate_content.rb`
+1. `bun run build`
+2. `node scripts/parity/diff-manifests.mjs scripts/parity/manifest.json out`
+3. `node scripts/validate-content.mjs`
+4. `python3 scripts/validate_api_output.py out`
 
 If CI fails, reproduce locally with the same commands first.
 
@@ -125,10 +132,11 @@ page_scripts:
   - /assets/js/pages/search.js
 ```
 
-Use these only for page-owned behavior and styles. Shared global behavior still belongs in layouts, includes, `css/main.css`, or shared assets under `assets/css/components` and `assets/js/components`.
+Use these only for page-owned behavior and styles. Shared global behavior still belongs in the shared React components (`components/`), `css/main.css`, or shared assets under `assets/css/components` and `assets/js/components`.
 
 ## Guardrails
 
 - Do not add inline `<style>` blocks or inline page-owned `<script>` blocks back to `index.html`, `blog.md`, `books.md`, `work.md`, or `stats.md`.
-- Do not introduce a JS bundler or CSS preprocessor as part of routine page changes.
-- Keep shared top-level page UI inside `_includes/components/` once a repeated pattern exists in more than one page.
+- Do not swap the markdown renderer in `lib/markdown.ts` for a stock one — heading ids, rouge token classes, and smart quotes are matched byte-for-byte to the original published output.
+- Never change a URL. Run `bun run parity` after any routing or build change.
+- Keep shared top-level page UI inside `components/` once a repeated pattern exists in more than one page.

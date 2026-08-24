@@ -143,7 +143,7 @@ Use for important callouts or quotes:
 
 Internal links (to other blog posts):
 ```markdown
-[Link Text]({{ site.baseurl }}/YYYY/MM/DD/post-slug/)
+[Link Text](/YYYY/MM/DD/post-slug/)
 ```
 
 External links:
@@ -256,7 +256,7 @@ Example: `2025-12-26-context-graphs-my-thoughts.md`
 4. ❌ Code blocks without language specification
 5. ❌ Missing References section when citing sources
 6. ❌ Inconsistent date formats (always use YYYY-MM-DD)
-7. ❌ Broken internal links (check `site.baseurl`)
+7. ❌ Broken internal links (use root-relative paths like `/YYYY/MM/DD/slug/`)
 8. ❌ Tables without proper alignment markers
 
 ## Quick Checklist

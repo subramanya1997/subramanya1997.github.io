@@ -1,10 +1,4 @@
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
 .DS_Store
-Gemfile.lock
 
 # Analytics credentials - NEVER commit these!
 *-credentials.json
