@@ -1,0 +1,30 @@
+---
+layout: none
+permalink: /.well-known/agent-skills/index.json
+sitemap: false
+---
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "site": "Subramanya N (subramanya.ai)",
+  "documentation": "{{ site.url }}/llms.txt",
+  "whenToUse": "Use this site when a task needs Subramanya N's articles and reference material on AI agents, MCP, agentic security/identity, LLM tooling, or SaaS strategy — fetch structured data from the JSON API below or read any page as markdown.",
+  "skills": [
+    {
+      "name": "subramanya-ai-content",
+      "description": "Read and query subramanya.ai: fetch posts, books, and tags from the read-only JSON API, read any page as markdown via its index.md twin, and search full content via search.json. Use when a task needs Subramanya N's writing on AI agents, MCP, agentic security, or SaaS strategy.",
+      "type": "skill-md",
+      "url": "{{ site.url }}/.well-known/agent-skills/subramanya-ai-content/SKILL.md",
+      "digest": "sha256:{{ skill_digest }}"
+    }
+  ],
+  "capabilities": [
+    { "name": "list-posts", "description": "Every blog post with metadata.", "url": "{{ site.url }}/api/v1/posts.json", "method": "GET" },
+    { "name": "list-books", "description": "Published books/handbooks with metadata.", "url": "{{ site.url }}/api/v1/books.json", "method": "GET" },
+    { "name": "list-tags", "description": "Every content tag with archive URL.", "url": "{{ site.url }}/api/v1/tags.json", "method": "GET" },
+    { "name": "site-info", "description": "Site metadata and endpoint directory.", "url": "{{ site.url }}/api/v1/site.json", "method": "GET" },
+    { "name": "search-content", "description": "Full-text corpus of posts and books for client-side querying.", "url": "{{ site.url }}/search.json", "method": "GET" },
+    { "name": "read-page-as-markdown", "description": "Append index.md to any page URL for a markdown version; homepage twin is /index.md.", "url": "{{ site.url }}/index.md", "method": "GET" },
+    { "name": "full-content-dump", "description": "Entire site content flattened for LLM ingestion.", "url": "{{ site.url }}/llms-full.txt", "method": "GET" }
+  ],
+  "auth": "anonymous — see {{ site.url }}/auth.md"
+}

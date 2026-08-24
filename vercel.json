@@ -1,18 +1,3 @@
 {
-  "buildCommand": "bun run build",
-  "trailingSlash": true,
-  "headers": [
-    {
-      "source": "/.well-known/api-catalog",
-      "headers": [
-        { "key": "Content-Type", "value": "application/linkset+json;profile=\"https://www.rfc-editor.org/info/rfc9727\"" }
-      ]
-    },
-    {
-      "source": "/.well-known/(openid-configuration|oauth-noop)",
-      "headers": [
-        { "key": "Content-Type", "value": "application/json; charset=utf-8" }
-      ]
-    }
-  ]
+  "buildCommand": "bun run build"
 }

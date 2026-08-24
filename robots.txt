@@ -11,6 +11,31 @@ User-agent: *
 Content-Signal: ai-train=yes, search=yes, ai-input=yes
 Allow: /
 
+# AI answer-engine and assistant crawlers are explicitly welcome.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# NLWeb Schema Feeds map (structured data feeds)
+schemamap: https://subramanya.ai/schema-map.xml
+
 Sitemap: https://subramanya.ai/sitemap.xml
 Sitemap: https://subramanya.ai/sitemap-media.xml
 Sitemap: https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/sitemap.xml

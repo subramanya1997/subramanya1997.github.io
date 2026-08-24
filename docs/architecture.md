@@ -31,7 +31,10 @@ translation, TOC behavior, newsletter UI, and post interactions.
    non-HTML surfaces (`feed.xml`, `search.json`, `sitemap.xml`,
    `sitemapindex.xml`, `llms.txt`, `llms-full.txt`, `/api/v1/*.json`) from
    `lib/nonhtml.ts`.
-5. `next build` writes the full static export to `out/`, which Vercel serves.
+5. `next build` prerenders every route statically; Vercel runs the standard
+   build and applies the `next.config.ts` headers/rewrites. `bun run
+   build:export` (`EXPORT_PARITY=1`) switches to `output: "export"` and writes
+   `out/` for the local URL-parity harness.
 
 `scripts/parity/` holds the URL-parity harness: `manifest.json` is the frozen
 baseline of every URL the site has ever served, and

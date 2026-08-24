@@ -9,7 +9,9 @@ from the original Jekyll content sources, served on Vercel.
 Vercel project `subramanya-ai` is git-connected. Do not deploy manually with
 `vercel --prod`; commit, push, and the deployment goes out on its own.
 
-- Build: `bun run build` (runs `scripts/next/sync-public.mjs`, then `next build`)
+- Build: `bun run build` (runs `scripts/next/sync-public.mjs`, then `next build`);
+  `bun run build:export` (`EXPORT_PARITY=1`) writes the static export to `out/`
+  for the parity harness — Vercel never uses export mode.
 - Vercel config: `vercel.json` (trailing slashes, `.well-known` content types)
 - Domain: subramanya.ai (+ www). GitHub Pages is retired; DNS points at Vercel.
 
@@ -36,8 +38,8 @@ Vercel project `subramanya-ai` is git-connected. Do not deploy manually with
   `.well-known` discovery docs (+ extensionless aliases), markdown twins
   (`<url>index.md` beside every page), and book redirect pages.
 - `scripts/parity/` holds the URL-parity harness: `manifest.json` is the
-  1,059-URL baseline from the final Jekyll build;
-  `node scripts/parity/diff-manifests.mjs scripts/parity/manifest.json out`
+  1,059-URL baseline from the final Jekyll build; run `bun run build:export`,
+  then `node scripts/parity/diff-manifests.mjs scripts/parity/manifest.json out`
   must report no missing URLs and no canonical drift before shipping changes.
 
 ## Hard constraint

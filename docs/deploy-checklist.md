@@ -16,8 +16,8 @@ commits off `main`.
 bun run build
 ```
 
-Must finish without errors. The build syncs the static content directories
-into `public/` and writes the full static export to `out/`.
+Must finish without errors. This is the standard deployment build Vercel
+runs; it syncs the static content directories into `public/` first.
 
 ## 2. Content and URL validation
 
@@ -26,6 +26,7 @@ node scripts/validate-content.mjs
 ```
 
 ```bash
+bun run build:export
 bun run parity
 ```
 
@@ -41,7 +42,8 @@ canonical drift.
 python3 scripts/validate_api_output.py out
 ```
 
-This validates the **built** `out/` output, and fails on drift between
+This validates the **exported** `out/` output (from `bun run build:export`
+above), and fails on drift between
 `openapi.json` and reality:
 
 - `openapi.json`, `search.json`, `/api/v1/posts.json`, `/api/v1/books.json`,

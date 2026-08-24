@@ -82,6 +82,9 @@ def check_search(spec):
     schema = spec["paths"]["/search.json"]["get"]["responses"]["200"]["content"][
         "application/json"
     ]["schema"]["items"]
+    if "$ref" in schema:  # resolve a local components/schemas reference
+        name = schema["$ref"].rsplit("/", 1)[-1]
+        schema = spec["components"]["schemas"][name]
     allowed_kinds = set(schema["properties"]["kind"]["enum"])
     required = set(schema.get("required", []))
 
@@ -194,11 +197,10 @@ def check_404_error_document(spec):
 
     # The page keeps the full site chrome by design; the cap only guards
     # against runaway bloat that would bury the machine-readable error block.
-    # The Next.js static export embeds framework scripts and flight data
-    # (~125KB today), so the budget sits above that; the checks below on the
-    # agent-error block and recovery links are the real invariant.
-    if len(text.encode("utf-8")) > 200000:
-        err(f"404.html: body is {len(text.encode('utf-8'))} bytes; keep it under 200KB so agents get a usable recovery page")
+    # 150KB: the standard Vercel/Next deployment inlines the React runtime and
+    # RSC payload on the 404 (the old static-export build stripped them).
+    if len(text.encode("utf-8")) > 150000:
+        err(f"404.html: body is {len(text.encode('utf-8'))} bytes; keep it under 150KB so agents get a usable recovery page")
 
     match = re.search(
         r'<script type="application/json" id="agent-error">\s*(\{.*?\})\s*</script>',

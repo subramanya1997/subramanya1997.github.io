@@ -18,12 +18,15 @@ bun run dev
 
 ```bash
 bun run build
+bun run build:export
 bun run parity
 node scripts/validate-content.mjs
 python3 scripts/validate_api_output.py out
 ```
 
-`bun run parity` diffs the build against the frozen URL manifest in
+`bun run build` is the standard deployment build (what Vercel runs);
+`bun run build:export` writes the static export to `out/`, which
+`bun run parity` diffs against the frozen URL manifest in
 `scripts/parity/manifest.json` — every published URL must keep resolving with
 no canonical drift.
 

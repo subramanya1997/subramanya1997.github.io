@@ -28,23 +28,27 @@ Run these before opening a PR:
 
 ```bash
 bun run build
+bun run build:export
 bun run parity
 node scripts/validate-content.mjs
 python3 scripts/validate_api_output.py out
 ```
 
-`bun run parity` diffs the built `out/` directory against the frozen URL
-manifest in `scripts/parity/manifest.json`; every published URL must keep
-resolving with no canonical drift.
+`bun run build` is the standard deployment build (what Vercel runs).
+`bun run build:export` writes the static export to `out/`, which
+`bun run parity` diffs against the frozen URL manifest in
+`scripts/parity/manifest.json`; every published URL must keep resolving with
+no canonical drift.
 
 ## CI Parity
 
 The CI workflow in `.github/workflows/code_quality.yml` runs the same checks:
 
 1. `bun run build`
-2. `node scripts/parity/diff-manifests.mjs scripts/parity/manifest.json out`
-3. `node scripts/validate-content.mjs`
-4. `python3 scripts/validate_api_output.py out`
+2. `bun run build:export`
+3. `node scripts/parity/diff-manifests.mjs scripts/parity/manifest.json out`
+4. `node scripts/validate-content.mjs`
+5. `python3 scripts/validate_api_output.py out`
 
 If CI fails, reproduce locally with the same commands first.
 

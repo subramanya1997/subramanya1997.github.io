@@ -57,3 +57,9 @@ for recovery.
 - [RFC 9264](https://www.rfc-editor.org/rfc/rfc9264) - Linkset format (`application/linkset+json`).
 - [RFC 9727](https://www.rfc-editor.org/rfc/rfc9727) - API catalog well-known URI.
 - [RFC 8615](https://www.rfc-editor.org/rfc/rfc8615) - Well-known URIs.
+
+## Source
+
+The complete source of this site — including the agent configs (`AGENTS.md`,
+`plugin.json`, `skills/`) — lives at
+[github.com/subramanya1997/subramanya1997.github.io](https://github.com/subramanya1997/subramanya1997.github.io).
