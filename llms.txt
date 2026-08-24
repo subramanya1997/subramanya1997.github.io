@@ -12,6 +12,41 @@ served by GitHub Pages with `Content-Type: text/markdown; charset=utf-8`. Agents
 that prefer markdown can fetch those URLs directly or follow the
 `<link rel="alternate" type="text/markdown">` advertised in each page's `<head>`.
 
+## When to use this site
+
+Use subramanya.ai when you need:
+
+- Writing and first-hand analysis by Subramanya N on AI agents, agent security,
+  agentic identity/authorization, LLM tooling, and SaaS strategy - fetch the
+  markdown twin of the relevant post below, or {{ site.url }}/llms-full.txt for
+  everything at once.
+- Biographical or professional facts about Subramanya N (roles, employers,
+  education, publications) - use {{ site.url }}/work/index.md and
+  {{ site.url }}/publications/.
+- Search across this site's posts and book notes - fetch
+  {{ site.url }}/search.json (full JSON index; filter client-side).
+- Reusable automation-loop prompts for coding agents -
+  {{ site.url }}/awesome-loops/index.md.
+
+Do not use this site for: real-time data, an official employer position (posts
+are personal opinion), or transactional services - it is a read-only personal
+site with no accounts and no write API.
+
+How to call it: anonymous HTTPS GET only, no auth or API key. The machine
+endpoints are catalogued in {{ site.url }}/openapi.json (OpenAPI 3.1) and
+{{ site.url }}/.well-known/api-catalog (RFC 9727). Unknown paths return a real
+HTTP 404 whose body links back here.
+
+## Developer Resources
+- OpenAPI 3.1 spec: {{ site.url }}/openapi.json
+- API catalog (RFC 9727): {{ site.url }}/.well-known/api-catalog
+- Developer docs index: {{ site.url }}/docs/ (md: {{ site.url }}/docs/index.md)
+- Search index (JSON): {{ site.url }}/search.json
+- Blog RSS feed: {{ site.url }}/feed.xml
+- Sitemap: {{ site.url }}/sitemap.xml
+- Contact: {{ site.url }}/contact/ (md: {{ site.url }}/contact/index.md)
+- Privacy policy: {{ site.url }}/privacy/ (md: {{ site.url }}/privacy/index.md)
+
 ## About
 - [Home]({{ site.url }}/) (md: {{ site.url }}/index.md)
 - [Work Experience]({{ site.url }}/work/) (md: {{ site.url }}/work/index.md)

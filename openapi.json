@@ -1,0 +1,231 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "subramanya.ai Content API",
+    "version": "1.0.0",
+    "summary": "Read-only content API for Subramanya N's personal site",
+    "description": "Machine-readable, read-only API surface of subramanya.ai, the personal site of Subramanya N (AI agents, agent security, SaaS strategy). All endpoints are static files served by GitHub Pages over anonymous HTTPS GET - no authentication, no API key, no rate-limit registration required. There are no write operations. Every HTML page also has a parallel markdown twin at `<page-url>index.md` (see the getPageMarkdown operation). Because the host is a static CDN, error responses for unknown paths return HTTP 404 with an HTML body that links back to /llms.txt, /sitemap.xml, and /search.json for recovery; JSON error bodies and Accept-header content negotiation are not available.",
+    "contact": {
+      "name": "Subramanya N",
+      "url": "https://subramanya.ai/contact/",
+      "email": "subramanyanagabhushan@gmail.com"
+    },
+    "license": {
+      "name": "All rights reserved (content); see site for reuse policy",
+      "identifier": "LicenseRef-Site-Content"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://subramanya.ai",
+      "description": "Production (GitHub Pages via Fastly CDN)"
+    }
+  ],
+  "tags": [
+    { "name": "discovery", "description": "Endpoints that help agents discover what exists on the site" },
+    { "name": "content", "description": "Endpoints that return site content" }
+  ],
+  "paths": {
+    "/openapi.json": {
+      "get": {
+        "operationId": "getOpenApiSpec",
+        "tags": ["discovery"],
+        "summary": "This OpenAPI specification",
+        "description": "Returns this OpenAPI 3.1 document describing the site's read-only content API.",
+        "responses": {
+          "200": {
+            "description": "The OpenAPI document.",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "description": "OpenAPI 3.1 document" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search.json": {
+      "get": {
+        "operationId": "searchContent",
+        "tags": ["discovery", "content"],
+        "summary": "Full-text search index of posts and books",
+        "description": "Returns the complete search index as a JSON array. Each item is a blog post or book with title, URL, plain-text content, tags, view count, and reading time. Agents should fetch this once and filter client-side; there is no server-side query parameter.",
+        "responses": {
+          "200": {
+            "description": "The full search index.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/SearchItem" }
+                }
+              }
+            }
+          },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    },
+    "/llms.txt": {
+      "get": {
+        "operationId": "getLlmsTxt",
+        "tags": ["discovery"],
+        "summary": "llms.txt site summary",
+        "description": "Returns the llmstxt.org-format summary of the site: what it is, when an agent should use it, and links to every page's markdown twin.",
+        "responses": {
+          "200": {
+            "description": "Markdown-formatted site summary.",
+            "content": {
+              "text/plain": { "schema": { "type": "string" } }
+            }
+          },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    },
+    "/llms-full.txt": {
+      "get": {
+        "operationId": "getLlmsFullTxt",
+        "tags": ["content"],
+        "summary": "Full site content for LLM ingestion",
+        "description": "Returns the full text of every blog post in one markdown document, including FAQ question/answer pairs where present. Large response; prefer /search.json plus per-page markdown twins for targeted reads.",
+        "responses": {
+          "200": {
+            "description": "Full site content as markdown.",
+            "content": {
+              "text/plain": { "schema": { "type": "string" } }
+            }
+          },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    },
+    "/feed.xml": {
+      "get": {
+        "operationId": "getBlogFeed",
+        "tags": ["content"],
+        "summary": "Blog RSS 2.0 feed",
+        "description": "Returns the most recent blog posts as an RSS 2.0 feed.",
+        "responses": {
+          "200": {
+            "description": "RSS 2.0 XML document.",
+            "content": {
+              "application/rss+xml": { "schema": { "type": "string", "description": "RSS 2.0 XML" } }
+            }
+          },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    },
+    "/sitemap.xml": {
+      "get": {
+        "operationId": "getSitemap",
+        "tags": ["discovery"],
+        "summary": "Sitemaps 0.9 sitemap",
+        "description": "Returns the canonical URL list for the site in Sitemaps 0.9 XML format. Use this to enumerate every crawlable page.",
+        "responses": {
+          "200": {
+            "description": "Sitemap XML document.",
+            "content": {
+              "application/xml": { "schema": { "type": "string", "description": "Sitemaps 0.9 XML" } }
+            }
+          },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    },
+    "/.well-known/api-catalog": {
+      "get": {
+        "operationId": "getApiCatalog",
+        "tags": ["discovery"],
+        "summary": "RFC 9727 api-catalog linkset",
+        "description": "Returns an RFC 9727 / RFC 9264 linkset cataloguing every machine-readable endpoint on the site, including this OpenAPI document.",
+        "responses": {
+          "200": {
+            "description": "Linkset JSON document.",
+            "content": {
+              "application/linkset+json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["linkset"],
+                  "properties": {
+                    "linkset": {
+                      "type": "array",
+                      "items": { "type": "object", "description": "RFC 9264 link context object" }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    },
+    "/{pagePath}/index.md": {
+      "get": {
+        "operationId": "getPageMarkdown",
+        "tags": ["content"],
+        "summary": "Markdown twin of any HTML page",
+        "description": "Every HTML page on the site has a parallel markdown representation at `<page-url>index.md`, served as `text/markdown; charset=utf-8`. For example, the markdown twin of https://subramanya.ai/work/ is https://subramanya.ai/work/index.md. The site homepage's twin is /index.md. Page URLs are enumerated in /sitemap.xml and /llms.txt; each HTML page also advertises its twin via `<link rel=\"alternate\" type=\"text/markdown\">`.",
+        "parameters": [
+          {
+            "name": "pagePath",
+            "in": "path",
+            "required": true,
+            "description": "The page's URL path without leading or trailing slash, e.g. `work`, `blog`, or `2026/08/17/break-in-break-out-ai-agent-security`.",
+            "schema": { "type": "string", "pattern": "^[A-Za-z0-9/_-]+$" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Markdown representation of the page.",
+            "content": {
+              "text/markdown": { "schema": { "type": "string" } }
+            }
+          },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "NotFound": {
+        "description": "The path does not exist. The static host (GitHub Pages) returns a real HTTP 404 status with an HTML body; the body links to /llms.txt, /sitemap.xml, /search.json, and /.well-known/api-catalog so agents can recover. JSON error bodies are not available on this static host.",
+        "content": {
+          "text/html": {
+            "schema": { "type": "string", "description": "HTML 404 page with recovery links for agents" }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "SearchItem": {
+        "type": "object",
+        "description": "One entry in the site search index: a blog post or a book note.",
+        "required": ["kind", "title", "url"],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": ["post", "book"],
+            "description": "Whether this entry is a blog post or a book note."
+          },
+          "title": { "type": "string", "description": "Title of the post or book." },
+          "url": { "type": "string", "description": "Site-relative URL of the HTML page. Append `index.md` for the markdown twin." },
+          "date_display": { "type": "string", "description": "Human-readable publication date, e.g. 'August 17, 2026'." },
+          "date_iso": { "type": "string", "format": "date", "description": "Publication date in YYYY-MM-DD format." },
+          "excerpt": { "type": "string", "description": "Plain-text excerpt." },
+          "content": { "type": "string", "description": "Full plain-text content, HTML stripped." },
+          "views": { "type": "integer", "description": "Page views from site analytics (0 when unavailable)." },
+          "reading_minutes": { "type": "integer", "minimum": 1, "description": "Estimated reading time in minutes at 200 wpm." },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Topic tags. Tag archive pages live at /tags/."
+          }
+        }
+      }
+    }
+  }
+}

@@ -179,6 +179,7 @@
       The api-catalog linkset is generated from api-catalog.json.
     -->
     <link rel="api-catalog" type="application/linkset+json" href="{{ '/.well-known/api-catalog' | prepend: site.baseurl | prepend: site.url }}" title="Agent resource catalog (RFC 9727)">
+    <link rel="service-desc" type="application/json" href="{{ '/openapi.json' | prepend: site.baseurl | prepend: site.url }}" title="OpenAPI 3.1 specification of the read-only content API">
     <link rel="describedby" type="text/plain" href="{{ '/llms.txt' | prepend: site.baseurl | prepend: site.url }}" title="Machine-readable site summary (llms.txt)">
     <link rel="describedby" type="text/plain" href="{{ '/llms-full.txt' | prepend: site.baseurl | prepend: site.url }}" title="Full site content for LLM ingestion (llms-full.txt)">
     <link rel="service-doc" type="text/html" href="{{ '/docs/' | prepend: site.baseurl | prepend: site.url }}" title="Architecture and developer documentation">

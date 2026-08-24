@@ -11,6 +11,9 @@ sitemap: false
         { "href": "{{ site.url }}/llms.txt", "type": "text/plain", "title": "Machine-readable site summary (llms.txt)" },
         { "href": "{{ site.url }}/llms-full.txt", "type": "text/plain", "title": "Full site content for LLM ingestion (llms-full.txt)" }
       ],
+      "service-desc": [
+        { "href": "{{ site.url }}/openapi.json", "type": "application/json", "title": "OpenAPI 3.1 specification of the read-only content API" }
+      ],
       "service-doc": [
         { "href": "{{ site.url }}/docs/", "type": "text/html", "title": "Architecture, content-model, and development documentation" }
       ],

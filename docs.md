@@ -1,15 +1,17 @@
 ---
 layout: page
-title: Documentation
-description: Developer documentation for this site - architecture, content model, and contributor workflow.
+title: Developer Documentation
+description: Subramanya N (subramanya.ai) developer resources - OpenAPI spec, agent endpoints, architecture, content model, and contributor workflow.
 permalink: /docs/
-robots: noindex, follow
 ---
 
-This section is the human-readable counterpart to the machine-readable
-[`/.well-known/api-catalog`](/.well-known/api-catalog) and
+These are the developer resources for **subramanya.ai**, the personal site of
+**Subramanya N**. This section is the human-readable counterpart to the
+machine-readable [`/openapi.json`](/openapi.json),
+[`/.well-known/api-catalog`](/.well-known/api-catalog), and
 [`/llms.txt`](/llms.txt) endpoints. It describes how the site is built,
-what data it depends on, and how to contribute.
+what data it depends on, how agents can consume it programmatically, and how
+to contribute.
 
 ## Pages
 
@@ -25,6 +27,7 @@ an RFC 9727 api-catalog Linkset.
 
 | Endpoint | Purpose | Content Type |
 | --- | --- | --- |
+| [`/openapi.json`](/openapi.json) | OpenAPI 3.1 spec of the read-only content API | `application/json` |
 | [`/.well-known/api-catalog`](/.well-known/api-catalog) | RFC 9727 catalog of all machine-readable endpoints | `application/linkset+json` |
 | [`/llms.txt`](/llms.txt) | Short site summary for LLM ingestion | `text/plain` |
 | [`/llms-full.txt`](/llms-full.txt) | Full site content for LLM ingestion | `text/plain` |
@@ -33,6 +36,14 @@ an RFC 9727 api-catalog Linkset.
 | [`/sitemap.xml`](/sitemap.xml) | Sitemaps 0.9 | `application/xml` |
 | [`/sitemapindex.xml`](/sitemapindex.xml) | Sitemap index | `application/xml` |
 | [`/robots.txt`](/robots.txt) | Crawler policy with AI content signals | `text/plain` |
+
+All endpoints are read-only, served over anonymous HTTPS `GET` - no API key,
+no sign-up, no rate-limit registration. Every operation in
+[`/openapi.json`](/openapi.json) has a unique `operationId`, a description,
+and typed response schemas, so it can be loaded directly into LLM
+function-calling or tool-use frameworks. Nonexistent paths return a real
+HTTP 404 whose body links to `/llms.txt`, `/sitemap.xml`, and `/search.json`
+for recovery.
 
 ## RFC References
 

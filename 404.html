@@ -87,11 +87,41 @@ sitemap: false
     color: var(--text-primary, #111);
   }
   
+  .error-agent-help {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-color, #e5e5e5);
+    text-align: left;
+  }
+
+  .error-agent-help h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary, #111);
+    margin-bottom: 10px;
+  }
+
+  .error-agent-help p,
+  .error-agent-help li {
+    font-size: 14px;
+    color: var(--text-secondary, #666);
+    line-height: 1.6;
+  }
+
+  .error-agent-help ul {
+    margin: 10px 0;
+    padding-left: 20px;
+  }
+
+  .error-agent-help a {
+    color: var(--accent, #555555);
+  }
+
   @media screen and (max-width: 600px) {
     .error-code {
       font-size: 80px;
     }
-    
+
     .error-message {
       font-size: 24px;
     }
@@ -119,6 +149,25 @@ sitemap: false
     <a href="{{ site.baseurl }}/blog/">Browse Blog</a>
     <a href="{{ site.baseurl }}/books/">View Books</a>
     <a href="{{ site.baseurl }}/work/">See Work</a>
+  </div>
+
+  <div class="error-agent-help">
+    <h2>Looking for something? (Agents welcome)</h2>
+    <p>
+      This is a real HTTP 404 &mdash; the path you requested does not exist on
+      subramanya.ai. To find the right URL:
+    </p>
+    <ul>
+      <li><a href="{{ site.baseurl }}/llms.txt">/llms.txt</a> &mdash; site map with markdown links for every page</li>
+      <li><a href="{{ site.baseurl }}/sitemap.xml">/sitemap.xml</a> &mdash; canonical URL list (Sitemaps 0.9)</li>
+      <li><a href="{{ site.baseurl }}/search.json">/search.json</a> &mdash; full-text search index (JSON)</li>
+      <li><a href="{{ site.baseurl }}/openapi.json">/openapi.json</a> &mdash; OpenAPI 3.1 spec of all machine endpoints</li>
+      <li><a href="{{ site.baseurl }}/.well-known/api-catalog">/.well-known/api-catalog</a> &mdash; RFC 9727 endpoint catalog</li>
+    </ul>
+    <p>
+      Every HTML page has a markdown twin at <code>&lt;page-url&gt;index.md</code>,
+      e.g. <a href="{{ site.baseurl }}/work/index.md">/work/index.md</a>.
+    </p>
   </div>
 </div>
 

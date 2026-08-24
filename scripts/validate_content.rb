@@ -26,6 +26,11 @@ class ValidationRunner
     validate_about_data
     validate_view_count_data
     validate_top_level_page_asset_guard
+    validate_openapi_spec
+    validate_trust_pages
+    validate_llms_txt
+    validate_404_recovery_links
+    validate_api_catalog
 
     if @errors.empty?
       puts "Content validation passed."
@@ -182,6 +187,98 @@ class ValidationRunner
     rescue StandardError => e
       add_error(e.message)
     end
+  end
+
+  # The OpenAPI spec is a plain static file (no front matter, no Liquid), so it
+  # must parse as JSON straight from the repo and satisfy the invariants agents
+  # rely on: unique operationIds and a description + responses on every operation.
+  def validate_openapi_spec
+    path = ROOT.join("openapi.json")
+    spec = JSON.parse(path.read)
+
+    add_error("openapi.json: openapi version must be 3.x") unless spec["openapi"].to_s.start_with?("3.")
+    add_error("openapi.json: missing info.title") unless present?(spec.dig("info", "title"))
+    add_error("openapi.json: missing info.contact.url") unless present?(spec.dig("info", "contact", "url"))
+    add_error("openapi.json: servers must include https://subramanya.ai") unless
+      Array(spec["servers"]).any? { |s| s["url"] == "https://subramanya.ai" }
+
+    operation_ids = []
+    Hash(spec["paths"]).each do |api_path, methods|
+      Hash(methods).each do |verb, op|
+        next unless %w[get post put patch delete].include?(verb)
+
+        label = "openapi.json: #{verb.upcase} #{api_path}"
+        add_error("#{label}: missing operationId") unless present?(op["operationId"])
+        add_error("#{label}: missing description") unless present?(op["description"])
+        add_error("#{label}: missing responses") unless op["responses"].is_a?(Hash) && !op["responses"].empty?
+        operation_ids << op["operationId"]
+      end
+    end
+
+    duplicates = operation_ids.tally.select { |_, count| count > 1 }.keys
+    add_error("openapi.json: duplicate operationIds: #{duplicates.join(', ')}") unless duplicates.empty?
+  rescue JSON::ParserError => e
+    add_error("openapi.json: invalid JSON (#{e.message})")
+  rescue StandardError => e
+    add_error("openapi.json: #{e.message}")
+  end
+
+  # Trust anchor pages (/contact/, /privacy/) must exist with substantial bodies;
+  # agents check these to verify the site is legitimate.
+  def validate_trust_pages
+    { "contact.md" => "/contact/", "privacy.md" => "/privacy/" }.each do |relative, expected_permalink|
+      path = ROOT.join(relative)
+
+      unless path.exist?
+        add_error("#{relative}: trust anchor page is missing")
+        next
+      end
+
+      front_matter, body = parse_front_matter(path)
+      normalized = stringify_keys(front_matter)
+
+      add_error("#{relative}: permalink must be #{expected_permalink}") unless normalized["permalink"] == expected_permalink
+      add_error("#{relative}: missing title") unless present?(normalized["title"])
+      add_error("#{relative}: body must be at least 500 characters (currently #{body.strip.length})") if body.strip.length < 500
+    rescue StandardError => e
+      add_error(e.message)
+    end
+  end
+
+  # llms.txt must keep the agent-guidance sections that tell agents when and
+  # how to use the site, and must point at the developer resources.
+  def validate_llms_txt
+    path = ROOT.join("llms.txt")
+    content = path.read
+
+    add_error("llms.txt: missing '## When to use this site' section") unless content.include?("## When to use this site")
+    add_error("llms.txt: missing '## Developer Resources' section") unless content.include?("## Developer Resources")
+    add_error("llms.txt: must reference /openapi.json") unless content.include?("/openapi.json")
+  rescue StandardError => e
+    add_error("llms.txt: #{e.message}")
+  end
+
+  # The 404 page must give agents recovery pointers (llms.txt, sitemap, search
+  # index) so a dead link is not a dead end.
+  def validate_404_recovery_links
+    path = ROOT.join("404.html")
+    content = path.read
+
+    %w[/llms.txt /sitemap.xml /search.json /openapi.json].each do |href|
+      add_error("404.html: missing recovery link to #{href}") unless content.include?(href)
+    end
+  rescue StandardError => e
+    add_error("404.html: #{e.message}")
+  end
+
+  # The RFC 9727 api-catalog must advertise the OpenAPI service description.
+  def validate_api_catalog
+    path = ROOT.join("api-catalog.json")
+    content = path.read
+
+    add_error("api-catalog.json: missing service-desc link to /openapi.json") unless content.include?("/openapi.json")
+  rescue StandardError => e
+    add_error("api-catalog.json: #{e.message}")
   end
 
   def parse_front_matter(path)
