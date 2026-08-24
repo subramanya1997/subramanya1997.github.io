@@ -103,7 +103,7 @@ export default async function AwesomeLoops() {
                 Create automation
               </a>
               <a
-                href={`${REPO}/tree/main/_loops`}
+                href={`${REPO}/tree/main/content/loops`}
                 rel="noopener noreferrer"
                 target="_blank"
                 title="Browse Markdown"

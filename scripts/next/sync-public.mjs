@@ -1,17 +1,17 @@
-// Syncs static Jekyll-era directories into public/ so Next.js serves them
-// verbatim. The originals at the repo root stay the source of truth (the
-// translation / OG-image / analytics scripts keep writing there).
+// Syncs the static asset directories into public/ so Next.js serves them
+// verbatim. The originals at the repo root (assets/, css/) and under content/
+// stay the source of truth (the translation / OG-image / analytics scripts keep
+// writing there).
 import { cpSync, mkdirSync, rmSync, existsSync, copyFileSync, readFileSync, writeFileSync, readdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
-import yaml from "js-yaml";
+import { site } from "../../site.config.mjs";
 import { writeTwins } from "./markdown-twins.mjs";
 import { writeBookRedirects } from "./book-redirects.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const pub = join(root, "public");
-const site = yaml.load(readFileSync(join(root, "_config.yml"), "utf8"));
 const siteUrl = String(site.url).replace(/\/$/, "");
 
 // NOTE: docs/ is NOT synced — those are markdown sources rendered by the
@@ -54,15 +54,21 @@ for (const file of FILES) {
   if (existsSync(src)) copyFileSync(src, join(pub, file));
 }
 
-// Pre-built book sites (HonKit output vendored in _books_static/<slug>/) are
-// served verbatim at /<slug>/ — formerly separate GitHub Pages project sites.
-const booksStatic = join(root, "_books_static");
+// Pre-built book sites (HonKit output vendored in content/books-static/<slug>/)
+// are served verbatim at /<slug>/ — formerly separate GitHub Pages project sites.
+const booksStatic = join(root, "content", "books-static");
 if (existsSync(booksStatic)) {
   for (const entry of readdirSync(booksStatic, { withFileTypes: true })) {
     if (!entry.isDirectory() || entry.name.startsWith(".")) continue;
-    cpSync(join(booksStatic, entry.name), join(pub, entry.name), {
+    const bookRoot = join(booksStatic, entry.name);
+    cpSync(bookRoot, join(pub, entry.name), {
       recursive: true,
-      filter: (p) => !p.split("/").pop().startsWith("."),
+      // Jekyll skips dotfiles (.gitkeep etc.); mirror that. The book's own
+      // HonKit-generated sitemap.xml stays vendored as the source for
+      // lib/nonhtml.ts (its URLs are folded into the main /sitemap.xml) but
+      // is not served as a secondary sitemap.
+      filter: (p) =>
+        !p.split("/").pop().startsWith(".") && p !== join(bookRoot, "sitemap.xml"),
     });
   }
 }

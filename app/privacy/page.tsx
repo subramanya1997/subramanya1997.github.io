@@ -1,4 +1,4 @@
-// Port of privacy.md (layout: page).
+// Port of the colocated content.md (layout: page).
 import { loadMarkdownPage } from "@/components/lib/markdown-page";
 import { pageMeta } from "@/components/lib/page-meta";
 import PageLayout from "@/components/site/PageLayout";
@@ -11,6 +11,6 @@ const meta = pageMeta({
 });
 
 export default async function Privacy() {
-  const { html } = await loadMarkdownPage("privacy.md");
+  const { html } = await loadMarkdownPage("app/privacy/content.md");
   return <PageLayout meta={meta} contentHtml={html} />;
 }

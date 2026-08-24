@@ -31,7 +31,7 @@ page_scripts:
       </div>
       <div class="loop-hero-actions">
         <a href="#submit-loop" class="loop-primary-action">Create automation</a>
-        <a href="https://github.com/subramanya1997/subramanya1997.github.io/tree/main/_loops" rel="noopener noreferrer">Browse Markdown</a>
+        <a href="https://github.com/subramanya1997/subramanya1997.github.io/tree/main/content/loops" rel="noopener noreferrer">Browse Markdown</a>
       </div>
     </div>
   </header>

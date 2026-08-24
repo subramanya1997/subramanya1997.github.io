@@ -29,23 +29,24 @@ function body(siteUrl: string): string {
   }
 
   .error-code {
-    font-size: 120px;
+    font-size: 96px;
     font-weight: 700;
-    color: var(--accent, #555555);
+    letter-spacing: -0.04em;
+    color: var(--line-strong, #d2d6dc);
     line-height: 1;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
 
   .error-message {
-    font-size: 28px;
+    font-size: var(--text-2xl, 27px);
     font-weight: 600;
     margin-bottom: 15px;
     color: var(--text-primary, #111);
   }
 
   .error-description {
-    font-size: 16px;
-    color: var(--text-secondary, #666);
+    font-size: var(--text-md, 17px);
+    color: var(--ink-muted, #666);
     margin-bottom: 40px;
     line-height: 1.6;
   }
@@ -62,18 +63,17 @@ function body(siteUrl: string): string {
     align-items: center;
     gap: 8px;
     padding: 12px 24px;
-    background-color: var(--accent, #555555);
-    color: white;
-    border-radius: 6px;
+    background-color: var(--ink, #111111);
+    color: var(--paper, #ffffff);
+    border-radius: var(--radius-md, 8px);
     text-decoration: none;
     font-weight: 500;
-    transition: all 0.2s ease;
+    transition: opacity 0.2s ease;
   }
 
   .error-button:hover {
-    background-color: var(--text-primary, #333333);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    color: var(--paper, #ffffff);
+    opacity: 0.85;
   }
 
   .error-links {

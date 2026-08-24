@@ -1,4 +1,4 @@
-// `_layouts/book-redirect.html` — the `_books` collection renders a bare
+// `_layouts/book-redirect.html` — the books collection renders a bare
 // redirect document with no site chrome at all (no <header>, no stylesheets,
 // no JSON-LD). The App Router always wraps a page in the shared root layout,
 // so the file is written directly instead.
@@ -111,7 +111,7 @@ export function writeBookRedirects(outDir) {
 
 /**
  * `_layouts/default.html`: `<body class="loop-shell">` on the loop marketplace
- * and every `_loops` document. A body class can only come from a root layout in
+ * and every loop document. A body class can only come from a root layout in
  * the App Router, and the site has a single shared one, so it is stamped here.
  */
 export function stampLoopShell(outDir, urls) {

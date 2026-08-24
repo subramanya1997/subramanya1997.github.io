@@ -1,11 +1,10 @@
-// Port of _includes/post-faq.html: the visible "Quick Answers" block plus the
-// matching schema.org FAQPage JSON-LD.
+// The visible "Quick Answers" block plus the matching schema.org FAQPage JSON-LD.
 //
-// Emitted as an HTML string rather than JSX: in `_layouts/post.html` this
-// include is a sibling of `{{ content }}` inside <article class="post-content">,
-// and JSX cannot interleave raw HTML with elements without inserting a wrapper
-// node that the CSS would see.
-import { includeStyle } from "@/components/lib/includes";
+// Emitted as an HTML string rather than JSX: this block is a sibling of the
+// rendered markdown inside <article class="post-content">, and JSX cannot
+// interleave raw HTML with elements without inserting a wrapper node that the
+// CSS would see.
+import { postFaqCss } from "./assets";
 import { escapeText } from "@/components/lib/html";
 import { stripHtml, stripNewlines } from "@/components/lib/jekyll";
 
@@ -48,6 +47,6 @@ export function postFaqHtml(canonical: string, items: FaqItem[]): string {
     `${details}\n` +
     `</section>\n\n` +
     `<script type="application/ld+json">\n${JSON.stringify(jsonLd, null, 2)}\n</script>\n\n` +
-    `<style>${includeStyle("post-faq.html")}</style>`
+    `<style>${postFaqCss()}</style>`
   );
 }

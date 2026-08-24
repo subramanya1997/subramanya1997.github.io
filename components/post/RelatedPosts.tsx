@@ -1,5 +1,5 @@
-// Port of _includes/related-posts.html.
-import { includeStyle } from "@/components/lib/includes";
+// Related-posts rail at the foot of a post.
+import { relatedPostsCss } from "./assets";
 import { linkTitle, stripHtml } from "@/components/lib/jekyll";
 import { shortDate, xmlSchemaDate } from "@/components/lib/post-extras";
 import { slugifyTag, type Post } from "@/lib/content";
@@ -62,7 +62,7 @@ export default function RelatedPosts({ posts }: { posts: Post[] }) {
         </div>
       </section>
 
-      <style dangerouslySetInnerHTML={{ __html: includeStyle("related-posts.html") }} />
+      <style dangerouslySetInnerHTML={{ __html: relatedPostsCss() }} />
     </>
   );
 }

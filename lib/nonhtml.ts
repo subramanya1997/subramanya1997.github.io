@@ -2,8 +2,8 @@
 // sitemap.xml, sitemapindex.xml, llms.txt, llms-full.txt and the versioned
 // /api/v1/*.json endpoints.
 //
-// Ground truth is the Jekyll build in _site/ and the Liquid sources at the repo
-// root (feed.xml, search.json, sitemap.xml, sitemapindex.xml, llms.txt,
+// Ground truth is the final Jekyll build in _site/ and its Liquid sources
+// (feed.xml, search.json, sitemap.xml, sitemapindex.xml, llms.txt,
 // llms-full.txt, api/v1/*.json). Everything here reproduces the Liquid filters
 // those templates rely on (xml_escape, strip_html, strip_newlines,
 // truncatewords, number_of_words, date_to_rfc822, date_to_xmlschema, slugify)
@@ -24,6 +24,7 @@ import {
   type Post,
   type CollectionDoc,
 } from "./content";
+import { PAGE_ENTRIES, PAGE_FILES, PAGE_DIRS } from "./page-sources.mjs";
 import { renderMarkdown } from "./markdown";
 
 // ---------------------------------------------------------------------------
@@ -211,8 +212,8 @@ export function dateDisplay(wall: WallClock): string {
 /**
  * Jekyll builds a post's pretty permalink from its *effective* date: the
  * front matter `date:` when present, falling back to the filename date.
- * Three posts in _posts/ have a front matter date that disagrees with their
- * filename (e.g. _posts/2023-12-28-demystifying-the-shell-scripting-a-
+ * Three posts in content/posts/ have a front matter date that disagrees with
+ * their filename (e.g. content/posts/2023-12-28-demystifying-the-shell-scripting-a-
  * beginners-guide.md has `date: 2022-12-28` and is published at
  * /2022/12/28/...). lib/content.ts derives Post.url from the filename only, so
  * every URL emitted here is normalized against the front matter first.
@@ -336,47 +337,58 @@ export interface SitePage {
   url: string;
   frontmatter: Record<string, unknown>;
   content: string;
-  sourcePath: string;
+  /** null for the metadata-only pages declared in PAGE_ENTRIES. */
+  sourcePath: string | null;
 }
-
-const PAGE_SOURCES = [
-  { dir: ".", recurse: false },
-  { dir: "docs", recurse: false },
-  { dir: "awesome-loops", recurse: false },
-];
 
 let _pages: SitePage[] | null = null;
 
 /**
- * Every Jekyll page with front matter: the repo-root .md/.html files plus
- * docs/ and awesome-loops/. Underscore-prefixed directories are collections
- * and are handled separately.
+ * Every page: the metadata-only entries (home, 404), the `content.md` files
+ * colocated with their app/ route, and the flat docs/ directory — all from
+ * lib/page-sources.mjs. Each page's URL is pinned by its own `permalink:` front
+ * matter where it has one, otherwise by the registry; never derived from where
+ * a file sits on disk.
  */
 export function getSitePages(): SitePage[] {
   if (_pages) return _pages;
   const pages: SitePage[] = [];
-  for (const source of PAGE_SOURCES) {
-    const dir = path.join(ROOT, source.dir);
+
+  for (const entry of PAGE_ENTRIES) {
+    pages.push({
+      url: entry.url,
+      frontmatter: entry.frontmatter,
+      content: "",
+      sourcePath: null,
+    });
+  }
+
+  const read = (sourcePath: string, fallbackUrl: string | null) => {
+    const raw = fs.readFileSync(sourcePath, "utf8");
+    if (!raw.startsWith("---")) return; // no front matter → not a page
+    const { data, content } = matter(raw);
+    const permalink = typeof data.permalink === "string" ? data.permalink : null;
+    const url = permalink ?? fallbackUrl;
+    if (!url) return;
+    pages.push({ url, frontmatter: data, content, sourcePath });
+  };
+
+  for (const page of PAGE_FILES) {
+    const sourcePath = path.join(ROOT, page.source);
+    if (!fs.existsSync(sourcePath)) continue;
+    read(sourcePath, page.url);
+  }
+  for (const dirName of PAGE_DIRS) {
+    const dir = path.join(ROOT, dirName);
     if (!fs.existsSync(dir)) continue;
     for (const entry of fs.readdirSync(dir)) {
       if (!/\.(md|markdown|html)$/.test(entry)) continue;
       const sourcePath = path.join(dir, entry);
       if (!fs.statSync(sourcePath).isFile()) continue;
-      const raw = fs.readFileSync(sourcePath, "utf8");
-      if (!raw.startsWith("---")) continue; // no front matter → not a Jekyll page
-      const { data, content } = matter(raw);
-      const permalink = typeof data.permalink === "string" ? data.permalink : null;
-      let url = permalink;
-      if (!url) {
-        const rel = path.relative(ROOT, sourcePath).replace(/\\/g, "/");
-        if (rel === "index.html" || rel === "index.md") url = "/";
-        else if (/\/index\.(md|markdown|html)$/.test(rel))
-          url = `/${rel.replace(/\/index\.(md|markdown|html)$/, "")}/`;
-        else url = `/${rel.replace(/\.(md|markdown|html)$/, "")}/`;
-      }
-      pages.push({ url, frontmatter: data, content, sourcePath });
+      read(sourcePath, `/${dirName}/${entry.replace(/\.(md|markdown|html)$/, "")}/`);
     }
   }
+
   _pages = pages.sort((a, b) => (a.url < b.url ? -1 : a.url > b.url ? 1 : 0));
   return _pages;
 }
@@ -684,12 +696,43 @@ export function buildSitemapXml(): string {
     url(absoluteUrl(`${baseUrl()}${bookLink(book)}/`), wall ? dateToXmlschema(wall) : undefined);
   }
 
+  // Interior pages of the vendored static book sites (_books_static/<slug>/).
+  // Each HonKit build ships its own sitemap.xml; rather than serving those as
+  // secondary sitemaps, their URLs are folded in here (the vendored file
+  // itself is not copied into public/ — see scripts/next/sync-public.mjs).
+  for (const loc of staticBookPageUrls()) {
+    url(loc);
+  }
+
   for (const loop of sortedLoops()) {
     url(absoluteUrl(loop.url));
   }
 
   lines.push("</urlset>");
   return `${lines.join("\n")}\n`;
+}
+
+/**
+ * <loc> entries from every vendored book's HonKit-generated sitemap.xml,
+ * minus each book's landing page (already emitted from the _books entry).
+ * Sorted for a deterministic sitemap; empty when no static books exist.
+ */
+function staticBookPageUrls(): string[] {
+  const dir = path.join(ROOT, "_books_static");
+  if (!fs.existsSync(dir)) return [];
+  const urls: string[] = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (!entry.isDirectory() || entry.name.startsWith(".")) continue;
+    const sitemap = path.join(dir, entry.name, "sitemap.xml");
+    if (!fs.existsSync(sitemap)) continue;
+    const landing = absoluteUrl(`${baseUrl()}/${entry.name}/`);
+    const raw = fs.readFileSync(sitemap, "utf8");
+    for (const match of raw.matchAll(/<loc>\s*([^<]+?)\s*<\/loc>/g)) {
+      const loc = match[1];
+      if (loc !== landing) urls.push(loc);
+    }
+  }
+  return urls.sort();
 }
 
 export function buildSitemapIndexXml(now: Date = new Date()): string {
@@ -709,14 +752,8 @@ export function buildSitemapIndexXml(now: Date = new Date()): string {
   // sitemap-media.xml is hand-maintained and copied verbatim into out/ by
   // scripts/next/sync-public.mjs (Jekyll kept it via `keep_files`).
   entry(absoluteUrl("/sitemap-media.xml"), buildTime);
-
-  for (const book of sortedBooks()) {
-    const wall = docWallClock(book.frontmatter.date);
-    entry(
-      absoluteUrl(`${baseUrl()}${bookLink(book)}/sitemap.xml`),
-      wall ? dateToXmlschema(wall) : buildTime
-    );
-  }
+  // The vendored static books' pages are folded into /sitemap.xml (see
+  // staticBookPageUrls), so no per-book sitemap entries are listed here.
 
   lines.push("</sitemapindex>");
   return `${lines.join("\n")}\n`;

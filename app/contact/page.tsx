@@ -1,4 +1,4 @@
-// Port of contact.md (layout: page).
+// Port of the colocated content.md (layout: page).
 import { pageMeta } from "@/components/lib/page-meta";
 import { loadMarkdownPage } from "@/components/lib/markdown-page";
 import PageLayout from "@/components/site/PageLayout";
@@ -10,6 +10,6 @@ const meta = pageMeta({
 });
 
 export default async function Contact() {
-  const { html } = await loadMarkdownPage("contact.md");
+  const { html } = await loadMarkdownPage("app/contact/content.md");
   return <PageLayout meta={meta} contentHtml={html} />;
 }

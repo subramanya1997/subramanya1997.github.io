@@ -17,19 +17,30 @@ Vercel project `subramanya-ai` is git-connected. Do not deploy manually with
 
 ## Layout
 
-- Content sources are the Jekyll-era directories: `_posts/`, `_books/`,
-  `_loops/`, `_data/`, `assets/`, `_config.yml`. They are the single source of
-  truth — the Python scripts in `scripts/` (translations, OG images,
-  analytics) write there.
+- Content collections live under `content/`: `content/posts/`,
+  `content/books/`, `content/loops/`, `content/data/`, plus the vendored
+  pre-built book sites in `content/books-static/`. Together with `assets/` they
+  are the single source of truth — the Python scripts in `scripts/`
+  (translations, OG images, analytics) write there.
+- Site-wide settings live in `site.config.mjs` (plain JS, JSDoc-typed) — it
+  replaced `_config.yml` and is imported by both `lib/content.ts` and the
+  bare-node build scripts.
+- Page sources are colocated with their route: `app/<route>/content.md`.
+  `lib/page-sources.mjs` is the registry that pins each one's URL; `docs/*.md`
+  remain a flat directory of pages pinned by their own `permalink:`. Next
+  ignores non-route files inside `app/`, so these are inert as far as routing
+  goes. The home page and 404 have no source file — they are pure TSX
+  (`app/page.tsx`, `app/not-found.tsx`) and their metadata is declared inline
+  in the registry's `PAGE_ENTRIES`.
 - `lib/content.ts` loads that content; `lib/markdown.ts` renders markdown with
   byte-level kramdown/rouge parity (do not swap in a stock renderer — heading
   ids, rouge token classes, and smart quotes are all matched to the old Jekyll
   output).
-- Eight Jekyll-era template files are still live build inputs:
-  `components/lib/includes.ts` reads the inline `<style>`/`<script>` blocks of
-  `_layouts/post.html` and `_includes/{citation,language-switcher,mermaid,
-  post-faq,related-posts,toc,translation-toast}.html` at build time. Do not
-  delete or "clean up" these files.
+- `components/post/assets/` holds the post chrome's hand-written CSS and vanilla
+  JS as plain `.css`/`.client.js` files; `components/post/assets/index.ts` reads
+  them at build time and the post components inject them **inline** via
+  `dangerouslySetInnerHTML`. Do not convert them to `<link>`/`<script src>` — the
+  bytes are part of the prerendered HTML the parity harness compares.
 - Validation: `node scripts/validate-content.mjs` (content/front-matter
   contracts) and `python3 scripts/validate_api_output.py out` (built API
   surface vs `openapi.json`). CI (`code_quality.yml`) runs build + parity +

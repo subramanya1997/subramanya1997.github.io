@@ -1,4 +1,4 @@
-// Filesystem view of the Jekyll content tree for the build scripts.
+// Filesystem view of the content/ tree for the build scripts.
 //
 // lib/content.ts is the TypeScript equivalent used by the Next routes; this is
 // the plain-JS twin so scripts/next/postbuild.mjs can run under bare node
@@ -8,16 +8,21 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import matter from "gray-matter";
 import yaml from "js-yaml";
+import { site } from "../../../site.config.mjs";
+import { PAGE_ENTRIES, PAGE_FILES, PAGE_DIRS } from "../../../lib/page-sources.mjs";
 
 export const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "..", "..");
 
+/** Root of the content collections (posts, books, loops, data). */
+const CONTENT = path.join(ROOT, "content");
+
 export function siteConfig() {
-  return yaml.load(fs.readFileSync(path.join(ROOT, "_config.yml"), "utf8"));
+  return site;
 }
 
 export function dataFile(name) {
   for (const extension of [".yml", ".yaml", ".json"]) {
-    const file = path.join(ROOT, "_data", name + extension);
+    const file = path.join(CONTENT, "data", name + extension);
     if (fs.existsSync(file)) {
       const raw = fs.readFileSync(file, "utf8");
       return extension === ".json" ? JSON.parse(raw) : yaml.load(raw);
@@ -50,7 +55,7 @@ const POST_FILE = /^(\d{4})-(\d{2})-(\d{2})-(.+)\.(md|markdown)$/;
  * it disagrees with the filename, exactly as Jekyll resolves it.
  */
 export function posts() {
-  const dir = path.join(ROOT, "_posts");
+  const dir = path.join(CONTENT, "posts");
   return fs
     .readdirSync(dir)
     .map((file) => {
@@ -84,7 +89,7 @@ export function posts() {
 }
 
 function collection(dirName, kind, urlFor) {
-  const dir = path.join(ROOT, dirName);
+  const dir = path.join(CONTENT, dirName);
   if (!fs.existsSync(dir)) return [];
   return fs
     .readdirSync(dir)
@@ -108,20 +113,44 @@ function collection(dirName, kind, urlFor) {
 }
 
 export function books() {
-  return collection("_books", "book", (slug, data) =>
+  return collection("books", "book", (slug, data) =>
     typeof data.permalink === "string" ? data.permalink : `/books/${slug}/`
   );
 }
 
 export function loops() {
-  return collection("_loops", "loop", (slug) => `/awesome-loops/${slug}/`);
+  return collection("loops", "loop", (slug) => `/awesome-loops/${slug}/`);
 }
 
-const PAGE_DIRS = [".", "docs", "awesome-loops"];
-
-/** Repo-root, docs/ and awesome-loops/ pages — Jekyll's `site.pages`. */
+/**
+ * Every page: the metadata-only entries (home, 404), the `content.md` files
+ * colocated with their app/ route, and the flat docs/ directory — all from
+ * lib/page-sources.mjs. Every URL is pinned by the page's own `permalink:`
+ * front matter, else by the registry; never derived from a file's location.
+ */
 export function pages() {
   const found = [];
+  for (const entry of PAGE_ENTRIES) {
+    found.push({
+      kind: "page",
+      url: entry.url,
+      data: entry.frontmatter,
+      content: "",
+      sourcePath: null,
+    });
+  }
+
+  const read = (sourcePath, fallbackUrl) => {
+    if (!fs.existsSync(sourcePath)) return;
+    const raw = fs.readFileSync(sourcePath, "utf8");
+    if (!raw.startsWith("---")) return;
+    const { data, content } = matter(raw);
+    const url = typeof data.permalink === "string" ? data.permalink : fallbackUrl;
+    if (!url) return;
+    found.push({ kind: "page", url, data, content, sourcePath });
+  };
+
+  for (const page of PAGE_FILES) read(path.join(ROOT, page.source), page.url);
   for (const dirName of PAGE_DIRS) {
     const dir = path.join(ROOT, dirName);
     if (!fs.existsSync(dir)) continue;
@@ -129,18 +158,7 @@ export function pages() {
       if (!/\.(md|markdown|html)$/.test(entry)) continue;
       const sourcePath = path.join(dir, entry);
       if (!fs.statSync(sourcePath).isFile()) continue;
-      const raw = fs.readFileSync(sourcePath, "utf8");
-      if (!raw.startsWith("---")) continue;
-      const { data, content } = matter(raw);
-      let url = typeof data.permalink === "string" ? data.permalink : null;
-      if (!url) {
-        const relative = path.relative(ROOT, sourcePath).replace(/\\/g, "/");
-        if (relative === "index.html" || relative === "index.md") url = "/";
-        else if (/\/index\.(md|markdown|html)$/.test(relative))
-          url = `/${relative.replace(/\/index\.(md|markdown|html)$/, "")}/`;
-        else url = `/${relative.replace(/\.(md|markdown|html)$/, "")}/`;
-      }
-      found.push({ kind: "page", url, data, content, sourcePath });
+      read(sourcePath, `/${dirName}/${entry.replace(/\.(md|markdown|html)$/, "")}/`);
     }
   }
   return found.sort((a, b) => (a.url < b.url ? -1 : 1));

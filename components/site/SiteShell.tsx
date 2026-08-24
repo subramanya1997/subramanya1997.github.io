@@ -9,89 +9,121 @@ import Header from "./Header";
 import NewsletterPopup from "./NewsletterPopup";
 import PageHead from "./PageHead";
 
+// NOTE on all the scripts below: React hydration can replace the header/button
+// nodes that were server-rendered, which drops any listener bound directly to
+// them. Everything here therefore delegates from `document`/`window` and looks
+// the element up at event time.
 const STICKY_HEADER_SCRIPT = `
       (function() {
-        const header = document.querySelector('.site-header');
-        let lastScroll = 0;
+        function sync() {
+          const header = document.querySelector('.site-header');
+          if (!header) return;
+          header.classList.toggle('scrolled', window.pageYOffset > 50);
+        }
 
-        window.addEventListener('scroll', function() {
-          const currentScroll = window.pageYOffset;
-
-          if (currentScroll > 50) {
-            header.classList.add('scrolled');
-          } else {
-            header.classList.remove('scrolled');
-          }
-
-          lastScroll = currentScroll;
-        });
+        window.addEventListener('scroll', sync, { passive: true });
+        sync();
       })();
     `;
 
 const BACK_TO_TOP_SCRIPT = `
       (function() {
-        const backToTopButton = document.getElementById('back-to-top');
-
-        if (backToTopButton) {
-          // Show/hide button based on scroll position
-          window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-              backToTopButton.classList.add('visible');
-            } else {
-              backToTopButton.classList.remove('visible');
-            }
-          });
-
-          // Smooth scroll to top on click
-          backToTopButton.addEventListener('click', function() {
-            window.scrollTo({
-              top: 0,
-              behavior: 'smooth'
-            });
-          });
+        function sync() {
+          const button = document.getElementById('back-to-top');
+          if (!button) return;
+          button.classList.toggle('visible', window.pageYOffset > 300);
         }
+
+        window.addEventListener('scroll', sync, { passive: true });
+        sync();
+
+        document.addEventListener('click', function(event) {
+          const button = event.target.closest && event.target.closest('#back-to-top');
+          if (!button) return;
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      })();
+    `;
+
+// Colour-scheme toggle. The stored preference is applied before paint by
+// THEME_SCRIPT in app/layout.tsx; this only flips it.
+const THEME_TOGGLE_SCRIPT = `
+      (function() {
+        const root = document.documentElement;
+        const media = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function effective() {
+          const attr = root.getAttribute('data-theme');
+          if (attr === 'dark' || attr === 'light') return attr;
+          return media.matches ? 'dark' : 'light';
+        }
+
+        function label() {
+          const button = document.getElementById('theme-toggle');
+          if (!button) return;
+          const next = effective() === 'dark' ? 'light' : 'dark';
+          button.setAttribute('aria-label', 'Switch to ' + next + ' theme');
+        }
+
+        document.addEventListener('click', function(event) {
+          const button = event.target.closest && event.target.closest('#theme-toggle');
+          if (!button) return;
+          const next = effective() === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', next);
+          try { localStorage.setItem('theme', next); } catch (e) {}
+          label();
+        });
+
+        // Follow the OS while the visitor has expressed no preference.
+        media.addEventListener('change', function() {
+          if (!root.hasAttribute('data-theme')) label();
+        });
+
+        label();
+        document.addEventListener('DOMContentLoaded', label);
+        window.addEventListener('load', label);
       })();
     `;
 
 const MOBILE_MENU_SCRIPT = `
       (function() {
-        const menuButton = document.querySelector('.menu-icon');
-        const navMenu = document.getElementById('nav-menu');
-
-        if (menuButton && navMenu) {
-          menuButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-
-            this.setAttribute('aria-expanded', !isExpanded);
-            navMenu.classList.toggle('active');
-
-            // Trap focus within menu when open
-            if (!isExpanded) {
-              const firstLink = navMenu.querySelector('a');
-              if (firstLink) firstLink.focus();
-            }
-          });
-
-          // Close menu on escape key
-          document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-              menuButton.setAttribute('aria-expanded', 'false');
-              navMenu.classList.remove('active');
-              menuButton.focus();
-            }
-          });
-
-          // Close menu when clicking outside
-          document.addEventListener('click', function(e) {
-            if (!menuButton.contains(e.target) && !navMenu.contains(e.target)) {
-              if (navMenu.classList.contains('active')) {
-                menuButton.setAttribute('aria-expanded', 'false');
-                navMenu.classList.remove('active');
-              }
-            }
-          });
+        function close() {
+          const button = document.querySelector('.menu-icon');
+          const menu = document.getElementById('nav-menu');
+          if (!button || !menu) return;
+          button.setAttribute('aria-expanded', 'false');
+          menu.classList.remove('active');
         }
+
+        document.addEventListener('click', function(event) {
+          const target = event.target;
+          const button = target.closest && target.closest('.menu-icon');
+          const menu = document.getElementById('nav-menu');
+          if (!menu) return;
+
+          if (button) {
+            event.preventDefault();
+            const open = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', open ? 'false' : 'true');
+            menu.classList.toggle('active', !open);
+            if (!open) {
+              const first = menu.querySelector('a');
+              if (first) first.focus();
+            }
+            return;
+          }
+
+          if (!(target.closest && target.closest('#nav-menu'))) close();
+        });
+
+        document.addEventListener('keydown', function(event) {
+          if (event.key !== 'Escape') return;
+          const menu = document.getElementById('nav-menu');
+          if (!menu || !menu.classList.contains('active')) return;
+          close();
+          const button = document.querySelector('.menu-icon');
+          if (button) button.focus();
+        });
       })();
     `;
 
@@ -165,6 +197,7 @@ export default function SiteShell({
       <script dangerouslySetInnerHTML={{ __html: STICKY_HEADER_SCRIPT }} />
       <script dangerouslySetInnerHTML={{ __html: BACK_TO_TOP_SCRIPT }} />
       <script dangerouslySetInnerHTML={{ __html: MOBILE_MENU_SCRIPT }} />
+      <script dangerouslySetInnerHTML={{ __html: THEME_TOGGLE_SCRIPT }} />
 
       <script src="/assets/js/components/site-language.js" defer />
 

@@ -1,15 +1,27 @@
 .books-container {
-  max-width: 800px;
+  max-width: 44rem;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--space-5);
 }
 
 .books-list {
-  margin-top: 20px;
+  margin-top: var(--space-5);
 }
 
 @media (max-width: 768px) {
   .books-container {
-    padding: 0 15px;
+    padding: 0 var(--space-4);
   }
+}
+
+.index-header {
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid var(--line);
+}
+
+.index-header h1 {
+  font-size: var(--text-3xl);
+  letter-spacing: var(--tracking-tighter);
+  margin: 0;
 }

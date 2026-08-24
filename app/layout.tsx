@@ -5,7 +5,7 @@
 // NOTE: app/globals.css (Tailwind + shadcn) is deliberately NOT imported here.
 // The ported pages are styled by the legacy stylesheets in public/css and
 // public/assets/css, and Tailwind's preflight would reset them. See
-// components/PARITY-NOTES.md.
+// docs/internal/parity-notes.md.
 import type { Viewport } from "next";
 import { getSiteConfig } from "@/components/lib/site-data";
 
@@ -17,6 +17,20 @@ const LANG_SCRIPT = `
       (function() {
         const lang = new URLSearchParams(window.location.search).get('lang');
         document.documentElement.setAttribute('lang', lang || 'en');
+      })();
+    `;
+
+// Applies the stored colour-scheme preference before anything paints, so there
+// is no flash of the wrong theme. With no stored preference the root attribute
+// stays unset and css/main.css falls through to prefers-color-scheme.
+const THEME_SCRIPT = `
+      (function() {
+        try {
+          var stored = localStorage.getItem('theme');
+          if (stored === 'dark' || stored === 'light') {
+            document.documentElement.setAttribute('data-theme', stored);
+          }
+        } catch (e) {}
       })();
     `;
 
@@ -35,7 +49,10 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#555555",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f1114" },
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -50,6 +67,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       data-baseurl=""
     >
       <body>
+        {/* Colour scheme — must run before any content paints. */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+
         {/* Favicons */}
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
         <link

@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Verbatim inline payloads injected into the post HTML byte for byte; they
+    // are data, not modules, and must not be "fixed" by a linter.
+    "components/post/assets/*.client.js",
   ]),
 ]);
 
