@@ -20,7 +20,6 @@ const DIRS = ["assets", "css"];
 const FILES = [
   "favicon.ico",
   "robots.txt",
-  "sitemap-media.xml", // maintained by hand (Jekyll keep_files); served as-is
   "openapi.json",
   "auth.md", // agent access walkthrough (workos.com/auth-md convention)
   "schema-map.xml", // NLWeb Schema Feeds map, referenced from robots.txt

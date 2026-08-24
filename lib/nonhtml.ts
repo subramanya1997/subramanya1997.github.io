@@ -735,6 +735,62 @@ function staticBookPageUrls(): string[] {
   return urls.sort();
 }
 
+/**
+ * /sitemap-media.xml — a Google image/video sitemap generated from the posts.
+ *
+ * Replaces the hand-maintained Jekyll-era file, which listed bare asset URLs
+ * (including CSS, JS and translation JSON — noise no crawler indexes). Image
+ * sitemap entries hang off the *page* URL that embeds the media, per
+ * https://developers.google.com/search/docs/crawling-indexing/sitemaps/image-sitemaps
+ */
+export function buildSitemapMediaXml(): string {
+  const MEDIA_RE = /\/assets\/(?:images|videos)\/[^\s)"'<>]+?\.(?:png|jpe?g|webp|gif|svg|mp4)/gi;
+  const lines: string[] = [];
+  lines.push('<?xml version="1.0" encoding="UTF-8"?>');
+  lines.push(
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" ' +
+      'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" ' +
+      'xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">'
+  );
+
+  for (const entry of getOutputPosts()) {
+    const fm = entry.post.frontmatter;
+    const seen = new Set<string>();
+    const images: string[] = [];
+    const videos: string[] = [];
+    const collect = (path: string) => {
+      if (seen.has(path)) return;
+      seen.add(path);
+      (path.toLowerCase().endsWith(".mp4") ? videos : images).push(path);
+    };
+    if (typeof fm.image === "string" && fm.image.startsWith("/assets/")) collect(fm.image);
+    for (const match of entry.post.content.matchAll(MEDIA_RE)) collect(match[0]);
+    if (images.length === 0 && videos.length === 0) continue;
+
+    lines.push("  <url>");
+    lines.push(`    <loc>${absoluteUrl(entry.url)}</loc>`);
+    for (const image of images) {
+      lines.push("    <image:image>");
+      lines.push(`      <image:loc>${xmlEscape(absoluteUrl(image))}</image:loc>`);
+      lines.push("    </image:image>");
+    }
+    for (const video of videos) {
+      const thumbnail = images[0] ?? String(getSiteConfig().default_social_image ?? "");
+      lines.push("    <video:video>");
+      lines.push(`      <video:content_loc>${xmlEscape(absoluteUrl(video))}</video:content_loc>`);
+      if (thumbnail)
+        lines.push(`      <video:thumbnail_loc>${xmlEscape(absoluteUrl(thumbnail))}</video:thumbnail_loc>`);
+      lines.push(`      <video:title>${xmlEscape(fm.title)}</video:title>`);
+      lines.push(`      <video:description>${xmlEscape(stripHtml(fm.excerpt))}</video:description>`);
+      lines.push("    </video:video>");
+    }
+    lines.push("  </url>");
+  }
+
+  lines.push("</urlset>");
+  return `${lines.join("\n")}\n`;
+}
+
 export function buildSitemapIndexXml(now: Date = new Date()): string {
   const buildTime = dateToXmlschema(nowWallClock(now));
   const lines: string[] = [];
@@ -749,8 +805,8 @@ export function buildSitemapIndexXml(now: Date = new Date()): string {
   };
 
   entry(absoluteUrl("/sitemap.xml"), buildTime);
-  // sitemap-media.xml is hand-maintained and copied verbatim into out/ by
-  // scripts/next/sync-public.mjs (Jekyll kept it via `keep_files`).
+  // sitemap-media.xml is generated from the posts (buildSitemapMediaXml,
+  // served by app/sitemap-media.xml/route.ts).
   entry(absoluteUrl("/sitemap-media.xml"), buildTime);
   // The vendored static books' pages are folded into /sitemap.xml (see
   // staticBookPageUrls), so no per-book sitemap entries are listed here.
