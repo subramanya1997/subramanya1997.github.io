@@ -1,12 +1,17 @@
-// Content loaders over the Jekyll source directories (_posts, _books, _loops,
-// _data, _config.yml). These directories remain the single source of truth so
-// the existing translation / OG-image / analytics scripts keep working.
+// Content loaders over the content/ tree (content/posts, content/books,
+// content/loops, content/data). These directories are the single source of
+// truth so the existing translation / OG-image / analytics scripts keep
+// working. Site-wide settings come from site.config.mjs.
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import yaml from "js-yaml";
+import { site } from "@/site.config.mjs";
 
 export const ROOT = process.cwd();
+
+/** Root of the content collections (posts, books, loops, data). */
+export const CONTENT_DIR = "content";
 
 // ---------- site config ----------
 
@@ -23,14 +28,8 @@ export interface SiteConfig {
   [key: string]: unknown;
 }
 
-let _site: SiteConfig | null = null;
 export function getSiteConfig(): SiteConfig {
-  if (!_site) {
-    _site = yaml.load(
-      fs.readFileSync(path.join(ROOT, "_config.yml"), "utf8")
-    ) as SiteConfig;
-  }
-  return _site;
+  return site as unknown as SiteConfig;
 }
 
 // ---------- posts ----------
@@ -59,7 +58,7 @@ export interface Post {
   date: Date;
   frontmatter: PostFrontmatter;
   content: string; // raw markdown body
-  sourcePath: string; // absolute path to the _posts file
+  sourcePath: string; // absolute path to the content/posts file
 }
 
 const POST_FILE = /^(\d{4})-(\d{2})-(\d{2})-(.+)\.(md|markdown)$/;
@@ -68,7 +67,7 @@ let _posts: Post[] | null = null;
 /** All posts, newest first. Matches Jekyll: no draft filtering beyond file presence. */
 export function getAllPosts(): Post[] {
   if (_posts) return _posts;
-  const dir = path.join(ROOT, "_posts");
+  const dir = path.join(ROOT, CONTENT_DIR, "posts");
   _posts = fs
     .readdirSync(dir)
     .map((file) => {
@@ -131,7 +130,7 @@ export interface CollectionDoc {
 }
 
 function loadCollection(dirName: string, urlFor: (slug: string, fm: Record<string, unknown>) => string): CollectionDoc[] {
-  const dir = path.join(ROOT, dirName);
+  const dir = path.join(ROOT, CONTENT_DIR, dirName);
   if (!fs.existsSync(dir)) return [];
   return fs
     .readdirSync(dir)
@@ -144,14 +143,14 @@ function loadCollection(dirName: string, urlFor: (slug: string, fm: Record<strin
     });
 }
 
-/** _loops collection — permalink: /awesome-loops/:path/ */
+/** content/loops collection — permalink: /awesome-loops/:path/ */
 export function getAllLoops(): CollectionDoc[] {
-  return loadCollection("_loops", (slug) => `/awesome-loops/${slug}/`);
+  return loadCollection("loops", (slug) => `/awesome-loops/${slug}/`);
 }
 
-/** _books collection — output: true, default permalink (/books/slug.html → check frontmatter). */
+/** content/books collection — URL from front matter `permalink:`, else /books/<slug>/. */
 export function getAllBooks(): CollectionDoc[] {
-  return loadCollection("_books", (slug, fm) =>
+  return loadCollection("books", (slug, fm) =>
     typeof fm.permalink === "string" ? (fm.permalink as string) : `/books/${slug}/`
   );
 }
@@ -199,7 +198,7 @@ export function getAllTags(): TagRecord[] {
 // ---------- data files ----------
 
 export function getDataFile<T = unknown>(name: string): T {
-  const dir = path.join(ROOT, "_data");
+  const dir = path.join(ROOT, CONTENT_DIR, "data");
   for (const ext of [".yml", ".yaml", ".json"]) {
     const p = path.join(dir, name + ext);
     if (fs.existsSync(p)) {
@@ -207,5 +206,5 @@ export function getDataFile<T = unknown>(name: string): T {
       return (ext === ".json" ? JSON.parse(raw) : yaml.load(raw)) as T;
     }
   }
-  throw new Error(`data file not found: _data/${name}`);
+  throw new Error(`data file not found: content/data/${name}`);
 }

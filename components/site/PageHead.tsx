@@ -3,7 +3,7 @@
 //
 // These elements are rendered as ordinary JSX: React 19 hoists <title>, <meta>
 // and <link> into <head>. Stylesheets carry a `precedence` so they are hoisted
-// too and always land *after* the layout's main.css (see PARITY-NOTES.md).
+// too and always land *after* the layout's main.css (see docs/internal/parity-notes.md).
 import { getAbout, getSiteConfig } from "@/components/lib/site-data";
 import { stripHtml, stripNewlines, truncate } from "@/components/lib/jekyll";
 import type { PageMeta } from "@/components/lib/page-meta";

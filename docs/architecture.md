@@ -18,13 +18,15 @@ translation, TOC behavior, newsletter UI, and post interactions.
 
 ## Build Flow
 
-1. `scripts/next/sync-public.mjs` (prebuild) reads `_config.yml` and fills
+1. `scripts/next/sync-public.mjs` (prebuild) reads `site.config.mjs` and fills
    `public/`: static assets (`assets/`, `css/`), the `.well-known` discovery
    documents (plus extensionless aliases), markdown twins (an `index.md`
    beside every HTML page), book redirect pages, and the vendored static book
-   sites in `_books_static/`.
-2. `lib/content.ts` loads content from `_posts/`, `_books/`, `_loops/`,
-   `_data/`, and the top-level pages such as `index.html` and `blog.md`.
+   sites in `content/books-static/`.
+2. `lib/content.ts` loads content from `content/posts/`, `content/books/`,
+   `content/loops/` and `content/data/`; the page sources colocated with each
+   route (`app/content.html`, `app/blog/content.md`, …) are registered in
+   `lib/page-sources.mjs`.
 3. `lib/markdown.ts` renders markdown with byte-level parity to the original
    kramdown/rouge output (heading ids, token classes, smart quotes).
 4. The App Router routes in `app/` render every page and generate the
@@ -43,12 +45,13 @@ tag drifts.
 
 ## Repository Structure
 
-- `_config.yml`: Site configuration, collections, i18n settings, newsletter settings, and analytics IDs.
-- `_posts/`: Blog posts in dated Markdown files.
-- `_books/`: The custom `books` collection.
-- `_loops/`: Curated automation-loop marketplace listings.
-- `_data/`: Structured data for the homepage, work page, i18n labels, and analytics-derived view counts.
-- `_books_static/`: Pre-built static book sites served verbatim at their original URLs.
+- `site.config.mjs`: Site configuration — title, description, URL, i18n settings, newsletter settings, and analytics IDs.
+- `content/posts/`: Blog posts in dated Markdown files.
+- `content/books/`: The `books` collection.
+- `content/loops/`: Curated automation-loop marketplace listings.
+- `content/data/`: Structured data for the homepage, work page, i18n labels, and analytics-derived view counts.
+- `content/books-static/`: Pre-built static book sites served verbatim at their original URLs.
+- `app/<route>/content.md`: Each page's own source (front matter plus body), colocated with the route that renders it; `lib/page-sources.mjs` is the registry that pins their URLs.
 - `assets/`: Images, JavaScript, translation JSON, video, resume files, and page/component CSS.
 - `css/main.css`: Global site styles shared across the whole site.
 - `app/`: Next.js App Router routes — one route per page type, plus the non-HTML endpoints.
@@ -80,12 +83,12 @@ tag drifts.
 
 ## Data and Content
 
-- `_data/about.yaml` powers the homepage biography, work history, education, and social links.
-- `_data/view_count.json` stores analytics-derived view counts and per-post engagement metadata used on the homepage, blog index, and stats page.
-- `_data/i18n.yml` stores UI strings for translation-related interfaces.
-- `_posts/` uses front matter plus Markdown body content for posts.
-- `_books/` uses front matter plus Markdown body content for the books collection.
-- `_loops/` uses front matter plus Markdown body content for automation-loop marketplace listings. Loop detail pages derive prompt, Agent Skill, Codex/Cursor `AGENTS.md`, Cursor `.mdc`, Claude deep-link, and Cursor deep-link exports from that source content.
+- `content/data/about.yaml` powers the homepage biography, work history, education, and social links.
+- `content/data/view_count.json` stores analytics-derived view counts and per-post engagement metadata used on the homepage, blog index, and stats page.
+- `content/data/i18n.yml` stores UI strings for translation-related interfaces.
+- `content/posts/` uses front matter plus Markdown body content for posts.
+- `content/books/` uses front matter plus Markdown body content for the books collection.
+- `content/loops/` uses front matter plus Markdown body content for automation-loop marketplace listings. Loop detail pages derive prompt, Agent Skill, Codex/Cursor `AGENTS.md`, Cursor `.mdc`, Claude deep-link, and Cursor deep-link exports from that source content.
 - `search.json` is the structured discovery index consumed by the search page, generated at build time by `lib/nonhtml.ts`.
 
 ## Runtime JavaScript Responsibilities
@@ -99,7 +102,7 @@ tag drifts.
 
 ## Automation and Maintenance Scripts
 
-- `scripts/fetch_analytics.py`: fetches Google Analytics data and writes `_data/view_count.json`.
+- `scripts/fetch_analytics.py`: fetches Google Analytics data and writes `content/data/view_count.json`.
 - `scripts/generate_og_images.py`: generates fallback OG images for posts.
 - `scripts/translate_posts.py`: generates translation JSON files in `assets/translations/`.
 - `scripts/validate-content.mjs`: validates front matter, data file structure, and top-level page asset guardrails.
@@ -109,23 +112,23 @@ tag drifts.
 
 ## Where To Change Things
 
-- Homepage content and structure: `index.html` and `app/page.tsx`
-- Homepage bio/work data: `_data/about.yaml`
-- Blog listing page: `blog.md` and `app/blog/page.tsx`
-- Books listing page: `books.md` and `app/books/page.tsx`
-- Loop marketplace page: `awesome-loops/index.md`, `_loops/*.md`, and `app/awesome-loops/`
-- Work page: `work.md` and `app/work/page.tsx`
-- Stats page: `stats.md` and `app/stats/page.tsx`
+- Homepage content and structure: `app/content.html` and `app/page.tsx`
+- Homepage bio/work data: `content/data/about.yaml`
+- Blog listing page: `app/blog/content.md` and `app/blog/page.tsx`
+- Books listing page: `app/books/content.md` and `app/books/page.tsx`
+- Loop marketplace page: `app/awesome-loops/content.md`, `content/loops/*.md`, and `app/awesome-loops/`
+- Work page: `app/work/content.md` and `app/work/page.tsx`
+- Stats page: `app/stats/content.md` and `app/stats/page.tsx`
 - Post page layout and post-only UX: `components/post/PostLayout.tsx` (inline assets sourced from `_layouts/post.html`)
 - Global shell behavior and per-page script loading: `components/site/SiteShell.tsx`
 - Global metadata and per-page stylesheet loading: `components/site/PageHead.tsx` and `app/layout.tsx`
-- Search behavior: `components/site/SearchForm.tsx`, `search.md`, the `search.json` builder in `lib/nonhtml.ts`, `assets/js/components/discovery.js`, and `assets/js/pages/search.js`
-- Tag archives and topic browsing: `tags.md`, `app/tags/`, and `assets/css/pages/tags.css`
+- Search behavior: `components/site/SearchForm.tsx`, `app/search/content.md`, the `search.json` builder in `lib/nonhtml.ts`, `assets/js/components/discovery.js`, and `assets/js/pages/search.js`
+- Tag archives and topic browsing: `app/tags/content.md`, `app/tags/`, and `assets/css/pages/tags.css`
 - Agent discovery (RFC 8288 / RFC 9727): `api-catalog.json` is published at `/.well-known/api-catalog.json`, and `scripts/next/sync-public.mjs` copies that output to the canonical extensionless `/.well-known/api-catalog` path so both URLs work (`vercel.json` sets the content type). The catalog is a Linkset per RFC 9264 and enumerates every machine-readable endpoint on the site. The site advertises the same endpoints via RFC 8288 `<link>` elements on every page (`api-catalog`, `describedby`, `service-doc`, `sitemap`, `search`, `author`, `alternate`).
 - OpenID Connect discovery (OIDC Discovery 1.0): `openid-configuration.json` is published at `/.well-known/openid-configuration.json` and copied to the canonical extensionless `/.well-known/openid-configuration`. The document is an intentionally inert stub: the site exposes no protected APIs, so `grant_types_supported` and `scopes_supported` are empty and `response_types_supported` / `id_token_signing_alg_values_supported` are `["none"]`. `jwks.json` is published at `/.well-known/jwks.json` as an empty keyset, and `oauth-noop.json` at `/.well-known/oauth-noop.json` (also aliased to `/.well-known/oauth-noop`) returning an RFC 6749 §5.2 `invalid_client` error for any agent that follows the authorization/token endpoints. Extend the alias list in `scripts/next/sync-public.mjs` to add more extensionless well-known URIs.
-- Developer documentation hub: `docs.md` emits `/docs/` as the landing page; each `docs/*.md` file is rendered by the `app/docs/` routes at `/docs/<name>/`. The `/docs/` URL is also the target of the `service-doc` link relation.
+- Developer documentation hub: `app/docs/content.md` emits `/docs/` as the landing page; each `docs/*.md` file is rendered by the `app/docs/` routes at `/docs/<name>/`. The `/docs/` URL is also the target of the `service-doc` link relation.
 - Analytics configuration: `components/site/Analytics.tsx`
-- Analytics-derived stats data: `_data/view_count.json` and `scripts/fetch_analytics.py`
+- Analytics-derived stats data: `content/data/view_count.json` and `scripts/fetch_analytics.py`
 - Translation loading and UI: `assets/js/i18n.js`, `assets/js/components/site-language.js`, `components/post/LanguageSwitcher.tsx`, `components/post/TranslationToast.tsx`, and `assets/translations/`
 - Shared card UI for top-level pages: `components/cards/` and `assets/css/components/`
 

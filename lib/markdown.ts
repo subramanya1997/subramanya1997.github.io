@@ -33,14 +33,14 @@ export { buildTocHtml, slugifyHeading } from "./toc";
 export interface RenderMarkdownOptions {
   /**
    * Values for the handful of Liquid variables that appear inside content
-   * markdown. Mirrors the relevant bits of `_config.yml`.
+   * markdown. Mirrors the relevant bits of `site.config.mjs`.
    */
   site?: {
     baseurl?: string;
     url?: string;
     email?: string;
     title?: string;
-    /** Contents of `_data/*.yml`, keyed by file name (`{ about: { ... } }`). */
+    /** Contents of `content/data/*.yml`, keyed by file name (`{ about: { ... } }`). */
     data?: Record<string, unknown>;
   };
   /**
@@ -75,7 +75,7 @@ const SITE_HOST = "subramanya.ai";
 // ---------------------------------------------------------------------------
 // 1. Liquid
 //
-// `_posts/*.md` contain no `{% ... %}` tags. A single post and a few root pages
+// `content/posts/*.md` contain no `{% ... %}` tags. A single post and a few page sources
 // use `{{ ... }}` variables, so only the variable form is resolved here.
 // ---------------------------------------------------------------------------
 

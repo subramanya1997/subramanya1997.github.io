@@ -9,7 +9,7 @@ const VIEWS_ICON_TITLE = { title: "Total views" } as React.SVGProps<SVGSVGElemen
 
 export interface PostCardProps {
   post: Post;
-  /** Matching entry from _data/view_count.json, when the post has one. */
+  /** Matching entry from content/data/view_count.json, when the post has one. */
   postViews?: number;
   dateMode: "human" | "iso";
   /** Result of components/lib/jekyll#readingTime on the post's rendered HTML. */

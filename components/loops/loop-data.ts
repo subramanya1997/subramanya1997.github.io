@@ -1,4 +1,4 @@
-// Shared shape/ordering helpers for the `_loops` collection.
+// Shared shape/ordering helpers for the content/loops collection.
 import { getAllLoops, type CollectionDoc } from "@/lib/content";
 
 export interface Loop {
@@ -43,7 +43,7 @@ function toLoop(doc: CollectionDoc): Loop {
     stop: optional(fm.stop),
     memory: optional(fm.memory),
     content: doc.content,
-    sourcePath: `_loops/${doc.sourcePath.split("/").pop()}`,
+    sourcePath: `content/loops/${doc.sourcePath.split("/").pop()}`,
   };
 }
 

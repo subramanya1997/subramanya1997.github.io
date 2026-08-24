@@ -17,10 +17,20 @@ Vercel project `subramanya-ai` is git-connected. Do not deploy manually with
 
 ## Layout
 
-- Content sources are the Jekyll-era directories: `_posts/`, `_books/`,
-  `_loops/`, `_data/`, `assets/`, `_config.yml`. They are the single source of
-  truth — the Python scripts in `scripts/` (translations, OG images,
-  analytics) write there.
+- Content collections live under `content/`: `content/posts/`,
+  `content/books/`, `content/loops/`, `content/data/`, plus the vendored
+  pre-built book sites in `content/books-static/`. Together with `assets/` they
+  are the single source of truth — the Python scripts in `scripts/`
+  (translations, OG images, analytics) write there.
+- Site-wide settings live in `site.config.mjs` (plain JS, JSDoc-typed) — it
+  replaced `_config.yml` and is imported by both `lib/content.ts` and the
+  bare-node build scripts.
+- Page sources are colocated with their route: `app/<route>/content.md` (or
+  `.html`), with `app/content.html` for the home page and
+  `app/not-found.content.html` for the 404. `lib/page-sources.mjs` is the
+  registry that pins each one's URL; `docs/*.md` remain a flat directory of
+  pages pinned by their own `permalink:`. Next ignores non-route files inside
+  `app/`, so these are inert as far as routing goes.
 - `lib/content.ts` loads that content; `lib/markdown.ts` renders markdown with
   byte-level kramdown/rouge parity (do not swap in a stock renderer — heading
   ids, rouge token classes, and smart quotes are all matched to the old Jekyll

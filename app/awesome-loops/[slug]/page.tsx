@@ -1,4 +1,4 @@
-// Loop detail pages — the `_loops` collection under
+// Loop detail pages — the loops collection under
 // `permalink: /awesome-loops/:path/`, rendered by `_layouts/loop.html`.
 //
 // `<body class="loop-shell">` comes from SiteShell's bodyClass prop.

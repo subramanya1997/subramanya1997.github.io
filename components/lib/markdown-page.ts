@@ -1,6 +1,7 @@
-// Loader for the markdown-bodied top-level pages (contact.md, privacy.md,
-// docs/*.md). Their bodies contain a handful of Liquid expressions, which are
-// resolved here before the markdown is handed to lib/markdown.ts.
+// Loader for the markdown-bodied pages: the `content.md` colocated with each
+// route (app/contact/content.md, app/privacy/content.md, app/docs/content.md)
+// plus docs/*.md. Their bodies contain a handful of Liquid expressions, which
+// are resolved here before the markdown is handed to lib/markdown.ts.
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";

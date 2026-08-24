@@ -53,8 +53,8 @@ jobs:
           if (markdown === "") throw new Error("Loop submission markdown is empty");
           if (!markdown.startsWith("---")) throw new Error("Loop submission must include YAML front matter");
 
-          fs.mkdirSync("_loops", { recursive: true });
-          fs.writeFileSync(path.join("_loops", filename), `${markdown}\n`);
+          fs.mkdirSync("content/loops", { recursive: true });
+          fs.writeFileSync(path.join("content", "loops", filename), `${markdown}\n`);
 
           let branch = `loop-submission-${issue.number}-${slugify(filename.replace(/\.md$/, ""))}`;
           branch = branch.slice(0, 120).replace(/-+$/, "");
@@ -78,7 +78,7 @@ jobs:
       - name: Detect changes
         id: diff
         run: |
-          if [ -z "$(git status --porcelain -- "_loops/${{ steps.prepare.outputs.filename }}")" ]; then
+          if [ -z "$(git status --porcelain -- "content/loops/${{ steps.prepare.outputs.filename }}")" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -94,7 +94,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B "$BRANCH"
-          git add "_loops/$FILENAME"
+          git add "content/loops/$FILENAME"
           git commit -m "Add loop: $LOOP_TITLE"
           git push --force-with-lease origin "$BRANCH"
 

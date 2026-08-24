@@ -56,7 +56,7 @@ If CI fails, reproduce locally with the same commands first.
 
 ### Blog posts
 
-1. Create a dated Markdown file in `_posts/`.
+1. Create a dated Markdown file in `content/posts/`.
 2. Add the required front matter defined in `docs/content-model.md`.
 3. Add or generate an OG image if needed.
 4. If the post should participate in translation, run the translation script after the English source is stable.
@@ -64,13 +64,13 @@ If CI fails, reproduce locally with the same commands first.
 
 ### Books
 
-1. Add or update the collection entry in `_books/`.
+1. Add or update the collection entry in `content/books/`.
 2. Use the required front matter defined in `docs/content-model.md`.
 3. Run the validation commands.
 
 ### Automation loops
 
-1. Add or update a Markdown listing in `_loops/`.
+1. Add or update a Markdown listing in `content/loops/`.
 2. Use the required front matter defined in `docs/content-model.md`.
 3. Keep the body concrete: it should be the actual prompt or operating instructions, not a vague idea.
 4. Treat source, attribution, category, trigger, cadence, tooling, proof, memory, stop condition, tags, and MCP/resource links as optional metadata.
@@ -82,11 +82,11 @@ Loop PRs are routed through `.github/CODEOWNERS` and `.github/pull_request_templ
 
 ### Data-driven pages
 
-- Homepage and work page content comes from `_data/about.yaml`.
-- Stats and homepage view counts come from `_data/view_count.json`.
-- Translation UI labels come from `_data/i18n.yml`.
+- Homepage and work page content comes from `content/data/about.yaml`.
+- Stats and homepage view counts come from `content/data/view_count.json`.
+- Translation UI labels come from `content/data/i18n.yml`.
 
-Whenever `_data/` changes, rebuild the site and verify the affected page manually.
+Whenever `content/data/` changes, rebuild the site and verify the affected page manually.
 
 ## Python Maintenance Scripts
 
@@ -100,7 +100,7 @@ pip install -r scripts/requirements.txt
 
 ### Analytics refresh
 
-`scripts/fetch_analytics.py` writes `_data/view_count.json`. Run it only when you intend to refresh tracked analytics data and have the required environment variables.
+`scripts/fetch_analytics.py` writes `content/data/view_count.json`. Run it only when you intend to refresh tracked analytics data and have the required environment variables.
 
 Required environment variables:
 
@@ -140,7 +140,7 @@ Use these only for page-owned behavior and styles. Shared global behavior still 
 
 ## Guardrails
 
-- Do not add inline `<style>` blocks or inline page-owned `<script>` blocks back to `index.html`, `blog.md`, `books.md`, `work.md`, or `stats.md`.
+- Do not add inline `<style>` blocks or inline page-owned `<script>` blocks back to `app/content.html`, `app/blog/content.md`, `app/books/content.md`, `app/work/content.md`, or `app/stats/content.md`.
 - Do not swap the markdown renderer in `lib/markdown.ts` for a stock one — heading ids, rouge token classes, and smart quotes are matched byte-for-byte to the original published output.
 - Never change a URL. Run `bun run parity` after any routing or build change.
 - Keep shared top-level page UI inside `components/` once a repeated pattern exists in more than one page.

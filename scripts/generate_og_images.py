@@ -26,7 +26,8 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-POSTS_DIR = PROJECT_ROOT / "_posts"
+CONTENT_DIR = PROJECT_ROOT / "content"
+POSTS_DIR = CONTENT_DIR / "posts"
 OUTPUT_DIR = PROJECT_ROOT / "assets" / "images"
 
 WIDTH = 1200

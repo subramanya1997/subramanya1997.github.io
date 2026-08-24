@@ -1,4 +1,4 @@
-// Typed accessors over _data/*, plus the derived collections the Liquid
+// Typed accessors over content/data/*, plus the derived collections the Liquid
 // templates built inline (tag archive directory, per-post view counts).
 import {
   getAllBooks,

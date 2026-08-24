@@ -13,11 +13,20 @@ import { fileURLToPath } from "node:url";
 import yaml from "js-yaml";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const POSTS_DIR = path.join(ROOT, "_posts");
-const BOOKS_DIR = path.join(ROOT, "_books");
-const LOOPS_DIR = path.join(ROOT, "_loops");
-const DATA_DIR = path.join(ROOT, "_data");
-const TOP_LEVEL_PAGES = ["index.html", "blog.md", "books.md", "work.md", "stats.md"];
+const CONTENT_DIR = path.join(ROOT, "content");
+const POSTS_DIR = path.join(CONTENT_DIR, "posts");
+const BOOKS_DIR = path.join(CONTENT_DIR, "books");
+const LOOPS_DIR = path.join(CONTENT_DIR, "loops");
+const DATA_DIR = path.join(CONTENT_DIR, "data");
+// Page sources colocated with their app/ route (see lib/page-sources.mjs).
+const TOP_LEVEL_PAGES = [
+  "app/content.html",
+  "app/blog/content.md",
+  "app/books/content.md",
+  "app/work/content.md",
+  "app/stats/content.md",
+];
+const NOT_FOUND_PAGE = "app/not-found.content.html";
 const FRONT_MATTER_PATTERN = /^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*(?:\r?\n|$)/;
 
 const errors = [];
@@ -83,7 +92,7 @@ function validateFrontMatter(file, requiredKeys) {
 
 function validatePosts() {
   for (const file of markdownFiles(POSTS_DIR)) {
-    if (relativePath(file) === "_posts/readme.md") continue;
+    if (relativePath(file) === "content/posts/readme.md") continue;
     validateFrontMatter(file, ["layout", "title", "excerpt", "date", "tags"]);
   }
 }
@@ -264,7 +273,10 @@ function validateOpenapiSpec() {
 // Trust anchor pages (/contact/, /privacy/) must exist with substantial bodies;
 // agents check these to verify the site is legitimate.
 function validateTrustPages() {
-  const pages = { "contact.md": "/contact/", "privacy.md": "/privacy/" };
+  const pages = {
+    "app/contact/content.md": "/contact/",
+    "app/privacy/content.md": "/privacy/",
+  };
   for (const [relative, expectedPermalink] of Object.entries(pages)) {
     const file = path.join(ROOT, relative);
     if (!fs.existsSync(file)) {
@@ -314,12 +326,12 @@ function validateLlmsTxt() {
 // index) so a dead link is not a dead end.
 function validate404RecoveryLinks() {
   try {
-    const content = fs.readFileSync(path.join(ROOT, "404.html"), "utf8");
+    const content = fs.readFileSync(path.join(ROOT, NOT_FOUND_PAGE), "utf8");
     for (const href of ["/llms.txt", "/sitemap.xml", "/search.json", "/openapi.json"]) {
-      if (!content.includes(href)) addError(`404.html: missing recovery link to ${href}`);
+      if (!content.includes(href)) addError(`${NOT_FOUND_PAGE}: missing recovery link to ${href}`);
     }
   } catch (e) {
-    addError(`404.html: ${e.message}`);
+    addError(`${NOT_FOUND_PAGE}: ${e.message}`);
   }
 }
 

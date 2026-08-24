@@ -5,7 +5,7 @@
 // NOTE: app/globals.css (Tailwind + shadcn) is deliberately NOT imported here.
 // The ported pages are styled by the legacy stylesheets in public/css and
 // public/assets/css, and Tailwind's preflight would reset them. See
-// components/PARITY-NOTES.md.
+// docs/internal/parity-notes.md.
 import type { Viewport } from "next";
 import { getSiteConfig } from "@/components/lib/site-data";
 

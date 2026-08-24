@@ -165,7 +165,7 @@ export function humanDate(date: Date): string {
 
 /**
  * `date: "%B %d, %Y at %I:%M %p"` used by the stats page for
- * `_data/view_count.json`'s `last_updated`. The stored timestamp has no zone,
+ * `content/data/view_count.json`'s `last_updated`. The stored timestamp has no zone,
  * so — like Jekyll — the wall-clock fields are used as-is.
  */
 export function longDateTime(timestamp: string): string {
