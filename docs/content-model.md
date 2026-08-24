@@ -120,11 +120,15 @@ Each `view_counts[]` entry must contain:
 
 ## Top-level Page Asset Contract
 
-The refactored top-level pages can declare page-specific CSS and JS through front matter.
+The refactored top-level pages can declare page-specific JS through front matter.
 
 ### Supported front matter keys
 
-- `page_stylesheets`
 - `page_scripts`
 
-Both must be arrays of asset paths and should only be used for page-owned styles and scripts.
+It must be an array of asset paths and should only be used for page-owned scripts.
+
+There is no per-page CSS key. All page styles are consolidated into the single
+site stylesheet `css/main.css` (section 8), which the root layout loads on
+every page; `page_stylesheets` is no longer read and no longer appears in any
+front matter.

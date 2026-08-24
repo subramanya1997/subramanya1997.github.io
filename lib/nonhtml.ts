@@ -283,8 +283,12 @@ export function docWallClock(value: unknown): WallClock | null {
 
 const htmlCache = new Map<string, string>();
 
-/** Rendered HTML for a markdown body, memoized per build. */
-async function html(key: string, markdown: string): Promise<string> {
+/**
+ * Rendered HTML for a markdown body, memoized per build. Exported so the HTML
+ * pages that only need reading time reuse the same render instead of
+ * re-rendering every post.
+ */
+export async function memoizedHtml(key: string, markdown: string): Promise<string> {
   const cached = htmlCache.get(key);
   if (cached !== undefined) return cached;
   const { html: rendered } = await renderMarkdown(markdown);
@@ -476,7 +480,7 @@ export async function buildFeedXml(now: Date = new Date()): Promise<string> {
     lines.push("    <item>");
     lines.push(`      <title>${xmlEscape(post.frontmatter.title)}</title>`);
     lines.push(
-      `      <description>${xmlEscape(await html(post.sourcePath, post.content))}</description>`
+      `      <description>${xmlEscape(await memoizedHtml(post.sourcePath, post.content))}</description>`
     );
     lines.push(`      <pubDate>${dateToRfc822(postWallClock(entry))}</pubDate>`);
     lines.push(`      <link>${link}</link>`);
@@ -493,7 +497,7 @@ export async function buildFeedXml(now: Date = new Date()): Promise<string> {
     lines.push("    <item>");
     lines.push(`      <title>${xmlEscape(book.frontmatter.title)}</title>`);
     lines.push(
-      `      <description>${xmlEscape(await html(book.sourcePath, book.content))}</description>`
+      `      <description>${xmlEscape(await memoizedHtml(book.sourcePath, book.content))}</description>`
     );
     lines.push(`      <pubDate>${wall ? dateToRfc822(wall) : ""}</pubDate>`);
     lines.push(`      <link>${link}</link>`);
@@ -555,7 +559,7 @@ export async function buildSearchItems(): Promise<SearchItem[]> {
 
   for (const entry of getOutputPosts()) {
     const post = entry.post;
-    const rendered = await html(post.sourcePath, post.content);
+    const rendered = await memoizedHtml(post.sourcePath, post.content);
     const wall = postWallClock(entry);
     const minutes = Math.max(1, Math.floor(numberOfWords(rendered) / 200));
     items.push({
@@ -577,7 +581,7 @@ export async function buildSearchItems(): Promise<SearchItem[]> {
   }
 
   for (const book of sortedBooks()) {
-    const rendered = await html(book.sourcePath, book.content);
+    const rendered = await memoizedHtml(book.sourcePath, book.content);
     const wall = docWallClock(book.frontmatter.date);
     items.push({
       kind: "book",
@@ -598,7 +602,7 @@ export async function buildSearchItems(): Promise<SearchItem[]> {
   }
 
   for (const loop of sortedLoops()) {
-    const rendered = await html(loop.sourcePath, loop.content);
+    const rendered = await memoizedHtml(loop.sourcePath, loop.content);
     items.push({
       kind: "loop",
       title: String(loop.frontmatter.title ?? ""),
@@ -943,7 +947,7 @@ export async function buildLlmsFullTxt(): Promise<string> {
     lines.push(`Date: ${dateIso(wall)}`);
     lines.push(`Tags: ${tagsOf(post.frontmatter).join(", ")}`);
     lines.push("");
-    lines.push(await html(post.sourcePath, post.content));
+    lines.push(await memoizedHtml(post.sourcePath, post.content));
     const faq = post.frontmatter.faq;
     if (Array.isArray(faq) && faq.length > 0) {
       lines.push("### Quick Answers");

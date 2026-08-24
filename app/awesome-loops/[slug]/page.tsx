@@ -57,7 +57,6 @@ export default async function LoopPage({ params }: { params: Promise<{ slug: str
     url: loop.url,
     description: loop.excerpt,
     image: loopSocialImage(loop.slug),
-    stylesheets: ["/assets/css/pages/loop-marketplace.css"],
     scripts: ["/assets/js/pages/loop-marketplace.js"],
   });
 

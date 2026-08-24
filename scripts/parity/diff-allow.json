@@ -11,20 +11,25 @@
     "/scripts/*": "Build tooling. _config.yml has no `exclude:`, so Jekyll copied the whole scripts/ tree into _site and published it (including translation_errors.log). Never linked, never intended to be public; the Next.js build does not copy it.",
     "/README.md": "Repo documentation accidentally published by the same missing `exclude:`. Not linked from anywhere and not part of the site.",
     "/CONTRIBUTING.md": "Same as /README.md.",
-    "/CNAME": "GitHub Pages is retired (site now on Vercel); CNAME was the GH Pages domain file and is intentionally not served anymore."
+    "/CNAME": "GitHub Pages is retired (site now on Vercel); CNAME was the GH Pages domain file and is intentionally not served anymore.",
+    "/assets/js/pages/home.js": "Formatted dates/counts client-side over server-rendered values, causing React hydration mismatches (#418). The formatting is server-rendered now and the script is deleted.",
+    "/assets/js/toc.js": "Stale Jekyll-era duplicate of components/post/assets/toc.client.js (which is inlined into post pages). Nothing referenced it.",
+    "/assets/css/*": "The per-page stylesheets under assets/css/ were consolidated into /css/main.css, which every page already loads. Assets, not content: nothing indexes or deep-links a stylesheet, and the only references were the <link> tags on the pages that moved into main.css."
   },
   "ignoreMissing": [
     "/scripts/*",
     "/README.md",
     "/CONTRIBUTING.md",
-    "/CNAME"
+    "/CNAME",
+    "/assets/js/pages/home.js",
+    "/assets/js/toc.js",
+    "/assets/css/*"
   ],
   "_ignoreExtraReasons": {
     "/_next/*": "Next.js runtime chunks and manifests.",
     "/404/*": "Next emits both /404.html (the GitHub Pages contract, present in the baseline) and a /404/ directory.",
     "/_not-found/": "Next's internal catch-all route, exported as a directory. GitHub Pages serves /404.html for unknown paths regardless.",
     "/*__next*.txt, /*/index.txt": "RSC flight payloads that Next's static export writes next to every prerendered page. Inert for crawlers; not addressable content.",
-    "/assets/translations/*/.gitkeep": "Empty placeholder files copied by scripts/next/sync-public.mjs; Jekyll skipped dotfiles.",
     "/docs/*.md": "sync-public.mjs copies docs/*.md into public/. Jekyll rendered them as pages instead, so the raw markdown was never published. Harmless (the markdown twins at /docs/<slug>/index.md are the advertised representation)."
   },
   "ignoreExtra": [
@@ -34,7 +39,6 @@
     "/*/__next*.txt",
     "/index.txt",
     "/*/index.txt",
-    "/assets/translations/*/.gitkeep",
     "/docs/*.md",
     "/_not-found/"
   ],

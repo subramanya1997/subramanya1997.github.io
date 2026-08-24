@@ -112,10 +112,6 @@ export default function PageHead({ meta }: { meta: PageMeta }) {
 
       <link rel="canonical" href={canonical} />
 
-      {(meta.stylesheets ?? []).map((href) => (
-        <link key={href} rel="stylesheet" href={href} precedence="page" />
-      ))}
-
       <StructuredData meta={meta} />
     </>
   );

@@ -11,7 +11,6 @@ const meta = pageMeta({
   url: "/tags/",
   description: "Browse posts and books by topic.",
   customLayout: true,
-  stylesheets: ["/assets/css/pages/tags.css"],
 });
 
 /** The `.tag-directory-meta` text, mirroring the Liquid branch-by-branch. */

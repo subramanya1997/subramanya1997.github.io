@@ -11,7 +11,6 @@ const meta = pageMeta({
   title: "Stats",
   url: "/stats/",
   customLayout: true,
-  stylesheets: ["/assets/css/pages/stats.css"],
   scripts: ["/assets/js/pages/stats.js"],
 });
 
@@ -19,6 +18,18 @@ const meta = pageMeta({
  * `content/data/view_count.json` stores engagement/duration as JSON floats, and Liquid
  * prints Ruby floats with a trailing ".0". JSON.parse loses that, so re-add it.
  */
+/** Thousands separators — byte-identical to the formatter stats.js used to apply. */
+function formatCount(views: number): string {
+  return String(views).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+/** stats.js formatTime, ported verbatim: <1min shows seconds, else one-decimal minutes. */
+function formatDuration(seconds: number): string {
+  const mins = Math.round((seconds / 60) * 10) / 10;
+  if (mins < 1) return `${Math.round(seconds)}s`;
+  return `${mins}m`;
+}
+
 function floatText(value: number): string {
   return Number.isInteger(value) ? value.toFixed(1) : String(value);
 }
@@ -67,7 +78,7 @@ export default function Stats() {
             </div>
             <h3 className="stat-label">Total Views</h3>
             <p className="stat-value" id="total-views">
-              {totalViews}
+              {formatCount(totalViews)}
             </p>
             <p className="stat-description">All-time page views</p>
             <p className="stat-meta">Since site launch</p>
@@ -199,7 +210,7 @@ export default function Stats() {
                       </div>
                       <div className="stats-row-metrics">
                         <div className="stats-metric">
-                          <span className="stats-metric-value">{item.views}</span>
+                          <span className="stats-metric-value">{formatCount(item.views)}</span>
                           <span className="stats-metric-label">views</span>
                         </div>
                         <div className="stats-metric">
@@ -213,7 +224,7 @@ export default function Stats() {
                             className="stats-metric-value"
                             data-seconds={floatText(item.avg_duration_seconds)}
                           >
-                            {`${rubyRound(item.avg_duration_seconds / 60, 1).toFixed(1)}m`}
+                            {formatDuration(item.avg_duration_seconds)}
                           </span>
                           <span className="stats-metric-label">avg. time</span>
                         </div>
