@@ -16,7 +16,6 @@ const meta = pageMeta({
   description: "Automation loops for Claude, Cursor, and Codex.",
   image: "/assets/images/og/awesome-loops.png",
   customLayout: true,
-  stylesheets: ["/assets/css/pages/loop-marketplace.css"],
   scripts: ["/assets/js/pages/loop-marketplace.js"],
 });
 

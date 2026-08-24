@@ -13,8 +13,6 @@ export interface PageMeta {
   image?: string;
   /** `page.markdown_url` from `_plugins/markdown_twin_generator.rb`. */
   markdownUrl?: string;
-  /** `page.page_stylesheets`. */
-  stylesheets?: string[];
   /** `page.page_scripts`. */
   scripts?: string[];
   /** `page.custom_layout` — bypasses the `.post` wrapper in `_layouts/page.html`. */

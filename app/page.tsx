@@ -11,7 +11,6 @@ import { memoizedHtml } from "@/lib/nonhtml";
 
 const meta = pageMeta({
   url: "/",
-  stylesheets: ["/assets/css/components/content-cards.css", "/assets/css/pages/home.css"],
 });
 
 export default async function Home() {

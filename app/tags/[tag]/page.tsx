@@ -35,10 +35,6 @@ export default async function TagArchivePage({
     url: `/tags/${tag.slug}/`,
     description: `Posts and books tagged ${tag.name}.`,
     customLayout: true,
-    stylesheets: [
-      "/assets/css/components/content-cards.css",
-      "/assets/css/pages/tags.css",
-    ],
   });
 
   return (

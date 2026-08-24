@@ -4,9 +4,6 @@ title: Books
 permalink: /books/
 includelink: true
 custom_layout: true
-page_stylesheets:
-  - /assets/css/components/content-cards.css
-  - /assets/css/pages/books-index.css
 ---
 
 <div class="books-container">

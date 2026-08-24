@@ -4,9 +4,6 @@ title: Blog
 permalink: /blog/
 includelink: true
 custom_layout: true
-page_stylesheets:
-  - /assets/css/components/content-cards.css
-  - /assets/css/pages/blog-index.css
 ---
 
 <div class="blog-container">

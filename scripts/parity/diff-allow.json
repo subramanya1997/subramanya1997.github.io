@@ -13,7 +13,8 @@
     "/CONTRIBUTING.md": "Same as /README.md.",
     "/CNAME": "GitHub Pages is retired (site now on Vercel); CNAME was the GH Pages domain file and is intentionally not served anymore.",
     "/assets/js/pages/home.js": "Formatted dates/counts client-side over server-rendered values, causing React hydration mismatches (#418). The formatting is server-rendered now and the script is deleted.",
-    "/assets/js/toc.js": "Stale Jekyll-era duplicate of components/post/assets/toc.client.js (which is inlined into post pages). Nothing referenced it."
+    "/assets/js/toc.js": "Stale Jekyll-era duplicate of components/post/assets/toc.client.js (which is inlined into post pages). Nothing referenced it.",
+    "/assets/css/*": "The per-page stylesheets under assets/css/ were consolidated into /css/main.css, which every page already loads. Assets, not content: nothing indexes or deep-links a stylesheet, and the only references were the <link> tags on the pages that moved into main.css."
   },
   "ignoreMissing": [
     "/scripts/*",
@@ -21,7 +22,8 @@
     "/CONTRIBUTING.md",
     "/CNAME",
     "/assets/js/pages/home.js",
-    "/assets/js/toc.js"
+    "/assets/js/toc.js",
+    "/assets/css/*"
   ],
   "_ignoreExtraReasons": {
     "/_next/*": "Next.js runtime chunks and manifests.",
