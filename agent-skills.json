@@ -1,0 +1,54 @@
+---
+layout: none
+permalink: /.well-known/agent-skills/index.json
+sitemap: false
+---
+{
+  "site": "Subramanya N (subramanya.ai)",
+  "documentation": "{{ site.url }}/llms.txt",
+  "skills": [
+    {
+      "name": "list-posts",
+      "description": "Fetch every blog post with title, url, date, tags, description, and word count.",
+      "url": "{{ site.url }}/api/v1/posts.json",
+      "method": "GET"
+    },
+    {
+      "name": "list-books",
+      "description": "Fetch the published books/handbooks with metadata.",
+      "url": "{{ site.url }}/api/v1/books.json",
+      "method": "GET"
+    },
+    {
+      "name": "list-tags",
+      "description": "Fetch every content tag with its archive URL and tagged items.",
+      "url": "{{ site.url }}/api/v1/tags.json",
+      "method": "GET"
+    },
+    {
+      "name": "site-info",
+      "description": "Fetch site metadata: title, author, languages, endpoints.",
+      "url": "{{ site.url }}/api/v1/site.json",
+      "method": "GET"
+    },
+    {
+      "name": "search-content",
+      "description": "Fetch the search corpus (all posts and books with text content) for client-side querying.",
+      "url": "{{ site.url }}/search.json",
+      "method": "GET"
+    },
+    {
+      "name": "read-page-as-markdown",
+      "description": "Read any content page as markdown by appending index.md to its URL, e.g. /2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/index.md. The homepage twin is /index.md.",
+      "url": "{{ site.url }}/index.md",
+      "method": "GET"
+    },
+    {
+      "name": "full-content-dump",
+      "description": "Fetch the entire site's content in one flattened text document for LLM ingestion.",
+      "url": "{{ site.url }}/llms-full.txt",
+      "method": "GET"
+    }
+  ],
+  "auth": "anonymous — see {{ site.url }}/auth.md"
+}

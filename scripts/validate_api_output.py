@@ -82,6 +82,9 @@ def check_search(spec):
     schema = spec["paths"]["/search.json"]["get"]["responses"]["200"]["content"][
         "application/json"
     ]["schema"]["items"]
+    if "$ref" in schema:  # resolve a local components/schemas reference
+        name = schema["$ref"].rsplit("/", 1)[-1]
+        schema = spec["components"]["schemas"][name]
     allowed_kinds = set(schema["properties"]["kind"]["enum"])
     required = set(schema.get("required", []))
 

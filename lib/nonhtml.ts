@@ -636,15 +636,39 @@ export function buildSitemapXml(): string {
     lines.push("  </url>");
   };
 
+  // lastmod is only emitted where a truthful date exists: posts carry their
+  // own dates; tag archives and post-listing pages change when their newest
+  // post does; loops have no dated front matter and stay bare.
+  const wallKey = (w: WallClock) =>
+    Date.UTC(w.year, w.month - 1, w.day, w.hour, w.minute - w.offsetMinutes, w.second);
+  const postModified = (entry: OutputPost) =>
+    docWallClock(entry.post.frontmatter.last_modified_at) ?? postWallClock(entry);
+  const newestPerTag = new Map<string, WallClock>();
+  let newestOverall: WallClock | null = null;
+  for (const entry of getOutputPosts()) {
+    const wall = postModified(entry);
+    if (!newestOverall || wallKey(wall) > wallKey(newestOverall)) newestOverall = wall;
+    for (const raw of tagsOf(entry.post.frontmatter)) {
+      const slug = slugifyTag(String(raw).trim());
+      const seen = newestPerTag.get(slug);
+      if (!seen || wallKey(wall) > wallKey(seen)) newestPerTag.set(slug, wall);
+    }
+  }
+  // Pages whose content is driven by the post list.
+  const POST_DRIVEN_PAGES = new Set(["/", "/blog/", "/tags/"]);
+
   for (const page of getSitePages()) {
     if (!pageIsIndexable(page)) continue;
-    url(absoluteUrl(page.url.replace("index.html", "")));
+    const loc = page.url.replace("index.html", "");
+    const wall = POST_DRIVEN_PAGES.has(loc) && newestOverall ? newestOverall : null;
+    url(absoluteUrl(loc), wall ? dateToXmlschema(wall) : undefined);
   }
 
   // Tag archive pages (_plugins/tag_pages_generator.rb). The /tags-<slug>/
   // legacy redirect stubs carry robots: noindex and stay out of the sitemap.
   for (const tag of getTagArchives()) {
-    url(absoluteUrl(`/tags/${tag.slug}/`));
+    const wall = newestPerTag.get(tag.slug);
+    url(absoluteUrl(`/tags/${tag.slug}/`), wall ? dateToXmlschema(wall) : undefined);
   }
 
   // ?lang= variants are client-side translations of the same HTML and must not
@@ -656,7 +680,8 @@ export function buildSitemapXml(): string {
   }
 
   for (const book of sortedBooks()) {
-    url(absoluteUrl(`${baseUrl()}${bookLink(book)}/`));
+    const wall = docWallClock(book.frontmatter.last_modified_at ?? book.frontmatter.date);
+    url(absoluteUrl(`${baseUrl()}${bookLink(book)}/`), wall ? dateToXmlschema(wall) : undefined);
   }
 
   for (const loop of sortedLoops()) {
@@ -750,6 +775,11 @@ export function buildLlmsTxt(): string {
   lines.push(`- Tags API (v1, typed JSON): ${url}/api/v1/tags.json`);
   lines.push(`- API versioning & deprecation policy: ${url}/docs/api-deprecation-policy/`);
   lines.push(`- API catalog (RFC 9727): ${url}/.well-known/api-catalog`);
+  lines.push(`- ARD catalog: ${url}/.well-known/ai-catalog.json`);
+  lines.push(`- Agent skills index: ${url}/.well-known/agent-skills/index.json`);
+  lines.push(`- Auth walkthrough (anonymous, no credentials): ${url}/auth.md`);
+  lines.push(`- Scoped llms.txt: ${url}/docs/llms.txt (docs), ${url}/api/llms.txt (API)`);
+  lines.push(`- Source repository: https://github.com/subramanya1997/subramanya1997.github.io`);
   lines.push(`- Developer docs index: ${url}/docs/ (md: ${url}/docs/index.md)`);
   lines.push(`- Search index (JSON): ${url}/search.json`);
   lines.push(`- Blog RSS feed: ${url}/feed.xml`);

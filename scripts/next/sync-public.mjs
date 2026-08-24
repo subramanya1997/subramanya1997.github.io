@@ -21,6 +21,8 @@ const FILES = [
   "robots.txt",
   "sitemap-media.xml", // maintained by hand (Jekyll keep_files); served as-is
   "openapi.json",
+  "auth.md", // agent access walkthrough (workos.com/auth-md convention)
+  "schema-map.xml", // NLWeb Schema Feeds map, referenced from robots.txt
 ];
 
 // Discovery documents whose Jekyll front matter pins them under /.well-known/.
@@ -31,6 +33,7 @@ const WELL_KNOWN = [
   "openid-configuration.json",
   "oauth-noop.json",
   "api-catalog.json",
+  "ai-catalog.json", // Agentic Resource Discovery catalog
 ];
 
 rmSync(pub, { recursive: true, force: true });
@@ -76,6 +79,19 @@ for (const file of WELL_KNOWN) {
       return value === undefined ? match : String(value);
     });
   writeFileSync(join(pub, ".well-known", file), body);
+}
+
+// Agent skills index (source: agent-skills.json at the repo root, same
+// front-matter + {{ site.url }} conventions as the WELL_KNOWN files).
+{
+  const src = join(root, "agent-skills.json");
+  if (existsSync(src)) {
+    const body = readFileSync(src, "utf8")
+      .replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, "")
+      .replace(/\{\{\s*site\.url\s*\}\}/g, siteUrl);
+    mkdirSync(join(pub, ".well-known", "agent-skills"), { recursive: true });
+    writeFileSync(join(pub, ".well-known", "agent-skills", "index.json"), body);
+  }
 }
 
 // Extensionless canonical copies (RFC 9727 / RFC 8414 / OIDC discovery paths

@@ -4,7 +4,7 @@
     "title": "subramanya.ai Content API",
     "version": "1.1.0",
     "summary": "Read-only content API for Subramanya N's personal site",
-    "description": "Machine-readable, read-only API surface of subramanya.ai, the personal site of Subramanya N (AI agents, agent security, SaaS strategy). All endpoints are static files served by GitHub Pages over anonymous HTTPS GET - no authentication, no API key, no rate-limit registration required. There are no write operations. Every HTML page also has a parallel markdown twin at `<page-url>index.md` (see the getPageMarkdown operation).\n\nDiscovery files that follow their own public standards are intentionally not modeled as operations here; find them at /llms.txt (llmstxt.org site summary), /llms-full.txt (full content), /sitemap.xml (Sitemaps 0.9), /feed.xml (RSS 2.0), and /.well-known/api-catalog (RFC 9727 linkset).\n\n## Versioning and deprecation\n\nStructured JSON resources live under the URL-path-versioned prefix `/api/v1/`. The v1 surface is additive-only: fields may be added, but existing fields, paths, and semantics will not change or disappear within v1. Any breaking change would ship as a new `/api/v2/` prefix while `/api/v1/` keeps working for at least 6 months. Deprecations are announced with sunset dates on the deprecation policy page (https://subramanya.ai/docs/api-deprecation-policy/), in the affected operations here (marked `deprecated: true`), and in /llms.txt. The static host cannot emit Sunset or Deprecation response headers, so those documents are the authoritative signal.\n\n## Rate limits and errors\n\nThere are no per-client rate limits and no RateLimit response headers - content is served by the Fastly CDN; please cache respectfully (responses carry Cache-Control and ETag headers). Unknown paths return a real HTTP 404 with an HTML body; that body embeds a machine-readable error object (see the ErrorDocument schema) in `<script type=\"application/json\" id=\"agent-error\">` and links to /llms.txt, /sitemap.xml, and /search.json for recovery. Because the host is a static CDN, standalone JSON error bodies and Accept-header content negotiation are not available.",
+    "description": "Machine-readable, read-only API surface of subramanya.ai, the personal site of Subramanya N (AI agents, agent security, SaaS strategy). All endpoints are static files served by GitHub Pages over anonymous HTTPS GET - no authentication, no API key, no rate-limit registration required. There are no write operations. Every HTML page also has a parallel markdown twin at `<page-url>index.md` (see the getPageMarkdown operation).\n\nDiscovery files that follow their own public standards are intentionally not modeled as operations here; find them at /llms.txt (llmstxt.org site summary), /llms-full.txt (full content), /sitemap.xml (Sitemaps 0.9), /feed.xml (RSS 2.0), and /.well-known/api-catalog (RFC 9727 linkset).\n\n## Versioning and deprecation\n\nStructured JSON resources live under the URL-path-versioned prefix `/api/v1/`. The v1 surface is additive-only: fields may be added, but existing fields, paths, and semantics will not change or disappear within v1. Any breaking change would ship as a new `/api/v2/` prefix while `/api/v1/` keeps working for at least 6 months. Deprecations are announced with sunset dates on the deprecation policy page (https://subramanya.ai/docs/api-deprecation-policy/), in the affected operations here (marked `deprecated: true`), and in /llms.txt. The static host cannot emit Sunset or Deprecation response headers, so those documents are the authoritative signal.\n\n## Rate limits and errors\n\nThere are no per-client rate limits and no RateLimit response headers - content is served by the Fastly CDN; please cache respectfully (responses carry Cache-Control and ETag headers). Unknown paths return a real HTTP 404 with an HTML body; that body embeds a machine-readable error object (see the ErrorDocument schema) in `<script type=\"application/json\" id=\"agent-error\">` and links to /llms.txt, /sitemap.xml, and /search.json for recovery. Because the host is a static CDN, standalone JSON error bodies and Accept-header content negotiation are not available. Versioning: endpoints are URL-versioned under /api/v1/; breaking changes ship as /api/v2/ while /v1 remains available per the deprecation policy at https://subramanya.ai/docs/api-deprecation-policy/.",
     "contact": {
       "name": "Subramanya N",
       "url": "https://subramanya.ai/contact/",
@@ -13,7 +13,8 @@
     "license": {
       "name": "All rights reserved (content); see site for reuse policy",
       "identifier": "LicenseRef-Site-Content"
-    }
+    },
+    "x-deprecation-policy": "https://subramanya.ai/docs/api-deprecation-policy/"
   },
   "externalDocs": {
     "description": "Developer documentation, including the API versioning and deprecation policy",
@@ -26,14 +27,22 @@
     }
   ],
   "tags": [
-    { "name": "discovery", "description": "Endpoints that help agents discover what exists on the site" },
-    { "name": "content", "description": "Endpoints that return site content" }
+    {
+      "name": "discovery",
+      "description": "Endpoints that help agents discover what exists on the site"
+    },
+    {
+      "name": "content",
+      "description": "Endpoints that return site content"
+    }
   ],
   "paths": {
     "/openapi.json": {
       "get": {
         "operationId": "getOpenApiSpec",
-        "tags": ["discovery"],
+        "tags": [
+          "discovery"
+        ],
         "summary": "This OpenAPI specification",
         "description": "Returns this OpenAPI 3.1 document describing the site's read-only content API.",
         "responses": {
@@ -44,17 +53,41 @@
                 "schema": {
                   "type": "object",
                   "description": "OpenAPI 3.1 document",
-                  "required": ["openapi", "info", "paths"],
+                  "required": [
+                    "openapi",
+                    "info",
+                    "paths"
+                  ],
                   "properties": {
-                    "openapi": { "type": "string", "description": "OpenAPI version, 3.1.x" },
-                    "info": { "type": "object", "description": "API metadata" },
-                    "servers": { "type": "array", "items": { "type": "object" } },
-                    "paths": { "type": "object", "description": "Available operations keyed by path" },
-                    "components": { "type": "object", "description": "Shared schemas" }
+                    "openapi": {
+                      "type": "string",
+                      "description": "OpenAPI version, 3.1.x"
+                    },
+                    "info": {
+                      "type": "object",
+                      "description": "API metadata"
+                    },
+                    "servers": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    },
+                    "paths": {
+                      "type": "object",
+                      "description": "Available operations keyed by path"
+                    },
+                    "components": {
+                      "type": "object",
+                      "description": "Shared schemas"
+                    }
                   }
                 }
               }
             }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
           }
         }
       }
@@ -62,7 +95,9 @@
     "/api/v1/site.json": {
       "get": {
         "operationId": "getSiteInfo",
-        "tags": ["discovery"],
+        "tags": [
+          "discovery"
+        ],
         "summary": "Site metadata and endpoint directory (v1)",
         "description": "Returns site metadata (name, description, author, content counts) and a directory of every machine-readable endpoint and policy page. A good single starting call for agents.",
         "responses": {
@@ -71,46 +106,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "description": "Site metadata envelope.",
-                  "required": ["api_version", "kind", "name", "url", "endpoints"],
-                  "properties": {
-                    "api_version": { "type": "string", "const": "v1", "description": "API version of this response." },
-                    "kind": { "type": "string", "const": "site_info" },
-                    "generated_from": { "type": "string", "format": "uri", "description": "URL of this OpenAPI spec." },
-                    "name": { "type": "string", "description": "Site name (Subramanya N)." },
-                    "description": { "type": "string", "description": "Site description." },
-                    "url": { "type": "string", "format": "uri", "description": "Canonical site origin." },
-                    "author": {
-                      "type": "object",
-                      "description": "Site author and contact points.",
-                      "properties": {
-                        "name": { "type": "string" },
-                        "email": { "type": "string", "format": "email" },
-                        "github": { "type": "string", "format": "uri" },
-                        "linkedin": { "type": "string", "format": "uri" }
-                      }
-                    },
-                    "counts": {
-                      "type": "object",
-                      "description": "Number of items per content collection.",
-                      "properties": {
-                        "posts": { "type": "integer", "minimum": 0 },
-                        "books": { "type": "integer", "minimum": 0 },
-                        "loops": { "type": "integer", "minimum": 0 }
-                      }
-                    },
-                    "endpoints": {
-                      "type": "object",
-                      "description": "Absolute URLs of every machine-readable endpoint.",
-                      "additionalProperties": { "type": "string", "format": "uri" }
-                    },
-                    "policies": {
-                      "type": "object",
-                      "description": "Absolute URLs of policy and trust pages (deprecation policy, privacy, contact).",
-                      "additionalProperties": { "type": "string", "format": "uri" }
-                    }
-                  }
+                  "$ref": "#/components/schemas/SiteDocument"
                 }
               }
             }
@@ -119,17 +115,26 @@
             "description": "Not found. See the ErrorDocument schema: the HTML body embeds a machine-readable error object in <script type=\"application/json\" id=\"agent-error\"> and links to /llms.txt, /sitemap.xml, and /search.json for recovery.",
             "content": {
               "text/html": {
-                "schema": { "type": "string", "description": "HTML 404 page embedding an ErrorDocument JSON object in script#agent-error" }
+                "schema": {
+                  "type": "string",
+                  "description": "HTML 404 page embedding an ErrorDocument JSON object in script#agent-error"
+                }
               }
             }
           }
+        },
+        "x-pagination": {
+          "style": "none",
+          "note": "Complete collection in a single response; no cursor or page parameters."
         }
       }
     },
     "/api/v1/posts.json": {
       "get": {
         "operationId": "listPosts",
-        "tags": ["content"],
+        "tags": [
+          "content"
+        ],
         "summary": "List all blog posts (v1, typed JSON)",
         "description": "Returns every blog post as a typed JSON object: title, canonical HTML URL, markdown twin URL, ISO date, excerpt, and tags. Newest first. Part of the additive-only /api/v1/ versioned surface; deprecation policy: https://subramanya.ai/docs/api-deprecation-policy/.",
         "responses": {
@@ -138,32 +143,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "description": "Envelope for the blog post list.",
-                  "required": ["api_version", "kind", "count", "posts"],
-                  "properties": {
-                    "api_version": { "type": "string", "const": "v1", "description": "API version of this response." },
-                    "kind": { "type": "string", "const": "post_list" },
-                    "generated_from": { "type": "string", "format": "uri", "description": "URL of this OpenAPI spec." },
-                    "count": { "type": "integer", "minimum": 0, "description": "Number of posts in the list." },
-                    "posts": {
-                      "type": "array",
-                      "description": "All blog posts, newest first.",
-                      "items": {
-                        "type": "object",
-                        "description": "A blog post.",
-                        "required": ["title", "url", "markdown_url", "date"],
-                        "properties": {
-                          "title": { "type": "string", "description": "Title of the post." },
-                          "url": { "type": "string", "format": "uri", "description": "Canonical absolute URL of the HTML page." },
-                          "markdown_url": { "type": "string", "format": "uri", "description": "Absolute URL of the post's markdown twin (text/markdown)." },
-                          "date": { "type": "string", "format": "date", "description": "Publication date, YYYY-MM-DD." },
-                          "excerpt": { "type": "string", "description": "Plain-text excerpt." },
-                          "tags": { "type": "array", "items": { "type": "string" }, "description": "Topic tag names; resolve slugs and archive URLs via listTags." }
-                        }
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/PostsDocument"
                 }
               }
             }
@@ -172,17 +152,26 @@
             "description": "Not found. See the ErrorDocument schema: the HTML body embeds a machine-readable error object in <script type=\"application/json\" id=\"agent-error\">.",
             "content": {
               "text/html": {
-                "schema": { "type": "string", "description": "HTML 404 page embedding an ErrorDocument JSON object in script#agent-error" }
+                "schema": {
+                  "type": "string",
+                  "description": "HTML 404 page embedding an ErrorDocument JSON object in script#agent-error"
+                }
               }
             }
           }
+        },
+        "x-pagination": {
+          "style": "none",
+          "note": "Complete collection in a single response; no cursor or page parameters."
         }
       }
     },
     "/api/v1/books.json": {
       "get": {
         "operationId": "listBooks",
-        "tags": ["content"],
+        "tags": [
+          "content"
+        ],
         "summary": "List all book notes (v1, typed JSON)",
         "description": "Returns every book note as a typed JSON object: title, canonical HTML URL, markdown twin URL, ISO date, excerpt, and tags. Part of the additive-only /api/v1/ versioned surface; deprecation policy: https://subramanya.ai/docs/api-deprecation-policy/.",
         "responses": {
@@ -191,32 +180,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "description": "Envelope for the book note list.",
-                  "required": ["api_version", "kind", "count", "books"],
-                  "properties": {
-                    "api_version": { "type": "string", "const": "v1", "description": "API version of this response." },
-                    "kind": { "type": "string", "const": "book_list" },
-                    "generated_from": { "type": "string", "format": "uri", "description": "URL of this OpenAPI spec." },
-                    "count": { "type": "integer", "minimum": 0, "description": "Number of book notes in the list." },
-                    "books": {
-                      "type": "array",
-                      "description": "All book notes.",
-                      "items": {
-                        "type": "object",
-                        "description": "A book note.",
-                        "required": ["title", "url", "markdown_url", "date"],
-                        "properties": {
-                          "title": { "type": "string", "description": "Title of the book note." },
-                          "url": { "type": "string", "format": "uri", "description": "Canonical absolute URL of the HTML page." },
-                          "markdown_url": { "type": "string", "format": "uri", "description": "Absolute URL of the note's markdown twin (text/markdown)." },
-                          "date": { "type": "string", "format": "date", "description": "Publication date, YYYY-MM-DD." },
-                          "excerpt": { "type": "string", "description": "Plain-text excerpt." },
-                          "tags": { "type": "array", "items": { "type": "string" }, "description": "Topic tag names; resolve slugs and archive URLs via listTags." }
-                        }
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/BooksDocument"
                 }
               }
             }
@@ -225,17 +189,27 @@
             "description": "Not found. See the ErrorDocument schema: the HTML body embeds a machine-readable error object in <script type=\"application/json\" id=\"agent-error\">.",
             "content": {
               "text/html": {
-                "schema": { "type": "string", "description": "HTML 404 page embedding an ErrorDocument JSON object in script#agent-error" }
+                "schema": {
+                  "type": "string",
+                  "description": "HTML 404 page embedding an ErrorDocument JSON object in script#agent-error"
+                }
               }
             }
           }
+        },
+        "x-pagination": {
+          "style": "none",
+          "note": "Complete collection in a single response; no cursor or page parameters."
         }
       }
     },
     "/api/v1/tags.json": {
       "get": {
         "operationId": "listTags",
-        "tags": ["discovery", "content"],
+        "tags": [
+          "discovery",
+          "content"
+        ],
         "summary": "List all topic tags (v1, typed JSON)",
         "description": "Returns every topic tag used on blog posts, with its URL slug, post count, and tag archive URL. Use it to map the tag names returned by listPosts and searchContent to browsable archive pages. Part of the additive-only /api/v1/ versioned surface; deprecation policy: https://subramanya.ai/docs/api-deprecation-policy/.",
         "responses": {
@@ -244,30 +218,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "description": "Envelope for the tag list.",
-                  "required": ["api_version", "kind", "count", "tags"],
-                  "properties": {
-                    "api_version": { "type": "string", "const": "v1", "description": "API version of this response." },
-                    "kind": { "type": "string", "const": "tag_list" },
-                    "generated_from": { "type": "string", "format": "uri", "description": "URL of this OpenAPI spec." },
-                    "count": { "type": "integer", "minimum": 0, "description": "Number of distinct tags." },
-                    "tags": {
-                      "type": "array",
-                      "description": "All topic tags, sorted by name.",
-                      "items": {
-                        "type": "object",
-                        "description": "A topic tag.",
-                        "required": ["name", "slug", "post_count", "archive_url"],
-                        "properties": {
-                          "name": { "type": "string", "description": "Display name of the tag, e.g. 'AI Agents'." },
-                          "slug": { "type": "string", "description": "URL slug of the tag." },
-                          "post_count": { "type": "integer", "minimum": 1, "description": "Number of blog posts carrying this tag." },
-                          "archive_url": { "type": "string", "format": "uri", "description": "Absolute URL of the tag's archive page." }
-                        }
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/TagsDocument"
                 }
               }
             }
@@ -276,17 +227,27 @@
             "description": "Not found. See the ErrorDocument schema: the HTML body embeds a machine-readable error object in <script type=\"application/json\" id=\"agent-error\">.",
             "content": {
               "text/html": {
-                "schema": { "type": "string", "description": "HTML 404 page embedding an ErrorDocument JSON object in script#agent-error" }
+                "schema": {
+                  "type": "string",
+                  "description": "HTML 404 page embedding an ErrorDocument JSON object in script#agent-error"
+                }
               }
             }
           }
+        },
+        "x-pagination": {
+          "style": "none",
+          "note": "Complete collection in a single response; no cursor or page parameters."
         }
       }
     },
     "/search.json": {
       "get": {
         "operationId": "searchContent",
-        "tags": ["discovery", "content"],
+        "tags": [
+          "discovery",
+          "content"
+        ],
         "summary": "Full-text search index of posts, books, and loops",
         "description": "Returns the complete search index as a JSON array (~0.5 MB). Each item is a blog post, book note, or automation-loop prompt with title, URL, plain-text content, tags, view count, and reading time. Agents should fetch this once and filter client-side; there is no server-side query parameter. For a lighter, typed list without full content, use listPosts or listBooks.",
         "responses": {
@@ -296,39 +257,9 @@
               "application/json": {
                 "schema": {
                   "type": "array",
-                  "description": "All indexed content items.",
+                  "description": "Complete search corpus (no pagination).",
                   "items": {
-                    "type": "object",
-                    "description": "One entry in the site search index: a blog post, a book note, or an automation-loop prompt.",
-                    "required": ["kind", "title", "url"],
-                    "properties": {
-                      "kind": {
-                        "type": "string",
-                        "enum": ["post", "book", "loop"],
-                        "description": "Whether this entry is a blog post, a book note, or an automation loop from /awesome-loops/."
-                      },
-                      "title": { "type": "string", "description": "Title of the entry." },
-                      "url": { "type": "string", "description": "Site-relative URL of the HTML page. Append `index.md` for the markdown twin." },
-                      "date_display": { "type": ["string", "null"], "description": "Human-readable publication date, e.g. 'August 17, 2026'. Null for undated entries such as loops." },
-                      "date_iso": { "type": ["string", "null"], "description": "Publication date in YYYY-MM-DD format, or null for undated entries." },
-                      "excerpt": { "type": "string", "description": "Plain-text excerpt." },
-                      "content": { "type": "string", "description": "Full plain-text content, HTML stripped." },
-                      "views": { "type": ["integer", "null"], "description": "Page views from site analytics; null when analytics are unavailable for the entry." },
-                      "reading_minutes": { "type": ["integer", "null"], "minimum": 1, "description": "Estimated reading time in minutes at 200 wpm; null for entries without it." },
-                      "tags": {
-                        "type": "array",
-                        "description": "Topic tags. Tag archive pages live at /tags/<slug>/.",
-                        "items": {
-                          "type": "object",
-                          "description": "A topic tag on a search item.",
-                          "required": ["name", "slug"],
-                          "properties": {
-                            "name": { "type": "string", "description": "Display name of the tag, e.g. 'AI Agents'." },
-                            "slug": { "type": "string", "description": "URL slug of the tag; the archive page is /tags/<slug>/." }
-                          }
-                        }
-                      }
-                    }
+                    "$ref": "#/components/schemas/SearchItem"
                   }
                 }
               }
@@ -338,17 +269,26 @@
             "description": "Not found. See the ErrorDocument schema: the HTML body embeds a machine-readable error object in <script type=\"application/json\" id=\"agent-error\">.",
             "content": {
               "text/html": {
-                "schema": { "type": "string", "description": "HTML 404 page embedding an ErrorDocument JSON object in script#agent-error" }
+                "schema": {
+                  "type": "string",
+                  "description": "HTML 404 page embedding an ErrorDocument JSON object in script#agent-error"
+                }
               }
             }
           }
+        },
+        "x-pagination": {
+          "style": "none",
+          "note": "Complete collection in a single response; no cursor or page parameters."
         }
       }
     },
     "/{pagePath}/index.md": {
       "get": {
         "operationId": "getPageMarkdown",
-        "tags": ["content"],
+        "tags": [
+          "content"
+        ],
         "summary": "Markdown twin of any HTML page",
         "description": "Every HTML page on the site has a parallel markdown representation at `<page-url>index.md`, served as `text/markdown; charset=utf-8`. For example, the markdown twin of https://subramanya.ai/work/ is https://subramanya.ai/work/index.md. The site homepage's twin is /index.md. Page URLs are enumerated in /sitemap.xml and /llms.txt; each HTML page also advertises its twin via `<link rel=\"alternate\" type=\"text/markdown\">`.",
         "parameters": [
@@ -357,21 +297,31 @@
             "in": "path",
             "required": true,
             "description": "The page's URL path without leading or trailing slash, e.g. `work`, `blog`, or `2026/08/17/break-in-break-out-ai-agent-security-in-2026`.",
-            "schema": { "type": "string", "pattern": "^[A-Za-z0-9/_-]+$" }
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9/_-]+$"
+            }
           }
         ],
         "responses": {
           "200": {
             "description": "Markdown representation of the page.",
             "content": {
-              "text/markdown": { "schema": { "type": "string" } }
+              "text/markdown": {
+                "schema": {
+                  "type": "string"
+                }
+              }
             }
           },
           "404": {
             "description": "Not found. See the ErrorDocument schema: the HTML body embeds a machine-readable error object in <script type=\"application/json\" id=\"agent-error\">.",
             "content": {
               "text/html": {
-                "schema": { "type": "string", "description": "HTML 404 page embedding an ErrorDocument JSON object in script#agent-error" }
+                "schema": {
+                  "type": "string",
+                  "description": "HTML 404 page embedding an ErrorDocument JSON object in script#agent-error"
+                }
               }
             }
           }
@@ -384,20 +334,30 @@
       "ErrorDocument": {
         "type": "object",
         "description": "Typed error model for this API. The static host returns errors as an HTML 404 page; that page embeds exactly this JSON object in <script type=\"application/json\" id=\"agent-error\">, so agents can extract a structured error without parsing the surrounding HTML.",
-        "required": ["error"],
+        "required": [
+          "error"
+        ],
         "properties": {
           "error": {
             "type": "object",
-            "required": ["code", "status", "message"],
+            "required": [
+              "code",
+              "status",
+              "message"
+            ],
             "properties": {
               "code": {
                 "type": "string",
-                "enum": ["not_found"],
+                "enum": [
+                  "not_found"
+                ],
                 "description": "Machine-readable error code. The static host can only produce not_found."
               },
               "status": {
                 "type": "integer",
-                "enum": [404],
+                "enum": [
+                  404
+                ],
                 "description": "HTTP status code of the response."
               },
               "message": {
@@ -411,12 +371,411 @@
               "links": {
                 "type": "object",
                 "description": "Absolute URLs of recovery endpoints (llms.txt, sitemap, search index, OpenAPI spec, docs).",
-                "additionalProperties": { "type": "string", "format": "uri" }
+                "additionalProperties": {
+                  "type": "string",
+                  "format": "uri"
+                }
               }
+            }
+          }
+        }
+      },
+      "PostSummary": {
+        "type": "object",
+        "description": "One blog post on subramanya.ai.",
+        "required": [
+          "title",
+          "url",
+          "date"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Post title."
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Canonical HTML URL of the post."
+          },
+          "markdown_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Markdown twin of the post (same URL + index.md)."
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "Publication date (YYYY-MM-DD)."
+          },
+          "excerpt": {
+            "type": "string",
+            "description": "Short plain-text summary."
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Topic tags."
+          }
+        }
+      },
+      "BookSummary": {
+        "type": "object",
+        "description": "One published book/handbook on subramanya.ai.",
+        "required": [
+          "title",
+          "url",
+          "date"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Post title."
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Canonical HTML URL of the post."
+          },
+          "markdown_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Markdown twin of the post (same URL + index.md)."
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "Publication date (YYYY-MM-DD)."
+          },
+          "excerpt": {
+            "type": "string",
+            "description": "Short plain-text summary."
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Topic tags."
+          }
+        }
+      },
+      "TagEntry": {
+        "type": "object",
+        "description": "One content tag with its archive page.",
+        "required": [
+          "name",
+          "slug",
+          "archive_url"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Display name of the tag."
+          },
+          "slug": {
+            "type": "string",
+            "description": "URL slug of the tag."
+          },
+          "post_count": {
+            "type": "integer",
+            "description": "Number of posts carrying the tag."
+          },
+          "archive_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Tag archive page URL."
+          }
+        }
+      },
+      "PostsDocument": {
+        "type": "object",
+        "required": [
+          "api_version",
+          "kind",
+          "count",
+          "posts"
+        ],
+        "properties": {
+          "api_version": {
+            "type": "string",
+            "description": "API version identifier, currently \"v1\"."
+          },
+          "kind": {
+            "type": "string",
+            "description": "Document kind discriminator."
+          },
+          "generated_from": {
+            "type": "string",
+            "description": "Source the document was generated from."
+          },
+          "count": {
+            "type": "integer",
+            "description": "Total number of posts (the complete collection is returned; no pagination)."
+          },
+          "posts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PostSummary"
+            }
+          }
+        },
+        "description": "Every blog post in one response."
+      },
+      "BooksDocument": {
+        "type": "object",
+        "required": [
+          "api_version",
+          "kind",
+          "count",
+          "books"
+        ],
+        "properties": {
+          "api_version": {
+            "type": "string",
+            "description": "API version identifier, currently \"v1\"."
+          },
+          "kind": {
+            "type": "string",
+            "description": "Document kind discriminator."
+          },
+          "generated_from": {
+            "type": "string",
+            "description": "Source the document was generated from."
+          },
+          "count": {
+            "type": "integer",
+            "description": "Total number of books (complete collection; no pagination)."
+          },
+          "books": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BookSummary"
+            }
+          }
+        },
+        "description": "Every published book in one response."
+      },
+      "TagsDocument": {
+        "type": "object",
+        "required": [
+          "api_version",
+          "kind",
+          "count",
+          "tags"
+        ],
+        "properties": {
+          "api_version": {
+            "type": "string",
+            "description": "API version identifier, currently \"v1\"."
+          },
+          "kind": {
+            "type": "string",
+            "description": "Document kind discriminator."
+          },
+          "generated_from": {
+            "type": "string",
+            "description": "Source the document was generated from."
+          },
+          "count": {
+            "type": "integer",
+            "description": "Total number of tags (complete collection; no pagination)."
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TagEntry"
+            }
+          }
+        },
+        "description": "Every content tag in one response."
+      },
+      "SiteDocument": {
+        "type": "object",
+        "required": [
+          "api_version",
+          "kind",
+          "name",
+          "url",
+          "endpoints"
+        ],
+        "properties": {
+          "api_version": {
+            "type": "string",
+            "description": "API version identifier, currently \"v1\"."
+          },
+          "kind": {
+            "type": "string",
+            "description": "Document kind discriminator."
+          },
+          "generated_from": {
+            "type": "string",
+            "description": "Source the document was generated from."
+          },
+          "name": {
+            "type": "string",
+            "description": "Site name (Subramanya N)."
+          },
+          "description": {
+            "type": "string",
+            "description": "Site description."
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Canonical site origin."
+          },
+          "author": {
+            "type": "object",
+            "description": "Site author and profiles.",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string",
+                "format": "email"
+              },
+              "github": {
+                "type": "string",
+                "format": "uri"
+              },
+              "linkedin": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          },
+          "counts": {
+            "type": "object",
+            "description": "Content counts.",
+            "properties": {
+              "posts": {
+                "type": "integer"
+              },
+              "books": {
+                "type": "integer"
+              },
+              "loops": {
+                "type": "integer"
+              }
+            }
+          },
+          "endpoints": {
+            "type": "object",
+            "description": "Directory of every machine endpoint (absolute URLs).",
+            "additionalProperties": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "policies": {
+            "type": "object",
+            "description": "Policy and contact page URLs.",
+            "additionalProperties": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        },
+        "description": "Site metadata and endpoint directory."
+      },
+      "SearchTag": {
+        "type": "object",
+        "required": [
+          "name",
+          "slug",
+          "url"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "SearchItem": {
+        "type": "object",
+        "description": "One searchable content item (post or book) with full text.",
+        "required": [
+          "kind",
+          "title",
+          "url"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "post",
+              "book"
+            ],
+            "description": "Item type."
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "description": "Site-relative URL."
+          },
+          "date_display": {
+            "type": "string",
+            "description": "Human-formatted date."
+          },
+          "date_iso": {
+            "type": "string",
+            "format": "date",
+            "description": "ISO date."
+          },
+          "excerpt": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string",
+            "description": "Full plain-text content for client-side search."
+          },
+          "views": {
+            "type": "integer",
+            "description": "Approximate page views."
+          },
+          "reading_minutes": {
+            "type": "integer"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SearchTag"
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "NotFound": {
+        "description": "Unknown path. Static hosting returns an HTML error page (text/html) with HTTP 404; the page embeds a machine-readable JSON block (<script type=\"application/json\" id=\"agent-error\">, schema: #/components/schemas/ErrorDocument) plus recovery links to /llms.txt, /sitemap.xml, /search.json and /openapi.json. Detect errors by HTTP status, not body content-type.",
+        "content": {
+          "text/html": {
+            "schema": {
+              "type": "string",
+              "description": "HTML error page embedding the agent-error JSON block."
             }
           }
         }
       }
     }
+  },
+  "x-agent-resources": {
+    "llms_txt": "https://subramanya.ai/llms.txt",
+    "auth_md": "https://subramanya.ai/auth.md",
+    "api_catalog": "https://subramanya.ai/.well-known/api-catalog",
+    "ai_catalog": "https://subramanya.ai/.well-known/ai-catalog.json",
+    "agent_skills": "https://subramanya.ai/.well-known/agent-skills/index.json"
   }
 }

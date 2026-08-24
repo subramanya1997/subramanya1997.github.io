@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "subramanya-ai",
+  "version": "1.0.0",
+  "description": "Skills for consuming subramanya.ai — a personal site with a read-only JSON content API, llms.txt, markdown twins, and full agent discovery surfaces.",
+  "author": {
+    "name": "Subramanya N",
+    "url": "https://subramanya.ai"
+  },
+  "homepage": "https://subramanya.ai/docs/",
+  "repository": "https://github.com/subramanya1997/subramanya1997.github.io",
+  "license": "MIT",
+  "keywords": ["content-api", "llms-txt", "markdown", "blog", "agent-readable"]
+}

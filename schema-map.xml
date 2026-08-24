@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- NLWeb Schema Feeds map: structured data feeds for this site. -->
+<schemamap xmlns="http://www.nlweb.ai/schemas/schemamap/1.0">
+  <feed>
+    <loc>https://subramanya.ai/feed.xml</loc>
+    <type>application/rss+xml</type>
+    <description>RSS 2.0 feed of blog posts</description>
+  </feed>
+  <feed>
+    <loc>https://subramanya.ai/search.json</loc>
+    <type>application/json</type>
+    <description>Full-content JSON corpus of posts and books</description>
+  </feed>
+  <feed>
+    <loc>https://subramanya.ai/api/v1/posts.json</loc>
+    <type>application/json</type>
+    <description>Structured post metadata (see https://subramanya.ai/openapi.json)</description>
+  </feed>
+</schemamap>
