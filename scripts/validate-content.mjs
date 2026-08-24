@@ -19,14 +19,19 @@ const BOOKS_DIR = path.join(CONTENT_DIR, "books");
 const LOOPS_DIR = path.join(CONTENT_DIR, "loops");
 const DATA_DIR = path.join(CONTENT_DIR, "data");
 // Page sources colocated with their app/ route (see lib/page-sources.mjs).
+// The home page has no entry here: it is pure TSX (app/page.tsx) with its
+// metadata declared in lib/page-sources.mjs, so there is no markdown body an
+// inline <style>/<script> block could creep back into. The guard below applies
+// only to pages that still have a `content.md`.
 const TOP_LEVEL_PAGES = [
-  "app/content.html",
   "app/blog/content.md",
   "app/books/content.md",
   "app/work/content.md",
   "app/stats/content.md",
 ];
-const NOT_FOUND_PAGE = "app/not-found.content.html";
+// The 404 is rendered by app/not-found.tsx — that is where the agent recovery
+// links now live.
+const NOT_FOUND_PAGE = "app/not-found.tsx";
 const FRONT_MATTER_PATTERN = /^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*(?:\r?\n|$)/;
 
 const errors = [];

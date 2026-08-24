@@ -25,12 +25,13 @@ Vercel project `subramanya-ai` is git-connected. Do not deploy manually with
 - Site-wide settings live in `site.config.mjs` (plain JS, JSDoc-typed) — it
   replaced `_config.yml` and is imported by both `lib/content.ts` and the
   bare-node build scripts.
-- Page sources are colocated with their route: `app/<route>/content.md` (or
-  `.html`), with `app/content.html` for the home page and
-  `app/not-found.content.html` for the 404. `lib/page-sources.mjs` is the
-  registry that pins each one's URL; `docs/*.md` remain a flat directory of
-  pages pinned by their own `permalink:`. Next ignores non-route files inside
-  `app/`, so these are inert as far as routing goes.
+- Page sources are colocated with their route: `app/<route>/content.md`.
+  `lib/page-sources.mjs` is the registry that pins each one's URL; `docs/*.md`
+  remain a flat directory of pages pinned by their own `permalink:`. Next
+  ignores non-route files inside `app/`, so these are inert as far as routing
+  goes. The home page and 404 have no source file — they are pure TSX
+  (`app/page.tsx`, `app/not-found.tsx`) and their metadata is declared inline
+  in the registry's `PAGE_ENTRIES`.
 - `lib/content.ts` loads that content; `lib/markdown.ts` renders markdown with
   byte-level kramdown/rouge parity (do not swap in a stock renderer — heading
   ids, rouge token classes, and smart quotes are all matched to the old Jekyll

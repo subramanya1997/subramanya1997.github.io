@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 import matter from "gray-matter";
 import yaml from "js-yaml";
 import { site } from "../../../site.config.mjs";
-import { PAGE_FILES, PAGE_DIRS } from "../../../lib/page-sources.mjs";
+import { PAGE_ENTRIES, PAGE_FILES, PAGE_DIRS } from "../../../lib/page-sources.mjs";
 
 export const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "..", "..");
 
@@ -123,13 +123,23 @@ export function loops() {
 }
 
 /**
- * Page sources: the `content.*` files colocated with their app/ route
- * (lib/page-sources.mjs) plus the flat docs/ directory. Every URL is pinned —
- * by the file's own `permalink:` front matter, else by the registry — and is
- * never derived from where the file sits on disk.
+ * Every page: the metadata-only entries (home, 404), the `content.md` files
+ * colocated with their app/ route, and the flat docs/ directory — all from
+ * lib/page-sources.mjs. Every URL is pinned by the page's own `permalink:`
+ * front matter, else by the registry; never derived from a file's location.
  */
 export function pages() {
   const found = [];
+  for (const entry of PAGE_ENTRIES) {
+    found.push({
+      kind: "page",
+      url: entry.url,
+      data: entry.frontmatter,
+      content: "",
+      sourcePath: null,
+    });
+  }
+
   const read = (sourcePath, fallbackUrl) => {
     if (!fs.existsSync(sourcePath)) return;
     const raw = fs.readFileSync(sourcePath, "utf8");

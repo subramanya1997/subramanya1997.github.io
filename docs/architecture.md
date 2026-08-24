@@ -25,7 +25,7 @@ translation, TOC behavior, newsletter UI, and post interactions.
    sites in `content/books-static/`.
 2. `lib/content.ts` loads content from `content/posts/`, `content/books/`,
    `content/loops/` and `content/data/`; the page sources colocated with each
-   route (`app/content.html`, `app/blog/content.md`, …) are registered in
+   route (`app/blog/content.md`, `app/work/content.md`, …) are registered in
    `lib/page-sources.mjs`.
 3. `lib/markdown.ts` renders markdown with byte-level parity to the original
    kramdown/rouge output (heading ids, token classes, smart quotes).
@@ -51,7 +51,7 @@ tag drifts.
 - `content/loops/`: Curated automation-loop marketplace listings.
 - `content/data/`: Structured data for the homepage, work page, i18n labels, and analytics-derived view counts.
 - `content/books-static/`: Pre-built static book sites served verbatim at their original URLs.
-- `app/<route>/content.md`: Each page's own source (front matter plus body), colocated with the route that renders it; `lib/page-sources.mjs` is the registry that pins their URLs.
+- `app/<route>/content.md`: Each page's own source (front matter plus body), colocated with the route that renders it; `lib/page-sources.mjs` is the registry that pins their URLs, and declares the home page and 404 inline since those are rendered entirely in TSX.
 - `assets/`: Images, JavaScript, translation JSON, video, resume files, and page/component CSS.
 - `css/main.css`: Global site styles shared across the whole site.
 - `app/`: Next.js App Router routes — one route per page type, plus the non-HTML endpoints.
@@ -112,7 +112,7 @@ tag drifts.
 
 ## Where To Change Things
 
-- Homepage content and structure: `app/content.html` and `app/page.tsx`
+- Homepage content and structure: `app/page.tsx` (no separate source file; its page metadata is a `PAGE_ENTRIES` entry in `lib/page-sources.mjs`)
 - Homepage bio/work data: `content/data/about.yaml`
 - Blog listing page: `app/blog/content.md` and `app/blog/page.tsx`
 - Books listing page: `app/books/content.md` and `app/books/page.tsx`

@@ -140,7 +140,7 @@ Use these only for page-owned behavior and styles. Shared global behavior still 
 
 ## Guardrails
 
-- Do not add inline `<style>` blocks or inline page-owned `<script>` blocks back to `app/content.html`, `app/blog/content.md`, `app/books/content.md`, `app/work/content.md`, or `app/stats/content.md`.
+- Do not add inline `<style>` blocks or inline page-owned `<script>` blocks back to `app/blog/content.md`, `app/books/content.md`, `app/work/content.md`, or `app/stats/content.md`.
 - Do not swap the markdown renderer in `lib/markdown.ts` for a stock one — heading ids, rouge token classes, and smart quotes are matched byte-for-byte to the original published output.
 - Never change a URL. Run `bun run parity` after any routing or build change.
 - Keep shared top-level page UI inside `components/` once a repeated pattern exists in more than one page.

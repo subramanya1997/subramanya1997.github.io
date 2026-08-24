@@ -24,7 +24,7 @@ import {
   type Post,
   type CollectionDoc,
 } from "./content";
-import { PAGE_FILES, PAGE_DIRS } from "./page-sources.mjs";
+import { PAGE_ENTRIES, PAGE_FILES, PAGE_DIRS } from "./page-sources.mjs";
 import { renderMarkdown } from "./markdown";
 
 // ---------------------------------------------------------------------------
@@ -337,20 +337,31 @@ export interface SitePage {
   url: string;
   frontmatter: Record<string, unknown>;
   content: string;
-  sourcePath: string;
+  /** null for the metadata-only pages declared in PAGE_ENTRIES. */
+  sourcePath: string | null;
 }
 
 let _pages: SitePage[] | null = null;
 
 /**
- * Every page source: the `content.*` files colocated with their app/ route
- * (lib/page-sources.mjs) plus the flat docs/ directory. Each page's URL is
- * pinned — by its own `permalink:` front matter where it has one, otherwise by
- * the registry — never derived from where the file sits on disk.
+ * Every page: the metadata-only entries (home, 404), the `content.md` files
+ * colocated with their app/ route, and the flat docs/ directory — all from
+ * lib/page-sources.mjs. Each page's URL is pinned by its own `permalink:` front
+ * matter where it has one, otherwise by the registry; never derived from where
+ * a file sits on disk.
  */
 export function getSitePages(): SitePage[] {
   if (_pages) return _pages;
   const pages: SitePage[] = [];
+
+  for (const entry of PAGE_ENTRIES) {
+    pages.push({
+      url: entry.url,
+      frontmatter: entry.frontmatter,
+      content: "",
+      sourcePath: null,
+    });
+  }
 
   const read = (sourcePath: string, fallbackUrl: string | null) => {
     const raw = fs.readFileSync(sourcePath, "utf8");
