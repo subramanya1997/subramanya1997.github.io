@@ -1,7 +1,7 @@
 // Syncs static Jekyll-era directories into public/ so Next.js serves them
 // verbatim. The originals at the repo root stay the source of truth (the
 // translation / OG-image / analytics scripts keep writing there).
-import { cpSync, mkdirSync, rmSync, existsSync, copyFileSync, readFileSync, writeFileSync } from "node:fs";
+import { cpSync, mkdirSync, rmSync, existsSync, copyFileSync, readFileSync, writeFileSync, readdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import yaml from "js-yaml";
@@ -47,6 +47,19 @@ for (const dir of DIRS) {
 for (const file of FILES) {
   const src = join(root, file);
   if (existsSync(src)) copyFileSync(src, join(pub, file));
+}
+
+// Pre-built book sites (HonKit output vendored in _books_static/<slug>/) are
+// served verbatim at /<slug>/ — formerly separate GitHub Pages project sites.
+const booksStatic = join(root, "_books_static");
+if (existsSync(booksStatic)) {
+  for (const entry of readdirSync(booksStatic, { withFileTypes: true })) {
+    if (!entry.isDirectory() || entry.name.startsWith(".")) continue;
+    cpSync(join(booksStatic, entry.name), join(pub, entry.name), {
+      recursive: true,
+      filter: (p) => !p.split("/").pop().startsWith("."),
+    });
+  }
 }
 
 mkdirSync(join(pub, ".well-known"), { recursive: true });
