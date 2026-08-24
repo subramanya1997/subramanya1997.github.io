@@ -10,9 +10,8 @@ Node built-ins only — no `npm install`, no `package.json`.
 ## The baseline is frozen
 
 `scripts/parity/manifest.json` was captured from the final Jekyll build
-before the Jekyll toolchain (Gemfile, `_plugins/`, and all templates except
-the few `_layouts/`/`_includes/` files still read at build time) was removed
-from this repo. It can no longer be regenerated — there is no
+before the Jekyll toolchain (Gemfile, `_plugins/`, and all `_layouts/` and
+`_includes/` templates) was removed from this repo. It can no longer be regenerated — there is no
 Jekyll build to run it against — so it stays a fixed, permanent baseline.
 New URLs are verified by diffing the Next.js build against this frozen
 manifest with `diff-manifests.mjs`, below; intentional differences from the

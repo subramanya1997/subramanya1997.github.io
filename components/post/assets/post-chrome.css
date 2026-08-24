@@ -1,0 +1,101 @@
+
+  /* Reading progress + code-block copy affordance. */
+
+  .reading-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--accent);
+    opacity: 0.85;
+    z-index: 10000;
+    transition: width 0.1s linear;
+  }
+
+  .code-wrapper {
+    position: relative;
+    margin: var(--space-8) 0;
+  }
+
+  /* Match pre margin to code-wrapper to prevent CLS when wrapping */
+  .post-content pre {
+    margin: var(--space-8) 0;
+  }
+
+  /* The rouge wrapper divs are structural only. */
+  .post-content .highlighter-rouge,
+  .post-content .highlight {
+    margin: 0;
+    background: transparent;
+  }
+
+  .post-content .highlighter-rouge {
+    margin: var(--space-8) 0;
+  }
+
+  .copy-code-button {
+    position: absolute;
+    top: var(--space-2);
+    right: var(--space-2);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-2);
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    color: var(--ink-subtle);
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-medium);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity var(--duration) var(--ease),
+      color var(--duration) var(--ease),
+      border-color var(--duration) var(--ease);
+    z-index: 10;
+  }
+
+  .code-wrapper:hover .copy-code-button,
+  .copy-code-button:focus-visible,
+  .copy-code-button.copied {
+    opacity: 1;
+  }
+
+  .copy-code-button:hover {
+    color: var(--ink);
+    border-color: var(--line-strong);
+  }
+
+  .copy-code-button.copied {
+    background-color: var(--success);
+    border-color: var(--success);
+    color: var(--success-contrast);
+  }
+
+  .copy-code-button svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .code-wrapper pre {
+    margin: 0;
+  }
+
+  /* Touch devices have no hover; keep the button permanently visible. */
+  @media (hover: none) {
+    .copy-code-button {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .copy-code-button .copy-text {
+      display: none;
+    }
+
+    .copy-code-button {
+      padding: var(--space-2);
+    }
+  }

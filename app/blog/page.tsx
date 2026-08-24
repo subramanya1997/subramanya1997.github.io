@@ -26,6 +26,9 @@ export default async function BlogIndex() {
   return (
     <PageLayout meta={meta}>
       <div className="blog-container">
+        <header className="index-header">
+          <h1>{meta.title}</h1>
+        </header>
         <div className="blog-posts">
           {posts.map((post, index) => (
             <Fragment key={post.url}>

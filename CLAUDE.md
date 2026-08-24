@@ -36,11 +36,11 @@ Vercel project `subramanya-ai` is git-connected. Do not deploy manually with
   byte-level kramdown/rouge parity (do not swap in a stock renderer — heading
   ids, rouge token classes, and smart quotes are all matched to the old Jekyll
   output).
-- Eight Jekyll-era template files are still live build inputs:
-  `components/lib/includes.ts` reads the inline `<style>`/`<script>` blocks of
-  `_layouts/post.html` and `_includes/{citation,language-switcher,mermaid,
-  post-faq,related-posts,toc,translation-toast}.html` at build time. Do not
-  delete or "clean up" these files.
+- `components/post/assets/` holds the post chrome's hand-written CSS and vanilla
+  JS as plain `.css`/`.client.js` files; `components/post/assets/index.ts` reads
+  them at build time and the post components inject them **inline** via
+  `dangerouslySetInnerHTML`. Do not convert them to `<link>`/`<script src>` — the
+  bytes are part of the prerendered HTML the parity harness compares.
 - Validation: `node scripts/validate-content.mjs` (content/front-matter
   contracts) and `python3 scripts/validate_api_output.py out` (built API
   surface vs `openapi.json`). CI (`code_quality.yml`) runs build + parity +

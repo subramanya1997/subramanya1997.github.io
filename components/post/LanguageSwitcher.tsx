@@ -1,7 +1,6 @@
-// Port of _includes/language-switcher.html. Only the languages that actually
-// have a translation JSON for this post are listed (the Liquid walked
-// `site.static_files`; see components/lib/post-extras#availableLanguages).
-import { includeScript, includeStyle } from "@/components/lib/includes";
+// Language switcher. Only the languages that actually have a translation JSON
+// for this post are listed (see components/lib/post-extras#availableLanguages).
+import { languageSwitcherCss, languageSwitcherJs } from "./assets";
 import { getSiteConfig } from "@/components/lib/site-data";
 import { availableLanguages } from "@/components/lib/post-extras";
 
@@ -84,8 +83,8 @@ export default function LanguageSwitcher({ slug }: { slug: string }) {
         </ul>
       </div>
 
-      <style dangerouslySetInnerHTML={{ __html: includeStyle("language-switcher.html") }} />
-      <script dangerouslySetInnerHTML={{ __html: includeScript("language-switcher.html") }} />
+      <style dangerouslySetInnerHTML={{ __html: languageSwitcherCss() }} />
+      <script dangerouslySetInnerHTML={{ __html: languageSwitcherJs() }} />
     </>
   );
 }

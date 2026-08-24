@@ -1,5 +1,5 @@
-// Port of _includes/translation-toast.html.
-import { includeScript, includeStyle } from "@/components/lib/includes";
+// Toast shown when a post is being read in a machine translation.
+import { translationToastCss, translationToastJs } from "./assets";
 
 export default function TranslationToast() {
   return (
@@ -64,8 +64,8 @@ export default function TranslationToast() {
         <div className="toast-progress" id="toastProgress"></div>
       </div>
 
-      <style dangerouslySetInnerHTML={{ __html: includeStyle("translation-toast.html") }} />
-      <script dangerouslySetInnerHTML={{ __html: includeScript("translation-toast.html") }} />
+      <style dangerouslySetInnerHTML={{ __html: translationToastCss() }} />
+      <script dangerouslySetInnerHTML={{ __html: translationToastJs() }} />
     </>
   );
 }

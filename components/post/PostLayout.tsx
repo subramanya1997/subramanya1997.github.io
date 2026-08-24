@@ -3,7 +3,7 @@
 // `layout="post"` tells SiteShell to drop the footer newsletter, matching
 // Jekyll's `{% unless page.layout == 'post' %}`; the newsletter is rendered
 // here instead, exactly where the Liquid put it.
-import { includeStyles } from "@/components/lib/includes";
+import { postChromeCss, postLayoutCss } from "./assets";
 import { linkTitle, stripHtml, stripNewlines } from "@/components/lib/jekyll";
 import type { PageMeta } from "@/components/lib/page-meta";
 import {
@@ -71,7 +71,6 @@ export default function PostLayout({
   const author = typeof fm.author === "string" ? fm.author : undefined;
   const { previous, next } = postNeighbours(post);
   const shareTarget = { url: canonical, title: fm.title, excerpt: fm.excerpt };
-  const layoutStyles = includeStyles("_layouts/post.html");
 
   // `_layouts/post.html`'s own JSON-LD node. `schema_type` defaults to
   // TechArticle; `last_modified_at` falls back to the publication date.
@@ -343,7 +342,7 @@ export default function PostLayout({
       {/* Optimized Post Scripts (external file with debounced scroll handlers) */}
       <script src="/assets/js/post-scripts.js" defer />
 
-      <style dangerouslySetInnerHTML={{ __html: layoutStyles[0] }} />
+      <style dangerouslySetInnerHTML={{ __html: postChromeCss() }} />
 
       {/* Structured Data for the post. */}
       <script
@@ -351,7 +350,7 @@ export default function PostLayout({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd, null, 2) }}
       />
 
-      <style dangerouslySetInnerHTML={{ __html: layoutStyles[1] }} />
+      <style dangerouslySetInnerHTML={{ __html: postLayoutCss() }} />
 
       {/* Translation Toast */}
       <TranslationToast />
