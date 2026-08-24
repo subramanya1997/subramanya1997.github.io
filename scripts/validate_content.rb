@@ -217,6 +217,15 @@ class ValidationRunner
 
     duplicates = operation_ids.tally.select { |_, count| count > 1 }.keys
     add_error("openapi.json: duplicate operationIds: #{duplicates.join(', ')}") unless duplicates.empty?
+
+    # The versioned JSON surface documented in the spec must exist as Jekyll
+    # sources, and every /api/v1/ path in the spec must have a matching template.
+    Hash(spec["paths"]).keys.select { |p| p.start_with?("/api/v1/") }.each do |api_path|
+      template = ROOT.join(api_path.delete_prefix("/"))
+      add_error("openapi.json: #{api_path} documented but #{api_path.delete_prefix('/')} template is missing") unless template.exist?
+    end
+    add_error("openapi.json: must document the versioned /api/v1/ surface") if
+      Hash(spec["paths"]).keys.none? { |p| p.start_with?("/api/v1/") }
   rescue JSON::ParserError => e
     add_error("openapi.json: invalid JSON (#{e.message})")
   rescue StandardError => e

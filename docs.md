@@ -28,6 +28,8 @@ an RFC 9727 api-catalog Linkset.
 | Endpoint | Purpose | Content Type |
 | --- | --- | --- |
 | [`/openapi.json`](/openapi.json) | OpenAPI 3.1 spec of the read-only content API | `application/json` |
+| [`/api/v1/posts.json`](/api/v1/posts.json) | All blog posts (versioned, typed JSON) | `application/json` |
+| [`/api/v1/books.json`](/api/v1/books.json) | All book notes (versioned, typed JSON) | `application/json` |
 | [`/.well-known/api-catalog`](/.well-known/api-catalog) | RFC 9727 catalog of all machine-readable endpoints | `application/linkset+json` |
 | [`/llms.txt`](/llms.txt) | Short site summary for LLM ingestion | `text/plain` |
 | [`/llms-full.txt`](/llms-full.txt) | Full site content for LLM ingestion | `text/plain` |

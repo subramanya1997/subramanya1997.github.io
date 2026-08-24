@@ -4,7 +4,7 @@
     "title": "subramanya.ai Content API",
     "version": "1.0.0",
     "summary": "Read-only content API for Subramanya N's personal site",
-    "description": "Machine-readable, read-only API surface of subramanya.ai, the personal site of Subramanya N (AI agents, agent security, SaaS strategy). All endpoints are static files served by GitHub Pages over anonymous HTTPS GET - no authentication, no API key, no rate-limit registration required. There are no write operations. Every HTML page also has a parallel markdown twin at `<page-url>index.md` (see the getPageMarkdown operation). Because the host is a static CDN, error responses for unknown paths return HTTP 404 with an HTML body that links back to /llms.txt, /sitemap.xml, and /search.json for recovery; JSON error bodies and Accept-header content negotiation are not available.",
+    "description": "Machine-readable, read-only API surface of subramanya.ai, the personal site of Subramanya N (AI agents, agent security, SaaS strategy). All endpoints are static files served by GitHub Pages over anonymous HTTPS GET - no authentication, no API key, no rate-limit registration required. There are no write operations. Every HTML page also has a parallel markdown twin at `<page-url>index.md` (see the getPageMarkdown operation).\n\n## Versioning and deprecation\n\nStructured JSON resources live under the URL-path-versioned prefix `/api/v1/`. The v1 surface is additive-only: fields may be added, but existing fields, paths, and semantics will not change or disappear within v1. Any breaking change would ship as a new `/api/v2/` prefix while `/api/v1/` keeps working for at least 6 months; a deprecation is announced in this spec, in /llms.txt, and in the site changelog before a retired path starts returning 404/410. Root-level discovery files (/llms.txt, /search.json, /sitemap.xml, /feed.xml, /openapi.json) follow their respective public standards and are likewise stable.\n\n## Rate limits and errors\n\nThere are no per-client rate limits and no RateLimit response headers - content is served by the Fastly CDN; please cache respectfully (responses carry Cache-Control and ETag headers). Because the host is a static CDN, error responses for unknown paths return HTTP 404 with an HTML body that links back to /llms.txt, /sitemap.xml, and /search.json for recovery; JSON error bodies and Accept-header content negotiation are not available.",
     "contact": {
       "name": "Subramanya N",
       "url": "https://subramanya.ai/contact/",
@@ -37,10 +37,59 @@
             "description": "The OpenAPI document.",
             "content": {
               "application/json": {
-                "schema": { "type": "object", "description": "OpenAPI 3.1 document" }
+                "schema": {
+                  "type": "object",
+                  "description": "OpenAPI 3.1 document",
+                  "required": ["openapi", "info", "paths"],
+                  "properties": {
+                    "openapi": { "type": "string", "description": "OpenAPI version, 3.1.x" },
+                    "info": { "type": "object", "description": "API metadata" },
+                    "servers": { "type": "array", "items": { "type": "object" } },
+                    "paths": { "type": "object", "description": "Available operations keyed by path" },
+                    "components": { "type": "object", "description": "Shared schemas and responses" }
+                  }
+                }
               }
             }
           }
+        }
+      }
+    },
+    "/api/v1/posts.json": {
+      "get": {
+        "operationId": "listPosts",
+        "tags": ["content"],
+        "summary": "List all blog posts (v1, typed JSON)",
+        "description": "Returns every blog post as a typed JSON object: title, canonical HTML URL, markdown twin URL, ISO date, excerpt, and tags. Newest first. Part of the additive-only /api/v1/ versioned surface; see the versioning policy in the spec description.",
+        "responses": {
+          "200": {
+            "description": "The full list of blog posts.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/PostList" }
+              }
+            }
+          },
+          "404": { "$ref": "#/components/responses/NotFound" }
+        }
+      }
+    },
+    "/api/v1/books.json": {
+      "get": {
+        "operationId": "listBooks",
+        "tags": ["content"],
+        "summary": "List all book notes (v1, typed JSON)",
+        "description": "Returns every book note as a typed JSON object: title, canonical HTML URL, markdown twin URL, ISO date, excerpt, and tags. Part of the additive-only /api/v1/ versioned surface; see the versioning policy in the spec description.",
+        "responses": {
+          "200": {
+            "description": "The full list of book notes.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/BookList" }
+              }
+            }
+          },
+          "404": { "$ref": "#/components/responses/NotFound" }
         }
       }
     },
@@ -201,6 +250,51 @@
       }
     },
     "schemas": {
+      "ContentItem": {
+        "type": "object",
+        "description": "A blog post or book note in the versioned v1 API.",
+        "required": ["title", "url", "markdown_url", "date"],
+        "properties": {
+          "title": { "type": "string", "description": "Title of the post or book note." },
+          "url": { "type": "string", "format": "uri", "description": "Canonical absolute URL of the HTML page." },
+          "markdown_url": { "type": "string", "format": "uri", "description": "Absolute URL of the page's markdown twin (text/markdown)." },
+          "date": { "type": "string", "format": "date", "description": "Publication date, YYYY-MM-DD." },
+          "excerpt": { "type": "string", "description": "Plain-text excerpt." },
+          "tags": { "type": "array", "items": { "type": "string" }, "description": "Topic tags." }
+        }
+      },
+      "PostList": {
+        "type": "object",
+        "description": "Envelope for the blog post list.",
+        "required": ["api_version", "kind", "count", "posts"],
+        "properties": {
+          "api_version": { "type": "string", "const": "v1", "description": "API version of this response." },
+          "kind": { "type": "string", "const": "post_list" },
+          "generated_from": { "type": "string", "format": "uri", "description": "URL of the OpenAPI spec describing this endpoint." },
+          "count": { "type": "integer", "minimum": 0, "description": "Number of posts in the list." },
+          "posts": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/ContentItem" },
+            "description": "All blog posts, newest first."
+          }
+        }
+      },
+      "BookList": {
+        "type": "object",
+        "description": "Envelope for the book note list.",
+        "required": ["api_version", "kind", "count", "books"],
+        "properties": {
+          "api_version": { "type": "string", "const": "v1", "description": "API version of this response." },
+          "kind": { "type": "string", "const": "book_list" },
+          "generated_from": { "type": "string", "format": "uri", "description": "URL of the OpenAPI spec describing this endpoint." },
+          "count": { "type": "integer", "minimum": 0, "description": "Number of book notes in the list." },
+          "books": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/ContentItem" },
+            "description": "All book notes."
+          }
+        }
+      },
       "SearchItem": {
         "type": "object",
         "description": "One entry in the site search index: a blog post or a book note.",

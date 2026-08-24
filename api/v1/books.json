@@ -1,0 +1,23 @@
+---
+layout: none
+permalink: /api/v1/books.json
+sitemap: false
+---
+{
+  "api_version": "v1",
+  "kind": "book_list",
+  "generated_from": "{{ site.url }}/openapi.json",
+  "count": {{ site.books | size }},
+  "books": [
+    {% for book in site.books %}
+    {
+      "title": {{ book.title | jsonify }},
+      "url": {{ book.web_url | prepend: site.baseurl | prepend: site.url | jsonify }},
+      "markdown_url": {{ book.url | append: "index.md" | prepend: site.baseurl | prepend: site.url | jsonify }},
+      "date": {{ book.date | date: "%Y-%m-%d" | jsonify }},
+      "excerpt": {{ book.excerpt | strip_html | strip_newlines | strip | jsonify }},
+      "tags": {{ book.tags | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}

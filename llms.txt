@@ -39,6 +39,8 @@ HTTP 404 whose body links back here.
 
 ## Developer Resources
 - OpenAPI 3.1 spec: {{ site.url }}/openapi.json
+- Posts API (v1, typed JSON): {{ site.url }}/api/v1/posts.json
+- Books API (v1, typed JSON): {{ site.url }}/api/v1/books.json
 - API catalog (RFC 9727): {{ site.url }}/.well-known/api-catalog
 - Developer docs index: {{ site.url }}/docs/ (md: {{ site.url }}/docs/index.md)
 - Search index (JSON): {{ site.url }}/search.json
