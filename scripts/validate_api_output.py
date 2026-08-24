@@ -77,7 +77,9 @@ def check_search(spec):
         err("search.json: expected a non-empty array")
         return
 
-    schema = spec["components"]["schemas"]["SearchItem"]
+    schema = spec["paths"]["/search.json"]["get"]["responses"]["200"]["content"][
+        "application/json"
+    ]["schema"]["items"]
     allowed_kinds = set(schema["properties"]["kind"]["enum"])
     required = set(schema.get("required", []))
 
@@ -140,6 +142,91 @@ def check_collection(relative, list_key, expected_kind):
             err(f"{relative}: posts must be sorted newest first")
 
 
+def check_tags():
+    data = load_json("api/v1/tags.json")
+    if data is None:
+        return
+    if data.get("api_version") != "v1" or data.get("kind") != "tag_list":
+        err("api/v1/tags.json: envelope must have api_version=v1 and kind=tag_list")
+    tags = data.get("tags")
+    if not isinstance(tags, list) or not tags:
+        err("api/v1/tags.json: tags must be a non-empty array")
+        return
+    if data.get("count") != len(tags):
+        err(f"api/v1/tags.json: count {data.get('count')} != len(tags) {len(tags)}")
+    for tag in tags:
+        name = str(tag.get("name"))[:40]
+        for field in ("name", "slug", "post_count", "archive_url"):
+            if field not in tag or tag[field] in (None, ""):
+                err(f"api/v1/tags.json: tag '{name}' missing {field}")
+        if not isinstance(tag.get("post_count"), int) or tag.get("post_count", 0) < 1:
+            err(f"api/v1/tags.json: tag '{name}' post_count must be a positive integer")
+        archive = str(tag.get("archive_url", "")).replace(ORIGIN, "")
+        if archive and not (site_path_for(archive) / "index.html").exists():
+            err(f"api/v1/tags.json: tag '{name}' archive page missing from build: {tag.get('archive_url')}")
+
+
+def check_site_info():
+    data = load_json("api/v1/site.json")
+    if data is None:
+        return
+    if data.get("api_version") != "v1" or data.get("kind") != "site_info":
+        err("api/v1/site.json: envelope must have api_version=v1 and kind=site_info")
+    for field in ("name", "description", "url", "author", "counts", "endpoints", "policies"):
+        if not data.get(field):
+            err(f"api/v1/site.json: missing {field}")
+    for group in ("endpoints", "policies"):
+        for key, url in dict(data.get(group, {})).items():
+            local = str(url).replace(ORIGIN, "")
+            target = site_path_for(local)
+            if not (target.exists() or (target / "index.html").exists()):
+                err(f"api/v1/site.json: {group}.{key} points at missing path {url}")
+
+
+def check_404_error_document(spec):
+    """The 404 page must be short and embed the ErrorDocument JSON the spec promises."""
+    not_found = SITE / "404.html"
+    if not not_found.exists():
+        return
+    text = not_found.read_text(encoding="utf-8")
+
+    if len(text.encode("utf-8")) > 20000:
+        err(f"404.html: body is {len(text.encode('utf-8'))} bytes; keep it under 20KB so agents get a short recovery page")
+
+    match = re.search(
+        r'<script type="application/json" id="agent-error">\s*(\{.*?\})\s*</script>',
+        text,
+        re.DOTALL,
+    )
+    if not match:
+        err("404.html: missing embedded <script type=\"application/json\" id=\"agent-error\"> error object")
+        return
+    try:
+        document = json.loads(match.group(1))
+    except json.JSONDecodeError as exc:
+        err(f"404.html: embedded agent-error JSON is invalid ({exc})")
+        return
+
+    error_schema = (
+        spec.get("components", {}).get("schemas", {}).get("ErrorDocument", {})
+        if spec
+        else {}
+    )
+    if not error_schema:
+        err("openapi.json: ErrorDocument schema is missing from components.schemas")
+    error = document.get("error", {})
+    for field in ("code", "status", "message", "resolution", "links"):
+        if field not in error:
+            err(f"404.html: embedded agent-error object missing error.{field}")
+    if error.get("status") != 404 or error.get("code") != "not_found":
+        err("404.html: embedded agent-error must have code=not_found and status=404")
+    for key, url in dict(error.get("links", {})).items():
+        local = str(url).replace(ORIGIN, "")
+        target = site_path_for(local)
+        if not (target.exists() or (target / "index.html").exists()):
+            err(f"404.html: agent-error links.{key} points at missing path {url}")
+
+
 def check_discovery_files():
     catalog = load_json(".well-known/api-catalog")
     if catalog is not None and "/openapi.json" not in json.dumps(catalog):
@@ -175,6 +262,9 @@ def main():
         check_search(spec)
     check_collection("api/v1/posts.json", "posts", "post_list")
     check_collection("api/v1/books.json", "books", "book_list")
+    check_tags()
+    check_site_info()
+    check_404_error_document(spec)
     check_discovery_files()
 
     if errors:

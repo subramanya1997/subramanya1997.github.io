@@ -70,7 +70,7 @@ curl -s -o /dev/null -w "%{http_code}\n" https://subramanya.ai/some-path-that-do
 Must print `404`.
 
 ```bash
-for u in /openapi.json /api/v1/posts.json /api/v1/books.json /search.json /llms.txt /contact/ /privacy/ /.well-known/api-catalog /sitemap.xml /feed.xml; do printf "%-26s %s\n" "$u" "$(curl -s -o /dev/null -w '%{http_code} %{content_type}' https://subramanya.ai$u)"; done
+for u in /openapi.json /api/v1/site.json /api/v1/posts.json /api/v1/books.json /api/v1/tags.json /search.json /llms.txt /contact/ /privacy/ /docs/api-deprecation-policy/ /.well-known/api-catalog /sitemap.xml /feed.xml; do printf "%-30s %s\n" "$u" "$(curl -s -o /dev/null -w '%{http_code} %{content_type}' https://subramanya.ai$u)"; done
 ```
 
 Every row must be `200` with the right content type (`application/json` for

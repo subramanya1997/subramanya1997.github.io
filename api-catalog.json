@@ -15,8 +15,10 @@ sitemap: false
         { "href": "{{ site.url }}/openapi.json", "type": "application/json", "title": "OpenAPI 3.1 specification of the read-only content API" }
       ],
       "service": [
+        { "href": "{{ site.url }}/api/v1/site.json", "type": "application/json", "title": "Site info + endpoint directory (v1)" },
         { "href": "{{ site.url }}/api/v1/posts.json", "type": "application/json", "title": "Posts API (v1, typed JSON)" },
-        { "href": "{{ site.url }}/api/v1/books.json", "type": "application/json", "title": "Books API (v1, typed JSON)" }
+        { "href": "{{ site.url }}/api/v1/books.json", "type": "application/json", "title": "Books API (v1, typed JSON)" },
+        { "href": "{{ site.url }}/api/v1/tags.json", "type": "application/json", "title": "Tags API (v1, typed JSON)" }
       ],
       "service-doc": [
         { "href": "{{ site.url }}/docs/", "type": "text/html", "title": "Architecture, content-model, and development documentation" }

@@ -263,6 +263,10 @@ class ValidationRunner
     add_error("llms.txt: missing '## When to use this site' section") unless content.include?("## When to use this site")
     add_error("llms.txt: missing '## Developer Resources' section") unless content.include?("## Developer Resources")
     add_error("llms.txt: must reference /openapi.json") unless content.include?("/openapi.json")
+    add_error("llms.txt: must reference the API deprecation policy") unless content.include?("/docs/api-deprecation-policy/")
+
+    policy = ROOT.join("docs", "api-deprecation-policy.md")
+    add_error("docs/api-deprecation-policy.md: deprecation policy page is missing") unless policy.exist?
   rescue StandardError => e
     add_error("llms.txt: #{e.message}")
   end

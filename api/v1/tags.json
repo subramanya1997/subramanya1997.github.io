@@ -1,0 +1,25 @@
+---
+layout: none
+permalink: /api/v1/tags.json
+sitemap: false
+---
+{% assign all_tags = "" | split: "" %}
+{% for post in site.posts %}{% assign all_tags = all_tags | concat: post.tags %}{% endfor %}
+{% assign unique_tags = all_tags | uniq | sort_natural %}
+{
+  "api_version": "v1",
+  "kind": "tag_list",
+  "generated_from": "{{ site.url }}/openapi.json",
+  "count": {{ unique_tags | size }},
+  "tags": [
+    {% for tag in unique_tags %}
+    {% assign tagged = site.posts | where_exp: "p", "p.tags contains tag" %}
+    {
+      "name": {{ tag | jsonify }},
+      "slug": {{ tag | slugify | jsonify }},
+      "post_count": {{ tagged | size }},
+      "archive_url": {{ tag | slugify | prepend: "/tags/" | append: "/" | prepend: site.baseurl | prepend: site.url | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}

@@ -19,6 +19,7 @@ to contribute.
 - [Content Model]({{ '/docs/content-model/' | prepend: site.baseurl }}) - front-matter and data contracts for posts, books, data files, and top-level pages.
 - [Development]({{ '/docs/development/' | prepend: site.baseurl }}) - local setup, validation commands, content update workflow, and Python maintenance scripts.
 - [Deploy Checklist]({{ '/docs/deploy-checklist/' | prepend: site.baseurl }}) - pre-deploy verification: production build, content/link validation, API-vs-spec checks, and post-deploy live checks.
+- [API Versioning & Deprecation Policy]({{ '/docs/api-deprecation-policy/' | prepend: site.baseurl }}) - URL path versioning, additive-only guarantees, 6-month sunset timeline, and how deprecations are announced.
 
 ## Agent-Readable Endpoints
 
@@ -29,8 +30,10 @@ an RFC 9727 api-catalog Linkset.
 | Endpoint | Purpose | Content Type |
 | --- | --- | --- |
 | [`/openapi.json`](/openapi.json) | OpenAPI 3.1 spec of the read-only content API | `application/json` |
+| [`/api/v1/site.json`](/api/v1/site.json) | Site metadata + endpoint directory (versioned, typed JSON) | `application/json` |
 | [`/api/v1/posts.json`](/api/v1/posts.json) | All blog posts (versioned, typed JSON) | `application/json` |
 | [`/api/v1/books.json`](/api/v1/books.json) | All book notes (versioned, typed JSON) | `application/json` |
+| [`/api/v1/tags.json`](/api/v1/tags.json) | All topic tags with archive URLs (versioned, typed JSON) | `application/json` |
 | [`/.well-known/api-catalog`](/.well-known/api-catalog) | RFC 9727 catalog of all machine-readable endpoints | `application/linkset+json` |
 | [`/llms.txt`](/llms.txt) | Short site summary for LLM ingestion | `text/plain` |
 | [`/llms-full.txt`](/llms-full.txt) | Full site content for LLM ingestion | `text/plain` |
