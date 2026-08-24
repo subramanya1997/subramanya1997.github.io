@@ -142,6 +142,14 @@
     .post-container {
       flex-direction: column;
     }
+
+    /* Code blocks propagate their widest unbreakable line into the flex
+       item's intrinsic size (overflow-x:auto does not reduce intrinsic
+       contributions), which blew the article out to ~84ch and made phones
+       zoom the whole page out. Pin the stacked article to the container. */
+    .post {
+      width: 100%;
+    }
   }
 
   /* --- Mobile social share ----------------------------------------------- */
