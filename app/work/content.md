@@ -4,9 +4,6 @@ title: Work
 permalink: /work/
 includelink: true
 custom_layout: true
-page_stylesheets:
-  - /assets/css/components/work-entry.css
-  - /assets/css/pages/work.css
 ---
 
 <div class="work-container">

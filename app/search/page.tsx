@@ -9,10 +9,6 @@ const meta = pageMeta({
   description: "Search posts and books across the archive.",
   robots: "noindex, follow",
   customLayout: true,
-  stylesheets: [
-    "/assets/css/components/content-cards.css",
-    "/assets/css/pages/search.css",
-  ],
   scripts: ["/assets/js/components/discovery.js", "/assets/js/pages/search.js"],
 });
 

@@ -11,10 +11,6 @@ const meta = pageMeta({
   title: "Blog",
   url: "/blog/",
   customLayout: true,
-  stylesheets: [
-    "/assets/css/components/content-cards.css",
-    "/assets/css/pages/blog-index.css",
-  ],
 });
 
 export default async function BlogIndex() {

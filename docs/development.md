@@ -125,18 +125,28 @@ Use `--post` or `--force` deliberately so you do not regenerate unrelated assets
 
 ## Page Asset Conventions
 
-Top-level pages can load page-specific assets using front matter arrays:
+Top-level pages can load page-specific scripts using a front matter array:
 
 ```yaml
-page_stylesheets:
-  - /assets/css/components/content-cards.css
-  - /assets/css/pages/search.css
 page_scripts:
   - /assets/js/components/discovery.js
   - /assets/js/pages/search.js
 ```
 
-Use these only for page-owned behavior and styles. Shared global behavior still belongs in the shared React components (`components/`), `css/main.css`, or shared assets under `assets/css/components` and `assets/js/components`.
+Use it only for page-owned behavior. Shared global behavior still belongs in
+the shared React components (`components/`) or shared assets under
+`assets/js/components`.
+
+**CSS is not per-page.** There is exactly one linked stylesheet,
+`css/main.css`, and every page loads it from the root layout. Page styles live
+in its section 8, one commented block per page (`/* --- pages/search ... */`),
+in the order the old per-page `<link>` tags were emitted. Add new page styles
+to that section under their own comment, and keep selectors uniquely named or
+compound-scoped to the page's own markup so they cannot leak. Do not
+reintroduce a per-page stylesheet or an `assets/css/` tree.
+
+Per-post CSS is the one exception and works differently: the sheets in
+`components/post/assets/` are inlined into the post markup, not linked.
 
 ## Guardrails
 

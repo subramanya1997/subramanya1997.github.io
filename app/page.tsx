@@ -11,7 +11,6 @@ import { renderMarkdown } from "@/lib/markdown";
 
 const meta = pageMeta({
   url: "/",
-  stylesheets: ["/assets/css/components/content-cards.css", "/assets/css/pages/home.css"],
   scripts: ["/assets/js/pages/home.js"],
 });
 

@@ -11,7 +11,6 @@ const meta = pageMeta({
   title: "Stats",
   url: "/stats/",
   customLayout: true,
-  stylesheets: ["/assets/css/pages/stats.css"],
   scripts: ["/assets/js/pages/stats.js"],
 });
 
