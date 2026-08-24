@@ -18,8 +18,8 @@ exclude:
   - app
   - components
   - lib
-  - public
-  - out
+  - public/
+  - out/
   - .next
   - node_modules
   - scripts
@@ -28,6 +28,7 @@ exclude:
   - tsconfig.json
   - next.config.ts
   - next-env.d.ts
+  - "*.tsbuildinfo"
   - eslint.config.mjs
   - postcss.config.mjs
   - components.json
