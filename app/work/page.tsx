@@ -8,10 +8,6 @@ const meta = pageMeta({
   title: "Work",
   url: "/work/",
   customLayout: true,
-  stylesheets: [
-    "/assets/css/components/work-entry.css",
-    "/assets/css/pages/work.css",
-  ],
 });
 
 export default function Work() {

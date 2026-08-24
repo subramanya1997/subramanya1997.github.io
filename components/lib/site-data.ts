@@ -82,23 +82,6 @@ export function viewsFor(url: string): number | undefined {
 }
 
 /**
- * `site.posts` order. lib/content.ts sorts by date only, so posts sharing a
- * date come out in filename-ascending order; Jekyll sorts docs ascending by
- * (date, path) and reverses, i.e. same-day posts are filename-descending.
- * TODO: fold this tiebreak into lib/content.ts#getAllPosts so the feed/sitemap/
- * search index agree with the HTML pages.
- */
-let _orderedPosts: Post[] | null = null;
-export function getPostsInJekyllOrder(): Post[] {
-  if (_orderedPosts) return _orderedPosts;
-  _orderedPosts = [...getAllPosts()].sort(
-    (a, b) =>
-      b.date.getTime() - a.date.getTime() || (a.sourcePath < b.sourcePath ? 1 : a.sourcePath > b.sourcePath ? -1 : 0)
-  );
-  return _orderedPosts;
-}
-
-/**
  * `_plugins/tag_pages_generator.rb`'s `site.data.tag_archives`: every tag on a
  * post or book, ordered by descending item count then case-insensitive name.
  * Documents are walked oldest-first (Jekyll's `site.posts.docs` order), which
@@ -129,7 +112,7 @@ export function getTagArchives(): TagArchive[] {
     return record;
   };
 
-  const postsOldestFirst = [...getPostsInJekyllOrder()].reverse();
+  const postsOldestFirst = [...getAllPosts()].reverse();
   for (const post of postsOldestFirst) {
     for (const tag of post.frontmatter.tags ?? []) {
       if (!tag.trim()) continue;
@@ -145,7 +128,14 @@ export function getTagArchives(): TagArchive[] {
 
   _tagArchives = [...records.values()]
     .map((record) => {
-      record.posts.sort((a, b) => b.date.getTime() - a.date.getTime());
+      // Same (date desc, path desc) tiebreak as getAllPosts — Jekyll resolves
+      // same-day ties back to site.posts order, and the markdown twins
+      // (scripts/next/lib/jekyll-content.mjs byDateDescStable) already do.
+      record.posts.sort(
+        (a, b) =>
+          b.date.getTime() - a.date.getTime() ||
+          (b.sourcePath > a.sourcePath ? 1 : b.sourcePath < a.sourcePath ? -1 : 0)
+      );
       record.post_count = record.posts.length;
       record.book_count = record.books.length;
       record.total_count = record.post_count + record.book_count;
