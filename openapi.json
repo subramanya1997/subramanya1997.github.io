@@ -714,7 +714,8 @@
             "type": "string",
             "enum": [
               "post",
-              "book"
+              "book",
+              "loop"
             ],
             "description": "Item type."
           },

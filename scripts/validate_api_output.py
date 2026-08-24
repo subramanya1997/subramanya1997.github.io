@@ -197,8 +197,10 @@ def check_404_error_document(spec):
 
     # The page keeps the full site chrome by design; the cap only guards
     # against runaway bloat that would bury the machine-readable error block.
-    if len(text.encode("utf-8")) > 100000:
-        err(f"404.html: body is {len(text.encode('utf-8'))} bytes; keep it under 100KB so agents get a usable recovery page")
+    # 150KB: the standard Vercel/Next deployment inlines the React runtime and
+    # RSC payload on the 404 (the old static-export build stripped them).
+    if len(text.encode("utf-8")) > 150000:
+        err(f"404.html: body is {len(text.encode('utf-8'))} bytes; keep it under 150KB so agents get a usable recovery page")
 
     match = re.search(
         r'<script type="application/json" id="agent-error">\s*(\{.*?\})\s*</script>',
