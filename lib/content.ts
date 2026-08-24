@@ -74,9 +74,21 @@ export function getAllPosts(): Post[] {
     .map((file) => {
       const m = file.match(POST_FILE);
       if (!m) return null;
-      const [, year, month, day, slug] = m;
+      const [, fileYear, fileMonth, fileDay, slug] = m;
       const sourcePath = path.join(dir, file);
       const { data, content } = matter(fs.readFileSync(sourcePath, "utf8"));
+      // Jekyll's permalink date comes from front-matter `date` when present,
+      // falling back to the filename. Three posts differ, so this matters.
+      let [year, month, day] = [fileYear, fileMonth, fileDay];
+      const fmDate = (data as PostFrontmatter).date;
+      if (fmDate) {
+        const d = fmDate instanceof Date ? fmDate : new Date(fmDate);
+        if (!Number.isNaN(d.getTime())) {
+          year = String(d.getUTCFullYear());
+          month = String(d.getUTCMonth() + 1).padStart(2, "0");
+          day = String(d.getUTCDate()).padStart(2, "0");
+        }
+      }
       return {
         slug,
         year,
@@ -90,7 +102,15 @@ export function getAllPosts(): Post[] {
       } satisfies Post;
     })
     .filter((p): p is Post => p !== null)
-    .sort((a, b) => b.date.getTime() - a.date.getTime());
+    // Jekyll sorts by (date, path) ascending then reverses: newest first, and
+    // same-day posts ordered filename-DESCENDING. Feed/sitemap/related-posts
+    // ordering depends on this exact tiebreak.
+    .sort(
+      (a, b) =>
+        b.date.getTime() - a.date.getTime() ||
+        // byte-order compare, matching Ruby's String#<=>
+        (b.sourcePath > a.sourcePath ? 1 : b.sourcePath < a.sourcePath ? -1 : 0)
+    );
   return _posts;
 }
 
