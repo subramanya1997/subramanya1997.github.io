@@ -6,8 +6,6 @@ permalink: /awesome-loops/
 includelink: true
 custom_layout: true
 image: /assets/images/og/awesome-loops.png
-page_stylesheets:
-  - /assets/css/pages/loop-marketplace.css
 page_scripts:
   - /assets/js/pages/loop-marketplace.js
 ---

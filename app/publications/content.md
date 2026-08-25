@@ -5,9 +5,6 @@ permalink: /publications/
 description: Papers, standards proposals, and books by Subramanya N on agentic AI identity, authorization, and security.
 includelink: true
 custom_layout: true
-page_stylesheets:
-  - /assets/css/components/content-cards.css
-  - /assets/css/pages/blog-index.css
 ---
 
 <div class="blog-container">

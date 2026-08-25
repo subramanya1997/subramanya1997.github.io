@@ -91,6 +91,9 @@ const FOOTER_STYLE = `
     .footer-quote {
       margin-left: 0;
       margin-right: 0;
+      /* The quote is nowrap on desktop; on narrow screens it must wrap or it
+         forces horizontal scroll (overflowed at 320px viewports). */
+      white-space: normal;
     }
   }
 `;

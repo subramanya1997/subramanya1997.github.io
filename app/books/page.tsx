@@ -9,10 +9,6 @@ const meta = pageMeta({
   title: "Books",
   url: "/books/",
   customLayout: true,
-  stylesheets: [
-    "/assets/css/components/content-cards.css",
-    "/assets/css/pages/books-index.css",
-  ],
 });
 
 export default function BooksIndex() {

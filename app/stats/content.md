@@ -3,8 +3,6 @@ layout: page
 title: Stats
 permalink: /stats/
 custom_layout: true
-page_stylesheets:
-  - /assets/css/pages/stats.css
 page_scripts:
   - /assets/js/pages/stats.js
 ---

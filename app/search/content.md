@@ -5,9 +5,6 @@ permalink: /search/
 custom_layout: true
 description: Search posts and books across the archive.
 robots: noindex, follow
-page_stylesheets:
-  - /assets/css/components/content-cards.css
-  - /assets/css/pages/search.css
 page_scripts:
   - /assets/js/components/discovery.js
   - /assets/js/pages/search.js

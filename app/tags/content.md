@@ -4,8 +4,6 @@ title: Tags
 permalink: /tags/
 custom_layout: true
 description: Browse posts and books by topic.
-page_stylesheets:
-  - /assets/css/pages/tags.css
 ---
 
 <div class="tags-page">

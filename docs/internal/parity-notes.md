@@ -29,14 +29,14 @@ substantive differences are listed below.
 - **Order.** Jekyll's `<head>` order is: per-page tags → favicons → fonts →
   `main.css` → page stylesheets → Font Awesome → discovery links. React hoists
   metadata, so the built order is: charset/viewport (Next) → stylesheets by
-  `precedence` (Google font, `main.css`, Font Awesome, page stylesheets) →
-  favicons/discovery links (layout) → per-page tags. **The cascade order that
-  matters is preserved**: `main.css` always precedes the page stylesheets.
-  Safe: `<head>` element order carries no semantics beyond stylesheet cascade.
-- **`precedence` on stylesheets.** Page stylesheets are emitted with React's
-  `precedence` prop so they are hoisted into `<head>` instead of rendering in
-  the body. This adds a `data-precedence="..."` attribute that Jekyll did not
-  emit. Harmless — it is not used by any selector.
+  `precedence` (Google font, `main.css`, Font Awesome) → favicons/discovery
+  links (layout) → per-page tags. Safe: `<head>` element order carries no
+  semantics beyond stylesheet cascade.
+- **No page stylesheets.** Jekyll linked a stylesheet per page from
+  `assets/css/**`. Those sheets are now concatenated into `css/main.css`
+  (section 8) in the exact order the links were emitted, so the cascade is
+  unchanged and every page ships one stylesheet. The old `/assets/css/*` URLs
+  are gone from the build and allowlisted in `scripts/parity/diff-allow.json`.
 - **Font Awesome `onload`.** Jekyll emits
   `<link rel="stylesheet" media="print" onload="this.media='all'">`. JSX cannot
   express a string `onload`, so the link carries `id="font-awesome-css"` and a
@@ -82,7 +82,7 @@ substantive differences are listed below.
 ### Styling
 
 - **`app/globals.css` is not imported.** Tailwind's preflight would reset the
-  legacy stylesheets in `public/css` and `public/assets/css`. The file is left
+  legacy stylesheet in `public/css`. The file is left
   intact so the shadcn setup keeps working for any future non-ported surface;
   it just is not pulled into the root layout.
 
@@ -120,7 +120,7 @@ import Newsletter from "@/components/site/Newsletter";
 import { pageMeta } from "@/components/lib/page-meta";
 import { readingTime } from "@/components/lib/jekyll";
 
-<SiteShell meta={pageMeta({ title, url, description, image, stylesheets, scripts })} layout="post">
+<SiteShell meta={pageMeta({ title, url, description, image, scripts })} layout="post">
   {/* _layouts/post.html body */}
 </SiteShell>
 ```

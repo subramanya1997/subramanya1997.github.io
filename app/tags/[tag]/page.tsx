@@ -8,7 +8,7 @@ import { pageMeta } from "@/components/lib/page-meta";
 import { urlEncode } from "@/components/lib/post-extras";
 import { getTagArchives, viewsFor, type TagArchive } from "@/components/lib/site-data";
 import PageLayout from "@/components/site/PageLayout";
-import { renderMarkdown } from "@/lib/markdown";
+import { memoizedHtml } from "@/lib/nonhtml";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
@@ -27,7 +27,7 @@ export default async function TagArchivePage({
   if (!tag) notFound();
 
   const readingTimes = await Promise.all(
-    tag.posts.map(async (post) => readingTime((await renderMarkdown(post.content)).html))
+    tag.posts.map(async (post) => readingTime(await memoizedHtml(post.url, post.content)))
   );
 
   const meta = pageMeta({
@@ -35,10 +35,6 @@ export default async function TagArchivePage({
     url: `/tags/${tag.slug}/`,
     description: `Posts and books tagged ${tag.name}.`,
     customLayout: true,
-    stylesheets: [
-      "/assets/css/components/content-cards.css",
-      "/assets/css/pages/tags.css",
-    ],
   });
 
   return (

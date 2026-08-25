@@ -63,15 +63,6 @@ export function urlEncode(value: string): string {
   return encodeURIComponent(value).replace(/%20/g, "+");
 }
 
-/** A front-matter date value (`Date` from YAML, or an ISO string). */
-export function frontmatterDate(value: unknown): Date | undefined {
-  if (value instanceof Date) return value;
-  if (typeof value === "string") {
-    const parsed = new Date(/^\d{4}-\d{2}-\d{2}$/.test(value) ? `${value}T00:00:00Z` : value);
-    if (!Number.isNaN(parsed.getTime())) return parsed;
-  }
-  return undefined;
-}
 
 // ---------------------------------------------------------------------------
 // social images (`_includes/head.html`)

@@ -3,24 +3,21 @@ import { Fragment } from "react";
 import PostCard from "@/components/cards/PostCard";
 import { readingTime } from "@/components/lib/jekyll";
 import { pageMeta } from "@/components/lib/page-meta";
-import { getPostsInJekyllOrder, viewsFor } from "@/components/lib/site-data";
+import { viewsFor } from "@/components/lib/site-data";
 import PageLayout from "@/components/site/PageLayout";
-import { renderMarkdown } from "@/lib/markdown";
+import { getAllPosts } from "@/lib/content";
+import { memoizedHtml } from "@/lib/nonhtml";
 
 const meta = pageMeta({
   title: "Blog",
   url: "/blog/",
   customLayout: true,
-  stylesheets: [
-    "/assets/css/components/content-cards.css",
-    "/assets/css/pages/blog-index.css",
-  ],
 });
 
 export default async function BlogIndex() {
-  const posts = getPostsInJekyllOrder();
+  const posts = getAllPosts();
   const readingTimes = await Promise.all(
-    posts.map(async (post) => readingTime((await renderMarkdown(post.content)).html))
+    posts.map(async (post) => readingTime(await memoizedHtml(post.url, post.content)))
   );
 
   return (

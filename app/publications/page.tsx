@@ -14,10 +14,6 @@ const meta = pageMeta({
   description:
     "Papers, standards proposals, and books by Subramanya N on agentic AI identity, authorization, and security.",
   customLayout: true,
-  stylesheets: [
-    "/assets/css/components/content-cards.css",
-    "/assets/css/pages/blog-index.css",
-  ],
 });
 
 interface Entry {

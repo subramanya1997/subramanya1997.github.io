@@ -123,14 +123,14 @@ tag drifts.
 - Global shell behavior and per-page script loading: `components/site/SiteShell.tsx`
 - Global metadata and per-page stylesheet loading: `components/site/PageHead.tsx` and `app/layout.tsx`
 - Search behavior: `components/site/SearchForm.tsx`, `app/search/content.md`, the `search.json` builder in `lib/nonhtml.ts`, `assets/js/components/discovery.js`, and `assets/js/pages/search.js`
-- Tag archives and topic browsing: `app/tags/content.md`, `app/tags/`, and `assets/css/pages/tags.css`
+- Tag archives and topic browsing: `app/tags/content.md` and `app/tags/` (styles: the `pages/tags` block in `css/main.css`)
 - Agent discovery (RFC 8288 / RFC 9727): `api-catalog.json` is published at `/.well-known/api-catalog.json`, and `scripts/next/sync-public.mjs` copies that output to the canonical extensionless `/.well-known/api-catalog` path so both URLs work (`vercel.json` sets the content type). The catalog is a Linkset per RFC 9264 and enumerates every machine-readable endpoint on the site. The site advertises the same endpoints via RFC 8288 `<link>` elements on every page (`api-catalog`, `describedby`, `service-doc`, `sitemap`, `search`, `author`, `alternate`).
 - OpenID Connect discovery (OIDC Discovery 1.0): `openid-configuration.json` is published at `/.well-known/openid-configuration.json` and copied to the canonical extensionless `/.well-known/openid-configuration`. The document is an intentionally inert stub: the site exposes no protected APIs, so `grant_types_supported` and `scopes_supported` are empty and `response_types_supported` / `id_token_signing_alg_values_supported` are `["none"]`. `jwks.json` is published at `/.well-known/jwks.json` as an empty keyset, and `oauth-noop.json` at `/.well-known/oauth-noop.json` (also aliased to `/.well-known/oauth-noop`) returning an RFC 6749 §5.2 `invalid_client` error for any agent that follows the authorization/token endpoints. Extend the alias list in `scripts/next/sync-public.mjs` to add more extensionless well-known URIs.
 - Developer documentation hub: `app/docs/content.md` emits `/docs/` as the landing page; each `docs/*.md` file is rendered by the `app/docs/` routes at `/docs/<name>/`. The `/docs/` URL is also the target of the `service-doc` link relation.
 - Analytics configuration: `components/site/Analytics.tsx`
 - Analytics-derived stats data: `content/data/view_count.json` and `scripts/fetch_analytics.py`
 - Translation loading and UI: `assets/js/i18n.js`, `assets/js/components/site-language.js`, `components/post/LanguageSwitcher.tsx`, `components/post/TranslationToast.tsx`, and `assets/translations/`
-- Shared card UI for top-level pages: `components/cards/` and `assets/css/components/`
+- Shared card UI for top-level pages: `components/cards/` (styles: the `components/*` blocks in `css/main.css`)
 
 ## Constraints
 
