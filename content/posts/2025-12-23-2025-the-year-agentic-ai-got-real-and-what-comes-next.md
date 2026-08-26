@@ -43,7 +43,7 @@ The Model Context Protocol (MCP), introduced in late 2024, became the de facto s
 
 This culminated in the December 9th announcement that Anthropic, along with Block and OpenAI, was donating MCP to the newly formed **Agentic AI Foundation (AAIF)** under the Linux Foundation [4]. With over 10,000 active public MCP servers and 97 million monthly SDK downloads, MCP's transition to a neutral, community-driven standard solidifies its role as the foundational protocol for the agentic economy.
 
-![Before and After MCP](/assets/images/mcp_before_after.png){: width="960" height="540" }
+![Before and After MCP](/assets/images/mcp_before_after.webp){: width="960" height="540" }
 *The shift from fragmented, proprietary APIs to a unified, MCP-based approach simplifies agent-tool integration.*
 
 ### 2. The Dawn of Portable Skills

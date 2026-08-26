@@ -202,7 +202,8 @@
     background-color: var(--surface-sunken);
   }
 
-  .mobile-social-icon i {
+  .mobile-social-icon i,
+  .mobile-social-icon svg {
     font-size: var(--text-base);
     width: 16px;
     text-align: center;

@@ -7,12 +7,20 @@
 // public/assets/css, and Tailwind's preflight would reset them. See
 // docs/internal/parity-notes.md.
 import type { Viewport } from "next";
+import { Inter } from "next/font/google";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { getSiteConfig } from "@/components/lib/site-data";
 
-const FONT_AWESOME =
-  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css";
+// Self-hosted Inter (replaces the fonts.googleapis.com stylesheet): the woff2
+// files are served same-origin with a preload, and next/font generates a
+// metric-adjusted fallback so the swap doesn't shift layout.
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 // _includes/head.html — sets <html lang> from ?lang= before paint.
 const LANG_SCRIPT = `
@@ -36,17 +44,6 @@ const THEME_SCRIPT = `
       })();
     `;
 
-// Replaces the inline onload="this.media='all'" attribute on the Font Awesome
-// <link>, which JSX cannot express. Same non-blocking behavior.
-const FONT_AWESOME_SWAP = `
-      (function() {
-        var fa = document.getElementById('font-awesome-css');
-        if (!fa) return;
-        if (fa.sheet) { fa.media = 'all'; return; }
-        fa.addEventListener('load', function() { this.media = 'all'; });
-      })();
-    `;
-
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -64,6 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       data-default-lang={site.default_lang}
       data-supported-languages={languages}
       data-baseurl=""
+      className={inter.variable}
     >
       <body>
         {/* Colour scheme — must run before any content paints. */}
@@ -97,16 +95,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="manifest" href="/assets/favicon/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#555555" />
         <meta name="msapplication-TileImage" content="/assets/favicon/mstile-144x144.png" />
-
-        {/* Fonts - Preconnect for faster loading */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-          precedence="font"
-        />
 
         {/* Custom CSS */}
         <link rel="stylesheet" href="/css/main.css" precedence="site" />
@@ -159,19 +147,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="author" type="text/html" href={`${site.url}/work/`} title={site.title} />
 
         <script dangerouslySetInnerHTML={{ __html: LANG_SCRIPT }} />
-
-        {/* Font Awesome - loaded with media="print", swapped to all once ready */}
-        <link
-          rel="stylesheet"
-          href={FONT_AWESOME}
-          media="print"
-          id="font-awesome-css"
-          precedence="font-awesome"
-        />
-        <script dangerouslySetInnerHTML={{ __html: FONT_AWESOME_SWAP }} />
-        <noscript>
-          <link rel="stylesheet" href={FONT_AWESOME} />
-        </noscript>
 
         {children}
         <VercelAnalytics />

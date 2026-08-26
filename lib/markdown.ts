@@ -15,6 +15,9 @@
 // Public API: `renderMarkdown(md, options?) => Promise<RenderedMarkdown>`.
 // The `{ html, toc }` shape is unchanged; extra fields are additive.
 
+import fs from "node:fs";
+import path from "node:path";
+import { imageSize } from "image-size";
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";
@@ -1303,6 +1306,59 @@ function deriveTitle(node: HastElement): string | null {
   return text;
 }
 
+// Build-time intrinsic dimensions for site-local images, so the browser can
+// reserve layout space before the file loads (CLS). Local srcs (`/assets/...`)
+// resolve to the checked-in files; anything unresolvable is left untouched.
+// Also marks below-the-first images lazy so they don't compete with the
+// initial render.
+const imageDimensionCache = new Map<string, { width: number; height: number } | null>();
+
+function localImageDimensions(src: string): { width: number; height: number } | null {
+  const cached = imageDimensionCache.get(src);
+  if (cached !== undefined) return cached;
+
+  let result: { width: number; height: number } | null = null;
+  const relative = src.replace(/^\//, "").split(/[?#]/)[0];
+  if (relative && !relative.includes("..")) {
+    for (const base of [process.cwd(), path.join(process.cwd(), "public")]) {
+      const file = path.join(base, decodeURIComponent(relative));
+      if (!fs.existsSync(file)) continue;
+      try {
+        const { width, height } = imageSize(fs.readFileSync(file));
+        if (width && height) result = { width, height };
+      } catch {
+        // Unsupported format - leave the img as-is.
+      }
+      break;
+    }
+  }
+  imageDimensionCache.set(src, result);
+  return result;
+}
+
+function rehypeImageDimensions() {
+  return (tree: HastRoot) => {
+    let index = 0;
+    visit(tree, "element", (node: HastElement) => {
+      if (node.tagName !== "img") return;
+      const props = (node.properties ??= {});
+      const src = typeof props.src === "string" ? props.src : "";
+
+      if (src.startsWith("/") && props.width === undefined && props.height === undefined) {
+        const dims = localImageDimensions(src);
+        if (dims) {
+          props.width = dims.width;
+          props.height = dims.height;
+        }
+      }
+      if (props.decoding === undefined) props.decoding = "async";
+      // The first image may be the LCP element; keep it eager.
+      if (index > 0 && props.loading === undefined) props.loading = "lazy";
+      index += 1;
+    });
+  };
+}
+
 // ---------------------------------------------------------------------------
 // 5. Public entry point
 // ---------------------------------------------------------------------------
@@ -1330,6 +1386,7 @@ export async function renderMarkdown(
     .use(rehypeEscapeGt)
     .use(rehypeKramdownOrderedLists)
     .use(rehypeKramdownTableAlign)
+    .use(rehypeImageDimensions)
     .use(options.linkAttributes === false ? noopPlugin : rehypeLinkAttributes)
     .use(rehypeStringify, {
       allowDangerousHtml: true,

@@ -22,7 +22,7 @@ faq:
 
 The SaaS landscape is at a critical inflection point. The traditional, human-driven application model is giving way to a new paradigm: the agentic workspace. This is not a distant trend, but a strategic imperative for today. We propose that the next evolution for every successful SaaS company is to become a platform that orchestrates intelligent agents to achieve user outcomes. This transition is complex and fraught with challenges, but for those who navigate it successfully, the rewards will be immense. Those who fail to adapt risk being left behind.
 
-![SaaS and AI Agent Convergence](/assets/images/saas_agent_convergence.png){:.post-img}
+![SaaS and AI Agent Convergence](/assets/images/saas_agent_convergence.webp){:.post-img}
 <span class="post-img-caption">The convergence of SaaS and AI agents is reshaping the enterprise software landscape</span>
 
 ## The Decline of Seat-Based SaaS Dominance
@@ -31,7 +31,7 @@ The traditional SaaS model, built on per-user licensing and incremental feature 
 
 These startups, unburdened by legacy systems, are operating with unprecedented efficiency. As highlighted in recent analysis [5], AI-native firms are averaging \$3.48 million in revenue per employee—a staggering 5.7 times more than their traditional SaaS counterparts. This efficiency gap is a clear signal of a major market shift.
 
-![Efficiency Gap Between Traditional SaaS and AI-Native Startups](/assets/images/efficiency_gap.png){:.post-img}
+![Efficiency Gap Between Traditional SaaS and AI-Native Startups](/assets/images/efficiency_gap.webp){:.post-img}
 <span class="post-img-caption">AI-native startups are averaging $3.48M revenue per employee — 5.7x more than traditional SaaS companies</span>
 
 ## Six Pressures Reshaping the SaaS Model
@@ -63,7 +63,7 @@ Despite the challenges, the strategic advantage of becoming an agentic platform 
 
 While traditional systems of record store data about objects (like customers or invoices), context graphs create a system of record for *decisions*. They capture the exceptions, overrides, and precedents that currently live in siloed communications.
 
-![Context Graph Visualization](/assets/images/context_graph_saas.png){:.post-img}
+![Context Graph Visualization](/assets/images/context_graph_saas.webp){:.post-img}
 <span class="post-img-caption">Context graphs capture the decision traces that explain not just what happened, but why</span>
 
 This creates a powerful feedback loop. The companies that provide the agentic execution layer are the only ones who can capture these decision traces. As their context graphs grow, their agents become smarter and more reliable, creating a defensible advantage that is nearly impossible for competitors to replicate.

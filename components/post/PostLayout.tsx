@@ -176,11 +176,11 @@ export default function PostLayout({
 
                   <div className="copy-dropdown" id="copyDropdown">
                     <button className="copy-option" data-ai="claude">
-                      <img src="/assets/images/logos/claude.svg" alt="Claude" className="ai-logo" />
+                      <img src="/assets/images/logos/claude.svg" alt="Claude" className="ai-logo" width={14} height={14} loading="lazy" decoding="async" />
                       Open in Claude
                     </button>
                     <button className="copy-option" data-ai="chatgpt">
-                      <img src="/assets/images/logos/openai.svg" alt="OpenAI" className="ai-logo" />
+                      <img src="/assets/images/logos/openai.svg" alt="OpenAI" className="ai-logo" width={14} height={14} loading="lazy" decoding="async" />
                       Open in ChatGPT
                     </button>
                   </div>

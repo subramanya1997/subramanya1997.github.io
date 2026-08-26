@@ -116,10 +116,15 @@ export default async function Home() {
             </div>
           </div>
           <div className="profile-image">
+            {/* 312px (2x the 156px slot) variant of profile_picture.webp —
+                the 785KB original stays published for anything linking it. */}
             <img
               alt="profile photo"
-              src="/assets/images/profile_picture.webp"
-              loading="lazy"
+              src="/assets/images/profile_picture_312.webp"
+              width={312}
+              height={416}
+              fetchPriority="high"
+              decoding="async"
               className="profile-img"
             />
           </div>

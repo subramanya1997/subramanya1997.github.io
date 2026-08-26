@@ -15,7 +15,7 @@ export default function WorkEntry(props: Props) {
     <div className="work-entry">
       <div className="company-logo">
         {logo ? (
-          <img src={logo} alt={`${orgName} logo`} />
+          <img src={logo} alt={`${orgName} logo`} width={40} height={40} loading="lazy" decoding="async" />
         ) : (
           <div className="logo-placeholder">{orgName.slice(0, 1)}</div>
         )}
