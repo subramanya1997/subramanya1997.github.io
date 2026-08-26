@@ -8,6 +8,7 @@
 // docs/internal/parity-notes.md.
 import type { Viewport } from "next";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { getSiteConfig } from "@/components/lib/site-data";
 
 const FONT_AWESOME =
@@ -174,6 +175,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {children}
         <VercelAnalytics />
+        <SpeedInsights />
       </body>
     </html>
   );
