@@ -94,9 +94,11 @@ substantive differences are listed below.
   three 2022-12-28 posts. `components/lib/site-data.ts#getPostsInJekyllOrder`
   applies the tiebreak locally; it should be folded into `getAllPosts` so the
   feed, sitemap, search index and post routes agree.
-- **Analytics is gated on `JEKYLL_ENV=production`**, mirroring
-  `jekyll.environment == 'production'` (the value the deploy workflow already
-  sets). Local builds therefore match a local `jekyll build`, which has no GA.
+- **Analytics is always emitted.** The `JEKYLL_ENV=production` gate (mirroring
+  `jekyll.environment == 'production'`) was dropped after the Vercel cut-over —
+  the Vercel build never set it, so production shipped without GA. Every build
+  now carries the GA tags; local HTML differs from a plain `jekyll build` by
+  exactly those script tags.
 - **Reading time** is computed by running the post's markdown through
   `renderMarkdown` and applying `_includes/reading_time.html`'s algorithm to the
   rendered HTML — the same input Jekyll used. Verified equal for all posts.

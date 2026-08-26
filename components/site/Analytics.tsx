@@ -1,12 +1,7 @@
-// Port of _includes/analytics.html. Emitted only when JEKYLL_ENV=production,
-// exactly like the Liquid `jekyll.environment == 'production'` guard, so local
-// builds stay byte-comparable with a local `jekyll build`.
+// Port of _includes/analytics.html. Always emitted (the old Jekyll
+// JEKYLL_ENV=production guard is gone), so every build carries the GA tags.
 import { getSiteConfig } from "@/components/lib/site-data";
 import type { PageMeta } from "@/components/lib/page-meta";
-
-export function isProductionBuild(): boolean {
-  return process.env.JEKYLL_ENV === "production";
-}
 
 export default function Analytics({
   meta,
@@ -17,7 +12,7 @@ export default function Analytics({
 }) {
   const site = getSiteConfig();
   const ga = site.google_analytics as string | undefined;
-  if (!ga || !isProductionBuild()) return null;
+  if (!ga) return null;
 
   const contentType = layout === "page" ? "    'content_type': 'page',\n" : "";
   const pageView = meta.title

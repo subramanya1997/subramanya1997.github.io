@@ -12,6 +12,7 @@
     "build:export": "node scripts/next/sync-public.mjs && EXPORT_PARITY=1 next build"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "gray-matter": "^4.0.3",
     "hast-util-to-string": "^3.0.0",
     "highlight.js": "^11.10.0",

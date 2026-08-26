@@ -7,6 +7,7 @@
 // public/assets/css, and Tailwind's preflight would reset them. See
 // docs/internal/parity-notes.md.
 import type { Viewport } from "next";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import { getSiteConfig } from "@/components/lib/site-data";
 
 const FONT_AWESOME =
@@ -172,6 +173,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </noscript>
 
         {children}
+        <VercelAnalytics />
       </body>
     </html>
   );
