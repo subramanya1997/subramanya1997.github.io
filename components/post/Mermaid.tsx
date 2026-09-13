@@ -6,7 +6,10 @@ import { mermaidCss, mermaidJs } from "./assets";
 export default function Mermaid() {
   return (
     <>
-      <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+      {/* `defer` keeps it off the render path; the inline runtime below only
+          touches `mermaid` inside its DOMContentLoaded handler, which fires
+          after every deferred script has executed. */}
+      <script defer src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
       <script dangerouslySetInnerHTML={{ __html: mermaidJs() }} />
       <style dangerouslySetInnerHTML={{ __html: mermaidCss() }} />
     </>
