@@ -1311,6 +1311,9 @@ function deriveTitle(node: HastElement): string | null {
 // resolve to the checked-in files; anything unresolvable is left untouched.
 // Also marks below-the-first images lazy so they don't compete with the
 // initial render.
+//
+// Build-time only (every route is prerendered), so the `turbopackIgnore`
+// hints stop Turbopack from tracing the whole repo into the server bundle.
 const imageDimensionCache = new Map<string, { width: number; height: number } | null>();
 
 function localImageDimensions(src: string): { width: number; height: number } | null {
@@ -1321,10 +1324,10 @@ function localImageDimensions(src: string): { width: number; height: number } | 
   const relative = src.replace(/^\//, "").split(/[?#]/)[0];
   if (relative && !relative.includes("..")) {
     for (const base of [process.cwd(), path.join(process.cwd(), "public")]) {
-      const file = path.join(base, decodeURIComponent(relative));
-      if (!fs.existsSync(file)) continue;
+      const file = path.join(/* turbopackIgnore: true */ base, decodeURIComponent(relative));
+      if (!fs.existsSync(/* turbopackIgnore: true */ file)) continue;
       try {
-        const { width, height } = imageSize(fs.readFileSync(file));
+        const { width, height } = imageSize(fs.readFileSync(/* turbopackIgnore: true */ file));
         if (width && height) result = { width, height };
       } catch {
         // Unsupported format - leave the img as-is.

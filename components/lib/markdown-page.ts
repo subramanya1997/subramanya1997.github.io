@@ -41,9 +41,18 @@ export interface MarkdownPage {
   html: string;
 }
 
-/** Reads a repo-relative markdown page and renders it the way Jekyll would. */
+/**
+ * Reads a repo-relative markdown page and renders it the way Jekyll would.
+ *
+ * Build-time only: every caller is a statically prerendered route, so the
+ * markdown never needs to ship in the server bundle. The `turbopackIgnore`
+ * hint stops Turbopack from tracing the whole repo into the output.
+ */
 export async function loadMarkdownPage(relativePath: string): Promise<MarkdownPage> {
-  const source = fs.readFileSync(path.join(process.cwd(), relativePath), "utf8");
+  const source = fs.readFileSync(
+    path.join(/* turbopackIgnore: true */ process.cwd(), relativePath),
+    "utf8",
+  );
   const { data, content } = matter(source);
   const { html } = await renderMarkdown(resolveLiquid(content));
   return { frontmatter: data, html };

@@ -68,8 +68,12 @@ export function urlEncode(value: string): string {
 // social images (`_includes/head.html`)
 // ---------------------------------------------------------------------------
 
+// Build-time only (all routes are prerendered); the `turbopackIgnore` hint
+// keeps Turbopack from tracing the whole repo into the server bundle.
 function staticFileExists(relativePath: string): boolean {
-  return fs.existsSync(path.join(ROOT, relativePath.replace(/^\//, "")));
+  return fs.existsSync(
+    path.join(/* turbopackIgnore: true */ ROOT, relativePath.replace(/^\//, "")),
+  );
 }
 
 /**
