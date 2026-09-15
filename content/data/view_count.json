@@ -1,17 +1,17 @@
 {
-  "last_updated": "2026-09-14T01:30:13.939074",
+  "last_updated": "2026-09-15T01:27:20.361167",
   "view_counts": [
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
-      "views": 4327,
-      "avg_duration_seconds": 138.0,
-      "engagement_rate": 89.87
+      "views": 4329,
+      "avg_duration_seconds": 137.9,
+      "engagement_rate": 89.85
     },
     {
       "url": "/2025/04/28/oidc-a-proposal/",
       "views": 3732,
-      "avg_duration_seconds": 174.0,
-      "engagement_rate": 62.77
+      "avg_duration_seconds": 173.9,
+      "engagement_rate": 62.74
     },
     {
       "url": "/2026/01/01/what-are-context-graphs-really/",
@@ -33,21 +33,21 @@
     },
     {
       "url": "/2025/05/21/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway/",
-      "views": 1774,
-      "avg_duration_seconds": 187.6,
-      "engagement_rate": 66.01
+      "views": 1776,
+      "avg_duration_seconds": 187.3,
+      "engagement_rate": 66.06
     },
     {
       "url": "/2025/12/23/2025-the-year-agentic-ai-got-real-and-what-comes-next/",
-      "views": 1247,
-      "avg_duration_seconds": 115.1,
+      "views": 1249,
+      "avg_duration_seconds": 114.9,
       "engagement_rate": 95.74
     },
     {
       "url": "/2025/12/18/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle/",
-      "views": 1121,
-      "avg_duration_seconds": 147.4,
-      "engagement_rate": 94.32
+      "views": 1123,
+      "avg_duration_seconds": 147.1,
+      "engagement_rate": 94.33
     },
     {
       "url": "/2026/01/14/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it/",
@@ -56,22 +56,22 @@
       "engagement_rate": 92.14
     },
     {
+      "url": "/2026/04/13/the-filesystem-is-the-database-why-agents-need-a-new-storage-primitive/",
+      "views": 953,
+      "avg_duration_seconds": 338.7,
+      "engagement_rate": 92.49
+    },
+    {
       "url": "/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/",
       "views": 950,
       "avg_duration_seconds": 101.9,
       "engagement_rate": 53.97
     },
     {
-      "url": "/2026/04/13/the-filesystem-is-the-database-why-agents-need-a-new-storage-primitive/",
-      "views": 949,
-      "avg_duration_seconds": 339.7,
-      "engagement_rate": 92.47
-    },
-    {
       "url": "/2026/02/01/openclaw-and-the-rise-of-user-built-intelligence-a-wake-up-call-for-saas/",
-      "views": 900,
-      "avg_duration_seconds": 108.7,
-      "engagement_rate": 93.96
+      "views": 903,
+      "avg_duration_seconds": 108.6,
+      "engagement_rate": 93.97
     },
     {
       "url": "/2025/09/09/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms/",
@@ -81,9 +81,9 @@
     },
     {
       "url": "/2025/11/20/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale/",
-      "views": 713,
-      "avg_duration_seconds": 77.5,
-      "engagement_rate": 90.03
+      "views": 715,
+      "avg_duration_seconds": 77.3,
+      "engagement_rate": 90.06
     },
     {
       "url": "/2026/02/23/the-saaspocalypse-a-survival-guide/",
@@ -98,22 +98,22 @@
       "engagement_rate": 90.04
     },
     {
-      "url": "/2026/04/23/context-engineering-why-prompt-engineering-was-never-enough/",
-      "views": 543,
-      "avg_duration_seconds": 191.3,
-      "engagement_rate": 94.81
+      "url": "/2026/01/19/the-agentic-workspace-a-strategic-imperative-for-the-next-era-of-saas/",
+      "views": 545,
+      "avg_duration_seconds": 103.7,
+      "engagement_rate": 92.76
     },
     {
-      "url": "/2026/01/19/the-agentic-workspace-a-strategic-imperative-for-the-next-era-of-saas/",
-      "views": 542,
-      "avg_duration_seconds": 104.6,
-      "engagement_rate": 93.06
+      "url": "/2026/04/23/context-engineering-why-prompt-engineering-was-never-enough/",
+      "views": 544,
+      "avg_duration_seconds": 190.4,
+      "engagement_rate": 94.5
     },
     {
       "url": "/2025/12/10/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026/",
-      "views": 526,
-      "avg_duration_seconds": 120.7,
-      "engagement_rate": 93.46
+      "views": 533,
+      "avg_duration_seconds": 119.7,
+      "engagement_rate": 93.54
     },
     {
       "url": "/2024/01/11/the-nockout-story/",
@@ -129,15 +129,15 @@
     },
     {
       "url": "/2024/12/10/ai-agents-agentic-security-enterprise-automation/",
-      "views": 330,
-      "avg_duration_seconds": 60.0,
-      "engagement_rate": 73.76
+      "views": 332,
+      "avg_duration_seconds": 59.7,
+      "engagement_rate": 73.93
     },
     {
       "url": "/2025/12/02/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first/",
-      "views": 321,
-      "avg_duration_seconds": 95.4,
-      "engagement_rate": 90.58
+      "views": 323,
+      "avg_duration_seconds": 95.2,
+      "engagement_rate": 90.64
     },
     {
       "url": "/2025/07/01/securing-ai-assistants-digital-ids-for-ai/",
@@ -147,9 +147,9 @@
     },
     {
       "url": "/2026/08/17/break-in-break-out-ai-agent-security-in-2026/",
-      "views": 267,
-      "avg_duration_seconds": 195.3,
-      "engagement_rate": 97.29
+      "views": 271,
+      "avg_duration_seconds": 192.4,
+      "engagement_rate": 97.33
     },
     {
       "url": "/2026/02/19/the-year-saas-disappeared-into-the-conversation/",
@@ -189,9 +189,9 @@
     },
     {
       "url": "/2025/07/15/do-agents-need-their-own-identity/",
-      "views": 187,
-      "avg_duration_seconds": 37.3,
-      "engagement_rate": 84.47
+      "views": 190,
+      "avg_duration_seconds": 37.1,
+      "engagement_rate": 84.59
     },
     {
       "url": "/2025/11/14/from-espionage-to-identity-securing-the-future-of-agentic-ai/",
@@ -207,9 +207,9 @@
     },
     {
       "url": "/2022/12/28/demystifying-the-shell-a-beginners-guide/",
-      "views": 155,
-      "avg_duration_seconds": 8.3,
-      "engagement_rate": 69.03
+      "views": 161,
+      "avg_duration_seconds": 8.2,
+      "engagement_rate": 68.94
     },
     {
       "url": "/2023/01/04/demystifying-the-shell-scripting-working-with-files-and-directories/",
