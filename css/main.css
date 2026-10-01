@@ -1059,7 +1059,7 @@ button:focus {
 /* --- Profile / sections -------------------------------------------------- */
 
 .profile-card {
-  display: flex;
+  display: block;
   background: transparent;
   border-radius: 0;
   overflow: hidden;
@@ -1068,11 +1068,6 @@ button:focus {
 
 .profile-content {
   padding: 0;
-}
-
-.profile-image {
-  border-radius: var(--radius-md);
-  overflow: hidden;
 }
 
 .profile-links {
@@ -1833,9 +1828,7 @@ button:focus {
 /* --- Identity ------------------------------------------------------------ */
 
 .profile-card {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-8);
+  display: block;
   background: transparent;
   border-radius: 0;
   overflow: visible;
@@ -1877,22 +1870,6 @@ button:focus {
 
 .profile-content a:hover {
   text-decoration-color: currentColor;
-}
-
-.profile-image {
-  flex: 0 0 156px;
-  width: 156px;
-  align-self: flex-start;
-  overflow: hidden;
-  border-radius: var(--radius-md);
-  background: var(--surface-sunken);
-}
-
-.profile-image img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-md);
 }
 
 .profile-links {
@@ -1970,14 +1947,7 @@ button:focus {
 
 @media screen and (max-width: 768px) {
   .profile-card {
-    flex-direction: column-reverse;
-    gap: var(--space-5);
     margin-bottom: var(--space-12);
-  }
-
-  .profile-image {
-    flex: none;
-    width: 120px;
   }
 
   .profile-content {

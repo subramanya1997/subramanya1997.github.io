@@ -24,7 +24,8 @@
     "/assets/translations/ja/the-nockout-story.json": "Owner explicitly requested complete removal of this post on September 30, 2026.",
     "/assets/translations/ko/the-nockout-story.json": "Owner explicitly requested complete removal of this post on September 30, 2026.",
     "/assets/translations/pt/the-nockout-story.json": "Owner explicitly requested complete removal of this post on September 30, 2026.",
-    "/assets/translations/zh/the-nockout-story.json": "Owner explicitly requested complete removal of this post on September 30, 2026."
+    "/assets/translations/zh/the-nockout-story.json": "Owner explicitly requested complete removal of this post on September 30, 2026.",
+    "/assets/images/profile_picture.webp": "Owner explicitly requested removal of their photo from the site on September 30, 2026."
   },
   "ignoreMissing": [
     "/scripts/*",
@@ -43,7 +44,8 @@
     "/assets/translations/ja/the-nockout-story.json",
     "/assets/translations/ko/the-nockout-story.json",
     "/assets/translations/pt/the-nockout-story.json",
-    "/assets/translations/zh/the-nockout-story.json"
+    "/assets/translations/zh/the-nockout-story.json",
+    "/assets/images/profile_picture.webp"
   ],
   "_ignoreExtraReasons": {
     "/_next/*": "Next.js runtime chunks and manifests.",
