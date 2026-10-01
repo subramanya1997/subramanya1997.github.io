@@ -1,8 +1,0 @@
-{
-  "title": "삭제된 게시물",
-  "excerpt": "이 게시물은 삭제되었습니다.",
-  "content_html": "<p>이 게시물은 삭제되었습니다.</p>\n<p><a href=\"/blog/\">최신 게시물 읽기</a>.</p>",
-  "source_hash": "sha256:b65806bdb64f9cb840eb6974b8d0697c99a9878f194ce04ffd08df153f98dde9",
-  "model": "moonshotai/kimi-k2.6",
-  "generated_at": "2026-10-01T03:54:01.857755+00:00"
-}

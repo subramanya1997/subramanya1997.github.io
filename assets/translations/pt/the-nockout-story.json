@@ -1,8 +1,0 @@
-{
-  "title": "Post removido",
-  "excerpt": "Este post foi removido.",
-  "content_html": "<p>Este post foi removido.</p>\n<p><a href=\"/blog/\">Leia os posts mais recentes</a>.</p>",
-  "source_hash": "sha256:b65806bdb64f9cb840eb6974b8d0697c99a9878f194ce04ffd08df153f98dde9",
-  "model": "moonshotai/kimi-k2.6",
-  "generated_at": "2026-10-01T03:54:03.196967+00:00"
-}

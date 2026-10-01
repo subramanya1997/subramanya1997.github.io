@@ -186,6 +186,10 @@ export function slugify(tag) {
  */
 export function tagArchives(postList, bookList) {
   const records = new Map();
+  for (const tag of dataFile("tag-archives").preserved) {
+    const slug = slugify(tag);
+    records.set(slug, { name: tag, slug, posts: [], books: [] });
+  }
   const add = (documents, bucket) => {
     for (const document of documents) {
       for (const tag of tagsOf(document.data)) {

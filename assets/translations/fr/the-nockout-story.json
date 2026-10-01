@@ -1,8 +1,0 @@
-{
-  "title": "Article supprimé",
-  "excerpt": "Cet article a été supprimé.",
-  "content_html": "<p>Cet article a été supprimé.</p>\n<p><a href=\"/blog/\">Lire les derniers articles</a>.</p>",
-  "source_hash": "sha256:b65806bdb64f9cb840eb6974b8d0697c99a9878f194ce04ffd08df153f98dde9",
-  "model": "moonshotai/kimi-k2.6",
-  "generated_at": "2026-10-01T03:53:55.586908+00:00"
-}

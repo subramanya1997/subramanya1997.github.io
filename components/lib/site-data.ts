@@ -112,6 +112,7 @@ export function getTagArchives(): TagArchive[] {
     return record;
   };
 
+  for (const tag of getDataFile<{ preserved: string[] }>("tag-archives").preserved) ensure(tag);
   // Keep published tag archives addressable after retiring their last post.
   for (const post of getAllPosts(true).filter(post => post.frontmatter.retired)) {
     for (const tag of post.frontmatter.tags ?? []) if (tag.trim()) ensure(tag);

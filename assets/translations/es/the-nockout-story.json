@@ -1,8 +1,0 @@
-{
-  "title": "Publicación eliminada",
-  "excerpt": "Esta publicación ha sido eliminada.",
-  "content_html": "<p>Esta publicación ha sido eliminada.</p>\n\n<p><a href=\"/blog/\">Leer las últimas publicaciones</a>.</p>",
-  "source_hash": "sha256:b65806bdb64f9cb840eb6974b8d0697c99a9878f194ce04ffd08df153f98dde9",
-  "model": "moonshotai/kimi-k2.6",
-  "generated_at": "2026-10-01T03:54:33.213467+00:00"
-}

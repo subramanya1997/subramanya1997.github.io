@@ -1,8 +1,0 @@
-{
-  "title": "पोस्ट हटा दी गई",
-  "excerpt": "यह पोस्ट हटा दी गई है।",
-  "content_html": "<p>यह पोस्ट हटा दी गई है।</p>\n<p><a href=\"/blog/\">नवीनतम पोस्ट पढ़ें</a></p>",
-  "source_hash": "sha256:b65806bdb64f9cb840eb6974b8d0697c99a9878f194ce04ffd08df153f98dde9",
-  "model": "moonshotai/kimi-k2.6",
-  "generated_at": "2026-10-01T03:53:58.820165+00:00"
-}
