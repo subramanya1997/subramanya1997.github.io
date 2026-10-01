@@ -37,3 +37,10 @@ next-env.d.ts
 # Retired Jekyll output and local editorial bundles
 /_site/
 /drafts/
+
+# Local editor configuration and transient tool output
+/.claude/launch.json
+.pytest_cache/
+.venv/
+.cache/
+*.log
