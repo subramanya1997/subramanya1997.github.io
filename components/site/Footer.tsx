@@ -101,7 +101,6 @@ const FOOTER_STYLE = `
 const FOOTER_NAV = [
   { href: "/publications/", label: "Publications" },
   { href: "/stats/", label: "Stats" },
-  { href: "/docs/", label: "API Docs" },
   { href: "/contact/", label: "Contact" },
   { href: "/privacy/", label: "Privacy" },
 ];
