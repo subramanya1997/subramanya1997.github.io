@@ -1858,19 +1858,11 @@ button:focus {
   letter-spacing: var(--tracking-tight);
 }
 
-/* Lead paragraph — the one-line answer to "who is this". */
-.profile-content > p:first-of-type {
-  font-size: var(--text-base);
-  font-weight: var(--weight-medium);
-  line-height: var(--leading-relaxed);
-  color: var(--ink);
-  margin-bottom: var(--space-3);
-  text-wrap: pretty;
-}
-
+/* About paragraphs use one consistent reading style. */
 .profile-content > p {
-  font-size: var(--text-sm);
-  color: var(--ink-muted);
+  font-size: var(--text-base);
+  font-weight: var(--weight-normal);
+  color: var(--ink);
   line-height: var(--leading-relaxed);
   margin-bottom: var(--space-3);
   text-wrap: pretty;

@@ -40,7 +40,7 @@ export function buildStructuredData(meta: PageMeta): Node {
       name: site.title,
       url: `${site.url}/`,
       description: stripHtml(about.bio),
-      jobTitle: "Machine Learning Engineer",
+      jobTitle: about.job_title ?? "Machine Learning Engineer",
       email: `mailto:${site.email}`,
       sameAs: [
         `https://x.com/${about.twitter_username}`,

@@ -46,6 +46,7 @@ export interface About {
   linkedin_username: string;
   scholar_id: string;
   bio: string;
+  job_title?: string;
   history: string;
   fav_quote?: string;
   email?: string;
