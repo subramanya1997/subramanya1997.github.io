@@ -1,0 +1,1010 @@
+[
+  {
+    "label": "Cohort A",
+    "submission": "56638917",
+    "first40": {
+      "games": 40,
+      "wins": 37,
+      "losses": 3,
+      "draws": 0,
+      "strictly_above30000": 5,
+      "mean_own_cash": 102717.7,
+      "mean_margin": 12564.3
+    },
+    "first60": {
+      "games": 60,
+      "wins": 46,
+      "losses": 14,
+      "draws": 0,
+      "strictly_above30000": 5,
+      "mean_own_cash": 101738.06666666667,
+      "mean_margin": 7411.016666666666
+    },
+    "rows": [
+      {
+        "episode": 114668854,
+        "seat": 0,
+        "game_no": 1,
+        "margin": 99564,
+        "own_cash": 159556,
+        "rival_cash": 59992
+      },
+      {
+        "episode": 114670330,
+        "seat": 0,
+        "game_no": 2,
+        "margin": 66672,
+        "own_cash": 129998,
+        "rival_cash": 63326
+      },
+      {
+        "episode": 114671757,
+        "seat": 1,
+        "game_no": 3,
+        "margin": 48773,
+        "own_cash": 113292,
+        "rival_cash": 64519
+      },
+      {
+        "episode": 114673217,
+        "seat": 1,
+        "game_no": 4,
+        "margin": 63127,
+        "own_cash": 128442,
+        "rival_cash": 65315
+      },
+      {
+        "episode": 114674654,
+        "seat": 0,
+        "game_no": 5,
+        "margin": 53725,
+        "own_cash": 127750,
+        "rival_cash": 74025
+      },
+      {
+        "episode": 114676095,
+        "seat": 1,
+        "game_no": 6,
+        "margin": 18687,
+        "own_cash": 80471,
+        "rival_cash": 61784
+      },
+      {
+        "episode": 114677547,
+        "seat": 0,
+        "game_no": 7,
+        "margin": 18044,
+        "own_cash": 76092,
+        "rival_cash": 58048
+      },
+      {
+        "episode": 114679010,
+        "seat": 1,
+        "game_no": 8,
+        "margin": 8712,
+        "own_cash": 128403,
+        "rival_cash": 119691
+      },
+      {
+        "episode": 114680456,
+        "seat": 1,
+        "game_no": 9,
+        "margin": 13320,
+        "own_cash": 99430,
+        "rival_cash": 86110
+      },
+      {
+        "episode": 114681905,
+        "seat": 1,
+        "game_no": 10,
+        "margin": 4991,
+        "own_cash": 93498,
+        "rival_cash": 88507
+      },
+      {
+        "episode": 114683370,
+        "seat": 1,
+        "game_no": 11,
+        "margin": 9134,
+        "own_cash": 93192,
+        "rival_cash": 84058
+      },
+      {
+        "episode": 114684827,
+        "seat": 0,
+        "game_no": 12,
+        "margin": 3613,
+        "own_cash": 93987,
+        "rival_cash": 90374
+      },
+      {
+        "episode": 114686281,
+        "seat": 1,
+        "game_no": 13,
+        "margin": 1330,
+        "own_cash": 76967,
+        "rival_cash": 75637
+      },
+      {
+        "episode": 114687737,
+        "seat": 1,
+        "game_no": 14,
+        "margin": 1692,
+        "own_cash": 70522,
+        "rival_cash": 68830
+      },
+      {
+        "episode": 114687979,
+        "seat": 0,
+        "game_no": 15,
+        "margin": 4254,
+        "own_cash": 100487,
+        "rival_cash": 96233
+      },
+      {
+        "episode": 114689193,
+        "seat": 1,
+        "game_no": 16,
+        "margin": 388,
+        "own_cash": 81897,
+        "rival_cash": 81509
+      },
+      {
+        "episode": 114690660,
+        "seat": 0,
+        "game_no": 17,
+        "margin": 10465,
+        "own_cash": 119423,
+        "rival_cash": 108958
+      },
+      {
+        "episode": 114692127,
+        "seat": 1,
+        "game_no": 18,
+        "margin": 9877,
+        "own_cash": 69213,
+        "rival_cash": 59336
+      },
+      {
+        "episode": 114692810,
+        "seat": 1,
+        "game_no": 19,
+        "margin": 8132,
+        "own_cash": 117086,
+        "rival_cash": 108954
+      },
+      {
+        "episode": 114693627,
+        "seat": 1,
+        "game_no": 20,
+        "margin": 6154,
+        "own_cash": 116058,
+        "rival_cash": 109904
+      },
+      {
+        "episode": 114695191,
+        "seat": 0,
+        "game_no": 21,
+        "margin": 1832,
+        "own_cash": 85991,
+        "rival_cash": 84159
+      },
+      {
+        "episode": 114695800,
+        "seat": 1,
+        "game_no": 22,
+        "margin": 5404,
+        "own_cash": 102091,
+        "rival_cash": 96687
+      },
+      {
+        "episode": 114696649,
+        "seat": 1,
+        "game_no": 23,
+        "margin": 5489,
+        "own_cash": 76379,
+        "rival_cash": 70890
+      },
+      {
+        "episode": 114697151,
+        "seat": 0,
+        "game_no": 24,
+        "margin": 5182,
+        "own_cash": 73931,
+        "rival_cash": 68749
+      },
+      {
+        "episode": 114698194,
+        "seat": 1,
+        "game_no": 25,
+        "margin": 7713,
+        "own_cash": 79007,
+        "rival_cash": 71294
+      },
+      {
+        "episode": 114699689,
+        "seat": 1,
+        "game_no": 26,
+        "margin": 4418,
+        "own_cash": 82911,
+        "rival_cash": 78493
+      },
+      {
+        "episode": 114701145,
+        "seat": 1,
+        "game_no": 27,
+        "margin": 6715,
+        "own_cash": 87661,
+        "rival_cash": 80946
+      },
+      {
+        "episode": 114702649,
+        "seat": 0,
+        "game_no": 28,
+        "margin": 6583,
+        "own_cash": 109957,
+        "rival_cash": 103374
+      },
+      {
+        "episode": 114704113,
+        "seat": 1,
+        "game_no": 29,
+        "margin": 3440,
+        "own_cash": 107171,
+        "rival_cash": 103731
+      },
+      {
+        "episode": 114705593,
+        "seat": 1,
+        "game_no": 30,
+        "margin": 46,
+        "own_cash": 106486,
+        "rival_cash": 106440
+      },
+      {
+        "episode": 114707077,
+        "seat": 0,
+        "game_no": 31,
+        "margin": -5195,
+        "own_cash": 125774,
+        "rival_cash": 130969
+      },
+      {
+        "episode": 114708561,
+        "seat": 0,
+        "game_no": 32,
+        "margin": -10496,
+        "own_cash": 70639,
+        "rival_cash": 81135
+      },
+      {
+        "episode": 114710027,
+        "seat": 0,
+        "game_no": 33,
+        "margin": 4063,
+        "own_cash": 142060,
+        "rival_cash": 137997
+      },
+      {
+        "episode": 114710654,
+        "seat": 0,
+        "game_no": 34,
+        "margin": -3871,
+        "own_cash": 79656,
+        "rival_cash": 83527
+      },
+      {
+        "episode": 114711537,
+        "seat": 0,
+        "game_no": 35,
+        "margin": 6533,
+        "own_cash": 108435,
+        "rival_cash": 101902
+      },
+      {
+        "episode": 114713006,
+        "seat": 1,
+        "game_no": 36,
+        "margin": 1484,
+        "own_cash": 126458,
+        "rival_cash": 124974
+      },
+      {
+        "episode": 114713598,
+        "seat": 1,
+        "game_no": 37,
+        "margin": 3050,
+        "own_cash": 134309,
+        "rival_cash": 131259
+      },
+      {
+        "episode": 114714289,
+        "seat": 1,
+        "game_no": 38,
+        "margin": 5515,
+        "own_cash": 125389,
+        "rival_cash": 119874
+      },
+      {
+        "episode": 114715984,
+        "seat": 1,
+        "game_no": 39,
+        "margin": 2831,
+        "own_cash": 92466,
+        "rival_cash": 89635
+      },
+      {
+        "episode": 114717475,
+        "seat": 1,
+        "game_no": 40,
+        "margin": 1182,
+        "own_cash": 116173,
+        "rival_cash": 114991
+      },
+      {
+        "episode": 114718970,
+        "seat": 0,
+        "game_no": 41,
+        "margin": 3069,
+        "own_cash": 95287,
+        "rival_cash": 92218
+      },
+      {
+        "episode": 114720439,
+        "seat": 1,
+        "game_no": 42,
+        "margin": 10369,
+        "own_cash": 134284,
+        "rival_cash": 123915
+      },
+      {
+        "episode": 114721891,
+        "seat": 1,
+        "game_no": 43,
+        "margin": -2501,
+        "own_cash": 107457,
+        "rival_cash": 109958
+      },
+      {
+        "episode": 114723388,
+        "seat": 0,
+        "game_no": 44,
+        "margin": -1768,
+        "own_cash": 112274,
+        "rival_cash": 114042
+      },
+      {
+        "episode": 114724863,
+        "seat": 0,
+        "game_no": 45,
+        "margin": -47365,
+        "own_cash": 64693,
+        "rival_cash": 112058
+      },
+      {
+        "episode": 114726352,
+        "seat": 0,
+        "game_no": 46,
+        "margin": -2872,
+        "own_cash": 64807,
+        "rival_cash": 67679
+      },
+      {
+        "episode": 114727816,
+        "seat": 0,
+        "game_no": 47,
+        "margin": -10382,
+        "own_cash": 109318,
+        "rival_cash": 119700
+      },
+      {
+        "episode": 114729299,
+        "seat": 1,
+        "game_no": 48,
+        "margin": 3012,
+        "own_cash": 109378,
+        "rival_cash": 106366
+      },
+      {
+        "episode": 114730785,
+        "seat": 1,
+        "game_no": 49,
+        "margin": -8083,
+        "own_cash": 127198,
+        "rival_cash": 135281
+      },
+      {
+        "episode": 114731100,
+        "seat": 1,
+        "game_no": 50,
+        "margin": -9157,
+        "own_cash": 76404,
+        "rival_cash": 85561
+      },
+      {
+        "episode": 114732259,
+        "seat": 1,
+        "game_no": 51,
+        "margin": 1367,
+        "own_cash": 81023,
+        "rival_cash": 79656
+      },
+      {
+        "episode": 114733748,
+        "seat": 0,
+        "game_no": 52,
+        "margin": 5512,
+        "own_cash": 148185,
+        "rival_cash": 142673
+      },
+      {
+        "episode": 114735204,
+        "seat": 0,
+        "game_no": 53,
+        "margin": 2732,
+        "own_cash": 91256,
+        "rival_cash": 88524
+      },
+      {
+        "episode": 114736695,
+        "seat": 1,
+        "game_no": 54,
+        "margin": 8484,
+        "own_cash": 114435,
+        "rival_cash": 105951
+      },
+      {
+        "episode": 114736946,
+        "seat": 0,
+        "game_no": 55,
+        "margin": -15454,
+        "own_cash": 63471,
+        "rival_cash": 78925
+      },
+      {
+        "episode": 114737067,
+        "seat": 1,
+        "game_no": 56,
+        "margin": -6429,
+        "own_cash": 74864,
+        "rival_cash": 81293
+      },
+      {
+        "episode": 114738221,
+        "seat": 1,
+        "game_no": 57,
+        "margin": -7288,
+        "own_cash": 95196,
+        "rival_cash": 102484
+      },
+      {
+        "episode": 114739679,
+        "seat": 1,
+        "game_no": 58,
+        "margin": -2534,
+        "own_cash": 68362,
+        "rival_cash": 70896
+      },
+      {
+        "episode": 114741185,
+        "seat": 0,
+        "game_no": 59,
+        "margin": 2027,
+        "own_cash": 116337,
+        "rival_cash": 114310
+      },
+      {
+        "episode": 114742664,
+        "seat": 0,
+        "game_no": 60,
+        "margin": 19350,
+        "own_cash": 141347,
+        "rival_cash": 121997
+      }
+    ]
+  },
+  {
+    "label": "Cohort B",
+    "submission": "56652541",
+    "first40": {
+      "games": 40,
+      "wins": 36,
+      "losses": 4,
+      "draws": 0,
+      "strictly_above30000": 6,
+      "mean_own_cash": 105981.35,
+      "mean_margin": 13181.3
+    },
+    "first60": {
+      "games": 60,
+      "wins": 44,
+      "losses": 16,
+      "draws": 0,
+      "strictly_above30000": 6,
+      "mean_own_cash": 103289.16666666667,
+      "mean_margin": 7530.083333333333
+    },
+    "rows": [
+      {
+        "episode": 114891600,
+        "seat": 0,
+        "game_no": 1,
+        "margin": 86126,
+        "own_cash": 134460,
+        "rival_cash": 48334
+      },
+      {
+        "episode": 114893171,
+        "seat": 0,
+        "game_no": 2,
+        "margin": 65422,
+        "own_cash": 98240,
+        "rival_cash": 32818
+      },
+      {
+        "episode": 114894711,
+        "seat": 1,
+        "game_no": 3,
+        "margin": 75402,
+        "own_cash": 157994,
+        "rival_cash": 82592
+      },
+      {
+        "episode": 114896236,
+        "seat": 0,
+        "game_no": 4,
+        "margin": 40376,
+        "own_cash": 97105,
+        "rival_cash": 56729
+      },
+      {
+        "episode": 114897784,
+        "seat": 0,
+        "game_no": 5,
+        "margin": 34584,
+        "own_cash": 109963,
+        "rival_cash": 75379
+      },
+      {
+        "episode": 114899312,
+        "seat": 0,
+        "game_no": 6,
+        "margin": 17283,
+        "own_cash": 113339,
+        "rival_cash": 96056
+      },
+      {
+        "episode": 114900851,
+        "seat": 1,
+        "game_no": 7,
+        "margin": 8687,
+        "own_cash": 79867,
+        "rival_cash": 71180
+      },
+      {
+        "episode": 114902402,
+        "seat": 0,
+        "game_no": 8,
+        "margin": 25957,
+        "own_cash": 113562,
+        "rival_cash": 87605
+      },
+      {
+        "episode": 114903939,
+        "seat": 0,
+        "game_no": 9,
+        "margin": 24116,
+        "own_cash": 96710,
+        "rival_cash": 72594
+      },
+      {
+        "episode": 114905513,
+        "seat": 1,
+        "game_no": 10,
+        "margin": 7347,
+        "own_cash": 151257,
+        "rival_cash": 143910
+      },
+      {
+        "episode": 114906093,
+        "seat": 1,
+        "game_no": 11,
+        "margin": 18545,
+        "own_cash": 121251,
+        "rival_cash": 102706
+      },
+      {
+        "episode": 114907024,
+        "seat": 1,
+        "game_no": 12,
+        "margin": 10127,
+        "own_cash": 67869,
+        "rival_cash": 57742
+      },
+      {
+        "episode": 114908692,
+        "seat": 1,
+        "game_no": 13,
+        "margin": 3422,
+        "own_cash": 89848,
+        "rival_cash": 86426
+      },
+      {
+        "episode": 114910363,
+        "seat": 1,
+        "game_no": 14,
+        "margin": 4180,
+        "own_cash": 109264,
+        "rival_cash": 105084
+      },
+      {
+        "episode": 114912041,
+        "seat": 0,
+        "game_no": 15,
+        "margin": 839,
+        "own_cash": 84312,
+        "rival_cash": 83473
+      },
+      {
+        "episode": 114913738,
+        "seat": 1,
+        "game_no": 16,
+        "margin": 12728,
+        "own_cash": 117896,
+        "rival_cash": 105168
+      },
+      {
+        "episode": 114915409,
+        "seat": 1,
+        "game_no": 17,
+        "margin": -15129,
+        "own_cash": 108256,
+        "rival_cash": 123385
+      },
+      {
+        "episode": 114916467,
+        "seat": 0,
+        "game_no": 18,
+        "margin": 4226,
+        "own_cash": 94613,
+        "rival_cash": 90387
+      },
+      {
+        "episode": 114917107,
+        "seat": 0,
+        "game_no": 19,
+        "margin": 4033,
+        "own_cash": 77979,
+        "rival_cash": 73946
+      },
+      {
+        "episode": 114918830,
+        "seat": 0,
+        "game_no": 20,
+        "margin": 1860,
+        "own_cash": 85716,
+        "rival_cash": 83856
+      },
+      {
+        "episode": 114920630,
+        "seat": 1,
+        "game_no": 21,
+        "margin": 6190,
+        "own_cash": 83150,
+        "rival_cash": 76960
+      },
+      {
+        "episode": 114922191,
+        "seat": 0,
+        "game_no": 22,
+        "margin": 1278,
+        "own_cash": 77008,
+        "rival_cash": 75730
+      },
+      {
+        "episode": 114923680,
+        "seat": 1,
+        "game_no": 23,
+        "margin": 10574,
+        "own_cash": 99288,
+        "rival_cash": 88714
+      },
+      {
+        "episode": 114924423,
+        "seat": 0,
+        "game_no": 24,
+        "margin": 510,
+        "own_cash": 122469,
+        "rival_cash": 121959
+      },
+      {
+        "episode": 114925157,
+        "seat": 0,
+        "game_no": 25,
+        "margin": 6980,
+        "own_cash": 123361,
+        "rival_cash": 116381
+      },
+      {
+        "episode": 114926638,
+        "seat": 1,
+        "game_no": 26,
+        "margin": 9080,
+        "own_cash": 100190,
+        "rival_cash": 91110
+      },
+      {
+        "episode": 114928092,
+        "seat": 0,
+        "game_no": 27,
+        "margin": 307,
+        "own_cash": 72885,
+        "rival_cash": 72578
+      },
+      {
+        "episode": 114928802,
+        "seat": 0,
+        "game_no": 28,
+        "margin": 6982,
+        "own_cash": 90398,
+        "rival_cash": 83416
+      },
+      {
+        "episode": 114928884,
+        "seat": 1,
+        "game_no": 29,
+        "margin": 6898,
+        "own_cash": 130461,
+        "rival_cash": 123563
+      },
+      {
+        "episode": 114929654,
+        "seat": 1,
+        "game_no": 30,
+        "margin": 720,
+        "own_cash": 80824,
+        "rival_cash": 80104
+      },
+      {
+        "episode": 114931217,
+        "seat": 1,
+        "game_no": 31,
+        "margin": 3988,
+        "own_cash": 124989,
+        "rival_cash": 121001
+      },
+      {
+        "episode": 114932763,
+        "seat": 0,
+        "game_no": 32,
+        "margin": 1703,
+        "own_cash": 71621,
+        "rival_cash": 69918
+      },
+      {
+        "episode": 114934489,
+        "seat": 1,
+        "game_no": 33,
+        "margin": 1320,
+        "own_cash": 99963,
+        "rival_cash": 98643
+      },
+      {
+        "episode": 114935819,
+        "seat": 1,
+        "game_no": 34,
+        "margin": 15,
+        "own_cash": 98345,
+        "rival_cash": 98330
+      },
+      {
+        "episode": 114937659,
+        "seat": 1,
+        "game_no": 35,
+        "margin": 241,
+        "own_cash": 107511,
+        "rival_cash": 107270
+      },
+      {
+        "episode": 114937799,
+        "seat": 0,
+        "game_no": 36,
+        "margin": 83795,
+        "own_cash": 162874,
+        "rival_cash": 79079
+      },
+      {
+        "episode": 114937807,
+        "seat": 1,
+        "game_no": 37,
+        "margin": -12182,
+        "own_cash": 80871,
+        "rival_cash": 93053
+      },
+      {
+        "episode": 114939001,
+        "seat": 1,
+        "game_no": 38,
+        "margin": 3438,
+        "own_cash": 162178,
+        "rival_cash": 158740
+      },
+      {
+        "episode": 114940754,
+        "seat": 1,
+        "game_no": 39,
+        "margin": -20374,
+        "own_cash": 113984,
+        "rival_cash": 134358
+      },
+      {
+        "episode": 114942551,
+        "seat": 0,
+        "game_no": 40,
+        "margin": -14342,
+        "own_cash": 127383,
+        "rival_cash": 141725
+      },
+      {
+        "episode": 114944341,
+        "seat": 0,
+        "game_no": 41,
+        "margin": -4351,
+        "own_cash": 140702,
+        "rival_cash": 145053
+      },
+      {
+        "episode": 114946222,
+        "seat": 1,
+        "game_no": 42,
+        "margin": -5564,
+        "own_cash": 92278,
+        "rival_cash": 97842
+      },
+      {
+        "episode": 114948141,
+        "seat": 0,
+        "game_no": 43,
+        "margin": 2426,
+        "own_cash": 135620,
+        "rival_cash": 133194
+      },
+      {
+        "episode": 114950034,
+        "seat": 1,
+        "game_no": 44,
+        "margin": 990,
+        "own_cash": 62386,
+        "rival_cash": 61396
+      },
+      {
+        "episode": 114952013,
+        "seat": 0,
+        "game_no": 45,
+        "margin": 447,
+        "own_cash": 117676,
+        "rival_cash": 117229
+      },
+      {
+        "episode": 114952397,
+        "seat": 0,
+        "game_no": 46,
+        "margin": 151,
+        "own_cash": 67315,
+        "rival_cash": 67164
+      },
+      {
+        "episode": 114954070,
+        "seat": 1,
+        "game_no": 47,
+        "margin": -12706,
+        "own_cash": 67662,
+        "rival_cash": 80368
+      },
+      {
+        "episode": 114956121,
+        "seat": 0,
+        "game_no": 48,
+        "margin": 12440,
+        "own_cash": 132331,
+        "rival_cash": 119891
+      },
+      {
+        "episode": 114958235,
+        "seat": 0,
+        "game_no": 49,
+        "margin": -2560,
+        "own_cash": 110662,
+        "rival_cash": 113222
+      },
+      {
+        "episode": 114960293,
+        "seat": 1,
+        "game_no": 50,
+        "margin": -7624,
+        "own_cash": 72526,
+        "rival_cash": 80150
+      },
+      {
+        "episode": 114960447,
+        "seat": 1,
+        "game_no": 51,
+        "margin": -6247,
+        "own_cash": 103182,
+        "rival_cash": 109429
+      },
+      {
+        "episode": 114962123,
+        "seat": 1,
+        "game_no": 52,
+        "margin": -9188,
+        "own_cash": 93290,
+        "rival_cash": 102478
+      },
+      {
+        "episode": 114962293,
+        "seat": 0,
+        "game_no": 53,
+        "margin": 1085,
+        "own_cash": 139926,
+        "rival_cash": 138841
+      },
+      {
+        "episode": 114964361,
+        "seat": 1,
+        "game_no": 54,
+        "margin": 8,
+        "own_cash": 100809,
+        "rival_cash": 100801
+      },
+      {
+        "episode": 114966544,
+        "seat": 1,
+        "game_no": 55,
+        "margin": -4616,
+        "own_cash": 76230,
+        "rival_cash": 80846
+      },
+      {
+        "episode": 114968721,
+        "seat": 0,
+        "game_no": 56,
+        "margin": -607,
+        "own_cash": 93378,
+        "rival_cash": 93985
+      },
+      {
+        "episode": 114970754,
+        "seat": 0,
+        "game_no": 57,
+        "margin": 644,
+        "own_cash": 83364,
+        "rival_cash": 82720
+      },
+      {
+        "episode": 114971313,
+        "seat": 1,
+        "game_no": 58,
+        "margin": -4672,
+        "own_cash": 80973,
+        "rival_cash": 85645
+      },
+      {
+        "episode": 114972622,
+        "seat": 1,
+        "game_no": 59,
+        "margin": -26198,
+        "own_cash": 103365,
+        "rival_cash": 129563
+      },
+      {
+        "episode": 114978727,
+        "seat": 0,
+        "game_no": 60,
+        "margin": -9305,
+        "own_cash": 84421,
+        "rival_cash": 93726
+      }
+    ]
+  }
+]

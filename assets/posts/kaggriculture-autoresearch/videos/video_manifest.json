@@ -1,0 +1,128 @@
+{
+  "status": "TECHNICAL_AND_DECODED_STILL_REVIEW_PASS",
+  "cases": [
+    {
+      "id": "859_recovery",
+      "title": "A recorded loss becomes a753-coin win",
+      "scope": "LOCAL_RECORDED_OPPONENT; not a hosted match. Historical opponent commands and shop reveals retained by evaluator.",
+      "source": {
+        "path": "generation/research859_20260918/parent_repair_visible_demand_v1/artifact",
+        "canonical_source_sha256": "08f712abccb4dcd00a6554c52db0b60749a5887bb32d2ebe1827684a421932fc",
+        "verified_files": 96,
+        "canonical_encoding": "sortedJSON compact separators"
+      },
+      "final_own_cash": 67293.0,
+      "final_rival_cash": 66540.0,
+      "final_margin": 753.0,
+      "video": "859_recovery.mp4",
+      "poster": "859_recovery_poster.png",
+      "chapters": "859_recovery.vtt",
+      "previews": {
+        "intro": "859_recovery_intro.png",
+        "mid": "859_recovery_mid.png",
+        "late": "859_recovery_late.png",
+        "final": "859_recovery_final.png"
+      },
+      "duration_seconds": 37.0,
+      "encoded_frames": 888,
+      "manifest": "859_recovery_manifest.json",
+      "manifest_sha256": "a3dc2355b63e55c562affd714d71c8fc161d5cc5fa3b83c5e96df35b07b2937e",
+      "visual_review": "Decoded intro/mid/final inspected; readable, accurate outcome/scope labels."
+    },
+    {
+      "id": "397_narrow_preserved_win",
+      "title": "A last-day fertilizer tour; narrow win retained",
+      "scope": "LOCAL_RECORDED_OPPONENT; not the final hosted submission playing this game.",
+      "source": {
+        "path": "generation/first40_autoresearch_20260928/fast_retire397_astra",
+        "canonical_source_sha256": "362ac5c7ec764f345c222d388a47d41349d786fe2e118fe1fe41a0673918972e",
+        "verified_files": 142,
+        "canonical_encoding": "sortedJSON default separators"
+      },
+      "final_own_cash": 107511.0,
+      "final_rival_cash": 107270.0,
+      "final_margin": 241.0,
+      "video": "397_narrow_preserved_win.mp4",
+      "poster": "397_narrow_preserved_win_poster.png",
+      "chapters": "397_narrow_preserved_win.vtt",
+      "previews": {
+        "intro": "397_narrow_preserved_win_intro.png",
+        "mid": "397_narrow_preserved_win_mid.png",
+        "late": "397_narrow_preserved_win_late.png",
+        "final": "397_narrow_preserved_win_final.png"
+      },
+      "duration_seconds": 37.0,
+      "encoded_frames": 888,
+      "manifest": "397_narrow_preserved_win_manifest.json",
+      "manifest_sha256": "b1e506c6fb1616c5bcaedfeffcebcee672172af39e489e4c76d92f53383b8e8d",
+      "visual_review": "Decoded intro/mid/final inspected; readable, accurate outcome/scope labels."
+    },
+    {
+      "id": "397_fragile46_win",
+      "title": "A46-coin win survives the final changes",
+      "scope": "LOCAL_RECORDED_OPPONENT; not a hosted final397game.",
+      "source": {
+        "path": "generation/first40_autoresearch_20260928/fast_retire397_astra",
+        "canonical_source_sha256": "362ac5c7ec764f345c222d388a47d41349d786fe2e118fe1fe41a0673918972e",
+        "verified_files": 142,
+        "canonical_encoding": "sortedJSON default separators"
+      },
+      "final_own_cash": 106486.0,
+      "final_rival_cash": 106440.0,
+      "final_margin": 46.0,
+      "video": "397_fragile46_win.mp4",
+      "poster": "397_fragile46_win_poster.png",
+      "chapters": "397_fragile46_win.vtt",
+      "previews": {
+        "intro": "397_fragile46_win_intro.png",
+        "mid": "397_fragile46_win_mid.png",
+        "late": "397_fragile46_win_late.png",
+        "final": "397_fragile46_win_final.png"
+      },
+      "duration_seconds": 37.0,
+      "encoded_frames": 888,
+      "manifest": "397_fragile46_win_manifest.json",
+      "manifest_sha256": "1b65c7fd273f950eeba7f839431275885d50e670c341b06c3f7adf6e07bffe1b",
+      "visual_review": "Decoded intro/mid/final inspected; readable, accurate outcome/scope labels."
+    },
+    {
+      "id": "361_live_strategic_loss",
+      "title": "A completed hosted loss, not a stalled game",
+      "scope": "ACTUAL_HOSTED_PUBLIC_REPLAY; own farm/callback logs and public opponent farm only.",
+      "source": {
+        "path": "generation/first40_autoresearch_20260928/margin361_astra",
+        "canonical_source_sha256": "f6b6e081f9c9a0fb509186b424251c2593051d78bc5bc6a58d6de93e44a6f94f",
+        "verified_files": 141,
+        "canonical_encoding": "sortedJSON default separators"
+      },
+      "final_own_cash": 75156.0,
+      "final_rival_cash": 76382.0,
+      "final_margin": -1226.0,
+      "video": "361_live_strategic_loss.mp4",
+      "poster": "361_live_strategic_loss_poster.png",
+      "chapters": "361_live_strategic_loss.vtt",
+      "previews": {
+        "intro": "361_live_strategic_loss_intro.png",
+        "mid": "361_live_strategic_loss_mid.png",
+        "late": "361_live_strategic_loss_late.png",
+        "final": "361_live_strategic_loss_final.png"
+      },
+      "duration_seconds": 37.0,
+      "encoded_frames": 888,
+      "manifest": "361_live_strategic_loss_manifest.json",
+      "manifest_sha256": "86651c235d2b26bfe1e0560ea6e716e3ee2949a2af931e65fcc55a79d70e6517",
+      "visual_review": "Decoded intro/mid/final inspected; readable, accurate outcome/scope labels."
+    }
+  ],
+  "renderer_sha256": "0e7860ebd7325b4d9af867c2cc1dbc13f3666a2f2213f2ca5f2458decc0f96b6",
+  "input_cases_sha256": "27d9f9855f4302af8a85fe40527c7ef52c1bc0d2e958808256ebe1fb85bbb37c",
+  "decoded_visual_checks_sha256": "d99a79162dc21917bb5e72ba366161475c6fb4058beb3e3c552e7006bf6db9dd",
+  "human_full_motion_acceptance": "NOT_CLAIMED",
+  "input_cases_path": "evaluation/blog_draft_20260930/site/videos/input_video_cases_frozen.json",
+  "metadata_correction": {
+    "corrected_path": "evaluation/blog_draft_20260930/video_cases.json",
+    "sha256": "7cdad023fdb53ca491d030b35a7498a75e7ed1d8b387effed63f21d55d7a6eb1",
+    "reason": "Milestone animal summaries were corrected from tile animal fields; rendering already read the raw replay and was unaffected. Original case-input bytes retained.",
+    "no_reencode": true
+  }
+}

@@ -21,7 +21,7 @@ import { getAllPosts, getPost } from "@/lib/content";
 import { renderMarkdown } from "@/lib/markdown";
 
 export function generateStaticParams() {
-  return getAllPosts().map((post) => ({
+  return getAllPosts(true).map((post) => ({
     segment: post.year,
     month: post.month,
     day: post.day,

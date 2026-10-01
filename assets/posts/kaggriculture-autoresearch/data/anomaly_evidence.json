@@ -1,0 +1,617 @@
+{
+  "scope": "Local technical blog evidence only; pure saved JSON/source reading. No new policy, helper, engine, API or upload calls.",
+  "cases": [
+    {
+      "id": "narrow_vs_broad_gen68",
+      "title": "Selected loss recovery did not generalize",
+      "same_source": true,
+      "narrow": {
+        "games": 15,
+        "candidate_wins": 6,
+        "parent_wins": 2,
+        "recoveries": 6,
+        "lost_wins": 2,
+        "mean_own_delta": 11667.666666666666,
+        "mean_margin_delta": 24157.6,
+        "source_sha256": "e42362287e17aa02fbb59bc75eb0eac2e1639316317a3ba1233ba7dc5e2d1b4d"
+      },
+      "broad": {
+        "games": 120,
+        "candidate_wins": 21,
+        "parent_wins": 90,
+        "recoveries": 5,
+        "lost_wins": 74,
+        "mean_own_delta": -10412.1,
+        "mean_margin_delta": -16332.775,
+        "source_sha256": "e42362287e17aa02fbb59bc75eb0eac2e1639316317a3ba1233ba7dc5e2d1b4d"
+      },
+      "evidence": [
+        "E01",
+        "E02",
+        "E03",
+        "E04"
+      ],
+      "limits": [
+        "Recorded opponent actions, not responsive/live win probabilities.",
+        "The panels have different selection and overlap; do not plot as sequential deteriorating live skill.",
+        "Both fragile controls already failed on the narrow panel; aggregate gain never passed win-preservation."
+      ]
+    },
+    {
+      "id": "runtime388_to397",
+      "title": "A winning record could still fail the selected runtime gate",
+      "failed_responsive": {
+        "wins": 6,
+        "draws": 10,
+        "losses": 0,
+        "games": 16,
+        "callback_threshold_seconds": 1.0,
+        "slow_cases": [
+          {
+            "case": "world6_s0",
+            "own_overruns": [
+              {
+                "step": 408,
+                "seconds": 1.2235144999576733
+              }
+            ],
+            "peer_overruns": [
+              {
+                "step": 408,
+                "seconds": 1.2330183750018477
+              }
+            ],
+            "evidence": [
+              "E06"
+            ]
+          },
+          {
+            "case": "world6_s1",
+            "own_overruns": [
+              {
+                "step": 408,
+                "seconds": 1.2421561669325456
+              }
+            ],
+            "peer_overruns": [
+              {
+                "step": 408,
+                "seconds": 1.231346792075783
+              }
+            ],
+            "evidence": [
+              "E07"
+            ]
+          }
+        ]
+      },
+      "profile": {
+        "total_instrumented_seconds": 3.304,
+        "market_value_calls": 9344,
+        "market_value_cumulative_seconds": 2.613,
+        "route_calls": 3172,
+        "route_cumulative_seconds": 0.488,
+        "scope": "Instrumented diagnostic; not comparable as raw wall runtime."
+      },
+      "route_equivalence": {
+        "status": "PASS",
+        "cases": 4200,
+        "helper_calls": 8400,
+        "full_games": 0
+      },
+      "market_equivalence": {
+        "status": "PASS",
+        "cases": 3056,
+        "market_helper_calls": 6112,
+        "price_helper_calls": 488028,
+        "policy_callbacks": 0
+      },
+      "same_saved_prefix": {
+        "source396_step408_seconds": 1.1291907500708476,
+        "source397_step408_seconds": 0.6557437090668827,
+        "callbacks_each": 409,
+        "all_actions_equal388": true
+      },
+      "new_fresh397": {
+        "games": 16,
+        "worlds": 8,
+        "wins": 6,
+        "losses": 0,
+        "draws": 10,
+        "maximum_callback": 0.7856981669319794,
+        "maximum_peer_callback": 1.2264145420631394,
+        "candidate_callback_overruns": 0,
+        "peer_runtime_status": "UNQUALIFIED_OBSERVED_OVERRUN"
+      },
+      "known_failed_world_regression": {
+        "games": 2,
+        "fresh": false,
+        "maximum_callback": 0.6967134999576956,
+        "full_both_semantic_paths_equal": true
+      },
+      "mechanism": [
+        "Select shortest retirement target permutation by exact Manhattan length, then allocate only the winning command list.",
+        "Visit only receipt-bearing market times and count intervening periodic consumption algebraically; preserve exact per-price-call inventory and sale-before-consumption ordering."
+      ],
+      "evidence": [
+        "E05",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E10",
+        "E11",
+        "E12",
+        "E13",
+        "E14",
+        "E15",
+        "E16"
+      ],
+      "limits": [
+        "Fresh397 worlds differ from388; use the saved prefix/known two for paired runtime evidence.",
+        "Frozen361 peer still exceeded the one-second criterion, disclosed as unqualified. A prospective gate amendment retained candidate strict runtime and reported peer risk.",
+        "No measured local maximum is a hosted latency guarantee.",
+        "Helper equivalence calls and prefix callbacks are not full games."
+      ]
+    },
+    {
+      "id": "aggregate_gain_lost_wins390",
+      "title": "Positive average margin hid two overturned wins",
+      "overall": {
+        "games": 191,
+        "candidate_wins": 93,
+        "parent_wins": 94,
+        "recoveries": 1,
+        "lost_wins": 2,
+        "mean_own_delta": 21.005235602094242,
+        "mean_margin_delta": 39.35078534031414,
+        "source_sha256": "43779a14fd536164c5510af36c27db8d77c5fbcceb1218cb1a86cc582539cccd"
+      },
+      "lost_winner_rows": [
+        {
+          "episode": 114924423,
+          "seat": 0,
+          "submission": 56652541,
+          "run": "research390_integrated_final191_k3",
+          "parent_run": "research362_margin361_full120_k3",
+          "parent_margin": 463.0,
+          "margin": -126.0,
+          "own_cash": 121758.0,
+          "rival_cash": 121884.0,
+          "margin_delta": -589.0,
+          "own_delta": -662.0,
+          "rival_delta": -73.0,
+          "semantic_paths_equal": false,
+          "first_semantic_difference": 606,
+          "semantic_diff_steps": 114,
+          "status": "DONE"
+        },
+        {
+          "episode": 114952397,
+          "seat": 0,
+          "submission": 56652541,
+          "run": "research390_integrated_final191_k3",
+          "parent_run": "research362_margin361_full120_k3",
+          "parent_margin": 151.0,
+          "margin": -121.0,
+          "own_cash": 67401.0,
+          "rival_cash": 67522.0,
+          "margin_delta": -272.0,
+          "own_delta": 86.0,
+          "rival_delta": 358.0,
+          "semantic_paths_equal": false,
+          "first_semantic_difference": 614,
+          "semantic_diff_steps": 106,
+          "status": "DONE"
+        }
+      ],
+      "evidence": [
+        "E17",
+        "E18",
+        "E19"
+      ],
+      "limits": [
+        "The later literal-suffix cargo certificate omitted adaptive future sales; current mass did not prove protected goods would be discarded.",
+        "One recovered loss did not compensate the win-preservation gate for two lost prior winners."
+      ]
+    },
+    {
+      "id": "archive_seed_jitter_rejoin",
+      "episode": 115748332,
+      "seat": 1,
+      "differing_action_callbacks": [
+        377,
+        381
+      ],
+      "different_observation_rows": [
+        378,
+        379,
+        380,
+        381
+      ],
+      "observation_rejoin_row": 382,
+      "archive_seed_cost": 20,
+      "original_seed_callback": 377,
+      "archive_seed_callback": 381,
+      "same_final_banks": [
+        71683.0,
+        71391.0
+      ],
+      "action_witnesses": [
+        {
+          "callback": 377,
+          "parent_market": [
+            [
+              "SELL",
+              "WHEAT",
+              32
+            ],
+            [
+              "BUY_SEED",
+              "CARROT",
+              1
+            ]
+          ],
+          "archive_market": [
+            [
+              "SELL",
+              "WHEAT",
+              32
+            ]
+          ]
+        },
+        {
+          "callback": 381,
+          "parent_market": [
+            [
+              "SELL",
+              "WHEAT",
+              25
+            ],
+            [
+              "BUY_SEED",
+              "WHEAT",
+              1
+            ]
+          ],
+          "archive_market": [
+            [
+              "SELL",
+              "WHEAT",
+              25
+            ],
+            [
+              "BUY_SEED",
+              "WHEAT",
+              1
+            ],
+            [
+              "BUY_SEED",
+              "CARROT",
+              1
+            ]
+          ]
+        }
+      ],
+      "original_full_path_matches": 12,
+      "original_cases": 13,
+      "repeat_full_path_matches": 13,
+      "repeat_cases": 13,
+      "interpretation": "Timing-dependent optional search is plausible, not a proved triggering-helper cause. State observations rejoin at382; the recorded previous action at row382 still differs. Original mismatch and repeat both retained.",
+      "evidence": [
+        "E20",
+        "E21",
+        "E22",
+        "E23",
+        "E24",
+        "E14"
+      ]
+    },
+    {
+      "id": "completed_strategic_loss_not_stuck",
+      "title": "A completed loss and three different clocks",
+      "runtime": {
+        "fetched_utc": "2026-09-30T22:58:50.863226+00:00",
+        "source_sha256": "f6b6e081f9c9a0fb509186b424251c2593051d78bc5bc6a58d6de93e44a6f94f",
+        "submission": 56719676,
+        "game_no": 13,
+        "episode": 115999868,
+        "time": "2026-09-30T22:47:45.178832700Z",
+        "own": 75156,
+        "rival": 76382,
+        "margin": -1226,
+        "seat": 0,
+        "opponent_submission": 56719320,
+        "callbacks": 719,
+        "callback_seconds": 63.222255,
+        "maximum_callback": 2.784472,
+        "minimum_overage": 56.51399299999999,
+        "guard_callbacks": [],
+        "traceback_callbacks": [],
+        "steps": 720,
+        "terminal_status": "DONE",
+        "episode_elapsed_seconds": 200.683457,
+        "replay_sha256": "9fc0a1adad2e23e138609986a31e649875da4e82185421d68eae6e9cac80027e",
+        "logs_sha256": "9d078d189890936a3e11c47b73ff3d2752908d6eeca8b559ba260e07395348cc",
+        "scope": "Completed own callbacks/public replay. Cause requires exact local path parity."
+      },
+      "same361_388_rows": 720,
+      "388_recovery": false,
+      "actual_wages": {
+        "own": 6646,
+        "rival": 6036,
+        "difference": 610,
+        "extra_day25": 233,
+        "extra_day27": 144,
+        "extra_day28": 233
+      },
+      "fertilizer_arithmetic": {
+        "actual_doses": 33,
+        "recorded_suffix_extra_carrot_units": 32,
+        "recorded_suffix_extra_wheat_units": 2,
+        "scope": "Offline fixed-action arithmetic, not a played alternative or recoverable-profit certificate."
+      },
+      "evidence": [
+        "E25",
+        "E26",
+        "E27",
+        "E28",
+        "E29",
+        "E30",
+        "E31",
+        "E32"
+      ],
+      "limits": [
+        "Episode elapsed time includes more than own callbacks; callback durations are wall-clock measurements, not CPU attribution.",
+        "No guard or exception was observed; exact local unchanged outcomes support strategic/economic classification, not a timeout-loss explanation.",
+        "Higher wage bill was buying productive tours. Removing labor blindly would also remove real harvest.",
+        "No terminal cargo explanation: actual own terminal product inventory was empty."
+      ]
+    }
+  ],
+  "visual_datasets": {
+    "panel_comparison": {
+      "evidence": [
+        "E01",
+        "E02"
+      ],
+      "rows": [
+        {
+          "panel": "Selected difficult 15",
+          "policy": "251",
+          "wins": 2,
+          "games": 15
+        },
+        {
+          "panel": "Selected difficult 15",
+          "policy": "332",
+          "wins": 6,
+          "games": 15
+        },
+        {
+          "panel": "Chronological 120",
+          "policy": "251",
+          "wins": 90,
+          "games": 120
+        },
+        {
+          "panel": "Chronological 120",
+          "policy": "332",
+          "wins": 21,
+          "games": 120
+        }
+      ]
+    },
+    "paired_prefix_latency": {
+      "evidence": [
+        "E06",
+        "E11",
+        "E13"
+      ],
+      "rows": [
+        {
+          "phase": "Original 388 responsive callback 408",
+          "seconds": 1.2235144999576733
+        },
+        {
+          "phase": "396 route optimization; saved prefix",
+          "seconds": 1.1291907500708476
+        },
+        {
+          "phase": "397 plus sparse market; saved prefix",
+          "seconds": 0.6557437090668827
+        }
+      ],
+      "warning": "Original is responsive measurement; optimized values are separate unprofiled prefix runs. Do not label as controlled hardware microbenchmark."
+    },
+    "loss_clocks": {
+      "evidence": [
+        "E25"
+      ],
+      "rows": [
+        {
+          "metric": "Total episode elapsed",
+          "seconds": 200.683457
+        },
+        {
+          "metric": "Sum of own callback durations",
+          "seconds": 63.222255
+        },
+        {
+          "metric": "Longest own callback",
+          "seconds": 2.784472
+        }
+      ]
+    }
+  },
+  "sources": {
+    "E01": {
+      "path": "evaluation/first40_autoresearch_20260928/research332_gen68_funded_labor_current15_k3_review.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/research332_gen68_funded_labor_current15_k3_review.json",
+      "sha256": "62db8930bb798dd54360ff43bd163654f56e09c9c4d85de752e44dafb9e483c0",
+      "locator": "rows, recoveries, lost_wins, source.sha256"
+    },
+    "E02": {
+      "path": "evaluation/first40_autoresearch_20260928/research333_gen68_full120_k3_review.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/research333_gen68_full120_k3_review.json",
+      "sha256": "229535f2f21841adea820311905c3b631eb47703b8986695a0ac15d34b9fd6c3",
+      "locator": "rows, recoveries, lost_wins, source.sha256"
+    },
+    "E03": {
+      "path": "evaluation/first40_autoresearch_20260928/lanes333/cohort_summary.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/lanes333/cohort_summary.json",
+      "sha256": "6858a3e2397ece52acf1f136f0f89b64553b02f442a2a1a95e7c65da0f6736f0",
+      "locator": "cohorts"
+    },
+    "E04": {
+      "path": "evaluation/first40_autoresearch_20260928/REPORT333.md",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/REPORT333.md",
+      "sha256": "9da8175fece9c97d79f3fba3c0cb35c67f41819f5cc8bc2578104f878889b706",
+      "locator": "Coverage and physical limitations"
+    },
+    "E05": {
+      "path": "evaluation/first40_autoresearch_20260928/submission_final_20260930/responsive388/completion.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_final_20260930/responsive388/completion.json",
+      "sha256": "1e074125f07522e8e90613f4a54bca5ec40c85460b0ac091985ccc0c1f755b9b"
+    },
+    "E06": {
+      "path": "evaluation/first40_autoresearch_20260928/submission_final_20260930/responsive388/games/world6_s0.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_final_20260930/responsive388/games/world6_s0.json",
+      "sha256": "12bee48b5865a6bcb2d1996b4c9044780b649984f6fb6f160643598bc3ccb496",
+      "locator": "own_callback_overruns; peer_callback_overruns"
+    },
+    "E07": {
+      "path": "evaluation/first40_autoresearch_20260928/submission_final_20260930/responsive388/games/world6_s1.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_final_20260930/responsive388/games/world6_s1.json",
+      "sha256": "7424ad8c0acd2ba6e8d510c0e35fe39d0071179babab1d3d9b1e0422d39bac99",
+      "locator": "own_callback_overruns; peer_callback_overruns"
+    },
+    "E08": {
+      "path": "evaluation/first40_autoresearch_20260928/lanes396/profile388_original/tottime.txt",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/lanes396/profile388_original/tottime.txt",
+      "sha256": "fc2494835bbcbd410eaa8fb57e6fcda1fa17a6909aeb332d0437876dff393b50"
+    },
+    "E09": {
+      "path": "evaluation/first40_autoresearch_20260928/lanes396/profile388_original/summary.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/lanes396/profile388_original/summary.json",
+      "sha256": "421e1ddd26edf9dca8baaf458e2c4390d106b17f0ca08447d0de47f2f25592f5",
+      "locator": "policy_callbacks and rows"
+    },
+    "E10": {
+      "path": "evaluation/first40_autoresearch_20260928/lanes396/route_equivalence.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/lanes396/route_equivalence.json",
+      "sha256": "7c7e2302cdab37421e65662f6e2a25706365f08bdd574c613747f6d97843c136"
+    },
+    "E11": {
+      "path": "evaluation/first40_autoresearch_20260928/lanes396/route_prefix396.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/lanes396/route_prefix396.json",
+      "sha256": "98544ed46548723ab6cc7c7d2c701f634bea319d998b66b70c40abbeabdebb5e"
+    },
+    "E12": {
+      "path": "evaluation/first40_autoresearch_20260928/lanes397/market_equivalence.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/lanes397/market_equivalence.json",
+      "sha256": "ce01431245f72baf06c79bbb7d55bb3856c0252667fb493cc541952ba84498f4"
+    },
+    "E13": {
+      "path": "evaluation/first40_autoresearch_20260928/lanes397/market_prefix397.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/lanes397/market_prefix397.json",
+      "sha256": "3876e09d874e72e1289f94017020552f07d59dc26aa5f3d42c37ebeabed4f8e2"
+    },
+    "E14": {
+      "path": "evaluation/first40_autoresearch_20260928/submission_final_20260930/final_qualification.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_final_20260930/final_qualification.json",
+      "sha256": "d8c272d1f97369b5df8a24726374310ccb515f78d22d4ed01cf1c8fedbb53704",
+      "locator": "responsive; known_runtime_regression; limitations"
+    },
+    "E15": {
+      "path": "evaluation/first40_autoresearch_20260928/submission_final_20260930/responsive397/completion.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_final_20260930/responsive397/completion.json",
+      "sha256": "88644e06ead97219cf7bdcf2caff940374fb739cc680de5c08115085b21b18e9"
+    },
+    "E16": {
+      "path": "evaluation/first40_autoresearch_20260928/submission_final_20260930/runtime_peer_amendment_proposed/approved_prospective.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_final_20260930/runtime_peer_amendment_proposed/approved_prospective.json",
+      "sha256": "9a90c4c7786839f0ecec8b68894158c1381a5605c9f7bd6f86ac7a9d09236adb"
+    },
+    "E17": {
+      "path": "evaluation/first40_autoresearch_20260928/research390_integrated_final191_k3_review.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/research390_integrated_final191_k3_review.json",
+      "sha256": "04daba5c81e741b19b5d93ddb2e6cff7abd055b84743997e770454529197f0f3"
+    },
+    "E18": {
+      "path": "evaluation/first40_autoresearch_20260928/lanes390/cohort_summary.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/lanes390/cohort_summary.json",
+      "sha256": "dc02004348bb0a665cfb6a0b73a7ac33c076fe140977851bb75e98e06c4ef4f2"
+    },
+    "E19": {
+      "path": "evaluation/first40_autoresearch_20260928/REPORT390.md",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/REPORT390.md",
+      "sha256": "fcc86ababe0afdf73eb828091f3dd4502f3eb2cad8bdfb235c4891743f4bdecf"
+    },
+    "E20": {
+      "path": "evaluation/first40_autoresearch_20260928/submit397_archive13_k3_review.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submit397_archive13_k3_review.json",
+      "sha256": "2d252d61fd032f9a093924b9e18ce0a2e5a2e11bec1d6412d66c49a38d558e93"
+    },
+    "E21": {
+      "path": "evaluation/first40_autoresearch_20260928/submit397_archive_repeat13_k3_review.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submit397_archive_repeat13_k3_review.json",
+      "sha256": "7a0c56593707664cec35d0ce10d2d60297d727058f6485b7ee102a44375ed825"
+    },
+    "E22": {
+      "path": "evaluation/first40_autoresearch_20260928/submission_final_20260930/archive_repeat397_predeclared.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_final_20260930/archive_repeat397_predeclared.json",
+      "sha256": "1e12cccf6023ade438b957efda07ffa21755d2bbd3c19bdc17859079d6132a91"
+    },
+    "E23": {
+      "path": "claude/nine/out/research397_fastretire_full133_k3_dump/115748332.json.gz",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/claude/nine/out/research397_fastretire_full133_k3_dump/115748332.json.gz",
+      "sha256": "41243e40d402d0a2ff00555efcd6a3f64dc89e926778aab6d8c5a3723cb7ad83"
+    },
+    "E24": {
+      "path": "claude/nine/out/submit397_archive13_k3_dump/115748332.json.gz",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/claude/nine/out/submit397_archive13_k3_dump/115748332.json.gz",
+      "sha256": "1e49a0c0c8f0adbe784d3411fd8542e13ae54c3cbcd6ac5c3aab8672f992d1d1"
+    },
+    "E25": {
+      "path": "evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/runtime.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/runtime.json",
+      "sha256": "15356a1a6ac2036b7a4f549f34e9047f8f0e346b5639d4cff4d095c93c61db49"
+    },
+    "E26": {
+      "path": "evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/astra/semantic_parity394_395.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/astra/semantic_parity394_395.json",
+      "sha256": "6e3bd123d0131614d9f72e72cf811cb7b753295a97630c7cbf482cd506d4bd28"
+    },
+    "E27": {
+      "path": "evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/astra/EXTRA_HIRES.md",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/astra/EXTRA_HIRES.md",
+      "sha256": "68e46619c69086c3ff98ed7f8c75b9b8d34b93dd148b7ea89ed8f45008350f9a"
+    },
+    "E28": {
+      "path": "evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/astra/extra_fertilizer_routes.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/astra/extra_fertilizer_routes.json",
+      "sha256": "030d231a9af24c7cf952952a306686ca2b714e9a9a79e81b205fbcef7e92913c"
+    },
+    "E29": {
+      "path": "evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/astra/public_census.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/astra/public_census.json",
+      "sha256": "024f408299cc4e9878293c3d47fbd32bea4f8203f6b9a99947683908793a16fc"
+    },
+    "E30": {
+      "path": "claude/nine/out/research394_margin361_newlive1_k1_dump/115999868.json.gz",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/claude/nine/out/research394_margin361_newlive1_k1_dump/115999868.json.gz",
+      "sha256": "e75421327bb9b711f4308a48d02f57f5320b790b1e897d4a5c57e403ba9811d0"
+    },
+    "E31": {
+      "path": "claude/nine/out/research395_carrot388_newlive1_k1_dump/115999868.json.gz",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/claude/nine/out/research395_carrot388_newlive1_k1_dump/115999868.json.gz",
+      "sha256": "07229a17c77b6f66c39288f42ab85e38e3882e4aa427d6673ce7e963c528a248"
+    },
+    "E32": {
+      "path": "evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/astra/FINDINGS.md",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/astra/FINDINGS.md",
+      "sha256": "69a0762ca1ac8e46a4782b8012b0e3860f26f0de093373315d13b31cca1d095b"
+    }
+  }
+}

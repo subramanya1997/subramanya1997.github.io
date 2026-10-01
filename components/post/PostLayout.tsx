@@ -19,6 +19,7 @@ import { slugifyTag, type Post } from "@/lib/content";
 import { citationHtml } from "./citation";
 import LanguageSwitcher from "./LanguageSwitcher";
 import Mermaid from "./Mermaid";
+import Kaggriculture from "./kaggriculture/Kaggriculture";
 import { postFaqHtml, type FaqItem } from "./post-faq";
 import RelatedPosts from "./RelatedPosts";
 import Toc from "./Toc";
@@ -337,6 +338,7 @@ export default function PostLayout({
           </>
         ) : null}
         {fm.mermaid ? <Mermaid /> : null}
+        {fm.interactive === "kaggriculture" ? <Kaggriculture /> : null}
       </div>
 
       {/* Optimized Post Scripts (external file with debounced scroll handlers) */}

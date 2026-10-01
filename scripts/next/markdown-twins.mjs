@@ -176,7 +176,7 @@ function renderHome() {
   }
   if (postList.length > 0) {
     lines.push("## Blog", "");
-    for (const post of postList) {
+    for (const post of postList.filter(post => !post.data.retired)) {
       lines.push(
         `- [${post.data.title}](${absoluteUrl(post.url)}) — ${shortText(post.data.excerpt, 25)}`
       );
@@ -188,7 +188,7 @@ function renderHome() {
 
 function renderBlog() {
   const lines = ["# Blog", "", "All posts, newest first.", ""];
-  for (const post of postList) {
+  for (const post of postList.filter(post => !post.data.retired)) {
     lines.push(
       `- ${post.date} — [${post.data.title}](${absoluteUrl(post.url)}) — ${shortText(post.data.excerpt, 25)}`
     );

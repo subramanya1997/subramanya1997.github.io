@@ -1,0 +1,3696 @@
+{
+  "created_utc": "2026-10-01T01:52:15.413403+00:00",
+  "cutoff": "Saved local evidence through 2026-09-30; no API refresh or policy execution by this collector.",
+  "day0": {
+    "date": "2026-08-10",
+    "meaning": "Earliest dated contemporary generation report found, not proof of the first-ever project edit.",
+    "evidence": [
+      {
+        "path": "docs/generations/gen1.md",
+        "sha256": "739d80d44a5789de926274e868a09f6e6cfad67cab62503662ae28f04564908d"
+      },
+      {
+        "path": "results.tsv",
+        "sha256": "73185d63a8f61dc20e3b82f442fd6fb4487d15a05abeb25a663bb65d2d6acd50"
+      }
+    ],
+    "early_documented_experiments": [
+      {
+        "date": "2026-08-10",
+        "panel_start": 6588.3,
+        "panel_end": 32349.7,
+        "held_out_wins": 52,
+        "held_out_losses": 8,
+        "agent_matches": 60,
+        "whole_round_robin_games": 420,
+        "evidence": {
+          "path": "docs/generations/gen1.md",
+          "sha256": "739d80d44a5789de926274e868a09f6e6cfad67cab62503662ae28f04564908d"
+        }
+      },
+      {
+        "date": "2026-08-10/11",
+        "panel_end": 107199.8,
+        "held_out_wins": 70,
+        "held_out_losses": 10,
+        "whole_round_robin_games": 360,
+        "evidence": {
+          "path": "docs/generations/gen2.md",
+          "sha256": "55dd81f36f8dac31811eafd8250f93bef339b0e84b1fbb2dfc4eb8706251ef7f"
+        }
+      }
+    ],
+    "limitation": "Contemporary documented outcomes; original early source/archive not verified here. These round robins differ and must not be joined as one win-rate cohort.",
+    "documented_starter_panel_series": {
+      "rows": [
+        {
+          "label": "Carrot baseline",
+          "mean_own_cash": 6588.3,
+          "metric": "Documented original starter-development panel mean final bank",
+          "evidence": {
+            "path": "docs/generations/gen1.md",
+            "sha256": "739d80d44a5789de926274e868a09f6e6cfad67cab62503662ae28f04564908d"
+          }
+        },
+        {
+          "label": "Gen1 melon",
+          "mean_own_cash": 32349.7,
+          "metric": "Documented original starter-development panel mean final bank",
+          "evidence": {
+            "path": "docs/generations/gen1.md",
+            "sha256": "739d80d44a5789de926274e868a09f6e6cfad67cab62503662ae28f04564908d"
+          }
+        },
+        {
+          "label": "Gen2 portfolio",
+          "mean_own_cash": 107199.8,
+          "metric": "Documented original starter-development panel mean final bank",
+          "evidence": {
+            "path": "docs/generations/gen2.md",
+            "sha256": "55dd81f36f8dac31811eafd8250f93bef339b0e84b1fbb2dfc4eb8706251ef7f"
+          }
+        },
+        {
+          "label": "Gen3 composite",
+          "mean_own_cash": 161296.1,
+          "metric": "Documented original starter-development panel mean final bank",
+          "evidence": {
+            "path": "docs/generations/gen3.md",
+            "sha256": "ca92ea7ae9b3e8d57403fbe9accb60670883d1bbf2ca5836f623e21d4d835a73"
+          }
+        },
+        {
+          "label": "Gen4 merged",
+          "mean_own_cash": 178889.9,
+          "metric": "Documented original starter-development panel mean final bank",
+          "evidence": {
+            "path": "docs/generations/gen4.md",
+            "sha256": "9f314a59220a4d9feea3c2cf350028e3c6a379429816684d62468a4d3947d677"
+          }
+        }
+      ],
+      "scope": "August10\u201311 dated reports. Original early per-game outputs and source archives not independently reconstructed; not a live or elite-opponent comparison."
+    }
+  },
+  "live_rating_evidence": {
+    "earliest_archived_submission": {
+      "submission": 55425744,
+      "submitted_utc": "2026-08-11T06:44:16.417Z",
+      "highest_returned_score": {
+        "score": 980.5105528822717,
+        "field": "initialScore",
+        "episode": 91900448,
+        "time": "2026-08-11T07:03:14.752652900Z"
+      },
+      "evidence": {
+        "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/55425744.json",
+        "sha256": "6105dc889131b7d009d88bf4036cc0212d1f9ec624edb58b2172143555dd30f2"
+      },
+      "source_bytes_verified_here": false
+    },
+    "strongest_verified_archived_own_rating": {
+      "submission": 55616096,
+      "submitted_utc": "2026-08-19T05:54:18.020Z",
+      "source_sha256": "6aedd001d4db8bd16948d45a75e3cc1a66c2089778baddffc24253ccd15f03c7",
+      "source_bytes": 130344,
+      "peak_updated_score": {
+        "episode": 97032982,
+        "end_time": "2026-08-22T19:33:38.727406600Z",
+        "rating": 3056.308278707637,
+        "own_reward": 102553
+      },
+      "evidence": [
+        {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/55616096.json",
+          "sha256": "0e00e326e5e0dc3ffa25ccdb1658c0fbcfb83206fb120f0dff28a605ec37e3c5"
+        },
+        {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/gen68_55616096_source_retrieval.json",
+          "sha256": "40b148c7de9554faa418891af025c7807137e15994f3bba1f6f4db84b7881bf4"
+        }
+      ],
+      "exact_surviving_source_files": [
+        {
+          "path": "generation/readiness_20260904/gen68_final_cash_search_v8/base.py",
+          "sha256": "6aedd001d4db8bd16948d45a75e3cc1a66c2089778baddffc24253ccd15f03c7"
+        },
+        {
+          "path": "generation/readiness_20260904/rollout_submitted_dominance_v1/plan_r0.py",
+          "sha256": "6aedd001d4db8bd16948d45a75e3cc1a66c2089778baddffc24253ccd15f03c7"
+        },
+        {
+          "path": "generation/readiness_20260904/rollout_submitted_dominance_v1/opponent_gen68.py",
+          "sha256": "6aedd001d4db8bd16948d45a75e3cc1a66c2089778baddffc24253ccd15f03c7"
+        }
+      ]
+    },
+    "per_submission_returned_peaks": [
+      {
+        "submission": 55425744,
+        "submitted_utc": "2026-08-11T06:44:16.417Z",
+        "highest_returned_score": {
+          "score": 980.5105528822717,
+          "field": "initialScore",
+          "episode": 91900448,
+          "time": "2026-08-11T07:03:14.752652900Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/55425744.json",
+          "sha256": "6105dc889131b7d009d88bf4036cc0212d1f9ec624edb58b2172143555dd30f2"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 55438496,
+        "submitted_utc": "2026-08-11T17:19:09.633Z",
+        "highest_returned_score": {
+          "score": 1087.6942751967167,
+          "field": "initialScore",
+          "episode": 92062536,
+          "time": "2026-08-11T18:35:34.304515500Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/55438496.json",
+          "sha256": "bc8154a0ff2b421a564daf9e2b2b0c1a90f214bd12164d8260a718c361533ba3"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 55442810,
+        "submitted_utc": "2026-08-11T22:15:34.390Z",
+        "highest_returned_score": {
+          "score": 1470.5328652710557,
+          "field": "initialScore",
+          "episode": 92123297,
+          "time": "2026-08-11T23:00:48.634452100Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/55442810.json",
+          "sha256": "8911c76ec1b09fb04dfd956a8038e66b649a36182f670bf226f35b365b24a600"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 55452133,
+        "submitted_utc": "2026-08-12T07:41:35.077Z",
+        "highest_returned_score": {
+          "score": 1454.6477204141463,
+          "field": "initialScore",
+          "episode": 92286455,
+          "time": "2026-08-12T10:37:07.792648900Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/55452133.json",
+          "sha256": "72615b56ec7c06c84719e8516a209a0f84b67077569f02ccef540e2012f92c56"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 55461656,
+        "submitted_utc": "2026-08-12T15:11:44.550Z",
+        "highest_returned_score": {
+          "score": 1392.7436448226063,
+          "field": "initialScore",
+          "episode": 92415378,
+          "time": "2026-08-12T19:51:26.165382600Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/55461656.json",
+          "sha256": "0c19abb0cd5e863446c9da4f652a9aae3a84120660edbbc9b6dd30838f172c0d"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 55464313,
+        "submitted_utc": "2026-08-12T17:39:36.953Z",
+        "highest_returned_score": {
+          "score": 1732.5224218692094,
+          "field": "initialScore",
+          "episode": 92415188,
+          "time": "2026-08-12T19:51:37.339644600Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/55464313.json",
+          "sha256": "0b566c17c18c92d1f605abffa60d5e890af5a0a1a0a1751b6a03176c3a7f86e2"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 55468279,
+        "submitted_utc": "2026-08-12T22:39:54.820Z",
+        "highest_returned_score": {
+          "score": 1847.1067255814942,
+          "field": "initialScore",
+          "episode": 92626457,
+          "time": "2026-08-13T11:01:00.655445800Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/55468279.json",
+          "sha256": "2b884a2edb76e65ffe8440ee489ba8e3920f5a083f2c85c922fe132a0b0399f5"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 55472865,
+        "submitted_utc": "2026-08-13T03:13:02.437Z",
+        "highest_returned_score": {
+          "score": 1838.3143072795651,
+          "field": "initialScore",
+          "episode": 92554608,
+          "time": "2026-08-13T05:52:52.820860200Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/55472865.json",
+          "sha256": "1c845c4fa0d1ec4d7d9c7cef948dd447cfaf760a496851f89761a51137cc3f74"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 55487995,
+        "submitted_utc": "2026-08-13T16:56:47.983Z",
+        "highest_returned_score": {
+          "score": 1376.0863137213478,
+          "field": "initialScore",
+          "episode": 92746591,
+          "time": "2026-08-13T19:44:12.316070700Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/55487995.json",
+          "sha256": "15dfd942954d5353a4a75f9ed60b08327d4fdce81e014f400e3792c48dab22e0"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 55498761,
+        "submitted_utc": "2026-08-14T05:32:22.113Z",
+        "highest_returned_score": {
+          "score": 1799.6684909359528,
+          "field": "initialScore",
+          "episode": 92926772,
+          "time": "2026-08-14T08:46:30.171453Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/55498761.json",
+          "sha256": "5ba787e72f732be7895c4b6b552df5ec1ecb72ffe4f6b825174dd8d731fb3457"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 55511263,
+        "submitted_utc": "2026-08-14T18:05:24.297Z",
+        "highest_returned_score": {
+          "score": 1775.0765179952903,
+          "field": "initialScore",
+          "episode": 93421632,
+          "time": "2026-08-15T21:10:23.507290500Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/55511263.json",
+          "sha256": "105034aa4a23e2cfb719f7d289c0a02ca52cabf3885d7b5ce59c370966f144f6"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 55522925,
+        "submitted_utc": "2026-08-15T07:58:25.130Z",
+        "highest_returned_score": {
+          "score": 1818.2381188583688,
+          "field": "updatedScore",
+          "episode": 93705182,
+          "time": "2026-08-16T18:19:10.848395Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/55522925.json",
+          "sha256": "9c17585937afab212192ab22b41f4f9ed51ab15c9e54af2c22b66b2d3369ae19"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 55536657,
+        "submitted_utc": "2026-08-15T21:54:21.887Z",
+        "highest_returned_score": {
+          "score": 1836.1051481179438,
+          "field": "initialScore",
+          "episode": 94402767,
+          "time": "2026-08-19T04:13:28.027788500Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/55536657.json",
+          "sha256": "aa8397d6faa16ae62aa78f246a5d846d09d45d42d74553f940a3cb3399bf648e"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 55560205,
+        "submitted_utc": "2026-08-16T18:18:17.370Z",
+        "highest_returned_score": {
+          "score": 2176.3095357540938,
+          "field": "updatedScore",
+          "episode": 99363872,
+          "time": "2026-08-25T15:59:27.436628Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/55560205.json",
+          "sha256": "77655d95df5c07bdc1c5c3ca13ccbaadef50df95d6a16e2d4d493adeca1a73f9"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 55616096,
+        "submitted_utc": "2026-08-19T05:54:18.020Z",
+        "highest_returned_score": {
+          "score": 3056.308278707637,
+          "field": "initialScore",
+          "episode": 97078518,
+          "time": "2026-08-22T20:52:20.524129100Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/55616096.json",
+          "sha256": "0e00e326e5e0dc3ffa25ccdb1658c0fbcfb83206fb120f0dff28a605ec37e3c5"
+        },
+        "source_bytes_verified_here": true
+      },
+      {
+        "submission": 55774959,
+        "submitted_utc": "2026-08-25T16:45:45.420Z",
+        "highest_returned_score": {
+          "score": 1901.1675165492743,
+          "field": "initialScore",
+          "episode": 104736034,
+          "time": "2026-09-02T05:38:00.296416900Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/55774959.json",
+          "sha256": "7d51697c1107180a19f259798624f78e77ebf22bbd7c0947d52efa20b29fa006"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56065361,
+        "submitted_utc": "2026-09-07T00:13:15.163Z",
+        "highest_returned_score": {
+          "score": 1989.2938647941867,
+          "field": "initialScore",
+          "episode": 106299990,
+          "time": "2026-09-07T01:34:48.568568300Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56065361.json",
+          "sha256": "0d7deebceb57ebdb538a99114c10c2a1f8dff0a3b4d3a6801f6d0eef40e97fc0"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56069241,
+        "submitted_utc": "2026-09-07T05:01:41.563Z",
+        "highest_returned_score": {
+          "score": 2212.613368305245,
+          "field": "initialScore",
+          "episode": 106442020,
+          "time": "2026-09-07T11:55:42.877583700Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56069241.json",
+          "sha256": "1f390985816301182c13a85cfa0cf714c2d83be3fa45fe1a0376e07bd7739c63"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56079029,
+        "submitted_utc": "2026-09-07T14:44:54.130Z",
+        "highest_returned_score": {
+          "score": 2378.728129061877,
+          "field": "initialScore",
+          "episode": 106541424,
+          "time": "2026-09-07T19:03:29.244170400Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56079029.json",
+          "sha256": "df9a9fec21bc9db94580923f59213fef7eb7b298eedaa48dd45f0323adb1a2f7"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56083794,
+        "submitted_utc": "2026-09-07T20:08:12.123Z",
+        "highest_returned_score": {
+          "score": 1344.4800719222744,
+          "field": "initialScore",
+          "episode": 106620200,
+          "time": "2026-09-08T00:50:45.689303900Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56083794.json",
+          "sha256": "a6dd78541c7bd8047b8417ab95c8d9b31d31747b3f70f7f37e49b3893eab0c23"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56087811,
+        "submitted_utc": "2026-09-08T01:08:34.887Z",
+        "highest_returned_score": {
+          "score": 2571.7938280445237,
+          "field": "initialScore",
+          "episode": 106729858,
+          "time": "2026-09-08T08:38:34.758898900Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56087811.json",
+          "sha256": "e0926d81b877707b7e59a3e7e5180816ac235ede4a20399f8466477e2fd7e872"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56091694,
+        "submitted_utc": "2026-09-08T05:45:39.223Z",
+        "highest_returned_score": {
+          "score": 2707.9470539167087,
+          "field": "initialScore",
+          "episode": 106748521,
+          "time": "2026-09-08T09:55:37.218848500Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56091694.json",
+          "sha256": "a2cfbbfd4e0d90b4bd81e51095e88f4947067b2bbd79d0b83245bf23713cf293"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56094715,
+        "submitted_utc": "2026-09-08T08:43:42.547Z",
+        "highest_returned_score": {
+          "score": 2763.604407133679,
+          "field": "initialScore",
+          "episode": 106761367,
+          "time": "2026-09-08T10:53:29.299561300Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56094715.json",
+          "sha256": "0b9ae81d55463a98e612d129028e6f1c59f45a1c09f6fab318706c8e202049dd"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56096009,
+        "submitted_utc": "2026-09-08T10:01:15.100Z",
+        "highest_returned_score": {
+          "score": 2759.200325909206,
+          "field": "initialScore",
+          "episode": 106796396,
+          "time": "2026-09-08T13:19:59.476438400Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56096009.json",
+          "sha256": "0b75298b192da2011e89b5e58c922656265bf23e1b7272f1c0e2253f38ed7f1f"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56097117,
+        "submitted_utc": "2026-09-08T11:21:12.577Z",
+        "highest_returned_score": {
+          "score": 2769.632106064886,
+          "field": "initialScore",
+          "episode": 106813434,
+          "time": "2026-09-08T14:34:46.729922800Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56097117.json",
+          "sha256": "514c3a0a5285f87f6e0c57b03fd393b9608e5d3002c0e97ff652f3984b6d5c7b"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56109813,
+        "submitted_utc": "2026-09-09T00:32:18.437Z",
+        "highest_returned_score": {
+          "score": 2527.077231307083,
+          "field": "initialScore",
+          "episode": 107202131,
+          "time": "2026-09-09T17:57:34.256693300Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56109813.json",
+          "sha256": "b8c865291a3af206652d3e48c14e733893444f91e4d32ed2db018dc29368f422"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56114641,
+        "submitted_utc": "2026-09-09T05:35:19.177Z",
+        "highest_returned_score": {
+          "score": 2616.9156070291997,
+          "field": "initialScore",
+          "episode": 107118177,
+          "time": "2026-09-09T12:09:07.818018800Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56114641.json",
+          "sha256": "043461a1f3a47b2c4841983ac27f4ba548ed94a49ba98d06581fab77ba114d0e"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56129969,
+        "submitted_utc": "2026-09-09T19:35:57.947Z",
+        "highest_returned_score": {
+          "score": 2798.252443695027,
+          "field": "initialScore",
+          "episode": 107282888,
+          "time": "2026-09-09T23:40:35.527071100Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56129969.json",
+          "sha256": "a6870c8d546f78cfb91a8cec75cee319ad906bae07deaa198bb54f127e9992ce"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56132650,
+        "submitted_utc": "2026-09-09T23:51:51.323Z",
+        "highest_returned_score": {
+          "score": 2879.009735748067,
+          "field": "initialScore",
+          "episode": 107485387,
+          "time": "2026-09-10T13:37:03.074722800Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56132650.json",
+          "sha256": "3aeb36933e01a5c67aa2e0603a2c7a257f25c9d9cd5225d4a783527c8a6566ad"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56138892,
+        "submitted_utc": "2026-09-10T06:28:57.863Z",
+        "highest_returned_score": {
+          "score": 2917.8606978580824,
+          "field": "initialScore",
+          "episode": 107664886,
+          "time": "2026-09-11T01:52:41.894242300Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56138892.json",
+          "sha256": "c410e4712a9ac2a5458d6ca4b508f267cb5d7a7db9a046d9839d216d802a7aad"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56150004,
+        "submitted_utc": "2026-09-10T18:44:57.480Z",
+        "highest_returned_score": {
+          "score": 2916.575911437938,
+          "field": "initialScore",
+          "episode": 107984655,
+          "time": "2026-09-11T23:44:19.127071300Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56150004.json",
+          "sha256": "aeda5d945a73435e839620851f039039ceb421dac3371c1ad600517109867be1"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56171838,
+        "submitted_utc": "2026-09-11T19:42:10.860Z",
+        "highest_returned_score": {
+          "score": 2901.779113451079,
+          "field": "initialScore",
+          "episode": 108217339,
+          "time": "2026-09-12T15:16:06.430731100Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56171838.json",
+          "sha256": "48d680d9b25e50619089495d2313874b143f88a0c9d30a667adc4840e47f4cc1"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56179521,
+        "submitted_utc": "2026-09-12T05:50:59.537Z",
+        "highest_returned_score": {
+          "score": 2941.0798080194345,
+          "field": "initialScore",
+          "episode": 108400159,
+          "time": "2026-09-13T03:24:39.723131900Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56179521.json",
+          "sha256": "83c96126a6aa653f32ec4de7a24d07afe3b1b02ffa53a7ada28ad2dbbc742b10"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56196738,
+        "submitted_utc": "2026-09-13T01:59:24.400Z",
+        "highest_returned_score": {
+          "score": 2990.5621220027965,
+          "field": "initialScore",
+          "episode": 108511684,
+          "time": "2026-09-13T10:46:27.882988Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56196738.json",
+          "sha256": "0420e6c64728dc922d173916b305121719bafea10a94c751eed0e5481048f685"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56213574,
+        "submitted_utc": "2026-09-13T19:07:10.253Z",
+        "highest_returned_score": {
+          "score": 2867.108969919657,
+          "field": "initialScore",
+          "episode": 109036018,
+          "time": "2026-09-14T20:59:38.199381Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56213574.json",
+          "sha256": "21612fb74bf6ab5e46b4dc6e49fa22a89df7ae7fefc4865523bf037a4c94ea76"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56242926,
+        "submitted_utc": "2026-09-15T02:04:53.040Z",
+        "highest_returned_score": {
+          "score": 2640.893843710946,
+          "field": "updatedScore",
+          "episode": 109271968,
+          "time": "2026-09-15T11:41:41.045624700Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56242926.json",
+          "sha256": "b7f78fabeb8a498e5f36b2cbd1a4a0b3550ed85a7453cadbc9f7b6e4a97a1a15"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56249353,
+        "submitted_utc": "2026-09-15T07:58:14.150Z",
+        "highest_returned_score": {
+          "score": 1651.1367750297234,
+          "field": "updatedScore",
+          "episode": 109417193,
+          "time": "2026-09-15T21:01:23.627178100Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56249353.json",
+          "sha256": "92e2acc6eef443ee0d0015e3c62b55ef2f8261997afc860805372ee71da601d8"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56253485,
+        "submitted_utc": "2026-09-15T11:44:47.493Z",
+        "highest_returned_score": {
+          "score": 2313.39468407809,
+          "field": "initialScore",
+          "episode": 109554414,
+          "time": "2026-09-16T05:30:42.722601400Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56253485.json",
+          "sha256": "484698a0cae80d7d2f2f849d08278f280761ec26644cd030faf03ae544b438ef"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56263107,
+        "submitted_utc": "2026-09-15T21:55:14.183Z",
+        "highest_returned_score": {
+          "score": 2220.352283968887,
+          "field": "initialScore",
+          "episode": 109769974,
+          "time": "2026-09-16T19:07:05.101525600Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56263107.json",
+          "sha256": "59c38bc168aa5fe25cd92ce1ddf2bc47e72947c2e9f9a4ef12412fb7caa85c42"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56270389,
+        "submitted_utc": "2026-09-16T05:23:15.710Z",
+        "highest_returned_score": {
+          "score": 2522.6533268725802,
+          "field": "initialScore",
+          "episode": 110177709,
+          "time": "2026-09-17T20:40:09.301954900Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56270389.json",
+          "sha256": "c9ddf2f4cdcc24ed72c421e910daa95dbe15773d6b95eca01a288af47c9bceed"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56287622,
+        "submitted_utc": "2026-09-16T21:30:13.390Z",
+        "highest_returned_score": {
+          "score": 2534.2570901453287,
+          "field": "initialScore",
+          "episode": 110372594,
+          "time": "2026-09-18T08:40:26.847809200Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56287622.json",
+          "sha256": "dd31099ab81356917338438c12a6afc37ec0aff7a3db9c216865fd7bcfaf7dc5"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56328407,
+        "submitted_utc": "2026-09-18T11:00:40.210Z",
+        "highest_returned_score": {
+          "score": 2749.2849541530386,
+          "field": "initialScore",
+          "episode": 110819235,
+          "time": "2026-09-19T12:10:27.162491200Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56328407.json",
+          "sha256": "f4cd262496dcd5b7c73a0248c4209ab4f51ba6b6e302c822f1f6a6821b796481"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56376485,
+        "submitted_utc": "2026-09-20T02:00:42.063Z",
+        "highest_returned_score": {
+          "score": 2446.004080378616,
+          "field": "initialScore",
+          "episode": 111163562,
+          "time": "2026-09-20T09:07:47.784994700Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56376485.json",
+          "sha256": "e1d38dc2a380196202df1cd9fae5edb0d12e429c2c1f31025a47857ac0c566fd"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56382116,
+        "submitted_utc": "2026-09-20T05:54:53.723Z",
+        "highest_returned_score": {
+          "score": 2292.489579692058,
+          "field": "initialScore",
+          "episode": 111196234,
+          "time": "2026-09-20T11:01:46.044762500Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56382116.json",
+          "sha256": "f92b41aa4fc7a47eb58cb9f5592f4dbd041aaa30bd283fcc72d6e9942cd6dc9f"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56388418,
+        "submitted_utc": "2026-09-20T09:06:33.697Z",
+        "highest_returned_score": {
+          "score": 2285.5253288777612,
+          "field": "initialScore",
+          "episode": 111205596,
+          "time": "2026-09-20T11:37:43.776831100Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56388418.json",
+          "sha256": "210262ae7dec19d0c5dac36d9be3fd46ccf516d79ba377d30353a74cff33a61e"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56392353,
+        "submitted_utc": "2026-09-20T11:29:45.283Z",
+        "highest_returned_score": {
+          "score": 2633.3326242065045,
+          "field": "initialScore",
+          "episode": 111279913,
+          "time": "2026-09-20T16:07:21.685681600Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56392353.json",
+          "sha256": "1ae465b9af987162c0eebac3b669705b4f47ea1b767d48d9fdef91e2723bd3f7"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56392782,
+        "submitted_utc": "2026-09-20T11:48:13.017Z",
+        "highest_returned_score": {
+          "score": 2497.3989411733987,
+          "field": "initialScore",
+          "episode": 111999351,
+          "time": "2026-09-22T11:23:21.427438800Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56392782.json",
+          "sha256": "c11a2d6e68e367f4686c49baf37b292344c5a07fdd41a11eb182c4584fa2abd4"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56420770,
+        "submitted_utc": "2026-09-21T07:22:49.510Z",
+        "highest_returned_score": {
+          "score": 2478.0888688192863,
+          "field": "initialScore",
+          "episode": 111969851,
+          "time": "2026-09-22T09:39:31.253128900Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56420770.json",
+          "sha256": "793399dd152afce3ad99fb3ae932d1ed799ad4bbf3c42e68b41a5f35e7fd4f24"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56469162,
+        "submitted_utc": "2026-09-22T16:09:23.803Z",
+        "highest_returned_score": {
+          "score": 1909.8644080594786,
+          "field": "initialScore",
+          "episode": 112283595,
+          "time": "2026-09-23T03:24:34.017814400Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56469162.json",
+          "sha256": "6f85534927d7fbaee42a076e29c921e00950ddb66a3555cdcff672e22e087226"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56475784,
+        "submitted_utc": "2026-09-22T23:14:58.517Z",
+        "highest_returned_score": {
+          "score": 2138.6721278885707,
+          "field": "updatedScore",
+          "episode": 112352220,
+          "time": "2026-09-23T07:09:59.646359100Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56475784.json",
+          "sha256": "4cca3ba7b3102d442c158b8631e8b93fd01d052256826ec680778f8b8f0f8e91"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56481505,
+        "submitted_utc": "2026-09-23T03:34:49.007Z",
+        "highest_returned_score": {
+          "score": 2562.9952876648363,
+          "field": "updatedScore",
+          "episode": 112363976,
+          "time": "2026-09-23T07:49:21.545729300Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56481505.json",
+          "sha256": "32f2ec5d6a4ddb2e861c4c4dd66516107955db568c55f724dab6c766e57595d7"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56486347,
+        "submitted_utc": "2026-09-23T07:07:24.133Z",
+        "highest_returned_score": {
+          "score": 2375.451578391629,
+          "field": "initialScore",
+          "episode": 112400494,
+          "time": "2026-09-23T09:53:43.461302100Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56486347.json",
+          "sha256": "24a84a3e371732cd5cdd65e1729d67698cb05570822ec6df89466d843e57dad2"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56487176,
+        "submitted_utc": "2026-09-23T07:43:22.143Z",
+        "highest_returned_score": {
+          "score": 2532.9318629753943,
+          "field": "updatedScore",
+          "episode": 112442282,
+          "time": "2026-09-23T12:15:41.864718700Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56487176.json",
+          "sha256": "f624c65f6040eaf39c3a0e94ddafd432e58836b06e9bca974e61024e0f3fc8b2"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56490583,
+        "submitted_utc": "2026-09-23T10:29:26.270Z",
+        "highest_returned_score": {
+          "score": 2480.663270239096,
+          "field": "initialScore",
+          "episode": 112754685,
+          "time": "2026-09-24T06:07:45.412718400Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56490583.json",
+          "sha256": "5c82a954fb224929dbe50208dca094ee033840e8e6be79d1f1d6992cb3e379f6"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56492631,
+        "submitted_utc": "2026-09-23T12:07:54.113Z",
+        "highest_returned_score": {
+          "score": 2222.024930226151,
+          "field": "initialScore",
+          "episode": 112766138,
+          "time": "2026-09-24T06:47:11.663379900Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56492631.json",
+          "sha256": "8182a97db1a804588556e45de952ad4ba8ac4755b9d9e73980bff1148ecc559f"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56513805,
+        "submitted_utc": "2026-09-24T06:22:14.627Z",
+        "highest_returned_score": {
+          "score": 2703.2814888862795,
+          "field": "updatedScore",
+          "episode": 113086259,
+          "time": "2026-09-25T01:12:20.518563100Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56513805.json",
+          "sha256": "de3381b27ba6dd3b5311c624ac04077b4235c1cb1ecb76f5c2a78220e70b6f90"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56516288,
+        "submitted_utc": "2026-09-24T08:15:54.807Z",
+        "highest_returned_score": {
+          "score": 2698.5906691007885,
+          "field": "initialScore",
+          "episode": 113184617,
+          "time": "2026-09-25T06:51:59.591987100Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56516288.json",
+          "sha256": "5f36f8523d60de34509bc68a062074e190c7f9c2fe155e83a068dbe0a8cf9ef2"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56536397,
+        "submitted_utc": "2026-09-25T01:14:04.360Z",
+        "highest_returned_score": {
+          "score": 2640.1220071243974,
+          "field": "initialScore",
+          "episode": 113308364,
+          "time": "2026-09-25T13:59:19.493007Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56536397.json",
+          "sha256": "5e02380e89bd6efa0c78b34a62bcd2288b633fd4d00cbd50565a891c4e18ed51"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56551351,
+        "submitted_utc": "2026-09-25T13:10:59.210Z",
+        "highest_returned_score": null,
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56551351.json",
+          "sha256": "5b6099aa5cdef7f4153c1d1615bf394ec8a33deeeb757d9e4278266ada808f3d"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56553690,
+        "submitted_utc": "2026-09-25T15:02:52.933Z",
+        "highest_returned_score": null,
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56553690.json",
+          "sha256": "8a7a58ff11f8765874921dd26da9deda95e57742a19b2aaea7752c2aa920cc91"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56554334,
+        "submitted_utc": "2026-09-25T15:34:35.443Z",
+        "highest_returned_score": {
+          "score": 2675.428685926282,
+          "field": "initialScore",
+          "episode": 113405546,
+          "time": "2026-09-25T19:34:17.714732500Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56554334.json",
+          "sha256": "c708bc0ca8d79bcb50617b1ff348ed2cb791a6321cfd62e5d1a57e0af19451d7"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56572222,
+        "submitted_utc": "2026-09-26T06:53:55.563Z",
+        "highest_returned_score": {
+          "score": 2646.9657660037383,
+          "field": "initialScore",
+          "episode": 113868333,
+          "time": "2026-09-26T21:57:47.406747600Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56572222.json",
+          "sha256": "6d4e38f744aff566a097008a7d2c784fe3d46a0e181bb80a146ef7b8f50f83e8"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56638917,
+        "submitted_utc": "2026-09-28T11:15:01.547Z",
+        "highest_returned_score": {
+          "score": 2569.370441824933,
+          "field": "initialScore",
+          "episode": 114721891,
+          "time": "2026-09-28T13:49:36.336898800Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56638917.json",
+          "sha256": "d29ee72586cc12fb6753e6f7a108c1aa79487638351c68b535092e1f999c95f1"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56652541,
+        "submitted_utc": "2026-09-28T21:25:32.900Z",
+        "highest_returned_score": {
+          "score": 2546.3856754914054,
+          "field": "initialScore",
+          "episode": 114937807,
+          "time": "2026-09-28T23:36:03.568844800Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56652541.json",
+          "sha256": "32b9e7b2d6a7a248b87e2f3d0138deafb245d52208544ec5e13f83a19b2b65bf"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56696789,
+        "submitted_utc": "2026-09-30T04:10:43.300Z",
+        "highest_returned_score": {
+          "score": 2095.9606179622488,
+          "field": "initialScore",
+          "episode": 115853369,
+          "time": "2026-09-30T16:03:26.614537900Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56696789.json",
+          "sha256": "4de81943d44aea113767b6dac79b9579207c7abf74ac243ae5db6b0a414be5da"
+        },
+        "source_bytes_verified_here": false
+      },
+      {
+        "submission": 56698403,
+        "submitted_utc": "2026-09-30T05:36:30.043Z",
+        "highest_returned_score": {
+          "score": 2391.673244407136,
+          "field": "initialScore",
+          "episode": 115660782,
+          "time": "2026-09-30T07:37:42.149560100Z"
+        },
+        "evidence": {
+          "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/56698403.json",
+          "sha256": "f7be9ee4034bfc1cef11b73d6efef7ddbedc21107d9ac4410940063f4af65f02"
+        },
+        "source_bytes_verified_here": false
+      }
+    ],
+    "gen68_daily_series": {
+      "2026-08-22": {
+        "games": 37,
+        "wins": 19,
+        "mean_own": 94885.62162162163,
+        "mean_margin": -385.97297297297297,
+        "final_rating": 3050.5374409641067,
+        "zero_own": 0
+      },
+      "2026-08-23": {
+        "games": 32,
+        "wins": 11,
+        "mean_own": 96998.8125,
+        "mean_margin": -2063.75,
+        "final_rating": 3009.5958931262476,
+        "zero_own": 0
+      },
+      "2026-08-24": {
+        "games": 27,
+        "wins": 9,
+        "mean_own": 95967.77777777778,
+        "mean_margin": 749.8888888888889,
+        "final_rating": 2968.4283736683237,
+        "zero_own": 0
+      },
+      "2026-08-25": {
+        "games": 24,
+        "wins": 10,
+        "mean_own": 89068.25,
+        "mean_margin": -1098.4583333333333,
+        "final_rating": 2956.940122666289,
+        "zero_own": 0
+      },
+      "2026-08-26": {
+        "games": 28,
+        "wins": 13,
+        "mean_own": 94662.96428571429,
+        "mean_margin": 1691.1785714285713,
+        "final_rating": 2955.833139839865,
+        "zero_own": 0
+      },
+      "2026-08-27": {
+        "games": 32,
+        "wins": 16,
+        "mean_own": 95385.625,
+        "mean_margin": 1601.375,
+        "final_rating": 2968.5557253859793,
+        "zero_own": 0
+      },
+      "2026-08-28": {
+        "games": 37,
+        "wins": 13,
+        "mean_own": 95512.54054054055,
+        "mean_margin": -4231.2972972972975,
+        "final_rating": 2922.951902293686,
+        "zero_own": 0
+      },
+      "2026-08-29": {
+        "games": 34,
+        "wins": 12,
+        "mean_own": 98077.44117647059,
+        "mean_margin": -5480.764705882353,
+        "final_rating": 2875.581609945789,
+        "zero_own": 0
+      },
+      "2026-08-30": {
+        "games": 25,
+        "wins": 9,
+        "mean_own": 88920.6,
+        "mean_margin": -2232.24,
+        "final_rating": 2838.356023656964,
+        "zero_own": 0
+      },
+      "2026-08-31": {
+        "games": 23,
+        "wins": 8,
+        "mean_own": 89870.91304347826,
+        "mean_margin": -721,
+        "final_rating": 2806.0811862762753,
+        "zero_own": 0
+      },
+      "2026-09-01": {
+        "games": 71,
+        "wins": 21,
+        "mean_own": 87590.88732394367,
+        "mean_margin": -4275.647887323944,
+        "final_rating": 2664.0970426760305,
+        "zero_own": 0
+      },
+      "2026-09-02": {
+        "games": 198,
+        "wins": 59,
+        "mean_own": 90056.89393939394,
+        "mean_margin": -6931.368686868687,
+        "final_rating": 2302.7334738226555,
+        "zero_own": 0
+      },
+      "2026-09-03": {
+        "games": 153,
+        "wins": 41,
+        "mean_own": 90509.46405228759,
+        "mean_margin": -9686.013071895424,
+        "final_rating": 1993.986159261928,
+        "zero_own": 0
+      },
+      "2026-09-04": {
+        "games": 158,
+        "wins": 55,
+        "mean_own": 91114.32278481012,
+        "mean_margin": -4166.791139240507,
+        "final_rating": 1798.1545621221082,
+        "zero_own": 0
+      },
+      "2026-09-05": {
+        "games": 70,
+        "wins": 24,
+        "mean_own": 93545.22857142857,
+        "mean_margin": -5553.857142857143,
+        "final_rating": 1716.835501280921,
+        "zero_own": 0
+      },
+      "2026-09-06": {
+        "games": 50,
+        "wins": 17,
+        "mean_own": 88106.58,
+        "mean_margin": -7741.54,
+        "final_rating": 1659.677464134064,
+        "zero_own": 0
+      },
+      "2026-09-07": {
+        "games": 1,
+        "wins": 0,
+        "mean_own": 75761,
+        "mean_margin": -4916,
+        "final_rating": 1654.8265527543801,
+        "zero_own": 0
+      }
+    },
+    "daily_series_evidence": {
+      "path": "evaluation/first40_autoresearch_20260928/lanes328/gen68_rating_timeline.json",
+      "sha256": "efe55637f4dfc4b1425105a6568f0eb6a0b1a9eee512a2da5a7f0a698a16906a"
+    },
+    "scan_evidence": {
+      "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_score_reconciled.json",
+      "sha256": "0aaf5a0739e9d77a3a24eb33a63dce20bc0a15ea1e29401abc4af74101c80443"
+    },
+    "limitations": [
+      "Highest in the retrieved own histories, not a claim of global rank #1 or complete all-time coverage.",
+      "Historical endpoint caps returned episodes; Gen68 earliest August19\u201322 games are absent.",
+      "Daily series tracks one fixed submitted policy in a changing competition; rating later fell to1654.83.",
+      "Per-submission maxima form an envelope, not a continuous current live-rating curve."
+    ]
+  },
+  "comparable_recorded_groups": [
+    {
+      "group": "Historical fixed82 episode/seat panel",
+      "case_keys_sha256": "46086e327e539574c948179332bbbf72e95ea40ee87b3f49a2e3906722dafeb4",
+      "case_keys": [
+        [
+          109809477,
+          0
+        ],
+        [
+          109810545,
+          1
+        ],
+        [
+          109811586,
+          1
+        ],
+        [
+          109812629,
+          1
+        ],
+        [
+          109813685,
+          0
+        ],
+        [
+          109814736,
+          1
+        ],
+        [
+          109815786,
+          1
+        ],
+        [
+          109816852,
+          1
+        ],
+        [
+          109817911,
+          1
+        ],
+        [
+          109818973,
+          1
+        ],
+        [
+          109820022,
+          1
+        ],
+        [
+          109821083,
+          0
+        ],
+        [
+          109822145,
+          1
+        ],
+        [
+          109823199,
+          1
+        ],
+        [
+          109824255,
+          1
+        ],
+        [
+          109825138,
+          1
+        ],
+        [
+          109825325,
+          1
+        ],
+        [
+          109826383,
+          0
+        ],
+        [
+          109827464,
+          0
+        ],
+        [
+          109828543,
+          0
+        ],
+        [
+          109829613,
+          1
+        ],
+        [
+          109830700,
+          0
+        ],
+        [
+          109831785,
+          1
+        ],
+        [
+          109832854,
+          0
+        ],
+        [
+          109833917,
+          1
+        ],
+        [
+          109834975,
+          1
+        ],
+        [
+          109836036,
+          0
+        ],
+        [
+          109837106,
+          1
+        ],
+        [
+          109837446,
+          1
+        ],
+        [
+          109837798,
+          1
+        ],
+        [
+          109838173,
+          0
+        ],
+        [
+          109839253,
+          0
+        ],
+        [
+          109840365,
+          0
+        ],
+        [
+          109841035,
+          0
+        ],
+        [
+          109841391,
+          0
+        ],
+        [
+          109841767,
+          0
+        ],
+        [
+          109842451,
+          1
+        ],
+        [
+          109843515,
+          0
+        ],
+        [
+          109844582,
+          0
+        ],
+        [
+          109845643,
+          1
+        ],
+        [
+          109846345,
+          1
+        ],
+        [
+          109846702,
+          0
+        ],
+        [
+          109847806,
+          1
+        ],
+        [
+          109848915,
+          0
+        ],
+        [
+          109850005,
+          0
+        ],
+        [
+          109850570,
+          1
+        ],
+        [
+          109851092,
+          1
+        ],
+        [
+          109852055,
+          1
+        ],
+        [
+          109853227,
+          1
+        ],
+        [
+          109854302,
+          1
+        ],
+        [
+          109855371,
+          0
+        ],
+        [
+          109856442,
+          1
+        ],
+        [
+          109857514,
+          1
+        ],
+        [
+          109857838,
+          0
+        ],
+        [
+          109858576,
+          1
+        ],
+        [
+          109859645,
+          1
+        ],
+        [
+          109860706,
+          0
+        ],
+        [
+          109861770,
+          1
+        ],
+        [
+          109862843,
+          1
+        ],
+        [
+          109863937,
+          1
+        ],
+        [
+          109864982,
+          1
+        ],
+        [
+          109866064,
+          0
+        ],
+        [
+          109866996,
+          0
+        ],
+        [
+          109867137,
+          0
+        ],
+        [
+          109868243,
+          0
+        ],
+        [
+          109869280,
+          0
+        ],
+        [
+          109870350,
+          1
+        ],
+        [
+          109871428,
+          0
+        ],
+        [
+          109872495,
+          0
+        ],
+        [
+          109873572,
+          1
+        ],
+        [
+          109874648,
+          1
+        ],
+        [
+          109875715,
+          1
+        ],
+        [
+          109876704,
+          1
+        ],
+        [
+          109876788,
+          0
+        ],
+        [
+          109877857,
+          1
+        ],
+        [
+          109878926,
+          0
+        ],
+        [
+          109879998,
+          0
+        ],
+        [
+          109881076,
+          0
+        ],
+        [
+          109882078,
+          1
+        ],
+        [
+          109886934,
+          1
+        ],
+        [
+          109888801,
+          0
+        ],
+        [
+          109892765,
+          1
+        ]
+      ],
+      "points": [
+        {
+          "version": "Route848 accepted",
+          "recorded_review_utc": "2026-09-18T06:58:50.035129+00:00",
+          "source_build": "f883e9368fcf2ccc609392810a6c10f6ca2ee7400d305f28c75a46f9e9aee607",
+          "metrics": {
+            "games": 82,
+            "wins": 61,
+            "draws": 0,
+            "losses": 21,
+            "mean_margin": 9362.487804878048,
+            "worst_margin": -9584.0
+          },
+          "evidence": {
+            "path": "evaluation/research858_20260917/accepted_comparison82.json",
+            "sha256": "9e03b37f60fd399de9af30689c4ebecf87e3af963d2905cd63a2b7bec4450f48"
+          },
+          "source_files": [
+            {
+              "path": "generation/submission848_20260916/extracted/LICENSE-ENGINE.txt",
+              "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/LICENSE.txt",
+              "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/THIRD_PARTY_NOTICES.md",
+              "sha256": "bdb13bef9d6b3fad17f044efad759bbc5952922f0bf4bc4c11ad9795741cd2f2"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/baseline489.py",
+              "sha256": "26d01ceab3292f35c8f203df552b60ef2046d6ad0a01ff94d0e3071435fe7d8b"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/c15_horizon679.py",
+              "sha256": "25a3218565ef860fe49349e216a61ceead4200dc8ba60485d6d2e970a8974a15"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/cache715.py",
+              "sha256": "ee10e3dae93e818b91aaa55b407629873695b9b16e2e25eaee8870ba47d74907"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/capacity679.py",
+              "sha256": "89d0bd3251c9d108a76c6c8c9f5a60dc5a36cc2688c4b4b93e19f6089353353d"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/cargo_horizon679.py",
+              "sha256": "eb171038e84e2bbb5cd84be3a084149faff28839ee7ff04430ce552a32e269db"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/carrier_proof678.py",
+              "sha256": "b88c26f379449c661e1b4dbf195f71056fc2fcc540c476dec6260389f66ee7a9"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/carrot626.py",
+              "sha256": "a60956f7e274f94ed34068d7699521d743bf949a9bb76b1398ed38b2d38630f5"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/clearance25_units.py",
+              "sha256": "2ea089167d05084b08923fcde62d6839700e442272be5eb98ec8a53021ad45d3"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/compiled_cache679.py",
+              "sha256": "9951d59e78db85a2fb54938dac11e92eb64fc8017c6ebcefdf826e52b6934798"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/consumption686.py",
+              "sha256": "a597ebca67695da857bfdc944673e53dd6346d8f55595739868a8a76fa996118"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/cow673.py",
+              "sha256": "154e0940db2b1c8ec37923a84d4333f13070db1fea0b7be422370799f4a0edda"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/crop_fert840.py",
+              "sha256": "a5bbaf97a88603be00c7f2857ed4e2bf4375156233b57ff1f4abffe8a10972d6"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/crop_value846.py",
+              "sha256": "044700d5a52910977de0875b602a20a8a5f735cce2793c7f818c26c830380a24"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/custody844.py",
+              "sha256": "3c1c5c28e3ee323f50970541d79421f0abb2d8386384b192a14e62ab1f4e9f7a"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/data_copy679.py",
+              "sha256": "54231530ca5b34faa5fc923ee32e5bb3ad078e2f594158846dd29affe96b2d83"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/early_budget581.py",
+              "sha256": "8e3671dfd1ddb4c1b89fc6ac812af9cee425f2db4b7dd55d9be1051d80b4b142"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/early_drop844.py",
+              "sha256": "6f9880bcf0dc3d441cff59eb0e7a13a8fb44772eeeac800ffc852360f1c05020"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/engine_primitives425.py",
+              "sha256": "4acdd437a71703c95b68da382567145f266a237aebcaf0ade8b8a31111c879dd"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/exact_routes.py",
+              "sha256": "f7ede6358e590b5465cd4c53f82e66f4061f214ea606f0a598103db22fcd83fd"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/feed837.py",
+              "sha256": "18e06e90e43dc49f6a71af671752ff9560870e23272805ea8dc02073e957fb3e"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/feed_rescue678.py",
+              "sha256": "914119df226830d7146b49452a942dedf0af0dd1593cb071961af8a8a3d8d7b6"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/feed_value837.py",
+              "sha256": "ba81627f8962acc5455e6f34676c56a08cface5ffe4d9521e3446f6b3c24490c"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/fert_service679.py",
+              "sha256": "4261602746e5fb8c6437c636794520c489fd832ea997812ba8d11cdcd65349ad"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/fertprog.py",
+              "sha256": "55016e7158cb67dcada76d3a318fa573b3a853a92cac65be52a2381057164f17"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/forecast_context679.py",
+              "sha256": "e8ae3ea5983df25bb20c7f38a1c596a5ae13ac51795963cd87f5143b9c2c4809"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/forecast_physical789.py",
+              "sha256": "f0b9d45cd6fcca65323ad85a8791e586a8e078f4c8a1816d8c3dbc95581f2f09"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/growth804.py",
+              "sha256": "9b0920f153eaba35f2470dc914c2ea343837904e4d225efce4761160252d8e5f"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/handoff640.py",
+              "sha256": "7fabd97cedc99f711172929a2408111e0714298e1fb8da7c76f4998551eda7ea"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/harvest668.py",
+              "sha256": "04987e6bad553156c6e7e6e69e1858e1c7ddbca5b51ea53ac9756b2c83cc6794"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/joint_crop.py",
+              "sha256": "3b1be7512dea78cc0bea9e2c69f3ea3d17fe932d97b5c20194bd0dcebd14204d"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/joint_tomato834.py",
+              "sha256": "3a6d8584deebd546596db81960b7e91a5ffad915a02e51fbd74bd34645a5dd0f"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/late_c15_679.py",
+              "sha256": "7bfda35463d193549da91ff3241ed7745102a4a62d0ff5686426e774ad0ff46a"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/late_program712.py",
+              "sha256": "4e794107e8b6e78c1529801bed79464103991bb4f4433a348383dab3fe489a62"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/late_species847.py",
+              "sha256": "66878fe9067e98ea547d236460c9a551a5467500c1bc7d0875a6c408e992d506"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/liquidation846.py",
+              "sha256": "5bb1eccf02c66e82ab802e6b22759742a78257bae1891512e2e80d6f36f3f6d6"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/main.py",
+              "sha256": "fe732e72b31c7ab83fec97dfc20f2e37f4e06d239ef47616c7358f6a3f7b94b9"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/market683.py",
+              "sha256": "b2b3506efa07222e933fa44c6f465d21e676c763ad1bde5617fb9ccf5170ff2f"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/native12_845.py",
+              "sha256": "6a82d6f036e3cf3fbfd321ce18562c03dabd8477e73a1eb87f9119e950af2835"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/native_service679.py",
+              "sha256": "2626bb7212bf0072a6d577e2c2db127ffa94acf3c6a115da406ed9a38e1fa587"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/plans.json",
+              "sha256": "fd82c622372165ae6378c1811926b1bf2453be749dbcc244b561861abbde1947"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/policy_clone678.py",
+              "sha256": "5b6838516a60ab7b53d45dcbb2c95eb8d6898dcdf53810558e9556088795a768"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/policy_clone679.py",
+              "sha256": "d85e3f5e175e5554c28ba73a6f45281e27e81641cce45b69d05b2a8b74395396"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/public_farm844.py",
+              "sha256": "a9e505583ec8a53e3c5d3981ddc2016d5933c0815be5dc700b62f67e98859736"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/replacement679.py",
+              "sha256": "cb0ac174e4c943368aa00698c78659f8ab26a6c65ab0badf255974f1d7cf9bf2"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/resource679.py",
+              "sha256": "e2f991b0f6a5c97f1823b0a4d8f4326d847124b2384faff662bbb69a445feb08"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/resumable844.py",
+              "sha256": "0c208ad1772f47a476ab4492c3b8afebb18aa90c30feb137a3057433876556bc"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/retire776.py",
+              "sha256": "dc68a269299fdab76064a6ed715e9cfb226a713e5898bc35ff38257d6561b133"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/retirement_guard789.py",
+              "sha256": "d8d5b270debfa90028deac15af2d24999a2cc22eed46bc9cf9a5b584d39230ca"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/rotation679.py",
+              "sha256": "62281fc8a2fac5f92c9405b34cdd818475b4679feaf903a2bb45d95eeff65510"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/route_lookup.json",
+              "sha256": "eb15fb455d7ddb9393318283cb59c5437731b0f4d4d4a3ea036a637a0e54d5d3"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/route_table842.py",
+              "sha256": "ab5f994006e00840cc332d3a92dca0e60ae8b3534bd5f1452f938d02eb1db186"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/routes584.json.zlib",
+              "sha256": "cffd6ab10f78ff260f0100ff7b922254962a54431a878ea09e087876567c5472"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/routes708.json.zlib",
+              "sha256": "59aa8b4c20aa5d14f70e43132e41da6e4ed6759ec1483a8b985adcc246678024"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/routes708.py",
+              "sha256": "7c84609e1953a0627f2773942e6004f3e5d8a841a895dca9b4a873e7df4f07ba"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/routes711.json.zlib",
+              "sha256": "03b2f8d53249b24f58aeca5b7018ae3e0be93ed66d5248c40c244bf5ab5d03ba"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/routes711.py",
+              "sha256": "8fc8381920630ce2d55c69728353b3503d28121f4a372a8ce6cf25aa60bb59ec"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/routes806.py",
+              "sha256": "93d62f3e70f8a6d5beee381e4ad715945ed1643f06d3e5e52d686918d5ed1c60"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/seed_proof678.py",
+              "sha256": "2e2c9a397e21db19cada5c9c0efc04be72033590c1cfd55e4a17dd2512ce2396"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/seed_rescue678.py",
+              "sha256": "b9ee7b174451cef3bc0e8faed4ec9eda26a6bccddf24e7395ae2aca58163c236"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/sheep_rescue678.py",
+              "sha256": "c71fda507395a015bae481f965850b713a3ac8321a2ca1880a0371a446aefb4d"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/spatial679.py",
+              "sha256": "6d0ff819889b9c11c2483ad527e7c9a93cfae8675f50eb76cca3e237477fff76"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/staged764.py",
+              "sha256": "475e86031a60151ececc665064d31fe3b673949f84a52d1ed7e7e504bb8b3742"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/tactical665.py",
+              "sha256": "f51178b1d6c68fe891c4cf3310818f00eb0e625746f196110587c685765a53dd"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/terminal845.py",
+              "sha256": "30b1232c77b1c51c2718f3d816c6d75eed948fe7fdd0a6e9bf827f2ef3664c64"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/tomato_value847.py",
+              "sha256": "4ed1ff466d4200e658c9802e01d32132f57c720e605961c557bc3db235338a8b"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/valuation652.py",
+              "sha256": "d2e1994cb4a7347b6cd1d214d3d41b6e9a7d2bfcb2a3463af27d17e8776b00fd"
+            },
+            {
+              "path": "generation/submission848_20260916/extracted/water714.py",
+              "sha256": "7a6eaee755d95c1ef7175ffe754ed04bf04489fa1d208346c655c7ec4f2df7a5"
+            }
+          ]
+        },
+        {
+          "version": "854",
+          "recorded_review_utc": "2026-09-17T07:32:52.341901+00:00",
+          "source_path": "generation/research854_20260917/root/late_only_ablation/artifact",
+          "source_build": "49e3f67db488e20eae6e31ef5d0fd4a52773dcc03186bf2bd08a08c7fc2aa51b",
+          "source_manifest_files_verified": 81,
+          "metrics": {
+            "games": 82,
+            "wins": 70,
+            "draws": 0,
+            "losses": 12,
+            "mean_margin": 9881.646341463415,
+            "worst_margin": -2399.0
+          },
+          "evidence": [
+            {
+              "path": "evaluation/research854_20260917/delivery/late_v6_final_review/review.json",
+              "sha256": "3a1e96fd8e8b5715a685cc8af1c40576da5351387e8ce8bbfbd1a61dd31e0b5d"
+            },
+            {
+              "path": "evaluation/research854_20260917/candidate.json",
+              "sha256": "0466c5fc79ba66c63359100a2ef630e666ebb426803f0fdb96044cf3502cec51"
+            }
+          ]
+        },
+        {
+          "version": "855",
+          "recorded_review_utc": "2026-09-17T22:01:56.647577+00:00",
+          "source_path": "generation/research855_20260917/root/integrated_v4/artifact",
+          "source_build": "5b28ed1070ffcc60ca7de27af563556a3ef19e2fac191d564b22d629d7b1d513",
+          "source_manifest_files_verified": 88,
+          "metrics": {
+            "games": 82,
+            "wins": 74,
+            "draws": 0,
+            "losses": 8,
+            "mean_margin": 10133.914634146342,
+            "worst_margin": -1892.0
+          },
+          "evidence": [
+            {
+              "path": "evaluation/research855_20260917/review/integrated_v4/union82.json",
+              "sha256": "db5eb3fb5a3cd1004c5c869a6eacb4d7d71cfccdd20c1f874a09771159547c71"
+            },
+            {
+              "path": "evaluation/research855_20260917/candidate.json",
+              "sha256": "9e5b2554ed23b46a1f6b6f8c1d6ddceabd5e9766a19bfd01e2615f3278fa8e5a"
+            }
+          ]
+        },
+        {
+          "version": "856",
+          "recorded_review_utc": "2026-09-18T01:07:44.788070+00:00",
+          "source_path": "generation/research856_20260917/root/milk_equilibrium_v1/artifact",
+          "source_build": "eb926b2be0724f125b1d41c476ab9bee04eb7db57dce3e9402a19e22a83dcc71",
+          "source_manifest_files_verified": 88,
+          "metrics": {
+            "games": 82,
+            "wins": 76,
+            "draws": 0,
+            "losses": 6,
+            "mean_margin": 10147.487804878048,
+            "worst_margin": -2289.0
+          },
+          "evidence": [
+            {
+              "path": "evaluation/research856_20260917/review/milk_equilibrium82/union82.json",
+              "sha256": "859dfe7c27b96ac3801ea6bddaa3b676960cf078c8c5656b15f27fb45a14a85d"
+            },
+            {
+              "path": "evaluation/research856_20260917/candidate.json",
+              "sha256": "52d26623f0624ae18358b71ca8153ae0ebe4b790ca9073e2d31286166ab1dac9"
+            }
+          ]
+        },
+        {
+          "version": "857",
+          "recorded_review_utc": "2026-09-18T03:49:09.497878+00:00",
+          "source_path": "generation/research857_20260917/production/dusk_return_v1/artifact",
+          "source_build": "dcf98ee10e79ec57820c2ec47cbb74ef828a9cf873292b820ee84532251b0b59",
+          "source_manifest_files_verified": 90,
+          "metrics": {
+            "games": 82,
+            "wins": 77,
+            "draws": 0,
+            "losses": 5,
+            "mean_margin": 10335.573170731708,
+            "worst_margin": -1882.0
+          },
+          "evidence": [
+            {
+              "path": "evaluation/research857_20260917/review/integrated_v3_82/union82.json",
+              "sha256": "71067dc4b6b7dd37e2892dec7e5bbadb9f80de668a9932b3aa4fa8c909e71dc7"
+            },
+            {
+              "path": "evaluation/research857_20260917/candidate.json",
+              "sha256": "7370a84126be838b44205ab3184a6574418c1b296b284e31180784a154fda824"
+            }
+          ]
+        },
+        {
+          "version": "858",
+          "recorded_review_utc": "2026-09-18T06:58:22.607688+00:00",
+          "source_path": "generation/research858_20260917/root/integrated_v1/artifact",
+          "source_build": "0575f9ea5703c9c733ac3a17e7c7927611a279270b130e0e21c417b3b6089496",
+          "source_manifest_files_verified": 92,
+          "metrics": {
+            "games": 82,
+            "wins": 78,
+            "draws": 0,
+            "losses": 4,
+            "mean_margin": 10491.524390243903,
+            "worst_margin": -1883.0
+          },
+          "evidence": [
+            {
+              "path": "evaluation/research858_20260917/review/integrated_v1_82/union82.json",
+              "sha256": "d23ccb290f0aebe5896c38bdd17596b5c431e209290c8e9fcd4eb5c9d2caf042"
+            },
+            {
+              "path": "evaluation/research858_20260917/candidate.json",
+              "sha256": "aa13f03ef8bb8d164cda171be4ee1636652d6ea98b61ccab1677f8d5bfd5b583"
+            }
+          ]
+        },
+        {
+          "version": "859",
+          "recorded_review_utc": "2026-09-18T10:14:19.200660+00:00",
+          "source_path": "generation/research859_20260918/parent_repair_visible_demand_v1/artifact",
+          "source_build": "08f712abccb4dcd00a6554c52db0b60749a5887bb32d2ebe1827684a421932fc",
+          "source_manifest_files_verified": 96,
+          "metrics": {
+            "games": 82,
+            "wins": 79,
+            "draws": 0,
+            "losses": 3,
+            "mean_margin": 10618.658536585366,
+            "worst_margin": -1662.0
+          },
+          "evidence": [
+            {
+              "path": "evaluation/research859_20260918/parent_failure/review82/union82.json",
+              "sha256": "68124c1a54aaf8082da2049cb1b0a43e575007a1f96b84d334306cc631bc949e"
+            },
+            {
+              "path": "evaluation/research859_20260918/candidate.json",
+              "sha256": "fe52792a629895e8c0dd55c2b2fb5c6f528b3d64053e51749c7ec752d54e9a01"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Recorded replay results, not live outcomes or an independent randomized holdout at each iteration.",
+        "Individual economic regressions persist; retention of wins does not mean every game improved."
+      ]
+    },
+    {
+      "group": "September30 frozen A60+B60 /120",
+      "case_keys_sha256": "6e8007cf23805df3e825d185b4512e391ff32c773e810e0dafd5c9975e3a3569",
+      "case_keys": [
+        [
+          114668854,
+          0
+        ],
+        [
+          114670330,
+          0
+        ],
+        [
+          114671757,
+          1
+        ],
+        [
+          114673217,
+          1
+        ],
+        [
+          114674654,
+          0
+        ],
+        [
+          114676095,
+          1
+        ],
+        [
+          114677547,
+          0
+        ],
+        [
+          114679010,
+          1
+        ],
+        [
+          114680456,
+          1
+        ],
+        [
+          114681905,
+          1
+        ],
+        [
+          114683370,
+          1
+        ],
+        [
+          114684827,
+          0
+        ],
+        [
+          114686281,
+          1
+        ],
+        [
+          114687737,
+          1
+        ],
+        [
+          114687979,
+          0
+        ],
+        [
+          114689193,
+          1
+        ],
+        [
+          114690660,
+          0
+        ],
+        [
+          114692127,
+          1
+        ],
+        [
+          114692810,
+          1
+        ],
+        [
+          114693627,
+          1
+        ],
+        [
+          114695191,
+          0
+        ],
+        [
+          114695800,
+          1
+        ],
+        [
+          114696649,
+          1
+        ],
+        [
+          114697151,
+          0
+        ],
+        [
+          114698194,
+          1
+        ],
+        [
+          114699689,
+          1
+        ],
+        [
+          114701145,
+          1
+        ],
+        [
+          114702649,
+          0
+        ],
+        [
+          114704113,
+          1
+        ],
+        [
+          114705593,
+          1
+        ],
+        [
+          114707077,
+          0
+        ],
+        [
+          114708561,
+          0
+        ],
+        [
+          114710027,
+          0
+        ],
+        [
+          114710654,
+          0
+        ],
+        [
+          114711537,
+          0
+        ],
+        [
+          114713006,
+          1
+        ],
+        [
+          114713598,
+          1
+        ],
+        [
+          114714289,
+          1
+        ],
+        [
+          114715984,
+          1
+        ],
+        [
+          114717475,
+          1
+        ],
+        [
+          114718970,
+          0
+        ],
+        [
+          114720439,
+          1
+        ],
+        [
+          114721891,
+          1
+        ],
+        [
+          114723388,
+          0
+        ],
+        [
+          114724863,
+          0
+        ],
+        [
+          114726352,
+          0
+        ],
+        [
+          114727816,
+          0
+        ],
+        [
+          114729299,
+          1
+        ],
+        [
+          114730785,
+          1
+        ],
+        [
+          114731100,
+          1
+        ],
+        [
+          114732259,
+          1
+        ],
+        [
+          114733748,
+          0
+        ],
+        [
+          114735204,
+          0
+        ],
+        [
+          114736695,
+          1
+        ],
+        [
+          114736946,
+          0
+        ],
+        [
+          114737067,
+          1
+        ],
+        [
+          114738221,
+          1
+        ],
+        [
+          114739679,
+          1
+        ],
+        [
+          114741185,
+          0
+        ],
+        [
+          114742664,
+          0
+        ],
+        [
+          114891600,
+          0
+        ],
+        [
+          114893171,
+          0
+        ],
+        [
+          114894711,
+          1
+        ],
+        [
+          114896236,
+          0
+        ],
+        [
+          114897784,
+          0
+        ],
+        [
+          114899312,
+          0
+        ],
+        [
+          114900851,
+          1
+        ],
+        [
+          114902402,
+          0
+        ],
+        [
+          114903939,
+          0
+        ],
+        [
+          114905513,
+          1
+        ],
+        [
+          114906093,
+          1
+        ],
+        [
+          114907024,
+          1
+        ],
+        [
+          114908692,
+          1
+        ],
+        [
+          114910363,
+          1
+        ],
+        [
+          114912041,
+          0
+        ],
+        [
+          114913738,
+          1
+        ],
+        [
+          114915409,
+          1
+        ],
+        [
+          114916467,
+          0
+        ],
+        [
+          114917107,
+          0
+        ],
+        [
+          114918830,
+          0
+        ],
+        [
+          114920630,
+          1
+        ],
+        [
+          114922191,
+          0
+        ],
+        [
+          114923680,
+          1
+        ],
+        [
+          114924423,
+          0
+        ],
+        [
+          114925157,
+          0
+        ],
+        [
+          114926638,
+          1
+        ],
+        [
+          114928092,
+          0
+        ],
+        [
+          114928802,
+          0
+        ],
+        [
+          114928884,
+          1
+        ],
+        [
+          114929654,
+          1
+        ],
+        [
+          114931217,
+          1
+        ],
+        [
+          114932763,
+          0
+        ],
+        [
+          114934489,
+          1
+        ],
+        [
+          114935819,
+          1
+        ],
+        [
+          114937659,
+          1
+        ],
+        [
+          114937799,
+          0
+        ],
+        [
+          114937807,
+          1
+        ],
+        [
+          114939001,
+          1
+        ],
+        [
+          114940754,
+          1
+        ],
+        [
+          114942551,
+          0
+        ],
+        [
+          114944341,
+          0
+        ],
+        [
+          114946222,
+          1
+        ],
+        [
+          114948141,
+          0
+        ],
+        [
+          114950034,
+          1
+        ],
+        [
+          114952013,
+          0
+        ],
+        [
+          114952397,
+          0
+        ],
+        [
+          114954070,
+          1
+        ],
+        [
+          114956121,
+          0
+        ],
+        [
+          114958235,
+          0
+        ],
+        [
+          114960293,
+          1
+        ],
+        [
+          114960447,
+          1
+        ],
+        [
+          114962123,
+          1
+        ],
+        [
+          114962293,
+          0
+        ],
+        [
+          114964361,
+          1
+        ],
+        [
+          114966544,
+          1
+        ],
+        [
+          114968721,
+          0
+        ],
+        [
+          114970754,
+          0
+        ],
+        [
+          114971313,
+          1
+        ],
+        [
+          114972622,
+          1
+        ],
+        [
+          114978727,
+          0
+        ]
+      ],
+      "points": [
+        {
+          "version": 251,
+          "completed_utc": "2026-09-30T05:30:01.742886+00:00",
+          "run": "research251_v2_full122_k3",
+          "source": {
+            "path": "generation/first40_autoresearch_20260928/retirement251_timeout_v2",
+            "sha256": "c9744d4d1da553b9b628ad29a470fe0542a1416ea3f0fe50fccc3cb5e1274cbe"
+          },
+          "source_files_verified": 138,
+          "metrics": {
+            "games": 120,
+            "wins": 90,
+            "draws": 0,
+            "losses": 30,
+            "strictly_above30000": 11,
+            "mean_own_cash": 102480.5,
+            "mean_margin": 7426.475,
+            "worst_margin": -47365.0,
+            "mean_own_cash_change_vs251": 0.0,
+            "mean_margin_change_vs251": 0.0
+          },
+          "evidence": [
+            {
+              "path": "evaluation/first40_autoresearch_20260928/research251_v2_full122_k3_review.json",
+              "sha256": "76a3cf79aaa4304e6a0578ec0ccc09e01d900dc7638191a3536257f2652882a2"
+            }
+          ]
+        },
+        {
+          "version": 333,
+          "completed_utc": "2026-09-30T17:00:15.055877+00:00",
+          "run": "research333_gen68_full120_k3",
+          "source": {
+            "path": "generation/first40_autoresearch_20260928/gen68_current_funded_labor332_rootfreeze",
+            "sha256": "e42362287e17aa02fbb59bc75eb0eac2e1639316317a3ba1233ba7dc5e2d1b4d"
+          },
+          "source_files_verified": 1,
+          "metrics": {
+            "games": 120,
+            "wins": 21,
+            "draws": 0,
+            "losses": 99,
+            "strictly_above30000": 11,
+            "mean_own_cash": 92068.4,
+            "mean_margin": -8906.3,
+            "worst_margin": -60615.0,
+            "mean_own_cash_change_vs251": -10412.1,
+            "mean_margin_change_vs251": -16332.775,
+            "recoveries_vs251": 5,
+            "lost_wins_vs251": 74
+          },
+          "evidence": [
+            {
+              "path": "evaluation/first40_autoresearch_20260928/research333_gen68_full120_k3_review.json",
+              "sha256": "229535f2f21841adea820311905c3b631eb47703b8986695a0ac15d34b9fd6c3"
+            },
+            {
+              "path": "evaluation/first40_autoresearch_20260928/RESEARCH333.json",
+              "sha256": "aa0ed198cdf0806e72db202485fac283bd92ab93e0462a59a5273d2283382004"
+            }
+          ]
+        },
+        {
+          "version": 336,
+          "completed_utc": "2026-09-30T17:35:52.485670+00:00",
+          "run": "research336_current335_full120_k3",
+          "source": {
+            "path": "generation/first40_autoresearch_20260928/early_sheep_choice335_rootfreeze",
+            "sha256": "222dd0a402942217a15abd677ddb5137764d7a586712356b703470a1510541cf"
+          },
+          "source_files_verified": 140,
+          "metrics": {
+            "games": 120,
+            "wins": 90,
+            "draws": 0,
+            "losses": 30,
+            "strictly_above30000": 11,
+            "mean_own_cash": 102744.59166666666,
+            "mean_margin": 7292.233333333334,
+            "worst_margin": -47365.0,
+            "mean_own_cash_change_vs251": 264.09166666666664,
+            "mean_margin_change_vs251": -134.24166666666667
+          },
+          "evidence": [
+            {
+              "path": "evaluation/first40_autoresearch_20260928/RESEARCH336.json",
+              "sha256": "39985a2e8905cc2cbb22e25e2c8b67536b5fd26aa614fa87f3f347c4a4e67415"
+            },
+            {
+              "path": "evaluation/first40_autoresearch_20260928/lanes336/cohort_summary.json",
+              "sha256": "63b1b7cce8f0814ce5f8b72f0c08057551e948702ccf960dbc2e55a034b8d2f0"
+            }
+          ]
+        },
+        {
+          "version": 340,
+          "completed_utc": "2026-09-30T18:41:04.737241+00:00",
+          "run": "research341_integrated340_full120_k3",
+          "source": {
+            "path": "generation/first40_autoresearch_20260928/integrated340_sheep_sale",
+            "sha256": "1a371551768adbf685f5019524ee446a10770149a6af3060e6970718f696b74a"
+          },
+          "source_files_verified": 141,
+          "metrics": {
+            "games": 120,
+            "wins": 90,
+            "draws": 0,
+            "losses": 30,
+            "strictly_above30000": 11,
+            "mean_own_cash": 102755.33333333333,
+            "mean_margin": 7311.891666666666,
+            "worst_margin": -47365.0,
+            "mean_own_cash_change_vs251": 274.8333333333333,
+            "mean_margin_change_vs251": -114.58333333333333
+          },
+          "evidence": [
+            {
+              "path": "evaluation/first40_autoresearch_20260928/lanes341/cohort_summary.json",
+              "sha256": "2c48d05fbb536b167043c6661f26df375ddc1f6f6a30ecfbbc3ca20747110cf3"
+            },
+            {
+              "path": "evaluation/first40_autoresearch_20260928/RESEARCH340.json",
+              "sha256": "6db0481412cfbe4c932c82cac14fc45cfbdb7fc4a6ff97c29b0a9cef7a0f27ad"
+            }
+          ]
+        },
+        {
+          "version": 361,
+          "completed_utc": "2026-09-30T21:34:13.964474+00:00",
+          "run": "research362_margin361_full120_k3",
+          "source": {
+            "path": "generation/first40_autoresearch_20260928/margin361_astra",
+            "sha256": "f6b6e081f9c9a0fb509186b424251c2593051d78bc5bc6a58d6de93e44a6f94f"
+          },
+          "source_files_verified": 141,
+          "metrics": {
+            "games": 120,
+            "wins": 90,
+            "draws": 0,
+            "losses": 30,
+            "strictly_above30000": 11,
+            "mean_own_cash": 102491.30833333333,
+            "mean_margin": 7447.45,
+            "worst_margin": -47365.0,
+            "mean_own_cash_change_vs251": 10.808333333333334,
+            "mean_margin_change_vs251": 20.975
+          },
+          "evidence": [
+            {
+              "path": "evaluation/first40_autoresearch_20260928/lanes362/cohort_summary.json",
+              "sha256": "7ea8db2f13923b3f3d72ec601d8e772eb8a8179b806f589c334749ef93f9e469"
+            },
+            {
+              "path": "evaluation/first40_autoresearch_20260928/RESEARCH361.json",
+              "sha256": "7ea5ecf526fbbe6c387cf6cfcd798f9bf96a10d0401c11fc4b7ed14955bc352d"
+            }
+          ]
+        },
+        {
+          "version": 397,
+          "completed_utc": "2026-09-30T23:53:40.219021+00:00",
+          "run": "research397_fastretire_full133_k3",
+          "source": {
+            "path": "generation/first40_autoresearch_20260928/fast_retire397_astra",
+            "sha256": "362ac5c7ec764f345c222d388a47d41349d786fe2e118fe1fe41a0673918972e"
+          },
+          "source_files_verified": 142,
+          "metrics": {
+            "games": 120,
+            "wins": 90,
+            "draws": 0,
+            "losses": 30,
+            "strictly_above30000": 11,
+            "mean_own_cash": 102513.61666666667,
+            "mean_margin": 7470.55,
+            "worst_margin": -47365.0,
+            "mean_own_cash_change_vs251": 33.11666666666667,
+            "mean_margin_change_vs251": 44.075
+          },
+          "evidence": [
+            {
+              "path": "evaluation/first40_autoresearch_20260928/research397_fastretire_full133_k3_review.json",
+              "sha256": "93df3cdd63854ab6be65e0367649b84cc6ec276d0ffaa5447dd5cb65095237ff"
+            },
+            {
+              "path": "evaluation/first40_autoresearch_20260928/lanes397/cohort_summary.json",
+              "sha256": "a3ef950b758c312b4e0c806993b41eb933d04b4a88c5a10b4bf98ff1219d31d2"
+            }
+          ]
+        }
+      ],
+      "plot_evidence": {
+        "path": "evaluation/blog_draft_20260930/charts/plot_data.json",
+        "sha256": "09a4d71908560d6c7a884e66a498aa36cd5f3cde543759a89657838510e85de4"
+      },
+      "limits": [
+        "Every point comes from candidate actual completed reviews, never legacy incumbent-display ledger rows.",
+        "Identical120 episode/seat cases;120 is derived coverage from the actual122 run for251 and133 run for397, not extra executions.",
+        "Different games from historical82: do not connect the two win-rate curves.",
+        "333 is a repaired Gen68 branch; it is not the historical uploaded single-file source.",
+        "Recorded opponent actions and forced historical shops; no responsive/live performance inference."
+      ]
+    }
+  ],
+  "final397": {
+    "submission": 56722213,
+    "status": "SUBMITTED_HOSTED_VALIDATION_PENDING",
+    "source_path": "generation/first40_autoresearch_20260928/fast_retire397_astra",
+    "source_sha256": "362ac5c7ec764f345c222d388a47d41349d786fe2e118fe1fe41a0673918972e",
+    "completed_utc": "2026-09-30T23:53:40.219021+00:00",
+    "actual133": {
+      "label": "FastRetire397: owned fertilizer and equivalent bounded retirement allocation",
+      "source": "362ac5c7ec764f345c222d388a47d41349d786fe2e118fe1fe41a0673918972e",
+      "matched_cases": 133,
+      "wins": 93,
+      "losses": 40,
+      "draws": 0,
+      "above30000": 11,
+      "recoveries": [],
+      "lost_wins": [],
+      "mean_margin_delta": 24.398496240601503,
+      "mean_own_cash_delta": 23.49624060150376,
+      "full60_qualification": false,
+      "coverage_label": "133 actual recorded games; exact120 cohort subset; further qualification pending",
+      "paired_label": "Paired versus exact submitted361.",
+      "game_axis_label": "Actual recorded cases: A/B frozen cohorts plus current target controls",
+      "scope_note": "Actual133 paired rows with semantic/physical audits; full120 subset. Further16fresh+2known+26archive separately counted; no new recorded parent games."
+    },
+    "runtime": {
+      "candidate_own_fresh_known_observed_strict_lt1": true,
+      "fresh": {
+        "games": 16,
+        "fresh": true,
+        "wins": 6,
+        "losses": 0,
+        "draws": 10,
+        "mean_margin": 30.375,
+        "worst_margin": 0.0,
+        "maximum_callback": 0.7856981669319794,
+        "maximum_peer_callback": 1.2264145420631394,
+        "errors": 0,
+        "peer_runtime_events": [
+          {
+            "case": "world0_s0",
+            "maximum_callback_seconds": 0.7756453329930082,
+            "callback_overruns": []
+          },
+          {
+            "case": "world0_s1",
+            "maximum_callback_seconds": 0.7402116250013933,
+            "callback_overruns": []
+          },
+          {
+            "case": "world1_s0",
+            "maximum_callback_seconds": 0.4592979159206152,
+            "callback_overruns": []
+          },
+          {
+            "case": "world1_s1",
+            "maximum_callback_seconds": 0.45758504199329764,
+            "callback_overruns": []
+          },
+          {
+            "case": "world2_s0",
+            "maximum_callback_seconds": 1.2264145420631394,
+            "callback_overruns": [
+              {
+                "step": 408,
+                "seconds": 1.2264145420631394
+              }
+            ]
+          },
+          {
+            "case": "world2_s1",
+            "maximum_callback_seconds": 1.216242832946591,
+            "callback_overruns": [
+              {
+                "step": 408,
+                "seconds": 1.216242832946591
+              }
+            ]
+          },
+          {
+            "case": "world3_s0",
+            "maximum_callback_seconds": 0.5571512089809403,
+            "callback_overruns": []
+          },
+          {
+            "case": "world3_s1",
+            "maximum_callback_seconds": 0.5570552500430495,
+            "callback_overruns": []
+          },
+          {
+            "case": "world4_s0",
+            "maximum_callback_seconds": 0.765494207968004,
+            "callback_overruns": []
+          },
+          {
+            "case": "world4_s1",
+            "maximum_callback_seconds": 0.7697768750367686,
+            "callback_overruns": []
+          },
+          {
+            "case": "world5_s0",
+            "maximum_callback_seconds": 0.5319929579272866,
+            "callback_overruns": []
+          },
+          {
+            "case": "world5_s1",
+            "maximum_callback_seconds": 0.5304772920208052,
+            "callback_overruns": []
+          },
+          {
+            "case": "world6_s0",
+            "maximum_callback_seconds": 0.49667920800857246,
+            "callback_overruns": []
+          },
+          {
+            "case": "world6_s1",
+            "maximum_callback_seconds": 0.4931780000915751,
+            "callback_overruns": []
+          },
+          {
+            "case": "world7_s0",
+            "maximum_callback_seconds": 0.39162216696422547,
+            "callback_overruns": []
+          },
+          {
+            "case": "world7_s1",
+            "maximum_callback_seconds": 0.3919363330351189,
+            "callback_overruns": []
+          }
+        ],
+        "peer_runtime_status": "UNQUALIFIED_OBSERVED_OVERRUN",
+        "ordered_transitions": 11504,
+        "bank_checks": 23008
+      },
+      "known": {
+        "games": 2,
+        "fresh": false,
+        "wins": 0,
+        "losses": 0,
+        "draws": 2,
+        "mean_margin": 0.0,
+        "worst_margin": 0.0,
+        "maximum_callback": 0.6967134999576956,
+        "maximum_peer_callback": 1.2686989159556106,
+        "errors": 0,
+        "peer_runtime_events": [
+          {
+            "case": "known388_world6_s0",
+            "maximum_callback_seconds": 1.2686989159556106,
+            "callback_overruns": [
+              {
+                "step": 408,
+                "seconds": 1.2686989159556106
+              }
+            ]
+          },
+          {
+            "case": "known388_world6_s1",
+            "maximum_callback_seconds": 1.2339039169019088,
+            "callback_overruns": [
+              {
+                "step": 408,
+                "seconds": 1.2339039169019088
+              }
+            ]
+          }
+        ],
+        "peer_runtime_status": "UNQUALIFIED_OBSERVED_OVERRUN",
+        "ordered_transitions": 1438,
+        "bank_checks": 2876
+      },
+      "peer_runtime_is_qualified": false
+    },
+    "archive": {
+      "actual_games": 26,
+      "selected_repeat": "submit397_archive_repeat13_k3",
+      "selected_repeat_games": 13,
+      "selected_repeat_full_both_semantic_paths_equal": true,
+      "original": "submit397_archive13_k3",
+      "original_full_both_paths_equal": 12,
+      "original_changed_paths": [
+        115748332
+      ],
+      "original_bank_equivalence": true
+    },
+    "limitations": [
+      "Original extractedarchive:12/13 fullboth paths equal;115748332 moved one20coin CARROTseed buy from policy377 to381, states rejoined at382 and all13 finalbanks equal. Observed seed timing variability is consistent with optional deadlines; exact triggering helper was not established. Universal determinism is not established. Original mismatch preserved; selectedrepeat must separately pass13/13 fullpaths.",
+      "Actual133: 93W40L; all93 prior wins retained, zero new recoveries. Frozen120 remains90W30L; first40 A37/B36, first60 A46/B44; zero-loss goals unmet.",
+      "Full120 mean own cash+22.308333/margin+23.100000; full133 meanown+23.496241/margin+24.398496. Individual cash/margin regressions retained.",
+      "Actual own physical count changes versus361: {\"animal_escapes\": 0, \"cap_drop_orders\": 0, \"cash_drop_orders\": 0, \"dusk_overflow_units\": 0, \"money_mismatch_steps\": 0, \"plant_deaths_water\": 0, \"uncared_animal_days\": 0, \"unfed_animal_days\": 0, \"unwatered_plant_days\": -1}; 0 both-player cases/roles have increased raw counts; detailed physical audits retained.",
+      "Fresh16=6W0L10D, ownmax0.785698s; known2 ownmax0.696713s and actual fullboth paths equal388. One exact peer and correlated seats; no elite/live or hosted runtime guarantee.",
+      "Unchanged frozen361 peer exceeded1s; every slow callback retained in fresh/known peer_runtime_events. Peer runtime unqualified; no hosted overage/timeout emulation."
+    ],
+    "evidence": {
+      "path": "evaluation/first40_autoresearch_20260928/RESEARCH397.json",
+      "sha256": "268ec3172f6806fff95f24dd9986b5b2ae12153de6a98966dc042abf5e7d5645"
+    },
+    "source_files_verified": 142,
+    "upload_receipt": {
+      "path": "evaluation/first40_autoresearch_20260928/submission_final_20260930/upload_receipt.json",
+      "sha256": "19f63e4bfec4c2546c1a1c2779ebbdc9391534629e63500f134bfb9e5a524474",
+      "received_utc": "2026-09-30T23:54:08.167393+00:00"
+    }
+  },
+  "public_replay_study": {
+    "recent_selected_sample": {
+      "exact251": "Same seven chronological sampled wins plus all22 live losses saved through09:14UTC; outcome-selected29, not all games or population win rate.",
+      "leaders": "Each cohort uses three latest selected wins and two nonwins per five studied teams; correlated seats and observed source versions. Earlier17 games/25views and fresh19 games/25views, no shared games.",
+      "old_new_game_overlap": [],
+      "scope": "Different worlds/opponents/dates; medians are descriptive, not source-paired economics or causal gains. No prototype326/clean farm observations included."
+    },
+    "definitions": {
+      "crops_animals": "Standing public board at final available observation of that day, before next-day refresh.",
+      "paid_hands_daily_peak": "Maximum simultaneous actual public hired hands observed within that day; excludes farmer. Not HIRE request count.",
+      "day": "Engine zero-based day, consistent with existing leader studies."
+    },
+    "summary": {
+      "exact251_hosted": {
+        "views": 29,
+        "unique_games": 29,
+        "days": {
+          "2": {
+            "crops": {
+              "WHEAT": 7,
+              "CARROT": 0,
+              "TOMATO": 0,
+              "STRAWBERRY": 0,
+              "MELON": 12
+            },
+            "animals": {
+              "COW": 3,
+              "SHEEP": 2,
+              "GOOSE": 0
+            },
+            "paid_hands_daily_peak": 4,
+            "cash": 193.0
+          },
+          "4": {
+            "crops": {
+              "WHEAT": 7,
+              "CARROT": 0,
+              "TOMATO": 0,
+              "STRAWBERRY": 0,
+              "MELON": 12
+            },
+            "animals": {
+              "COW": 4,
+              "SHEEP": 2,
+              "GOOSE": 0
+            },
+            "paid_hands_daily_peak": 4,
+            "cash": 670.0
+          },
+          "6": {
+            "crops": {
+              "WHEAT": 6,
+              "CARROT": 0,
+              "TOMATO": 0,
+              "STRAWBERRY": 12,
+              "MELON": 12
+            },
+            "animals": {
+              "COW": 4,
+              "SHEEP": 2,
+              "GOOSE": 0
+            },
+            "paid_hands_daily_peak": 7,
+            "cash": 1158.0
+          },
+          "10": {
+            "crops": {
+              "WHEAT": 12,
+              "CARROT": 0,
+              "TOMATO": 0,
+              "STRAWBERRY": 20,
+              "MELON": 0
+            },
+            "animals": {
+              "COW": 6,
+              "SHEEP": 6,
+              "GOOSE": 2
+            },
+            "paid_hands_daily_peak": 11,
+            "cash": 15589.0
+          }
+        }
+      },
+      "exact251_hosted_loss": {
+        "views": 22,
+        "unique_games": 22,
+        "days": {
+          "2": {
+            "crops": {
+              "WHEAT": 7.0,
+              "CARROT": 0.0,
+              "TOMATO": 0.0,
+              "STRAWBERRY": 0.0,
+              "MELON": 12.0
+            },
+            "animals": {
+              "COW": 3.0,
+              "SHEEP": 2.0,
+              "GOOSE": 0.0
+            },
+            "paid_hands_daily_peak": 4.0,
+            "cash": 192.0
+          },
+          "4": {
+            "crops": {
+              "WHEAT": 7.0,
+              "CARROT": 0.0,
+              "TOMATO": 0.0,
+              "STRAWBERRY": 0.0,
+              "MELON": 12.0
+            },
+            "animals": {
+              "COW": 4.0,
+              "SHEEP": 2.0,
+              "GOOSE": 0.0
+            },
+            "paid_hands_daily_peak": 4.0,
+            "cash": 666.0
+          },
+          "6": {
+            "crops": {
+              "WHEAT": 5.5,
+              "CARROT": 0.0,
+              "TOMATO": 0.0,
+              "STRAWBERRY": 12.0,
+              "MELON": 12.0
+            },
+            "animals": {
+              "COW": 4.0,
+              "SHEEP": 2.0,
+              "GOOSE": 0.0
+            },
+            "paid_hands_daily_peak": 7.0,
+            "cash": 1138.5
+          },
+          "10": {
+            "crops": {
+              "WHEAT": 12.0,
+              "CARROT": 0.0,
+              "TOMATO": 0.0,
+              "STRAWBERRY": 20.0,
+              "MELON": 0.0
+            },
+            "animals": {
+              "COW": 6.0,
+              "SHEEP": 6.0,
+              "GOOSE": 2.0
+            },
+            "paid_hands_daily_peak": 11.0,
+            "cash": 15679.0
+          }
+        }
+      },
+      "exact251_hosted_win": {
+        "views": 7,
+        "unique_games": 7,
+        "days": {
+          "2": {
+            "crops": {
+              "WHEAT": 7,
+              "CARROT": 0,
+              "TOMATO": 0,
+              "STRAWBERRY": 0,
+              "MELON": 12
+            },
+            "animals": {
+              "COW": 3,
+              "SHEEP": 2,
+              "GOOSE": 0
+            },
+            "paid_hands_daily_peak": 4,
+            "cash": 195.0
+          },
+          "4": {
+            "crops": {
+              "WHEAT": 7,
+              "CARROT": 0,
+              "TOMATO": 0,
+              "STRAWBERRY": 0,
+              "MELON": 12
+            },
+            "animals": {
+              "COW": 4,
+              "SHEEP": 2,
+              "GOOSE": 0
+            },
+            "paid_hands_daily_peak": 4,
+            "cash": 685.0
+          },
+          "6": {
+            "crops": {
+              "WHEAT": 6,
+              "CARROT": 0,
+              "TOMATO": 0,
+              "STRAWBERRY": 12,
+              "MELON": 12
+            },
+            "animals": {
+              "COW": 4,
+              "SHEEP": 2,
+              "GOOSE": 2
+            },
+            "paid_hands_daily_peak": 7,
+            "cash": 1317.0
+          },
+          "10": {
+            "crops": {
+              "WHEAT": 12,
+              "CARROT": 0,
+              "TOMATO": 0,
+              "STRAWBERRY": 20,
+              "MELON": 0
+            },
+            "animals": {
+              "COW": 6,
+              "SHEEP": 6,
+              "GOOSE": 3
+            },
+            "paid_hands_daily_peak": 11,
+            "cash": 14392.0
+          }
+        }
+      },
+      "leaders_old275": {
+        "views": 25,
+        "unique_games": 17,
+        "days": {
+          "2": {
+            "crops": {
+              "WHEAT": 8,
+              "CARROT": 0,
+              "TOMATO": 0,
+              "STRAWBERRY": 1,
+              "MELON": 10
+            },
+            "animals": {
+              "COW": 3,
+              "SHEEP": 3,
+              "GOOSE": 0
+            },
+            "paid_hands_daily_peak": 5,
+            "cash": 7.0
+          },
+          "4": {
+            "crops": {
+              "WHEAT": 0,
+              "CARROT": 0,
+              "TOMATO": 0,
+              "STRAWBERRY": 7,
+              "MELON": 10
+            },
+            "animals": {
+              "COW": 5,
+              "SHEEP": 3,
+              "GOOSE": 0
+            },
+            "paid_hands_daily_peak": 6,
+            "cash": 63.0
+          },
+          "6": {
+            "crops": {
+              "WHEAT": 2,
+              "CARROT": 0,
+              "TOMATO": 0,
+              "STRAWBERRY": 21,
+              "MELON": 12
+            },
+            "animals": {
+              "COW": 5,
+              "SHEEP": 3,
+              "GOOSE": 5
+            },
+            "paid_hands_daily_peak": 9,
+            "cash": 69.0
+          },
+          "10": {
+            "crops": {
+              "WHEAT": 31,
+              "CARROT": 0,
+              "TOMATO": 5,
+              "STRAWBERRY": 23,
+              "MELON": 7
+            },
+            "animals": {
+              "COW": 7,
+              "SHEEP": 3,
+              "GOOSE": 10
+            },
+            "paid_hands_daily_peak": 12,
+            "cash": 3642.0
+          }
+        }
+      },
+      "leaders_old275_nonwin": {
+        "views": 10,
+        "unique_games": 10,
+        "days": {
+          "2": {
+            "crops": {
+              "WHEAT": 8.5,
+              "CARROT": 0.0,
+              "TOMATO": 0.0,
+              "STRAWBERRY": 1.5,
+              "MELON": 9.0
+            },
+            "animals": {
+              "COW": 3.0,
+              "SHEEP": 3.0,
+              "GOOSE": 0.0
+            },
+            "paid_hands_daily_peak": 5.0,
+            "cash": 29.5
+          },
+          "4": {
+            "crops": {
+              "WHEAT": 0.0,
+              "CARROT": 0.0,
+              "TOMATO": 0.0,
+              "STRAWBERRY": 7.0,
+              "MELON": 9.0
+            },
+            "animals": {
+              "COW": 5.0,
+              "SHEEP": 3.0,
+              "GOOSE": 0.0
+            },
+            "paid_hands_daily_peak": 6.0,
+            "cash": 83.0
+          },
+          "6": {
+            "crops": {
+              "WHEAT": 2.5,
+              "CARROT": 0.0,
+              "TOMATO": 0.0,
+              "STRAWBERRY": 20.5,
+              "MELON": 12.0
+            },
+            "animals": {
+              "COW": 5.5,
+              "SHEEP": 3.0,
+              "GOOSE": 4.0
+            },
+            "paid_hands_daily_peak": 9.0,
+            "cash": 102.0
+          },
+          "10": {
+            "crops": {
+              "WHEAT": 31.0,
+              "CARROT": 0.0,
+              "TOMATO": 5.0,
+              "STRAWBERRY": 22.5,
+              "MELON": 6.0
+            },
+            "animals": {
+              "COW": 6.5,
+              "SHEEP": 3.0,
+              "GOOSE": 9.5
+            },
+            "paid_hands_daily_peak": 12.0,
+            "cash": 3541.5
+          }
+        }
+      },
+      "leaders_old275_win": {
+        "views": 15,
+        "unique_games": 15,
+        "days": {
+          "2": {
+            "crops": {
+              "WHEAT": 8,
+              "CARROT": 0,
+              "TOMATO": 0,
+              "STRAWBERRY": 1,
+              "MELON": 10
+            },
+            "animals": {
+              "COW": 3,
+              "SHEEP": 3,
+              "GOOSE": 0
+            },
+            "paid_hands_daily_peak": 5,
+            "cash": 6.0
+          },
+          "4": {
+            "crops": {
+              "WHEAT": 0,
+              "CARROT": 0,
+              "TOMATO": 0,
+              "STRAWBERRY": 7,
+              "MELON": 10
+            },
+            "animals": {
+              "COW": 5,
+              "SHEEP": 3,
+              "GOOSE": 0
+            },
+            "paid_hands_daily_peak": 6,
+            "cash": 46.0
+          },
+          "6": {
+            "crops": {
+              "WHEAT": 2,
+              "CARROT": 0,
+              "TOMATO": 0,
+              "STRAWBERRY": 23,
+              "MELON": 12
+            },
+            "animals": {
+              "COW": 5,
+              "SHEEP": 3,
+              "GOOSE": 5
+            },
+            "paid_hands_daily_peak": 9,
+            "cash": 69.0
+          },
+          "10": {
+            "crops": {
+              "WHEAT": 31,
+              "CARROT": 0,
+              "TOMATO": 5,
+              "STRAWBERRY": 23,
+              "MELON": 7
+            },
+            "animals": {
+              "COW": 7,
+              "SHEEP": 3,
+              "GOOSE": 10
+            },
+            "paid_hands_daily_peak": 12,
+            "cash": 3841.0
+          }
+        }
+      },
+      "leaders_fresh310": {
+        "views": 25,
+        "unique_games": 19,
+        "days": {
+          "2": {
+            "crops": {
+              "WHEAT": 8,
+              "CARROT": 0,
+              "TOMATO": 0,
+              "STRAWBERRY": 1,
+              "MELON": 10
+            },
+            "animals": {
+              "COW": 3,
+              "SHEEP": 3,
+              "GOOSE": 0
+            },
+            "paid_hands_daily_peak": 5,
+            "cash": 7.0
+          },
+          "4": {
+            "crops": {
+              "WHEAT": 1,
+              "CARROT": 0,
+              "TOMATO": 0,
+              "STRAWBERRY": 6,
+              "MELON": 10
+            },
+            "animals": {
+              "COW": 5,
+              "SHEEP": 3,
+              "GOOSE": 0
+            },
+            "paid_hands_daily_peak": 6,
+            "cash": 71.0
+          },
+          "6": {
+            "crops": {
+              "WHEAT": 1,
+              "CARROT": 0,
+              "TOMATO": 0,
+              "STRAWBERRY": 22,
+              "MELON": 12
+            },
+            "animals": {
+              "COW": 7,
+              "SHEEP": 3,
+              "GOOSE": 3
+            },
+            "paid_hands_daily_peak": 9,
+            "cash": 62.0
+          },
+          "10": {
+            "crops": {
+              "WHEAT": 29,
+              "CARROT": 0,
+              "TOMATO": 5,
+              "STRAWBERRY": 25,
+              "MELON": 6
+            },
+            "animals": {
+              "COW": 7,
+              "SHEEP": 3,
+              "GOOSE": 8
+            },
+            "paid_hands_daily_peak": 12,
+            "cash": 3869.0
+          }
+        }
+      },
+      "leaders_fresh310_nonwin": {
+        "views": 10,
+        "unique_games": 10,
+        "days": {
+          "2": {
+            "crops": {
+              "WHEAT": 8.0,
+              "CARROT": 0.0,
+              "TOMATO": 0.0,
+              "STRAWBERRY": 1.0,
+              "MELON": 10.0
+            },
+            "animals": {
+              "COW": 3.0,
+              "SHEEP": 3.0,
+              "GOOSE": 0.0
+            },
+            "paid_hands_daily_peak": 5.0,
+            "cash": 7.0
+          },
+          "4": {
+            "crops": {
+              "WHEAT": 1.0,
+              "CARROT": 0.0,
+              "TOMATO": 0.0,
+              "STRAWBERRY": 6.0,
+              "MELON": 10.0
+            },
+            "animals": {
+              "COW": 5.0,
+              "SHEEP": 3.0,
+              "GOOSE": 0.0
+            },
+            "paid_hands_daily_peak": 6.0,
+            "cash": 77.5
+          },
+          "6": {
+            "crops": {
+              "WHEAT": 2.0,
+              "CARROT": 0.0,
+              "TOMATO": 0.0,
+              "STRAWBERRY": 21.5,
+              "MELON": 12.0
+            },
+            "animals": {
+              "COW": 6.5,
+              "SHEEP": 3.0,
+              "GOOSE": 3.5
+            },
+            "paid_hands_daily_peak": 9.0,
+            "cash": 67.0
+          },
+          "10": {
+            "crops": {
+              "WHEAT": 28.5,
+              "CARROT": 0.0,
+              "TOMATO": 7.0,
+              "STRAWBERRY": 24.5,
+              "MELON": 6.0
+            },
+            "animals": {
+              "COW": 7.0,
+              "SHEEP": 3.0,
+              "GOOSE": 8.5
+            },
+            "paid_hands_daily_peak": 12.0,
+            "cash": 3839.5
+          }
+        }
+      },
+      "leaders_fresh310_win": {
+        "views": 15,
+        "unique_games": 15,
+        "days": {
+          "2": {
+            "crops": {
+              "WHEAT": 8,
+              "CARROT": 0,
+              "TOMATO": 0,
+              "STRAWBERRY": 1,
+              "MELON": 10
+            },
+            "animals": {
+              "COW": 3,
+              "SHEEP": 3,
+              "GOOSE": 0
+            },
+            "paid_hands_daily_peak": 5,
+            "cash": 7.0
+          },
+          "4": {
+            "crops": {
+              "WHEAT": 1,
+              "CARROT": 0,
+              "TOMATO": 0,
+              "STRAWBERRY": 6,
+              "MELON": 10
+            },
+            "animals": {
+              "COW": 5,
+              "SHEEP": 3,
+              "GOOSE": 0
+            },
+            "paid_hands_daily_peak": 6,
+            "cash": 66.0
+          },
+          "6": {
+            "crops": {
+              "WHEAT": 1,
+              "CARROT": 0,
+              "TOMATO": 0,
+              "STRAWBERRY": 22,
+              "MELON": 12
+            },
+            "animals": {
+              "COW": 7,
+              "SHEEP": 3,
+              "GOOSE": 2
+            },
+            "paid_hands_daily_peak": 9,
+            "cash": 46.0
+          },
+          "10": {
+            "crops": {
+              "WHEAT": 30,
+              "CARROT": 0,
+              "TOMATO": 5,
+              "STRAWBERRY": 26,
+              "MELON": 6
+            },
+            "animals": {
+              "COW": 8,
+              "SHEEP": 3,
+              "GOOSE": 8
+            },
+            "paid_hands_daily_peak": 12,
+            "cash": 3955.0
+          }
+        }
+      }
+    },
+    "evidence": {
+      "path": "evaluation/first40_autoresearch_20260928/lanes328/elite_growth_comparison.json",
+      "sha256": "bc8819baa97c6811e0a9539fd1f02c7abdde56315f87170aa9a92503239cb447"
+    },
+    "earlier_study": {
+      "scanned_public_game_records": 3085,
+      "player_ledgers": 400,
+      "reported_cash_reconciled_rows": 399,
+      "evidence": [
+        {
+          "path": "claude/elite/REPORT.md",
+          "sha256": "08dbc6f36a606b9c802fd3eebb4ad0faa6a8eaa174f1b9f3b50b3806eeb40720"
+        },
+        {
+          "path": "claude/elite/games.json",
+          "sha256": "de1176e38faaef98cb19df1cba4284d8d77a3dfda4a282eb7f16eeb1fde8b2ed"
+        },
+        {
+          "path": "claude/elite/ledger_elite.json",
+          "sha256": "c37fda5c9db8342ac3096f05075e8626206b1c0efa55ad02a47cb4358a0b9cd8"
+        }
+      ]
+    },
+    "contribution": [
+      "Public replays revealed earlier capital deployment, larger crop/herd programmes, paid service and cargo delivery patterns.",
+      "Measured farm counts became hypotheses, then full-route, input, wages, market and callback audits decided whether to retain them.",
+      "Production volume alone did not determine realized revenue in the shared market."
+    ],
+    "limitations": [
+      "Outcome-selected samples; no causal profit or population win-rate estimate.",
+      "No access to private rival state is needed for these public-farm comparisons.",
+      "Copying a successful visible portfolio is not proof its costs, routes or competitive prices transfer."
+    ]
+  },
+  "stages": [
+    {
+      "date": "2026-08-10/11",
+      "stage": "Single-farmer crop loop \u2192 parallel crop/species search \u2192 mixed portfolio allocator",
+      "evidence": [
+        {
+          "path": "docs/generations/gen1.md",
+          "sha256": "739d80d44a5789de926274e868a09f6e6cfad67cab62503662ae28f04564908d"
+        },
+        {
+          "path": "docs/generations/gen2.md",
+          "sha256": "55dd81f36f8dac31811eafd8250f93bef339b0e84b1fbb2dfc4eb8706251ef7f"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-19\u201322",
+      "stage": "Feasible land and late strawberry stacking; historical Gen68 peak live rating",
+      "evidence": {
+        "path": "evaluation/first40_autoresearch_20260928/lanes328/gen68_55616096_source_retrieval.json",
+        "sha256": "40b148c7de9554faa418891af025c7807137e15994f3bba1f6f4db84b7881bf4"
+      }
+    },
+    {
+      "date": "2026-09-13\u201318",
+      "stage": "Public elite replay study; physical custody, funded native feed, market timing, terminal delivery repairs",
+      "evidence": [
+        {
+          "path": "claude/elite/REPORT.md",
+          "sha256": "08dbc6f36a606b9c802fd3eebb4ad0faa6a8eaa174f1b9f3b50b3806eeb40720"
+        },
+        {
+          "path": "evaluation/research859_20260918/candidate.json",
+          "sha256": "fe52792a629895e8c0dd55c2b2fb5c6f528b3d64053e51749c7ec752d54e9a01"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-28\u201330",
+      "stage": "Source-pinned current loss repair, broad regression tests, runtime and extracted-archive audits; promising targeted rewrite rejected on full120",
+      "evidence": [
+        {
+          "path": "evaluation/first40_autoresearch_20260928/generation_progress_ledger.json",
+          "sha256": "c5afcdfa6dc6d1f382e7d46b15f2955dd1d8e1831cc94b42b262ae9c990124f5"
+        },
+        {
+          "path": "evaluation/first40_autoresearch_20260928/RESEARCH397.json",
+          "sha256": "268ec3172f6806fff95f24dd9986b5b2ae12153de6a98966dc042abf5e7d5645"
+        }
+      ]
+    }
+  ],
+  "corrected_utc": "2026-10-01T02:09:57.071607+00:00"
+}

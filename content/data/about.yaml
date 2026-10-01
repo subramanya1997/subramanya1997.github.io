@@ -6,7 +6,7 @@ linkedin_username: nsubramanya
 scholar_id: IyHluZcAAAAJ
 
 #Bio
-bio: I'm a machine learning engineer working on conversational AI, search, and agentic infrastructure for the enterprise. I'm currently the Founding ML Engineer & Lead Architect at Dylog and a Co-Founder of NockOut.
+bio: I'm a machine learning engineer working on conversational AI, search, and agentic infrastructure for the enterprise. Previously, I was the Founding ML Engineer & Lead Architect at Dylog, through July 2026. I'm also a Co-Founder of NockOut.
 history: I hold an M.S. in Computer Science from UMass Amherst, where I worked on Vision-Language robotics with <a href='https://hcr.cs.umass.edu/people/hzhang'>Prof. Hao Zhang</a> at the <a href='https://hcr.cs.umass.edu'>Human-Centered Robotics Lab</a>. Before that, I led product development at <a href='https://www.renderpub.com'>RenderPub</a> and co-founded Yourkraft and Vayam, a non-profit focused on education.
 fav_quote: '"The harder you work, the luckier you get." -- Gary Player'
 
@@ -15,9 +15,9 @@ experience:
   - position: Founding Machine Learning Engineer & Lead Architect
     company: Dylog Inc
     location: San Jose, CA
-    period: Aug 2023 - Present
+    period: Aug 2023 - Jul 2026
     logo: /assets/images/logos/dylog.png
-    description: Serve as the principal architect, spearheading the development and design of Dylog Inc's conversational AI and search platform.
+    description: Served as the principal architect, leading the development and design of Dylog Inc's conversational AI and search platform.
     achievements:
       - Developed pipelines for synthetic data generation, tailored for e-commerce platforms, improving search results by 20% (internal evaluations).
       - Developed a hybrid search framework combining Elasticsearch, ColBERT, and llama, integrating keyword-based and vector-based retrieval for enhanced search accuracy.

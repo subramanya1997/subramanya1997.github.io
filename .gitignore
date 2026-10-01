@@ -33,3 +33,7 @@ public/
 next-env.d.ts
 *.tsbuildinfo
 .vercel
+
+# Retired Jekyll output and local editorial bundles
+/_site/
+/drafts/

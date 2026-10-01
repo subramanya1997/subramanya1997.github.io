@@ -64,9 +64,9 @@ export interface Post {
 const POST_FILE = /^(\d{4})-(\d{2})-(\d{2})-(.+)\.(md|markdown)$/;
 
 let _posts: Post[] | null = null;
-/** All posts, newest first. Matches Jekyll: no draft filtering beyond file presence. */
-export function getAllPosts(): Post[] {
-  if (_posts) return _posts;
+/** Active posts, newest first. Retired documents remain available at their indexed URLs. */
+export function getAllPosts(includeRetired = false): Post[] {
+  if (_posts) return includeRetired ? _posts : _posts.filter(post => !post.frontmatter.retired);
   const dir = path.join(ROOT, CONTENT_DIR, "posts");
   _posts = fs
     .readdirSync(dir)
@@ -110,11 +110,11 @@ export function getAllPosts(): Post[] {
         // byte-order compare, matching Ruby's String#<=>
         (b.sourcePath > a.sourcePath ? 1 : b.sourcePath < a.sourcePath ? -1 : 0)
     );
-  return _posts;
+  return includeRetired ? _posts : _posts.filter(post => !post.frontmatter.retired);
 }
 
 export function getPost(year: string, month: string, day: string, slug: string) {
-  return getAllPosts().find(
+  return getAllPosts(true).find(
     (p) => p.year === year && p.month === month && p.day === day && p.slug === slug
   );
 }

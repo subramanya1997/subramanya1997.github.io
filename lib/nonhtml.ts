@@ -433,6 +433,13 @@ export function getTagArchives(): TagArchive[] {
       records.get(slug)![bucket] += 1;
     }
   };
+  // Preserve indexed tag URLs when a post is retired, without listing it.
+  for (const post of getAllPosts(true).filter(post => post.frontmatter.retired)) {
+    for (const name of tagsOf(post.frontmatter)) {
+      const slug = slugifyTag(name);
+      if (!records.has(slug)) records.set(slug, { name, slug, posts: 0, books: 0 });
+    }
+  }
   for (const { post } of getOutputPosts()) add(tagsOf(post.frontmatter), "posts");
   for (const book of sortedBooks()) add(tagsOf(book.frontmatter), "books");
 

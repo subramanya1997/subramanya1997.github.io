@@ -1,0 +1,31 @@
+{
+  "accessed_utc": "2026-10-01",
+  "method": "gstack browse, original author sources",
+  "references": [
+    {
+      "title": "Karpathy autoresearch README",
+      "url": "https://github.com/karpathy/autoresearch",
+      "observed_repository_head_short": "228791f",
+      "claims": ["Agent edits train.py; prepare.py supplies fixed preparation and evaluation", "Five-minute training wall-clock budget excludes startup/compilation", "Validation bits per byte is the objective", "Human-authored program.md defines the research instructions"]
+    },
+    {
+      "title": "Karpathy autoresearch agent program",
+      "url": "https://github.com/karpathy/autoresearch/blob/master/program.md",
+      "observed_last_file_commit_short": "068d93d",
+      "claims": ["Establish a baseline first", "Preserve an experiment log with keep/discard/crash outcomes", "Evaluator and dependencies stay fixed", "Simpler equal-performing code may be preferable"]
+    },
+    {
+      "title": "A Recipe for Training Neural Networks",
+      "url": "https://karpathy.github.io/2019/04/25/recipe/",
+      "published": "2019-04-25",
+      "claims": ["Inspect data before building a complicated model", "Verify the end-to-end evaluation skeleton using simple baselines", "Introduce complexity incrementally and validate explicit hypotheses"]
+    },
+    {
+      "title": "Andrej Karpathy blog index",
+      "url": "https://karpathy.github.io/",
+      "observation": "The index inspected did not list a dedicated autoresearch post; the original GitHub README/program are used for the autoresearch design rather than inventing a blog citation."
+    }
+  ],
+  "local_adaptation": "Root program.md explicitly states that Kaggriculture Edition is adapted from karpathy/autoresearch. The article distinguishes historical instructions from the later checked benchmark/release workflow.",
+  "scope": "Reference material, not instructions executed against the research repository. No training runs, resets, commits or package installations."
+}

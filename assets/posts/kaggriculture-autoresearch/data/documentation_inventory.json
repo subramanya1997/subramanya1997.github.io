@@ -1,0 +1,3313 @@
+{
+  "scope": "All14 Markdown files underdocs inventoried; original README/program/results andfinalSep30state/target/qualification/ledger also inspected. No API, engine, model, policy, fixture or benchmark execution. Only this inventory written.",
+  "docs_markdown_count": 14,
+  "article_snapshot": {
+    "path": "evaluation/blog_draft_20260930/site/article.md",
+    "sha256": "233ff18373bc8b9da1a64725ce4941dd9d28ff323f463ecf2d835a64166fc2a8"
+  },
+  "inspection_limit": "Long rolling checkpoint documents were scanned across their complete text and structure with focused inspection of material methodology/status passages; this is not a claim to have independently validated every archived number or read every referenced replay.",
+  "files": [
+    {
+      "path": "docs/LEARNINGS.md",
+      "sha256": "9c6a30ecd703d0c3e8200a5c28293bca922b27874d78ff1aae28168d2dfd2c5a",
+      "bytes": 17952,
+      "lines": 257,
+      "main_relevance": "Early distilled mechanics and instrument corrections: feed custody, shared RNG, LP correction, and opponent reconstruction limitations.",
+      "historical_current_distinction": "Historical cumulative August generations; claims labelled laws/local ceilings were revised and are not universal or final September truth.",
+      "article_omission_or_correction": "Optional corrected-LP example; reference reconstruction could exaggerate competitive performance.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": [
+        {
+          "line": 1,
+          "heading": "# LEARNINGS \u2014 distilled evidence base (curated after Generation 1)"
+        },
+        {
+          "line": 7,
+          "heading": "## Economy rankings (gen 1, all 0-error, vs 6,588 champion)"
+        },
+        {
+          "line": 22,
+          "heading": "## Verified mechanics (exploit these)"
+        },
+        {
+          "line": 48,
+          "heading": "## Price-curve facts (measured)"
+        },
+        {
+          "line": 64,
+          "heading": "## Labor facts"
+        },
+        {
+          "line": 72,
+          "heading": "## Traps (do not repeat)"
+        },
+        {
+          "line": 82,
+          "heading": "## Gen 2 direction (composition, target \u2265 74,581)"
+        },
+        {
+          "line": 92,
+          "heading": "## Generation 2 addendum (see docs/generations/gen2.md for the full distillation)"
+        },
+        {
+          "line": 102,
+          "heading": "## Generation 3 addendum (full distillation in docs/generations/gen3.md)"
+        },
+        {
+          "line": 112,
+          "heading": "## Generation 4 addendum (full distillation in docs/generations/gen4.md)"
+        },
+        {
+          "line": 122,
+          "heading": "## Generation 5 addendum"
+        },
+        {
+          "line": 136,
+          "heading": "## Generation 6 addendum"
+        },
+        {
+          "line": 153,
+          "heading": "## Generation 7 addendum (closure generation)"
+        },
+        {
+          "line": 174,
+          "heading": "## Generations 8-9 addendum (final)"
+        },
+        {
+          "line": 192,
+          "heading": "## Generation 10 addendum (elite replay study)"
+        },
+        {
+          "line": 204,
+          "heading": "## Generation 11 addendum (loss-cohort + ladder standings; full distillation in docs/generations/gen11.md)"
+        },
+        {
+          "line": 226,
+          "heading": "## Generation 13 addendum (instrument rebuild + engine-exact executor P&L)"
+        }
+      ]
+    },
+    {
+      "path": "docs/generations/gen1.md",
+      "sha256": "739d80d44a5789de926274e868a09f6e6cfad67cab62503662ae28f04564908d",
+      "bytes": 2348,
+      "lines": 49,
+      "main_relevance": "Original parallel worktrees and tournament; own-bank leader differs from promoted win leader.",
+      "historical_current_distinction": "Dated Aug10 report, not independently replayed in blog pass.",
+      "article_omission_or_correction": "Already covered.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": [
+        {
+          "line": 1,
+          "heading": "# Generation 1 report \u2014 2026-08-10"
+        },
+        {
+          "line": 7,
+          "heading": "## Promotion"
+        },
+        {
+          "line": 25,
+          "heading": "## Hypothesis outcomes (full details in ../../results.tsv rows 5-25 and generation/gen1/*.json)"
+        },
+        {
+          "line": 38,
+          "heading": "## Learnings merged into docs/LEARNINGS.md"
+        },
+        {
+          "line": 45,
+          "heading": "## Carried to Generation 2"
+        }
+      ]
+    },
+    {
+      "path": "docs/generations/gen2.md",
+      "sha256": "55dd81f36f8dac31811eafd8250f93bef339b0e84b1fbb2dfc4eb8706251ef7f",
+      "bytes": 3289,
+      "lines": 51,
+      "main_relevance": "Portfolio allocator; demand matching; previous grow-feed and labor rules overturned; shared RNG warning.",
+      "historical_current_distinction": "Dated Aug10/11-era generation report.",
+      "article_omission_or_correction": "Already broadly covered; avoid calling early heuristic rules universal.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": [
+        {
+          "line": 1,
+          "heading": "# Generation 2 report \u2014 2026-08-10/11"
+        },
+        {
+          "line": 7,
+          "heading": "## Promotion"
+        },
+        {
+          "line": 19,
+          "heading": "## The laws gen 2 converged on (independent replications)"
+        },
+        {
+          "line": 35,
+          "heading": "## Gen-1 rules overturned (context-dependence found)"
+        },
+        {
+          "line": 44,
+          "heading": "## Protocol learnings"
+        }
+      ]
+    },
+    {
+      "path": "docs/generations/gen3.md",
+      "sha256": "ca92ea7ae9b3e8d57403fbe9accb60670883d1bbf2ca5836f623e21d4d835a73",
+      "bytes": 2812,
+      "lines": 45,
+      "main_relevance": "Split-feed pickup bug; measurable composite grafts; held-out reversal and interaction testing.",
+      "historical_current_distinction": "Dated Aug11 report.",
+      "article_omission_or_correction": "Already covered.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": [
+        {
+          "line": 1,
+          "heading": "# Generation 3 report \u2014 2026-08-11"
+        },
+        {
+          "line": 9,
+          "heading": "## Promotion path"
+        },
+        {
+          "line": 16,
+          "heading": "## What actually moved the needle (marginal, on the composite)"
+        },
+        {
+          "line": 29,
+          "heading": "## Laws confirmed/extended"
+        },
+        {
+          "line": 40,
+          "heading": "## Protocol notes"
+        }
+      ]
+    },
+    {
+      "path": "docs/generations/gen4.md",
+      "sha256": "9f314a59220a4d9feea3c2cf350028e3c6a379429816684d62468a4d3947d677",
+      "bytes": 2860,
+      "lines": 47,
+      "main_relevance": "Real-ladder archetype testing; movement shadow prices; aggressive prior closed-axis claims.",
+      "historical_current_distinction": "Dated Aug11 report; closed axes later reopened with new evidence.",
+      "article_omission_or_correction": "Already covered in starter-vs-ladder narrative.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": [
+        {
+          "line": 1,
+          "heading": "# Generation 4 report \u2014 2026-08-11"
+        },
+        {
+          "line": 8,
+          "heading": "## Promotion"
+        },
+        {
+          "line": 17,
+          "heading": "## Real-ladder intelligence (kagglemeta, from 6 downloaded replays)"
+        },
+        {
+          "line": 27,
+          "heading": "## Laws established in gen 4"
+        },
+        {
+          "line": 41,
+          "heading": "## Closed axes (do not revisit without new evidence)"
+        }
+      ]
+    },
+    {
+      "path": "docs/generations/gen11.md",
+      "sha256": "2aba37648642fa684a4c21283931e3958e686634c9f8650708b3e2d9b3b219fb",
+      "bytes": 3995,
+      "lines": 61,
+      "main_relevance": "Reconstructed leader composition still uses our executor, so success against that reconstruction can misstate live competitiveness; single-tape bifurcation.",
+      "historical_current_distinction": "Dated Aug12 report, including historically remote compute; no current active process claim.",
+      "article_omission_or_correction": "Add a short warning that opponent-model validation is itself part of research.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": [
+        {
+          "line": 1,
+          "heading": "# Generation 11 report \u2014 2026-08-12"
+        },
+        {
+          "line": 9,
+          "heading": "## Promotion"
+        },
+        {
+          "line": 19,
+          "heading": "## Loss-cohort intelligence (11 real ladder losses, user-supplied)"
+        },
+        {
+          "line": 35,
+          "heading": "## Ladder-standings intelligence (fresh crawl: 9,666 episodes, 1,450 teams)"
+        },
+        {
+          "line": 49,
+          "heading": "## Other gen-11 results"
+        },
+        {
+          "line": 58,
+          "heading": "## Closed axes added"
+        }
+      ]
+    },
+    {
+      "path": "docs/COMPETITIVE_OBJECTIVE.md",
+      "sha256": "2d6ebc87d77b27d87ad3a9ee27afd9bed49c6c4f01c99897c342146dc10888f4",
+      "bytes": 166357,
+      "lines": 931,
+      "main_relevance": "Large rolling Sept8\u201310 archive of objective changes, source-bound qualification, responsive versus historical-town comparisons and cash reconciliation.",
+      "historical_current_distinction": "Stale as a current-status pointer; top checkpoint is Sept10, not final397.",
+      "article_omission_or_correction": "No additional numeric history needed; evaluation instrument calibration detail worth retaining.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": [
+        {
+          "line": 1,
+          "heading": "## September 10, completed extensive evaluation of all 46 latest-two losses"
+        },
+        {
+          "line": 21,
+          "heading": "## September10,09:29Pacific: all losses from the two strongest recent submissions archived"
+        },
+        {
+          "line": 31,
+          "heading": "## September 10, current progress after the deadline submission"
+        },
+        {
+          "line": 39,
+          "heading": "## September 9, 11:28:57 PM Pacific: Joint71 submitted within the 30-minute deadline"
+        },
+        {
+          "line": 51,
+          "heading": "## September 9, 10:23 PM Pacific: joint validation complete; conditional upload authorized"
+        },
+        {
+          "line": 63,
+          "heading": "## Latest rating target:3,500 minimum,4,000 aim, and#1"
+        },
+        {
+          "line": 67,
+          "heading": "## September 9, 9:02 PM Pacific snapshot: eleven losses; Crop47 evaluated"
+        },
+        {
+          "line": 81,
+          "heading": "## September 9, 6:52 PM Pacific snapshot: Market28b loses games 31 and 32"
+        },
+        {
+          "line": 89,
+          "heading": "## September 9, 5:37 PM Pacific snapshot: Market28b validated; loss review complete"
+        },
+        {
+          "line": 97,
+          "heading": "## September9,4:39PM Pacific: Market28b direct tests pass; broader losses remain"
+        },
+        {
+          "line": 103,
+          "heading": "## September 9 loss audit and promotion decision"
+        },
+        {
+          "line": 113,
+          "heading": "## Current research objective and evidence rules \u2014 September 9"
+        },
+        {
+          "line": 125,
+          "heading": "## September 9: 30-game threshold satisfied; user resumed work"
+        },
+        {
+          "line": 129,
+          "heading": "## Latest user instruction: wait for 30 completed live games"
+        },
+        {
+          "line": 133,
+          "heading": "## September8: complete256gameholdingconfirmation and runtime parity"
+        },
+        {
+          "line": 137,
+          "heading": "## September8: Linux forecast timeout fixed by equivalent event scoring"
+        },
+        {
+          "line": 141,
+          "heading": "## September8: marginal-floor holding pilot improves competitive results"
+        },
+        {
+          "line": 145,
+          "heading": "## September8: current upload runner now checks Kaggle allowance"
+        },
+        {
+          "line": 149,
+          "heading": "## September8: floor-price sale guard prototypes"
+        },
+        {
+          "line": 153,
+          "heading": "## September8,12:43UTC: live evidence and rejected day-six wool route"
+        },
+        {
+          "line": 157,
+          "heading": "## September8: day-six allocation versus future-town audit"
+        },
+        {
+          "line": 161,
+          "heading": "## September8: day-six route headroom probe complete"
+        },
+        {
+          "line": 165,
+          "heading": "## September8: stronger opponent and allocation diagnosis"
+        },
+        {
+          "line": 169,
+          "heading": "## September 8, 05:33 Pacific: renewed authorized upload rejected by Kaggle"
+        },
+        {
+          "line": 173,
+          "heading": "## September8: larger untouched yhay comparison running"
+        },
+        {
+          "line": 177,
+          "heading": "## September8: newly retrieved public router wins exploratory benchmark"
+        },
+        {
+          "line": 181,
+          "heading": "## September8: newer public agents retrieved for opponent evaluation"
+        },
+        {
+          "line": 185,
+          "heading": "## September8: independent three-way early-repair panel launched"
+        },
+        {
+          "line": 189,
+          "heading": "## September8: no-extra-hire repair also improves but does not win"
+        },
+        {
+          "line": 193,
+          "heading": "## September8: combined-repair full comparison complete; hold slot"
+        },
+        {
+          "line": 197,
+          "heading": "## September8: early paid-helper test completes with improved loss"
+        },
+        {
+          "line": 201,
+          "heading": "## September8: complete-panel analysis prepared; early weed-worker feasibility checked"
+        },
+        {
+          "line": 205,
+          "heading": "## September8: combined wheat/planner package passes all runtime cases"
+        },
+        {
+          "line": 209,
+          "heading": "## September8: combined wheat/planner artifact built; runtime and fresh checks running"
+        },
+        {
+          "line": 213,
+          "heading": "## September8: wheat/planner integration passed; current-incumbent fresh panel running"
+        },
+        {
+          "line": 217,
+          "heading": "## September8: water-first carrot variant rejected; consistent wheat/planner integration running"
+        },
+        {
+          "line": 221,
+          "heading": "## September8: largest carrot-regression attribution complete"
+        },
+        {
+          "line": 225,
+          "heading": "## September8: unconditional repeated-carrot strategy rejected"
+        },
+        {
+          "line": 229,
+          "heading": "## September8,11:36UTC: submitted planner first games verified"
+        },
+        {
+          "line": 233,
+          "heading": "## September8: carrot workload execution audit and independent water-first panel"
+        },
+        {
+          "line": 237,
+          "heading": "## September8: wheat confirmation complete; carrot-cycle fresh evaluation running"
+        },
+        {
+          "line": 241,
+          "heading": "## September8: weakest-game accounting and livestock omission resolved"
+        },
+        {
+          "line": 245,
+          "heading": "## September8: wheat-recovery first independent panel complete"
+        },
+        {
+          "line": 249,
+          "heading": "## September8, 04:21:12 AM Pacific: new authorized upload verified"
+        },
+        {
+          "line": 255,
+          "heading": "# Competitive objective \u2014 September 6, 2026"
+        },
+        {
+          "line": 257,
+          "heading": "## September 8: clear-only repair rejected; complete recovery under test"
+        },
+        {
+          "line": 263,
+          "heading": "## September 8: independent route confirmation complete; weed repair under test"
+        },
+        {
+          "line": 269,
+          "heading": "## September 8: day21 package parity complete; second panel running"
+        },
+        {
+          "line": 275,
+          "heading": "## September 8: day21 test shows larger conditional gain"
+        },
+        {
+          "line": 283,
+          "heading": "## September 8: preserved Gen120 direct actor tested locally"
+        },
+        {
+          "line": 287,
+          "heading": "## September 8: earlier route gains require broader evidence"
+        },
+        {
+          "line": 293,
+          "heading": "## September 8: full day-24 test completed; day-21 test started"
+        },
+        {
+          "line": 299,
+          "heading": "## September 8: broader test running; earlier allocation experiment prepared"
+        },
+        {
+          "line": 305,
+          "heading": "## September 8: combined planner passes packaged runtime"
+        },
+        {
+          "line": 309,
+          "heading": "## September 8: authorized immediate upload completed"
+        },
+        {
+          "line": 318,
+          "heading": "## September 8: selector runtime budget tested"
+        },
+        {
+          "line": 322,
+          "heading": "## September 8: revised selector gains hold in second cohort"
+        },
+        {
+          "line": 326,
+          "heading": "## September 8: own-policy forecast mismatch isolated"
+        },
+        {
+          "line": 330,
+          "heading": "## September 8: prospective route-switch test rejected"
+        },
+        {
+          "line": 334,
+          "heading": "## September8: isolated terminal settlement qualified for next window"
+        },
+        {
+          "line": 338,
+          "heading": "## September8: confirmation complete, terminal defect isolated"
+        },
+        {
+          "line": 342,
+          "heading": "## September8: late route forecast frozen for fresh evaluation"
+        },
+        {
+          "line": 346,
+          "heading": "## September8: material route-selection opportunity"
+        },
+        {
+          "line": 350,
+          "heading": "## September8: actual capacity correction tested"
+        },
+        {
+          "line": 354,
+          "heading": "## September 8: harvest combination tested"
+        },
+        {
+          "line": 358,
+          "heading": "## September 8: authorized immediate upload"
+        },
+        {
+          "line": 363,
+          "heading": "## September 8 capacity candidate qualified for next window"
+        },
+        {
+          "line": 369,
+          "heading": "## September 8 joint capacity repair advances"
+        },
+        {
+          "line": 373,
+          "heading": "## September 8 SELL confirmation and capacity weakness"
+        },
+        {
+          "line": 377,
+          "heading": "## September 8 selected-action SELL candidate advances"
+        },
+        {
+          "line": 381,
+          "heading": "## September 8 fixed TITAN benchmark rejected"
+        },
+        {
+          "line": 385,
+          "heading": "## September 8 planting-delay fresh test and stronger peer discovery"
+        },
+        {
+          "line": 389,
+          "heading": "## September 8 current games and planting-delay hypothesis"
+        },
+        {
+          "line": 393,
+          "heading": "## September 8 strawberry terminal harvest rejected"
+        },
+        {
+          "line": 397,
+          "heading": "## September 8 fresh tomato component results"
+        },
+        {
+          "line": 401,
+          "heading": "## September 8 accepted-native tomato diagnosis"
+        },
+        {
+          "line": 405,
+          "heading": "## September 8 current submission21publicgames"
+        },
+        {
+          "line": 409,
+          "heading": "## September 8 late adaptive handoffs rejected"
+        },
+        {
+          "line": 413,
+          "heading": "## September 8 feasible crop quota test"
+        },
+        {
+          "line": 417,
+          "heading": "## September 7 final-week crop execution gap tested"
+        },
+        {
+          "line": 421,
+          "heading": "## September 7 isolated sheep value and late crop turnover"
+        },
+        {
+          "line": 425,
+          "heading": "## September 7 flow execution audit and late-livestock rejection"
+        },
+        {
+          "line": 429,
+          "heading": "## September 7 opponent-flow allocator integration tested"
+        },
+        {
+          "line": 433,
+          "heading": "## September 7 opponent flow model with floor-sale accounting"
+        },
+        {
+          "line": 437,
+          "heading": "## September 7 temporal market model trained with held-out groups"
+        },
+        {
+          "line": 441,
+          "heading": "## September 7 supply calibration and age-aware test"
+        },
+        {
+          "line": 445,
+          "heading": "## September 7 competitive allocation value tested"
+        },
+        {
+          "line": 449,
+          "heading": "## September 7 accepted public seven wins and adaptive rejection"
+        },
+        {
+          "line": 453,
+          "heading": "## September 7 carrot cohort feasibility and ablation"
+        },
+        {
+          "line": 457,
+          "heading": "## September 7 allocation cash audit completed"
+        },
+        {
+          "line": 461,
+          "heading": "## September 7 route alternative diagnostic completed"
+        },
+        {
+          "line": 465,
+          "heading": "## September 7 bounded milk holding tested and deprioritized"
+        },
+        {
+          "line": 469,
+          "heading": "## September 7 loss-panel completion and milk revenue diagnosis"
+        },
+        {
+          "line": 473,
+          "heading": "## September 7 general pickup provisioner remains research only"
+        },
+        {
+          "line": 477,
+          "heading": "## September 7 server validation complete and feeding diagnostic"
+        },
+        {
+          "line": 481,
+          "heading": "## September 7 reserve submission56091694 accepted and adopted"
+        },
+        {
+          "line": 485,
+          "heading": "## September 7 reserve package qualified after real-opening screen"
+        },
+        {
+          "line": 489,
+          "heading": "## September 7 fresh reserve stress gain and81-game archive"
+        },
+        {
+          "line": 493,
+          "heading": "## September 7 cash-pressure stress coverage"
+        },
+        {
+          "line": 497,
+          "heading": "## September 7 opening reserve diagnostic and inactive fresh panel"
+        },
+        {
+          "line": 501,
+          "heading": "## September 7 large-loss labor failure identified"
+        },
+        {
+          "line": 505,
+          "heading": "## September 7 crop-capacity package qualified for next slot"
+        },
+        {
+          "line": 509,
+          "heading": "## September 7 crop-capacity direct32 gain and refreshed losses"
+        },
+        {
+          "line": 513,
+          "heading": "## September 7 broader capacity confirmation and live standing"
+        },
+        {
+          "line": 517,
+          "heading": "## September 7 crop overflow diagnosis and fresh capacity check"
+        },
+        {
+          "line": 521,
+          "heading": "## September7 broader crop check does not earn promotion"
+        },
+        {
+          "line": 525,
+          "heading": "## September7 supply-aware crop selector modest fresh gain"
+        },
+        {
+          "line": 529,
+          "heading": "## September7 demand uncertainty and developing-supply model"
+        },
+        {
+          "line": 533,
+          "heading": "## September7 mixed-crop demand rule rejected on fresh games"
+        },
+        {
+          "line": 537,
+          "heading": "## September7 crop substitution feasibility"
+        },
+        {
+          "line": 541,
+          "heading": "## September7 residual loss audit and retry rejection"
+        },
+        {
+          "line": 545,
+          "heading": "## September7 price-impact direct32seed qualification"
+        },
+        {
+          "line": 549,
+          "heading": "## September7 price-impact broader confirmation and exact runtime"
+        },
+        {
+          "line": 553,
+          "heading": "## September 7 marginal-price ordering improves fresh panel"
+        },
+        {
+          "line": 557,
+          "heading": "## September 7 remaining losses accounted"
+        },
+        {
+          "line": 561,
+          "heading": "## September 7 refreshed54public games and all13loss diagnostics"
+        },
+        {
+          "line": 565,
+          "heading": "## September 7 combined independent confirmation and runtime"
+        },
+        {
+          "line": 569,
+          "heading": "## September 7 combined contender leads common selection panel"
+        },
+        {
+          "line": 573,
+          "heading": "## September 7 refreshed public peers independently audited"
+        },
+        {
+          "line": 577,
+          "heading": "## September 7 cash-conditioned opening fresh confirmation"
+        },
+        {
+          "line": 581,
+          "heading": "## September 7 opening-size stress and mixed one-unit confirmation"
+        },
+        {
+          "line": 589,
+          "heading": "## September 7 opening round-trip feed protection verified, not promoted"
+        },
+        {
+          "line": 593,
+          "heading": "## September 7 7:49 PM live losses and completed conditional futures"
+        },
+        {
+          "line": 599,
+          "heading": "## September 7 fresh day-12 transition: extra mirror win, substantial income regressions"
+        },
+        {
+          "line": 603,
+          "heading": "## September 7 closest-win wheat audit and day-12 route lead"
+        },
+        {
+          "line": 607,
+          "heading": "## September 7 7:28 PM Pacific live refresh: 21 public wins, rating 2,515.4"
+        },
+        {
+          "line": 613,
+          "heading": "## September 7 existing asset reservation verified; handoff rejected"
+        },
+        {
+          "line": 617,
+          "heading": "## September 7 existing-feed mismatch confirmed; correction not sufficient"
+        },
+        {
+          "line": 621,
+          "heading": "## September 7 weak-income audit and rejected adaptive handoff"
+        },
+        {
+          "line": 627,
+          "heading": "## September 7 mixed-order stress passed; larger town gate rejected"
+        },
+        {
+          "line": 633,
+          "heading": "## September 7 configured transfer, Linux admission, and first live router games"
+        },
+        {
+          "line": 639,
+          "heading": "## September 7 market-priority prior transfer and package diagnosis"
+        },
+        {
+          "line": 643,
+          "heading": "## September 7 post-upload market-priority research"
+        },
+        {
+          "line": 647,
+          "heading": "## September 7 router accepted and selected \u2014 6:08 PM Pacific"
+        },
+        {
+          "line": 653,
+          "heading": "## September 7 fresh pre-upload live audit"
+        },
+        {
+          "line": 657,
+          "heading": "## September 7 accepted-artifact handoff prepared"
+        },
+        {
+          "line": 661,
+          "heading": "## September 7 selfplay stress and mirror alternatives"
+        },
+        {
+          "line": 665,
+          "heading": "## September 7 stronger prior submission also beaten"
+        },
+        {
+          "line": 669,
+          "heading": "## September 7 router standalone qualified, awaiting five-hour window"
+        },
+        {
+          "line": 673,
+          "heading": "## September 7 conditional repair fails fresh competitive check"
+        },
+        {
+          "line": 677,
+          "heading": "## September 7 direct-loss adaptive recovery prototype"
+        },
+        {
+          "line": 681,
+          "heading": "## September 7 direct head-to-head and requested postmortem"
+        },
+        {
+          "line": 685,
+          "heading": "## September 7 fresh public-peer comparison changes research priority"
+        },
+        {
+          "line": 689,
+          "heading": "## September 7 milk-capacity audit and crop-unlock rejection"
+        },
+        {
+          "line": 693,
+          "heading": "## September 7 repaired cashflow and prompt-sale rejection"
+        },
+        {
+          "line": 697,
+          "heading": "## September 7 missing-producer handoff rejected"
+        },
+        {
+          "line": 701,
+          "heading": "## September 7 frequent live opening confirmation"
+        },
+        {
+          "line": 705,
+          "heading": "## September 7 responsive opening-pressure validation"
+        },
+        {
+          "line": 709,
+          "heading": "## September 7 live hiring-failure repair validation"
+        },
+        {
+          "line": 713,
+          "heading": "## September 7 full live failure review \u2014 current priority"
+        },
+        {
+          "line": 717,
+          "heading": "## September 7 prospective active-gate evidence"
+        },
+        {
+          "line": 721,
+          "heading": "## September 7 gated955 retirement transfer"
+        },
+        {
+          "line": 725,
+          "heading": "## September 7 livestock retirement component"
+        },
+        {
+          "line": 729,
+          "heading": "## September 7 labor and logistics audit"
+        },
+        {
+          "line": 733,
+          "heading": "## September 7 opening correction and production cash audit"
+        },
+        {
+          "line": 737,
+          "heading": "## September 7 aggressive adverse-town production experiment"
+        },
+        {
+          "line": 741,
+          "heading": "## September 7 ensemble selector fresh rejection"
+        },
+        {
+          "line": 745,
+          "heading": "## September 7 expanded adaptive-controller pool"
+        },
+        {
+          "line": 749,
+          "heading": "## September 7 route-pool limit and forecast convergence"
+        },
+        {
+          "line": 753,
+          "heading": "## September 7 bounded profit rollout prototype"
+        },
+        {
+          "line": 757,
+          "heading": "## September 7 expanded opponent and repair audit"
+        },
+        {
+          "line": 763,
+          "heading": "## September 7 weak-town adaptation results"
+        },
+        {
+          "line": 767,
+          "heading": "## September 7 new public-router profit research"
+        },
+        {
+          "line": 771,
+          "heading": "## Latest accepted submission \u2014 September 7, 20:08 UTC"
+        },
+        {
+          "line": 780,
+          "heading": "## Latest objective clarification \u2014 profit across seeds"
+        },
+        {
+          "line": 847,
+          "heading": "## Current execution policy \u2014 September 6, 2026"
+        },
+        {
+          "line": 857,
+          "heading": "## One-time early upload exception consumed"
+        },
+        {
+          "line": 861,
+          "heading": "## September 7 incremental submission"
+        },
+        {
+          "line": 865,
+          "heading": "## September8: holding-capacity interaction isolated"
+        },
+        {
+          "line": 869,
+          "heading": "### Capacity repair completed: reject for promotion"
+        },
+        {
+          "line": 873,
+          "heading": "## September8: stronger-peer confirmation started"
+        },
+        {
+          "line": 877,
+          "heading": "## September8: Yhayconfirmation complete, improvement modest"
+        },
+        {
+          "line": 881,
+          "heading": "## September8: demand hold screen rejected"
+        },
+        {
+          "line": 885,
+          "heading": "## September8: day24 route headroom found on twoYhaycases"
+        },
+        {
+          "line": 889,
+          "heading": "## September8: legal day24forecasts identify useful routes"
+        },
+        {
+          "line": 893,
+          "heading": "## September8: bounded day24selector verified;freshpilot running"
+        },
+        {
+          "line": 897,
+          "heading": "## September8: day24package passes actualMac/Linuxloader"
+        },
+        {
+          "line": 901,
+          "heading": "## September8: source-timeout/package decision parity check"
+        },
+        {
+          "line": 905,
+          "heading": "## September8: day24freshpilot positive;independentconfirmation launched"
+        },
+        {
+          "line": 909,
+          "heading": "## September8: combinedsearch stresscase source/Mac exact"
+        },
+        {
+          "line": 913,
+          "heading": "## September8: combinedruntime coverage complete"
+        },
+        {
+          "line": 917,
+          "heading": "## September8: forecastpolicy state reconstruction checked"
+        },
+        {
+          "line": 921,
+          "heading": "## September8: independentday24confirmation complete"
+        },
+        {
+          "line": 925,
+          "heading": "## September8: finalconfirmation deadlinecases underpackagecheck"
+        },
+        {
+          "line": 929,
+          "heading": "## September8: Linuxopponent harness repaired;no candidatefailure inferred"
+        }
+      ]
+    },
+    {
+      "path": "docs/CURRENT_CANDIDATE.md",
+      "sha256": "875ca3faf7f3ea32c64e147636a439f7e0884fc0da46049db8fdaee2330ff41a",
+      "bytes": 76430,
+      "lines": 333,
+      "main_relevance": "Rolling checkpoint index; exact artifact and qualified/submitted distinctions; source-specific coverage.",
+      "historical_current_distinction": "Top checkpoint Sept18 GuardedSplit860; NOT latest Sep30 submission.",
+      "article_omission_or_correction": "Article correctly uses final397 records instead.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": [
+        {
+          "line": 1,
+          "heading": "## September18 research860 guarded checkpoint: 69W11L first80; submission held"
+        },
+        {
+          "line": 5,
+          "heading": "## September18 research860: four first80 recoveries validated; submission targets unmet"
+        },
+        {
+          "line": 15,
+          "heading": "## September18 research860 current: two new first80 recoveries; next combined source under test"
+        },
+        {
+          "line": 25,
+          "heading": "## September18 research860 active: submitted859 and three remaining losses"
+        },
+        {
+          "line": 31,
+          "heading": "## September18 research859: Demand859V3 accepted"
+        },
+        {
+          "line": 47,
+          "heading": "## September18 research859 active: four losses targeted; validated858 baseline held"
+        },
+        {
+          "line": 57,
+          "heading": "## September17 research857 complete: three of eight recovered; five starting losses remain"
+        },
+        {
+          "line": 73,
+          "heading": "## September17 research856 complete: two more recoveries; six losses remain"
+        },
+        {
+          "line": 87,
+          "heading": "## September17 research856 active; research855 closed, upload conditional"
+        },
+        {
+          "line": 95,
+          "heading": "## September17 research855 active: improve remaining12 from exact V6"
+        },
+        {
+          "line": 101,
+          "heading": "## September17 research854 complete: three losses recovered; twelve remain"
+        },
+        {
+          "line": 117,
+          "heading": "## September17 research853 complete: responsive losses recovered;15 recorded losses remain"
+        },
+        {
+          "line": 131,
+          "heading": "## September17 research852 complete: modest successor;60-win target unmet"
+        },
+        {
+          "line": 143,
+          "heading": "## September16 research850: elite investigation; three public-loss cases recovered locally"
+        },
+        {
+          "line": 157,
+          "heading": "## September16 submission848 accepted: Route848 with bounded four-hour monitoring"
+        },
+        {
+          "line": 167,
+          "heading": "## September 16 research846 closed: eight recorded losses recovered; 33 remain"
+        },
+        {
+          "line": 183,
+          "heading": "## September16 research845 closed: compiled repair preserves238;41 recorded losses remain"
+        },
+        {
+          "line": 197,
+          "heading": "## September 16 research844 closed: two more original losses recovered; thirteen remain"
+        },
+        {
+          "line": 209,
+          "heading": "## September16 research843 closed: Warm843 accepted;193 cases improve,28 losses remain"
+        },
+        {
+          "line": 225,
+          "heading": "## September15 research842: current research status"
+        },
+        {
+          "line": 231,
+          "heading": "## September 11: Land602 submitted by explicit instruction; targets unmet"
+        },
+        {
+          "line": 241,
+          "heading": "## September 11, completed 571\u2013575: Mask2 accepted; Goose569 still unqualified"
+        },
+        {
+          "line": 251,
+          "heading": "## September 11 completed557\u2013570: accepted Mask2, experimental Goose569"
+        },
+        {
+          "line": 259,
+          "heading": "## September10: Joint137 research complete; three losses remain"
+        },
+        {
+          "line": 267,
+          "heading": "## September 10, 00:20 Pacific: Joint71 execution verified; 11 live wins"
+        },
+        {
+          "line": 273,
+          "heading": "## September 9, 11:28:57 PM Pacific: Joint71 submitted within the 30-minute deadline"
+        },
+        {
+          "line": 285,
+          "heading": "## September 9, 10:23 PM Pacific: joint validation complete; conditional upload authorized"
+        },
+        {
+          "line": 297,
+          "heading": "## Latest rating target:3,500 minimum,4,000 aim, and#1"
+        },
+        {
+          "line": 301,
+          "heading": "## September 9, 9:02 PM Pacific snapshot: eleven losses; Crop47 evaluated"
+        },
+        {
+          "line": 315,
+          "heading": "# Current submitted agent"
+        },
+        {
+          "line": 317,
+          "heading": "## September 9, 6:52 PM Pacific snapshot: Market28b loses games 31 and 32"
+        },
+        {
+          "line": 325,
+          "heading": "## September 9, 5:37 PM Pacific snapshot: Market28b validated; loss review complete"
+        }
+      ]
+    },
+    {
+      "path": "docs/CANDIDATE_STATUS_20260908.md",
+      "sha256": "59c84677e9883b0a6f5bd2af0facf3ced1f26cdd234b58afcecd80f302bb812f",
+      "bytes": 134741,
+      "lines": 887,
+      "main_relevance": "Large Sept8\u20139 research log: private-state guesses caused forecast bias; held-out rejection, source/archive platform checks, production/finance coupling.",
+      "historical_current_distinction": "Historical append/prepend mixture; neither first nor last paragraph alone establishes current Sep30 status.",
+      "article_omission_or_correction": "Potential appendix sentence: model forecasts needed calibration against actual traces before policy selection.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": [
+        {
+          "line": 1,
+          "heading": "## Production and staffing probes: no successor qualified"
+        },
+        {
+          "line": 7,
+          "heading": "## Day12 selector: fresh screen does not support promotion"
+        },
+        {
+          "line": 11,
+          "heading": "## Day12 selector: used pilot passed; untouched screening running"
+        },
+        {
+          "line": 17,
+          "heading": "## Early-production opportunity under controlled follow-up"
+        },
+        {
+          "line": 23,
+          "heading": "## Current qualified submission contender"
+        },
+        {
+          "line": 31,
+          "heading": "## Latest played-game inventory \u2014 September 8, 2026, 19:05 UTC"
+        },
+        {
+          "line": 37,
+          "heading": "## Independent natural confirmation complete"
+        },
+        {
+          "line": 45,
+          "heading": "## Latest authenticated standings \u2014 September 8, 2026, 19:03:48 UTC"
+        },
+        {
+          "line": 49,
+          "heading": "## Completed historical package review and rejected crew caps"
+        },
+        {
+          "line": 55,
+          "heading": "## Matched remaining-loss diagnosis"
+        },
+        {
+          "line": 59,
+          "heading": "## Completed controlled cow-rescue validation"
+        },
+        {
+          "line": 63,
+          "heading": "## Latest natural-game evidence \u2014 September 8, 2026, 18:40 UTC"
+        },
+        {
+          "line": 71,
+          "heading": "# Candidate status \u2014 September 8"
+        },
+        {
+          "line": 75,
+          "heading": "## What is actually submitted"
+        },
+        {
+          "line": 81,
+          "heading": "## Current research state \u2014 September 8, 10:12 AM Pacific"
+        },
+        {
+          "line": 100,
+          "heading": "## Combined candidate package: platform checks complete"
+        },
+        {
+          "line": 108,
+          "heading": "## Earlier local candidate evidence"
+        },
+        {
+          "line": 118,
+          "heading": "## What the loss analysis established"
+        },
+        {
+          "line": 127,
+          "heading": "## Why the day24selector is being tested"
+        },
+        {
+          "line": 135,
+          "heading": "## Runtime evidence and remaining uncertainty"
+        },
+        {
+          "line": 143,
+          "heading": "## Evidence map"
+        },
+        {
+          "line": 156,
+          "heading": "## Latest 12 recorded losses: completed candidate rematches"
+        },
+        {
+          "line": 162,
+          "heading": "## Candidate loss cash audit completed"
+        },
+        {
+          "line": 166,
+          "heading": "## Keiz early route headroom completed"
+        },
+        {
+          "line": 170,
+          "heading": "## Keiz fixed-town control rejects route3 change"
+        },
+        {
+          "line": 174,
+          "heading": "## Crop-only keiz mechanism test started"
+        },
+        {
+          "line": 178,
+          "heading": "## Crop-only result and new feeding failure"
+        },
+        {
+          "line": 184,
+          "heading": "## Feeding repair mechanism verified"
+        },
+        {
+          "line": 188,
+          "heading": "## Observation-based restock research built"
+        },
+        {
+          "line": 192,
+          "heading": "## Restock implementation matches causal probes"
+        },
+        {
+          "line": 196,
+          "heading": "## Restock fresh screen completed: no activation"
+        },
+        {
+          "line": 200,
+          "heading": "## Fresh-panel loss diagnosis"
+        },
+        {
+          "line": 204,
+          "heading": "## Pre-plant weed repair recovers one responsive loss"
+        },
+        {
+          "line": 208,
+          "heading": "## General preplant recovery ready for fresh evaluation"
+        },
+        {
+          "line": 212,
+          "heading": "## Forecast-aware preplant integration exercised"
+        },
+        {
+          "line": 216,
+          "heading": "## Forecast integration full-game check passed"
+        },
+        {
+          "line": 220,
+          "heading": "## Authenticated standings at22:03UTC /15:03Pacific"
+        },
+        {
+          "line": 224,
+          "heading": "## Preplant fresh screen completed"
+        },
+        {
+          "line": 228,
+          "heading": "## Early forecast calibration and package transfer"
+        },
+        {
+          "line": 232,
+          "heading": "## Public-opponent forecast calibration completed"
+        },
+        {
+          "line": 236,
+          "heading": "## Forecast optimism traced to rival private-state guesses"
+        },
+        {
+          "line": 240,
+          "heading": "## Unconditional livestock policy rejected; observable gate in research"
+        },
+        {
+          "line": 244,
+          "heading": "## Observer-gated livestock mechanism confirmed"
+        },
+        {
+          "line": 248,
+          "heading": "## Inferred-stock forecast check completed"
+        },
+        {
+          "line": 252,
+          "heading": "## Linux gate checks and day21 observed-rival search"
+        },
+        {
+          "line": 256,
+          "heading": "## Day21 known-rival route recovered a responsive loss"
+        },
+        {
+          "line": 260,
+          "heading": "## Day21 selector entrypoint repair"
+        },
+        {
+          "line": 264,
+          "heading": "## Observed day21 selector passes Mac/Linux; fresh comparison started"
+        },
+        {
+          "line": 268,
+          "heading": "## Deadline fallback and sale-slot opportunities"
+        },
+        {
+          "line": 272,
+          "heading": "## Online sale ordering under responsive test"
+        },
+        {
+          "line": 276,
+          "heading": "## Day21 fresh screen complete; earlier production under test"
+        },
+        {
+          "line": 280,
+          "heading": "## Day9 diagnostics recover two losses; online selector under test"
+        },
+        {
+          "line": 284,
+          "heading": "## Day9 online gains transfer; fresh evaluation dispatched"
+        },
+        {
+          "line": 288,
+          "heading": "## Day9 Linux choice drift under investigation"
+        },
+        {
+          "line": 292,
+          "heading": "## Day9 fresh result and faster implementation"
+        },
+        {
+          "line": 296,
+          "heading": "## Day9 v2 Linux exact; fresh screen launched"
+        },
+        {
+          "line": 300,
+          "heading": "## Day6 rejected; Day9 sale-order combination under test"
+        },
+        {
+          "line": 304,
+          "heading": "## Submitted combined policy56109813"
+        },
+        {
+          "line": 308,
+          "heading": "## Sale-order Mac gains; three-arm fresh protocol prepared"
+        },
+        {
+          "line": 312,
+          "heading": "## Day9 v2 fresh screen completed"
+        },
+        {
+          "line": 316,
+          "heading": "## Three-arm comparison running"
+        },
+        {
+          "line": 320,
+          "heading": "## Day12 observed-rival diagnostic started"
+        },
+        {
+          "line": 324,
+          "heading": "## Day12 forecasts complete; allfourchanges underresponsive test"
+        },
+        {
+          "line": 328,
+          "heading": "## New submission validated and first public win verified"
+        },
+        {
+          "line": 332,
+          "heading": "## Day9/day12 interaction test"
+        },
+        {
+          "line": 336,
+          "heading": "## Win-oriented route objective diagnostic"
+        },
+        {
+          "line": 340,
+          "heading": "## Three-scenario win-count switch rejected"
+        },
+        {
+          "line": 344,
+          "heading": "## Common-future sampling diagnostic"
+        },
+        {
+          "line": 348,
+          "heading": "## Additionalday12 rejected; stable-sampling changedonechoice"
+        },
+        {
+          "line": 352,
+          "heading": "## Three-arm screen complete; largerconfirmation started"
+        },
+        {
+          "line": 356,
+          "heading": "## Exact cash ledger identifies first remainingloss drivers"
+        },
+        {
+          "line": 361,
+          "heading": "### Remaining-loss cash audit and preemptive-sale probe"
+        },
+        {
+          "line": 366,
+          "heading": "### Independent confirmation complete; no confirmed win-rate gain"
+        },
+        {
+          "line": 371,
+          "heading": "### Crop-worker route study"
+        },
+        {
+          "line": 376,
+          "heading": "### Task reassignment confirmed one small labor saving"
+        },
+        {
+          "line": 383,
+          "heading": "### Labor spawn dependency fixed; online cache built"
+        },
+        {
+          "line": 388,
+          "heading": "### Schedule cache used-loss result and broader baseline test"
+        },
+        {
+          "line": 395,
+          "heading": "### Alternative farming foundation: four used losses recovered"
+        },
+        {
+          "line": 400,
+          "heading": "### Yukino-directed audit and responsive recovery"
+        },
+        {
+          "line": 407,
+          "heading": "### Remaining loss investigation: terminal-route shortcut rejected"
+        },
+        {
+          "line": 411,
+          "heading": "## Observed-yarn sheep substitution rejected (2026-09-09)"
+        },
+        {
+          "line": 417,
+          "heading": "## Inferred Yukino sale-model probe improves three used worlds (2026-09-09)"
+        },
+        {
+          "line": 425,
+          "heading": "## Combined opponent-model implementation and probe (2026-09-09)"
+        },
+        {
+          "line": 433,
+          "heading": "## Combined optimizer Linux parity started (2026-09-09)"
+        },
+        {
+          "line": 441,
+          "heading": "## Public farming candidate independent confirmation complete (2026-09-09)"
+        },
+        {
+          "line": 449,
+          "heading": "## Fourth older-policy model: small gains, no recovered losses (2026-09-09)"
+        },
+        {
+          "line": 453,
+          "heading": "## Smaller predicted sale declines do not produce a useful gain (2026-09-09)"
+        },
+        {
+          "line": 457,
+          "heading": "## Three-model fresh incremental screen complete and archive built (2026-09-09)"
+        },
+        {
+          "line": 465,
+          "heading": "## Exact archive Linux qualified; broad direct confirmation launched (2026-09-09)"
+        },
+        {
+          "line": 471,
+          "heading": "## Alternate complete day6 route rejected on used losses (2026-09-09)"
+        },
+        {
+          "line": 475,
+          "heading": "## Missing pasture bug repaired in isolated successor (2026-09-09)"
+        },
+        {
+          "line": 483,
+          "heading": "## Missing pasture repair fresh test launched (2026-09-09)"
+        },
+        {
+          "line": 487,
+          "heading": "## Fresh condition-selected pasture validation launched (2026-09-09)"
+        },
+        {
+          "line": 493,
+          "heading": "## Pasture conditional validation interim (2026-09-09)"
+        },
+        {
+          "line": 497,
+          "heading": "## Conditional pasture test complete: competitive gain with one regression (2026-09-09)"
+        },
+        {
+          "line": 501,
+          "heading": "## Repair/fourth-model interaction and expanded condition screen (2026-09-09)"
+        },
+        {
+          "line": 509,
+          "heading": "## Second conditional pasture panel and Linux checks running (2026-09-09)"
+        },
+        {
+          "line": 517,
+          "heading": "## Live scoreboard and second conditional repair results (2026-09-09)"
+        },
+        {
+          "line": 523,
+          "heading": "## Repair no-op screen complete; strongest-live comparison started (2026-09-09)"
+        },
+        {
+          "line": 533,
+          "heading": "## Repaired archive Linux passes; current live game audit underway (2026-09-09)"
+        },
+        {
+          "line": 539,
+          "heading": "## Latest/strongest live replay audit complete (2026-09-09)"
+        },
+        {
+          "line": 545,
+          "heading": "## Public-policy live loss reconstructed and recovered locally (2026-09-09)"
+        },
+        {
+          "line": 553,
+          "heading": "## Six-peer exact archive qualifications completed (2026-09-09)"
+        },
+        {
+          "line": 561,
+          "heading": "## Remaining-loss cause fixed in successor research source (2026-09-09)"
+        },
+        {
+          "line": 571,
+          "heading": "## Wheat reserve packaging and unchanged-loss accounting (2026-09-09)"
+        },
+        {
+          "line": 577,
+          "heading": "## Exact wheat archive Linux qualified; fallback sale probe started (2026-09-09)"
+        },
+        {
+          "line": 585,
+          "heading": "## Wheat fresh screen terminal; larger archive and conditional screens started (2026-09-09)"
+        },
+        {
+          "line": 591,
+          "heading": "## Prospective shortage found; direct strongest-agent challenge started (2026-09-09)"
+        },
+        {
+          "line": 599,
+          "heading": "## Direct strongest-submission result is materially weaker than broad panel (2026-09-09)"
+        },
+        {
+          "line": 609,
+          "heading": "## General livestock provisioning improves margins, qualification pending (2026-09-09)"
+        },
+        {
+          "line": 617,
+          "heading": "## Fourth-model integration recovers two older-policy losses (2026-09-09)"
+        },
+        {
+          "line": 623,
+          "heading": "## Combined archive Linux passes; final selection remains pending (2026-09-09)"
+        },
+        {
+          "line": 629,
+          "heading": "## Wheat archive independent qualification complete (2026-09-09)"
+        },
+        {
+          "line": 635,
+          "heading": "## Livestock provisioning fresh comparison completed (2026-09-09)"
+        },
+        {
+          "line": 641,
+          "heading": "## Fourth-model fresh qualification completed without win-rate gain (2026-09-09)"
+        },
+        {
+          "line": 651,
+          "heading": "## Combined direct qualification complete; transfer fix has a tradeoff (2026-09-09)"
+        },
+        {
+          "line": 659,
+          "heading": "## Largest direct tail loss has another missing-structure failure (2026-09-09)"
+        },
+        {
+          "line": 665,
+          "heading": "## Idle structure repair restores cow but has matchup tradeoffs (2026-09-09)"
+        },
+        {
+          "line": 672,
+          "heading": "### Completed fresh successor panels and Yukino clarification"
+        },
+        {
+          "line": 681,
+          "heading": "### Prospective missing-structure conditional validation completed"
+        },
+        {
+          "line": 688,
+          "heading": "### Combined structure and transfer-aware successor launched"
+        },
+        {
+          "line": 693,
+          "heading": "### Authenticated live refresh during combined validation"
+        },
+        {
+          "line": 698,
+          "heading": "### Combined repair fresh and interaction panels completed"
+        },
+        {
+          "line": 707,
+          "heading": "### Exact combined archive Linux passed; current-game losses refreshed"
+        },
+        {
+          "line": 714,
+          "heading": "### Combined archive broad confirmation and new real-loss recovery"
+        },
+        {
+          "line": 725,
+          "heading": "### Direct combined-archive qualification complete"
+        },
+        {
+          "line": 732,
+          "heading": "### New-hire pickup blind spot diagnosed and tested"
+        },
+        {
+          "line": 741,
+          "heading": "### Late sheep feeding route gap identified"
+        },
+        {
+          "line": 746,
+          "heading": "### Qualified fallback review; new-hire and late-feed results"
+        },
+        {
+          "line": 755,
+          "heading": "### Late feeding fresh validation complete; archive pending"
+        },
+        {
+          "line": 762,
+          "heading": "### Feeding archive Linux pass and exact paired qualification launched"
+        },
+        {
+          "line": 767,
+          "heading": "### Final-day expense hypothesis checked, no new edit"
+        },
+        {
+          "line": 772,
+          "heading": "### Exact feeding challenger selected after448-game confirmation"
+        },
+        {
+          "line": 777,
+          "heading": "### Selected archive largest-loss diagnosis complete"
+        },
+        {
+          "line": 782,
+          "heading": "### Double-yarn production mix experiment"
+        },
+        {
+          "line": 791,
+          "heading": "### Prospective double-yarn worlds selected and full test launched"
+        },
+        {
+          "line": 798,
+          "heading": "### Double-yarn qualified; broader threshold test launched"
+        },
+        {
+          "line": 807,
+          "heading": "### Single-yarn broadening rejected"
+        },
+        {
+          "line": 814,
+          "heading": "### Milk-demand-aware extension under heldout test"
+        },
+        {
+          "line": 821,
+          "heading": "### SUBMITTED56114641: adaptive livestock after heldout qualification"
+        },
+        {
+          "line": 830,
+          "heading": "### Refreshed Yukino diagnosis and ongoing herd guard"
+        }
+      ]
+    },
+    {
+      "path": "docs/LIVESTOCK_RESEARCH_20260909.md",
+      "sha256": "5927d79ad07404c3c69c9710ebb69e5a68e3ed629729960a191ec31116ca9b04",
+      "bytes": 3652,
+      "lines": 30,
+      "main_relevance": "Goose substitution/storage interaction and three-arm ablation distinguish animal benefit from room guard.",
+      "historical_current_distinction": "Historical Sept9 checkpoint; pending labels later superseded elsewhere.",
+      "article_omission_or_correction": "Already represented by whole-programme/interacting resource explanation.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": [
+        {
+          "line": 1,
+          "heading": "# Livestock and storage research"
+        },
+        {
+          "line": 12,
+          "heading": "## Why the goose-only variant failed"
+        },
+        {
+          "line": 18,
+          "heading": "## What the independent test separates"
+        },
+        {
+          "line": 22,
+          "heading": "## Remaining frontier loss"
+        },
+        {
+          "line": 26,
+          "heading": "## New completed evidence"
+        }
+      ]
+    },
+    {
+      "path": "docs/SCORE_TARGET_20260909.md",
+      "sha256": "eb407b9049bec1c0423930daccaf9e07ddcae58f2b89b5ae371fc8cf2a98e2e7",
+      "bytes": 3862,
+      "lines": 19,
+      "main_relevance": "Live rating objective separate from local wins; dated Joint71 acceptance and qualification.",
+      "historical_current_distinction": "Historical Sept9/10 target and submission, not current397 gate.",
+      "article_omission_or_correction": "Do not import old rating/quota constraints as final unchanged gate.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": [
+        {
+          "line": 1,
+          "heading": "## September 9, 11:28:57 PM Pacific: Joint71 submitted within the 30-minute deadline"
+        },
+        {
+          "line": 13,
+          "heading": "# Competition rating target"
+        }
+      ]
+    },
+    {
+      "path": "docs/MARGIN_TARGET_20260910.md",
+      "sha256": "f28838a586e3c655eb4014ac645784cdb575531b8339ab893ddc191d4c03fb87",
+      "bytes": 5623,
+      "lines": 31,
+      "main_relevance": "At-least2500 floor and examples where forecast rival decline differed from actual revenue; finite evaluated-set limits.",
+      "historical_current_distinction": "Historical non-strict floor superseded nextday; numeric checkpoints stale.",
+      "article_omission_or_correction": "Article current strict30000 target is separately supported; do not mix thresholds.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": [
+        {
+          "line": 1,
+          "heading": "# Minimum winning margin"
+        },
+        {
+          "line": 29,
+          "heading": "## Completed522\u2013528 checkpoint"
+        }
+      ]
+    },
+    {
+      "path": "docs/MARGIN_TARGET_20260911.md",
+      "sha256": "9965693c402f4c939349044a2c7e18888d300378fa52d0c92c731c5acbe385ff",
+      "bytes": 1018,
+      "lines": 7,
+      "main_relevance": "Changes margin floor to strictly greater2500; preserve earlier reports with earlier comparison operator.",
+      "historical_current_distinction": "Historical strict2500 superseded later goals, useful gate-versioning lesson.",
+      "article_omission_or_correction": "Optional note that acceptance contracts and comparison operators were versioned.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": [
+        {
+          "line": 1,
+          "heading": "# Strict margin target, September 11"
+        }
+      ]
+    },
+    {
+      "path": "docs/RESEARCH_WINDOW_20260908.md",
+      "sha256": "4a52f17a310cf837c2f16bc8e1f4ccf7ad8a9fce753e8ad2c497289fb309c9ab",
+      "bytes": 2096,
+      "lines": 13,
+      "main_relevance": "Nine-hour research/no-submit window; local platform limits; independent panel rejected favorable development result.",
+      "historical_current_distinction": "Expired dated execution directive; not a current restriction or pending job.",
+      "article_omission_or_correction": "Already covered by holdout and separate authorization.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": [
+        {
+          "line": 1,
+          "heading": "# Nine-hour push toward 4,000+ Elo"
+        }
+      ]
+    },
+    {
+      "path": "README.md",
+      "sha256": "bda6068c70aabea3430df8c59f3c94789c1b278ade5692eb202a983fbf473d43",
+      "bytes": 58503,
+      "lines": 529,
+      "main_relevance": "Rules: market unit order, fixed input versus dynamic output prices, actor-held feed, finite season, workers and town consumption.",
+      "historical_current_distinction": "Rules mixed with dated status preamble; engine-specific claims should use actual implementation when disputed.",
+      "article_omission_or_correction": "Opening wording incorrectly suggests travel is a direct cash charge; call it worker time/opportunity cost.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": [
+        {
+          "line": 1,
+          "heading": "## September18 research860 guarded checkpoint: 69W11L first80; submission held"
+        },
+        {
+          "line": 5,
+          "heading": "## September18 research860: four first80 recoveries validated; submission targets unmet"
+        },
+        {
+          "line": 15,
+          "heading": "## September18 research860 current: two new first80 recoveries; next combined source under test"
+        },
+        {
+          "line": 25,
+          "heading": "## September18 research860 active: submitted859 and three remaining losses"
+        },
+        {
+          "line": 31,
+          "heading": "## September18 research859: Demand859V3 accepted"
+        },
+        {
+          "line": 47,
+          "heading": "## September18 research859 active: four losses targeted; validated858 baseline held"
+        },
+        {
+          "line": 57,
+          "heading": "## Current research857: three of eight failures recovered"
+        },
+        {
+          "line": 61,
+          "heading": "## Current research:856 complete, two more recorded losses recovered"
+        },
+        {
+          "line": 65,
+          "heading": "## Current research:855 improvement,856 repair work active"
+        },
+        {
+          "line": 69,
+          "heading": "## Research855 in progress"
+        },
+        {
+          "line": 73,
+          "heading": "## Research854: three more losses recovered"
+        },
+        {
+          "line": 77,
+          "heading": "## Research853: local head-to-head losses recovered"
+        },
+        {
+          "line": 81,
+          "heading": "## September17 research852: successor tested;60-win target remains open"
+        },
+        {
+          "line": 85,
+          "heading": "## September16 research850: three more local loss recoveries"
+        },
+        {
+          "line": 89,
+          "heading": "## September16: Route848 submitted; four-hour game review active"
+        },
+        {
+          "line": 93,
+          "heading": "## September16 research847:214 wins,24 losses on238 recorded cases"
+        },
+        {
+          "line": 97,
+          "heading": "## September12: research continues; Unified669 is the accepted submission"
+        },
+        {
+          "line": 105,
+          "heading": "## September 11: Land602 submitted"
+        },
+        {
+          "line": 111,
+          "heading": "## September 11: 1,000 direct Mask2 games completed"
+        },
+        {
+          "line": 119,
+          "heading": "## September 9, 11:28:57 PM Pacific: Joint71 submitted within the 30-minute deadline"
+        },
+        {
+          "line": 131,
+          "heading": "## September 9, 10:23 PM Pacific: joint validation complete; conditional upload authorized"
+        },
+        {
+          "line": 143,
+          "heading": "## Latest rating target:3,500 minimum,4,000 aim, and#1"
+        },
+        {
+          "line": 147,
+          "heading": "## September 9, 9:02 PM Pacific snapshot: eleven losses; Crop47 evaluated"
+        },
+        {
+          "line": 161,
+          "heading": "## Current execution policy \u2014 September 6, 2026"
+        },
+        {
+          "line": 169,
+          "heading": "# Kaggriculture"
+        },
+        {
+          "line": 173,
+          "heading": "## Overview"
+        },
+        {
+          "line": 177,
+          "heading": "## Object Types"
+        },
+        {
+          "line": 201,
+          "heading": "## Actions"
+        },
+        {
+          "line": 205,
+          "heading": "### Farmer / Farm Hand Action"
+        },
+        {
+          "line": 209,
+          "heading": "#### Movement"
+        },
+        {
+          "line": 213,
+          "heading": "#### Shed"
+        },
+        {
+          "line": 220,
+          "heading": "#### Plants"
+        },
+        {
+          "line": 231,
+          "heading": "#### Animals"
+        },
+        {
+          "line": 241,
+          "heading": "#### Animal Care"
+        },
+        {
+          "line": 250,
+          "heading": "#### Terrain"
+        },
+        {
+          "line": 256,
+          "heading": "#### Other"
+        },
+        {
+          "line": 260,
+          "heading": "### Market Action"
+        },
+        {
+          "line": 277,
+          "heading": "## Watering / Animal Feed"
+        },
+        {
+          "line": 287,
+          "heading": "## Harvest Yields"
+        },
+        {
+          "line": 298,
+          "heading": "## Map Features"
+        },
+        {
+          "line": 302,
+          "heading": "### Farm Space"
+        },
+        {
+          "line": 310,
+          "heading": "### Shed (Inventory)"
+        },
+        {
+          "line": 319,
+          "heading": "### Farmer/Farm Hand"
+        },
+        {
+          "line": 321,
+          "heading": "#### Hiring"
+        },
+        {
+          "line": 329,
+          "heading": "#### Inventory"
+        },
+        {
+          "line": 335,
+          "heading": "### Town Buildings"
+        },
+        {
+          "line": 354,
+          "heading": "## Market Mechanics"
+        },
+        {
+          "line": 360,
+          "heading": "### Selling inventory to the market"
+        },
+        {
+          "line": 366,
+          "heading": "### Buying inventory from the market"
+        },
+        {
+          "line": 372,
+          "heading": "### The Price Function"
+        },
+        {
+          "line": 404,
+          "heading": "## Turn Processing Order"
+        },
+        {
+          "line": 416,
+          "heading": "## Win Conditions"
+        },
+        {
+          "line": 420,
+          "heading": "## Reward"
+        },
+        {
+          "line": 424,
+          "heading": "## Observation Format"
+        },
+        {
+          "line": 495,
+          "heading": "## Quick Start"
+        },
+        {
+          "line": 513,
+          "heading": "## Configuration Defaults"
+        }
+      ]
+    },
+    {
+      "path": "program.md",
+      "sha256": "dddd10a63efa5cc359e2a5bd0a846e59c75e1f6e66ed2cbe35882c618a766ea8",
+      "bytes": 25527,
+      "lines": 416,
+      "main_relevance": "Actual autoresearch instructions and dated amendments: starter/h2h, ledger/canaries, calibration and ensemble adjudication, public responsive instruments, historical Elo proxy.",
+      "historical_current_distinction": "Accumulated original plus amendments throughAug17; not one pristine or forever-unchanged protocol.",
+      "article_omission_or_correction": "Material omission: calibration of the opponent instrument evolved alongside candidate policy.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": [
+        {
+          "line": 1,
+          "heading": "# autoresearch: Kaggriculture Edition"
+        },
+        {
+          "line": 3,
+          "heading": "## Overview"
+        },
+        {
+          "line": 13,
+          "heading": "## Files"
+        },
+        {
+          "line": 23,
+          "heading": "## Metric"
+        },
+        {
+          "line": 32,
+          "heading": "## Initial Setup Phase"
+        },
+        {
+          "line": 42,
+          "heading": "## Experimentation Loop"
+        },
+        {
+          "line": 68,
+          "heading": "## Results Logging Format"
+        },
+        {
+          "line": 76,
+          "heading": "## Parallel Experiments via Worktrees"
+        },
+        {
+          "line": 97,
+          "heading": "## Generational Protocol (AlphaZero-inspired)"
+        },
+        {
+          "line": 128,
+          "heading": "## Docs (cross-referenced knowledge base)"
+        },
+        {
+          "line": 138,
+          "heading": "## Key Constraints"
+        },
+        {
+          "line": 156,
+          "heading": "## Ideas Backlog (ranked, maintain as you learn)"
+        },
+        {
+          "line": 169,
+          "heading": "## Critical Autonomy Rule"
+        },
+        {
+          "line": 174,
+          "heading": "## Keep-rule evolution (gen 14, 2026-08-13)"
+        },
+        {
+          "line": 184,
+          "heading": "## Standing gate: the full-ledger eval (gen 23, 2026-08-14, user directive)"
+        },
+        {
+          "line": 201,
+          "heading": "### Gate refinement: instrument floor + certified canaries (gen 24, 2026-08-14)"
+        },
+        {
+          "line": 219,
+          "heading": "### Gate clarification: strict-both resolvability for dropped wins (gen 26, 2026-08-14)"
+        },
+        {
+          "line": 230,
+          "heading": "### Gate refinement: ensemble adjudication replaces the per-game error bar (gen 29, 2026-08-14)"
+        },
+        {
+          "line": 288,
+          "heading": "### Cadence directive (2026-08-15, user): 5-hour refresh loop until all-wins"
+        },
+        {
+          "line": 296,
+          "heading": "### Instrument-reading correction (gen 33, 2026-08-15)"
+        },
+        {
+          "line": 305,
+          "heading": "### Gate amendment: supply-expanding arms need g20 + arch_band (gen 34, 2026-08-15)"
+        },
+        {
+          "line": 319,
+          "heading": "### Gate refinement: instrument sign vetoes bind only at resolution (gen 47, 2026-08-16)"
+        },
+        {
+          "line": 334,
+          "heading": "### Instrument amendment: arch_pub replaces arch_band as primary band gate (gen 51, 2026-08-16)"
+        },
+        {
+          "line": 356,
+          "heading": "### Instrument amendment: arch_pubF (forced-town) is the standing primary battery (gen 53, 2026-08-16)"
+        },
+        {
+          "line": 372,
+          "heading": "### Program amendment: THE ELO GATE replaces the ledger as primary promoter (gen 62, 2026-08-16)"
+        },
+        {
+          "line": 400,
+          "heading": "### Gate refinement: responsive columns and cell-set honesty (gen 63, 2026-08-16)"
+        },
+        {
+          "line": 411,
+          "heading": "### Gate refinement: arch_pubCF admitted as the class-C column (gen 64, 2026-08-17)"
+        }
+      ]
+    },
+    {
+      "path": "results.tsv",
+      "sha256": "73185d63a8f61dc20e3b82f442fd6fb4487d15a05abeb25a663bb65d2d6acd50",
+      "bytes": 189652,
+      "lines": 230,
+      "main_relevance": "Original six-column retained/discarded experiment log.",
+      "historical_current_distinction": "Historical experiments and labels, not a current source qualification ledger.",
+      "article_omission_or_correction": "Covered in pipeline notes; optional name explicitly in article.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": []
+    },
+    {
+      "path": "evaluation/first40_autoresearch_20260928/STATE.md",
+      "sha256": "79dc1d94aa6042f8955f4580112a80812af0432844b127435ff4fa4e140c9af6",
+      "bytes": 462157,
+      "lines": 2286,
+      "main_relevance": "Final Sep30 acceptance56722213, source/archive identity,93/133wins, runtime/archive limitations; retains historical checkpoints.",
+      "historical_current_distinction": "Latest23:56 entry current at blog evidence cutoff; earlier RUNNING/held entries superseded.",
+      "article_omission_or_correction": "No result/status correction needed.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": [
+        {
+          "line": 1,
+          "heading": "## Latest read-only status \u2014 2026-09-30T23:56:54.780495+00:00"
+        },
+        {
+          "line": 5,
+          "heading": "# September30 final authorized upload accepted: FastRetire397 / 56722213"
+        },
+        {
+          "line": 13,
+          "heading": "# Generation397 final evidence complete; qualifier pending"
+        },
+        {
+          "line": 29,
+          "heading": "# Generation397: recorded133 complete; final checks pending"
+        },
+        {
+          "line": 35,
+          "heading": "# Generation393 held by runtime gate"
+        },
+        {
+          "line": 39,
+          "heading": "# Generation393: recorded132 complete; qualification pending"
+        },
+        {
+          "line": 45,
+          "heading": "# Generation391 rejected after screen"
+        },
+        {
+          "line": 49,
+          "heading": "# Generation390: rejected or diagnostic"
+        },
+        {
+          "line": 55,
+          "heading": "# Generation391: screen completed"
+        },
+        {
+          "line": 61,
+          "heading": "# Final upload390 in progress \u20142026-09-30 22:45UTC"
+        },
+        {
+          "line": 73,
+          "heading": "# Generation389: screen completed"
+        },
+        {
+          "line": 79,
+          "heading": "# Generation387: rejected or diagnostic"
+        },
+        {
+          "line": 85,
+          "heading": "# Generation384: rejected or diagnostic"
+        },
+        {
+          "line": 91,
+          "heading": "# Generation 386: ONE_ADDITIONAL_RECORDED_RECOVERY_REQUIRES_BROAD_VALIDATION"
+        },
+        {
+          "line": 99,
+          "heading": "# Generation385: rejected or diagnostic"
+        },
+        {
+          "line": 105,
+          "heading": "# Generation 383: NO_CHANGE_IN_11_GAMES_DIAGNOSING_NONADMISSION"
+        },
+        {
+          "line": 113,
+          "heading": "# Submission361 hostedvalidation COMPLETE;378 completed and held"
+        },
+        {
+          "line": 117,
+          "heading": "# Generation 378: NO_NEW_RECOVERY_SMALL_MIXED_CASH_CHANGE_NOT_SELECTED"
+        },
+        {
+          "line": 125,
+          "heading": "# Completed all9 current340 ordered-loss investigation"
+        },
+        {
+          "line": 129,
+          "heading": "# Margin361 submitted once as56719676 \u20142026-09-30 21:56UTC"
+        },
+        {
+          "line": 137,
+          "heading": "# Generation 371: TWO_NEWEST_LOSSES_UNCHANGED_ARCHIVE_VERIFIED"
+        },
+        {
+          "line": 145,
+          "heading": "# Generation 369: REJECTED_ONE_LOST_FRAGILE_WIN"
+        },
+        {
+          "line": 153,
+          "heading": "# Generation 367: TWO_RECOVERIES_NO_NEW_FRESH_WINS_NOT_SELECTED"
+        },
+        {
+          "line": 161,
+          "heading": "# Generation 365: ALL_FIVE_LOSSES_UNCHANGED_NO_RECOVERY"
+        },
+        {
+          "line": 169,
+          "heading": "# Generation 362: ALL90_WINS_RETAINED_NO_NEW_COHORT_WINS_CAPACITY_REVIEW"
+        },
+        {
+          "line": 177,
+          "heading": "# Generation 361: BOTH_NEW_LOSSES_RECOVERED_BROAD_WINS_RETAINED_PHYSICAL_REVIEW"
+        },
+        {
+          "line": 185,
+          "heading": "# Generation 359: OLDER_SOURCE_WINS_BOTH_NEW_LOSSES_STRATEGIC_GATES_IDENTIFIED"
+        },
+        {
+          "line": 193,
+          "heading": "# Generation 360: ONE_RECOVERY_SMALL_OWN_GAIN_ONE_NEW_DISCARD_NOT_SELECTED"
+        },
+        {
+          "line": 201,
+          "heading": "# Generation 357: ONE_LOSS_RECOVERED_ALL_TESTED_WINS_RETAINED_ONE_NEW_DISCARD"
+        },
+        {
+          "line": 209,
+          "heading": "# Generation 351: ALL63_LOSSES_TESTED_SMALL_CASH_GAIN_ZERO_RECOVERIES"
+        },
+        {
+          "line": 217,
+          "heading": "# Generation 349: REJECTED_TWO_CALLBACK_ERRORS_ALL61_NOT_COMPLETE"
+        },
+        {
+          "line": 225,
+          "heading": "# Generation 347: ONE_RECORDED_RECOVERY_THREE_WINS_RETAINED_BROADER_PENDING"
+        },
+        {
+          "line": 233,
+          "heading": "# Generation 346: SMALL_COIN_GAIN_ZERO_RECOVERIES_BROADER_TEST_NEXT"
+        },
+        {
+          "line": 241,
+          "heading": "# Generation 345: ZERO_CHANGE_EIGHT_FULL_PATHS_EQUAL"
+        },
+        {
+          "line": 249,
+          "heading": "# Generation 344: REJECTED_ZERO_RECOVERIES_THREE_LOST_WINS"
+        },
+        {
+          "line": 257,
+          "heading": "# Individual61-loss investigation complete; new340 live7W0L"
+        },
+        {
+          "line": 263,
+          "heading": "# Integrated340 submitted as56716574"
+        },
+        {
+          "line": 273,
+          "heading": "# Integrated340 full verification"
+        },
+        {
+          "line": 277,
+          "heading": "# Generation341: COIN_GAIN_ALL_WINS_RETAINED_SUBMISSION_VALIDATION"
+        },
+        {
+          "line": 285,
+          "heading": "# Generation340: PAIRED_COIN_GAIN_FULL_VALIDATION_PENDING"
+        },
+        {
+          "line": 293,
+          "heading": "# Submitted251: 64 live wins, 61 losses, rating 2218.1"
+        },
+        {
+          "line": 297,
+          "heading": "# Generation339: SMALL_PAIRED_GAIN_ZERO_RECOVERIES_NOT_READY"
+        },
+        {
+          "line": 305,
+          "heading": "# Generation338: REJECTED_CAPACITY_GUARD_ZERO_RECOVERIES_ONE_LOST_WIN"
+        },
+        {
+          "line": 313,
+          "heading": "# Generation337: REJECTED_ZERO_RECOVERIES_ONE_LOST_WIN"
+        },
+        {
+          "line": 321,
+          "heading": "# Generation 336: complete cohort test, no new wins"
+        },
+        {
+          "line": 344,
+          "heading": "# Generation335 retirement classification"
+        },
+        {
+          "line": 348,
+          "heading": "# Generation335: LARGER_CASH_MARGIN_GAIN_NO_RECOVERY_PHYSICAL_REGRESSION_HOLD"
+        },
+        {
+          "line": 356,
+          "heading": "# Generation334: CASH_GAIN_NO_RECOVERY_TWO_MARGIN_REGRESSIONS_NOT_READY"
+        },
+        {
+          "line": 364,
+          "heading": "# Full-cohort test: repaired Gen68 rejected"
+        },
+        {
+          "line": 389,
+          "heading": "# Generation333: REJECTED_FULL_COHORT_WIN_AND_CASH_REGRESSION"
+        },
+        {
+          "line": 397,
+          "heading": "# Comparison and research checkpoint, 2026-09-30T16:48:01.858151+00:00"
+        },
+        {
+          "line": 405,
+          "heading": "# Generation332: PARTIAL_TWO_CASH_GAINS_NO_NEW_RECOVERY_NOT_READY"
+        },
+        {
+          "line": 413,
+          "heading": "# Generation331: PARTIAL_CASH_GAIN_NO_NEW_RECOVERY_NOT_READY"
+        },
+        {
+          "line": 421,
+          "heading": "# Generation330: PARTIAL_SIX_RECOVERIES_TWO_LOST_CONTROLS_NOT_READY"
+        },
+        {
+          "line": 429,
+          "heading": "# Generation329: NO_ADMISSION_ALL_SIX_FULL_PATHS_UNCHANGED"
+        },
+        {
+          "line": 437,
+          "heading": "# Generation328: HISTORICAL_ROLLBACK_REJECTED_NET_WIN_AND_CASH_REGRESSION"
+        },
+        {
+          "line": 445,
+          "heading": "# Generation326: PARTIAL_FOUR_WINS_TWO_LOST_CONTROLS_NOT_READY"
+        },
+        {
+          "line": 453,
+          "heading": "# Generation325: PARTIAL_NET_WIN_GAIN_TWO_LOST_CONTROLS_NOT_READY"
+        },
+        {
+          "line": 461,
+          "heading": "# Submitted251: 60 live wins, 55 losses, rating 2226.0"
+        },
+        {
+          "line": 465,
+          "heading": "# Generation324: NO_ACTIVATION_FULL_PATHS_UNCHANGED"
+        },
+        {
+          "line": 473,
+          "heading": "# Generation321: PHYSICAL_REPAIR_CASH_GAIN_NO_EXTRA_WIN"
+        },
+        {
+          "line": 481,
+          "heading": "# Generation320: LIMITED_ACTIVATION_NO_EXTRA_WIN"
+        },
+        {
+          "line": 489,
+          "heading": "# Fresh five loss baselines: no new recovery"
+        },
+        {
+          "line": 493,
+          "heading": "# Submitted251: 59 live wins, 55 losses, rating 2221.1"
+        },
+        {
+          "line": 497,
+          "heading": "# Generation319: INTEGRATED_ECONOMIC_REGRESSION_NO_EXTRA_WIN"
+        },
+        {
+          "line": 505,
+          "heading": "# Generation317: SERVICE_ROUTES_ACTIVATE_ECONOMIC_REGRESSION_NO_EXTRA_WIN"
+        },
+        {
+          "line": 513,
+          "heading": "# Generation318: WORKING_CAPITAL_RECOVERY_CASH_MARGIN_GAIN_NO_EXTRA_WIN"
+        },
+        {
+          "line": 521,
+          "heading": "# Generation313: REJECTED_ALLOCATION_REGRESSION_NO_EXTRA_WIN"
+        },
+        {
+          "line": 529,
+          "heading": "# Generation316: CURRENT_SALE_FUNDING_CASH_GAIN_NO_EXTRA_WIN"
+        },
+        {
+          "line": 537,
+          "heading": "# Generation315: CROP_FAILURES_REMOVED_ECONOMIC_REGRESSION_NO_EXTRA_WIN"
+        },
+        {
+          "line": 545,
+          "heading": "# Generation314: SIX_CROP_DEATHS_REMOVED_NO_EXTRA_WIN"
+        },
+        {
+          "line": 553,
+          "heading": "# Generation312: MARGIN_GAIN_FOUR_DEATHS_REMOVED_NO_EXTRA_WIN"
+        },
+        {
+          "line": 561,
+          "heading": "# Generation310: RESERVATION_BUG_FIXED_ECONOMIC_AND_PHYSICAL_REGRESSION"
+        },
+        {
+          "line": 569,
+          "heading": "# Generation311: REJECTED_COUPLED_GRAIN_NO_EXTRA_WIN"
+        },
+        {
+          "line": 577,
+          "heading": "# Fresh leader evidence: 19 additional public games"
+        },
+        {
+          "line": 581,
+          "heading": "# Generation309: MARGIN_GAIN_FIVE_GAMES_NO_EXTRA_WIN"
+        },
+        {
+          "line": 589,
+          "heading": "# Fresh live losses: seven reproduced; submitted251 now54W50L"
+        },
+        {
+          "line": 595,
+          "heading": "# Submitted251: 54 live wins, 50 losses, rating 2225.2"
+        },
+        {
+          "line": 599,
+          "heading": "# Generation308: CASH_MARGIN_GAIN_FIVE_IMPROVE_NO_EXTRA_WIN"
+        },
+        {
+          "line": 607,
+          "heading": "# Generation307: REJECTED_WHEAT_CYCLE_REGRESSION_NEW_PLANT_DEATH"
+        },
+        {
+          "line": 615,
+          "heading": "# Generation305: REJECTED_LEARNED_PURCHASE_CASH_REGRESSION_NO_EXTRA_WIN"
+        },
+        {
+          "line": 623,
+          "heading": "# Generation306: CASH_MARGIN_GAIN_NEW_PLANT_DEATH_NO_EXTRA_WIN"
+        },
+        {
+          "line": 631,
+          "heading": "# Generation304: REJECTED_EXPANSION_RESTRICTION_REGRESSION_NO_EXTRA_WIN"
+        },
+        {
+          "line": 639,
+          "heading": "# Generation303: PARTIAL_MARGIN_GAIN_CASH_REGRESSION_NO_EXTRA_WIN"
+        },
+        {
+          "line": 647,
+          "heading": "# Generation297: REJECTED_NEW_ESCAPE_AND_CASH_REGRESSION_NO_EXTRA_WIN"
+        },
+        {
+          "line": 655,
+          "heading": "# Generation301: REJECTED_MARGIN_REGRESSION_NO_EXTRA_WIN"
+        },
+        {
+          "line": 663,
+          "heading": "# Generation300: REJECTED_MODEL_OBJECTIVE_REGRESSION_NO_EXTRA_WIN"
+        },
+        {
+          "line": 671,
+          "heading": "# Generation299: ESCAPES_REMOVED_CASH_GAIN_NO_EXTRA_WIN"
+        },
+        {
+          "line": 679,
+          "heading": "# Generation298: SERVICE_CASH_GAIN_NO_EXTRA_WIN"
+        },
+        {
+          "line": 687,
+          "heading": "# Generation296: CASH_GAIN_NO_EXTRA_WIN"
+        },
+        {
+          "line": 695,
+          "heading": "# Generation293: REJECTED_CASH_REGRESSION_NEW_ESCAPES_NO_EXTRA_WIN"
+        },
+        {
+          "line": 703,
+          "heading": "# Generation294: SURVIVAL_FIXED_CASH_REGRESSION_NO_EXTRA_WIN"
+        },
+        {
+          "line": 711,
+          "heading": "# Generation295: CASH_GAIN_ESCAPE_REMOVED_NO_EXTRA_WIN"
+        },
+        {
+          "line": 719,
+          "heading": "# Six fresh live losses audited \u2014 12:08 snapshot"
+        },
+        {
+          "line": 723,
+          "heading": "# Generation292: REJECTED_NEW_ESCAPE_CASH_REGRESSION_NO_EXTRA_WIN"
+        },
+        {
+          "line": 731,
+          "heading": "# Submitted251: 50 live wins, 43 losses, rating 2234.1"
+        },
+        {
+          "line": 735,
+          "heading": "# Generation290: CROP_DEATH_REMOVED_CASH_GAIN_NO_EXTRA_WIN"
+        },
+        {
+          "line": 743,
+          "heading": "# Generation289: EXPANSION_TIMING_FIXED_CASH_GAIN_NO_EXTRA_WIN"
+        },
+        {
+          "line": 751,
+          "heading": "# Generation291: REJECTED_NO_EXTRA_WIN_WITH_CASH_REGRESSION"
+        },
+        {
+          "line": 759,
+          "heading": "# Leader-driven investment liquidity investigation289 active"
+        },
+        {
+          "line": 765,
+          "heading": "# Generation286: MARGIN_GAIN_WITH_NEW_CROP_DEATH_NO_EXTRA_WIN"
+        },
+        {
+          "line": 773,
+          "heading": "# Generation285: REJECTED_CASH_AND_MARGIN_REGRESSION_NO_EXTRA_WIN"
+        },
+        {
+          "line": 781,
+          "heading": "# Generation288: REJECTED_ONE_REGRESSION_FIVE_IDENTICAL_PATHS"
+        },
+        {
+          "line": 789,
+          "heading": "# Two fresh live losses reproduced \u2014 11:23 snapshot"
+        },
+        {
+          "line": 793,
+          "heading": "# Submitted251: 50 live wins, 37 losses, rating 2261.9"
+        },
+        {
+          "line": 797,
+          "heading": "# Generation287: REJECTED_CASH_REGRESSION_NO_ADDITIONAL_WIN"
+        },
+        {
+          "line": 805,
+          "heading": "# Generation284: COMBINED_MARGIN_GAIN_NO_ADDITIONAL_GAME_WIN"
+        },
+        {
+          "line": 813,
+          "heading": "# Generation282: MARGIN_GAIN_NO_ADDITIONAL_GAME_WIN"
+        },
+        {
+          "line": 821,
+          "heading": "# Generation283: ALL_SIX_MARGINS_IMPROVED_NO_ADDITIONAL_GAME_WIN"
+        },
+        {
+          "line": 829,
+          "heading": "# Generation281: OPENING_CREW_REPAIRED_NO_ADDITIONAL_GAME_WIN"
+        },
+        {
+          "line": 837,
+          "heading": "# Seven fresh live losses reproduced \u2014 10:48 snapshot"
+        },
+        {
+          "line": 841,
+          "heading": "# Submitted251: 49 live wins, 35 losses, rating 2264.7"
+        },
+        {
+          "line": 845,
+          "heading": "# Generation279: REJECTED_LIVESTOCK_SERVICE_AND_CASH_REGRESSION"
+        },
+        {
+          "line": 853,
+          "heading": "# Generation280: SMALL_CASH_GAIN_NO_ADDITIONAL_GAME_WIN"
+        },
+        {
+          "line": 861,
+          "heading": "# Generation278: EXPANSION_REPAIRED_NO_ADDITIONAL_GAME_WIN"
+        },
+        {
+          "line": 869,
+          "heading": "# Generation277: OPENING_EXECUTES_BUT_EXPANSION_FEEDBACK_FAILS"
+        },
+        {
+          "line": 877,
+          "heading": "# New live-loss baselines through10:03UTC completed"
+        },
+        {
+          "line": 881,
+          "heading": "# Generation276: HERD_RECOVERED_BUT_NO_NEW_GAME_WIN"
+        },
+        {
+          "line": 889,
+          "heading": "# Submitted251: 47 live wins, 28 losses, rating 2286.6"
+        },
+        {
+          "line": 893,
+          "heading": "# Generation275: REJECTED_EARLY_HERD_SERVICE_FAILURE"
+        },
+        {
+          "line": 901,
+          "heading": "# Expanded top-five public strategy study275 complete; new adaptive agent under construction"
+        },
+        {
+          "line": 905,
+          "heading": "# Generation274: REJECTED_ONGOING_SERVICE_FAILURE_AND_LOST_WIN"
+        },
+        {
+          "line": 913,
+          "heading": "# Generation273: REJECTED_NET_TWO_LOST_WINS_REMAIN"
+        },
+        {
+          "line": 921,
+          "heading": "# Generation269: NO_ACTIVATION_MARKET_SLOT_INTEGRATION_FAILURE"
+        },
+        {
+          "line": 929,
+          "heading": "# Generation272: REJECTED_SIX_LOST_WINS_DESPITE_FOUR_RECOVERIES"
+        },
+        {
+          "line": 937,
+          "heading": "# Submitted251: 41 live wins, 22 losses, rating 2293.4"
+        },
+        {
+          "line": 941,
+          "heading": "# Generation271: SMALL_MEASURED_GAINS_NO_RECOVERY"
+        },
+        {
+          "line": 949,
+          "heading": "# Generation270: LIMITED_CASH_GAIN_NO_LOSS_RECOVERY"
+        },
+        {
+          "line": 957,
+          "heading": "# Generation267: REJECTED_NO_RECOVERY_INCREMENTAL_ECONOMICS_NEGATIVE"
+        },
+        {
+          "line": 965,
+          "heading": "# Winning-game review expanded; all14 hosted losses reproduced"
+        },
+        {
+          "line": 969,
+          "heading": "# Submitted251: 35 live wins, 14 losses, rating 2312.5"
+        },
+        {
+          "line": 973,
+          "heading": "# Generation264: REJECTED_DUSK_RECEIPT_AND_REPEATED_PAYROLL_BUG"
+        },
+        {
+          "line": 981,
+          "heading": "# Generation263: REJECTED_NET_LOSS_AND_PHYSICAL_REGRESSIONS"
+        },
+        {
+          "line": 989,
+          "heading": "# All13 hosted losses reproduced"
+        },
+        {
+          "line": 993,
+          "heading": "# Current leader review and all13 live losses audited"
+        },
+        {
+          "line": 997,
+          "heading": "# Submitted251: 31 live wins, 13 losses, rating 2281.9"
+        },
+        {
+          "line": 1001,
+          "heading": "# Generation265: native crop portfolio ablation rejected"
+        },
+        {
+          "line": 1009,
+          "heading": "# Generation260: earlier tomato programme rejected"
+        },
+        {
+          "line": 1017,
+          "heading": "# Submitted251: 30 live wins, 8 losses, rating 2332.5"
+        },
+        {
+          "line": 1021,
+          "heading": "# Submitted251: 28 live wins, 6 losses, rating 2329.5"
+        },
+        {
+          "line": 1025,
+          "heading": "# Generation261: sale-lot preservation rejected"
+        },
+        {
+          "line": 1033,
+          "heading": "# Three current live losses: source-bound baselines complete; next upload conditional"
+        },
+        {
+          "line": 1043,
+          "heading": "# Submitted251: 27 live wins, 3 losses, rating 2361.6"
+        },
+        {
+          "line": 1047,
+          "heading": "# Generation258: removing the late tomato programme worsens the live loss"
+        },
+        {
+          "line": 1057,
+          "heading": "# Submitted251: 25 live wins, 1 losses, rating 2363.7"
+        },
+        {
+          "line": 1061,
+          "heading": "# New251 first live loss at chronological game22; first30 target added"
+        },
+        {
+          "line": 1067,
+          "heading": "# Submitted251: 22 live wins, 1 losses, rating 2265.2"
+        },
+        {
+          "line": 1071,
+          "heading": "# Generation256: repeatability repaired, but strategy rejected"
+        },
+        {
+          "line": 1083,
+          "heading": "# Submitted251: 21 live wins, 0 losses, rating 2305.9"
+        },
+        {
+          "line": 1087,
+          "heading": "# Submitted251: 19 live wins, 0 losses, rating 2128.7"
+        },
+        {
+          "line": 1091,
+          "heading": "# Generation255: rejected; no recovery and one lost win"
+        },
+        {
+          "line": 1110,
+          "heading": "# Generation254: rejected; no recovery and one lost win"
+        },
+        {
+          "line": 1132,
+          "heading": "# Submitted251: 18 live wins, 0 losses, rating 2047.8"
+        },
+        {
+          "line": 1136,
+          "heading": "# Submitted251: 13 live wins, 0 losses, rating 1725.5"
+        },
+        {
+          "line": 1140,
+          "heading": "# Generation253: no activation, no improvement"
+        },
+        {
+          "line": 1150,
+          "heading": "# Submitted251: 10 live wins, 0 losses, rating 1475.9"
+        },
+        {
+          "line": 1154,
+          "heading": "# Submitted251: 8 live wins, 0 losses, rating 1268.4"
+        },
+        {
+          "line": 1160,
+          "heading": "# Submitted251 now5W0L, rating1032.3"
+        },
+        {
+          "line": 1164,
+          "heading": "# Generation252 rejected: late strawberry renewal loses a protected win"
+        },
+        {
+          "line": 1176,
+          "heading": "# Runtime251 first competitive result: 1W0L"
+        },
+        {
+          "line": 1180,
+          "heading": "# Runtime251 hosted validation COMPLETE"
+        },
+        {
+          "line": 1184,
+          "heading": "# Runtime251 submitted once as56698403"
+        },
+        {
+          "line": 1188,
+          "heading": "# Generation251: first live timeout loss repaired; qualified for one authorized upload"
+        },
+        {
+          "line": 1200,
+          "heading": "# First live loss: runtime guard drops mandatory dawn action"
+        },
+        {
+          "line": 1204,
+          "heading": "# Generation250 complete: Whole-farm controller"
+        },
+        {
+          "line": 1223,
+          "heading": "# First live loss confirmed; one next repair upload authorized"
+        },
+        {
+          "line": 1229,
+          "heading": "# Generation250 whole-farm controller: actual12 running"
+        },
+        {
+          "line": 1233,
+          "heading": "# Live213 first8: 8W0L, rating1311.8"
+        },
+        {
+          "line": 1237,
+          "heading": "# Live runtime check: completed game, no stuck-agent evidence"
+        },
+        {
+          "line": 1241,
+          "heading": "# Live213 first5:5W0L/rating1069.6"
+        },
+        {
+          "line": 1245,
+          "heading": "#249 rejected;250 native crop-cycle candidate under construction"
+        },
+        {
+          "line": 1249,
+          "heading": "# Generation249 complete: Native paid crop scheduler"
+        },
+        {
+          "line": 1266,
+          "heading": "#249 actual12 running: joint paid crop scheduler"
+        },
+        {
+          "line": 1270,
+          "heading": "#56696789 first3 competitive games:3W0L"
+        },
+        {
+          "line": 1274,
+          "heading": "# Scheduled automation removed; continuous in-session research"
+        },
+        {
+          "line": 1278,
+          "heading": "# Current-leader challenge complete; no additional wins"
+        },
+        {
+          "line": 1282,
+          "heading": "# Hosted validation passed for56696789"
+        },
+        {
+          "line": 1286,
+          "heading": "# Integrated213 submitted for live learning \u201456696789"
+        },
+        {
+          "line": 1294,
+          "heading": "# Generation248 complete: Mixed SW crop programme"
+        },
+        {
+          "line": 1313,
+          "heading": "#248 exact mixed SW source actual12 running"
+        },
+        {
+          "line": 1317,
+          "heading": "#248 current leaders studied; crop architecture next"
+        },
+        {
+          "line": 1323,
+          "heading": "# Generation247 complete: Astra two-date dairy portfolio"
+        },
+        {
+          "line": 1340,
+          "heading": "#247 two-date dairy portfolio investigation"
+        },
+        {
+          "line": 1346,
+          "heading": "# Generation246 complete: Astra direct birth economic ablation"
+        },
+        {
+          "line": 1365,
+          "heading": "#246 actual12 running"
+        },
+        {
+          "line": 1369,
+          "heading": "# Post242:244 model held;245 public census;246 ablation under review"
+        },
+        {
+          "line": 1377,
+          "heading": "# Generation242 complete: Astra coupled paid-animal V1"
+        },
+        {
+          "line": 1398,
+          "heading": "# Generation240 complete: Astra public milk funding V1"
+        },
+        {
+          "line": 1415,
+          "heading": "# Generation239 complete: Fresh grouped service V1"
+        },
+        {
+          "line": 1430,
+          "heading": "# Generation238 complete: Fresh funded herd growth V2"
+        },
+        {
+          "line": 1447,
+          "heading": "# Generation237 complete: Fresh mixed startup V1"
+        },
+        {
+          "line": 1490,
+          "heading": "## Actual236 admission census correction \u2014 2026-09-29T23:32:16.137797+00:00"
+        },
+        {
+          "line": 1503,
+          "heading": "## Independent research237 active \u2014 2026-09-29T23:28:20.374803+00:00"
+        },
+        {
+          "line": 1516,
+          "heading": "# Generation236 complete: Fresh crop quota-release V2"
+        },
+        {
+          "line": 1551,
+          "heading": "# Generation235 complete: Fresh crop-only agent V1"
+        },
+        {
+          "line": 1597,
+          "heading": "## Owner-authorized fresh-agent pathway active 2026-09-29T22:59:48.456327+00:00"
+        },
+        {
+          "line": 1601,
+          "heading": "## Status and bounded pretests closed 2026-09-29T22:47:36.910312+00:00"
+        },
+        {
+          "line": 1607,
+          "heading": "## Next-production pretests after completed232"
+        },
+        {
+          "line": 1611,
+          "heading": "# Generation232 complete: Certified current-sale funding V2"
+        },
+        {
+          "line": 1628,
+          "heading": "# Generation231 complete: Correct native geometry"
+        },
+        {
+          "line": 1639,
+          "heading": "# Generation230 complete: funding proof corrected, no new wins"
+        },
+        {
+          "line": 1651,
+          "heading": "# Generation229 complete: one complete portfolio test rejected"
+        },
+        {
+          "line": 1665,
+          "heading": "# Generation228: three parallel investigations; no qualified successor"
+        },
+        {
+          "line": 1687,
+          "heading": "# User priority update228"
+        },
+        {
+          "line": 1691,
+          "heading": "# Research227 completed: service repair and one unqualified first40 recovery"
+        },
+        {
+          "line": 1715,
+          "heading": "# Urgent226 \u2014 completed bounded research; submission held"
+        },
+        {
+          "line": 1733,
+          "heading": "# Heartbeat18:00 \u2014 milk-cap audit corrected; earlier-harvest hypothesis refuted"
+        },
+        {
+          "line": 1745,
+          "heading": "# Heartbeat17:00 \u2014 value guard passes nine but fails broader45"
+        },
+        {
+          "line": 1763,
+          "heading": "# Heartbeat16:30 \u2014 adaptive service owners diagnosed; blanket reservation rejected"
+        },
+        {
+          "line": 1779,
+          "heading": "# Heartbeat15:59 \u2014 wool pressure-sale cause verified; service regressions still block promotion"
+        },
+        {
+          "line": 1797,
+          "heading": "# Heartbeat 15:29 \u2014 early wheat production rejected after losing a protected win"
+        },
+        {
+          "line": 1813,
+          "heading": "# Heartbeat 14:59 \u2014 early delivery tested; adaptive feeding blocks promotion"
+        },
+        {
+          "line": 1835,
+          "heading": "# Heartbeat 14:29 \u2014 dusk purchase capacity repair, no new wins"
+        },
+        {
+          "line": 1851,
+          "heading": "## Heartbeat13:59 completed \u2014 2026-09-29T14:17:31.645167+00:00"
+        },
+        {
+          "line": 1867,
+          "heading": "## Heartbeat13:29 completed \u2014 2026-09-29T13:46:10.145737+00:00"
+        },
+        {
+          "line": 1883,
+          "heading": "## Heartbeat12:59 completed \u2014 2026-09-29T13:17:47.190598+00:00"
+        },
+        {
+          "line": 1903,
+          "heading": "## Heartbeat12:29 completed \u2014 2026-09-29T12:49:38.630085+00:00"
+        },
+        {
+          "line": 1917,
+          "heading": "## Heartbeat11:59 completed \u2014 2026-09-29T12:15:52.532380+00:00"
+        },
+        {
+          "line": 1935,
+          "heading": "## Heartbeat11:29 completed \u2014 2026-09-29T11:45:00.345612+00:00"
+        },
+        {
+          "line": 1947,
+          "heading": "## Heartbeat10:59 completed \u2014 2026-09-29T11:24:37.791251+00:00"
+        },
+        {
+          "line": 1963,
+          "heading": "## Heartbeat10:29 completed \u2014 2026-09-29T10:45:35.678986+00:00"
+        },
+        {
+          "line": 1977,
+          "heading": "## Heartbeat09:59 completed \u2014 2026-09-29T10:16:15.384489+00:00"
+        },
+        {
+          "line": 2000,
+          "heading": "## Heartbeat09:29 completed \u2014 2026-09-29T09:41:55.875834+00:00"
+        },
+        {
+          "line": 2016,
+          "heading": "## Heartbeat08:59 completed \u2014 2026-09-29T09:08:53.033186+00:00"
+        },
+        {
+          "line": 2032,
+          "heading": "## Heartbeat08:29 completed \u2014 2026-09-29T08:42:27.372594+00:00"
+        },
+        {
+          "line": 2048,
+          "heading": "## Heartbeat07:59 completed \u2014 2026-09-29T08:16:33.836358+00:00"
+        },
+        {
+          "line": 2062,
+          "heading": "## Heartbeat07:29 completed \u2014 2026-09-29T07:42:10.196411+00:00"
+        },
+        {
+          "line": 2078,
+          "heading": "## Heartbeat06:59 completed \u2014 2026-09-29T07:23:36.827371+00:00"
+        },
+        {
+          "line": 2097,
+          "heading": "## Heartbeat204 broader validation ACTIVE"
+        },
+        {
+          "line": 2101,
+          "heading": "## Heartbeat204 funding repair ACTIVE"
+        },
+        {
+          "line": 2105,
+          "heading": "## Heartbeat204 updated \u2014 2026-09-29T07:08:36.030988+00:00"
+        },
+        {
+          "line": 2109,
+          "heading": "## Heartbeat204 active \u2014 2026-09-29T07:03:55.135794+00:00"
+        },
+        {
+          "line": 2113,
+          "heading": "## Heartbeat06:29 completed \u2014 2026-09-29T06:44:42.665194+00:00"
+        },
+        {
+          "line": 2126,
+          "heading": "## Heartbeat203 active \u2014 2026-09-29T06:33:45.319076+00:00"
+        },
+        {
+          "line": 2130,
+          "heading": "## Continuation202 completed \u2014 2026-09-29T06:28:42.194820+00:00"
+        },
+        {
+          "line": 2145,
+          "heading": "## Continuation202 active \u2014 2026-09-29T06:14:39.284693+00:00"
+        },
+        {
+          "line": 2149,
+          "heading": "## Heartbeat05:48 completed \u2014 2026-09-29T06:07:15.761692+00:00"
+        },
+        {
+          "line": 2159,
+          "heading": "## Heartbeat05:18 completed \u2014 2026-09-29T05:34:09.853428+00:00"
+        },
+        {
+          "line": 2172,
+          "heading": "## Heartbeat04:48 completed \u2014 2026-09-29T05:09:15.547503+00:00"
+        },
+        {
+          "line": 2182,
+          "heading": "## Heartbeat04:18 completed \u2014 2026-09-29T04:41:17.411681+00:00"
+        },
+        {
+          "line": 2190,
+          "heading": "## Heartbeat03:48 completed \u2014 2026-09-29T04:10:48.435027+00:00"
+        },
+        {
+          "line": 2200,
+          "heading": "## Completed continuation196 \u2014 2026-09-29T03:47:30.484867+00:00"
+        },
+        {
+          "line": 2210,
+          "heading": "## September29 continuation \u2014 three additional recorded recoveries (2026-09-29T03:28:31.318366+00:00)"
+        },
+        {
+          "line": 2220,
+          "heading": "# Autonomous research checkpoint \u2014 September29 UTC / September28 Pacific"
+        },
+        {
+          "line": 2226,
+          "heading": "## Latest direct request: target the other18 \u2014 September29 02:54UTC"
+        },
+        {
+          "line": 2237,
+          "heading": "## Latest heartbeat02:31 \u2014 completed, no new recovery"
+        },
+        {
+          "line": 2245,
+          "heading": "## Initial completed evidence (292-game cycle)"
+        },
+        {
+          "line": 2255,
+          "heading": "## Execution and apparent-stall investigation"
+        },
+        {
+          "line": 2265,
+          "heading": "## Next useful work"
+        },
+        {
+          "line": 2274,
+          "heading": "## Running a bounded experiment"
+        },
+        {
+          "line": 2278,
+          "heading": "## Durable boundaries"
+        },
+        {
+          "line": 2282,
+          "heading": "## Post242 benchmark diagnostics for next source"
+        }
+      ]
+    },
+    {
+      "path": "evaluation/first40_autoresearch_20260928/USER_TARGET202.json",
+      "sha256": "a92b14cbb8908a8452d356c2d0c6ca7bd2aaa1089f5803d47c0c7a87e1b5383f",
+      "bytes": 373,
+      "lines": 5,
+      "main_relevance": "Later strict30000 winning-margin and zero-loss chronological milestone goals.",
+      "historical_current_distinction": "Goal statement separate from final relaxed authorization to submit small measured gains.",
+      "article_omission_or_correction": "Article correctly states goals remain unmet.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": []
+    },
+    {
+      "path": "evaluation/first40_autoresearch_20260928/acceptance_before202_target.json",
+      "sha256": "53a7ad1b57521e48846e8a757390c84571a1c61e445e9f8af910c8c7ef469430",
+      "bytes": 1813,
+      "lines": 20,
+      "main_relevance": "Preserved previous first40/60/80 and live-rating acceptance contract.",
+      "historical_current_distinction": "Explicit pre202 preimage, not current final acceptance; root acceptance.json absent.",
+      "article_omission_or_correction": "Do not cite this historical contract as latest submission gate.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": []
+    },
+    {
+      "path": "evaluation/first40_autoresearch_20260928/generation_progress_ledger.json",
+      "sha256": "c5afcdfa6dc6d1f382e7d46b15f2955dd1d8e1831cc94b42b262ae9c990124f5",
+      "bytes": 13657364,
+      "lines": 356432,
+      "main_relevance": "127 structured generation records, final397 binds177executions and submitted/hosted-pending status.",
+      "historical_current_distinction": "Final dated ledger authoritative at savedcutoff; per-entry cohorts not combinable learning curve.",
+      "article_omission_or_correction": "Article final counts agree.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": []
+    },
+    {
+      "path": "evaluation/first40_autoresearch_20260928/submission_final_20260930/final_qualification.json",
+      "sha256": "d8c272d1f97369b5df8a24726374310ccb515f78d22d4ed01cf1c8fedbb53704",
+      "bytes": 172035,
+      "lines": 1002,
+      "main_relevance": "Exact final397 source, paired cohorts, archive parity repeat, fresh responsive, known runtime regression and peer exception.",
+      "historical_current_distinction": "Final397 qualification artifact; source-specific and local, not future livevalidation.",
+      "article_omission_or_correction": "Article correctly retains peer runtime and archive mismatch limitations.",
+      "inspection_scope": "Full-file text/structure scan with focused reading of rules, gate amendments, headings, corrections and relevant dated checkpoints; no historical policy runs reexecuted.",
+      "section_index": []
+    }
+  ],
+  "actionable_findings": [
+    {
+      "priority": "correction",
+      "topic": "Travel is worker time, not an independent cash debit",
+      "article_locator": "From a crop loop to a competitive farm, first paragraph",
+      "current_text": "Winning means finishing with more banked cash after inputs, feed, wages and travel have been paid for.",
+      "suggested_text": "Winning means finishing with more banked cash after inputs, feed and wages; travel consumes the worker time needed to produce and deliver it.",
+      "evidence": [
+        "README.md:209\u2013217",
+        "README.md:319\u2013333"
+      ],
+      "reason": "Movement action spends a turn. There is no direct movement-price charge in these rules."
+    },
+    {
+      "priority": "material_addition",
+      "topic": "The evaluator itself was an evolving research instrument",
+      "article_locator": "How the loop was designed, after three evidence types or in technical appendix",
+      "suggested_text": "The opponent models needed validation too. Early reconstructions copied an elite farm composition onto our own executor, which could make local matchups misleading. Later amendments compared reconstructed models with public executable policies and separated market-price feedback from genuine replay-model error. Those were historical instrument changes, not evidence that one benchmark was permanently authoritative.",
+      "evidence": [
+        "docs/generations/gen11.md:36\u201346",
+        "program.md:230\u2013286",
+        "program.md:334\u2013416"
+      ],
+      "reason": "Current prose covers source freezing and three test categories but omits documented major changes to calibration/promotion instruments. Do not copy old model-derived Elo estimates as achieved live results."
+    },
+    {
+      "priority": "optional_appendix",
+      "topic": "Corrected economic upper bound",
+      "suggested_text": "A documented LP ceiling also needed correction: season-billed labor overstated the champion-configuration bound; time-indexing daily wages lowered it. This was a corrected model claim, not achieved revenue or an independently verified universal ceiling.",
+      "evidence": [
+        "docs/LEARNINGS.md:123\u2013145"
+      ],
+      "reason": "Good concise example of checking the research model itself; avoid adding all historical numerical checkpoints."
+    }
+  ],
+  "not_missing_or_not_current": [
+    "Final397 status correctly remains accepted with hostedvalidation unconfirmed atcutoff.",
+    "Final133/177coverage and two60casecohort numbers agree with finalSTATE/ledger.",
+    "Earlier2500floors, live3500/4000targets, remotecompute and fivehour rules are dated history, not silently imposed as unchanged finalcontract.",
+    "No single pristine originalprogram file was invented; program.md exists and includes dated amendments.",
+    "No rootacceptance.json presently exists; preservedacceptance_before202_target.json is historical; finalqualification is authoritative for397."
+  ],
+  "final_article_after_review": {
+    "path": "evaluation/blog_draft_20260930/site/article.md",
+    "sha256": "042d46b94fcfcae1fba47667737b03c7b7a1043ed84a547f61821637026f9520",
+    "applied_findings": [
+      "Travel consumes worker time; no direct cash travel charge",
+      "Added opponent-model calibration and corrected labor-bound context",
+      "Added complete source/evidence inventory link",
+      "Added four source-bound public replay videos with local and hosted scopes",
+      "Added optional public-state interactive replay viewer; videos moved into expandable section",
+      "Added explicit primary references and dated official COMPLETE submission scores; final competition rank remains unverified"
+    ],
+    "note": "article_snapshot retains the earlier review version; final_article_after_review records the edited delivered draft."
+  }
+}

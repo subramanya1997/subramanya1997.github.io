@@ -1,0 +1,2908 @@
+{
+  "created_utc": "2026-10-01T02:30:44.746849+00:00",
+  "scope": "Local blog video-case provenance only; all inputs are previously completed saved replays. No policies, models, engines, API calls, downloads or rendering run.",
+  "frame_convention": "steps[frame] is the state after frame\u22121 callback. Executed action is stored at frame=callback+1. Do not shift action captions by one. Engine days are zero-based; frame719 is day29/hour23, not day30.",
+  "privacy_boundary": "Milestones read both public farms from the own observation. No private rival shed/carried state is used or exported.",
+  "excluded_peak_case": {
+    "episode": 97032982,
+    "reason": "No full-state replay file located in saved project file inventory. The historical_episode_scores/55616096.json contains score records, not renderable state frames. Do not fabricate peak footage.",
+    "score_only_evidence": {
+      "path": "evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/55616096.json",
+      "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/lanes328/historical_episode_scores/55616096.json",
+      "sha256": "0e00e326e5e0dc3ffa25ccdb1658c0fbcfb83206fb120f0dff28a605ec37e3c5"
+    }
+  },
+  "cases": [
+    {
+      "replay": {
+        "path": "evaluation/research859_20260918/parent_failure/repair_screen9/109850570/replay.json.gz",
+        "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/research859_20260918/parent_failure/repair_screen9/109850570/replay.json.gz",
+        "sha256": "a1bfa5e4d10b8d0f092b5bbc685440d0cb12d3794a96e60b6eb0a5d2e868f4e8"
+      },
+      "replay_container_keys": [
+        "id",
+        "name",
+        "title",
+        "description",
+        "version",
+        "module_version",
+        "configuration",
+        "specification",
+        "steps",
+        "rewards",
+        "statuses",
+        "schema_version",
+        "info"
+      ],
+      "complete_frames": 720,
+      "applied_callbacks": 719,
+      "terminal_statuses": [
+        "DONE",
+        "DONE"
+      ],
+      "own_seat": 1,
+      "own_cash": 67293.0,
+      "rival_cash": 66540.0,
+      "margin": 753.0,
+      "outcome": "WIN",
+      "milestones": [
+        {
+          "state_frame": 0,
+          "engine_day": 0,
+          "engine_hour": 0,
+          "own_cash": 3000.0,
+          "rival_cash": 3000.0,
+          "margin": 0.0,
+          "plants": {},
+          "animals": {},
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW"
+          ]
+        },
+        {
+          "state_frame": 144,
+          "engine_day": 6,
+          "engine_hour": 0,
+          "own_cash": 798.0,
+          "rival_cash": 797.0,
+          "margin": 1.0,
+          "plants": {
+            "WHEAT": 3,
+            "STRAWBERRY": 4,
+            "MELON": 12
+          },
+          "animals": {
+            "COW": 4,
+            "SHEEP": 2
+          },
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW"
+          ]
+        },
+        {
+          "state_frame": 240,
+          "engine_day": 10,
+          "engine_hour": 0,
+          "own_cash": 2045.0,
+          "rival_cash": 2157.0,
+          "margin": -112.0,
+          "plants": {
+            "WHEAT": 5,
+            "STRAWBERRY": 20,
+            "MELON": 12
+          },
+          "animals": {
+            "COW": 6,
+            "SHEEP": 5,
+            "GOOSE": 2
+          },
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW",
+            "NE"
+          ]
+        },
+        {
+          "state_frame": 456,
+          "engine_day": 19,
+          "engine_hour": 0,
+          "own_cash": 27328.0,
+          "rival_cash": 27294.0,
+          "margin": 34.0,
+          "plants": {
+            "WHEAT": 25,
+            "STRAWBERRY": 33
+          },
+          "animals": {
+            "GOOSE": 5,
+            "COW": 6,
+            "SHEEP": 6
+          },
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW",
+            "NE",
+            "SW"
+          ]
+        },
+        {
+          "state_frame": 600,
+          "engine_day": 25,
+          "engine_hour": 0,
+          "own_cash": 35277.0,
+          "rival_cash": 34982.0,
+          "margin": 295.0,
+          "plants": {
+            "WHEAT": 28,
+            "CARROT": 13,
+            "STRAWBERRY": 17
+          },
+          "animals": {
+            "GOOSE": 5,
+            "COW": 6,
+            "SHEEP": 6
+          },
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW",
+            "NE",
+            "SW"
+          ]
+        },
+        {
+          "state_frame": 696,
+          "engine_day": 29,
+          "engine_hour": 0,
+          "own_cash": 48240.0,
+          "rival_cash": 50709.0,
+          "margin": -2469.0,
+          "plants": {
+            "CARROT": 21
+          },
+          "animals": {
+            "GOOSE": 5,
+            "COW": 6,
+            "SHEEP": 6
+          },
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW",
+            "NE",
+            "SW"
+          ]
+        },
+        {
+          "state_frame": 719,
+          "engine_day": 29,
+          "engine_hour": 23,
+          "own_cash": 67293.0,
+          "rival_cash": 66540.0,
+          "margin": 753.0,
+          "plants": {},
+          "animals": {
+            "GOOSE": 5,
+            "COW": 6,
+            "SHEEP": 6
+          },
+          "paid_hands_current": 11,
+          "unlocked_quadrants": [
+            "NW",
+            "NE",
+            "SW"
+          ]
+        }
+      ],
+      "id": "859_recovery",
+      "episode": 109850570,
+      "title": "A recorded loss becomes a753-coin win",
+      "policy": "Demand859V3",
+      "submission_using_this_source": 56328407,
+      "source": {
+        "path": "generation/research859_20260918/parent_repair_visible_demand_v1/artifact",
+        "canonical_source_sha256": "08f712abccb4dcd00a6554c52db0b60749a5887bb32d2ebe1827684a421932fc",
+        "verified_files": 96,
+        "canonical_encoding": "sortedJSON compact separators"
+      },
+      "run_or_panel": "research859 parent_failure/repair_screen9",
+      "scope": "LOCAL_RECORDED_OPPONENT; not a hosted match. Historical opponent commands and shop reveals retained by evaluator.",
+      "provenance": [
+        {
+          "path": "evaluation/research859_20260918/parent_failure/review82/union82.json",
+          "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/research859_20260918/parent_failure/review82/union82.json",
+          "sha256": "68124c1a54aaf8082da2049cb1b0a43e575007a1f96b84d334306cc631bc949e"
+        },
+        {
+          "path": "evaluation/research859_20260918/parent_failure/repair_screen9/109850570/result.json",
+          "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/research859_20260918/parent_failure/repair_screen9/109850570/result.json",
+          "sha256": "6b4a538fd53b00aa2fce88e2288b0d4e8c6b5b56e9a491ac3feefc4ce703b3fe"
+        },
+        {
+          "path": "evaluation/research859_20260918/parent_failure/repair_screen9/109850570/contract.json",
+          "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/research859_20260918/parent_failure/repair_screen9/109850570/contract.json",
+          "sha256": "dcf892b6bc76601f1f98fa84136130514c54e3d17c1d0bb680c30d6eb715bc10"
+        }
+      ],
+      "paired_parent": {
+        "source": "Integrated858-V1",
+        "canonical_source_sha256": "0575f9ea5703c9c733ac3a17e7c7927611a279270b130e0e21c417b3b6089496",
+        "replay": {
+          "path": "evaluation/research858_20260917/root/integrated_v1/screen8/109850570/replay.json.gz",
+          "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/research858_20260917/root/integrated_v1/screen8/109850570/replay.json.gz",
+          "sha256": "e9f57795ac394ec926b7435dac9eee7fbdf9263f9a1b59e32202e24177bcb40f"
+        },
+        "own_cash": 66532.0,
+        "rival_cash": 66547.0,
+        "margin": -15,
+        "own_cash_change": 761,
+        "rival_cash_change": -7,
+        "margin_change": 768
+      },
+      "suggested_sequence": "Opening \u2192 day6 investment \u2192 day19 farm \u2192 last-day delivery \u2192 final753 result; optionally compare final parent\u221215.",
+      "action_examples": [
+        {
+          "policy_callback": 0,
+          "returned_action_frame": 1,
+          "engine_day": 0,
+          "engine_hour": 0,
+          "action": {
+            "farmer": [
+              "PASS"
+            ],
+            "hands": [],
+            "market": [
+              [
+                "BUY_PRODUCT",
+                "WHEAT",
+                5
+              ]
+            ]
+          }
+        },
+        {
+          "policy_callback": 143,
+          "returned_action_frame": 144,
+          "engine_day": 5,
+          "engine_hour": 23,
+          "action": {
+            "farmer": [
+              "PASS"
+            ],
+            "hands": [
+              [
+                "PASS"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "WATER"
+              ]
+            ],
+            "market": []
+          }
+        },
+        {
+          "policy_callback": 337,
+          "returned_action_frame": 338,
+          "engine_day": 14,
+          "engine_hour": 1,
+          "action": {
+            "farmer": [
+              "PASS"
+            ],
+            "hands": [
+              [
+                "NORTH"
+              ],
+              [
+                "WEST"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "PICKUP",
+                "WHEAT",
+                2
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "WEST"
+              ],
+              [
+                "WEST"
+              ],
+              [
+                "PICKUP",
+                "WHEAT",
+                2
+              ],
+              [
+                "HARVEST"
+              ]
+            ],
+            "market": [
+              [
+                "SELL",
+                "FERTILIZER",
+                7
+              ],
+              [
+                "SELL",
+                "FERTILIZER",
+                1
+              ],
+              [
+                "BUY_PRODUCT",
+                "FERTILIZER",
+                2
+              ]
+            ]
+          }
+        },
+        {
+          "policy_callback": 695,
+          "returned_action_frame": 696,
+          "engine_day": 28,
+          "engine_hour": 23,
+          "action": {
+            "farmer": [
+              "WATER"
+            ],
+            "hands": [
+              [
+                "HARVEST"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "DROP"
+              ],
+              [
+                "CARE"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "DROP"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "COLLECT_FERTILIZER"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ]
+            ],
+            "market": [
+              [
+                "SELL",
+                "FERTILIZER",
+                1000
+              ],
+              [
+                "SELL",
+                "WHEAT",
+                1000
+              ],
+              [
+                "SELL",
+                "EGG",
+                1000
+              ]
+            ]
+          }
+        },
+        {
+          "policy_callback": 711,
+          "returned_action_frame": 712,
+          "engine_day": 29,
+          "engine_hour": 15,
+          "action": {
+            "farmer": [
+              "DROP"
+            ],
+            "hands": [
+              [
+                "WEST"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "CARE"
+              ],
+              [
+                "CARE"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "DROP"
+              ]
+            ],
+            "market": [
+              [
+                "SELL",
+                "CARROT",
+                2
+              ],
+              [
+                "SELL",
+                "WOOL",
+                5
+              ],
+              [
+                "SELL",
+                "MILK",
+                1
+              ],
+              [
+                "SELL",
+                "EGG",
+                4
+              ],
+              [
+                "SELL",
+                "FERTILIZER",
+                1
+              ],
+              [
+                "SELL",
+                "WHEAT",
+                2
+              ],
+              [
+                "SELL",
+                "CARROT",
+                8
+              ]
+            ]
+          }
+        },
+        {
+          "policy_callback": 717,
+          "returned_action_frame": 718,
+          "engine_day": 29,
+          "engine_hour": 21,
+          "action": {
+            "farmer": [
+              "PLACE",
+              "EGG",
+              4
+            ],
+            "hands": [
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ]
+            ],
+            "market": [
+              [
+                "SELL",
+                "MILK",
+                1000
+              ],
+              [
+                "SELL",
+                "WHEAT",
+                1000
+              ],
+              [
+                "SELL",
+                "CARROT",
+                1000
+              ],
+              [
+                "SELL",
+                "TOMATO",
+                1000
+              ],
+              [
+                "SELL",
+                "STRAWBERRY",
+                1000
+              ],
+              [
+                "SELL",
+                "MELON",
+                1000
+              ],
+              [
+                "SELL",
+                "EGG",
+                1000
+              ],
+              [
+                "SELL",
+                "WOOL",
+                1000
+              ],
+              [
+                "SELL",
+                "FERTILIZER",
+                1000
+              ]
+            ]
+          }
+        }
+      ],
+      "narration_limit": "The whole exact859 programme recovers this recorded case. Isolated changed commands are examples, not standalone profit attribution.",
+      "saved_review_utc": "2026-09-18T10:14:19.200660+00:00"
+    },
+    {
+      "replay": {
+        "path": "claude/nine/out/research397_fastretire_full133_k3_dump/114937659.json.gz",
+        "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/claude/nine/out/research397_fastretire_full133_k3_dump/114937659.json.gz",
+        "sha256": "5af186dce3ab6df0d2b4c2f88c2246cc1e2c62c2f467f87621fe05616d00b1ae"
+      },
+      "replay_container_keys": [
+        "steps",
+        "seat"
+      ],
+      "complete_frames": 720,
+      "applied_callbacks": 719,
+      "terminal_statuses": [
+        "DONE",
+        "DONE"
+      ],
+      "own_seat": 1,
+      "own_cash": 107511.0,
+      "rival_cash": 107270.0,
+      "margin": 241.0,
+      "outcome": "WIN",
+      "milestones": [
+        {
+          "state_frame": 0,
+          "engine_day": 0,
+          "engine_hour": 0,
+          "own_cash": 3000.0,
+          "rival_cash": 3000.0,
+          "margin": 0.0,
+          "plants": {},
+          "animals": {},
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW"
+          ]
+        },
+        {
+          "state_frame": 144,
+          "engine_day": 6,
+          "engine_hour": 0,
+          "own_cash": 799.0,
+          "rival_cash": 884.0,
+          "margin": -85.0,
+          "plants": {
+            "WHEAT": 3,
+            "STRAWBERRY": 4,
+            "MELON": 12
+          },
+          "animals": {
+            "COW": 4,
+            "SHEEP": 2
+          },
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW"
+          ]
+        },
+        {
+          "state_frame": 240,
+          "engine_day": 10,
+          "engine_hour": 0,
+          "own_cash": 3450.0,
+          "rival_cash": 3459.0,
+          "margin": -9.0,
+          "plants": {
+            "WHEAT": 5,
+            "STRAWBERRY": 20,
+            "MELON": 12
+          },
+          "animals": {
+            "COW": 6,
+            "SHEEP": 7
+          },
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW",
+            "NE"
+          ]
+        },
+        {
+          "state_frame": 456,
+          "engine_day": 19,
+          "engine_hour": 0,
+          "own_cash": 48767.0,
+          "rival_cash": 50232.0,
+          "margin": -1465.0,
+          "plants": {
+            "WHEAT": 25,
+            "STRAWBERRY": 33
+          },
+          "animals": {
+            "SHEEP": 11,
+            "COW": 6
+          },
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW",
+            "NE",
+            "SW"
+          ]
+        },
+        {
+          "state_frame": 600,
+          "engine_day": 25,
+          "engine_hour": 0,
+          "own_cash": 82760.0,
+          "rival_cash": 82235.0,
+          "margin": 525.0,
+          "plants": {
+            "WHEAT": 30,
+            "CARROT": 11,
+            "STRAWBERRY": 17
+          },
+          "animals": {
+            "SHEEP": 11,
+            "COW": 6
+          },
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW",
+            "NE",
+            "SW"
+          ]
+        },
+        {
+          "state_frame": 696,
+          "engine_day": 29,
+          "engine_hour": 0,
+          "own_cash": 99729.0,
+          "rival_cash": 96799.0,
+          "margin": 2930.0,
+          "plants": {
+            "CARROT": 21
+          },
+          "animals": {
+            "SHEEP": 11,
+            "COW": 6
+          },
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW",
+            "NE",
+            "SW"
+          ]
+        },
+        {
+          "state_frame": 719,
+          "engine_day": 29,
+          "engine_hour": 23,
+          "own_cash": 107511.0,
+          "rival_cash": 107270.0,
+          "margin": 241.0,
+          "plants": {},
+          "animals": {
+            "SHEEP": 11,
+            "COW": 6
+          },
+          "paid_hands_current": 11,
+          "unlocked_quadrants": [
+            "NW",
+            "NE",
+            "SW"
+          ]
+        }
+      ],
+      "id": "397_narrow_preserved_win",
+      "episode": 114937659,
+      "title": "A last-day fertilizer tour; narrow win retained",
+      "policy": "FastRetire397",
+      "submission_using_this_source": 56722213,
+      "source": {
+        "path": "generation/first40_autoresearch_20260928/fast_retire397_astra",
+        "canonical_source_sha256": "362ac5c7ec764f345c222d388a47d41349d786fe2e118fe1fe41a0673918972e",
+        "verified_files": 142,
+        "canonical_encoding": "sortedJSON default separators"
+      },
+      "run_or_panel": "research397_fastretire_full133_k3",
+      "scope": "LOCAL_RECORDED_OPPONENT; not the final hosted submission playing this game.",
+      "provenance": [
+        {
+          "path": "evaluation/first40_autoresearch_20260928/research397_fastretire_full133_k3_review.json",
+          "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/research397_fastretire_full133_k3_review.json",
+          "sha256": "93df3cdd63854ab6be65e0367649b84cc6ec276d0ffaa5447dd5cb65095237ff"
+        },
+        {
+          "path": "evaluation/first40_autoresearch_20260928/RESEARCH397.json",
+          "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/RESEARCH397.json",
+          "sha256": "268ec3172f6806fff95f24dd9986b5b2ae12153de6a98966dc042abf5e7d5645"
+        }
+      ],
+      "paired_parent": {
+        "policy": "Margin361",
+        "source_sha256": "f6b6e081f9c9a0fb509186b424251c2593051d78bc5bc6a58d6de93e44a6f94f",
+        "replay": {
+          "path": "claude/nine/out/research362_margin361_full120_k3_dump/114937659.json.gz",
+          "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/claude/nine/out/research362_margin361_full120_k3_dump/114937659.json.gz",
+          "sha256": "fa2a5132aa652d0ddd1ba08316da35f36b1ad76bd5b3dcb06b378e4ee0f20587"
+        },
+        "own_cash": 107434.0,
+        "rival_cash": 107278.0,
+        "margin": 156,
+        "own_cash_change": 77,
+        "rival_cash_change": -8,
+        "margin_change": 85
+      },
+      "suggested_sequence": "Day6 and19 farm snapshots \u2192 day29(callbacks696\u2013718) paid fertilizer/crop tour \u2192 final241 versus parent156.",
+      "action_examples": [
+        {
+          "policy_callback": 698,
+          "returned_action_frame": 699,
+          "engine_day": 29,
+          "engine_hour": 2,
+          "action": {
+            "farmer": [
+              "SOUTH"
+            ],
+            "hands": [
+              [
+                "NORTH"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "WEST"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "WEST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "PICKUP",
+                "FERTILIZER",
+                2
+              ]
+            ],
+            "market": [
+              [
+                "SELL",
+                "FERTILIZER",
+                11
+              ]
+            ]
+          }
+        },
+        {
+          "policy_callback": 702,
+          "returned_action_frame": 703,
+          "engine_day": 29,
+          "engine_hour": 6,
+          "action": {
+            "farmer": [
+              "SOUTH"
+            ],
+            "hands": [
+              [
+                "HARVEST"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "WEST"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "FERTILIZE"
+              ]
+            ],
+            "market": []
+          }
+        },
+        {
+          "policy_callback": 703,
+          "returned_action_frame": 704,
+          "engine_day": 29,
+          "engine_hour": 7,
+          "action": {
+            "farmer": [
+              "SOUTH"
+            ],
+            "hands": [
+              [
+                "SOUTH"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "EAST"
+              ]
+            ],
+            "market": []
+          }
+        },
+        {
+          "policy_callback": 704,
+          "returned_action_frame": 705,
+          "engine_day": 29,
+          "engine_hour": 8,
+          "action": {
+            "farmer": [
+              "WATER"
+            ],
+            "hands": [
+              [
+                "EAST"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "FERTILIZE"
+              ]
+            ],
+            "market": [
+              [
+                "BUY_PRODUCT",
+                "WHEAT",
+                47
+              ]
+            ]
+          }
+        },
+        {
+          "policy_callback": 705,
+          "returned_action_frame": 706,
+          "engine_day": 29,
+          "engine_hour": 9,
+          "action": {
+            "farmer": [
+              "HARVEST"
+            ],
+            "hands": [
+              [
+                "WATER"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "WATER"
+              ]
+            ],
+            "market": [
+              [
+                "SELL",
+                "WHEAT",
+                2
+              ],
+              [
+                "SELL",
+                "WHEAT",
+                47
+              ]
+            ]
+          }
+        },
+        {
+          "policy_callback": 706,
+          "returned_action_frame": 707,
+          "engine_day": 29,
+          "engine_hour": 10,
+          "action": {
+            "farmer": [
+              "NORTH"
+            ],
+            "hands": [
+              [
+                "HARVEST"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "DROP"
+              ],
+              [
+                "HARVEST"
+              ]
+            ],
+            "market": [
+              [
+                "SELL",
+                "CARROT",
+                3
+              ]
+            ]
+          }
+        },
+        {
+          "policy_callback": 711,
+          "returned_action_frame": 712,
+          "engine_day": 29,
+          "engine_hour": 15,
+          "action": {
+            "farmer": [
+              "DROP"
+            ],
+            "hands": [
+              [
+                "WEST"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "CARE"
+              ],
+              [
+                "CARE"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "DROP"
+              ]
+            ],
+            "market": [
+              [
+                "SELL",
+                "CARROT",
+                2
+              ],
+              [
+                "SELL",
+                "CARROT",
+                8
+              ],
+              [
+                "SELL",
+                "WOOL",
+                5
+              ],
+              [
+                "SELL",
+                "EGG",
+                4
+              ],
+              [
+                "SELL",
+                "FERTILIZER",
+                1
+              ],
+              [
+                "SELL",
+                "WHEAT",
+                2
+              ]
+            ]
+          }
+        }
+      ],
+      "paired_action_examples": [
+        {
+          "policy_callback": 698,
+          "returned_action_frame": 699,
+          "before": {
+            "farmer": [
+              "SOUTH"
+            ],
+            "hands": [
+              [
+                "NORTH"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "WEST"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "WEST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "EAST"
+              ]
+            ],
+            "market": [
+              [
+                "SELL",
+                "FERTILIZER",
+                11
+              ]
+            ]
+          },
+          "after": {
+            "farmer": [
+              "SOUTH"
+            ],
+            "hands": [
+              [
+                "NORTH"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "WEST"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "WEST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "PICKUP",
+                "FERTILIZER",
+                2
+              ]
+            ],
+            "market": [
+              [
+                "SELL",
+                "FERTILIZER",
+                11
+              ]
+            ]
+          }
+        },
+        {
+          "policy_callback": 702,
+          "returned_action_frame": 703,
+          "before": {
+            "farmer": [
+              "SOUTH"
+            ],
+            "hands": [
+              [
+                "HARVEST"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "WEST"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "WATER"
+              ]
+            ],
+            "market": []
+          },
+          "after": {
+            "farmer": [
+              "SOUTH"
+            ],
+            "hands": [
+              [
+                "HARVEST"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "WEST"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "FERTILIZE"
+              ]
+            ],
+            "market": []
+          }
+        },
+        {
+          "policy_callback": 703,
+          "returned_action_frame": 704,
+          "before": {
+            "farmer": [
+              "SOUTH"
+            ],
+            "hands": [
+              [
+                "SOUTH"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "HARVEST"
+              ]
+            ],
+            "market": []
+          },
+          "after": {
+            "farmer": [
+              "SOUTH"
+            ],
+            "hands": [
+              [
+                "SOUTH"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "EAST"
+              ]
+            ],
+            "market": []
+          }
+        },
+        {
+          "policy_callback": 704,
+          "returned_action_frame": 705,
+          "before": {
+            "farmer": [
+              "WATER"
+            ],
+            "hands": [
+              [
+                "EAST"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "PASS"
+              ]
+            ],
+            "market": [
+              [
+                "BUY_PRODUCT",
+                "WHEAT",
+                46
+              ]
+            ]
+          },
+          "after": {
+            "farmer": [
+              "WATER"
+            ],
+            "hands": [
+              [
+                "EAST"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "FERTILIZE"
+              ]
+            ],
+            "market": [
+              [
+                "BUY_PRODUCT",
+                "WHEAT",
+                47
+              ]
+            ]
+          }
+        },
+        {
+          "policy_callback": 705,
+          "returned_action_frame": 706,
+          "before": {
+            "farmer": [
+              "HARVEST"
+            ],
+            "hands": [
+              [
+                "WATER"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "PASS"
+              ]
+            ],
+            "market": [
+              [
+                "SELL",
+                "WHEAT",
+                2
+              ],
+              [
+                "SELL",
+                "WHEAT",
+                46
+              ]
+            ]
+          },
+          "after": {
+            "farmer": [
+              "HARVEST"
+            ],
+            "hands": [
+              [
+                "WATER"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "WATER"
+              ]
+            ],
+            "market": [
+              [
+                "SELL",
+                "WHEAT",
+                2
+              ],
+              [
+                "SELL",
+                "WHEAT",
+                47
+              ]
+            ]
+          }
+        },
+        {
+          "policy_callback": 706,
+          "returned_action_frame": 707,
+          "before": {
+            "farmer": [
+              "NORTH"
+            ],
+            "hands": [
+              [
+                "HARVEST"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "DROP"
+              ],
+              [
+                "PASS"
+              ]
+            ],
+            "market": [
+              [
+                "SELL",
+                "CARROT",
+                3
+              ]
+            ]
+          },
+          "after": {
+            "farmer": [
+              "NORTH"
+            ],
+            "hands": [
+              [
+                "HARVEST"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "DROP"
+              ],
+              [
+                "HARVEST"
+              ]
+            ],
+            "market": [
+              [
+                "SELL",
+                "CARROT",
+                3
+              ]
+            ]
+          }
+        },
+        {
+          "policy_callback": 711,
+          "returned_action_frame": 712,
+          "before": {
+            "farmer": [
+              "DROP"
+            ],
+            "hands": [
+              [
+                "WEST"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "CARE"
+              ],
+              [
+                "CARE"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "DROP"
+              ]
+            ],
+            "market": [
+              [
+                "SELL",
+                "CARROT",
+                2
+              ],
+              [
+                "SELL",
+                "CARROT",
+                7
+              ],
+              [
+                "SELL",
+                "WOOL",
+                5
+              ],
+              [
+                "SELL",
+                "EGG",
+                4
+              ],
+              [
+                "SELL",
+                "FERTILIZER",
+                1
+              ],
+              [
+                "SELL",
+                "WHEAT",
+                2
+              ]
+            ]
+          },
+          "after": {
+            "farmer": [
+              "DROP"
+            ],
+            "hands": [
+              [
+                "WEST"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "CARE"
+              ],
+              [
+                "CARE"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "DROP"
+              ]
+            ],
+            "market": [
+              [
+                "SELL",
+                "CARROT",
+                2
+              ],
+              [
+                "SELL",
+                "CARROT",
+                8
+              ],
+              [
+                "SELL",
+                "WOOL",
+                5
+              ],
+              [
+                "SELL",
+                "EGG",
+                4
+              ],
+              [
+                "SELL",
+                "FERTILIZER",
+                1
+              ],
+              [
+                "SELL",
+                "WHEAT",
+                2
+              ]
+            ]
+          }
+        }
+      ],
+      "narration_limit": "Preserves an existing win; this is not a new recovery. End-result+77own/+85margin belongs to the fullprogramme, including changed speculativeW trades.",
+      "saved_source_closure_utc": "2026-09-30T23:53:40.219021+00:00"
+    },
+    {
+      "replay": {
+        "path": "claude/nine/out/research397_fastretire_full133_k3_dump/114705593.json.gz",
+        "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/claude/nine/out/research397_fastretire_full133_k3_dump/114705593.json.gz",
+        "sha256": "af1bfd4cb5cb8fdfef64ea52c93708d150ec3d8c9e7863b28225ef2c98600f18"
+      },
+      "replay_container_keys": [
+        "steps",
+        "seat"
+      ],
+      "complete_frames": 720,
+      "applied_callbacks": 719,
+      "terminal_statuses": [
+        "DONE",
+        "DONE"
+      ],
+      "own_seat": 1,
+      "own_cash": 106486.0,
+      "rival_cash": 106440.0,
+      "margin": 46.0,
+      "outcome": "WIN",
+      "milestones": [
+        {
+          "state_frame": 0,
+          "engine_day": 0,
+          "engine_hour": 0,
+          "own_cash": 3000.0,
+          "rival_cash": 3000.0,
+          "margin": 0.0,
+          "plants": {},
+          "animals": {},
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW"
+          ]
+        },
+        {
+          "state_frame": 144,
+          "engine_day": 6,
+          "engine_hour": 0,
+          "own_cash": 704.0,
+          "rival_cash": 1030.0,
+          "margin": -326.0,
+          "plants": {
+            "WHEAT": 2,
+            "STRAWBERRY": 4,
+            "MELON": 13
+          },
+          "animals": {
+            "COW": 4,
+            "SHEEP": 2
+          },
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW"
+          ]
+        },
+        {
+          "state_frame": 240,
+          "engine_day": 10,
+          "engine_hour": 0,
+          "own_cash": 2543.0,
+          "rival_cash": 6329.0,
+          "margin": -3786.0,
+          "plants": {
+            "WHEAT": 4,
+            "STRAWBERRY": 20,
+            "MELON": 13
+          },
+          "animals": {
+            "COW": 5,
+            "GOOSE": 3,
+            "SHEEP": 5
+          },
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW",
+            "NE"
+          ]
+        },
+        {
+          "state_frame": 456,
+          "engine_day": 19,
+          "engine_hour": 0,
+          "own_cash": 47998.0,
+          "rival_cash": 37953.0,
+          "margin": 10045.0,
+          "plants": {
+            "WHEAT": 25,
+            "STRAWBERRY": 33
+          },
+          "animals": {
+            "GOOSE": 6,
+            "COW": 5,
+            "SHEEP": 6
+          },
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW",
+            "NE",
+            "SW"
+          ]
+        },
+        {
+          "state_frame": 600,
+          "engine_day": 25,
+          "engine_hour": 0,
+          "own_cash": 79421.0,
+          "rival_cash": 75313.0,
+          "margin": 4108.0,
+          "plants": {
+            "WHEAT": 37,
+            "CARROT": 4,
+            "STRAWBERRY": 17
+          },
+          "animals": {
+            "GOOSE": 6,
+            "COW": 5,
+            "SHEEP": 6
+          },
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW",
+            "NE",
+            "SW"
+          ]
+        },
+        {
+          "state_frame": 696,
+          "engine_day": 29,
+          "engine_hour": 0,
+          "own_cash": 99097.0,
+          "rival_cash": 95204.0,
+          "margin": 3893.0,
+          "plants": {
+            "CARROT": 12,
+            "WHEAT": 9
+          },
+          "animals": {
+            "GOOSE": 6,
+            "COW": 5,
+            "SHEEP": 6
+          },
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW",
+            "NE",
+            "SW"
+          ]
+        },
+        {
+          "state_frame": 719,
+          "engine_day": 29,
+          "engine_hour": 23,
+          "own_cash": 106486.0,
+          "rival_cash": 106440.0,
+          "margin": 46.0,
+          "plants": {},
+          "animals": {
+            "GOOSE": 6,
+            "COW": 5,
+            "SHEEP": 6
+          },
+          "paid_hands_current": 11,
+          "unlocked_quadrants": [
+            "NW",
+            "NE",
+            "SW"
+          ]
+        }
+      ],
+      "id": "397_fragile46_win",
+      "episode": 114705593,
+      "title": "A46-coin win survives the final changes",
+      "policy": "FastRetire397",
+      "submission_using_this_source": 56722213,
+      "source": {
+        "path": "generation/first40_autoresearch_20260928/fast_retire397_astra",
+        "canonical_source_sha256": "362ac5c7ec764f345c222d388a47d41349d786fe2e118fe1fe41a0673918972e",
+        "verified_files": 142,
+        "canonical_encoding": "sortedJSON default separators"
+      },
+      "run_or_panel": "research397_fastretire_full133_k3",
+      "scope": "LOCAL_RECORDED_OPPONENT; not a hosted final397game.",
+      "provenance": [
+        {
+          "path": "evaluation/first40_autoresearch_20260928/research397_fastretire_full133_k3_review.json",
+          "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/research397_fastretire_full133_k3_review.json",
+          "sha256": "93df3cdd63854ab6be65e0367649b84cc6ec276d0ffaa5447dd5cb65095237ff"
+        },
+        {
+          "path": "evaluation/first40_autoresearch_20260928/RESEARCH397.json",
+          "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/RESEARCH397.json",
+          "sha256": "268ec3172f6806fff95f24dd9986b5b2ae12153de6a98966dc042abf5e7d5645"
+        }
+      ],
+      "paired_parent": {
+        "policy": "Margin361",
+        "source_sha256": "f6b6e081f9c9a0fb509186b424251c2593051d78bc5bc6a58d6de93e44a6f94f",
+        "run": "research361_margin_all63loss_controls65_k3",
+        "margin": 46,
+        "own_cash_change": 0.0,
+        "margin_change": 0.0
+      },
+      "suggested_sequence": "Farm expansion \u2192 day19competition \u2192 final-day outputreturn \u2192106486versus106440.",
+      "action_examples": [
+        {
+          "policy_callback": 143,
+          "returned_action_frame": 144,
+          "engine_day": 5,
+          "engine_hour": 23,
+          "action": {
+            "farmer": [
+              "PASS"
+            ],
+            "hands": [
+              [
+                "PASS"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "WATER"
+              ]
+            ],
+            "market": []
+          }
+        },
+        {
+          "policy_callback": 455,
+          "returned_action_frame": 456,
+          "engine_day": 18,
+          "engine_hour": 23,
+          "action": {
+            "farmer": [
+              "HARVEST"
+            ],
+            "hands": [
+              [
+                "WATER"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "COLLECT_FERTILIZER"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "WATER"
+              ]
+            ],
+            "market": [
+              [
+                "SELL",
+                "STRAWBERRY",
+                2
+              ],
+              [
+                "SELL",
+                "FERTILIZER",
+                6
+              ],
+              [
+                "SELL",
+                "WOOL",
+                0
+              ],
+              [
+                "SELL",
+                "WHEAT",
+                4
+              ]
+            ]
+          }
+        },
+        {
+          "policy_callback": 695,
+          "returned_action_frame": 696,
+          "engine_day": 28,
+          "engine_hour": 23,
+          "action": {
+            "farmer": [
+              "WATER"
+            ],
+            "hands": [
+              [
+                "HARVEST"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "DROP"
+              ],
+              [
+                "CARE"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "DROP"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "COLLECT_FERTILIZER"
+              ]
+            ],
+            "market": [
+              [
+                "SELL",
+                "FERTILIZER",
+                1000
+              ],
+              [
+                "SELL",
+                "WHEAT",
+                1000
+              ],
+              [
+                "SELL",
+                "EGG",
+                1000
+              ]
+            ]
+          }
+        },
+        {
+          "policy_callback": 707,
+          "returned_action_frame": 708,
+          "engine_day": 29,
+          "engine_hour": 11,
+          "action": {
+            "farmer": [
+              "NORTH"
+            ],
+            "hands": [
+              [
+                "EAST"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "WEST"
+              ]
+            ],
+            "market": []
+          }
+        },
+        {
+          "policy_callback": 718,
+          "returned_action_frame": 719,
+          "engine_day": 29,
+          "engine_hour": 22,
+          "action": {
+            "farmer": [
+              "PASS"
+            ],
+            "hands": [
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "DROP"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ]
+            ],
+            "market": [
+              [
+                "SELL",
+                "CARROT",
+                3
+              ],
+              [
+                "SELL",
+                "WHEAT",
+                2
+              ]
+            ]
+          }
+        }
+      ],
+      "narration_limit": "An already-winning fragile control was preserved. No397recovery or new46coin gain is claimed.",
+      "saved_source_closure_utc": "2026-09-30T23:53:40.219021+00:00"
+    },
+    {
+      "replay": {
+        "path": "evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/episode-115999868-replay.json",
+        "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/episode-115999868-replay.json",
+        "sha256": "9fc0a1adad2e23e138609986a31e649875da4e82185421d68eae6e9cac80027e"
+      },
+      "replay_container_keys": [
+        "configuration",
+        "description",
+        "id",
+        "info",
+        "module_version",
+        "name",
+        "rewards",
+        "schema_version",
+        "specification",
+        "statuses",
+        "steps",
+        "title",
+        "version"
+      ],
+      "complete_frames": 720,
+      "applied_callbacks": 719,
+      "terminal_statuses": [
+        "DONE",
+        "DONE"
+      ],
+      "own_seat": 0,
+      "own_cash": 75156.0,
+      "rival_cash": 76382.0,
+      "margin": -1226.0,
+      "outcome": "LOSS",
+      "milestones": [
+        {
+          "state_frame": 0,
+          "engine_day": 0,
+          "engine_hour": 0,
+          "own_cash": 3000.0,
+          "rival_cash": 3000.0,
+          "margin": 0.0,
+          "plants": {},
+          "animals": {},
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW"
+          ]
+        },
+        {
+          "state_frame": 144,
+          "engine_day": 6,
+          "engine_hour": 0,
+          "own_cash": 797.0,
+          "rival_cash": 878.0,
+          "margin": -81.0,
+          "plants": {
+            "WHEAT": 3,
+            "STRAWBERRY": 4,
+            "MELON": 12
+          },
+          "animals": {
+            "COW": 4,
+            "SHEEP": 2
+          },
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW"
+          ]
+        },
+        {
+          "state_frame": 240,
+          "engine_day": 10,
+          "engine_hour": 0,
+          "own_cash": 3838.0,
+          "rival_cash": 3755.0,
+          "margin": 83.0,
+          "plants": {
+            "WHEAT": 5,
+            "STRAWBERRY": 20,
+            "MELON": 12
+          },
+          "animals": {
+            "COW": 6,
+            "SHEEP": 7
+          },
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW",
+            "NE"
+          ]
+        },
+        {
+          "state_frame": 456,
+          "engine_day": 19,
+          "engine_hour": 0,
+          "own_cash": 41732.0,
+          "rival_cash": 43219.0,
+          "margin": -1487.0,
+          "plants": {
+            "WHEAT": 24,
+            "STRAWBERRY": 33,
+            "CARROT": 1
+          },
+          "animals": {
+            "SHEEP": 11,
+            "COW": 6
+          },
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW",
+            "NE",
+            "SW"
+          ]
+        },
+        {
+          "state_frame": 600,
+          "engine_day": 25,
+          "engine_hour": 0,
+          "own_cash": 50285.0,
+          "rival_cash": 52374.0,
+          "margin": -2089.0,
+          "plants": {
+            "CARROT": 28,
+            "STRAWBERRY": 17,
+            "WHEAT": 13
+          },
+          "animals": {
+            "SHEEP": 11,
+            "COW": 6
+          },
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW",
+            "NE",
+            "SW"
+          ]
+        },
+        {
+          "state_frame": 696,
+          "engine_day": 29,
+          "engine_hour": 0,
+          "own_cash": 62377.0,
+          "rival_cash": 65053.0,
+          "margin": -2676.0,
+          "plants": {
+            "CARROT": 21
+          },
+          "animals": {
+            "SHEEP": 11,
+            "COW": 6
+          },
+          "paid_hands_current": 0,
+          "unlocked_quadrants": [
+            "NW",
+            "NE",
+            "SW"
+          ]
+        },
+        {
+          "state_frame": 719,
+          "engine_day": 29,
+          "engine_hour": 23,
+          "own_cash": 75156.0,
+          "rival_cash": 76382.0,
+          "margin": -1226.0,
+          "plants": {},
+          "animals": {
+            "SHEEP": 11,
+            "COW": 6
+          },
+          "paid_hands_current": 11,
+          "unlocked_quadrants": [
+            "NW",
+            "NE",
+            "SW"
+          ]
+        }
+      ],
+      "id": "361_live_strategic_loss",
+      "episode": 115999868,
+      "title": "A completed hosted loss, not a stalled game",
+      "policy": "Margin361",
+      "submission_using_this_source": 56719676,
+      "source": {
+        "path": "generation/first40_autoresearch_20260928/margin361_astra",
+        "canonical_source_sha256": "f6b6e081f9c9a0fb509186b424251c2593051d78bc5bc6a58d6de93e44a6f94f",
+        "verified_files": 141,
+        "canonical_encoding": "sortedJSON default separators"
+      },
+      "run_or_panel": "Hosted completed public episode115999868",
+      "scope": "ACTUAL_HOSTED_PUBLIC_REPLAY; own farm/callback logs and public opponent farm only.",
+      "episode_time_utc": "2026-09-30T22:47:45.178832700Z",
+      "provenance": [
+        {
+          "path": "evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/runtime.json",
+          "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/runtime.json",
+          "sha256": "15356a1a6ac2036b7a4f549f34e9047f8f0e346b5639d4cff4d095c93c61db49"
+        },
+        {
+          "path": "evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/episode-115999868-agent-0-logs.json",
+          "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/episode-115999868-agent-0-logs.json",
+          "sha256": "9d078d189890936a3e11c47b73ff3d2752908d6eeca8b559ba260e07395348cc"
+        },
+        {
+          "path": "evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/astra/semantic_parity394_395.json",
+          "absolute_path": "/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/astra/semantic_parity394_395.json",
+          "sha256": "6e3bd123d0131614d9f72e72cf811cb7b753295a97630c7cbf482cd506d4bd28"
+        }
+      ],
+      "runtime": {
+        "callbacks": 719,
+        "callback_seconds": 63.222255,
+        "maximum_callback": 2.784472,
+        "guard_callbacks": [],
+        "traceback_callbacks": [],
+        "terminal_status": "DONE",
+        "episode_elapsed_seconds": 200.683457
+      },
+      "suggested_sequence": "Show similar early cash \u2192 day19 opponentlead \u2192 productive late tours \u2192 terminal own75156 versus rival76382. Separate totalelapsed from owncallback time.",
+      "action_examples": [
+        {
+          "policy_callback": 0,
+          "returned_action_frame": 1,
+          "engine_day": 0,
+          "engine_hour": 0,
+          "action": {
+            "farmer": [
+              "PASS"
+            ],
+            "hands": [],
+            "market": [
+              [
+                "BUY_PRODUCT",
+                "WHEAT",
+                5
+              ]
+            ]
+          }
+        },
+        {
+          "policy_callback": 143,
+          "returned_action_frame": 144,
+          "engine_day": 5,
+          "engine_hour": 23,
+          "action": {
+            "farmer": [
+              "PASS"
+            ],
+            "hands": [
+              [
+                "PASS"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "WATER"
+              ]
+            ],
+            "market": []
+          }
+        },
+        {
+          "policy_callback": 455,
+          "returned_action_frame": 456,
+          "engine_day": 18,
+          "engine_hour": 23,
+          "action": {
+            "farmer": [
+              "FERTILIZE"
+            ],
+            "hands": [
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "COLLECT_FERTILIZER"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ]
+            ],
+            "market": []
+          }
+        },
+        {
+          "policy_callback": 695,
+          "returned_action_frame": 696,
+          "engine_day": 28,
+          "engine_hour": 23,
+          "action": {
+            "farmer": [
+              "WATER"
+            ],
+            "hands": [
+              [
+                "HARVEST"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "DROP"
+              ],
+              [
+                "CARE"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "DROP"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "COLLECT_FERTILIZER"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ]
+            ],
+            "market": [
+              [
+                "SELL",
+                "FERTILIZER",
+                1000
+              ],
+              [
+                "SELL",
+                "WHEAT",
+                1000
+              ],
+              [
+                "SELL",
+                "EGG",
+                1000
+              ]
+            ]
+          }
+        },
+        {
+          "policy_callback": 707,
+          "returned_action_frame": 708,
+          "engine_day": 29,
+          "engine_hour": 11,
+          "action": {
+            "farmer": [
+              "NORTH"
+            ],
+            "hands": [
+              [
+                "EAST"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "WATER"
+              ],
+              [
+                "SOUTH"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "HARVEST"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "EAST"
+              ],
+              [
+                "NORTH"
+              ],
+              [
+                "WEST"
+              ]
+            ],
+            "market": []
+          }
+        },
+        {
+          "policy_callback": 718,
+          "returned_action_frame": 719,
+          "engine_day": 29,
+          "engine_hour": 22,
+          "action": {
+            "farmer": [
+              "PASS"
+            ],
+            "hands": [
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "DROP"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ],
+              [
+                "PASS"
+              ]
+            ],
+            "market": [
+              [
+                "SELL",
+                "CARROT",
+                7
+              ],
+              [
+                "SELL",
+                "WOOL",
+                3
+              ]
+            ]
+          }
+        }
+      ],
+      "narration_limit": "No guard or exception appeared. Paid extra labor performed real work; this film does not establish a profitable deletion. Local397 also loses this case; do not label it fixed."
+    }
+  ],
+  "recommended_count": 4,
+  "general_limits": [
+    "Two local recorded games and one actual hosted game must retain their distinct captions.",
+    "No rejected390 recovery is presented as final397 or submitted performance.",
+    "Rendering saved states is not a new evaluated game.",
+    "A video illustrates route/economic behavior; it does not replace the paired cash, source and ordered-input audits."
+  ],
+  "metadata_correction": {
+    "note": "Milestone animal summaries corrected from the public tile animal field. The renderer already counted the raw animal fields correctly; encoded boards and all MP4s are unchanged. Original encoding case input is preserved byte-for-byte.",
+    "original_encoding_case_input": {
+      "path": "evaluation/blog_draft_20260930/site/videos/input_video_cases_frozen.json",
+      "sha256": "27d9f9855f4302af8a85fe40527c7ef52c1bc0d2e958808256ebe1fb85bbb37c"
+    },
+    "corrected_milestones": 24
+  }
+}

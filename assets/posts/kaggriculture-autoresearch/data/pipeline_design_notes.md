@@ -1,0 +1,72 @@
+# How the research pipeline evolved
+
+These notes distinguish instructions, dated reports, and executable enforcement. The root `program.md` exists: this is not a reconstructed substitute. Its current text contains both an original loop and later dated gate amendments, so it should not be presented as an untouched day-one specification. This lane inspected local files only; external Karpathy GitHub/blog verification belongs to the main writing lane. [P01]
+
+## The original experiment was deliberately small
+
+The opening contract explicitly calls this an adaptation of `karpathy/autoresearch`: ordinary Python is the research artifact, and no LLM runs inside the game policy. The loop was: read the rules and results, state one hypothesis, edit `agent.py`, evaluate against the committed champion, append a result, then keep or discard. Its initial keep rule required no errors, positive head-to-head margin, and a starter-panel score at least as good as the champion. The evaluator and seed list were declared immutable. [P01]
+
+There were ten fixed seeds and both seats. The code constructs 20 starter games **plus** 20 champion games, not just 20 total games per evaluation. It reports mean own bank against the starter separately from head-to-head margin and wins. `results.tsv` actually exists with the prescribed six columns: `iter`, `description`, `panel_score`, `h2h_margin`, `h2h_wins`, `kept`. Rejected land and labor experiments remain visible beside kept changes. A log row is an experiment record, not proof of a deployment. [P02][P04]
+
+## Parallel ideas, one promotion decision
+
+The initial multi-agent design assigned each hypothesis its own worktree. A coordinator collected code and JSON reports, rechecked promising claims, ran a round-robin against the champion, and serialized promotion. A candidate waiting behind a promotion had to be reevaluated against the newly changed champion. Distinct roles were explicit: experimenters implemented hypotheses; the coordinator decided what survived. [P01]
+
+The dated August 10 generation-one report records 21 experimenters and a seven-policy, both-seat tournament with 420 games. Treat those as claims of the archived generation report, rather than numbers independently reconstructed in this blog pass. Its useful design lesson is visible even without adopting every early conclusion: the policy with the largest standalone bank did not win the tournament. The report promoted the melon policy on wins while sheep and cow policies earned more money alone. [P03]
+
+After a generation, experimenters' findings were distilled into `docs/LEARNINGS.md` and a generation report: promoted changes, failed ideas, and contradictions. This gave later agents a written starting point. It was not gradient training, even though the document describes the generational protocol as AlphaZero-inspired. A later addendum explicitly changed the objective from the initial bank proxy toward competition wins and broader opponent evidence. [P01][P05]
+
+## Later: parallel research, serialized measurement
+
+By September 28, `bench_hold.sh` documented a different concurrency constraint: only one recorded-panel benchmark run could own the machine's shared lock at a time, because concurrent runs could change timing-sensitive outcomes. It uses FIFO tickets, removes dead waiters, and lets the queue head acquire the lock. `python_workers3.py` clamps the launched benchmark's worker argument to three. This is **one benchmark run with at most three workers**, not three simultaneous benchmark campaigns. [P06][P07]
+
+The checked launcher adds operational safeguards: reject duplicate case/seat entries, refuse to overwrite an existing result, require the complete expected panel, inspect candidate status throughout every replay, and retain launcher logs. It distinguishes a known downstream reporting failure from an incomplete or failed game. Its own output deliberately says `NOT_QUALIFIED_BY_THIS_CHECK`: successful execution is only the first gate. [P08]
+
+The final responsive runner is stricter about process isolation in a different way: one game worker runs the candidate and owns a separately identified peer process. Source bindings are verified before each game; a hash-bound root release is required; process exits and cleanup errors are retained. Research agents can still analyze and prepare isolated sources concurrently without launching uncontrolled policy jobs. [P11][P12][P13]
+
+## Three different kinds of evidence
+
+| Evaluation | What it measures | What it cannot establish |
+|---|---|---|
+| Recorded opponent panel | Candidate rerun in our historical seat, against the opponent's literal recorded actions, with historical shop reveals forced by the evaluator | How that opponent would adapt to the changed economy; a live win probability |
+| Responsive local match | Two exact policy sources react to current observations in newly predeclared worlds, with both seats covered | Broad opponent diversity, hosted timeout behavior, or future live rating |
+| Hosted live match | The submitted artifact's actual match, outcome, action stream and callback logs | A causal gain from an edit without a matched baseline |
+
+The recorded evaluator reads historical future shop draws to reconstruct the **test environment**. That is not permission for candidate policy code to read future shops. The responsive runner creates the world from its contract, strips `seed` from the callback configuration, and communicates only the current observation to the peer. These boundaries matter when explaining what information the agent actually had. [P10][P11][P13][P16]
+
+The original documentation promised exact reproducibility under fixed seeds. Later budget-sensitive search required a narrower claim: compare full semantic paths, keep timing separately, and investigate differences rather than infer determinism from matching final scores. `review_run.py` removes only `remainingOverageTime` from compared observations, then compares both players' actions and observations. Its review also reports own-cash changes, rival-cash changes, margin regressions, lost wins, and recoveries separately. [P01][P09]
+
+## From a score to a source-bound release
+
+A canonical source manifest hashes every included file, excluding Python bytecode caches, then hashes the sorted file-hash map. A filename such as “final” is not the identity of the policy. The final qualification script binds the executed source, paired baseline, extracted archive, and results to those file hashes. It verifies that summaries agree with actual rows and that every expected case and seat is represented. [P09][P14]
+
+The later gate is a chain of evidence: completed games; retained baseline wins; paired bank reconciliation for both policies and both seats; ordered daily inventory/custody checks; physical event reports; fresh responsive matches; callback runtime; and extracted-archive full-path parity. Coverage is never inherited merely because one component passed previously. A large run's explicitly identified subset is marked as derived coverage, not counted as another execution. The final code separately checks all 90 prior wins in the fixed 120-case cohort. Those counts describe this final contract, not an invariant of every earlier campaign. [P14][P15]
+
+Runtime is part of that chain. The recorded wrapper defaults to a three-times perceived policy clock, while the responsive runner records uninstrumented callback elapsed time. Neither produces a hosted wall-time guarantee. The final gate also retains a prospectively approved exception for the frozen peer's observed runtime failure; the selected candidate still has to meet its own strict bound. This is a documented scope decision, not a silently erased failure. Archive parity and the one shifted seed purchase are treated in `anomaly_notes.md`. [P08][P10][P11][P14][P15]
+
+## The knowledge base had to preserve corrections, not just victories
+
+The local notes contain a particularly useful warning about theoretical ceilings. Generation five recorded a champion-configuration LP bound of 261–270k. The generation-six addendum says that model had billed labor across the season incorrectly; a time-indexed correction lowered the documented bound to 214–229k. These are **historical model claims and their correction**, not achieved bank balances or a newly independently validated universal upper bound. The blog should emphasize the mistaken accounting assumption and the visible correction, rather than repeat the original “engine-exact” label as current truth. [P05]
+
+The pipeline's durable contribution was not an endlessly rising leaderboard. It was a way to keep failed hypotheses, exact sources, competing objectives, and deployment gates legible. The initial single-file loop expanded into frozen artifacts and source-specific checkpoints because interacting production, prices, labor, and timing made “the average got better” insufficient. The companion anomaly notes give the concrete narrow-panel collapse, aggregate-positive lost wins, runtime repair, archive mismatch, and unresolved strategic-loss examples.
+
+## Evidence index
+
+All hashes below were computed during this read-only documentation pass. Line ranges refer to the current local snapshot; links are local, not public URLs.
+
+- **P01** — [program.md](/Users/subramanya/Desktop/projects/Kaggriculture/program.md); locator `1–166; 168–215`; SHA-256 `dddd10a63efa5cc359e2a5bd0a846e59c75e1f6e66ed2cbe35882c618a766ea8`. Original loop, parallel roles, later keep-rule appendices.
+- **P02** — [results.tsv](/Users/subramanya/Desktop/projects/Kaggriculture/results.tsv); locator `1–27`; SHA-256 `73185d63a8f61dc20e3b82f442fd6fb4487d15a05abeb25a663bb65d2d6acd50`. Six-column log and retained failed experiments.
+- **P03** — [docs/generations/gen1.md](/Users/subramanya/Desktop/projects/Kaggriculture/docs/generations/gen1.md); locator `1–46`; SHA-256 `739d80d44a5789de926274e868a09f6e6cfad67cab62503662ae28f04564908d`. Dated first-generation report.
+- **P04** — [harness/evaluate.py](/Users/subramanya/Desktop/projects/Kaggriculture/harness/evaluate.py); locator `1–117`; SHA-256 `6461a83e61ae82efec8380206c9b451eb1ff66b4bfac008cc37dc51b2cf7c53e`. Actual original evaluation job construction and metrics.
+- **P05** — [docs/LEARNINGS.md](/Users/subramanya/Desktop/projects/Kaggriculture/docs/LEARNINGS.md); locator `105–150`; SHA-256 `9c6a30ecd703d0c3e8200a5c28293bca922b27874d78ff1aae28168d2dfd2c5a`. Distillation, changing claims, corrected LP.
+- **P06** — [claude/nine/bench_hold.sh](/Users/subramanya/Desktop/projects/Kaggriculture/claude/nine/bench_hold.sh); locator `1–34`; SHA-256 `197fdf475af3773b99c1c2f77e893c0b879ac65f6c62b41c49c4e676e0f4b70f`. FIFO ticket queue and shared benchmark lock.
+- **P07** — [evaluation/first40_autoresearch_20260928/python_workers3.py](/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/python_workers3.py); locator `1–11`; SHA-256 `f4484c2cb19a76f671fa8b5a2f69653fd6e59f248e1479c2b678bf116718b1cc`. Three-worker cap.
+- **P08** — [evaluation/first40_autoresearch_20260928/run_bench.py](/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/run_bench.py); locator `1–39`; SHA-256 `4aca07f76af8cad59a3f38c1b5bd6de083386039ae58afdb63f421424f0b43a6`. Completion validation; no qualification by launch success.
+- **P09** — [evaluation/first40_autoresearch_20260928/review_run.py](/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/review_run.py); locator `1–34`; SHA-256 `6c18f607345806b71f1713e789456b380500a0b7aabb22af70436258a4b397fe`. Source manifest and paired path/economic review.
+- **P10** — [claude/bench/tape_eval.py](/Users/subramanya/Desktop/projects/Kaggriculture/claude/bench/tape_eval.py); locator `9–17; 109–120; 168–207`; SHA-256 `cfcafee7906390fee5ad82e6f4ac606b182b0fd45ffb6a8f6f3100a7a5a05376`. Recorded rival actions, forced historical shops, scaled clock.
+- **P11** — [evaluation/first40_autoresearch_20260928/submission_final_20260930/responsive397/game.py](/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_final_20260930/responsive397/game.py); locator `1–105`; SHA-256 `a428458ed2504ab4495bb2874a85c2e4821d0748793c856a05c9bfeb01d8d694`. Isolated live-reacting local policies; seed withheld from callbacks.
+- **P12** — [evaluation/first40_autoresearch_20260928/submission_final_20260930/responsive397/run.py](/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_final_20260930/responsive397/run.py); locator `1–48`; SHA-256 `adf3902ffa4123e8e8212c4d3c1b7ee715468098d321824bbcda2c100be848f8`. Source-bound release, single game worker, owned peer process.
+- **P13** — [evaluation/first40_autoresearch_20260928/submission_final_20260930/responsive397/contract.json](/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_final_20260930/responsive397/contract.json); locator `models; cases; configuration; max_workers`; SHA-256 `6c06ea2bb0d5c1fd6d52f03fd01c7ce473935bb3c22236b9aa232fd7fb0e8617`. Frozen sources/worlds before outcomes.
+- **P14** — [evaluation/first40_autoresearch_20260928/submission_final_20260930/qualify.py](/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_final_20260930/qualify.py); locator `43–190`; SHA-256 `d4b1305f65bc3e70f1050d1048aecdd96cf35ba996c1e96c75e6c7b974db8f9d`. Final exact-source accounting, preservation, archive and runtime gates.
+- **P15** — [evaluation/first40_autoresearch_20260928/submission_final_20260930/final_qualification.json](/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_final_20260930/final_qualification.json); locator `source; full120; responsive; limitations`; SHA-256 `d8c272d1f97369b5df8a24726374310ccb515f78d22d4ed01cf1c8fedbb53704`. Actual final qualification evidence and limitations.
+- **P16** — [evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/runtime.json](/Users/subramanya/Desktop/projects/Kaggriculture/evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/runtime.json); locator `callback summary; outcome`; SHA-256 `15356a1a6ac2036b7a4f549f34e9047f8f0e346b5639d4cff4d095c93c61db49`. Actual hosted logs, separate from local evaluation.

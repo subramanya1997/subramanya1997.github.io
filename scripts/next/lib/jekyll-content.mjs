@@ -192,7 +192,7 @@ export function tagArchives(postList, bookList) {
         if (!tag.trim()) continue;
         const slug = slugify(tag);
         if (!records.has(slug)) records.set(slug, { name: tag, slug, posts: [], books: [] });
-        records.get(slug)[bucket].push(document);
+        if (!document.data.retired) records.get(slug)[bucket].push(document);
       }
     }
   };

@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-01T02:55:56.801092+00:00",
+  "scope": "Public saved states only; three local recorded-opponent evaluations and one completed hosted replay. No engine or policy execution.",
+  "cases_input": {
+    "path": "evaluation/blog_draft_20260930/video_cases.json",
+    "sha256": "7cdad023fdb53ca491d030b35a7498a75e7ed1d8b387effed63f21d55d7a6eb1"
+  },
+  "privacy_boundary": "No configuration, seed, private inventory, rival commands, town forecasts, or unobserved future state. All tile data and worker positions come from public farms in the own observation.",
+  "frame_convention": "Row 0 has no incoming command. Row i > 0 stores the own recorded request entering state i; requests are not independently asserted fills. All 720 rows are retained. Engine day/hour are zero-based.",
+  "cases": [
+    {
+      "id": "859_recovery",
+      "label": "A recorded loss becomes a753-coin win",
+      "scope": "LOCAL_RECORDED_OPPONENT; not a hosted match. Historical opponent commands and shop reveals retained by evaluator.",
+      "own_seat": 1,
+      "source_sha256": "08f712abccb4dcd00a6554c52db0b60749a5887bb32d2ebe1827684a421932fc",
+      "data_url": "859_recovery.json",
+      "frames": 720,
+      "own_cash": 67293.0,
+      "rival_cash": 66540.0,
+      "margin": 753.0,
+      "input_replay": {
+        "path": "evaluation/research859_20260918/parent_failure/repair_screen9/109850570/replay.json.gz",
+        "sha256": "a1bfa5e4d10b8d0f092b5bbc685440d0cb12d3794a96e60b6eb0a5d2e868f4e8"
+      },
+      "output": {
+        "path": "evaluation/blog_draft_20260930/site/data/interactive_replays/859_recovery.json",
+        "sha256": "0ddc3f4451b83cfe00b15766a567274af9e4d71abc8619fdec8ead229cf29df3",
+        "bytes": 595863
+      },
+      "tile_codebook_entries": 1093,
+      "command_codebook_entries": 206,
+      "validation": {
+        "status": "PASS_EXACT_SERIALIZED_ROUNDTRIP",
+        "checks": {
+          "frames": 720,
+          "banks": 1440,
+          "farmers": 1440,
+          "hand_lists": 1440,
+          "hand_positions": 12308,
+          "cells": 144000,
+          "clocks": 720,
+          "statuses": 1440,
+          "own_actions": 720,
+          "public_farm_misc": 2880
+        }
+      }
+    },
+    {
+      "id": "397_narrow_preserved_win",
+      "label": "A last-day fertilizer tour; narrow win retained",
+      "scope": "LOCAL_RECORDED_OPPONENT; not the final hosted submission playing this game.",
+      "own_seat": 1,
+      "source_sha256": "362ac5c7ec764f345c222d388a47d41349d786fe2e118fe1fe41a0673918972e",
+      "data_url": "397_narrow_preserved_win.json",
+      "frames": 720,
+      "own_cash": 107511.0,
+      "rival_cash": 107270.0,
+      "margin": 241.0,
+      "input_replay": {
+        "path": "claude/nine/out/research397_fastretire_full133_k3_dump/114937659.json.gz",
+        "sha256": "5af186dce3ab6df0d2b4c2f88c2246cc1e2c62c2f467f87621fe05616d00b1ae"
+      },
+      "output": {
+        "path": "evaluation/blog_draft_20260930/site/data/interactive_replays/397_narrow_preserved_win.json",
+        "sha256": "506d48bef21c8522661a7f1c232138f986473378392cc33813fdcf7c2ca789b0",
+        "bytes": 607215
+      },
+      "tile_codebook_entries": 1188,
+      "command_codebook_entries": 239,
+      "validation": {
+        "status": "PASS_EXACT_SERIALIZED_ROUNDTRIP",
+        "checks": {
+          "frames": 720,
+          "banks": 1440,
+          "farmers": 1440,
+          "hand_lists": 1440,
+          "hand_positions": 12987,
+          "cells": 144000,
+          "clocks": 720,
+          "statuses": 1440,
+          "own_actions": 720,
+          "public_farm_misc": 2880
+        }
+      }
+    },
+    {
+      "id": "397_fragile46_win",
+      "label": "A46-coin win survives the final changes",
+      "scope": "LOCAL_RECORDED_OPPONENT; not a hosted final397game.",
+      "own_seat": 1,
+      "source_sha256": "362ac5c7ec764f345c222d388a47d41349d786fe2e118fe1fe41a0673918972e",
+      "data_url": "397_fragile46_win.json",
+      "frames": 720,
+      "own_cash": 106486.0,
+      "rival_cash": 106440.0,
+      "margin": 46.0,
+      "input_replay": {
+        "path": "claude/nine/out/research397_fastretire_full133_k3_dump/114705593.json.gz",
+        "sha256": "af1bfd4cb5cb8fdfef64ea52c93708d150ec3d8c9e7863b28225ef2c98600f18"
+      },
+      "output": {
+        "path": "evaluation/blog_draft_20260930/site/data/interactive_replays/397_fragile46_win.json",
+        "sha256": "9e73e3e2aa4338296632391313e6afa54a4cf637dfb864ba02f8b593a5793c70",
+        "bytes": 631311
+      },
+      "tile_codebook_entries": 1688,
+      "command_codebook_entries": 225,
+      "validation": {
+        "status": "PASS_EXACT_SERIALIZED_ROUNDTRIP",
+        "checks": {
+          "frames": 720,
+          "banks": 1440,
+          "farmers": 1440,
+          "hand_lists": 1440,
+          "hand_positions": 11417,
+          "cells": 144000,
+          "clocks": 720,
+          "statuses": 1440,
+          "own_actions": 720,
+          "public_farm_misc": 2880
+        }
+      }
+    },
+    {
+      "id": "361_live_strategic_loss",
+      "label": "A completed hosted loss, not a stalled game",
+      "scope": "ACTUAL_HOSTED_PUBLIC_REPLAY; own farm/callback logs and public opponent farm only.",
+      "own_seat": 0,
+      "source_sha256": "f6b6e081f9c9a0fb509186b424251c2593051d78bc5bc6a58d6de93e44a6f94f",
+      "data_url": "361_live_strategic_loss.json",
+      "frames": 720,
+      "own_cash": 75156.0,
+      "rival_cash": 76382.0,
+      "margin": -1226.0,
+      "input_replay": {
+        "path": "evaluation/first40_autoresearch_20260928/submission_next_20260930/loss115999868/episode-115999868-replay.json",
+        "sha256": "9fc0a1adad2e23e138609986a31e649875da4e82185421d68eae6e9cac80027e"
+      },
+      "output": {
+        "path": "evaluation/blog_draft_20260930/site/data/interactive_replays/361_live_strategic_loss.json",
+        "sha256": "bb9414d7689910c21fa357a2178039fcbda0799db52696c74daeaa3b66e8abc4",
+        "bytes": 605255
+      },
+      "tile_codebook_entries": 1085,
+      "command_codebook_entries": 226,
+      "validation": {
+        "status": "PASS_EXACT_SERIALIZED_ROUNDTRIP",
+        "checks": {
+          "frames": 720,
+          "banks": 1440,
+          "farmers": 1440,
+          "hand_lists": 1440,
+          "hand_positions": 12966,
+          "cells": 144000,
+          "clocks": 720,
+          "statuses": 1440,
+          "own_actions": 720,
+          "public_farm_misc": 2880
+        }
+      }
+    }
+  ],
+  "total_dataset_bytes": 2439644,
+  "total_frames": 2880,
+  "all_cases_pass": true,
+  "limits": "Public fields are exact observations. Incoming own action is a request, not proof of individual command success. Codebooks encode storage only; no simulation or interpolation."
+}

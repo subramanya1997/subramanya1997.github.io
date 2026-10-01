@@ -1,0 +1,37 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.000
+Introduction: reconstructed saved observations
+
+2
+00:00:03.000 --> 00:00:05.000
+Saved row 0; zero-based day 0, hour 0; margin +0 coins
+
+3
+00:00:09.000 --> 00:00:11.000
+Saved row 144; zero-based day 6, hour 0; margin -326 coins
+
+4
+00:00:13.000 --> 00:00:15.000
+Saved row 240; zero-based day 10, hour 0; margin -3,786 coins
+
+5
+00:00:22.000 --> 00:00:24.000
+Saved row 456; zero-based day 19, hour 0; margin +10,045 coins
+
+6
+00:00:28.000 --> 00:00:30.000
+Saved row 600; zero-based day 25, hour 0; margin +4,108 coins
+
+7
+00:00:32.000 --> 00:00:33.000
+Saved row 696; zero-based day 29, hour 0; margin +3,893 coins
+
+8
+00:00:32.958 --> 00:00:33.000
+Saved row 719; zero-based day 29, hour 23; margin +46 coins
+
+9
+00:00:33.000 --> 00:00:37.000
+Final observed outcome; recorded/live scope remains as labelled

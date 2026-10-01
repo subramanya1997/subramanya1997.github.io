@@ -1,0 +1,57 @@
+{
+  "fetched_utc": "2026-10-01T03:14:43.641247+00:00",
+  "fetched_pacific": "2026-09-30T20:14:43.641247-07:00",
+  "competition": "kaggriculture",
+  "official_leaderboard_url": "https://www.kaggle.com/competitions/kaggriculture/leaderboard",
+  "mutation_scope": "Read-only official API queries; no upload, episode sweep, replay download, recurring monitoring or policy execution.",
+  "leaderboard": {
+    "status": "READ_OK",
+    "rows_returned": 200,
+    "own": null,
+    "ordered_page_position": null,
+    "leaders": [
+      {
+        "teamId": "16681125",
+        "teamName": "M & M & P & Q",
+        "submissionDate": "2026-09-30 15:21:46.810000",
+        "score": "3076.0"
+      },
+      {
+        "teamId": "16621497",
+        "teamName": "6x8 B200 Galaxy Run",
+        "submissionDate": "2026-09-30 23:54:28.016000",
+        "score": "2953.6"
+      },
+      {
+        "teamId": "16623559",
+        "teamName": "DECEM",
+        "submissionDate": "2026-09-30 19:08:29.566000",
+        "score": "2928.7"
+      }
+    ],
+    "scope": "One official public leaderboard first200 ordered rows. Placement is the returned position; final settlement is not established by this endpoint."
+  },
+  "submissions": {
+    "status": "READ_OK",
+    "rows_returned": 50,
+    "selected_submissions": [
+      {
+        "ref": "56722213",
+        "fileName": "submission.tar.gz",
+        "date": "2026-09-30 23:54:07.593000",
+        "status": "SubmissionStatus.COMPLETE",
+        "publicScore": "1647.7",
+        "privateScore": ""
+      },
+      {
+        "ref": "56719676",
+        "fileName": "submission.tar.gz",
+        "date": "2026-09-30 21:56:19.537000",
+        "status": "SubmissionStatus.COMPLETE",
+        "publicScore": "2145.4",
+        "privateScore": ""
+      }
+    ],
+    "scope": "Own submission listing. Submission scores and team leaderboard scores are distinct."
+  }
+}

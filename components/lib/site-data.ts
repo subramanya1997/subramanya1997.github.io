@@ -112,6 +112,10 @@ export function getTagArchives(): TagArchive[] {
     return record;
   };
 
+  // Keep published tag archives addressable after retiring their last post.
+  for (const post of getAllPosts(true).filter(post => post.frontmatter.retired)) {
+    for (const tag of post.frontmatter.tags ?? []) if (tag.trim()) ensure(tag);
+  }
   const postsOldestFirst = [...getAllPosts()].reverse();
   for (const post of postsOldestFirst) {
     for (const tag of post.frontmatter.tags ?? []) {

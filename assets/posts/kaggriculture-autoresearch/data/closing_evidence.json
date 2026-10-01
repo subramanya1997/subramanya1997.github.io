@@ -1,0 +1,78 @@
+{
+  "created_utc": "2026-10-01T03:21:20.589820+00:00",
+  "official_check": {
+    "fetched_utc": "2026-10-01T03:14:43.641247+00:00",
+    "fetched_pacific": "2026-09-30T20:14:43.641247-07:00",
+    "competition": "kaggriculture",
+    "official_leaderboard_url": "https://www.kaggle.com/competitions/kaggriculture/leaderboard",
+    "mutation_scope": "Read-only official API queries; no upload, episode sweep, replay download, recurring monitoring or policy execution.",
+    "leaderboard": {
+      "status": "READ_OK",
+      "rows_returned": 200,
+      "own": null,
+      "ordered_page_position": null,
+      "leaders": [
+        {
+          "teamId": "16681125",
+          "teamName": "M & M & P & Q",
+          "submissionDate": "2026-09-30 15:21:46.810000",
+          "score": "3076.0"
+        },
+        {
+          "teamId": "16621497",
+          "teamName": "6x8 B200 Galaxy Run",
+          "submissionDate": "2026-09-30 23:54:28.016000",
+          "score": "2953.6"
+        },
+        {
+          "teamId": "16623559",
+          "teamName": "DECEM",
+          "submissionDate": "2026-09-30 19:08:29.566000",
+          "score": "2928.7"
+        }
+      ],
+      "scope": "One official public leaderboard first200 ordered rows. Placement is the returned position; final settlement is not established by this endpoint."
+    },
+    "submissions": {
+      "status": "READ_OK",
+      "rows_returned": 50,
+      "selected_submissions": [
+        {
+          "ref": "56722213",
+          "fileName": "submission.tar.gz",
+          "date": "2026-09-30 23:54:07.593000",
+          "status": "SubmissionStatus.COMPLETE",
+          "publicScore": "1647.7",
+          "privateScore": ""
+        },
+        {
+          "ref": "56719676",
+          "fileName": "submission.tar.gz",
+          "date": "2026-09-30 21:56:19.537000",
+          "status": "SubmissionStatus.COMPLETE",
+          "publicScore": "2145.4",
+          "privateScore": ""
+        }
+      ],
+      "scope": "Own submission listing. Submission scores and team leaderboard scores are distinct."
+    }
+  },
+  "official_snapshot_pin": {
+    "path": "evaluation/blog_draft_20260930/closing_standings/official_snapshot.json",
+    "sha256": "fa0dbb2d4020d219bcda8a10881bc8ee6f512a1da6a260e805103866c307801a"
+  },
+  "historical_team_placement": {
+    "rank": 13,
+    "score": 2943.4,
+    "snapshot_utc": "2026-09-14T01:02:13.393847+00:00",
+    "snapshot_pacific": "2026-09-13T18:02:13.393847-07:00",
+    "evidence": {
+      "path": "evaluation/live824_20260913/leaderboard.json",
+      "sha256": "b592a9d49703f4c4161e53b6cc387a14fb992a9bce563dea0c0ac0ae15c1dfe2"
+    },
+    "scope": "Historical team placement; not final397 or final competition rank"
+  },
+  "settled_final_competition_rank": null,
+  "rank_scope": "Exact current and settled final rank are unverified. Team16705390 absent from one first200 public leaderboard response; no exact rank inferred.",
+  "comparison_scope": "Scores are from the same query timestamp but the two submissions did not play matched live opponents/games; score difference does not isolate policy effect."
+}
