@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-12T01:45:23.953761",
+  "last_updated": "2026-10-13T01:39:05.186450",
   "view_counts": [
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
@@ -9,15 +9,15 @@
     },
     {
       "url": "/2025/04/28/oidc-a-proposal/",
-      "views": 3834,
-      "avg_duration_seconds": 171.7,
-      "engagement_rate": 63.66
+      "views": 3836,
+      "avg_duration_seconds": 171.6,
+      "engagement_rate": 63.69
     },
     {
       "url": "/2026/01/01/what-are-context-graphs-really/",
-      "views": 2712,
-      "avg_duration_seconds": 326.9,
-      "engagement_rate": 90.48
+      "views": 2714,
+      "avg_duration_seconds": 326.6,
+      "engagement_rate": 90.47
     },
     {
       "url": "/2025/12/26/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory/",
@@ -33,9 +33,9 @@
     },
     {
       "url": "/2025/05/21/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway/",
-      "views": 1820,
-      "avg_duration_seconds": 184.3,
-      "engagement_rate": 66.67
+      "views": 1822,
+      "avg_duration_seconds": 184.1,
+      "engagement_rate": 66.7
     },
     {
       "url": "/2025/12/23/2025-the-year-agentic-ai-got-real-and-what-comes-next/",
@@ -51,9 +51,9 @@
     },
     {
       "url": "/2026/04/13/the-filesystem-is-the-database-why-agents-need-a-new-storage-primitive/",
-      "views": 1018,
-      "avg_duration_seconds": 323.1,
-      "engagement_rate": 92.59
+      "views": 1022,
+      "avg_duration_seconds": 322.4,
+      "engagement_rate": 92.61
     },
     {
       "url": "/2026/01/14/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it/",
@@ -99,21 +99,21 @@
     },
     {
       "url": "/2025/12/10/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026/",
-      "views": 586,
-      "avg_duration_seconds": 110.0,
-      "engagement_rate": 93.78
+      "views": 588,
+      "avg_duration_seconds": 109.7,
+      "engagement_rate": 93.8
     },
     {
       "url": "/2026/01/19/the-agentic-workspace-a-strategic-imperative-for-the-next-era-of-saas/",
-      "views": 579,
-      "avg_duration_seconds": 98.4,
-      "engagement_rate": 93.14
+      "views": 581,
+      "avg_duration_seconds": 98.2,
+      "engagement_rate": 93.16
     },
     {
       "url": "/2026/04/23/context-engineering-why-prompt-engineering-was-never-enough/",
-      "views": 575,
-      "avg_duration_seconds": 182.7,
-      "engagement_rate": 94.52
+      "views": 577,
+      "avg_duration_seconds": 182.3,
+      "engagement_rate": 94.54
     },
     {
       "url": "/2025/06/21/from-gateway-to-guardian-the-evolution-of-mcp-security/",
@@ -129,9 +129,9 @@
     },
     {
       "url": "/2026/08/17/break-in-break-out-ai-agent-security-in-2026/",
-      "views": 359,
-      "avg_duration_seconds": 154.5,
-      "engagement_rate": 97.97
+      "views": 363,
+      "avg_duration_seconds": 152.9,
+      "engagement_rate": 97.99
     },
     {
       "url": "/2024/12/10/ai-agents-agentic-security-enterprise-automation/",
