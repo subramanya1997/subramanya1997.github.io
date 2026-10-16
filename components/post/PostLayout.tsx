@@ -104,7 +104,8 @@ export default function PostLayout({
   return (
     <SiteShell meta={meta} layout="post">
       {/* Reading Progress Bar */}
-      <div className="reading-progress-bar" id="reading-progress"></div>
+      {/* post-scripts.js sets `style.width` on this before React hydrates. */}
+      <div className="reading-progress-bar" id="reading-progress" suppressHydrationWarning></div>
 
       <div className="post-container">
         {/* Table of Contents Sidebar (Left) */}
