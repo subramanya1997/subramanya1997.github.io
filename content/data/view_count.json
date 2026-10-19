@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-18T01:25:16.306848",
+  "last_updated": "2026-10-19T01:28:31.251370",
   "view_counts": [
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
@@ -81,9 +81,9 @@
     },
     {
       "url": "/2026/02/23/the-saaspocalypse-a-survival-guide/",
-      "views": 748,
-      "avg_duration_seconds": 140.5,
-      "engagement_rate": 92.59
+      "views": 751,
+      "avg_duration_seconds": 140.1,
+      "engagement_rate": 92.5
     },
     {
       "url": "/2025/11/20/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale/",
@@ -93,15 +93,15 @@
     },
     {
       "url": "/2025/12/01/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap/",
-      "views": 616,
-      "avg_duration_seconds": 143.9,
-      "engagement_rate": 90.38
+      "views": 618,
+      "avg_duration_seconds": 143.5,
+      "engagement_rate": 90.41
     },
     {
       "url": "/2025/12/10/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026/",
-      "views": 598,
-      "avg_duration_seconds": 107.9,
-      "engagement_rate": 93.9
+      "views": 599,
+      "avg_duration_seconds": 107.4,
+      "engagement_rate": 93.59
     },
     {
       "url": "/2026/04/23/context-engineering-why-prompt-engineering-was-never-enough/",
@@ -165,9 +165,9 @@
     },
     {
       "url": "/2025/12/07/the-three-platform-problem-in-enterprise-ai/",
-      "views": 245,
-      "avg_duration_seconds": 72.6,
-      "engagement_rate": 98.68
+      "views": 247,
+      "avg_duration_seconds": 72.0,
+      "engagement_rate": 98.69
     },
     {
       "url": "/2024/02/20/a-feat-of-strength-mvp-for-ai-apps/",
@@ -183,9 +183,9 @@
     },
     {
       "url": "/2022/12/21/version-control/",
-      "views": 212,
-      "avg_duration_seconds": 62.8,
-      "engagement_rate": 68.73
+      "views": 214,
+      "avg_duration_seconds": 62.2,
+      "engagement_rate": 69.03
     },
     {
       "url": "/2025/07/15/do-agents-need-their-own-identity/",
@@ -231,9 +231,9 @@
     },
     {
       "url": "/2026/08/06/fixing-b2b-commerce-search-in-the-age-of-ai/",
-      "views": 123,
-      "avg_duration_seconds": 48.2,
-      "engagement_rate": 97.38
+      "views": 125,
+      "avg_duration_seconds": 47.6,
+      "engagement_rate": 97.42
     }
   ]
 }
