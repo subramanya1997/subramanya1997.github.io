@@ -861,6 +861,18 @@ th[aria-sort="descending"] .hb-sort::after { content: "↓"; opacity: 1; color: 
   background: var(--accent-soft);
 }
 
+/* "+N more" chip: links to the chapter overview, which lists every page. */
+.hb-chapter-card li a.hb-chapter-more {
+  color: var(--accent);
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.hb-chapter-card li a.hb-chapter-more:hover {
+  background: var(--accent-soft);
+  box-shadow: none;
+}
+
 .hb-section-title {
   margin: var(--space-16) 0 var(--space-2);
   font-size: var(--text-2xl);

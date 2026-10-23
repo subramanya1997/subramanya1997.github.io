@@ -9,6 +9,9 @@ import {
   renderHandbookPage,
 } from "@/lib/handbook";
 
+/** Pages listed on a chapter card before collapsing the rest into "+N more". */
+const CARD_ARTICLES = 4;
+
 /**
  * Seeded node-and-edge constellation (the site's blueprint motif) — fixed
  * coordinates so the prerendered bytes are stable.
@@ -109,11 +112,22 @@ export default async function HandbookHome() {
             </p>
             {chapter.articles.length > 0 ? (
               <ul>
-                {chapter.articles.map((article) => (
+                {chapter.articles.slice(0, CARD_ARTICLES).map((article) => (
                   <li key={article.file}>
                     <a href={article.url}>{article.navTitle}</a>
                   </li>
                 ))}
+                {chapter.articles.length > CARD_ARTICLES ? (
+                  <li>
+                    <a
+                      className="hb-chapter-more"
+                      href={chapter.page.url}
+                      aria-label={`${chapter.articles.length - CARD_ARTICLES} more pages in ${chapter.page.navTitle}`}
+                    >
+                      +{chapter.articles.length - CARD_ARTICLES} more
+                    </a>
+                  </li>
+                ) : null}
               </ul>
             ) : null}
           </li>
