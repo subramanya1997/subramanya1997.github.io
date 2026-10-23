@@ -136,7 +136,7 @@ export function getTagArchives(): TagArchive[] {
     .map((record) => {
       // Same (date desc, path desc) tiebreak as getAllPosts — Jekyll resolves
       // same-day ties back to site.posts order, and the markdown twins
-      // (scripts/next/lib/jekyll-content.mjs byDateDescStable) already do.
+      // (lib/content-source.mjs byDateDescStable) already do.
       record.posts.sort(
         (a, b) =>
           b.date.getTime() - a.date.getTime() ||

@@ -1,8 +1,8 @@
 // Language switcher. Only the languages that actually have a translation JSON
-// for this post are listed (see components/lib/post-extras#availableLanguages).
+// for this post are listed (see lib/post-extras#availableLanguages).
 import { languageSwitcherCss, languageSwitcherJs } from "./assets";
-import { getSiteConfig } from "@/components/lib/site-data";
-import { availableLanguages } from "@/components/lib/post-extras";
+import { getSiteConfig } from "@/lib/site-data";
+import { availableLanguages } from "@/lib/post-extras";
 
 export default function LanguageSwitcher({ slug }: { slug: string }) {
   const defaultLang = getSiteConfig().default_lang;

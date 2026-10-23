@@ -1,6 +1,6 @@
 # Personal Website
 
-Personal site built with Next.js (App Router, static export) and deployed on
+Personal site built with Next.js (App Router, statically prerendered) and deployed on
 Vercel. Content lives under `content/` (`content/posts/`, `content/books/`,
 `content/loops/`, `content/data/`, and the UMass handbook in
 `content/navigating-umass-amherst-a-handbook-for-international-students/`,

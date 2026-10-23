@@ -1,9 +1,8 @@
-// Port of tags.md (layout: page, custom_layout: true) — the tag directory.
-// Individual tag archives (/tags/<slug>/) come from _includes/tag-archive.html
-// and are not part of this route.
-import { linkTitle } from "@/components/lib/jekyll";
-import { pageMeta } from "@/components/lib/page-meta";
-import { getTagArchives } from "@/components/lib/site-data";
+// The tag directory (/tags/). Individual tag archives (/tags/<slug>/) are
+// app/tags/[tag]/.
+import { linkTitle } from "@/lib/text";
+import { pageMeta } from "@/lib/page-meta";
+import { getTagArchives } from "@/lib/site-data";
 import PageLayout from "@/components/site/PageLayout";
 
 const meta = pageMeta({

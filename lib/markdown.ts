@@ -233,7 +233,7 @@ function nextMatch(re: RegExp, text: string, from: number): RegExpExecArray | nu
   return re.exec(text);
 }
 
-export function applyKramdownTypography(text: string): string {
+function applyKramdownTypography(text: string): string {
   if (!/["'.<>-]/.test(text)) return text;
 
   let out = "";
@@ -988,7 +988,7 @@ export interface HighlightResult {
  * sets `default_lang: "plaintext"`, so a bare fence becomes
  * `language-plaintext` and is run through rouge's PlainText lexer.
  */
-export function highlightCode(code: string, info?: string | null): HighlightResult {
+function highlightCode(code: string, info?: string | null): HighlightResult {
   const lang = info && info.trim() ? info.trim().split(/\s+/)[0] : null;
   const effective = lang ?? "plaintext"; // kramdown's `hl_opts[:default_lang]`
   const key = effective.toLowerCase();

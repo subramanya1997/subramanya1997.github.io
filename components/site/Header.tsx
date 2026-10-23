@@ -1,6 +1,6 @@
-// Port of _includes/header.html (plus the skip links that precede it).
+// Site header, plus the skip links that precede it.
 // `title` attributes are the ones _plugins/link_attributes.rb adds at build time.
-import { getSiteConfig, NAV_LINKS } from "@/components/lib/site-data";
+import { getSiteConfig, NAV_LINKS } from "@/lib/site-data";
 import SearchForm from "./SearchForm";
 
 export default function Header() {

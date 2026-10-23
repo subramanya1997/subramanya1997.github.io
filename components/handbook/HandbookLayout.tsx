@@ -3,10 +3,10 @@
 // rail. The post chrome (header styles, prev/next, copy-page, lightbox, TOC)
 // is reused as-is; components/handbook/assets adds the book-specific pieces.
 import type { ReactNode } from "react";
-import { readingTime } from "@/components/lib/jekyll";
+import { readingTime } from "@/lib/text";
 import { slugifyHeading } from "@/lib/markdown";
-import type { PageMeta } from "@/components/lib/page-meta";
-import { getSiteConfig } from "@/components/lib/site-data";
+import type { PageMeta } from "@/lib/page-meta";
+import { getSiteConfig } from "@/lib/site-data";
 import Lightbox from "@/components/post/Lightbox";
 import Toc from "@/components/post/Toc";
 import { postChromeCss, postLayoutCss } from "@/components/post/assets";
@@ -352,7 +352,7 @@ export default function HandbookLayout({
 
             {/* Below 1280px the right column is hidden; keep the signup in reach. */}
             <div className="hb-newsletter-inline">
-              <Newsletter variant="card" />
+              <Newsletter />
             </div>
           </div>
         </div>
@@ -360,7 +360,7 @@ export default function HandbookLayout({
         <aside className="post-toc-sidebar">
           <div className="hb-aside">
             <Toc target={shareTarget} />
-            <Newsletter variant="card" />
+            <Newsletter />
           </div>
         </aside>
       </div>

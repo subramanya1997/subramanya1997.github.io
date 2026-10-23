@@ -1,5 +1,5 @@
-// The subset of Jekyll front matter that `_includes/head.html` and
-// `_includes/structured-data.html` read. One object per route.
+// Per-route page metadata: the front matter fields PageHead and
+// StructuredData read. One object per route.
 export interface PageMeta {
   /** `page.title` — absent on the homepage and the 404 page. */
   title?: string;
@@ -27,18 +27,18 @@ export interface PageMeta {
   markdownUrl?: string;
   /** `page.page_scripts`. */
   scripts?: string[];
-  /** `page.custom_layout` — bypasses the `.post` wrapper in `_layouts/page.html`. */
+  /** `page.custom_layout` — bypasses the `.post` wrapper of the page layout. */
   customLayout?: boolean;
   /** `page.layout == 'post'` — changes og:type and the structured-data branch. */
   isPost?: boolean;
   /**
-   * The post-only half of `_includes/head.html` (`article:*`, `citation_*`,
+   * The post-only head tags (`article:*`, `citation_*`,
    * `DC.*`, `twitter:data1`). Present iff `isPost` is set.
    */
   article?: ArticleMeta;
 }
 
-/** Everything `_includes/head.html` needs for a `layout: post` page. */
+/** Everything PageHead needs for a `layout: post` page. */
 export interface ArticleMeta {
   /** `page.date | date_to_xmlschema` — both article:published_time and :modified_time. */
   publishedTime: string;
@@ -61,7 +61,7 @@ export interface ArticleMeta {
 const MARKDOWN_TWIN_SKIP_PREFIXES = ["/assets/", "/css/", "/scripts/", "/docs/"];
 
 /** `_plugins/markdown_twin_generator.rb`: `<page-url>index.md` for real pages. */
-export function markdownTwinUrl(url: string): string | undefined {
+function markdownTwinUrl(url: string): string | undefined {
   if (!url.endsWith("/")) return undefined;
   if (MARKDOWN_TWIN_SKIP_PREFIXES.some((prefix) => url.startsWith(prefix))) return undefined;
   if (/^\/tags-[^/]+\/$/.test(url)) return undefined;

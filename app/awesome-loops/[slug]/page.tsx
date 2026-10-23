@@ -1,11 +1,10 @@
-// Loop detail pages — the loops collection under
-// `permalink: /awesome-loops/:path/`, rendered by `_layouts/loop.html`.
+// Loop detail pages: one per content/loops document, at /awesome-loops/<slug>/.
 //
 // `<body class="loop-shell">` comes from SiteShell's bodyClass prop.
 import { notFound } from "next/navigation";
-import { linkTitle } from "@/components/lib/jekyll";
-import { pageMeta } from "@/components/lib/page-meta";
-import { loopSocialImage } from "@/components/lib/post-extras";
+import { linkTitle } from "@/lib/text";
+import { pageMeta } from "@/lib/page-meta";
+import { loopSocialImage } from "@/lib/post-extras";
 import { relatedLoops, sortedLoops, type Loop } from "@/components/loops/loop-data";
 import SiteShell from "@/components/site/SiteShell";
 import { renderMarkdown } from "@/lib/markdown";

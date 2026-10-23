@@ -1,6 +1,6 @@
-// Port of _includes/components/book-card.html.
-import { applyLinkAttributes, humanDate, isoDate, linkTitle } from "@/components/lib/jekyll";
-import { getSiteConfig } from "@/components/lib/site-data";
+// Book card for the books and home pages.
+import { applyLinkAttributes, humanDate, isoDate, linkTitle } from "@/lib/text";
+import { getSiteConfig } from "@/lib/site-data";
 import { slugifyTag, type CollectionDoc } from "@/lib/content";
 
 export interface BookCardProps {

@@ -1,8 +1,8 @@
 // Ports docs/*.md (layout: page, permalink: /docs/<slug>/).
 import fs from "node:fs";
 import path from "node:path";
-import { loadMarkdownPage } from "@/components/lib/markdown-page";
-import { pageMeta } from "@/components/lib/page-meta";
+import { loadMarkdownPage } from "@/lib/markdown-page";
+import { pageMeta } from "@/lib/page-meta";
 import PageLayout from "@/components/site/PageLayout";
 
 function docSlugs(): string[] {

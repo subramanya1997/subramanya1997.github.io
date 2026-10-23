@@ -2,9 +2,9 @@
 // folded into the same list as the papers, one entry format for everything —
 // /books/ still resolves on its own, but the nav points here.
 import { Fragment } from "react";
-import { applyLinkAttributes, linkTitle } from "@/components/lib/jekyll";
-import { pageMeta } from "@/components/lib/page-meta";
-import { getAbout, getSiteConfig } from "@/components/lib/site-data";
+import { applyLinkAttributes, linkTitle } from "@/lib/text";
+import { pageMeta } from "@/lib/page-meta";
+import { getAbout, getSiteConfig } from "@/lib/site-data";
 import PageLayout from "@/components/site/PageLayout";
 import { getAllBooks } from "@/lib/content";
 

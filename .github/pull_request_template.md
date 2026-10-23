@@ -13,3 +13,4 @@
 
 - [ ] `node scripts/validate-content.mjs`
 - [ ] `bun run build`
+- [ ] `bun run build:export && bun run parity` (no missing URLs, no canonical drift)

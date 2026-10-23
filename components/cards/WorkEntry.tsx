@@ -1,5 +1,5 @@
-// Port of _includes/components/work-entry.html.
-import type { AboutEducation, AboutExperience } from "@/components/lib/site-data";
+// One entry on the /work/ timeline.
+import type { AboutEducation, AboutExperience } from "@/lib/site-data";
 
 type Props =
   | { entryType: "experience"; entry: AboutExperience }

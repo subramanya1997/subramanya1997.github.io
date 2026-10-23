@@ -8,10 +8,10 @@ robots: noindex, follow
 
 ## Overview
 
-This repository is a Next.js (App Router, static export) personal site
+This repository is a Next.js (App Router, statically prerendered) personal site
 deployed on Vercel. It was migrated from Jekyll with a hard URL-compatibility
-guarantee: content still lives in the original Jekyll-era source directories,
-and the build reproduces the original published output — URLs, heading ids,
+guarantee: content lives in plain markdown/YAML under `content/`, and the build
+reproduces the original published output — URLs, heading ids,
 code-highlighting markup, and machine-readable endpoints included. Runtime
 behavior is added with browser-side JavaScript for search, analytics,
 translation, TOC behavior, newsletter UI, and post interactions.
@@ -23,7 +23,8 @@ translation, TOC behavior, newsletter UI, and post interactions.
    documents (plus extensionless aliases), markdown twins (an `index.md`
    beside every HTML page), book redirect pages, and the UMass handbook's
    images and markdown twins (`scripts/next/handbook-public.mjs`).
-2. `lib/content.ts` loads content from `content/posts/`, `content/books/`,
+2. `lib/content.ts` (a typed wrapper over `lib/content-source.mjs`, which the
+   prebuild scripts share) loads content from `content/posts/`, `content/books/`,
    `content/loops/` and `content/data/`; the page sources colocated with each
    route (`app/blog/content.md`, `app/work/content.md`, …) are registered in
    `lib/page-sources.mjs`.
@@ -124,7 +125,7 @@ tag drifts.
 - Global metadata and per-page stylesheet loading: `components/site/PageHead.tsx` and `app/layout.tsx`
 - Search behavior: `components/site/SearchForm.tsx`, `app/search/content.md`, the `search.json` builder in `lib/nonhtml.ts`, `assets/js/components/discovery.js`, and `assets/js/pages/search.js`
 - Tag archives and topic browsing: `app/tags/content.md` and `app/tags/` (styles: the `pages/tags` block in `css/main.css`)
-- Agent discovery (RFC 8288 / RFC 9727): `api-catalog.json` is published at `/.well-known/api-catalog.json`, and `scripts/next/sync-public.mjs` copies that output to the canonical extensionless `/.well-known/api-catalog` path so both URLs work (`vercel.json` sets the content type). The catalog is a Linkset per RFC 9264 and enumerates every machine-readable endpoint on the site. The site advertises the same endpoints via RFC 8288 `<link>` elements on every page (`api-catalog`, `describedby`, `service-doc`, `sitemap`, `search`, `author`, `alternate`).
+- Agent discovery (RFC 8288 / RFC 9727): `api-catalog.json` is published at `/.well-known/api-catalog.json`, and `scripts/next/sync-public.mjs` copies that output to the canonical extensionless `/.well-known/api-catalog` path so both URLs work (`next.config.ts` sets the content type). The catalog is a Linkset per RFC 9264 and enumerates every machine-readable endpoint on the site. The site advertises the same endpoints via RFC 8288 `<link>` elements on every page (`api-catalog`, `describedby`, `service-doc`, `sitemap`, `search`, `author`, `alternate`).
 - OpenID Connect discovery (OIDC Discovery 1.0): `openid-configuration.json` is published at `/.well-known/openid-configuration.json` and copied to the canonical extensionless `/.well-known/openid-configuration`. The document is an intentionally inert stub: the site exposes no protected APIs, so `grant_types_supported` and `scopes_supported` are empty and `response_types_supported` / `id_token_signing_alg_values_supported` are `["none"]`. `jwks.json` is published at `/.well-known/jwks.json` as an empty keyset, and `oauth-noop.json` at `/.well-known/oauth-noop.json` (also aliased to `/.well-known/oauth-noop`) returning an RFC 6749 §5.2 `invalid_client` error for any agent that follows the authorization/token endpoints. Extend the alias list in `scripts/next/sync-public.mjs` to add more extensionless well-known URIs.
 - Developer documentation hub: `app/docs/content.md` emits `/docs/` as the landing page; each `docs/*.md` file is rendered by the `app/docs/` routes at `/docs/<name>/`. The `/docs/` URL is also the target of the `service-doc` link relation.
 - Analytics configuration: `components/site/Analytics.tsx`
@@ -140,7 +141,7 @@ tag drifts.
 - Do not swap `lib/markdown.ts` for a stock markdown renderer — heading ids,
   rouge token classes, and smart quotes are matched to the original published
   output.
-- The Jekyll-era content directories are the single source of truth; the
+- `content/` and `assets/` are the single source of truth; the
   Python maintenance scripts write there, and the build reads them. Do not
   duplicate content into `app/` or `public/`.
 - Top-level pages can load page-specific static CSS/JS through front matter,

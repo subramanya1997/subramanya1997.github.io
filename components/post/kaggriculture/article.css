@@ -10,7 +10,6 @@
 .replay-cell.is-selected{outline:2px solid var(--ink);outline-offset:-2px;z-index:1}.replay-cell-info{white-space:pre-wrap;max-height:190px;overflow:auto}#replay-margin[data-sign="positive"]{color:var(--teal)}#replay-margin[data-sign="negative"]{color:#b34035}
 
 }
-.kaggriculture-article .draft-notice { padding: 12px 16px; margin-bottom:24px; border-left:3px solid var(--teal); background:var(--teal-light); color:var(--ink); font-size:13px; }
 .kaggriculture-article { min-width:0; }
 .kaggriculture-article figure img { margin:0; border-radius:0; box-shadow:none; }
 .kaggriculture-article .replay-cell { font-size:inherit; }

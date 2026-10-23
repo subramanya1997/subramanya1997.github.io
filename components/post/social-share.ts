@@ -1,11 +1,11 @@
-// The Facebook / Twitter / LinkedIn share links of `_includes/toc.html` and
-// the mobile block of `_layouts/post.html`.
+// The Facebook / Twitter / LinkedIn share links of the post sidebar (TOC) and
+// the mobile share block.
 //
 // These anchors carry an inline `onclick="window.open(...); return false;"`,
 // which JSX cannot express, so they are emitted as raw HTML. Attribute values
 // are escaped the way Nokogiri re-serialized them in the Jekyll output: `&`
 // becomes `&amp;`, a literal apostrophe stays a literal apostrophe.
-import { stripHtml } from "@/components/lib/jekyll";
+import { stripHtml } from "@/lib/text";
 
 const POPUP =
   "window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;";
@@ -76,7 +76,7 @@ const NETWORKS: Network[] = [
   },
 ];
 
-/** `_includes/toc.html` — icon only. */
+/** Sidebar (TOC) variant — icon only. */
 export function tocShareLinksHtml(target: ShareTarget): string {
   return NETWORKS.map(
     (network) =>
@@ -84,7 +84,7 @@ export function tocShareLinksHtml(target: ShareTarget): string {
   ).join("\n      ");
 }
 
-/** `_layouts/post.html` — icon plus the network name. */
+/** Mobile share block — icon plus the network name. */
 export function mobileShareLinksHtml(target: ShareTarget): string {
   return NETWORKS.map(
     (network) =>

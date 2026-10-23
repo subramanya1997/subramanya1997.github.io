@@ -1,12 +1,12 @@
-// Tag archives — `_plugins/tag_pages_generator.rb#TagArchivePage` rendering
-// `_includes/tag-archive.html` through `layout: page` with `custom_layout`.
+// Tag archives (/tags/<slug>/): every post and book carrying the tag, in the
+// order Jekyll's tag-page generator produced.
 import { Fragment } from "react";
 import BookCard from "@/components/cards/BookCard";
 import PostCard from "@/components/cards/PostCard";
-import { linkTitle, readingTime } from "@/components/lib/jekyll";
-import { pageMeta } from "@/components/lib/page-meta";
-import { urlEncode } from "@/components/lib/post-extras";
-import { getTagArchives, viewsFor, type TagArchive } from "@/components/lib/site-data";
+import { linkTitle, readingTime } from "@/lib/text";
+import { pageMeta } from "@/lib/page-meta";
+import { urlEncode } from "@/lib/post-extras";
+import { getTagArchives, viewsFor, type TagArchive } from "@/lib/site-data";
 import PageLayout from "@/components/site/PageLayout";
 import { memoizedHtml } from "@/lib/nonhtml";
 import { notFound } from "next/navigation";

@@ -2,7 +2,7 @@
 // sitemap.xml, sitemapindex.xml, llms.txt, llms-full.txt and the versioned
 // /api/v1/*.json endpoints.
 //
-// Ground truth is the final Jekyll build in _site/ and its Liquid sources
+// Ground truth was the final Jekyll build and its Liquid sources
 // (feed.xml, search.json, sitemap.xml, sitemapindex.xml, llms.txt,
 // llms-full.txt, api/v1/*.json). Everything here reproduces the Liquid filters
 // those templates rely on (xml_escape, strip_html, strip_newlines,
@@ -10,11 +10,7 @@
 // so the emitted payloads match field for field.
 //
 // This module owns only machine-readable output; HTML routes live elsewhere.
-import fs from "node:fs";
-import path from "node:path";
-import matter from "gray-matter";
 import {
-  ROOT,
   getSiteConfig,
   getAllPosts,
   getAllBooks,
@@ -24,7 +20,7 @@ import {
   type Post,
   type CollectionDoc,
 } from "./content";
-import { PAGE_ENTRIES, PAGE_FILES, PAGE_DIRS } from "./page-sources.mjs";
+import { pages } from "./content-source.mjs";
 import { renderMarkdown } from "./markdown";
 import { handbookPages, handbookTwinUrl } from "./handbook-source.mjs";
 
@@ -159,7 +155,7 @@ export function wallClockFromYMD(year: number, month: number, day: number): Wall
 }
 
 /** The current instant expressed as SITE_TZ wall clock — Jekyll's `site.time`. */
-export function nowWallClock(now: Date = new Date()): WallClock {
+function nowWallClock(now: Date = new Date()): WallClock {
   const offsetMinutes = tzOffsetMinutes(now);
   const shifted = new Date(now.getTime() + offsetMinutes * 60_000);
   return {
@@ -201,12 +197,12 @@ export function dateToXmlschema(wall: WallClock): string {
 }
 
 /** Liquid `date: "%Y-%m-%d"`. */
-export function dateIso(wall: WallClock): string {
+function dateIso(wall: WallClock): string {
   return `${wall.year}-${pad(wall.month)}-${pad(wall.day)}`;
 }
 
 /** Liquid `date: "%B %-d, %Y"`. */
-export function dateDisplay(wall: WallClock): string {
+function dateDisplay(wall: WallClock): string {
   return `${MONTHS_LONG[wall.month - 1]} ${wall.day}, ${wall.year}`;
 }
 
@@ -265,7 +261,7 @@ function postWallClock(entry: OutputPost): WallClock {
 }
 
 /** Front matter `date:` values arrive as Date (YAML timestamp) or string. */
-export function docWallClock(value: unknown): WallClock | null {
+function docWallClock(value: unknown): WallClock | null {
   if (value instanceof Date) {
     return wallClockFromYMD(
       value.getUTCFullYear(),
@@ -301,7 +297,7 @@ export async function memoizedHtml(key: string, markdown: string): Promise<strin
  * Jekyll's `doc.excerpt`: the front matter value when present, otherwise the
  * first paragraph of the body.
  */
-export function excerptOf(frontmatter: Record<string, unknown>, content: string): string {
+function excerptOf(frontmatter: Record<string, unknown>, content: string): string {
   const declared = frontmatter.excerpt;
   if (typeof declared === "string" && declared.trim()) return declared;
   const firstParagraph = content.trim().split(/\r?\n\s*\r?\n/)[0] ?? "";
@@ -326,7 +322,7 @@ function byUrl(a: CollectionDoc, b: CollectionDoc): number {
   return a.url < b.url ? -1 : a.url > b.url ? 1 : 0;
 }
 
-export function sortedBooks(): CollectionDoc[] {
+function sortedBooks(): CollectionDoc[] {
   return [...getAllBooks()].sort(byUrl);
 }
 
@@ -356,45 +352,12 @@ let _pages: SitePage[] | null = null;
  * a file sits on disk.
  */
 export function getSitePages(): SitePage[] {
-  if (_pages) return _pages;
-  const pages: SitePage[] = [];
-
-  for (const entry of PAGE_ENTRIES) {
-    pages.push({
-      url: entry.url,
-      frontmatter: entry.frontmatter,
-      content: "",
-      sourcePath: null,
-    });
-  }
-
-  const read = (sourcePath: string, fallbackUrl: string | null) => {
-    const raw = fs.readFileSync(sourcePath, "utf8");
-    if (!raw.startsWith("---")) return; // no front matter → not a page
-    const { data, content } = matter(raw);
-    const permalink = typeof data.permalink === "string" ? data.permalink : null;
-    const url = permalink ?? fallbackUrl;
-    if (!url) return;
-    pages.push({ url, frontmatter: data, content, sourcePath });
-  };
-
-  for (const page of PAGE_FILES) {
-    const sourcePath = path.join(ROOT, page.source);
-    if (!fs.existsSync(sourcePath)) continue;
-    read(sourcePath, page.url);
-  }
-  for (const dirName of PAGE_DIRS) {
-    const dir = path.join(ROOT, dirName);
-    if (!fs.existsSync(dir)) continue;
-    for (const entry of fs.readdirSync(dir)) {
-      if (!/\.(md|markdown|html)$/.test(entry)) continue;
-      const sourcePath = path.join(dir, entry);
-      if (!fs.statSync(sourcePath).isFile()) continue;
-      read(sourcePath, `/${dirName}/${entry.replace(/\.(md|markdown|html)$/, "")}/`);
-    }
-  }
-
-  _pages = pages.sort((a, b) => (a.url < b.url ? -1 : a.url > b.url ? 1 : 0));
+  _pages ??= pages().map((page) => ({
+    url: page.url,
+    frontmatter: page.data,
+    content: page.content,
+    sourcePath: page.sourcePath,
+  }));
   return _pages;
 }
 

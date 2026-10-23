@@ -1,9 +1,9 @@
 // Port of blog.md (layout: page, custom_layout: true).
 import { Fragment } from "react";
 import PostCard from "@/components/cards/PostCard";
-import { readingTime } from "@/components/lib/jekyll";
-import { pageMeta } from "@/components/lib/page-meta";
-import { viewsFor } from "@/components/lib/site-data";
+import { readingTime } from "@/lib/text";
+import { pageMeta } from "@/lib/page-meta";
+import { viewsFor } from "@/lib/site-data";
 import PageLayout from "@/components/site/PageLayout";
 import { getAllPosts } from "@/lib/content";
 import { memoizedHtml } from "@/lib/nonhtml";

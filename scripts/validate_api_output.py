@@ -59,9 +59,9 @@ def check_openapi(spec):
                 err(f"{label}: missing responses")
             operation_ids.append(op.get("operationId"))
 
-        # Every concrete (non-templated) documented path must exist in _site.
+        # Every concrete (non-templated) documented path must exist in the build.
         if "{" not in api_path and not site_path_for(api_path).exists():
-            err(f"openapi.json: documented path {api_path} missing from _site")
+            err(f"openapi.json: documented path {api_path} missing from the build")
 
     duplicates = {o for o in operation_ids if operation_ids.count(o) > 1}
     if duplicates:

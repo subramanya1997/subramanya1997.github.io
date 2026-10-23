@@ -6,9 +6,9 @@
 // the same `[segment]` placeholder as the post permalinks
 // (`app/[segment]/[month]/[day]/[slug]/`) and validates the prefix itself.
 import { notFound } from "next/navigation";
-import { linkTitle } from "@/components/lib/jekyll";
-import { pageMeta } from "@/components/lib/page-meta";
-import { getTagArchives } from "@/components/lib/site-data";
+import { linkTitle } from "@/lib/text";
+import { pageMeta } from "@/lib/page-meta";
+import { getTagArchives } from "@/lib/site-data";
 import SiteShell from "@/components/site/SiteShell";
 
 const LEGACY_PREFIX = "tags-";

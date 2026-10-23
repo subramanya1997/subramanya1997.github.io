@@ -1,9 +1,9 @@
 // The BibTeX block at the foot of a post.
 // Emitted as an HTML string for the same reason as post-faq.ts.
 import { citationCss } from "./assets";
-import { escapeText } from "@/components/lib/html";
-import { stripHtml } from "@/components/lib/jekyll";
-import { citationId, longMonth } from "@/components/lib/post-extras";
+import { escapeText } from "@/lib/html";
+import { stripHtml } from "@/lib/text";
+import { citationId, longMonth } from "@/lib/post-extras";
 import type { Post } from "@/lib/content";
 
 export function citationHtml(post: Post, canonical: string): string {

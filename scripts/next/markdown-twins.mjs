@@ -18,7 +18,7 @@ import {
   pages,
   tagArchives,
   tagsOf,
-} from "./lib/jekyll-content.mjs";
+} from "../../lib/content-source.mjs";
 
 // ---------------------------------------------------------------------------
 // helpers (mirrors of the plugin's private methods)

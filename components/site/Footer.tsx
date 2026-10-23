@@ -1,5 +1,5 @@
-// Port of _includes/footer.html.
-import { getAbout, getSiteConfig } from "@/components/lib/site-data";
+// Site footer.
+import { getAbout, getSiteConfig } from "@/lib/site-data";
 
 const FOOTER_STYLE = `
   .site-footer .header-wrap {

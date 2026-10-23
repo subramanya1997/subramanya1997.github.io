@@ -1,9 +1,9 @@
 // Port of stats.md (layout: page, custom_layout: true). The numbers are baked
 // in at build time exactly as Liquid computed them; stats.js only re-formats.
 import { Fragment } from "react";
-import { linkTitle, longDateTime, rubyRound } from "@/components/lib/jekyll";
-import { pageMeta } from "@/components/lib/page-meta";
-import { getViewCounts } from "@/components/lib/site-data";
+import { linkTitle, longDateTime, rubyRound } from "@/lib/text";
+import { pageMeta } from "@/lib/page-meta";
+import { getViewCounts } from "@/lib/site-data";
 import PageLayout from "@/components/site/PageLayout";
 import { getAllPosts } from "@/lib/content";
 

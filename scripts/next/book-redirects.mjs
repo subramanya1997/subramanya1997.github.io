@@ -2,12 +2,9 @@
 // redirect document with no site chrome at all (no <header>, no stylesheets,
 // no JSON-LD). The App Router always wraps a page in the shared root layout,
 // so the file is written directly instead.
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
-import { join, dirname } from "node:path";
-import { fileURLToPath } from "node:url";
-import { siteConfig, books } from "./lib/jekyll-content.mjs";
-
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
+import { mkdirSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
+import { siteConfig, books } from "../../lib/content-source.mjs";
 
 function stripHtml(value) {
   return String(value ?? "")
@@ -108,29 +105,3 @@ export function writeBookRedirects(outDir) {
 
   return count;
 }
-
-/**
- * `_layouts/default.html`: `<body class="loop-shell">` on the loop marketplace
- * and every loop document. A body class can only come from a root layout in
- * the App Router, and the site has a single shared one, so it is stamped here.
- */
-export function stampLoopShell(outDir, urls) {
-  let count = 0;
-  for (const url of urls) {
-    const file = join(outDir, url.replace(/^\//, ""), "index.html");
-    let html;
-    try {
-      html = readFileSync(file, "utf8");
-    } catch {
-      continue;
-    }
-    if (html.includes('<body class="loop-shell">')) continue;
-    const stamped = html.replace("<body>", '<body class="loop-shell">');
-    if (stamped === html) continue;
-    writeFileSync(file, stamped);
-    count += 1;
-  }
-  return count;
-}
-
-export { ROOT };

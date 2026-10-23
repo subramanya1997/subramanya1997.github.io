@@ -1,12 +1,12 @@
-// Per-page half of _includes/head.html. The site-wide half (favicons, fonts,
+// Per-page <head> tags. The site-wide ones (favicons, fonts,
 // main.css, RFC 8288 discovery links) lives in app/layout.tsx.
 //
 // These elements are rendered as ordinary JSX: React 19 hoists <title>, <meta>
 // and <link> into <head>. Stylesheets carry a `precedence` so they are hoisted
 // too and always land *after* the layout's main.css (see docs/internal/parity-notes.md).
-import { getAbout, getSiteConfig } from "@/components/lib/site-data";
-import { stripHtml, stripNewlines, truncate } from "@/components/lib/jekyll";
-import type { PageMeta } from "@/components/lib/page-meta";
+import { getAbout, getSiteConfig } from "@/lib/site-data";
+import { stripHtml, stripNewlines, truncate } from "@/lib/text";
+import type { PageMeta } from "@/lib/page-meta";
 import StructuredData from "./StructuredData";
 
 export default function PageHead({ meta }: { meta: PageMeta }) {

@@ -1,7 +1,7 @@
 // Port of work.md (layout: page, custom_layout: true).
 import WorkEntry from "@/components/cards/WorkEntry";
-import { pageMeta } from "@/components/lib/page-meta";
-import { getAbout } from "@/components/lib/site-data";
+import { pageMeta } from "@/lib/page-meta";
+import { getAbout } from "@/lib/site-data";
 import PageLayout from "@/components/site/PageLayout";
 
 const meta = pageMeta({

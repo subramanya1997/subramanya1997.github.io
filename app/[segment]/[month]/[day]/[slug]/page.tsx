@@ -5,16 +5,16 @@
 // share one slug name, and the sibling `app/[segment]/page.tsx` uses it for the
 // legacy `/tags-<slug>/` redirect pages.
 import { notFound } from "next/navigation";
-import { readingTime, stripHtml, stripNewlines } from "@/components/lib/jekyll";
-import { pageMeta } from "@/components/lib/page-meta";
+import { readingTime, stripHtml, stripNewlines } from "@/lib/text";
+import { pageMeta } from "@/lib/page-meta";
 import {
   isoDay,
   postSocialImage,
   readingMinutes,
   slashDate,
   xmlSchemaDate,
-} from "@/components/lib/post-extras";
-import { getSiteConfig } from "@/components/lib/site-data";
+} from "@/lib/post-extras";
+import { getSiteConfig } from "@/lib/site-data";
 import PostLayout from "@/components/post/PostLayout";
 import type { FaqItem } from "@/components/post/post-faq";
 import { getAllPosts, getPost } from "@/lib/content";

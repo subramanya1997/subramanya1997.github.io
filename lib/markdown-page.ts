@@ -13,7 +13,7 @@ import { renderMarkdown } from "@/lib/markdown";
  * `{{ site.email }}`, `{{ site.data.about.<key> }}` and
  * `{{ '<literal>' | prepend: site.baseurl }}` (baseurl is "").
  */
-export function resolveLiquid(source: string): string {
+function resolveLiquid(source: string): string {
   const site = getSiteConfig();
   const about = getAbout() as unknown as Record<string, unknown>;
 

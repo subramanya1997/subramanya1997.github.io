@@ -91,7 +91,7 @@ substantive differences are listed below.
 - **`lib/content.ts#getAllPosts` needs a tiebreak.** Jekyll sorts documents by
   `(date, path)` ascending and reverses, so posts sharing a date come out
   filename-**descending**. `getAllPosts` sorts on date only, which flipped the
-  three 2022-12-28 posts. `components/lib/site-data.ts#getPostsInJekyllOrder`
+  three 2022-12-28 posts. `lib/site-data.ts#getPostsInJekyllOrder`
   applies the tiebreak locally; it should be folded into `getAllPosts` so the
   feed, sitemap, search index and post routes agree.
 - **Analytics is always emitted.** The `JEKYLL_ENV=production` gate (mirroring
@@ -119,8 +119,8 @@ Post routes (`/YYYY/MM/DD/slug/`) should compose the same shell:
 ```tsx
 import SiteShell from "@/components/site/SiteShell";
 import Newsletter from "@/components/site/Newsletter";
-import { pageMeta } from "@/components/lib/page-meta";
-import { readingTime } from "@/components/lib/jekyll";
+import { pageMeta } from "@/lib/page-meta";
+import { readingTime } from "@/lib/text";
 
 <SiteShell meta={pageMeta({ title, url, description, image, scripts })} layout="post">
   {/* _layouts/post.html body */}

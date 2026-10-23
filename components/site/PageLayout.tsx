@@ -1,6 +1,6 @@
-// Port of _layouts/page.html (which itself wraps _layouts/default.html).
+// Standard content page layout, rendered inside SiteShell.
 import type { ReactNode } from "react";
-import type { PageMeta } from "@/components/lib/page-meta";
+import type { PageMeta } from "@/lib/page-meta";
 import SiteShell from "./SiteShell";
 
 export default function PageLayout({

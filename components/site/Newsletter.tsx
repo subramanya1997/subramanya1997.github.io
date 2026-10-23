@@ -1,7 +1,7 @@
-// Port of _includes/newsletter.html. Rendered inside the footer on every
-// non-post page; _layouts/post.html renders it itself, so it is exported for
-// the posts workstream too.
-import { getSiteConfig } from "@/components/lib/site-data";
+// Newsletter sign-up card (posts to a Google Form through a hidden iframe).
+// SiteShell renders it in the sticky right rail on every page; the handbook
+// places it in its own right column.
+import { getSiteConfig } from "@/lib/site-data";
 
 const NEWSLETTER_SCRIPT = `
 (function() {
@@ -32,46 +32,41 @@ const NEWSLETTER_SCRIPT = `
 `;
 
 const NEWSLETTER_STYLE = `
-  .newsletter-section {
-    border-top: 1px solid var(--border-color, rgba(0,0,0,0.08));
-    padding: 40px 0 10px;
-    margin-top: 40px;
-  }
-
-  .newsletter-inner {
-    max-width: 520px;
-    margin: 0 auto;
-    text-align: center;
+  /* Compact card for the side rails: left-aligned, stacked field + button. */
+  .newsletter-card {
+    padding: 16px;
+    border: 1px solid var(--line, rgba(0,0,0,0.08));
+    border-radius: 12px;
+    background: var(--surface, #fff);
   }
 
   .newsletter-heading {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    font-size: 18px;
+    gap: 6px;
+    font-size: 14px;
     font-weight: 600;
     color: var(--text-primary, #111);
-    margin: 0 0 8px;
+    margin: 0 0 4px;
   }
 
   .newsletter-tagline {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-secondary, #555);
-    margin: 0 0 20px;
+    margin: 0 0 12px;
     line-height: 1.5;
   }
 
   .newsletter-input-group {
     display: flex;
+    flex-direction: column;
     gap: 8px;
-    max-width: 440px;
-    margin: 0 auto;
   }
 
   .newsletter-email {
     flex: 1;
-    padding: 10px 14px;
-    font-size: 14px;
+    padding: 8px 12px;
+    font-size: 13px;
     border: 1px solid var(--border-color, #ddd);
     border-radius: 8px;
     background: var(--surface-sunken, #fff);
@@ -92,8 +87,8 @@ const NEWSLETTER_STYLE = `
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 20px;
-    font-size: 14px;
+    padding: 8px 12px;
+    font-size: 13px;
     font-weight: 600;
     color: var(--paper, #fff);
     background: var(--ink, #111);
@@ -111,7 +106,6 @@ const NEWSLETTER_STYLE = `
   .newsletter-btn:disabled {
     opacity: 0.6;
     cursor: not-allowed;
-    transform: none;
   }
 
   .btn-loading {
@@ -126,9 +120,9 @@ const NEWSLETTER_STYLE = `
   }
 
   .newsletter-privacy {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--text-tertiary, #999);
-    margin: 10px 0 0;
+    margin: 8px 0 0;
   }
 
   .newsletter-success {
@@ -136,78 +130,16 @@ const NEWSLETTER_STYLE = `
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 16px;
+    padding: 12px;
     background: var(--surface-sunken, #f9f9f9);
     border-radius: 8px;
     color: var(--success, #16a34a);
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 500;
   }
 
   .newsletter-success p {
     margin: 0;
-  }
-
-  /* Compact card for side rails: left-aligned, stacked field + button. */
-  .newsletter-card {
-    margin: 0;
-    padding: 16px;
-    border: 1px solid var(--line, rgba(0,0,0,0.08));
-    border-radius: 12px;
-    background: var(--surface, #fff);
-  }
-
-  .newsletter-card .newsletter-inner {
-    max-width: none;
-    text-align: left;
-  }
-
-  .newsletter-card .newsletter-heading {
-    font-size: 14px;
-    gap: 6px;
-    margin-bottom: 4px;
-  }
-
-  .newsletter-card .newsletter-heading svg {
-    width: 16px;
-    height: 16px;
-  }
-
-  .newsletter-card .newsletter-tagline {
-    font-size: 13px;
-    margin-bottom: 12px;
-  }
-
-  .newsletter-card .newsletter-input-group {
-    flex-direction: column;
-    max-width: none;
-  }
-
-  .newsletter-card .newsletter-email,
-  .newsletter-card .newsletter-btn {
-    padding: 8px 12px;
-    font-size: 13px;
-  }
-
-  .newsletter-card .newsletter-privacy {
-    font-size: 11px;
-    margin-top: 8px;
-  }
-
-  .newsletter-card .newsletter-success {
-    font-size: 13px;
-    padding: 12px;
-  }
-
-  @media screen and (max-width: 480px) {
-    .newsletter-input-group {
-      flex-direction: column;
-    }
-
-    .newsletter-btn {
-      width: 100%;
-      justify-content: center;
-    }
   }
 `;
 
@@ -221,25 +153,20 @@ interface NewsletterConfig {
   success_message?: string;
 }
 
-export default function Newsletter({
-  variant = "section",
-}: {
-  /** "section": full-width block (end of posts). "card": compact side-rail card. */
-  variant?: "section" | "card";
-} = {}) {
+export default function Newsletter() {
   const newsletter = getSiteConfig().newsletter as NewsletterConfig;
   return (
     <>
       {newsletter.enabled ? (
         <>
-          <div className={variant === "card" ? "newsletter-section newsletter-card" : "newsletter-section"}>
+          <div className="newsletter-card">
             <div className="newsletter-inner">
               <div className="newsletter-text">
                 <h3 className="newsletter-heading">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
+                    width="16"
+                    height="16"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"

@@ -4,8 +4,8 @@
 //
 // The body is injected verbatim because it contains an HTML comment (the agent
 // recovery hints) and a JSON <script> that JSX cannot reproduce exactly.
-import { pageMeta } from "@/components/lib/page-meta";
-import { getSiteConfig } from "@/components/lib/site-data";
+import { pageMeta } from "@/lib/page-meta";
+import { getSiteConfig } from "@/lib/site-data";
 import SiteShell from "@/components/site/SiteShell";
 
 // Next injects its own <meta name="robots" content="noindex"> on not-found

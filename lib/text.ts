@@ -1,6 +1,6 @@
-// Ports of the Liquid filters / Jekyll plugin behaviors the HTML templates
-// relied on. Keeping them here (rather than in lib/) avoids colliding with the
-// markdown-parity and non-HTML-routes workstreams.
+// Text helpers for the page templates (strip_html, reading time, link titles,
+// …). They reproduce the Liquid filters and Jekyll plugins the original
+// templates used, so the rendered HTML stays byte-identical.
 
 /** Liquid's `strip_html`: drops <script>/<style>/comment blocks, then all tags. */
 export function stripHtml(input: string): string {
@@ -24,7 +24,7 @@ export function truncate(input: string, length: number, ellipsis = "..."): strin
 }
 
 /**
- * `_includes/reading_time.html`, verbatim: paragraph tags are preserved,
+ * Jekyll's reading-time include, verbatim: paragraph tags are preserved,
  * <pre>/<code> contents removed, HTML stripped, words / 200.
  * Input is the *rendered* HTML of the document (as in Jekyll).
  */

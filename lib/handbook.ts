@@ -69,7 +69,7 @@ function enhanceHtml(html: string, heading: string): string {
     .replace(/<\/table>/g, "</table></div>");
 }
 
-export function htmlToText(html: string): string {
+function htmlToText(html: string): string {
   return html
     .replace(/<(script|style)[\s\S]*?<\/\1>/gi, " ")
     .replace(/<[^>]+>/g, " ")

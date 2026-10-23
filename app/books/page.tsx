@@ -1,7 +1,7 @@
 // Port of books.md (layout: page, custom_layout: true).
 import { Fragment } from "react";
 import BookCard from "@/components/cards/BookCard";
-import { pageMeta } from "@/components/lib/page-meta";
+import { pageMeta } from "@/lib/page-meta";
 import PageLayout from "@/components/site/PageLayout";
 import { getAllBooks } from "@/lib/content";
 

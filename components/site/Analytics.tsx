@@ -1,7 +1,7 @@
-// Port of _includes/analytics.html. Always emitted (the old Jekyll
-// JEKYLL_ENV=production guard is gone), so every build carries the GA tags.
-import { getSiteConfig } from "@/components/lib/site-data";
-import type { PageMeta } from "@/components/lib/page-meta";
+// Google Analytics tags plus the enhanced-analytics script. Emitted on every
+// build (there is no production-only guard).
+import { getSiteConfig } from "@/lib/site-data";
+import type { PageMeta } from "@/lib/page-meta";
 
 export default function Analytics({
   meta,

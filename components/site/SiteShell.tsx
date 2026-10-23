@@ -1,8 +1,8 @@
-// Port of _layouts/default.html. Every HTML route renders its body through
-// this component, so the header/footer/back-to-top/script order stays identical
-// to the Jekyll output.
+// The page shell: header, main column with the newsletter rail, footer,
+// back-to-top and site scripts. Every HTML route renders its body through
+// this component, so that order stays identical to the Jekyll output.
 import type { ReactNode } from "react";
-import type { PageMeta } from "@/components/lib/page-meta";
+import type { PageMeta } from "@/lib/page-meta";
 import Analytics from "./Analytics";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -162,12 +162,9 @@ export default function SiteShell({
   ]
     .filter(Boolean)
     .join(" ");
-  const content =
-    rawContent !== undefined ? (
-      <div className="site-rail-main" dangerouslySetInnerHTML={{ __html: rawContent }} />
-    ) : (
-      <div className="site-rail-main">{children}</div>
-    );
+  // Page body: verbatim HTML (404) or React children.
+  const body =
+    rawContent !== undefined ? { dangerouslySetInnerHTML: { __html: rawContent } } : { children };
   return (
     <>
       <PageHead meta={meta} />
@@ -184,24 +181,20 @@ export default function SiteShell({
 
       <main className="page-content" id="main-content" role="main">
         {!newsletterRail ? (
-          rawContent !== undefined ? (
-            <div className={wrapClass} dangerouslySetInnerHTML={{ __html: rawContent }} />
-          ) : (
-            <div className={wrapClass}>{children}</div>
-          )
+          <div className={wrapClass} {...body} />
         ) : (
           <div className={wrapClass}>
             <div className="site-rail-layout">
-              {content}
+              <div className="site-rail-main" {...body} />
               <aside className="site-rail" aria-label="Newsletter">
                 <div className="site-rail-sticky">
-                  <Newsletter variant="card" />
+                  <Newsletter />
                 </div>
               </aside>
             </div>
             {/* Narrow screens: no right column, so the card follows the content. */}
             <div className="site-rail-inline">
-              <Newsletter variant="card" />
+              <Newsletter />
             </div>
           </div>
         )}

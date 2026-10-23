@@ -1,6 +1,6 @@
 // Port of search.md (layout: page, custom_layout: true). The behavior lives in
 // public/assets/js/pages/search.js + components/discovery.js, loaded verbatim.
-import { pageMeta } from "@/components/lib/page-meta";
+import { pageMeta } from "@/lib/page-meta";
 import PageLayout from "@/components/site/PageLayout";
 
 const meta = pageMeta({

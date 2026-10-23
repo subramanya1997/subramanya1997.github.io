@@ -1,8 +1,6 @@
-// Helpers that only the post / loop / tag-archive routes need: Jekyll date
-// formats that were not already covered, the social-image cascade of
-// `_includes/head.html`, the citation key of `_includes/citation.html`, and the
-// per-post translation lookup that `_includes/language-switcher.html` did by
-// walking `site.static_files`.
+// Helpers that only the post / loop / tag-archive routes need: date formats,
+// the social-image cascade, the citation key, and the per-post translation
+// lookup (which translation files exist under assets/translations).
 import fs from "node:fs";
 import path from "node:path";
 import { getAllPosts, getSiteConfig, type Post } from "@/lib/content";
@@ -65,7 +63,7 @@ export function urlEncode(value: string): string {
 
 
 // ---------------------------------------------------------------------------
-// social images (`_includes/head.html`)
+// social images
 // ---------------------------------------------------------------------------
 
 // Build-time only (all routes are prerendered); the `turbopackIgnore` hint
@@ -102,7 +100,7 @@ export function loopSocialImage(slug: string, explicit?: unknown): string {
 }
 
 // ---------------------------------------------------------------------------
-// citation key (`_includes/citation.html`)
+// citation key
 // ---------------------------------------------------------------------------
 
 /** `'nagabhushanaradhya' + %Y + first two hyphen-parts of the slug`. */
@@ -114,7 +112,7 @@ export function citationId(post: Post): string {
 }
 
 // ---------------------------------------------------------------------------
-// translations (`_includes/language-switcher.html`)
+// translations
 // ---------------------------------------------------------------------------
 
 /**
@@ -147,7 +145,7 @@ export function postNeighbours(post: Post): { previous?: Post; next?: Post } {
 }
 
 /**
- * `_includes/related-posts.html`: every other post sharing at least one tag
+ * Related posts: every other post sharing at least one tag
  * (categories are always empty here, so `sameCategory` is true for every post
  * — Jekyll compares `nil == nil`), capped at four. The Liquid pushes onto the
  * list in `site.posts` order, i.e. newest first.

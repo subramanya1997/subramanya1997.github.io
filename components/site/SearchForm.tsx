@@ -1,4 +1,4 @@
-// Port of _includes/search.html.
+// Site search form.
 export default function SearchForm() {
   return (
     <form

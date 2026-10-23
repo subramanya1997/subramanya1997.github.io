@@ -55,7 +55,7 @@ export function sortedLoops(): Loop[] {
 }
 
 /**
- * `_layouts/loop.html`: up to four loops in the same category, in title order;
+ * Related loops: up to four loops in the same category, in title order;
  * if the category matches nothing, the first four other loops instead.
  */
 export function relatedLoops(current: Loop): Loop[] {

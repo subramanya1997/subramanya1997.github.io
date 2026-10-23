@@ -1,7 +1,7 @@
 // Related-posts rail at the foot of a post.
 import { relatedPostsCss } from "./assets";
-import { linkTitle, stripHtml } from "@/components/lib/jekyll";
-import { shortDate, xmlSchemaDate } from "@/components/lib/post-extras";
+import { linkTitle, stripHtml } from "@/lib/text";
+import { shortDate, xmlSchemaDate } from "@/lib/post-extras";
 import { slugifyTag, type Post } from "@/lib/content";
 import { truncateWords } from "@/lib/nonhtml";
 

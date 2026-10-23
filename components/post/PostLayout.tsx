@@ -1,15 +1,15 @@
-// Port of _layouts/post.html (which wraps _layouts/default.html via SiteShell).
+// Blog post layout, rendered inside SiteShell.
 // The newsletter card comes from SiteShell's right column, like every page.
 import { postChromeCss, postLayoutCss } from "./assets";
-import { linkTitle, stripHtml, stripNewlines } from "@/components/lib/jekyll";
-import type { PageMeta } from "@/components/lib/page-meta";
+import { linkTitle, stripHtml, stripNewlines } from "@/lib/text";
+import type { PageMeta } from "@/lib/page-meta";
 import {
   jsonLdTimestamp,
   postNeighbours,
   relatedPosts,
   shortDate,
-} from "@/components/lib/post-extras";
-import { getSiteConfig } from "@/components/lib/site-data";
+} from "@/lib/post-extras";
+import { getSiteConfig } from "@/lib/site-data";
 import SiteShell from "@/components/site/SiteShell";
 import { slugifyTag, type Post } from "@/lib/content";
 import { citationHtml } from "./citation";
@@ -49,7 +49,7 @@ export interface PostLayoutProps {
   post: Post;
   /** The post body, rendered by lib/markdown.ts. */
   contentHtml: string;
-  /** `_includes/reading_time.html` over `contentHtml`. */
+  /** Reading time of `contentHtml`. */
   readingTime: string;
   /** Front-matter `faq`, with each answer already markdownified. */
   faq: FaqItem[];
@@ -70,7 +70,7 @@ export default function PostLayout({
   const { previous, next } = postNeighbours(post);
   const shareTarget = { url: canonical, title: fm.title, excerpt: fm.excerpt };
 
-  // `_layouts/post.html`'s own JSON-LD node. `schema_type` defaults to
+  // The post's own JSON-LD node. `schema_type` defaults to
   // TechArticle; `last_modified_at` falls back to the publication date.
   const modified = fm.last_modified_at
     ? new Date(

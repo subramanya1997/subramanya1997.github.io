@@ -5,8 +5,8 @@
 // interleave raw HTML with elements without inserting a wrapper node that the
 // CSS would see.
 import { postFaqCss } from "./assets";
-import { escapeText } from "@/components/lib/html";
-import { stripHtml, stripNewlines } from "@/components/lib/jekyll";
+import { escapeText } from "@/lib/html";
+import { stripHtml, stripNewlines } from "@/lib/text";
 
 export interface FaqItem {
   q: string;

@@ -1,7 +1,7 @@
 # subramanya.ai
 
-Personal site of Subramanya N — Next.js 16 (App Router, static export) built
-from the original Jekyll content sources, served on Vercel.
+Personal site of Subramanya N — Next.js 16 (App Router, every route statically
+prerendered), ported from Jekyll with byte-level output parity, served on Vercel.
 
 ## Deployment
 
@@ -12,7 +12,8 @@ Vercel project `subramanya-ai` is git-connected. Do not deploy manually with
 - Build: `bun run build` (runs `scripts/next/sync-public.mjs`, then `next build`);
   `bun run build:export` (`EXPORT_PARITY=1`) writes the static export to `out/`
   for the parity harness — Vercel never uses export mode.
-- Vercel config: `vercel.json` (trailing slashes, `.well-known` content types)
+- Vercel config: `vercel.json` only sets the build command; trailing slashes,
+  redirects, rewrites and the `.well-known` content types live in `next.config.ts`
 - Domain: subramanya.ai (+ www). GitHub Pages is retired; DNS points at Vercel.
 
 ## Layout
@@ -35,7 +36,8 @@ Vercel project `subramanya-ai` is git-connected. Do not deploy manually with
   goes. The home page and 404 have no source file — they are pure TSX
   (`app/page.tsx`, `app/not-found.tsx`) and their metadata is declared inline
   in the registry's `PAGE_ENTRIES`.
-- `lib/content.ts` loads that content; `lib/markdown.ts` renders markdown with
+- `lib/content-source.mjs` reads that content (shared by the routes, via the
+  typed `lib/content.ts`, and the bare-node prebuild); `lib/markdown.ts` renders markdown with
   byte-level kramdown/rouge parity (do not swap in a stock renderer — heading
   ids, rouge token classes, and smart quotes are all matched to the old Jekyll
   output).

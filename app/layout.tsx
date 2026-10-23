@@ -1,5 +1,5 @@
-// Root layout: <html>/<body> from _layouts/default.html plus the site-wide
-// half of _includes/head.html. Per-page head tags live in
+// Root layout: <html>/<body> plus the site-wide <head> tags (favicons, fonts,
+// main.css, discovery links). Per-page head tags live in
 // components/site/PageHead.tsx.
 //
 // NOTE: app/globals.css (Tailwind + shadcn) is deliberately NOT imported here.
@@ -10,7 +10,7 @@ import type { Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { getSiteConfig } from "@/components/lib/site-data";
+import { getSiteConfig } from "@/lib/site-data";
 
 // Self-hosted Inter (replaces the fonts.googleapis.com stylesheet): the woff2
 // files are served same-origin with a preload, and next/font generates a
@@ -22,7 +22,7 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-// _includes/head.html — sets <html lang> from ?lang= before paint.
+// Sets <html lang> from ?lang= before paint.
 const LANG_SCRIPT = `
       (function() {
         const lang = new URLSearchParams(window.location.search).get('lang');

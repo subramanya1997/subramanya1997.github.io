@@ -2,8 +2,8 @@
 // (layout: page, custom_layout: true).
 //
 // `<body class="loop-shell">` comes from SiteShell's bodyClass prop.
-import { stripHtml } from "@/components/lib/jekyll";
-import { pageMeta } from "@/components/lib/page-meta";
+import { stripHtml } from "@/lib/text";
+import { pageMeta } from "@/lib/page-meta";
 import { sortedLoops, type Loop } from "@/components/loops/loop-data";
 import PageLayout from "@/components/site/PageLayout";
 import { renderMarkdown } from "@/lib/markdown";

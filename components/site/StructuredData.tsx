@@ -1,13 +1,13 @@
-// Port of _includes/structured-data.html.
-import { getAbout, getSiteConfig } from "@/components/lib/site-data";
-import { stripHtml, stripNewlines, truncate } from "@/components/lib/jekyll";
-import type { PageMeta } from "@/components/lib/page-meta";
+// JSON-LD structured data (@graph) for every page.
+import { getAbout, getSiteConfig } from "@/lib/site-data";
+import { stripHtml, stripNewlines, truncate } from "@/lib/text";
+import type { PageMeta } from "@/lib/page-meta";
 
 const COLLECTION_URLS = ["/blog/", "/tags/", "/books/", "/awesome-loops/", "/publications/"];
 
 type Node = Record<string, unknown>;
 
-export function buildStructuredData(meta: PageMeta): Node {
+function buildStructuredData(meta: PageMeta): Node {
   const site = getSiteConfig();
   const about = getAbout();
   const canonical = `${site.url}${meta.url}`;

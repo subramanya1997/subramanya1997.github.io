@@ -1,6 +1,6 @@
-// Port of _includes/components/post-card.html.
-import { applyLinkAttributes, humanDate, isoDate, linkTitle } from "@/components/lib/jekyll";
-import { getSiteConfig } from "@/components/lib/site-data";
+// Post card for the blog, home and tag archive lists.
+import { applyLinkAttributes, humanDate, isoDate, linkTitle } from "@/lib/text";
+import { getSiteConfig } from "@/lib/site-data";
 import { slugifyTag, type Post } from "@/lib/content";
 
 // The Jekyll markup puts a plain `title` attribute on the <svg>; React's SVG
@@ -12,7 +12,7 @@ export interface PostCardProps {
   /** Matching entry from content/data/view_count.json, when the post has one. */
   postViews?: number;
   dateMode: "human" | "iso";
-  /** Result of components/lib/jekyll#readingTime on the post's rendered HTML. */
+  /** Result of lib/jekyll#readingTime on the post's rendered HTML. */
   readingTime: string;
 }
 

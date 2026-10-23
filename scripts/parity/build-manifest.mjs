@@ -341,7 +341,7 @@ function parseArgs(argv) {
 
 function main() {
   const { positional, flags } = parseArgs(process.argv.slice(2));
-  const buildDir = positional[0] || join(REPO_ROOT, "_site");
+  const buildDir = positional[0] || join(REPO_ROOT, "out");
   try {
     if (!statSync(buildDir).isDirectory()) throw new Error("not a directory");
   } catch {

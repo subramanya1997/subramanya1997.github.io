@@ -6,7 +6,7 @@
 // build directives (`markdown`, `kramdown`, `highlighter`, `permalink`,
 // `exclude`, `keep_files`, `collections`, `defaults`, `data_dir`) went away
 // with the Jekyll toolchain — collection URLs are defined in lib/content.ts and
-// scripts/next/lib/jekyll-content.mjs, and the loop stylesheet/script defaults
+// lib/content-source.mjs, and the loop stylesheet/script defaults
 // are applied by the loop route.
 
 /**

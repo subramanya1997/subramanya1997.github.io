@@ -1,17 +1,11 @@
-// Content loaders over the content/ tree (content/posts, content/books,
-// content/loops, content/data). These directories are the single source of
-// truth so the existing translation / OG-image / analytics scripts keep
-// working. Site-wide settings come from site.config.mjs.
-import fs from "node:fs";
-import path from "node:path";
-import matter from "gray-matter";
-import yaml from "js-yaml";
+// Typed, cached access to the content/ tree for the Next routes. The reading
+// itself lives in lib/content-source.mjs, shared with the bare-node prebuild
+// scripts, so both see the same posts, permalinks and ordering. Site-wide
+// settings come from site.config.mjs.
 import { site } from "@/site.config.mjs";
+import { ROOT, books, dataFile, loops, posts, slugify } from "@/lib/content-source.mjs";
 
-export const ROOT = process.cwd();
-
-/** Root of the content collections (posts, books, loops, data). */
-export const CONTENT_DIR = "content";
+export { ROOT };
 
 // ---------- site config ----------
 
@@ -61,56 +55,25 @@ export interface Post {
   sourcePath: string; // absolute path to the content/posts file
 }
 
-const POST_FILE = /^(\d{4})-(\d{2})-(\d{2})-(.+)\.(md|markdown)$/;
-
 let _posts: Post[] | null = null;
 /** Active posts, newest first. Retired documents remain available at their indexed URLs. */
 export function getAllPosts(includeRetired = false): Post[] {
-  if (_posts) return includeRetired ? _posts : _posts.filter(post => !post.frontmatter.retired);
-  const dir = path.join(ROOT, CONTENT_DIR, "posts");
-  _posts = fs
-    .readdirSync(dir)
-    .map((file) => {
-      const m = file.match(POST_FILE);
-      if (!m) return null;
-      const [, fileYear, fileMonth, fileDay, slug] = m;
-      const sourcePath = path.join(dir, file);
-      const { data, content } = matter(fs.readFileSync(sourcePath, "utf8"));
-      // Jekyll's permalink date comes from front-matter `date` when present,
-      // falling back to the filename. Three posts differ, so this matters.
-      let [year, month, day] = [fileYear, fileMonth, fileDay];
-      const fmDate = (data as PostFrontmatter).date;
-      if (fmDate) {
-        const d = fmDate instanceof Date ? fmDate : new Date(fmDate);
-        if (!Number.isNaN(d.getTime())) {
-          year = String(d.getUTCFullYear());
-          month = String(d.getUTCMonth() + 1).padStart(2, "0");
-          day = String(d.getUTCDate()).padStart(2, "0");
-        }
-      }
-      return {
-        slug,
-        year,
-        month,
-        day,
-        url: `/${year}/${month}/${day}/${slug}/`,
-        date: new Date(`${year}-${month}-${day}T00:00:00Z`),
-        frontmatter: data as PostFrontmatter,
-        content,
-        sourcePath,
-      } satisfies Post;
-    })
-    .filter((p): p is Post => p !== null)
-    // Jekyll sorts by (date, path) ascending then reverses: newest first, and
-    // same-day posts ordered filename-DESCENDING. Feed/sitemap/related-posts
-    // ordering depends on this exact tiebreak.
-    .sort(
-      (a, b) =>
-        b.date.getTime() - a.date.getTime() ||
-        // byte-order compare, matching Ruby's String#<=>
-        (b.sourcePath > a.sourcePath ? 1 : b.sourcePath < a.sourcePath ? -1 : 0)
-    );
-  return includeRetired ? _posts : _posts.filter(post => !post.frontmatter.retired);
+  _posts ??= posts().map((post) => {
+    const month = String(post.month).padStart(2, "0");
+    const day = String(post.day).padStart(2, "0");
+    return {
+      slug: post.slug,
+      year: String(post.year),
+      month,
+      day,
+      url: post.url,
+      date: new Date(`${post.date}T00:00:00Z`),
+      frontmatter: post.data as PostFrontmatter,
+      content: post.content,
+      sourcePath: post.sourcePath,
+    };
+  });
+  return includeRetired ? _posts : _posts.filter((post) => !post.frontmatter.retired);
 }
 
 export function getPost(year: string, month: string, day: string, slug: string) {
@@ -129,52 +92,35 @@ export interface CollectionDoc {
   sourcePath: string;
 }
 
-function loadCollection(dirName: string, urlFor: (slug: string, fm: Record<string, unknown>) => string): CollectionDoc[] {
-  const dir = path.join(ROOT, CONTENT_DIR, dirName);
-  if (!fs.existsSync(dir)) return [];
-  return fs
-    .readdirSync(dir)
-    .filter((f) => /\.(md|markdown|html)$/.test(f))
-    .map((file) => {
-      const sourcePath = path.join(dir, file);
-      const { data, content } = matter(fs.readFileSync(sourcePath, "utf8"));
-      const slug = file.replace(/\.(md|markdown|html)$/, "");
-      return { slug, url: urlFor(slug, data), frontmatter: data, content, sourcePath };
-    });
+function toDoc(doc: ReturnType<typeof books>[number]): CollectionDoc {
+  return {
+    slug: doc.slug,
+    url: doc.url,
+    frontmatter: doc.data,
+    content: doc.content,
+    sourcePath: doc.sourcePath,
+  };
 }
 
 /** content/loops collection — permalink: /awesome-loops/:path/ */
 export function getAllLoops(): CollectionDoc[] {
-  return loadCollection("loops", (slug) => `/awesome-loops/${slug}/`);
+  return loops().map(toDoc);
 }
 
 /** content/books collection — URL from front matter `permalink:`, else /books/<slug>/. */
 export function getAllBooks(): CollectionDoc[] {
-  return loadCollection("books", (slug, fm) =>
-    typeof fm.permalink === "string" ? (fm.permalink as string) : `/books/${slug}/`
-  );
+  return books().map(toDoc);
 }
 
 // ---------- tags ----------
 
 /** Jekyll's tag slugify (mode: default): lowercase, spaces/special chars → hyphen. */
-export function slugifyTag(tag: string): string {
-  return tag
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
+export const slugifyTag: (tag: string) => string = slugify;
 
 // ---------- data files ----------
 
 export function getDataFile<T = unknown>(name: string): T {
-  const dir = path.join(ROOT, CONTENT_DIR, "data");
-  for (const ext of [".yml", ".yaml", ".json"]) {
-    const p = path.join(dir, name + ext);
-    if (fs.existsSync(p)) {
-      const raw = fs.readFileSync(p, "utf8");
-      return (ext === ".json" ? JSON.parse(raw) : yaml.load(raw)) as T;
-    }
-  }
-  throw new Error(`data file not found: content/data/${name}`);
+  const data = dataFile(name);
+  if (data === null) throw new Error(`data file not found: content/data/${name}`);
+  return data as T;
 }

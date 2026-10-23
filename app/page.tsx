@@ -2,9 +2,9 @@
 import { Fragment } from "react";
 import BookCard from "@/components/cards/BookCard";
 import PostCard from "@/components/cards/PostCard";
-import { applyLinkAttributes, readingTime } from "@/components/lib/jekyll";
-import { pageMeta } from "@/components/lib/page-meta";
-import { getAbout, getSiteConfig, viewsFor } from "@/components/lib/site-data";
+import { applyLinkAttributes, readingTime } from "@/lib/text";
+import { pageMeta } from "@/lib/page-meta";
+import { getAbout, getSiteConfig, viewsFor } from "@/lib/site-data";
 import SiteShell from "@/components/site/SiteShell";
 import { getAllBooks, getAllPosts } from "@/lib/content";
 import { memoizedHtml } from "@/lib/nonhtml";
