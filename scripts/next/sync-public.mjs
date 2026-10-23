@@ -1,8 +1,9 @@
 // Syncs the static asset directories into public/ so Next.js serves them
 // verbatim. The originals at the repo root (assets/, css/) and under content/
 // stay the source of truth (the translation / OG-image / analytics scripts keep
-// writing there).
-import { cpSync, mkdirSync, rmSync, existsSync, copyFileSync, readFileSync, writeFileSync } from "node:fs";
+// writing there). The one committed part of public/ is the handbook's static
+// folder (public/<handbook slug>/), which is left in place.
+import { cpSync, mkdirSync, rmSync, existsSync, copyFileSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
@@ -10,6 +11,7 @@ import { site } from "../../site.config.mjs";
 import { writeTwins } from "./markdown-twins.mjs";
 import { writeBookRedirects } from "./book-redirects.mjs";
 import { writeHandbookPublic } from "./handbook-public.mjs";
+import { HANDBOOK_SLUG } from "../../lib/handbook-source.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const pub = join(root, "public");
@@ -37,8 +39,16 @@ const WELL_KNOWN = [
   "ai-catalog.json", // Agentic Resource Discovery catalog
 ];
 
-rmSync(pub, { recursive: true, force: true });
+// Wipe everything generated, keeping the committed handbook files (its
+// markdown twins are regenerated below, so stale ones go too).
 mkdirSync(pub, { recursive: true });
+for (const entry of readdirSync(pub)) {
+  if (entry !== HANDBOOK_SLUG) rmSync(join(pub, entry), { recursive: true, force: true });
+}
+const handbookPub = join(pub, HANDBOOK_SLUG);
+for (const entry of existsSync(handbookPub) ? readdirSync(handbookPub, { recursive: true }) : []) {
+  if (String(entry).endsWith(".md")) rmSync(join(handbookPub, String(entry)));
+}
 
 for (const dir of DIRS) {
   const src = join(root, dir);
@@ -54,8 +64,8 @@ for (const file of FILES) {
   if (existsSync(src)) copyFileSync(src, join(pub, file));
 }
 
-// The UMass handbook (formerly a vendored HonKit build): images, LICENSE,
-// robots.txt and markdown twins. Its pages are Next routes under app/<slug>/.
+// The UMass handbook's markdown twins (its pages are Next routes under
+// app/<slug>/; its images, LICENSE and robots.txt are committed in public/).
 console.log(`sync-public: ${writeHandbookPublic(pub)} handbook markdown twins emitted`);
 
 mkdirSync(join(pub, ".well-known"), { recursive: true });

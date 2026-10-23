@@ -1,14 +1,12 @@
-// UMass handbook static files: its floor-plan images, LICENSE and robots.txt
-// are served verbatim at the URLs the HonKit build published, and every page
+// UMass handbook markdown twins. Its static files (floor-plan images, LICENSE,
+// robots.txt) are committed under public/<slug>/ and served as-is; every page
 // gets a markdown twin (`<slug>/index.md` for the landing page, `<page>.md`
 // beside each `.html` page). The pages themselves are Next routes under
 // app/<slug>/.
-import { cpSync, existsSync, mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { site } from "../../site.config.mjs";
 import {
-  HANDBOOK_DIR,
-  HANDBOOK_SLUG,
   HANDBOOK_TITLE,
   handbookPages,
   handbookTwinUrl,
@@ -21,14 +19,6 @@ function yamlString(value) {
 }
 
 export function writeHandbookPublic(pub) {
-  const out = join(pub, HANDBOOK_SLUG);
-  mkdirSync(out, { recursive: true });
-
-  for (const entry of ["assets", "LICENSE", "robots.txt"]) {
-    const src = join(HANDBOOK_DIR, entry);
-    if (existsSync(src)) cpSync(src, join(out, entry), { recursive: true });
-  }
-
   const siteUrl = String(site.url).replace(/\/$/, "");
   let count = 0;
   for (const page of handbookPages()) {

@@ -50,7 +50,7 @@ tag drifts.
 - `content/books/`: The `books` collection.
 - `content/loops/`: Curated automation-loop marketplace listings.
 - `content/data/`: Structured data for the homepage, work page, i18n labels, and analytics-derived view counts.
-- `content/handbook/<slug>/`: The UMass international-student handbook — HonKit-format markdown with `SUMMARY.md` as its table of contents. `lib/handbook-source.mjs` reads it, `lib/handbook.ts` renders it, and `app/<slug>/` serves every page at its original `.html` URL with in-handbook search (`<slug>/search_index.json`).
+- `content/<slug>/` (static files in `public/<slug>/`): The UMass international-student handbook — HonKit-format markdown with `SUMMARY.md` as its table of contents. `lib/handbook-source.mjs` reads it, `lib/handbook.ts` renders it, and `app/<slug>/` serves every page at its original `.html` URL with in-handbook search (`<slug>/search_index.json`).
 - `app/<route>/content.md`: Each page's own source (front matter plus body), colocated with the route that renders it; `lib/page-sources.mjs` is the registry that pins their URLs, and declares the home page and 404 inline since those are rendered entirely in TSX.
 - `assets/`: Images, JavaScript, translation JSON, video, resume files, and page/component CSS.
 - `css/main.css`: Global site styles shared across the whole site.

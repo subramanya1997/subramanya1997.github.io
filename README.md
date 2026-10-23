@@ -2,8 +2,9 @@
 
 Personal site built with Next.js (App Router, static export) and deployed on
 Vercel. Content lives under `content/` (`content/posts/`, `content/books/`,
-`content/loops/`, `content/data/`, `content/handbook/`), with site-wide
-settings in `site.config.mjs` — those are the single source of truth. Page
+`content/loops/`, `content/data/`, and the UMass handbook in
+`content/navigating-umass-amherst-a-handbook-for-international-students/`,
+whose images are in `public/` under the same slug), with site-wide settings in `site.config.mjs` — those are the single source of truth. Page
 sources sit beside the route that renders them (`app/<route>/content.md`).
 
 - Live site: `https://subramanya.ai`
