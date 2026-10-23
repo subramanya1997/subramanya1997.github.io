@@ -928,7 +928,13 @@ th[aria-sort="descending"] .hb-sort::after { content: "↓"; opacity: 1; color: 
     white-space: nowrap;
   }
 
-  .hb-mobile-title {
+  /* main.css caps svg at max-width: 100%, which collapses an icon inside a
+   shrink-to-fit flex button to zero width. */
+.hb-mobile-toggle svg {
+  flex: none;
+}
+
+.hb-mobile-title {
     min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
