@@ -66,6 +66,11 @@ export function buildStructuredData(meta: PageMeta): Node {
     return { "@context": "https://schema.org", "@graph": graph };
   }
 
+  if (meta.jsonLd) {
+    graph.push(...meta.jsonLd);
+    return { "@context": "https://schema.org", "@graph": graph };
+  }
+
   if (meta.isPost) {
     // Posts get breadcrumbs only — the ScholarlyArticle node lives in the post layout.
     graph.push({

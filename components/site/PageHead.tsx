@@ -18,8 +18,8 @@ export default function PageHead({ meta }: { meta: PageMeta }) {
     stripNewlines(stripHtml(meta.description ?? site.description)),
     160
   );
-  const title = meta.title ? `${meta.title} | ${site.title}` : site.title;
-  const ogTitle = meta.title ?? site.title;
+  const title = meta.fullTitle ?? (meta.title ? `${meta.title} | ${site.title}` : site.title);
+  const ogTitle = meta.fullTitle ?? meta.title ?? site.title;
 
   // head.html's social-image cascade for non-post pages.
   const imagePath = meta.image ?? (site.default_social_image as string);
@@ -39,7 +39,7 @@ export default function PageHead({ meta }: { meta: PageMeta }) {
 
       <meta property="og:title" content={ogTitle} />
       <meta property="og:description" content={metaDescription} />
-      <meta property="og:type" content={meta.isPost ? "article" : "website"} />
+      <meta property="og:type" content={meta.ogType ?? (meta.isPost ? "article" : "website")} />
       <meta property="og:url" content={canonical} />
       <meta property="og:site_name" content={site.title} />
       <meta property="og:locale" content="en_US" />

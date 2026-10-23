@@ -26,6 +26,7 @@ import {
 } from "./content";
 import { PAGE_ENTRIES, PAGE_FILES, PAGE_DIRS } from "./page-sources.mjs";
 import { renderMarkdown } from "./markdown";
+import { handbookPages, handbookTwinUrl } from "./handbook-source.mjs";
 
 // ---------------------------------------------------------------------------
 // site basics
@@ -711,12 +712,10 @@ export function buildSitemapXml(): string {
     url(absoluteUrl(`${baseUrl()}${bookLink(book)}/`), wall ? dateToXmlschema(wall) : undefined);
   }
 
-  // Interior pages of the vendored static book sites (_books_static/<slug>/).
-  // Each HonKit build ships its own sitemap.xml; rather than serving those as
-  // secondary sitemaps, their URLs are folded in here (the vendored file
-  // itself is not copied into public/ — see scripts/next/sync-public.mjs).
-  for (const loc of staticBookPageUrls()) {
-    url(loc);
+  // Interior pages of the UMass handbook (app/<slug>/); its landing page is
+  // already emitted from the content/books entry above.
+  for (const page of handbookPages()) {
+    if (page.route) url(absoluteUrl(page.url));
   }
 
   for (const loop of sortedLoops()) {
@@ -725,29 +724,6 @@ export function buildSitemapXml(): string {
 
   lines.push("</urlset>");
   return `${lines.join("\n")}\n`;
-}
-
-/**
- * <loc> entries from every vendored book's HonKit-generated sitemap.xml,
- * minus each book's landing page (already emitted from the _books entry).
- * Sorted for a deterministic sitemap; empty when no static books exist.
- */
-function staticBookPageUrls(): string[] {
-  const dir = path.join(ROOT, "_books_static");
-  if (!fs.existsSync(dir)) return [];
-  const urls: string[] = [];
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    if (!entry.isDirectory() || entry.name.startsWith(".")) continue;
-    const sitemap = path.join(dir, entry.name, "sitemap.xml");
-    if (!fs.existsSync(sitemap)) continue;
-    const landing = absoluteUrl(`${baseUrl()}/${entry.name}/`);
-    const raw = fs.readFileSync(sitemap, "utf8");
-    for (const match of raw.matchAll(/<loc>\s*([^<]+?)\s*<\/loc>/g)) {
-      const loc = match[1];
-      if (loc !== landing) urls.push(loc);
-    }
-  }
-  return urls.sort();
 }
 
 /**
@@ -823,8 +799,8 @@ export function buildSitemapIndexXml(now: Date = new Date()): string {
   // sitemap-media.xml is generated from the posts (buildSitemapMediaXml,
   // served by app/sitemap-media.xml/route.ts).
   entry(absoluteUrl("/sitemap-media.xml"), buildTime);
-  // The vendored static books' pages are folded into /sitemap.xml (see
-  // staticBookPageUrls), so no per-book sitemap entries are listed here.
+  // The UMass handbook's pages are listed in /sitemap.xml itself, so no
+  // per-book sitemap entries are listed here.
 
   lines.push("</sitemapindex>");
   return `${lines.join("\n")}\n`;
@@ -920,6 +896,13 @@ export function buildLlmsTxt(): string {
   for (const book of sortedBooks()) {
     lines.push(
       `- [${book.frontmatter.title}](${url}${bookLink(book)}) (md: ${url}${book.url}index.md)`
+    );
+    lines.push("");
+  }
+  for (const page of handbookPages()) {
+    if (!page.route) continue;
+    lines.push(
+      `- [UMass handbook: ${page.navTitle}](${url}${page.url}) (md: ${url}${handbookTwinUrl(page)}): ${page.description}`
     );
     lines.push("");
   }

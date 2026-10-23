@@ -72,6 +72,10 @@
     return serializeUrl(absoluteUrl);
   }
 
+  // Original hrefs are kept off the DOM (no data attribute): this runs before
+  // React hydrates, and any attribute it adds shows up as a hydration mismatch.
+  var originalHrefs = new WeakMap();
+
   function updateLink(link, options) {
     var href = link.getAttribute("href");
 
@@ -79,11 +83,12 @@
       return;
     }
 
-    if (!link.dataset.originalHref) {
-      link.dataset.originalHref = href;
+    if (!originalHrefs.has(link)) {
+      originalHrefs.set(link, href);
     }
 
-    link.setAttribute("href", appendLanguageToUrl(link.dataset.originalHref, options));
+    var next = appendLanguageToUrl(originalHrefs.get(link), options);
+    if (next !== href) link.setAttribute("href", next);
   }
 
   function updateForm(form, options) {

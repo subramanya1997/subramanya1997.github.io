@@ -19,6 +19,17 @@ const nextConfig: NextConfig = {
   ...(isExport
     ? {}
     : {
+        async redirects() {
+          return [
+            {
+              // The HonKit build also answered at <slug>/index.html; the
+              // handbook landing page is a route now, so keep that URL alive.
+              source: "/navigating-umass-amherst-a-handbook-for-international-students/index.html",
+              destination: "/navigating-umass-amherst-a-handbook-for-international-students/",
+              permanent: true,
+            },
+          ];
+        },
         async rewrites() {
           return {
             beforeFiles: [

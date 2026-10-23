@@ -5,9 +5,12 @@ import { getSiteConfig } from "@/components/lib/site-data";
 
 const NEWSLETTER_SCRIPT = `
 (function() {
+  // Bound forms are tracked off the DOM: a data attribute set before React
+  // hydrates shows up as a hydration mismatch.
+  var bound = window.__newsletterBound = window.__newsletterBound || new WeakSet();
   document.querySelectorAll('.js-newsletter-form').forEach(function(form) {
-    if (form.dataset.bound) return;
-    form.dataset.bound = 'true';
+    if (bound.has(form)) return;
+    bound.add(form);
 
     form.addEventListener('submit', function() {
       var btn = form.querySelector('.newsletter-btn');
@@ -145,6 +148,57 @@ const NEWSLETTER_STYLE = `
     margin: 0;
   }
 
+  /* Compact card for side rails: left-aligned, stacked field + button. */
+  .newsletter-card {
+    margin: 0;
+    padding: 16px;
+    border: 1px solid var(--line, rgba(0,0,0,0.08));
+    border-radius: 12px;
+    background: var(--surface, #fff);
+  }
+
+  .newsletter-card .newsletter-inner {
+    max-width: none;
+    text-align: left;
+  }
+
+  .newsletter-card .newsletter-heading {
+    font-size: 14px;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+
+  .newsletter-card .newsletter-heading svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .newsletter-card .newsletter-tagline {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .newsletter-card .newsletter-input-group {
+    flex-direction: column;
+    max-width: none;
+  }
+
+  .newsletter-card .newsletter-email,
+  .newsletter-card .newsletter-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .newsletter-card .newsletter-privacy {
+    font-size: 11px;
+    margin-top: 8px;
+  }
+
+  .newsletter-card .newsletter-success {
+    font-size: 13px;
+    padding: 12px;
+  }
+
   @media screen and (max-width: 480px) {
     .newsletter-input-group {
       flex-direction: column;
@@ -167,13 +221,18 @@ interface NewsletterConfig {
   success_message?: string;
 }
 
-export default function Newsletter() {
+export default function Newsletter({
+  variant = "section",
+}: {
+  /** "section": full-width block (end of posts). "card": compact side-rail card. */
+  variant?: "section" | "card";
+} = {}) {
   const newsletter = getSiteConfig().newsletter as NewsletterConfig;
   return (
     <>
       {newsletter.enabled ? (
         <>
-          <div className="newsletter-section">
+          <div className={variant === "card" ? "newsletter-section newsletter-card" : "newsletter-section"}>
             <div className="newsletter-inner">
               <div className="newsletter-text">
                 <h3 className="newsletter-heading">

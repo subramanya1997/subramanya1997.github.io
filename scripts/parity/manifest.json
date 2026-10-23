@@ -14,10 +14,18 @@
       ".DS_Store"
     ],
     "counts": {
-      "urls": 1059,
-      "htmlPages": 364,
-      "nonHtmlFiles": 695
-    }
+      "urls": 1121,
+      "htmlPages": 390,
+      "nonHtmlFiles": 731
+    },
+    "additions": [
+      {
+        "date": "2026-10-23",
+        "source": "vendored HonKit build of the UMass handbook (content/books-static, served from public/ before the Next.js port)",
+        "urls": 62,
+        "note": "Handbook pages, images, LICENSE, robots.txt and search_index.json were outside the Jekyll build; added so the parity harness guards their URLs."
+      }
+    ]
   },
   "urls": [
     "/",
@@ -625,6 +633,68 @@
     "/index.md",
     "/llms-full.txt",
     "/llms.txt",
+    "/navigating-umass-amherst-a-handbook-for-international-students/",
+    "/navigating-umass-amherst-a-handbook-for-international-students/LICENSE",
+    "/navigating-umass-amherst-a-handbook-for-international-students/academics-careers/academics-and-career-opportunities.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/academics-careers/beyond-coursework-job-hunt.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/academics-careers/course-selection.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/boulders_floorplan_1.webp",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/boulders_floorplan_2.webp",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/brandywine_floorplan_1.jpeg",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/brandywine_floorplan_2.jpeg",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/cliffside_floorplan_1.webp",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/cliffside_floorplan_2.webp",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/cliffside_floorplan_3.webp",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/crestview_floorplan_1.jpeg",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/hawkins_meadows_floorplan_1.webp",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/hawkins_meadows_floorplan_2.webp",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/lantern_court_apartments_floorplan_1.png",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/millvalley_floorplan_1.jpeg",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/millvalley_floorplan_2.jpeg",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/northsquare_floorplan_1.webp",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/northsquare_floorplan_2.webp",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/northsquare_floorplan_3.webp",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/presidential_apartments_2_floorplan_1.png",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/pufftonvillage_floorplan_1.png",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/pufftonvillage_floorplan_2.png",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/pufftonvillage_floorplan_3.png",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/pufftonvillage_floorplan_4.png",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/renew_floorplan_1.jpeg",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/renew_floorplan_2.jpeg",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/rollinggreen_floorplan_1.webp",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/rollinggreen_floorplan_2.webp",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/rollinggreen_floorplan_3.webp",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/rollinggreen_floorplan_4.webp",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/sugarloaf_estates_flooplan.jpeg",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/the_social_amherst_floorplan_1.png",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/the_social_amherst_floorplan_2.png",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/the_social_amherst_floorplan_3.png",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/townhouse_floorplan_1.jpeg",
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/townhouse_floorplan_2.jpeg",
+    "/navigating-umass-amherst-a-handbook-for-international-students/introduction/about-the-author.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/introduction/acknowledgments.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/introduction/contribute.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/introduction/target-audience.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/brandywine-apartments.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/center-east-commons.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/cliffside-apartment-homes.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/crestview-apartments.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/hawkins-meadows.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/housing.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/lantern-court-apartments.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/mill-valley-estates.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/north-square-apartments.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/presidential-apartments.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/puffton-village-apartments.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/renew-amherst.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/rolling-green-apartments.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/spruce-ridge.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/sugarloaf-estates.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/the-boulders.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/the-social-amherst.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/townhouse-apartment.html",
+    "/navigating-umass-amherst-a-handbook-for-international-students/robots.txt",
+    "/navigating-umass-amherst-a-handbook-for-international-students/search_index.json",
     "/openapi.json",
     "/privacy/",
     "/privacy/index.md",
@@ -3253,6 +3323,578 @@
         "og-image-generation",
         "page-asset-conventions",
         "guardrails"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/index.html",
+      "bytes": 24984,
+      "title": "UMass Amherst International Student Guide | Subramanya N",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/",
+      "description": "A practical UMass Amherst guide for international students, covering CS courses, careers, off-campus housing, transportation, and student life.",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "a-practical-guide-built-from-lived-experience",
+        "start-with-the-most-useful-sections"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/academics-careers/academics-and-career-opportunities.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/academics-careers/academics-and-career-opportunities.html",
+      "bytes": 25894,
+      "title": "UMass Amherst Academics and Careers | International Student Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/academics-careers/academics-and-career-opportunities.html",
+      "description": "First-hand guidance for international students navigating academics, research, internships, and career opportunities at UMass Amherst.",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/academics-careers/academics-and-career-opportunities.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "academics-and-career-opportunities",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/academics-careers/beyond-coursework-job-hunt.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/academics-careers/beyond-coursework-job-hunt.html",
+      "bytes": 31930,
+      "title": "UMass Amherst Job Hunt and Research Guide | International Students",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/academics-careers/beyond-coursework-job-hunt.html",
+      "description": "Practical advice for UMass Amherst international students pursuing research, independent studies, internships, and full-time roles beyond coursework.",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/academics-careers/beyond-coursework-job-hunt.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "beyond-coursework-and-job-hunt",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/academics-careers/course-selection.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/academics-careers/course-selection.html",
+      "bytes": 42825,
+      "title": "UMass Amherst CS Course Selection Guide | International Students",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/academics-careers/course-selection.html",
+      "description": "First-hand UMass Amherst computer science course recommendations, workload advice, professor resources, and a balanced graduate course strategy.",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/academics-careers/course-selection.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "course-selection---making-the-right-choices",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/introduction/about-the-author.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/introduction/about-the-author.html",
+      "bytes": 24574,
+      "title": "About the Author | UMass Amherst International Student Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/introduction/about-the-author.html",
+      "description": "Subramanya Nagabhushanaradhya ( subramanya.ai ) is currently a graduate student majoring in Computer Science at UMass Amherst. He is presently advised by...",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/introduction/about-the-author.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "about-the-author",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/introduction/acknowledgments.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/introduction/acknowledgments.html",
+      "bytes": 24188,
+      "title": "Acknowledgements | UMass Amherst International Student Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/introduction/acknowledgments.html",
+      "description": "This handbook would not have come to fruition without the invaluable assistance and guidance of numerous friends, colleagues, and mentors. They are...",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/introduction/acknowledgments.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "acknowledgments",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/introduction/contribute.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/introduction/contribute.html",
+      "bytes": 23808,
+      "title": "Contribute | UMass Amherst International Student Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/introduction/contribute.html",
+      "description": "Feel free to contribute to this guide by creating a pull request or opening an issue on GitHub .",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/introduction/contribute.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 4,
+      "headingIds": [
+        "amherst-housing-survey",
+        "feedback-errata-and-suggestions",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/introduction/target-audience.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/introduction/target-audience.html",
+      "bytes": 23945,
+      "title": "Target Audience | UMass Amherst International Student Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/introduction/target-audience.html",
+      "description": "This handbook is designed for prospective and current international students in computer science at UMass Amherst, offering insights and pointers on...",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/introduction/target-audience.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "target-audience",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/brandywine-apartments.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/brandywine-apartments.html",
+      "bytes": 26918,
+      "title": "Brandywine Apartments Amherst | UMass Student Housing Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/brandywine-apartments.html",
+      "description": "Brandywine Apartments is a residential community located near the campus, offering a wide range of convenient amenities. It caters to a diverse group of...",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/brandywine-apartments.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "brandywine-apartments",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/center-east-commons.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/center-east-commons.html",
+      "bytes": 25180,
+      "title": "Center East Commons Amherst | UMass Student Housing Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/center-east-commons.html",
+      "description": "Center East Commons offers a comfortable and contemporary living experience for its residents. This sought-after community boasts 2-bedroom, 1-bathroom...",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/center-east-commons.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "center-east-commons",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/cliffside-apartment-homes.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/cliffside-apartment-homes.html",
+      "bytes": 25813,
+      "title": "Cliffside Apartment Homes Amherst | UMass Student Housing Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/cliffside-apartment-homes.html",
+      "description": "Cliffside Apartments is a serene, pet-friendly residential community. With a mix of residents, including students, professionals, and families, it offers...",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/cliffside-apartment-homes.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "cliffside-apartment-homes",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/crestview-apartments.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/crestview-apartments.html",
+      "bytes": 24911,
+      "title": "Crestview Apartments Amherst | UMass Student Housing Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/crestview-apartments.html",
+      "description": "Situated within walking distance from the UMass campus, Crestview Apartments is a student-friendly residential community. The apartments are spacious,...",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/crestview-apartments.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "crestview-apartments",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/hawkins-meadows.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/hawkins-meadows.html",
+      "bytes": 25916,
+      "title": "Hawkins Meadows Amherst | UMass Student Housing Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/hawkins-meadows.html",
+      "description": "Hawkins Meadows is a welcoming residential community that features a variety of one and two-bedroom apartments, making it an ideal choice for students,...",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/hawkins-meadows.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "hawkins-meadows",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/housing.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/housing.html",
+      "bytes": 37029,
+      "title": "UMass Amherst Off-Campus Housing Guide | Apartments and Bus Routes",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/housing.html",
+      "description": "Compare off-campus housing near UMass Amherst by apartment, rent range, PVTA bus route, floor plan, commute, and student experience.",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/housing.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "off-campus-housing",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/lantern-court-apartments.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/lantern-court-apartments.html",
+      "bytes": 26218,
+      "title": "Lantern Court Apartments Amherst | UMass Student Housing Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/lantern-court-apartments.html",
+      "description": "Lantern Court Apartments is a sought-after residential community that offers a comfortable and convenient living experience. With its proximity to UMass...",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/lantern-court-apartments.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "lantern-court-apartments",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/mill-valley-estates.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/mill-valley-estates.html",
+      "bytes": 26278,
+      "title": "Mill Valley Estates Amherst | UMass Student Housing Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/mill-valley-estates.html",
+      "description": "Situated in a quiet, wooded area of Amherst, Mill Valley Estates is a pet-friendly residential community that offers a serene and peaceful living...",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/mill-valley-estates.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "mill-valley-estates",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/north-square-apartments.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/north-square-apartments.html",
+      "bytes": 27047,
+      "title": "North Square Apartments Amherst | UMass Student Housing Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/north-square-apartments.html",
+      "description": "Situated in North Amherst, the family-oriented residential community of North Square Apartments offers a comfortable and enjoyable living experience. With...",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/north-square-apartments.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "north-square-apartments",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/presidential-apartments.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/presidential-apartments.html",
+      "bytes": 26306,
+      "title": "Presidential Apartments Amherst | UMass Student Housing Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/presidential-apartments.html",
+      "description": "Located just half a mile from the UMass campus on North Pleasant Street, Presidential Apartments offers brand new, well-maintained units in a prime...",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/presidential-apartments.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "presidential-apartments",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/puffton-village-apartments.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/puffton-village-apartments.html",
+      "bytes": 27005,
+      "title": "Puffton Village Apartments Amherst | UMass Student Housing Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/puffton-village-apartments.html",
+      "description": "Puffton Village, nestled in North Amherst, is a vibrant residential community that holds high appeal for a diverse range of residents, including...",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/puffton-village-apartments.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "puffton-village-apartments",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/renew-amherst.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/renew-amherst.html",
+      "bytes": 28858,
+      "title": "ReNew Amherst | UMass Student Housing Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/renew-amherst.html",
+      "description": "ReNew Amherst provides a serene and friendly living environment for residents. This pet-friendly community offers a range of apartment types and sizes to...",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/renew-amherst.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "renew-amherst",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/rolling-green-apartments.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/rolling-green-apartments.html",
+      "bytes": 26947,
+      "title": "Rolling Green Apartments Amherst | UMass Student Housing Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/rolling-green-apartments.html",
+      "description": "Rolling Green Apartments is a pet-friendly residential community that offers a comfortable and enjoyable living experience. With its well-managed staff,...",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/rolling-green-apartments.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "rolling-green-apartments",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/spruce-ridge.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/spruce-ridge.html",
+      "bytes": 25277,
+      "title": "Spruce Ridge Amherst | UMass Student Housing Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/spruce-ridge.html",
+      "description": "Experience a blend of convenience and comfort at Spruce Ridge, a contemporary residential community located in the lively Amherst area. Offering spacious...",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/spruce-ridge.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "spruce-ridge",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/sugarloaf-estates.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/sugarloaf-estates.html",
+      "bytes": 26056,
+      "title": "Sugarloaf Estates Amherst | UMass Student Housing Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/sugarloaf-estates.html",
+      "description": "Nestled in the picturesque town of Sunderland, Sugarloaf Estates is a residential community offering a blend of comfort and convenience. With a mix of...",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/sugarloaf-estates.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "sugarloaf-estates",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/the-boulders.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/the-boulders.html",
+      "bytes": 26198,
+      "title": "The Boulders Amherst | UMass Student Housing Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/the-boulders.html",
+      "description": "Located in the tranquil setting of South Amherst, The Boulders is a multicultural, pet-friendly residential community. Well-known for its international...",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/the-boulders.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "the-boulders",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/the-social-amherst.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/the-social-amherst.html",
+      "bytes": 27459,
+      "title": "The Social Amherst | UMass Student Housing Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/the-social-amherst.html",
+      "description": "The Social Amherst offers a tranquil and charming living experience for its residents. This pet-friendly community is known for its quiet surroundings,...",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/the-social-amherst.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "the-social-amherst",
+        "stay-updated"
+      ]
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/townhouse-apartment.html": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/townhouse-apartment.html",
+      "bytes": 26267,
+      "title": "Townhouse Apartment Amherst | UMass Student Housing Guide",
+      "canonical": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/townhouse-apartment.html",
+      "description": "Townhouse Apartments is a popular choice for students and young professionals alike. This residential community is known for its affordable rent, spacious...",
+      "ogImage": null,
+      "ogUrl": "https://subramanya.ai/navigating-umass-amherst-a-handbook-for-international-students/off-campus-housing/townhouse-apartment.html",
+      "robots": "index, follow, max-image-preview:large",
+      "jsonLdTypes": [
+        "Article",
+        "Book",
+        "BreadcrumbList",
+        "ListItem",
+        "Person"
+      ],
+      "h1Count": 3,
+      "headingIds": [
+        "townhouse-apartment",
+        "stay-updated"
       ]
     },
     "/privacy/": {
@@ -15741,6 +16383,228 @@
       "contentType": "text/plain",
       "bytes": 24729,
       "sha256": "b374f9e98aaf1278"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/LICENSE": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/LICENSE",
+      "contentType": "application/octet-stream",
+      "bytes": 1086,
+      "sha256": "9142721ef3f1b27f"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/boulders_floorplan_1.webp": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/boulders_floorplan_1.webp",
+      "contentType": "image/webp",
+      "bytes": 53136,
+      "sha256": "aa9e5430fd46d8a7"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/boulders_floorplan_2.webp": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/boulders_floorplan_2.webp",
+      "contentType": "image/webp",
+      "bytes": 53136,
+      "sha256": "aa9e5430fd46d8a7"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/brandywine_floorplan_1.jpeg": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/brandywine_floorplan_1.jpeg",
+      "contentType": "image/jpeg",
+      "bytes": 31345,
+      "sha256": "70e3bd40df9116f8"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/brandywine_floorplan_2.jpeg": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/brandywine_floorplan_2.jpeg",
+      "contentType": "image/jpeg",
+      "bytes": 40413,
+      "sha256": "ff02eaf78e6b623c"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/cliffside_floorplan_1.webp": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/cliffside_floorplan_1.webp",
+      "contentType": "image/webp",
+      "bytes": 16600,
+      "sha256": "932385b4b98b81de"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/cliffside_floorplan_2.webp": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/cliffside_floorplan_2.webp",
+      "contentType": "image/webp",
+      "bytes": 20992,
+      "sha256": "8b9f96eb5dbfe760"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/cliffside_floorplan_3.webp": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/cliffside_floorplan_3.webp",
+      "contentType": "image/webp",
+      "bytes": 40546,
+      "sha256": "f481f9b9b7f63d3e"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/crestview_floorplan_1.jpeg": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/crestview_floorplan_1.jpeg",
+      "contentType": "image/jpeg",
+      "bytes": 41326,
+      "sha256": "edab4259867bbf55"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/hawkins_meadows_floorplan_1.webp": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/hawkins_meadows_floorplan_1.webp",
+      "contentType": "image/webp",
+      "bytes": 77958,
+      "sha256": "143fe70c3f3fec2c"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/hawkins_meadows_floorplan_2.webp": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/hawkins_meadows_floorplan_2.webp",
+      "contentType": "image/webp",
+      "bytes": 72958,
+      "sha256": "5771c8b31990d353"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/lantern_court_apartments_floorplan_1.png": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/lantern_court_apartments_floorplan_1.png",
+      "contentType": "image/png",
+      "bytes": 272075,
+      "sha256": "d7a14c6f7212772d"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/millvalley_floorplan_1.jpeg": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/millvalley_floorplan_1.jpeg",
+      "contentType": "image/jpeg",
+      "bytes": 84577,
+      "sha256": "9d86525c74d3b623"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/millvalley_floorplan_2.jpeg": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/millvalley_floorplan_2.jpeg",
+      "contentType": "image/jpeg",
+      "bytes": 74534,
+      "sha256": "929d06c5991c4d48"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/northsquare_floorplan_1.webp": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/northsquare_floorplan_1.webp",
+      "contentType": "image/webp",
+      "bytes": 5878,
+      "sha256": "e4c032102b14e678"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/northsquare_floorplan_2.webp": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/northsquare_floorplan_2.webp",
+      "contentType": "image/webp",
+      "bytes": 7226,
+      "sha256": "b5f5c3b6e155a464"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/northsquare_floorplan_3.webp": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/northsquare_floorplan_3.webp",
+      "contentType": "image/webp",
+      "bytes": 9918,
+      "sha256": "8d317e21f639e9fa"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/presidential_apartments_2_floorplan_1.png": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/presidential_apartments_2_floorplan_1.png",
+      "contentType": "image/png",
+      "bytes": 189965,
+      "sha256": "0b0ee357e1a82526"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/pufftonvillage_floorplan_1.png": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/pufftonvillage_floorplan_1.png",
+      "contentType": "image/png",
+      "bytes": 49916,
+      "sha256": "0c00cbd0facf54e9"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/pufftonvillage_floorplan_2.png": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/pufftonvillage_floorplan_2.png",
+      "contentType": "image/png",
+      "bytes": 24912,
+      "sha256": "b02ac356443e3ebb"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/pufftonvillage_floorplan_3.png": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/pufftonvillage_floorplan_3.png",
+      "contentType": "image/png",
+      "bytes": 54720,
+      "sha256": "864e1d48bf8d01db"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/pufftonvillage_floorplan_4.png": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/pufftonvillage_floorplan_4.png",
+      "contentType": "image/png",
+      "bytes": 29754,
+      "sha256": "e73ec834f47df47d"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/renew_floorplan_1.jpeg": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/renew_floorplan_1.jpeg",
+      "contentType": "image/jpeg",
+      "bytes": 63357,
+      "sha256": "a4c0307e427518d2"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/renew_floorplan_2.jpeg": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/renew_floorplan_2.jpeg",
+      "contentType": "image/jpeg",
+      "bytes": 62028,
+      "sha256": "27ad05ac55c69826"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/rollinggreen_floorplan_1.webp": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/rollinggreen_floorplan_1.webp",
+      "contentType": "image/webp",
+      "bytes": 84948,
+      "sha256": "4c2bbd7b1cb04554"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/rollinggreen_floorplan_2.webp": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/rollinggreen_floorplan_2.webp",
+      "contentType": "image/webp",
+      "bytes": 71578,
+      "sha256": "c3566b8959db855d"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/rollinggreen_floorplan_3.webp": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/rollinggreen_floorplan_3.webp",
+      "contentType": "image/webp",
+      "bytes": 21652,
+      "sha256": "de05b34ccd6c13ab"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/rollinggreen_floorplan_4.webp": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/rollinggreen_floorplan_4.webp",
+      "contentType": "image/webp",
+      "bytes": 13276,
+      "sha256": "905e4acc8ffe80d3"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/sugarloaf_estates_flooplan.jpeg": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/sugarloaf_estates_flooplan.jpeg",
+      "contentType": "image/jpeg",
+      "bytes": 34963,
+      "sha256": "929bd5dceca00774"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/the_social_amherst_floorplan_1.png": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/the_social_amherst_floorplan_1.png",
+      "contentType": "image/png",
+      "bytes": 48320,
+      "sha256": "8a9b1606bc05abfd"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/the_social_amherst_floorplan_2.png": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/the_social_amherst_floorplan_2.png",
+      "contentType": "image/png",
+      "bytes": 58458,
+      "sha256": "a8a59ea078a3243c"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/the_social_amherst_floorplan_3.png": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/the_social_amherst_floorplan_3.png",
+      "contentType": "image/png",
+      "bytes": 52796,
+      "sha256": "c8a9f89b46e54ecf"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/townhouse_floorplan_1.jpeg": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/townhouse_floorplan_1.jpeg",
+      "contentType": "image/jpeg",
+      "bytes": 44960,
+      "sha256": "84073c803292e5be"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/assets/townhouse_floorplan_2.jpeg": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/assets/townhouse_floorplan_2.jpeg",
+      "contentType": "image/jpeg",
+      "bytes": 46182,
+      "sha256": "6a1dee4ed73eadec"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/robots.txt": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/robots.txt",
+      "contentType": "text/plain",
+      "bytes": 26,
+      "sha256": "9133ceedd6bece07"
+    },
+    "/navigating-umass-amherst-a-handbook-for-international-students/search_index.json": {
+      "file": "navigating-umass-amherst-a-handbook-for-international-students/search_index.json",
+      "contentType": "application/json",
+      "bytes": 888333,
+      "sha256": "e544e1f006c1b0c8",
+      "jsonShape": "object",
+      "jsonLength": null,
+      "jsonKeys": [
+        "index",
+        "store"
+      ]
     },
     "/openapi.json": {
       "file": "openapi.json",

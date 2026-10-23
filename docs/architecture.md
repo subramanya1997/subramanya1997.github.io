@@ -21,8 +21,8 @@ translation, TOC behavior, newsletter UI, and post interactions.
 1. `scripts/next/sync-public.mjs` (prebuild) reads `site.config.mjs` and fills
    `public/`: static assets (`assets/`, `css/`), the `.well-known` discovery
    documents (plus extensionless aliases), markdown twins (an `index.md`
-   beside every HTML page), book redirect pages, and the vendored static book
-   sites in `content/books-static/`.
+   beside every HTML page), book redirect pages, and the UMass handbook's
+   images and markdown twins (`scripts/next/handbook-public.mjs`).
 2. `lib/content.ts` loads content from `content/posts/`, `content/books/`,
    `content/loops/` and `content/data/`; the page sources colocated with each
    route (`app/blog/content.md`, `app/work/content.md`, …) are registered in
@@ -50,7 +50,7 @@ tag drifts.
 - `content/books/`: The `books` collection.
 - `content/loops/`: Curated automation-loop marketplace listings.
 - `content/data/`: Structured data for the homepage, work page, i18n labels, and analytics-derived view counts.
-- `content/books-static/`: Pre-built static book sites served verbatim at their original URLs.
+- `content/handbook/<slug>/`: The UMass international-student handbook — HonKit-format markdown with `SUMMARY.md` as its table of contents. `lib/handbook-source.mjs` reads it, `lib/handbook.ts` renders it, and `app/<slug>/` serves every page at its original `.html` URL with in-handbook search (`<slug>/search_index.json`).
 - `app/<route>/content.md`: Each page's own source (front matter plus body), colocated with the route that renders it; `lib/page-sources.mjs` is the registry that pins their URLs, and declares the home page and 404 inline since those are rendered entirely in TSX.
 - `assets/`: Images, JavaScript, translation JSON, video, resume files, and page/component CSS.
 - `css/main.css`: Global site styles shared across the whole site.

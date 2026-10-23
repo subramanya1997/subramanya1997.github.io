@@ -430,9 +430,10 @@
     SearchTracker.init();
   }
 
-  // Run on DOMContentLoaded
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+  // Run after `load`: the trackers add sentinels and inline styles to <body>
+  // and the article, which must not happen before React hydrates.
+  if (document.readyState !== 'complete') {
+    window.addEventListener('load', function() { setTimeout(init, 0); });
   } else {
     init();
   }

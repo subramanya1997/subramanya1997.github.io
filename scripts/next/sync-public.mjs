@@ -2,13 +2,14 @@
 // verbatim. The originals at the repo root (assets/, css/) and under content/
 // stay the source of truth (the translation / OG-image / analytics scripts keep
 // writing there).
-import { cpSync, mkdirSync, rmSync, existsSync, copyFileSync, readFileSync, writeFileSync, readdirSync } from "node:fs";
+import { cpSync, mkdirSync, rmSync, existsSync, copyFileSync, readFileSync, writeFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { site } from "../../site.config.mjs";
 import { writeTwins } from "./markdown-twins.mjs";
 import { writeBookRedirects } from "./book-redirects.mjs";
+import { writeHandbookPublic } from "./handbook-public.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const pub = join(root, "public");
@@ -53,24 +54,9 @@ for (const file of FILES) {
   if (existsSync(src)) copyFileSync(src, join(pub, file));
 }
 
-// Pre-built book sites (HonKit output vendored in content/books-static/<slug>/)
-// are served verbatim at /<slug>/ — formerly separate GitHub Pages project sites.
-const booksStatic = join(root, "content", "books-static");
-if (existsSync(booksStatic)) {
-  for (const entry of readdirSync(booksStatic, { withFileTypes: true })) {
-    if (!entry.isDirectory() || entry.name.startsWith(".")) continue;
-    const bookRoot = join(booksStatic, entry.name);
-    cpSync(bookRoot, join(pub, entry.name), {
-      recursive: true,
-      // Jekyll skips dotfiles (.gitkeep etc.); mirror that. The book's own
-      // HonKit-generated sitemap.xml stays vendored as the source for
-      // lib/nonhtml.ts (its URLs are folded into the main /sitemap.xml) but
-      // is not served as a secondary sitemap.
-      filter: (p) =>
-        !p.split("/").pop().startsWith(".") && p !== join(bookRoot, "sitemap.xml"),
-    });
-  }
-}
+// The UMass handbook (formerly a vendored HonKit build): images, LICENSE,
+// robots.txt and markdown twins. Its pages are Next routes under app/<slug>/.
+console.log(`sync-public: ${writeHandbookPublic(pub)} handbook markdown twins emitted`);
 
 mkdirSync(join(pub, ".well-known"), { recursive: true });
 for (const file of WELL_KNOWN) {

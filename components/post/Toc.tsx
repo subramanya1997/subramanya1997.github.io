@@ -23,7 +23,12 @@ export default function Toc({ target }: { target: ShareTarget }) {
           the children the script added, which otherwise throws a hydration
           mismatch (#418) on every post page.
         */}
-        <ul id="toc-list" className="toc-list" dangerouslySetInnerHTML={{ __html: "" }} />
+        <ul
+          id="toc-list"
+          className="toc-list"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: "" }}
+        />
 
         {/* Social Share Section */}
         <div className="toc-social-share">

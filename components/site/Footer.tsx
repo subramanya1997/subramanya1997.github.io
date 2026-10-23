@@ -1,6 +1,5 @@
 // Port of _includes/footer.html.
 import { getAbout, getSiteConfig } from "@/components/lib/site-data";
-import Newsletter from "./Newsletter";
 
 const FOOTER_STYLE = `
   .site-footer .header-wrap {
@@ -105,7 +104,7 @@ const FOOTER_NAV = [
   { href: "/privacy/", label: "Privacy" },
 ];
 
-export default function Footer({ showNewsletter = true }: { showNewsletter?: boolean }) {
+export default function Footer() {
   const site = getSiteConfig();
   const about = getAbout();
 
@@ -265,7 +264,6 @@ export default function Footer({ showNewsletter = true }: { showNewsletter?: boo
           </div>
         </div>
 
-        {showNewsletter ? <Newsletter /> : null}
       </footer>
 
       <style dangerouslySetInnerHTML={{ __html: FOOTER_STYLE }} />

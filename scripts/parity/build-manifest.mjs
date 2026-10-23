@@ -212,8 +212,12 @@ function walk(dir, base = dir, acc = []) {
 // `about/index.html` -> `/about/`; root `index.html` -> `/`; everything else
 // keeps its literal path (404.html stays /404.html, index.md twins stay
 // /about/index.md -- they are fetched by that exact URL by agents).
+// Next's export writes a route whose last segment carries an extension (the
+// handbook's `the-boulders.html`) as `the-boulders.html/index.html`; Vercel
+// serves it at the extension URL with no trailing slash, so map it back.
 export function toUrl(relPath) {
   if (relPath === "index.html") return "/";
+  if (/\/[^/]+\.html\/index\.html$/.test(relPath)) return "/" + relPath.slice(0, -"/index.html".length);
   if (relPath.endsWith("/index.html")) return "/" + relPath.slice(0, -"index.html".length);
   return "/" + relPath;
 }

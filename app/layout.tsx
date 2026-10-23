@@ -63,7 +63,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       data-baseurl=""
       className={inter.variable}
     >
-      <body>
+      {/* SiteShell's bodyClass script sets a class before hydration. */}
+      <body suppressHydrationWarning>
         {/* Colour scheme — must run before any content paints. */}
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
 

@@ -2,7 +2,7 @@
 
 Personal site built with Next.js (App Router, static export) and deployed on
 Vercel. Content lives under `content/` (`content/posts/`, `content/books/`,
-`content/loops/`, `content/data/`, `content/books-static/`), with site-wide
+`content/loops/`, `content/data/`, `content/handbook/`), with site-wide
 settings in `site.config.mjs` — those are the single source of truth. Page
 sources sit beside the route that renders them (`app/<route>/content.md`).
 

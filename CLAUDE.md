@@ -18,8 +18,10 @@ Vercel project `subramanya-ai` is git-connected. Do not deploy manually with
 ## Layout
 
 - Content collections live under `content/`: `content/posts/`,
-  `content/books/`, `content/loops/`, `content/data/`, plus the vendored
-  pre-built book sites in `content/books-static/`. Together with `assets/` they
+  `content/books/`, `content/loops/`, `content/data/`, plus the UMass
+  handbook in `content/handbook/<slug>/` (HonKit markdown + `SUMMARY.md`,
+  rendered by `app/<slug>/` via `lib/handbook.ts`; its pages keep their `.html`
+  URLs). Together with `assets/` they
   are the single source of truth — the Python scripts in `scripts/`
   (translations, OG images, analytics) write there.
 - Site-wide settings live in `site.config.mjs` (plain JS, JSDoc-typed) — it

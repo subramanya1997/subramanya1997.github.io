@@ -87,6 +87,8 @@
   /* --- Chrome metrics ----------------------------------------------------- */
   --header-height: 60px;
   --content-width: 1180px;
+  --frame-width: 1400px;     /* header, footer and pages with the right rail */
+  --rail-width: 240px;
   --gutter: var(--space-6);
 
   /* --- Palette: light ----------------------------------------------------- */
@@ -247,8 +249,16 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Sticky footer: the page is at least one screen tall and <main> absorbs the
+   slack, so on a short page the footer sits at the bottom edge of the screen
+   (never right under the content) and on a long one it follows the content.
+   The header, popups and back-to-top button are fixed, so they stay out of
+   this flow. */
 body {
-  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
   font-family: var(--font-sans);
   font-size: var(--text-base);
   line-height: var(--leading-relaxed);
@@ -379,6 +389,58 @@ button:focus {
   margin: 0 auto;
 }
 
+/* --- Newsletter rail ------------------------------------------------------
+   Every page (SiteShell) carries the newsletter card in a sticky right
+   column; the header, footer and content share the wider frame so their
+   edges line up. Below 1280px the column drops away and the card follows the
+   content instead. */
+
+.wrap.wrap-rail,
+.site-header .wrap,
+.site-footer .wrap {
+  max-width: var(--frame-width);
+}
+
+.site-rail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--rail-width);
+  gap: var(--space-12);
+  align-items: start;
+}
+
+.site-rail-main {
+  min-width: 0;
+}
+
+.site-rail {
+  align-self: stretch;
+}
+
+.site-rail-sticky {
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-6));
+}
+
+.site-rail-inline {
+  display: none;
+  max-width: 28rem;
+  margin: var(--space-16) auto 0;
+}
+
+@media screen and (max-width: 1280px) {
+  .site-rail-layout {
+    display: block;
+  }
+
+  .site-rail {
+    display: none;
+  }
+
+  .site-rail-inline {
+    display: block;
+  }
+}
+
 /* Skip links */
 .skip-link {
   position: absolute;
@@ -433,8 +495,14 @@ button:focus {
   border-bottom-color: var(--line);
 }
 
+/* The .wrap clearfix pseudo-elements would become flex items here and inset
+   the title from the edge, so they are dropped. */
+.header-wrap::before,
+.header-wrap::after {
+  display: none;
+}
+
 .header-wrap {
-  max-width: var(--content-width);
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -640,7 +708,7 @@ button:focus {
   padding: var(--space-12) 0 var(--space-8);
   padding-top: calc(var(--header-height) + var(--space-10));
   background-color: var(--paper);
-  min-height: calc(100vh - var(--header-height));
+  flex: 1 0 auto;
 }
 
 /* --------------------------------------------------------------------------

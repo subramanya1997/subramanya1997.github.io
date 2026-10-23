@@ -3,6 +3,18 @@
 export interface PageMeta {
   /** `page.title` — absent on the homepage and the 404 page. */
   title?: string;
+  /**
+   * Exact `<title>` / og:title, bypassing the ` | <site title>` suffix. The
+   * handbook pages keep the titles their HonKit build was indexed with.
+   */
+  fullTitle?: string;
+  /** og:type override (defaults to "article" for posts, "website" otherwise). */
+  ogType?: string;
+  /**
+   * Page-specific schema.org nodes. When present they replace the generic
+   * WebPage + BreadcrumbList nodes in the site-wide `@graph`.
+   */
+  jsonLd?: Record<string, unknown>[];
   /** `page.description` (falls back to `page.excerpt`, then `site.description`). */
   description?: string;
   /** `page.url`, e.g. "/blog/" (the homepage is "/"). */

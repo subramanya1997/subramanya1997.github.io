@@ -6,7 +6,7 @@ import type { PageMeta } from "@/components/lib/page-meta";
 import Analytics from "./Analytics";
 import Footer from "./Footer";
 import Header from "./Header";
-import NewsletterPopup from "./NewsletterPopup";
+import Newsletter from "./Newsletter";
 import PageHead from "./PageHead";
 
 // NOTE on all the scripts below: React hydration can replace the header/button
@@ -122,7 +122,7 @@ const MOBILE_MENU_SCRIPT = `
 
 export interface SiteShellProps {
   meta: PageMeta;
-  /** Which Jekyll layout the page used — drives analytics `content_type` and the footer newsletter. */
+  /** Which Jekyll layout the page used — drives analytics `content_type`. */
   layout?: "page" | "default" | "post";
   children?: ReactNode;
   /**
@@ -136,6 +136,14 @@ export interface SiteShellProps {
    * while the body is still parsing — before any content paints.
    */
   bodyClass?: string;
+  /** Extra class on the `.wrap` container (the handbook widens it). */
+  wrapClassName?: string;
+  /**
+   * The site-wide newsletter card in a sticky right column (inline after the
+   * content on narrow screens). Off for layouts that place it themselves —
+   * the handbook puts it in its own right column under "On this page".
+   */
+  newsletterRail?: boolean;
 }
 
 export default function SiteShell({
@@ -144,7 +152,22 @@ export default function SiteShell({
   children,
   rawContent,
   bodyClass,
+  wrapClassName,
+  newsletterRail = true,
 }: SiteShellProps) {
+  const wrapClass = [
+    "wrap",
+    newsletterRail ? "wrap-rail" : null,
+    wrapClassName ?? null,
+  ]
+    .filter(Boolean)
+    .join(" ");
+  const content =
+    rawContent !== undefined ? (
+      <div className="site-rail-main" dangerouslySetInnerHTML={{ __html: rawContent }} />
+    ) : (
+      <div className="site-rail-main">{children}</div>
+    );
   return (
     <>
       <PageHead meta={meta} />
@@ -160,14 +183,31 @@ export default function SiteShell({
       <Header />
 
       <main className="page-content" id="main-content" role="main">
-        {rawContent !== undefined ? (
-          <div className="wrap" dangerouslySetInnerHTML={{ __html: rawContent }} />
+        {!newsletterRail ? (
+          rawContent !== undefined ? (
+            <div className={wrapClass} dangerouslySetInnerHTML={{ __html: rawContent }} />
+          ) : (
+            <div className={wrapClass}>{children}</div>
+          )
         ) : (
-          <div className="wrap">{children}</div>
+          <div className={wrapClass}>
+            <div className="site-rail-layout">
+              {content}
+              <aside className="site-rail" aria-label="Newsletter">
+                <div className="site-rail-sticky">
+                  <Newsletter variant="card" />
+                </div>
+              </aside>
+            </div>
+            {/* Narrow screens: no right column, so the card follows the content. */}
+            <div className="site-rail-inline">
+              <Newsletter variant="card" />
+            </div>
+          </div>
         )}
       </main>
 
-      <Footer showNewsletter={layout !== "post"} />
+      <Footer />
 
       {/* Back to Top Button */}
       <button id="back-to-top" className="back-to-top" aria-label="Back to top">
@@ -193,8 +233,6 @@ export default function SiteShell({
       <script dangerouslySetInnerHTML={{ __html: THEME_TOGGLE_SCRIPT }} />
 
       <script src="/assets/js/components/site-language.js" defer />
-
-      <NewsletterPopup />
 
       {(meta.scripts ?? []).map((src) => (
         <script key={src} src={src} defer />
