@@ -1,4 +1,4 @@
-// Search box for the handbook. Server markup only; handbook.client.js loads
+// Search box for the handbook. Server markup only; assets/js/handbook.js loads
 // the section index on first focus and renders the results listbox.
 import { HANDBOOK_BASE } from "@/lib/handbook";
 
@@ -49,7 +49,7 @@ export default function HandbookSearch({
         </kbd>
       </form>
       {/*
-        handbook.client.js fills this listbox; the empty `__html` tells React
+        assets/js/handbook.js fills this listbox; the empty `__html` tells React
         not to reconcile its children, so a query typed before hydration
         cannot trigger a hydration mismatch (same trick as the post TOC).
       */}

@@ -15,7 +15,6 @@ const eslintConfig = defineConfig([
     // Verbatim inline payloads injected into the post HTML byte for byte; they
     // are data, not modules, and must not be "fixed" by a linter.
     "components/post/assets/*.client.js",
-    "components/handbook/assets/*.client.js",
     // Static files copied verbatim into public/ by scripts/next/sync-public.mjs:
     // legacy Jekyll-era browser scripts. They are shipped as-is, not bundled,
     // so linting them is noise.

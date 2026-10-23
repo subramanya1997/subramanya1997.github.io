@@ -1,7 +1,8 @@
 // Layout for every handbook page: the site shell (header, footer, theme,
 // newsletter) around a book rail, the article, and the post "On this page"
 // rail. The post chrome (header styles, prev/next, copy-page, lightbox, TOC)
-// is reused as-is; components/handbook/assets adds the book-specific pieces.
+// is reused as-is; css/handbook.css and assets/js/handbook.js add the
+// book-specific pieces.
 import type { ReactNode } from "react";
 import { readingTime } from "@/lib/text";
 import { slugifyHeading } from "@/lib/markdown";
@@ -25,7 +26,6 @@ import {
   handbookTwinUrl,
   type HandbookPage,
 } from "@/lib/handbook";
-import { handbookCss, handbookJs } from "./assets";
 import HandbookSearch from "./HandbookSearch";
 
 const HOUSING_NOTE =
@@ -125,7 +125,7 @@ function BookRail({ current }: { current: HandbookPage }) {
 
       <HandbookSearch id="hb-search-rail" />
 
-      {/* handbook.client.js sets data-fade (scroll-edge fades) on this, which
+      {/* assets/js/handbook.js sets data-fade (scroll-edge fades) on this, which
           can land before React hydrates in a slow dev build. */}
       <nav className="hb-nav" aria-label="Handbook contents" suppressHydrationWarning>
         <ol>
@@ -370,8 +370,11 @@ export default function HandbookLayout({
       <script src="/assets/js/post-scripts.js" defer />
       <style dangerouslySetInnerHTML={{ __html: postChromeCss() }} />
       <style dangerouslySetInnerHTML={{ __html: postLayoutCss() }} />
-      <style dangerouslySetInnerHTML={{ __html: handbookCss() }} />
-      <script dangerouslySetInnerHTML={{ __html: handbookJs() }} />
+      {/* Shared by all 26 handbook pages, so served as cached files rather
+          than inlined like the post chrome. The stylesheet hoists into <head>
+          after main.css. */}
+      <link rel="stylesheet" href="/css/handbook.css" precedence="handbook" />
+      <script src="/assets/js/handbook.js" defer />
     </SiteShell>
   );
 }
