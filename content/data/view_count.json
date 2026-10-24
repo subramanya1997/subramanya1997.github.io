@@ -1,17 +1,17 @@
 {
-  "last_updated": "2026-10-23T01:26:51.636817",
+  "last_updated": "2026-10-24T01:23:51.818756",
   "view_counts": [
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
-      "views": 4435,
+      "views": 4436,
       "avg_duration_seconds": 136.1,
       "engagement_rate": 90.04
     },
     {
       "url": "/2025/04/28/oidc-a-proposal/",
-      "views": 3869,
-      "avg_duration_seconds": 170.4,
-      "engagement_rate": 63.92
+      "views": 3874,
+      "avg_duration_seconds": 170.0,
+      "engagement_rate": 63.91
     },
     {
       "url": "/2026/01/01/what-are-context-graphs-really/",
@@ -45,15 +45,15 @@
     },
     {
       "url": "/2025/12/18/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle/",
-      "views": 1177,
-      "avg_duration_seconds": 140.4,
-      "engagement_rate": 93.93
+      "views": 1179,
+      "avg_duration_seconds": 140.1,
+      "engagement_rate": 93.87
     },
     {
       "url": "/2026/04/13/the-filesystem-is-the-database-why-agents-need-a-new-storage-primitive/",
       "views": 1032,
-      "avg_duration_seconds": 320.0,
-      "engagement_rate": 92.56
+      "avg_duration_seconds": 319.6,
+      "engagement_rate": 92.5
     },
     {
       "url": "/2026/01/14/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it/",
@@ -63,9 +63,9 @@
     },
     {
       "url": "/2023/05/02/hybrid-search-for-e-commerce-with-pinecone-and-LLM/",
-      "views": 970,
-      "avg_duration_seconds": 100.0,
-      "engagement_rate": 54.61
+      "views": 972,
+      "avg_duration_seconds": 99.8,
+      "engagement_rate": 54.7
     },
     {
       "url": "/2026/02/01/openclaw-and-the-rise-of-user-built-intelligence-a-wake-up-call-for-saas/",
@@ -81,9 +81,9 @@
     },
     {
       "url": "/2026/02/23/the-saaspocalypse-a-survival-guide/",
-      "views": 757,
-      "avg_duration_seconds": 140.6,
-      "engagement_rate": 92.55
+      "views": 758,
+      "avg_duration_seconds": 140.4,
+      "engagement_rate": 92.45
     },
     {
       "url": "/2025/11/20/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale/",
@@ -93,15 +93,15 @@
     },
     {
       "url": "/2025/12/01/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap/",
-      "views": 628,
-      "avg_duration_seconds": 141.4,
-      "engagement_rate": 90.55
+      "views": 629,
+      "avg_duration_seconds": 141.2,
+      "engagement_rate": 90.42
     },
     {
       "url": "/2025/12/10/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026/",
-      "views": 604,
-      "avg_duration_seconds": 106.6,
-      "engagement_rate": 93.49
+      "views": 609,
+      "avg_duration_seconds": 105.8,
+      "engagement_rate": 93.38
     },
     {
       "url": "/2026/04/23/context-engineering-why-prompt-engineering-was-never-enough/",
@@ -111,15 +111,15 @@
     },
     {
       "url": "/2026/01/19/the-agentic-workspace-a-strategic-imperative-for-the-next-era-of-saas/",
-      "views": 593,
-      "avg_duration_seconds": 96.5,
-      "engagement_rate": 93.28
+      "views": 595,
+      "avg_duration_seconds": 96.3,
+      "engagement_rate": 93.3
     },
     {
       "url": "/2025/06/21/from-gateway-to-guardian-the-evolution-of-mcp-security/",
-      "views": 445,
-      "avg_duration_seconds": 42.7,
-      "engagement_rate": 61.41
+      "views": 452,
+      "avg_duration_seconds": 42.9,
+      "engagement_rate": 61.63
     },
     {
       "url": "/2024/01/11/the-nockout-story/",
@@ -129,9 +129,9 @@
     },
     {
       "url": "/2026/08/17/break-in-break-out-ai-agent-security-in-2026/",
-      "views": 388,
-      "avg_duration_seconds": 147.4,
-      "engagement_rate": 97.56
+      "views": 392,
+      "avg_duration_seconds": 145.9,
+      "engagement_rate": 97.59
     },
     {
       "url": "/2024/12/10/ai-agents-agentic-security-enterprise-automation/",
@@ -219,9 +219,9 @@
     },
     {
       "url": "/2022/12/28/demystifying-the-shell-scripting-advanced-techniques-and-best-practices/",
-      "views": 138,
-      "avg_duration_seconds": 14.4,
-      "engagement_rate": 84.66
+      "views": 140,
+      "avg_duration_seconds": 14.3,
+      "engagement_rate": 84.87
     },
     {
       "url": "/2022/12/28/demystifying-the-shell-scripting-a-beginners-guide/",
