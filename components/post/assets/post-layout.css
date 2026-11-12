@@ -102,8 +102,6 @@
     justify-content: space-between;
     gap: var(--space-8);
     margin-top: var(--space-16);
-    padding-top: var(--space-6);
-    border-top: 1px solid var(--line);
   }
 
   .prev-post, .next-post {
@@ -157,8 +155,6 @@
   .mobile-social-share {
     display: none;
     margin-top: var(--space-12);
-    padding-top: var(--space-6);
-    border-top: 1px solid var(--line);
   }
 
   .mobile-social-header {
@@ -243,8 +239,6 @@
 
   .references-section {
     margin-top: var(--space-16);
-    padding-top: var(--space-8);
-    border-top: 1px solid var(--line);
   }
 
   h2.references-section {
@@ -253,9 +247,10 @@
     font-size: var(--text-xl);
   }
 
-  .reference-item {
-    margin: var(--space-2) 0;
-    padding: var(--space-2) 0;
+  /* Two classes so this outranks the post body's paragraph margin. */
+  .post-content .reference-item {
+    margin: 0;
+    padding: var(--space-1) 0;
     font-size: var(--text-sm);
     line-height: var(--leading-relaxed);
     color: var(--ink-muted);
@@ -336,8 +331,8 @@
 
   .references-section + ul li.reference-item,
   .references-section + ol li.reference-item {
-    margin: var(--space-2) 0;
-    padding: var(--space-2) 0;
+    margin: 0;
+    padding: var(--space-1) 0;
     font-size: var(--text-sm);
     line-height: var(--leading-relaxed);
     color: var(--ink-muted);
@@ -357,8 +352,6 @@
 
   .comments-section {
     margin-top: var(--space-16);
-    padding-top: var(--space-10);
-    border-top: 1px solid var(--line);
     min-height: 200px; /* Reserve space to prevent CLS when utterances loads */
   }
 

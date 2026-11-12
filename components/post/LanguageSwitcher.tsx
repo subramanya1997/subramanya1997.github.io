@@ -8,6 +8,8 @@ export default function LanguageSwitcher({ slug }: { slug: string }) {
   const defaultLang = getSiteConfig().default_lang;
   const languages = availableLanguages(slug);
 
+  // suppressHydrationWarning: assets/js/i18n.js runs before hydration and
+  // rewrites the aria-label, the current-language label and the active option.
   return (
     <>
       <div
@@ -15,6 +17,7 @@ export default function LanguageSwitcher({ slug }: { slug: string }) {
         id="languageSwitcher"
         role="navigation"
         aria-label="Language selection"
+        suppressHydrationWarning
       >
         <button
           className="language-switcher-toggle"
@@ -24,7 +27,7 @@ export default function LanguageSwitcher({ slug }: { slug: string }) {
           aria-expanded="false"
           aria-label="Select language"
         >
-          <span className="current-lang" id="currentLangLabel">
+          <span className="current-lang" id="currentLangLabel" suppressHydrationWarning>
             English
           </span>
           <svg
@@ -60,6 +63,7 @@ export default function LanguageSwitcher({ slug }: { slug: string }) {
                 data-lang={language.code}
                 aria-selected={isDefault ? "true" : "false"}
                 tabIndex={0}
+                suppressHydrationWarning
               >
                 <span className="lang-native">{language.native}</span>
                 <svg

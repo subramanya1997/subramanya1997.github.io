@@ -19,11 +19,7 @@ export default function RelatedPosts({ posts }: { posts: Post[] }) {
             return (
               <article className="related-post-card" key={post.url}>
                 <div className="related-post-content">
-                  {/* React 19 emits `dateTime` verbatim; Jekyll wrote `datetime`. */}
-                  <time
-                    className="related-post-date"
-                    {...({ datetime: xmlSchemaDate(post.date) } as React.TimeHTMLAttributes<HTMLTimeElement>)}
-                  >
+                  <time className="related-post-date" dateTime={xmlSchemaDate(post.date)}>
                     {shortDate(post.date)}
                   </time>
                   <h4 className="related-post-title">

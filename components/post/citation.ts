@@ -20,9 +20,7 @@ export function citationHtml(post: Post, canonical: string): string {
     `}`;
 
   return (
-    `<section class="citation-section" id="citation">\n` +
-    `  <h4 class="citation-title">Cite this post</h4>\n` +
-    `  <p class="citation-hint">If you reference this post in your work, please cite it as:</p>\n` +
+    `<section class="citation-section" id="citation" aria-label="Cite this post">\n` +
     `  <pre class="citation-bibtex"><code>${escapeText(bibtex)}</code></pre>\n` +
     `</section>\n\n` +
     `<style>${citationCss()}</style>`

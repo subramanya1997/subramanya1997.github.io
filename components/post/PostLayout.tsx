@@ -197,8 +197,11 @@ export default function PostLayout({
             with elements without adding a wrapper node the CSS would see — so
             the includes are built as markup and concatenated.
           */}
+          {/* suppressHydrationWarning: the post scripts (copy buttons, heading
+              anchors, translations) edit this markup before React hydrates. */}
           <article
             className="post-content"
+            suppressHydrationWarning
             dangerouslySetInnerHTML={{
               __html: `${contentHtml}\n${postFaqHtml(canonical, faq)}\n${citationHtml(post, canonical)}\n`,
             }}

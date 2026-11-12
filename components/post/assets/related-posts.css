@@ -3,8 +3,6 @@
 
   .related-posts {
     margin-top: var(--space-16);
-    padding-top: var(--space-10);
-    border-top: 1px solid var(--line);
   }
 
   .related-posts-title {

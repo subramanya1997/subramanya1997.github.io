@@ -51,9 +51,9 @@ MAX_RETRY_DELAY = 300  # 5 minutes
 
 # Timeout settings for OpenRouter API
 CONNECTION_TIMEOUT = 30.0     # seconds to establish connection
-READ_TIMEOUT = 600.0          # seconds between receiving data chunks (10 min)
+READ_TIMEOUT = 240.0          # seconds between receiving data chunks (4 min)
 WRITE_TIMEOUT = 60.0          # seconds to send request
-TOTAL_TIMEOUT = 1200.0        # total request timeout (20 min)
+TOTAL_TIMEOUT = 300.0         # total request timeout (5 min); a hung request fails fast and retries
 
 # Supported languages with their native names
 SUPPORTED_LANGUAGES = {
@@ -69,7 +69,8 @@ SUPPORTED_LANGUAGES = {
 
 # OpenRouter settings
 OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions"
-DEFAULT_OPENROUTER_MODEL = "moonshotai/kimi-k2.6"
+# kimi-k2.6 stalled or emitted malformed JSON on long posts (ko/ja/hi); flash is fast and reliable.
+DEFAULT_OPENROUTER_MODEL = "deepseek/deepseek-v4-flash"
 OPENROUTER_SITE_URL = "https://subramanya.ai"
 OPENROUTER_APP_NAME = "subramanya1997.github.io translation script"
 
