@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-11T01:09:32.069696",
+  "last_updated": "2026-11-12T01:09:55.797659",
   "view_counts": [
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
@@ -10,7 +10,7 @@
     {
       "url": "/2025/04/28/oidc-a-proposal/",
       "views": 3966,
-      "avg_duration_seconds": 170.5,
+      "avg_duration_seconds": 169.1,
       "engagement_rate": 64.5
     },
     {
@@ -27,9 +27,9 @@
     },
     {
       "url": "/2026/01/04/a-year-with-cursor-how-my-workflow-evolved-from-agent-to-architect/",
-      "views": 1916,
-      "avg_duration_seconds": 243.4,
-      "engagement_rate": 93.2
+      "views": 1918,
+      "avg_duration_seconds": 243.8,
+      "engagement_rate": 93.21
     },
     {
       "url": "/2025/12/26/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory/",
@@ -39,21 +39,21 @@
     },
     {
       "url": "/2025/12/23/2025-the-year-agentic-ai-got-real-and-what-comes-next/",
-      "views": 1371,
-      "avg_duration_seconds": 104.3,
-      "engagement_rate": 95.25
+      "views": 1375,
+      "avg_duration_seconds": 104.0,
+      "engagement_rate": 95.26
     },
     {
       "url": "/2025/12/18/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle/",
-      "views": 1221,
-      "avg_duration_seconds": 135.2,
-      "engagement_rate": 93.85
+      "views": 1223,
+      "avg_duration_seconds": 135.0,
+      "engagement_rate": 93.86
     },
     {
       "url": "/2026/04/13/the-filesystem-is-the-database-why-agents-need-a-new-storage-primitive/",
-      "views": 1084,
-      "avg_duration_seconds": 306.6,
-      "engagement_rate": 92.02
+      "views": 1088,
+      "avg_duration_seconds": 305.9,
+      "engagement_rate": 92.1
     },
     {
       "url": "/2026/01/14/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it/",
@@ -81,9 +81,9 @@
     },
     {
       "url": "/2026/02/23/the-saaspocalypse-a-survival-guide/",
-      "views": 778,
-      "avg_duration_seconds": 137.5,
-      "engagement_rate": 92.36
+      "views": 780,
+      "avg_duration_seconds": 137.2,
+      "engagement_rate": 92.38
     },
     {
       "url": "/2025/11/20/the-governance-stack-operationalizing-ai-agent-governance-at-enterprise-scale/",
@@ -99,14 +99,14 @@
     },
     {
       "url": "/2025/12/10/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026/",
-      "views": 654,
-      "avg_duration_seconds": 98.5,
-      "engagement_rate": 93.03
+      "views": 656,
+      "avg_duration_seconds": 98.3,
+      "engagement_rate": 93.05
     },
     {
       "url": "/2026/04/23/context-engineering-why-prompt-engineering-was-never-enough/",
       "views": 622,
-      "avg_duration_seconds": 174.1,
+      "avg_duration_seconds": 172.5,
       "engagement_rate": 94.16
     },
     {
@@ -129,15 +129,15 @@
     },
     {
       "url": "/2026/08/17/break-in-break-out-ai-agent-security-in-2026/",
-      "views": 437,
-      "avg_duration_seconds": 132.0,
-      "engagement_rate": 97.36
+      "views": 439,
+      "avg_duration_seconds": 131.3,
+      "engagement_rate": 97.38
     },
     {
       "url": "/2024/12/10/ai-agents-agentic-security-enterprise-automation/",
-      "views": 350,
-      "avg_duration_seconds": 58.9,
-      "engagement_rate": 74.33
+      "views": 352,
+      "avg_duration_seconds": 58.6,
+      "engagement_rate": 74.48
     },
     {
       "url": "/2025/12/02/the-platform-convergence-why-the-future-of-ai-saas-is-headless-first/",
@@ -213,9 +213,9 @@
     },
     {
       "url": "/2023/01/04/demystifying-the-shell-scripting-working-with-files-and-directories/",
-      "views": 160,
-      "avg_duration_seconds": 20.6,
-      "engagement_rate": 87.39
+      "views": 162,
+      "avg_duration_seconds": 20.4,
+      "engagement_rate": 87.55
     },
     {
       "url": "/2022/12/28/demystifying-the-shell-scripting-advanced-techniques-and-best-practices/",
@@ -231,15 +231,15 @@
     },
     {
       "url": "/2026/08/06/fixing-b2b-commerce-search-in-the-age-of-ai/",
-      "views": 132,
-      "avg_duration_seconds": 46.3,
-      "engagement_rate": 97.53
+      "views": 136,
+      "avg_duration_seconds": 45.3,
+      "engagement_rate": 97.59
     },
     {
       "url": "/2026/10/16/git-was-built-for-2500-merges-a-day/",
-      "views": 116,
-      "avg_duration_seconds": 101.0,
-      "engagement_rate": 95.41
+      "views": 118,
+      "avg_duration_seconds": 98.0,
+      "engagement_rate": 95.58
     }
   ]
 }
