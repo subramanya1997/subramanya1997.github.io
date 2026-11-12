@@ -4,6 +4,7 @@ title: Books
 permalink: /books/
 includelink: true
 custom_layout: true
+description: Books and long-form guides written by Subramanya N.
 ---
 
 <div class="books-container">

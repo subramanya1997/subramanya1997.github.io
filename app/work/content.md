@@ -4,6 +4,7 @@ title: Work
 permalink: /work/
 includelink: true
 custom_layout: true
+description: Work experience and education of Subramanya N - founding engineer roles, research, and resume.
 ---
 
 <div class="work-container">

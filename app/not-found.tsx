@@ -17,6 +17,7 @@ export const metadata = {
 
 const meta = pageMeta({
   url: "/404.html",
+  description: "Page not found on subramanya.ai.",
 });
 
 function body(siteUrl: string): string {

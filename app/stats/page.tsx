@@ -10,6 +10,8 @@ import { getAllPosts } from "@/lib/content";
 const meta = pageMeta({
   title: "Stats",
   url: "/stats/",
+  description:
+    "Readership stats for subramanya.ai - page views, engagement, reading time, and most-read posts.",
   customLayout: true,
   scripts: ["/assets/js/pages/stats.js"],
 });

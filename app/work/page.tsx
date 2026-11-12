@@ -7,6 +7,8 @@ import PageLayout from "@/components/site/PageLayout";
 const meta = pageMeta({
   title: "Work",
   url: "/work/",
+  description:
+    "Work experience and education of Subramanya N - founding engineer roles, research, and resume.",
   customLayout: true,
 });
 

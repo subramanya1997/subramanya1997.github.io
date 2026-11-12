@@ -3,6 +3,7 @@ layout: page
 title: Stats
 permalink: /stats/
 custom_layout: true
+description: Readership stats for subramanya.ai - page views, engagement, reading time, and most-read posts.
 page_scripts:
   - /assets/js/pages/stats.js
 ---

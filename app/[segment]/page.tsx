@@ -37,12 +37,14 @@ export default async function LegacyTagPage({
   if (!segment.startsWith(LEGACY_PREFIX)) notFound();
 
   const slug = segment.slice(LEGACY_PREFIX.length);
-  if (!getTagArchives().some((tag) => tag.slug === slug)) notFound();
+  const tag = getTagArchives().find((entry) => entry.slug === slug);
+  if (!tag) notFound();
 
   const target = `/tags/${slug}/`;
   const meta = pageMeta({
     title: "Redirecting...",
     url: `/${segment}/`,
+    description: `Posts and books tagged ${tag.name}.`,
     robots: "noindex, nofollow",
   });
 

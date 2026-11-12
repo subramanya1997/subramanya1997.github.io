@@ -8,6 +8,7 @@ import { getAllBooks } from "@/lib/content";
 const meta = pageMeta({
   title: "Books",
   url: "/books/",
+  description: "Books and long-form guides written by Subramanya N.",
   customLayout: true,
 });
 

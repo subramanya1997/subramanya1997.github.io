@@ -4,6 +4,7 @@ title: Blog
 permalink: /blog/
 includelink: true
 custom_layout: true
+description: Essays by Subramanya N on AI agent identity, security, and infrastructure.
 ---
 
 <div class="blog-container">

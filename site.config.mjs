@@ -47,7 +47,7 @@ export const site = {
   title: "Subramanya N",
   email: "subramanyanagabhushan@gmail.com",
   description:
-    "Welcome to my personal website, a space where I blog and share my musings on academic and professional topics. Dive in to explore my intellectual journey and gain insights from my experiences in various fields!",
+    "Author of OpenID Connect for Agents (OIDC-A) and co-author of the OpenID Foundation whitepaper on agentic AI identity. Writes on AI agent identity and security.",
   baseurl: "",
   url: "https://subramanya.ai",
   default_social_image: "/assets/images/og/default.png",

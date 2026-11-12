@@ -11,6 +11,8 @@ import { memoizedHtml } from "@/lib/nonhtml";
 const meta = pageMeta({
   title: "Blog",
   url: "/blog/",
+  description:
+    "Essays by Subramanya N on AI agent identity, security, and infrastructure.",
   customLayout: true,
 });
 
