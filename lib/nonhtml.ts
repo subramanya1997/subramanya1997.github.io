@@ -599,6 +599,106 @@ export async function buildSearchItems(): Promise<SearchItem[]> {
   return items;
 }
 
+// ---------------------------------------------------------------------------
+// Section-level index for the server-side search endpoint (/api/search/).
+// Built once by scripts/next/build-search-index.ts and bundled into the
+// function; never served to browsers.
+// ---------------------------------------------------------------------------
+
+export interface SearchSection {
+  /** Heading text; empty for the text before the first heading. */
+  heading: string;
+  /** Heading id (URL fragment); empty when the section has no anchor. */
+  id: string;
+  text: string;
+}
+
+export interface SearchDoc {
+  kind: SearchItem["kind"];
+  title: string;
+  url: string;
+  date_display: string | null;
+  date_iso: string | null;
+  tags: string[];
+  excerpt: string;
+  sections: SearchSection[];
+}
+
+const NAMED_ENTITIES: Record<string, string> = {
+  amp: "&",
+  lt: "<",
+  gt: ">",
+  quot: '"',
+  apos: "'",
+  nbsp: " ",
+};
+
+function decodeEntities(input: string): string {
+  return input.replace(/&(#x?[0-9a-f]+|[a-z]+);/gi, (match, name: string) => {
+    if (name[0] === "#") {
+      const hex = name[1]?.toLowerCase() === "x";
+      const code = parseInt(name.slice(hex ? 2 : 1), hex ? 16 : 10);
+      return code > 0 && code <= 0x10ffff ? String.fromCodePoint(code) : match;
+    }
+    return NAMED_ENTITIES[name.toLowerCase()] ?? match;
+  });
+}
+
+/** Readable plain text: block boundaries become spaces, entities are decoded. */
+function plainText(html: string): string {
+  const spaced = html
+    .replace(/<(script|style)[\s\S]*?<\/\1>/gi, " ")
+    .replace(/<!--[\s\S]*?-->/g, " ")
+    .replace(/<\/(p|li|h[1-6]|div|pre|blockquote|tr|td|th|figcaption|summary|dt|dd)>|<br\s*\/?>/gi, " ");
+  return decodeEntities(stripHtml(spaced)).replace(/\s+/g, " ").trim();
+}
+
+function splitSections(html: string, anchors: boolean): SearchSection[] {
+  const sections: SearchSection[] = [];
+  const heading = /<h([23])\b[^>]*\bid="([^"]+)"[^>]*>([\s\S]*?)<\/h\1>/g;
+  let current: SearchSection = { heading: "", id: "", text: "" };
+  let cursor = 0;
+  const flush = (end: number) => {
+    current.text = plainText(html.slice(cursor, end));
+    if (current.heading || current.text) sections.push(current);
+  };
+  for (let match = heading.exec(html); match; match = heading.exec(html)) {
+    flush(match.index);
+    current = { heading: plainText(match[3]), id: anchors ? match[2] : "", text: "" };
+    cursor = match.index + match[0].length;
+  }
+  flush(html.length);
+  return sections;
+}
+
+export async function buildSearchDocs(): Promise<SearchDoc[]> {
+  const html = new Map<string, string>();
+  for (const entry of getOutputPosts()) {
+    html.set(
+      `${baseUrl()}${entry.url}`,
+      await memoizedHtml(entry.post.sourcePath, entry.post.content),
+    );
+  }
+  for (const book of sortedBooks()) {
+    html.set(`${baseUrl()}${bookLink(book)}`, await memoizedHtml(book.sourcePath, book.content));
+  }
+  for (const loop of sortedLoops()) {
+    html.set(`${baseUrl()}${loop.url}`, await memoizedHtml(loop.sourcePath, loop.content));
+  }
+
+  return (await buildSearchItems()).map((item) => ({
+    kind: item.kind,
+    title: decodeEntities(item.title),
+    url: item.url,
+    date_display: item.date_display,
+    date_iso: item.date_iso,
+    tags: item.tags.map((tag) => tag.name),
+    excerpt: decodeEntities(item.excerpt).replace(/\s+/g, " ").trim(),
+    // A book card links out to the book itself, so its headings are not anchors.
+    sections: splitSections(html.get(item.url) ?? "", item.kind !== "book"),
+  }));
+}
+
 export async function buildSearchJson(): Promise<string> {
   return `${JSON.stringify(await buildSearchItems(), null, 2)}\n`;
 }

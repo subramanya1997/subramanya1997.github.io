@@ -31,15 +31,23 @@ const LANG_SCRIPT = `
     `;
 
 // Applies the stored colour-scheme preference before anything paints, so there
-// is no flash of the wrong theme. With no stored preference the root attribute
-// stays unset and css/main.css renders the light default (dark is opt-in).
+// is no flash of the wrong theme. The preference is "light", "dark" or
+// "system"; `data-theme-pref` records it (the footer switcher's selected
+// segment is styled from it) and `data-theme` carries the resolved scheme that
+// css/main.css keys on. With nothing stored neither attribute is set and the
+// site renders its light default.
 const THEME_SCRIPT = `
       (function() {
         try {
           var stored = localStorage.getItem('theme');
-          if (stored === 'dark' || stored === 'light') {
-            document.documentElement.setAttribute('data-theme', stored);
+          if (stored !== 'dark' && stored !== 'light' && stored !== 'system') return;
+          var root = document.documentElement;
+          var resolved = stored;
+          if (stored === 'system') {
+            resolved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
           }
+          root.setAttribute('data-theme-pref', stored);
+          root.setAttribute('data-theme', resolved);
         } catch (e) {}
       })();
     `;

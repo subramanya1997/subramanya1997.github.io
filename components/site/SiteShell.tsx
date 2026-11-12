@@ -31,7 +31,11 @@ const BACK_TO_TOP_SCRIPT = `
         function sync() {
           const button = document.getElementById('back-to-top');
           if (!button) return;
-          button.classList.toggle('visible', window.pageYOffset > 300);
+          // Hidden again once the footer is on screen, so it never sits on top
+          // of the footer's own controls.
+          const footer = document.querySelector('.site-footer');
+          const atFooter = footer && footer.getBoundingClientRect().top < window.innerHeight - 24;
+          button.classList.toggle('visible', window.pageYOffset > 300 && !atFooter);
         }
 
         window.addEventListener('scroll', sync, { passive: true });
@@ -45,36 +49,147 @@ const BACK_TO_TOP_SCRIPT = `
       })();
     `;
 
-// Colour-scheme toggle. The stored preference is applied before paint by
-// THEME_SCRIPT in app/layout.tsx; this only flips it.
-const THEME_TOGGLE_SCRIPT = `
+// Footer theme switcher (Light / Dark / System). The stored preference is
+// applied before paint by THEME_SCRIPT in app/layout.tsx; this changes it.
+const THEME_SWITCH_SCRIPT = `
       (function() {
         const root = document.documentElement;
+        const media = window.matchMedia('(prefers-color-scheme: dark)');
 
-        // Light is the site default; dark applies only via this toggle.
-        function effective() {
-          return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        // Light is the site default when nothing has been chosen.
+        function preference() {
+          const pref = root.getAttribute('data-theme-pref');
+          return pref === 'dark' || pref === 'system' ? pref : 'light';
         }
 
-        function label() {
-          const button = document.getElementById('theme-toggle');
-          if (!button) return;
-          const next = effective() === 'dark' ? 'light' : 'dark';
-          button.setAttribute('aria-label', 'Switch to ' + next + ' theme');
+        function apply(pref) {
+          const resolved = pref === 'system' ? (media.matches ? 'dark' : 'light') : pref;
+          root.setAttribute('data-theme-pref', pref);
+          root.setAttribute('data-theme', resolved);
+        }
+
+        function sync() {
+          const pref = preference();
+          document.querySelectorAll('[data-theme-value]').forEach(function(option) {
+            const selected = option.getAttribute('data-theme-value') === pref;
+            option.setAttribute('aria-checked', selected ? 'true' : 'false');
+            option.tabIndex = selected ? 0 : -1;
+          });
+        }
+
+        function choose(option) {
+          const pref = option.getAttribute('data-theme-value');
+          apply(pref);
+          try { localStorage.setItem('theme', pref); } catch (e) {}
+          sync();
         }
 
         document.addEventListener('click', function(event) {
-          const button = event.target.closest && event.target.closest('#theme-toggle');
-          if (!button) return;
-          const next = effective() === 'dark' ? 'light' : 'dark';
-          root.setAttribute('data-theme', next);
-          try { localStorage.setItem('theme', next); } catch (e) {}
-          label();
+          const option = event.target.closest && event.target.closest('[data-theme-value]');
+          if (option) choose(option);
         });
 
-        label();
-        document.addEventListener('DOMContentLoaded', label);
-        window.addEventListener('load', label);
+        // Radio-group keyboard model: arrows move and select.
+        document.addEventListener('keydown', function(event) {
+          const option = event.target.closest && event.target.closest('[data-theme-value]');
+          if (!option) return;
+          const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[event.key];
+          if (!step) return;
+          event.preventDefault();
+          const options = Array.from(option.parentNode.querySelectorAll('[data-theme-value]'));
+          const next = options[(options.indexOf(option) + step + options.length) % options.length];
+          choose(next);
+          next.focus();
+        });
+
+        media.addEventListener('change', function() {
+          if (preference() === 'system') apply('system');
+        });
+
+        sync();
+        document.addEventListener('DOMContentLoaded', sync);
+        window.addEventListener('load', sync);
+      })();
+    `;
+
+// Newsletter sheet. Below 1280px there is no right rail, so the sign-up card
+// slides up from the bottom once the reader is about halfway down a long page
+// (never on load, never on short pages). Closing it keeps it away for 30
+// days; subscribing — from the sheet or the rail — keeps it away for good.
+const NEWSLETTER_SHEET_SCRIPT = `
+      (function() {
+        const KEY = 'newsletter-sheet';
+        const QUIET_MS = 30 * 24 * 60 * 60 * 1000;
+        const narrow = window.matchMedia('(max-width: 1280px)');
+        let shown = false;
+
+        function sheet() { return document.getElementById('newsletter-sheet'); }
+
+        function read() {
+          try { return JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { return {}; }
+        }
+
+        function write(state) {
+          try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+        }
+
+        function eligible() {
+          if (shown || !narrow.matches || !sheet()) return false;
+          if (document.documentElement.classList.contains('sp-open')) return false;
+          const state = read();
+          if (state.subscribed) return false;
+          return !(state.dismissed && Date.now() - state.dismissed < QUIET_MS);
+        }
+
+        function open() {
+          const el = sheet();
+          if (!el) return;
+          shown = true;
+          el.inert = false;
+          el.classList.add('is-open');
+          document.documentElement.classList.add('nl-sheet-open');
+        }
+
+        function close(remember) {
+          const el = sheet();
+          if (!el || !el.classList.contains('is-open')) return;
+          if (el.contains(document.activeElement)) document.activeElement.blur();
+          el.classList.remove('is-open');
+          el.inert = true;
+          document.documentElement.classList.remove('nl-sheet-open');
+          if (remember) write(Object.assign(read(), { dismissed: Date.now() }));
+        }
+
+        function check() {
+          if (!eligible()) return;
+          const page = document.documentElement.scrollHeight;
+          const view = window.innerHeight;
+          if (page < view * 2.5) return;
+          if (window.pageYOffset + view >= page * 0.5) open();
+        }
+
+        window.addEventListener('scroll', check, { passive: true });
+
+        document.addEventListener('click', function(event) {
+          if (event.target.closest && event.target.closest('[data-newsletter-close]')) close(true);
+        });
+
+        document.addEventListener('keydown', function(event) {
+          if (event.key !== 'Escape') return;
+          if (document.documentElement.classList.contains('sp-open')) return;
+          close(true);
+        });
+
+        document.addEventListener('submit', function(event) {
+          if (!event.target.matches || !event.target.matches('.js-newsletter-form')) return;
+          write(Object.assign(read(), { subscribed: true }));
+          setTimeout(function() { close(false); }, 5000);
+        });
+
+        // The rail takes over again when the window grows past the breakpoint.
+        narrow.addEventListener('change', function() {
+          if (!narrow.matches) close(false);
+        });
       })();
     `;
 
@@ -192,10 +307,39 @@ export default function SiteShell({
                 </div>
               </aside>
             </div>
-            {/* Narrow screens: no right column, so the card follows the content. */}
-            <div className="site-rail-inline">
+            {/* Narrow screens: no right column, so the card is a dismissible
+                sheet that NEWSLETTER_SHEET_SCRIPT slides up from the bottom. */}
+            <aside
+              className="nl-sheet"
+              id="newsletter-sheet"
+              aria-label="Newsletter sign-up"
+              inert
+              suppressHydrationWarning
+            >
+              <button
+                type="button"
+                className="nl-sheet-close"
+                data-newsletter-close=""
+                aria-label="Close newsletter sign-up"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
               <Newsletter />
-            </div>
+            </aside>
           </div>
         )}
       </main>
@@ -223,9 +367,11 @@ export default function SiteShell({
       <script dangerouslySetInnerHTML={{ __html: STICKY_HEADER_SCRIPT }} />
       <script dangerouslySetInnerHTML={{ __html: BACK_TO_TOP_SCRIPT }} />
       <script dangerouslySetInnerHTML={{ __html: MOBILE_MENU_SCRIPT }} />
-      <script dangerouslySetInnerHTML={{ __html: THEME_TOGGLE_SCRIPT }} />
+      <script dangerouslySetInnerHTML={{ __html: THEME_SWITCH_SCRIPT }} />
+      {newsletterRail && <script dangerouslySetInnerHTML={{ __html: NEWSLETTER_SHEET_SCRIPT }} />}
 
       <script src="/assets/js/components/site-language.js" defer />
+      <script src="/assets/js/components/search-palette.js" defer />
 
       {(meta.scripts ?? []).map((src) => (
         <script key={src} src={src} defer />

@@ -12,6 +12,9 @@ const isExport = process.env.EXPORT_PARITY === "1";
 
 const nextConfig: NextConfig = {
   ...(isExport ? { output: "export" as const } : {}),
+  // `*.dynamic.ts` route files (app/api/search/) need a server, so they are
+  // only routes outside export mode; the static export never sees them.
+  pageExtensions: [...(isExport ? [] : ["dynamic.ts"]), "tsx", "ts", "jsx", "js"],
   // Jekyll used pretty permalinks (/path/ -> path/index.html); trailing
   // slashes keep every indexed URL identical.
   trailingSlash: true,

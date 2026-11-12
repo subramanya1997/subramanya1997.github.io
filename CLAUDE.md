@@ -53,6 +53,15 @@ Vercel project `subramanya-ai` is git-connected. Do not deploy manually with
 - `scripts/next/sync-public.mjs` (prebuild) fills `public/`: assets, css,
   `.well-known` discovery docs (+ extensionless aliases), markdown twins
   (`<url>index.md` beside every page), and book redirect pages.
+- Search: the header palette (`assets/js/components/search-palette.js`, opened
+  by `/` or Cmd/Ctrl+K) queries `GET /api/search/?q=` — the site's only
+  dynamic route (`app/api/search/route.dynamic.ts`; the `.dynamic.ts`
+  extension is registered in `next.config.ts` outside export mode only, so the
+  parity export never sees it). Ranking lives in `lib/search-engine.ts` over a
+  section-level index that `scripts/next/build-search-index.ts` (run with bun
+  by `predev`/`build`) writes to the git-ignored `lib/generated/`. The palette
+  therefore has no results under the static `out/` preview — use `bun run dev`.
+  `/search/` and `search.json` are unchanged.
 - `scripts/parity/` holds the URL-parity harness: `manifest.json` is the
   1,059-URL baseline from the final Jekyll build; run `bun run build:export`,
   then `node scripts/parity/diff-manifests.mjs scripts/parity/manifest.json out`

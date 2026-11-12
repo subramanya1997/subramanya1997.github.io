@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "node scripts/next/sync-public.mjs",
+    "predev": "node scripts/next/sync-public.mjs && bun scripts/next/build-search-index.ts",
     "dev": "next dev",
-    "build": "node scripts/next/sync-public.mjs && next build",
+    "build": "node scripts/next/sync-public.mjs && bun scripts/next/build-search-index.ts && next build",
     "start": "next start",
     "lint": "eslint",
     "parity": "node scripts/parity/diff-manifests.mjs scripts/parity/manifest.json out",
-    "build:export": "node scripts/next/sync-public.mjs && EXPORT_PARITY=1 next build"
+    "build:export": "node scripts/next/sync-public.mjs && bun scripts/next/build-search-index.ts && EXPORT_PARITY=1 next build"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

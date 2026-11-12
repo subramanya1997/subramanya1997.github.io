@@ -1,7 +1,7 @@
 // Site header, plus the skip links that precede it.
 // `title` attributes are the ones _plugins/link_attributes.rb adds at build time.
 import { getSiteConfig, NAV_LINKS } from "@/lib/site-data";
-import SearchForm from "./SearchForm";
+import SearchForm, { SearchToggle } from "./SearchForm";
 
 export default function Header() {
   const site = getSiteConfig();
@@ -34,42 +34,7 @@ export default function Header() {
             role="navigation"
             aria-label="Main navigation"
           >
-            <button
-              className="theme-toggle"
-              id="theme-toggle"
-              type="button"
-              aria-label="Switch to dark theme"
-              title="Switch theme"
-            >
-              <svg
-                className="icon-sun"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.7"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <circle cx="12" cy="12" r="4"></circle>
-                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
-              </svg>
-              <svg
-                className="icon-moon"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.7"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-              </svg>
-              <span className="sr-only">Toggle colour theme</span>
-            </button>
+            <SearchToggle />
             <button
               className="menu-icon"
               aria-label="Toggle navigation menu"

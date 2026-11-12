@@ -3,7 +3,7 @@
 
    Everything visual starts here:
      1. Design tokens (color, type, space, radius, shadow, motion)
-     2. Dark theme (opt-in via [data-theme='dark'] toggle; light is default)
+     2. Dark theme (opt-in via the footer theme switcher; light is default)
      3. Reset + element defaults
      4. Layout chrome (header, footer, page shell)
      5. Long-form post typography
@@ -174,8 +174,9 @@
    2. Dark theme
 
    The site is light by default regardless of the OS preference; dark applies
-   only when the header toggle sets `data-theme="dark"` (persisted by the
-   no-flash boot script in app/layout.tsx).
+   only when the footer switcher resolves to it — "Dark", or "System" on a
+   dark OS — and sets `data-theme="dark"` (persisted by the no-flash boot
+   script in app/layout.tsx).
    -------------------------------------------------------------------------- */
 
 
@@ -393,8 +394,8 @@ button:focus {
 /* --- Newsletter rail ------------------------------------------------------
    Every page (SiteShell) carries the newsletter card in a sticky right
    column; the header, footer and content share the wider frame so their
-   edges line up. Below 1280px the column drops away and the card follows the
-   content instead. */
+   edges line up. Below 1280px the column drops away and the card becomes a
+   bottom sheet instead (see .nl-sheet). */
 
 .wrap.wrap-rail,
 .site-header .wrap,
@@ -422,10 +423,11 @@ button:focus {
   top: calc(var(--header-height) + var(--space-6));
 }
 
-.site-rail-inline {
+/* Below the rail breakpoint the same card is a sheet anchored to the bottom
+   of the viewport: the bottom-right corner on tablets and small laptops, the
+   full width on phones. It is closed until SiteShell's sheet script opens it. */
+.nl-sheet {
   display: none;
-  max-width: 28rem;
-  margin: var(--space-16) auto 0;
 }
 
 @media screen and (max-width: 1280px) {
@@ -437,8 +439,110 @@ button:focus {
     display: none;
   }
 
-  .site-rail-inline {
+  .nl-sheet {
     display: block;
+    position: fixed;
+    z-index: 900;
+    right: var(--space-6);
+    bottom: var(--space-6);
+    width: 380px;
+    max-width: calc(100vw - 2 * var(--space-4));
+    max-height: 50vh;
+    overflow-y: auto;
+    padding: var(--space-5);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-lg);
+    background-color: var(--surface);
+    box-shadow: var(--shadow-lg), 0 24px 64px rgb(var(--shadow-color) / 0.18);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(24px);
+    transition: opacity var(--duration-slow) var(--ease),
+      transform var(--duration-slow) var(--ease),
+      visibility var(--duration-slow) var(--ease);
+  }
+
+  .nl-sheet.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* The sheet is the container here; the card inside loses its own frame. */
+  .nl-sheet .newsletter-card {
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .nl-sheet .newsletter-heading {
+    padding-right: var(--space-8);
+  }
+
+  .nl-sheet-close {
+    position: absolute;
+    top: var(--space-3);
+    right: var(--space-3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--ink-subtle);
+    cursor: pointer;
+  }
+
+  .nl-sheet-close:hover {
+    color: var(--ink);
+    background-color: var(--surface-sunken);
+  }
+
+  /* One thing in the corner at a time. */
+  :root.nl-sheet-open .back-to-top {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nl-sheet {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    max-width: none;
+    padding: var(--space-5) var(--space-5) calc(var(--space-6) + env(safe-area-inset-bottom));
+    border-width: 1px 0 0;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    transform: translateY(100%);
+  }
+
+  /* 16px keeps iOS from zooming the page when the field takes focus. */
+  .nl-sheet .newsletter-email {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  .nl-sheet .newsletter-btn {
+    font-size: 14px;
+    padding: 11px 12px;
+  }
+
+  .nl-sheet .newsletter-heading {
+    font-size: 16px;
+  }
+
+  .nl-sheet .newsletter-tagline {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nl-sheet {
+    transition: none;
   }
 }
 
@@ -533,40 +637,345 @@ button:focus {
   flex-shrink: 0;
 }
 
-.header-search {
+/* Search trigger: a link dressed as a search box. search-palette.js opens the
+   palette from it; without JS it navigates to /search/. */
+.header-search,
+.header-search:visited {
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  padding: var(--space-2) 0;
   flex: 1;
   max-width: 380px;
+  height: 36px;
+  padding: 0 var(--space-2) 0 var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background-color: var(--surface-sunken);
+  color: var(--ink-subtle);
+  font-size: var(--text-base);
+  line-height: 1;
+  text-decoration: none;
+  cursor: text;
+  transition: border-color var(--duration) var(--ease),
+    background-color var(--duration) var(--ease),
+    color var(--duration) var(--ease);
+}
+
+.header-search:hover {
+  border-color: var(--line-strong);
+  background-color: var(--surface);
+  color: var(--ink-muted);
+  text-decoration: none;
 }
 
 .header-search .search-icon {
+  flex-shrink: 0;
+}
+
+.header-search-label {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.header-search-kbd,
+.sp-root kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background-color: var(--surface);
+  color: var(--ink-subtle);
+  font-family: var(--font-sans);
+  font-size: var(--text-2xs);
+  font-weight: var(--weight-medium);
+  line-height: 1;
+  box-shadow: none;
+}
+
+/* Icon-only trigger; replaces the box on narrow screens. */
+.search-toggle,
+.search-toggle:visited {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  color: var(--ink-muted);
+  line-height: 0;
+  transition: color var(--duration) var(--ease),
+    background-color var(--duration) var(--ease),
+    border-color var(--duration) var(--ease);
+}
+
+.search-toggle:hover {
+  color: var(--ink);
+  background-color: var(--surface-sunken);
+  border-color: var(--line);
+}
+
+/* --- Search palette (assets/js/components/search-palette.js) ------------- */
+
+:root.sp-open {
+  overflow: hidden;
+}
+
+.sp-root {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: min(12vh, 96px) var(--space-4) var(--space-4);
+}
+
+.sp-root[hidden] {
+  display: none;
+}
+
+.sp-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgb(var(--shadow-color) / 0.32);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  animation: sp-fade var(--duration-fast) var(--ease);
+}
+
+.sp-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 640px;
+  max-height: min(70vh, 620px);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  background-color: var(--surface);
+  box-shadow: var(--shadow-lg), 0 24px 64px rgb(var(--shadow-color) / 0.18);
+  overflow: hidden;
+  animation: sp-rise var(--duration) var(--ease);
+}
+
+.sp-field {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 0 var(--space-3) 0 var(--space-4);
+  border-bottom: 1px solid var(--line);
   color: var(--ink-subtle);
   flex-shrink: 0;
 }
 
-.header-search-input {
-  width: 100%;
+.sp-icon {
+  flex-shrink: 0;
+}
+
+.sp-input {
+  flex: 1;
+  min-width: 0;
+  height: 52px;
+  padding: 0;
   border: none;
-  background: transparent;
-  border-bottom: 1px solid var(--line);
-  font-family: inherit;
-  font-size: var(--text-base);
-  color: var(--ink);
-  outline: none;
-  padding: var(--space-1) 0;
   border-radius: 0;
-  transition: border-color var(--duration) var(--ease);
+  outline: none;
+  background: transparent;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: var(--text-body);
+  appearance: none;
+  -webkit-appearance: none;
 }
 
-.header-search-input:focus {
-  border-bottom-color: var(--accent);
-}
-
-.header-search-input::placeholder {
+.sp-input::placeholder {
   color: var(--ink-subtle);
+}
+
+.sp-input::-webkit-search-cancel-button,
+.sp-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+  display: none;
+}
+
+.sp-esc {
+  display: inline-flex;
+  padding: var(--space-1);
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.sp-esc:hover kbd {
+  color: var(--ink);
+  border-color: var(--line-strong);
+}
+
+.sp-results {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: var(--space-2);
+  scroll-padding: var(--space-2);
+}
+
+.sp-group {
+  padding: var(--space-2) var(--space-3) var(--space-1);
+  color: var(--ink-subtle);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+}
+
+.sp-group:not(:first-child) {
+  margin-top: var(--space-2);
+}
+
+.sp-message {
+  padding: var(--space-5) var(--space-3);
+  color: var(--ink-muted);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
+.sp-message strong {
+  color: var(--ink);
+  font-weight: var(--weight-medium);
+}
+
+.sp-item,
+.sp-item:visited,
+.sp-item:hover {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  color: var(--ink);
+  text-decoration: none;
+  line-height: var(--leading-snug);
+  outline: none;
+}
+
+.sp-item > .sp-icon {
+  margin-top: 2px;
+  color: var(--ink-subtle);
+}
+
+.sp-item.is-active {
+  background-color: var(--surface-sunken);
+}
+
+.sp-item.is-active > .sp-icon {
+  color: var(--accent);
+}
+
+.sp-item-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.sp-item-title {
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sp-item-sub {
+  color: var(--ink-subtle);
+  font-size: var(--text-sm);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sp-item-kind {
+  color: var(--ink-muted);
+}
+
+.sp-sep {
+  margin: 0 var(--space-2);
+  opacity: 0.6;
+}
+
+.sp-root mark {
+  background: none;
+  color: var(--accent);
+  font-weight: var(--weight-semibold);
+}
+
+.sp-item-enter {
+  display: inline-flex;
+  align-self: center;
+  color: var(--ink-subtle);
+  visibility: hidden;
+}
+
+.sp-item.is-active .sp-item-enter {
+  visibility: visible;
+}
+
+.sp-footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  border-top: 1px solid var(--line);
+  color: var(--ink-subtle);
+  font-size: var(--text-xs);
+  flex-shrink: 0;
+}
+
+.sp-footer span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.sp-footer-end {
+  margin-left: auto;
+}
+
+@keyframes sp-fade {
+  from { opacity: 0; }
+}
+
+@keyframes sp-rise {
+  from { opacity: 0; transform: translateY(-6px) scale(0.985); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sp-backdrop,
+  .sp-panel {
+    animation: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sp-root {
+    padding: var(--space-3);
+  }
+
+  .sp-panel {
+    max-height: min(80vh, 620px);
+    max-height: min(80dvh, 620px);
+  }
+
+  .sp-footer {
+    display: none;
+  }
 }
 
 .site-nav .menu-icon {
@@ -596,46 +1005,66 @@ button:focus {
   color: var(--ink);
 }
 
-/* Theme toggle */
-.theme-toggle {
+/* Theme switcher (footer): Light / Dark / System as a segmented tab list,
+   after shadcn's Tabs. The selected segment follows `data-theme-pref` on the
+   root, which the boot script sets before paint; with no preference stored the
+   site default (light) is selected. */
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 3px;
+  border-radius: var(--radius-lg);
+  background-color: var(--surface-sunken);
+}
+
+.theme-switch-option {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
-  flex-shrink: 0;
-  padding: 0;
-  margin-right: var(--space-2);
+  gap: 6px;
+  height: 100%;
+  padding: 0 var(--space-3);
   border: 1px solid transparent;
   border-radius: var(--radius-md);
   background: transparent;
   color: var(--ink-muted);
+  font-family: inherit;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  line-height: 1;
+  white-space: nowrap;
   cursor: pointer;
-  line-height: 0;
   transition: color var(--duration) var(--ease),
     background-color var(--duration) var(--ease),
-    border-color var(--duration) var(--ease);
+    box-shadow var(--duration) var(--ease);
 }
 
-.theme-toggle:hover {
+.theme-switch-option:hover {
   color: var(--ink);
-  background-color: var(--surface-sunken);
-  border-color: var(--line);
 }
 
-.theme-toggle svg {
-  width: 17px;
-  height: 17px;
+.theme-switch-option:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
 }
 
-/* Swap the glyph with the active theme; JS only flips the root attribute. */
-.theme-toggle .icon-moon { display: none; }
-.theme-toggle .icon-sun { display: block; }
+.theme-switch-option svg {
+  flex-shrink: 0;
+}
 
-:root[data-theme='dark'] .theme-toggle .icon-sun { display: none; }
-:root[data-theme='dark'] .theme-toggle .icon-moon { display: block; }
-:root[data-theme='light'] .theme-toggle .icon-sun { display: block; }
-:root[data-theme='light'] .theme-toggle .icon-moon { display: none; }
+:root:not([data-theme-pref]) .theme-switch-option[data-theme-value='light'],
+:root[data-theme-pref='light'] .theme-switch-option[data-theme-value='light'],
+:root[data-theme-pref='dark'] .theme-switch-option[data-theme-value='dark'],
+:root[data-theme-pref='system'] .theme-switch-option[data-theme-value='system'] {
+  background-color: var(--surface);
+  color: var(--ink);
+  box-shadow: var(--shadow-sm);
+}
+
+:root[data-theme='dark'] .theme-switch-option[aria-checked='true'] {
+  border-color: var(--line-strong);
+}
 
 /* --- Site footer -------------------------------------------------------- */
 
@@ -1406,8 +1835,8 @@ button:focus {
     display: none;
   }
 
-  .theme-toggle {
-    margin-right: 0;
+  .search-toggle {
+    display: inline-flex;
   }
 
   .site-nav .menu-icon {
