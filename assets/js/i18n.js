@@ -397,7 +397,13 @@
       if (translation.content_html) {
         const contentEl = document.querySelector(CONFIG.selectors.postContent);
         if (contentEl) {
+          // The FAQ and citation block are appended to the article at build
+          // time and are not part of the translated body; carry them over.
+          const children = Array.from(contentEl.children);
+          const tailStart = children.findIndex(el => el.matches('.post-faq, .citation-section'));
+          const tail = tailStart === -1 ? [] : children.slice(tailStart);
           contentEl.innerHTML = translation.content_html;
+          tail.forEach(el => contentEl.appendChild(el));
           applied = true;
           
           // Re-initialize any scripts that depend on content

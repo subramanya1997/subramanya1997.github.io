@@ -3,9 +3,14 @@
     margin-top: var(--space-16);
   }
 
-  .citation-bibtex {
+  /* Wrap long title/url lines instead of showing a scrollbar. */
+  .post-content .citation-bibtex {
     font-size: var(--text-xs);
     line-height: var(--leading-relaxed);
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+
+  .post-content .citation-bibtex code {
     color: var(--ink-muted);
-    overflow-x: auto;
   }

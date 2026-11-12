@@ -97,6 +97,15 @@
 
   /* --- Prev / next ------------------------------------------------------- */
 
+  /* The sections after the article share the article's text measure, so the
+     page keeps one right edge all the way down. */
+  .mobile-social-share,
+  .related-posts,
+  .post-navigation,
+  .comments-section {
+    max-width: var(--measure);
+  }
+
   .post-navigation {
     display: flex;
     justify-content: space-between;
@@ -118,15 +127,21 @@
     letter-spacing: var(--tracking-widest);
     text-transform: uppercase;
     color: var(--ink-subtle);
-    opacity: 1;
+    font-weight: var(--weight-semibold);
     margin-bottom: var(--space-1);
   }
 
+  /* A lone Next link still sits on the right. */
   .next-post {
+    margin-left: auto;
     text-align: right;
   }
 
-  @media screen and (max-width: 1200px) {
+  .post-navigation > a:only-child {
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: 1280px) {
     .post-container {
       max-width: 46rem;
     }
@@ -154,7 +169,7 @@
 
   .mobile-social-share {
     display: none;
-    margin-top: var(--space-12);
+    margin-top: var(--space-16);
   }
 
   .mobile-social-header {
@@ -198,15 +213,13 @@
     background-color: var(--surface-sunken);
   }
 
-  .mobile-social-icon i,
   .mobile-social-icon svg {
-    font-size: var(--text-base);
     width: 16px;
-    text-align: center;
     opacity: 0.8;
   }
 
-  @media screen and (max-width: 1024px) {
+  /* Same breakpoint that hides the sidebar share, so one is always shown. */
+  @media screen and (max-width: 1280px) {
     .mobile-social-share {
       display: block;
     }
@@ -237,115 +250,103 @@
 
   /* --- References -------------------------------------------------------- */
 
-  .references-section {
-    margin-top: var(--space-16);
-  }
-
-  h2.references-section {
-    border-bottom: 1px solid var(--line);
+  /* A bold "References:" paragraph (older posts) is styled as the section
+     heading it stands in for. */
+  .post-content p.references-section {
+    margin: var(--space-16) 0 var(--space-4);
     padding-bottom: var(--space-3);
-    font-size: var(--text-xl);
+    border-bottom: 1px solid var(--line);
+    font-size: var(--text-2xl);
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-tighter);
+    color: var(--ink);
   }
 
-  /* Two classes so this outranks the post body's paragraph margin. */
+  .post-content p.references-section strong {
+    font-weight: var(--weight-semibold);
+  }
+
+  /* The number hangs in a fixed column so wrapped lines align with line one. */
   .post-content .reference-item {
+    position: relative;
     margin: 0;
-    padding: var(--space-1) 0;
+    padding: var(--space-1) 0 var(--space-1) 2.75em;
     font-size: var(--text-sm);
     line-height: var(--leading-relaxed);
     color: var(--ink-muted);
     scroll-margin-top: calc(var(--header-height) + var(--space-8));
   }
 
-  .reference-item:target {
+  .post-content .reference-item .ref-number,
+  .post-content .references-section + :is(ul, ol) > li.reference-item::before {
+    position: absolute;
+    left: 0;
+    font-weight: var(--weight-semibold);
+    color: var(--ink-subtle);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* List-based references get the same [n] column from a counter. */
+  .post-content .references-section + :is(ul, ol) {
+    list-style: none;
+    padding-left: 0;
+    counter-reset: ref;
+  }
+
+  .post-content .references-section + :is(ul, ol) > li.reference-item {
+    counter-increment: ref;
+  }
+
+  .post-content .references-section + :is(ul, ol) > li.reference-item::before {
+    content: "[" counter(ref) "]";
+  }
+
+  /* Highlight the jumped-to reference without changing its geometry. */
+  .post-content .reference-item:target {
     background-color: var(--highlight-soft);
-    padding: var(--space-2);
-    margin-left: calc(var(--space-2) * -1);
-    margin-right: calc(var(--space-2) * -1);
-    border-radius: var(--radius-sm);
+    box-shadow: 0 0 0 var(--space-2) var(--highlight-soft);
+    border-radius: var(--radius-xs);
     animation: highlight-fade 2s ease-out;
   }
 
   @keyframes highlight-fade {
     0% {
       background-color: var(--highlight-strong);
+      box-shadow: 0 0 0 var(--space-2) var(--highlight-strong);
     }
     100% {
       background-color: var(--highlight-soft);
+      box-shadow: 0 0 0 var(--space-2) var(--highlight-soft);
     }
   }
 
-  .ref-number {
-    display: inline-block;
-    font-weight: var(--weight-semibold);
-    color: var(--ink-subtle);
-    margin-right: var(--space-2);
-    min-width: 28px;
+  /* In-text [n] markers: brackets and numbers are one small raised unit. */
+  .post-content .citation-marker {
+    font-size: 0.78em;
+    vertical-align: 0.25em;
+    line-height: 1;
+    font-weight: var(--weight-medium);
+    color: var(--accent);
     font-variant-numeric: tabular-nums;
+    white-space: nowrap;
   }
 
-  .citation-link {
-    color: var(--accent);
+  .post-content .citation-link {
+    color: inherit;
     text-decoration: none;
-    font-weight: var(--weight-medium);
-    padding: 0 2px;
     border-radius: var(--radius-xs);
     transition: background-color var(--duration) var(--ease),
       color var(--duration) var(--ease);
-    cursor: pointer;
-    position: relative;
-    top: -2px;
-    font-size: 0.78em;
-    font-variant-numeric: tabular-nums;
   }
 
-  .citation-link:hover {
+  .post-content .citation-link:hover {
     background-color: var(--accent-soft);
     color: var(--accent-hover);
     text-decoration: none;
   }
 
-  .citation-link:visited {
+  .post-content .citation-link:visited {
     color: var(--accent);
-  }
-
-  .reference-item a {
-    color: var(--accent);
-    text-decoration: underline;
-    text-decoration-color: var(--accent-soft);
-    text-underline-offset: 0.16em;
-    transition: text-decoration-color var(--duration) var(--ease);
-  }
-
-  .reference-item a:hover {
-    text-decoration-color: currentColor;
-    background-color: transparent;
-  }
-
-  /* List-based references */
-  .references-section + ul,
-  .references-section + ol {
-    list-style: none;
-    padding-left: 0;
-  }
-
-  .references-section + ul li.reference-item,
-  .references-section + ol li.reference-item {
-    margin: 0;
-    padding: var(--space-1) 0;
-    font-size: var(--text-sm);
-    line-height: var(--leading-relaxed);
-    color: var(--ink-muted);
-  }
-
-  .references-section + ul li.reference-item:target,
-  .references-section + ol li.reference-item:target {
-    background-color: var(--highlight-soft);
-    padding: var(--space-2);
-    margin-left: calc(var(--space-2) * -1);
-    margin-right: calc(var(--space-2) * -1);
-    border-radius: var(--radius-sm);
-    animation: highlight-fade 2s ease-out;
   }
 
   /* --- Comments ---------------------------------------------------------- */
@@ -562,6 +563,7 @@
   }
 
   .copy-dropdown-toggle {
+    font: inherit;
     display: inline-flex;
     align-items: center;
     justify-content: center;

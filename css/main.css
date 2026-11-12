@@ -60,7 +60,9 @@
   --weight-bold: 700;
 
   /* Reading measure for long-form prose. */
-  --measure: 68ch;
+  /* rem, not ch: ch resolves against each element's own font size, so 13px
+     references and 27px headings ended up with different right edges. */
+  --measure: 42.875rem;
   --measure-wide: 84ch;
 
   /* --- Space scale (4px base) -------------------------------------------- */
@@ -1267,6 +1269,8 @@ button:focus {
   scroll-margin-top: calc(var(--header-height) + var(--space-6));
 }
 
+/* Old posts use `#` for body sections; treat it like h2. */
+.post-content h1,
 .post-content h2 {
   font-size: var(--text-2xl);
   letter-spacing: var(--tracking-tighter);
@@ -1373,6 +1377,14 @@ button:focus {
   color: var(--ink);
   overflow-wrap: anywhere;
   word-break: break-word;
+}
+
+/* Identifiers in table cells stay whole; the table scrolls on phones. */
+.post-content td code,
+.post-content th code {
+  overflow-wrap: normal;
+  word-break: normal;
+  white-space: nowrap;
 }
 
 .post pre code {
@@ -1916,14 +1928,19 @@ button:focus {
     padding-left: var(--space-5);
   }
 
+  /* Wide tables scroll sideways instead of breaking words letter by letter. */
   .post-content table {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    overflow-x: auto;
     font-size: var(--text-sm);
   }
 
   .post-content table th,
   .post-content table td {
     padding: var(--space-2) var(--space-3);
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
   }
 
   .post-content table th {

@@ -3,24 +3,15 @@
     margin-top: var(--space-16);
   }
 
-  .post-faq h2 {
-    margin: 0 0 var(--space-5);
-    border-bottom: 0;
-    padding-bottom: 0;
-    font-size: var(--text-xl);
+  /* Same size and rule as every other section heading; that rule doubles as
+     the top edge of the first question. */
+  .post-content .post-faq h2 {
+    margin: 0;
   }
 
   .post-faq-item {
-    margin-bottom: 0;
-    border: 0;
     border-bottom: 1px solid var(--line);
-    border-radius: 0;
-    background: transparent;
     overflow: hidden;
-  }
-
-  .post-faq-item:first-of-type {
-    border-top: 1px solid var(--line);
   }
 
   .post-faq-question {
@@ -67,7 +58,6 @@
     font-size: var(--text-base);
     line-height: var(--leading-relaxed);
     color: var(--ink-muted);
-    max-width: var(--measure);
   }
 
   .post-faq-answer p {

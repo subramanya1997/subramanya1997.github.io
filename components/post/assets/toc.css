@@ -151,12 +151,3 @@
     background: var(--line-strong);
   }
 
-  @media screen and (max-width: 1024px) {
-    .table-of-contents {
-      display: none !important; /* Hide on tablet and mobile */
-    }
-
-    .toc-social-share {
-      display: none !important; /* Hide social share in TOC on mobile */
-    }
-  }

@@ -571,32 +571,52 @@
       const content = document.querySelector('.post-content');
       if (!content) return;
 
+      // Already tagged (e.g. the original markup restored after a translation).
+      if (content.querySelector('.references-section')) return;
+
       const citationRegex = /\[[\d,\s]+\]/g;
       let referenceSection = null;
 
       const allElements = Array.from(content.children);
 
+      // A bibliography heading is an h2, or a paragraph that is only bold
+      // text, directly followed by a numbered entry or a list. Requiring the
+      // entry keeps a body section that happens to be titled "References"
+      // (the Git post) from being restyled.
+      const isHeadingLike = function(element) {
+        if (element.tagName === 'H2') return true;
+        if (element.tagName !== 'P') return false;
+        const strong = element.querySelector('strong');
+        return !!strong && strong.textContent.trim() === element.textContent.trim();
+      };
+      const startsBibliography = function(element, allowList) {
+        const next = element.nextElementSibling;
+        if (!next) return false;
+        if (allowList && (next.tagName === 'UL' || next.tagName === 'OL')) return true;
+        return next.tagName === 'P' && /^\[?1\]?[.\):]?\s/.test(next.textContent.trim());
+      };
+
       for (let i = 0; i < allElements.length; i++) {
         const element = allElements[i];
-        const text = element.textContent.trim();
-
-        if (element.tagName === 'H2' && /^References:?$/i.test(text)) {
+        if (!isHeadingLike(element)) continue;
+        // English posts: matched by title. Translated posts: the title is
+        // translated, so fall back to "heading followed by entry [1]".
+        const named = /^References:?$/i.test(element.textContent.trim());
+        if (named ? startsBibliography(element, true) : startsBibliography(element, false)) {
           referenceSection = element;
-          break;
-        }
-
-        if (element.tagName === 'P') {
-          const strong = element.querySelector('strong');
-          if (strong && /^References:?$/i.test(strong.textContent.trim())) {
-            referenceSection = element;
-            break;
-          }
+          if (named) break;
         }
       }
 
       if (!referenceSection) return;
 
       referenceSection.classList.add('references-section');
+
+      // The bold-paragraph variant is styled as a heading; drop its colon.
+      if (referenceSection.tagName === 'P') {
+        const label = referenceSection.querySelector('strong');
+        if (label) label.textContent = label.textContent.replace(/[:：]\s*$/, '');
+      }
 
       let nextElement = referenceSection.nextElementSibling;
 
@@ -664,7 +684,8 @@
               const links = nums.map(function(num) {
                 return '<a href="#ref-' + num + '" class="citation-link" title="Jump to reference ' + num + '">' + num + '</a>';
               }).join(', ');
-              return '[' + links + ']';
+              // One wrapper so brackets and numbers share a size and colour.
+              return '<span class="citation-marker">[' + links + ']</span>';
             }
           );
 
@@ -673,6 +694,43 @@
           textNode.replaceWith(span);
         });
       });
+    }
+  };
+
+  // ============================================
+  // Comments follow the site theme
+  // ============================================
+  // utterances is embedded with a fixed light theme; tell its iframe which
+  // theme the page resolved to, now and whenever the footer switcher changes it.
+  const CommentsTheme = {
+    init: function() {
+      const section = document.querySelector('.comments-section');
+      if (!section) return;
+      const root = document.documentElement;
+
+      const send = function() {
+        const frame = section.querySelector('iframe.utterances-frame');
+        if (!frame || !frame.contentWindow) return;
+        const theme = root.getAttribute('data-theme') === 'dark' ? 'github-dark' : 'github-light';
+        frame.contentWindow.postMessage({ type: 'set-theme', theme: theme }, 'https://utteranc.es');
+      };
+
+      const watchFrame = function() {
+        const frame = section.querySelector('iframe.utterances-frame');
+        if (!frame) return false;
+        frame.addEventListener('load', send);
+        send();
+        return true;
+      };
+
+      if (!watchFrame()) {
+        const added = new MutationObserver(function() {
+          if (watchFrame()) added.disconnect();
+        });
+        added.observe(section, { childList: true, subtree: true });
+      }
+
+      new MutationObserver(send).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
     }
   };
 
@@ -701,6 +759,13 @@
     CopyCode.init();
     CopyPage.init();
     References.init();
+
+    CommentsTheme.init();
+
+    // A translation replaces the article markup; tag its references too.
+    document.addEventListener('i18n:contentUpdated', function() {
+      References.init();
+    });
   }
 
   // Run on DOMContentLoaded
