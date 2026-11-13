@@ -41,3 +41,7 @@ next-env.d.ts
 /drafts/
 /.claude/launch.json
 .gstack/
+
+# Local research output (deep-research notes and reports)
+/reports/
+/research_notes/
