@@ -35,7 +35,8 @@ export interface AboutPublication {
   authors: string;
   venue: string;
   year: number | string;
-  url: string;
+  /** Omitted for entries with nothing to link to (e.g. an unrecorded talk). */
+  url?: string;
   related_post?: string;
 }
 

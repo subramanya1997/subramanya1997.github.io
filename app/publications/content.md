@@ -2,7 +2,7 @@
 layout: page
 title: Publications
 permalink: /publications/
-description: Papers, standards proposals, and books by Subramanya N on agentic AI identity, authorization, and security.
+description: Papers, standards proposals, talks, and books by Subramanya N on agentic AI identity, authorization, and security.
 includelink: true
 custom_layout: true
 ---
@@ -15,12 +15,13 @@ custom_layout: true
           <span class="post-date">{{ pub.year }} · {{ pub.venue }}</span>
         </div>
 
-        <h2 class="post-title"><a href="{{ pub.url }}" target="_blank" rel="noopener">{{ pub.title }}</a></h2>
+        {% if pub.url %}<h2 class="post-title"><a href="{{ pub.url }}" target="_blank" rel="noopener">{{ pub.title }}</a></h2>{% else %}<h2 class="post-title">{{ pub.title }}</h2>{% endif %}
 
         <div class="post-excerpt">
           {{ pub.authors }}
         </div>
 
+        {% if pub.url %}
         <a href="{{ pub.url }}" class="continue-reading" target="_blank" rel="noopener">
           Continue reading
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -28,6 +29,7 @@ custom_layout: true
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
         </a>
+        {% endif %}
       </article>
 
       {% unless forloop.last %}

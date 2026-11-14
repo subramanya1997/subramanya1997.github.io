@@ -8,22 +8,30 @@ scholar_id: IyHluZcAAAAJ
 #Bio
 job_title: Independent Researcher
 bio: I'm an independent researcher building agentic infrastructure and studying self-improving software. Previously, I was a founding engineer at multiple early-stage startups, building architectural visualization tools and retrieval systems for the distribution industry.
-history: I hold an M.S. in Computer Science from UMass Amherst, where I worked on Vision-Language robotics with <a href='https://hcr.cs.umass.edu/people/hzhang'>Prof. Hao Zhang</a> at the <a href='https://hcr.cs.umass.edu'>Human-Centered Robotics Lab</a>. Before that, I led product development at <a href='https://www.renderpub.com'>RenderPub</a> and co-founded Yourkraft and Vayam, a non-profit focused on education.
+history: I hold an M.S. in Computer Science from UMass Amherst, where I worked on Vision-Language robotics with <a href='https://hcr.cs.umass.edu/people/hzhang'>Prof. Hao Zhang</a> at the <a href='https://hcr.cs.umass.edu'>Human-Centered Robotics Lab</a>. Before that, I led product development at <a href='https://www.renderpub.com'>RenderPub</a>.
 fav_quote: '"The harder you work, the luckier you get." -- Gary Player'
 
 #Work Experience
 experience:
-  - position: Founding Machine Learning Engineer & Lead Architect
+  - position: Co-Founder
+    company: Agentic Labs Inc. (UC Berkeley SkyDeck, Batch 21)
+    location: Berkeley, CA
+    period: Jun 2025 - Present
+    logo: /assets/images/logos/skydeck.png
+    description: Co-founded Agentic Labs in UC Berkeley SkyDeck's Batch 21 accelerator cohort ($200K investment).
+    achievements:
+      - Responsible for technical vision and core platform development.
+
+  - position: Founding Machine Learning Engineer & Chief Architect, Agentic Commerce
     company: Dylog Inc
     location: San Jose, CA
     period: Aug 2023 - Jul 2026
     logo: /assets/images/logos/dylog.png
-    description: Served as the principal architect, leading the development and design of Dylog Inc's conversational AI and search platform.
+    description: Principal architect of Dylog's agentic commerce platform, AI agents for wholesale distribution.
     achievements:
-      - Developed pipelines for synthetic data generation, tailored for e-commerce platforms, improving search results by 20% (internal evaluations).
-      - Developed a hybrid search framework combining Elasticsearch, ColBERT, and llama, integrating keyword-based and vector-based retrieval for enhanced search accuracy.
-      - Designed and implemented agentic workflows for automating sales data processing from emails, text messages, and contact forms, reducing order processing time by 2 hours.
-      
+      - Architected Dylog's agentic commerce platform, an AI layer that unifies a distributor's ERP, PIM, CRM, and product content into one permission-aware knowledge base and powers agents that let customers find products, get answers, request quotes, and place orders in whatever channel they already use.
+      - Built the search and retrieval foundation behind every agent, combining semantic and keyword retrieval, neural reranking, and LLM query understanding, grounded in approved sources with human handoff when needed; improved search relevance 35% and lifted conversion 28% in A/B tests.
+
   - position: Graduate Student Researcher
     company: Human-Centered Robotics Lab, UMass Amherst
     location: MA
@@ -75,25 +83,6 @@ experience:
       - Developed and implemented a 360-degree panoramic image loading algorithm utilizing tile-based streaming, three.js, WebGL, and OpenCV.
       - Developed a desktop application utilizing Next.js, Electron, and React to launch and auto-update the RenderPub suite of applications and projects.
       
-  - position: Co-founder
-    company: Yourkraft
-    location: Bangalore, India
-    period: Feb 2016 - May 2018
-    logo: 
-    description: Yourkraft, a marketplace connecting entertainers and party planners, secured funding from renowned singer Vijay Prakash.
-    achievements:
-      - Managed a network of over 200 artists across multiple cities, including Bangalore, Mumbai, and Hyderabad, and successfully hosted over 350 events.
-      - Developed a feature-rich dashboard for event planning and artist hiring, including an events list and the ability to book event tickets, utilizing Flask and Firebase technology stack.
-      
-  - position: Co-founder/Treasurer
-    company: Vayam (Non-Profit)
-    location: Mysore, India
-    period: Jan 2016 - Present
-    logo: 
-    description: Vayam is a student-led trust to empower individuals through education and equality as its foundation.
-    achievements:
-      - In partnership with five government schools around Mysore, providing online classes in subjects such as science, mathematics, and computer science to approximately 200 children.
-      - Organizing various community initiatives, including blood donation drives, charity events, food relief efforts, and green initiatives.
 
 #Education
 education:
@@ -129,3 +118,13 @@ publications:
     year: 2025
     url: https://arxiv.org/abs/2509.25974
     related_post: /2025/04/28/oidc-a-proposal/
+  - title: "OIDC-A: Securing AI Agent Identity"
+    authors: "Featured guest on Gluu's Identerati Office Hours, presenting the OIDC-A specification with Tobin South (Stanford)."
+    venue: "Talk · Identerati Office Hours, Ep. 134"
+    year: 2025
+    url: https://www.youtube.com/live/Sy-ldP57NoM
+
+  - title: "Using AI Tools Securely at Work to Boost Productivity"
+    authors: "Guest lecture for the Government of India, invited by the Principal Chief Personnel Officer of Central Railway (95,000 employees), at its Mumbai headquarters."
+    venue: "Talk · Central Railway, Mumbai"
+    year: 2025

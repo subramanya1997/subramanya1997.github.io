@@ -12,7 +12,7 @@ const meta = pageMeta({
   title: "Publications",
   url: "/publications/",
   description:
-    "Papers, standards proposals, and books by Subramanya N on agentic AI identity, authorization, and security.",
+    "Papers, standards proposals, talks, and books by Subramanya N on agentic AI identity, authorization, and security.",
   customLayout: true,
 });
 
@@ -34,7 +34,7 @@ export default function Publications() {
       year: Number(pub.year),
       venue: String(pub.venue),
       title: String(pub.title),
-      url: String(pub.url),
+      url: pub.url ? String(pub.url) : "",
       bodyHtml: applyLinkAttributes(pub.authors, siteUrl),
       external: true,
     })),
@@ -60,21 +60,25 @@ export default function Publications() {
               ? { target: "_blank", rel: "noopener" }
               : {};
             return (
-              <Fragment key={entry.url}>
+              <Fragment key={entry.url || entry.title}>
                 <article className="blog-post">
                   <div className="post-meta">
                     <span className="post-date">{`${entry.year} · ${entry.venue}`}</span>
                   </div>
 
                   <h2 className="post-title">
-                    <a href={entry.url} {...linkProps} title={linkTitle(entry.title)}>
-                      {entry.title}
-                    </a>
+                    {entry.url ? (
+                      <a href={entry.url} {...linkProps} title={linkTitle(entry.title)}>
+                        {entry.title}
+                      </a>
+                    ) : (
+                      entry.title
+                    )}
                   </h2>
 
                   <div className="post-excerpt" dangerouslySetInnerHTML={{ __html: entry.bodyHtml }} />
 
-                  <a
+                  {entry.url ? <a
                     href={entry.url}
                     className="continue-reading"
                     {...linkProps}
@@ -95,7 +99,7 @@ export default function Publications() {
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
-                  </a>
+                  </a> : null}
                 </article>
 
                 {index < entries.length - 1 ? <hr className="post-divider" /> : null}
