@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-16T01:11:57.849091",
+  "last_updated": "2026-11-17T01:10:16.962545",
   "view_counts": [
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
@@ -9,9 +9,9 @@
     },
     {
       "url": "/2025/04/28/oidc-a-proposal/",
-      "views": 3984,
-      "avg_duration_seconds": 169.3,
-      "engagement_rate": 64.72
+      "views": 3986,
+      "avg_duration_seconds": 169.2,
+      "engagement_rate": 64.73
     },
     {
       "url": "/2026/01/01/what-are-context-graphs-really/",
@@ -21,9 +21,9 @@
     },
     {
       "url": "/2025/05/21/securing-mcp-with-oidc-and-oidc-a-identity-aware-gateway/",
-      "views": 1946,
-      "avg_duration_seconds": 183.6,
-      "engagement_rate": 68.15
+      "views": 1950,
+      "avg_duration_seconds": 184.6,
+      "engagement_rate": 68.23
     },
     {
       "url": "/2026/01/04/a-year-with-cursor-how-my-workflow-evolved-from-agent-to-architect/",
@@ -39,15 +39,15 @@
     },
     {
       "url": "/2025/12/23/2025-the-year-agentic-ai-got-real-and-what-comes-next/",
-      "views": 1389,
-      "avg_duration_seconds": 103.0,
-      "engagement_rate": 95.31
+      "views": 1391,
+      "avg_duration_seconds": 102.8,
+      "engagement_rate": 95.32
     },
     {
       "url": "/2025/12/18/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle/",
-      "views": 1234,
-      "avg_duration_seconds": 133.9,
-      "engagement_rate": 93.83
+      "views": 1236,
+      "avg_duration_seconds": 133.6,
+      "engagement_rate": 93.84
     },
     {
       "url": "/2026/04/13/the-filesystem-is-the-database-why-agents-need-a-new-storage-primitive/",
@@ -75,9 +75,9 @@
     },
     {
       "url": "/2025/09/09/beyond-non-deterministic-deconstructing-the-illusion-of-randomness-in-llms/",
-      "views": 913,
-      "avg_duration_seconds": 236.6,
-      "engagement_rate": 88.32
+      "views": 914,
+      "avg_duration_seconds": 236.3,
+      "engagement_rate": 88.21
     },
     {
       "url": "/2026/02/23/the-saaspocalypse-a-survival-guide/",
@@ -93,9 +93,9 @@
     },
     {
       "url": "/2025/12/01/mcp-enterprise-readiness-how-the-2025-11-25-spec-closes-the-production-gap/",
-      "views": 693,
-      "avg_duration_seconds": 128.6,
-      "engagement_rate": 90.27
+      "views": 699,
+      "avg_duration_seconds": 127.9,
+      "engagement_rate": 90.33
     },
     {
       "url": "/2025/12/10/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026/",
@@ -123,9 +123,9 @@
     },
     {
       "url": "/2026/08/17/break-in-break-out-ai-agent-security-in-2026/",
-      "views": 449,
-      "avg_duration_seconds": 128.8,
-      "engagement_rate": 97.44
+      "views": 452,
+      "avg_duration_seconds": 129.9,
+      "engagement_rate": 97.46
     },
     {
       "url": "/2024/01/11/the-nockout-story/",
@@ -176,16 +176,16 @@
       "engagement_rate": 72.28
     },
     {
+      "url": "/2024/02/20/a-feat-of-strength-mvp-for-ai-apps/",
+      "views": 235,
+      "avg_duration_seconds": 25.4,
+      "engagement_rate": 70.63
+    },
+    {
       "url": "/2025/11/17/why-private-registries-are-the-future-of-enterprise-agentic-infrastructure/",
       "views": 232,
       "avg_duration_seconds": 155.4,
       "engagement_rate": 86.63
-    },
-    {
-      "url": "/2024/02/20/a-feat-of-strength-mvp-for-ai-apps/",
-      "views": 231,
-      "avg_duration_seconds": 25.8,
-      "engagement_rate": 70.09
     },
     {
       "url": "/2025/07/15/do-agents-need-their-own-identity/",
@@ -219,9 +219,9 @@
     },
     {
       "url": "/2022/12/28/demystifying-the-shell-scripting-advanced-techniques-and-best-practices/",
-      "views": 154,
-      "avg_duration_seconds": 13.1,
-      "engagement_rate": 86.2
+      "views": 156,
+      "avg_duration_seconds": 12.9,
+      "engagement_rate": 86.37
     },
     {
       "url": "/2022/12/28/demystifying-the-shell-scripting-a-beginners-guide/",
@@ -231,9 +231,9 @@
     },
     {
       "url": "/2026/10/16/git-was-built-for-2500-merges-a-day/",
-      "views": 141,
-      "avg_duration_seconds": 93.7,
-      "engagement_rate": 95.91
+      "views": 143,
+      "avg_duration_seconds": 91.9,
+      "engagement_rate": 95.99
     },
     {
       "url": "/2026/08/06/fixing-b2b-commerce-search-in-the-age-of-ai/",
