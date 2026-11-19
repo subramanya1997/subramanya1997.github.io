@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-18T01:10:09.100580",
+  "last_updated": "2026-11-19T01:09:21.501404",
   "view_counts": [
     {
       "url": "/2025/10/30/claude-skills-vs-mcp-a-tale-of-two-ai-customization-philosophies/",
@@ -9,9 +9,9 @@
     },
     {
       "url": "/2025/04/28/oidc-a-proposal/",
-      "views": 3986,
-      "avg_duration_seconds": 169.2,
-      "engagement_rate": 64.73
+      "views": 3993,
+      "avg_duration_seconds": 168.9,
+      "engagement_rate": 64.74
     },
     {
       "url": "/2026/01/01/what-are-context-graphs-really/",
@@ -27,9 +27,9 @@
     },
     {
       "url": "/2026/01/04/a-year-with-cursor-how-my-workflow-evolved-from-agent-to-architect/",
-      "views": 1922,
-      "avg_duration_seconds": 243.4,
-      "engagement_rate": 93.22
+      "views": 1924,
+      "avg_duration_seconds": 243.2,
+      "engagement_rate": 93.23
     },
     {
       "url": "/2025/12/26/context-graphs-my-thoughts-on-the-trillion-dollar-evolution-of-agentic-memory/",
@@ -39,9 +39,9 @@
     },
     {
       "url": "/2025/12/23/2025-the-year-agentic-ai-got-real-and-what-comes-next/",
-      "views": 1395,
-      "avg_duration_seconds": 102.5,
-      "engagement_rate": 95.33
+      "views": 1399,
+      "avg_duration_seconds": 102.2,
+      "engagement_rate": 95.27
     },
     {
       "url": "/2025/12/18/agent-skills-the-missing-piece-of-the-enterprise-ai-puzzle/",
@@ -51,9 +51,9 @@
     },
     {
       "url": "/2026/04/13/the-filesystem-is-the-database-why-agents-need-a-new-storage-primitive/",
-      "views": 1100,
-      "avg_duration_seconds": 306.4,
-      "engagement_rate": 92.13
+      "views": 1102,
+      "avg_duration_seconds": 306.0,
+      "engagement_rate": 92.14
     },
     {
       "url": "/2026/01/14/context-graphs-are-a-trillion-dollar-opportunity-but-who-captures-it/",
@@ -99,15 +99,15 @@
     },
     {
       "url": "/2025/12/10/from-boom-to-build-out-the-state-of-enterprise-ai-in-2026/",
-      "views": 666,
-      "avg_duration_seconds": 96.9,
-      "engagement_rate": 93.16
+      "views": 668,
+      "avg_duration_seconds": 96.6,
+      "engagement_rate": 93.18
     },
     {
       "url": "/2026/04/23/context-engineering-why-prompt-engineering-was-never-enough/",
-      "views": 628,
-      "avg_duration_seconds": 171.1,
-      "engagement_rate": 94.22
+      "views": 629,
+      "avg_duration_seconds": 170.8,
+      "engagement_rate": 94.06
     },
     {
       "url": "/2026/01/19/the-agentic-workspace-a-strategic-imperative-for-the-next-era-of-saas/",
@@ -123,9 +123,9 @@
     },
     {
       "url": "/2026/08/17/break-in-break-out-ai-agent-security-in-2026/",
-      "views": 452,
-      "avg_duration_seconds": 129.9,
-      "engagement_rate": 97.46
+      "views": 454,
+      "avg_duration_seconds": 129.4,
+      "engagement_rate": 97.47
     },
     {
       "url": "/2024/01/11/the-nockout-story/",
@@ -195,9 +195,9 @@
     },
     {
       "url": "/2023/06/10/enhancing-document-interactions/",
-      "views": 200,
-      "avg_duration_seconds": 40.5,
-      "engagement_rate": 83.34
+      "views": 202,
+      "avg_duration_seconds": 40.1,
+      "engagement_rate": 83.53
     },
     {
       "url": "/2022/12/28/demystifying-the-shell-a-beginners-guide/",
@@ -225,9 +225,9 @@
     },
     {
       "url": "/2022/12/28/demystifying-the-shell-scripting-a-beginners-guide/",
-      "views": 152,
-      "avg_duration_seconds": 34.9,
-      "engagement_rate": 87.73
+      "views": 154,
+      "avg_duration_seconds": 34.5,
+      "engagement_rate": 87.89
     },
     {
       "url": "/2026/10/16/git-was-built-for-2500-merges-a-day/",
